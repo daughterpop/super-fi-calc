@@ -1,3 +1,25 @@
+<div className="max-w-4xl mx-auto px-4 py-8 prose prose-slate dark:prose-invert">
+  <h1 className="text-4xl font-bold text-center mb-4">Financial Independence Calculator</h1>
+  <p className="text-xl text-center text-muted-foreground mb-8">
+    Free tool to calculate your <strong>FI Number</strong> and see exactly when you can achieve Financial Independence / Retire Early (FIRE).
+  </p>
+  
+  <div className="grid md:grid-cols-2 gap-6 mb-10 text-sm">
+    <div>
+      <h2 className="text-lg font-semibold mb-2">How it works</h2>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Enter your savings rate, expenses, and investment returns</li>
+        <li>Watch real-time updates to your FI number and timeline</li>
+        <li>Built with the 4% safe withdrawal rule</li>
+      </ul>
+    </div>
+    <div>
+      <h2 className="text-lg font-semibold mb-2">Popular searches</h2>
+      <p className="text-muted-foreground">financial independence calculator • fi calculator • fire calculator • retire early tool • fi number calculator</p>
+    </div>
+  </div>
+</div>
+
 import React, { useState, useMemo } from 'react';
 import { ArrowRight, ArrowLeft, Check, TrendingUp, Home, GraduationCap, DollarSign, Sparkles } from 'lucide-react';
 
