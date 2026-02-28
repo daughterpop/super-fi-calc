@@ -1,3 +1,4 @@
+export default function SuperFICalculator() {
 <div className="max-w-4xl mx-auto px-4 py-8 prose prose-slate dark:prose-invert">
   <h1 className="text-4xl font-bold text-center mb-4">Financial Independence Calculator</h1>
   <p className="text-xl text-center text-muted-foreground mb-8">
