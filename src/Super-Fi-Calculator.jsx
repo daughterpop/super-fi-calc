@@ -1,14 +1,13 @@
 import React, { useState, useMemo } from 'react';
 import { ArrowRight, ArrowLeft, Check, TrendingUp, Home, GraduationCap, DollarSign, Sparkles } from 'lucide-react';
 
-// Add missing imports here if your original code used them (examples):
+// If you use shadcn/ui or radix components, add them here (examples):
 // import { Slider } from '@radix-ui/react-slider';
-// import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 // import { Input } from '@/components/ui/input';
 // import { Label } from '@/components/ui/label';
 // import { Checkbox } from '@/components/ui/checkbox';
 // import { Button } from '@/components/ui/button';
-// ... add whatever is used in your JSX (shadcn/ui components, etc.)
+// ... add whatever is missing based on your JSX
 
 export default function SuperFiCalculator() {
   const [step, setStep] = useState(0);
@@ -213,7 +212,6 @@ export default function SuperFiCalculator() {
     if (step < steps.length - 1) {
       setStep(step + 1);
     } else {
-      // Show results only if email is valid (or remove this check if not needed)
       if (email.includes('@')) {
         setShowResults(true);
       } else {
@@ -226,7 +224,7 @@ export default function SuperFiCalculator() {
     if (step > 0) setStep(step - 1);
   };
 
-  // Static intro (always shown at top)
+  // Static intro section (shown at the top of every page of the calculator)
   const IntroSection = () => (
     <div className="max-w-4xl mx-auto px-4 py-8 prose prose-slate dark:prose-invert">
       <h1 className="text-4xl font-bold text-center mb-4">Financial Independence Calculator</h1>
@@ -245,6 +243,37 @@ export default function SuperFiCalculator() {
         <div>
           <h2 className="text-lg font-semibold mb-2">Popular searches</h2>
           <p className="text-muted-foreground">financial independence calculator • fi calculator • fire calculator • retire early tool • fi number calculator</p>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Robinhood Promo block (shown on the first page)
+  const RobinhoodPromo = () => (
+    <div className="w-full max-w-2xl mb-8 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 shadow-sm border border-green-100">
+      <div className="flex items-start gap-4">
+        <div className="flex-shrink-0 w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
+          <TrendingUp className="text-white" size={24} />
+        </div>
+        <div className="flex-1">
+          <h3 className="text-lg font-bold text-gray-900 mb-1">
+            Ready to Start Investing?
+          </h3>
+          <p className="text-sm text-gray-600 mb-4">
+            Get free stocks worth up to $200 when you open a Robinhood account and make your first investment.
+          </p>
+          <a
+            href="https://join.robinhood.com/dustinh-1bff5a"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-all shadow-md hover:shadow-lg"
+          >
+            Claim Your Free Stock
+            <ArrowRight size={18} />
+          </a>
+          <p className="text-xs text-gray-500 mt-3">
+            Commission-free trading • Easy to use • Perfect for beginners
+          </p>
         </div>
       </div>
     </div>
@@ -295,7 +324,7 @@ export default function SuperFiCalculator() {
             </div>
           </div>
 
-          {/* Robinhood CTA */}
+          {/* Robinhood CTA in results page (optional - you can keep or remove) */}
           <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 shadow-sm border border-green-100 mb-6">
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
@@ -434,6 +463,9 @@ export default function SuperFiCalculator() {
             ))}
           </div>
         </div>
+
+        {/* Robinhood Promo - placed on the first page, after progress bar */}
+        <RobinhoodPromo />
 
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10">
           {step === 0 && (
