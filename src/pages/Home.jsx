@@ -15,7 +15,7 @@ export default function Home() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-            <h2 className="text-3xl font-semibold text-indigo-700 mb-4">Calculators</h2>
+            <h2 className="text-3xl font-semibold text-indigo-700 mb-4">Calculator</h2>
             <p className="text-gray-600 mb-6">
               Run the numbers on your path to financial freedom.
             </p>
