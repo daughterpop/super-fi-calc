@@ -667,4 +667,191 @@ export default function SuperFiCalculator() {
 
           {step === 3 && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Large Planned Expenses</h2>
+
+              <label className="flex items-center gap-3 cursor-pointer p-4 border-2 border-gray-200 rounded-xl hover:border-indigo-300 transition-colors">
+                <input
+                  type="checkbox"
+                  checked={buyingVehicle}
+                  onChange={(e) => setBuyingVehicle(e.target.checked)}
+                  className="w-5 h-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                />
+                <span className="text-lg font-medium text-gray-700">Vehicle purchase(s)</span>
+              </label>
+
+              {buyingVehicle && (
+                <>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-600">Plan to buy vehicle(s)?</span>
+                    <button
+                      onClick={addVehicle}
+                      className="text-sm font-medium text-indigo-600 hover:text-indigo-700"
+                    >
+                      + Add Vehicle
+                    </button>
+                  </div>
+
+                  {vehicles.map((vehicle, idx) => (
+                    <div key={vehicle.id} className="p-4 border-2 border-gray-100 rounded-xl space-y-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-semibold text-gray-700">Vehicle {idx + 1}</span>
+                        {vehicles.length > 1 && (
+                          <button
+                            onClick={() => removeVehicle(idx)}
+                            className="text-sm text-red-600 hover:text-red-700"
+                          >
+                            Remove
+                          </button>
+                        )}
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs font-medium text-gray-600 mb-1">Amount</label>
+                          <div className="relative">
+                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                            <input
+                              type="number"
+                              value={vehicle.amount}
+                              onChange={(e) => updateVehicle(idx, 'amount', parseFloat(e.target.value) || 0)}
+                              className="w-full pl-7 pr-3 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <label className="block text-xs font-medium text-gray-600 mb-1">Year</label>
+                          <input
+                            type="number"
+                            value={vehicle.year}
+                            onChange={(e) => updateVehicle(idx, 'year', parseInt(e.target.value) || 0)}
+                            className="w-full px-3 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </>
+              )}
+
+              <label className="flex items-center gap-3 cursor-pointer p-4 border-2 border-gray-200 rounded-xl hover:border-indigo-300 transition-colors">
+                <input
+                  type="checkbox"
+                  checked={hasOtherExpenses}
+                  onChange={(e) => setHasOtherExpenses(e.target.checked)}
+                  className="w-5 h-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                />
+                <span className="text-lg font-medium text-gray-700">Other large expenses</span>
+              </label>
+
+              {hasOtherExpenses && (
+                <>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-600">Add your planned expenses</span>
+                    <button
+                      onClick={addOtherExpense}
+                      className="text-sm font-medium text-indigo-600 hover:text-indigo-700"
+                    >
+                      + Add Expense
+                    </button>
+                  </div>
+
+                  {otherExpenses.map((expense, idx) => (
+                    <div key={expense.id} className="p-4 border-2 border-gray-100 rounded-xl space-y-3">
+                      <div className="flex justify-between items-center">
+                        <input
+                          type="text"
+                          value={expense.name}
+                          onChange={(e) => updateOtherExpense(idx, 'name', e.target.value)}
+                          placeholder="Expense name (e.g., Home renovation)"
+                          className="flex-1 px-3 py-2 text-sm font-semibold border-0 focus:outline-none"
+                        />
+                        <button
+                          onClick={() => removeOtherExpense(idx)}
+                          className="text-sm text-red-600 hover:text-red-700"
+                        >
+                          Remove
+                        </button>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs font-medium text-gray-600 mb-1">Amount</label>
+                          <div className="relative">
+                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                            <input
+                              type="number"
+                              value={expense.amount}
+                              onChange={(e) => updateOtherExpense(idx, 'amount', parseFloat(e.target.value) || 0)}
+                              className="w-full pl-7 pr-3 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <label className="block text-xs font-medium text-gray-600 mb-1">Year</label>
+                          <input
+                            type="number"
+                            value={expense.year}
+                            onChange={(e) => updateOtherExpense(idx, 'year', parseInt(e.target.value) || 0)}
+                            className="w-full px-3 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </>
+              )}
+            </div>
+          )}
+
+          <div className="flex gap-3 mt-8 pt-6 border-t border-gray-100">
+            {step > 0 && (
+              <button
+                onClick={prevStep}
+                className="flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-gray-200 text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+              >
+                <ArrowLeft size={20} />
+                Back
+              </button>
+            )}
+
+            {step === steps.length - 1 ? (
+              <div className="flex-1 space-y-3">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Email address to see your results
+                  </label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="your@email.com"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                  />
+                </div>
+                <button
+                  onClick={nextStep}
+                  disabled={!email.includes('@')}
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold hover:from-indigo-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  See Your Results
+                  <ArrowRight size={20} />
+                </button>
+                <p className="text-xs text-gray-500 text-center">
+                  We'll never spam you. Results will be shown instantly.
+                </p>
+              </div>
+            ) : (
+              <button
+                onClick={nextStep}
+                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold hover:from-indigo-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl"
+              >
+                Continue
+                <ArrowRight size={20} />
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
