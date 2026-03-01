@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />  {/* This must be first */}
-        <Route path="/super-fi-calculator" element={<SuperFiCalculator />} />
+        <Route path="/calculator" element={<SuperFiCalculator />} />
         <Route path="/blog/first-post" element={<BlogPost />} />
         <Route path="*" element={<div className="p-10 text-center text-xl">Page not found — <a href="/" className="text-indigo-600 underline">Go Home</a></div>} />
       </Routes>
