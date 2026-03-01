@@ -20,7 +20,7 @@ export default function Home() {
               Run the numbers on your path to financial freedom.
             </p>
             <Link
-              to="/calculator
+              to="/calculator"
               className="inline-block px-8 py-4 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors text-lg"
             >
               Try FI Calculator →
