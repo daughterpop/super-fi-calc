@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { TrendingUp, ArrowRight } from 'lucide-react';  // icons from your calculator page
 
 export default function Home() {
   return (
@@ -40,7 +41,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Robinhood Promo Section – same as on calculator page */}
+        {/* Robinhood Promo – exact copy from calculator page */}
         <div className="mt-16 max-w-3xl mx-auto bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 shadow-sm border border-green-100">
           <div className="flex items-start gap-6">
             <div className="flex-shrink-0 w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center">
