@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 
 import Home from './pages/Home';
-import SuperFiCalculator from './pages/SuperFiCalculator.jsx';  // ← updated to your renamed file
+import SuperFiCalculator from './src/Super-Fi-Calculator.jsx';  // ← updated to your renamed file
 import BlogPost from './pages/BlogPost';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
