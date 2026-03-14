@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
+import { Analytics } from '@vercel/analytics/react';  // Add this
 
 import Home from './pages/Home.jsx';  // or './Home.jsx' if not in pages/
 import SuperFiCalculator from './Super-Fi-Calculator.jsx';  // direct from src/
