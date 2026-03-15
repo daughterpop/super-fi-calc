@@ -13,6 +13,11 @@ export default function SuperFiCalculator() {
   const [step, setStep] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [email, setEmail] = useState('');
+    // NEW: optional subscription form states
+  const [phone, setPhone] = useState('');
+  const [consent, setConsent] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(null);
 
   // Form data
   const [annualExpenses, setAnnualExpenses] = useState(90000);
@@ -125,6 +130,26 @@ export default function SuperFiCalculator() {
         }
       });
     }
+  const handleSubscribe = async () => {
+    if (!consent || !email.includes('@')) return;
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, phone }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setError(null);
+      } else {
+        throw new Error('Subscription failed');
+      }
+    } catch (err) {
+      setError('Oops, something went wrong. Try again later.');
+    }
+  };
     const expensesByYear = {};
     if (buyingVehicle) {
       vehicles.forEach(vehicle => {
