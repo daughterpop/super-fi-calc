@@ -31,10 +31,11 @@ export default function SubscribeForm() {
   };
 
   return (
-    <div className="mt-8 p-6 bg-white rounded-lg shadow-md max-w-md mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Join for FI Tips</h2>
-      <p className="text-gray-600 mb-4">
-        No big deal—subscribe for free tips, tricks, and tools on your path to financial independence (no more than 1 email per week).
+    <div className="mt-12 p-8 bg-white rounded-2xl shadow-md max-w-md mx-auto text-center">
+      <h2 className="text-3xl font-bold mb-3">Join the Super FI List</h2>
+      <p className="text-gray-600 mb-6">
+        No big deal — free tips, tricks & tools to speed up your financial independence journey.<br />
+        (Max 1 email per week. Unsubscribe anytime.)
       </p>
 
       {!submitted ? (
@@ -44,43 +45,43 @@ export default function SubscribeForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Your email"
-            className="w-full p-3 border border-gray-300 rounded-md"
+            className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:border-indigo-500"
           />
           <input
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            placeholder="Your phone (optional, for occasional SMS tips)"
-            className="w-full p-3 border border-gray-300 rounded-md"
+            placeholder="Phone (optional for SMS)"
+            className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:border-indigo-500"
           />
-          <label className="flex items-center gap-2">
+          <label className="flex items-center justify-center gap-2 text-left">
             <input
               type="checkbox"
               checked={consent}
               onChange={(e) => setConsent(e.target.checked)}
-              className="h-4 w-4 text-indigo-600 border-gray-300 rounded"
+              className="h-5 w-5 text-indigo-600 border-gray-300 rounded"
             />
-            <span className="text-sm text-gray-600">Yes, send me FI updates (email + optional SMS).</span>
+            <span className="text-sm text-gray-600">Yes, send me FI updates</span>
           </label>
           {error && <p className="text-red-500 text-sm">{error}</p>}
-          <div className="flex gap-4">
+          <div className="flex gap-4 justify-center">
             <button
               onClick={handleSubscribe}
               disabled={!consent || !email.includes('@')}
-              className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-md disabled:opacity-50"
+              className="flex items-center gap-2 px-8 py-4 bg-indigo-600 text-white rounded-2xl disabled:opacity-50 hover:bg-indigo-700 text-lg"
             >
-              Subscribe <ArrowRight size={16} />
+              Subscribe Free <ArrowRight size={20} />
             </button>
             <button
               onClick={() => setSubmitted(true)}
-              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md"
+              className="px-8 py-4 bg-gray-100 text-gray-700 rounded-2xl hover:bg-gray-200 text-lg"
             >
-              Skip
+              Maybe Later
             </button>
           </div>
         </div>
       ) : (
-        <p className="text-green-600">Thanks! You're subscribed for FI insights.</p>
+        <p className="text-green-600 text-xl">✅ You're in! Welcome to the club.</p>
       )}
     </div>
   );
