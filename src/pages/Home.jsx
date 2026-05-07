@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight } from 'lucide-react';  // icons from your calculator page
+import { TrendingUp, ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -33,7 +33,7 @@ export default function Home() {
               Articles, tips, and insights on building wealth.
             </p>
             <Link
-              to="/blog/first-post"
+              to="/blog/why-fi-for-everyone"
               className="inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors text-lg"
             >
               Read Latest Post →
