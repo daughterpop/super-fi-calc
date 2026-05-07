@@ -33,10 +33,10 @@ export default function Home() {
               Articles, tips, and insights on building wealth.
             </p>
             <Link
-              to="/blog/why-fi-for-everyone"
+              to="/blog"
               className="inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors text-lg"
             >
-              Read Latest Post →
+              Browse All Posts →
             </Link>
           </div>
         </div>

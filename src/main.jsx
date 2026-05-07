@@ -8,6 +8,7 @@ import Home from './pages/Home.jsx';
 import SuperFiCalculator from './Super-Fi-Calculator.jsx';
 import BlogPost from './pages/BlogPost.jsx';
 import WhyFIForEveryone from './pages/WhyFIForEveryone.jsx';
+import BlogIndex from './pages/BlogIndex.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/calculator" element={<SuperFiCalculator />} />
+        <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/first-post" element={<BlogPost />} />
         <Route path="/blog/why-fi-for-everyone" element={<WhyFIForEveryone />} />
         <Route path="*" element={<div className="p-10 text-center text-xl">Page not found — <a href="/" className="text-indigo-600 underline">Go Home</a></div>} />
