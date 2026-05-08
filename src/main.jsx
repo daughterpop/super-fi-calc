@@ -9,6 +9,7 @@ import SuperFiCalculator from './Super-Fi-Calculator.jsx';
 import BlogPost from './pages/BlogPost.jsx';
 import WhyFIForEveryone from './pages/WhyFIForEveryone.jsx';
 import RaisingFaithFilledKidsWhileBuildingFinancialFreedom from './pages/RaisingFaithFilledKidsWhileBuildingFinancialFreedom.jsx';
+import StewardingYourFamilysFuture from './pages/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi.jsx';
 import BlogIndex from './pages/BlogIndex.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/blog/first-post" element={<BlogPost />} />
         <Route path="/blog/why-fi-for-everyone" element={<WhyFIForEveryone />} />
         <Route path="/blog/raising-faith-filled-kids-while-building-financial-freedom" element={<RaisingFaithFilledKidsWhileBuildingFinancialFreedom />} />
+        <Route path="/blog/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi" element={<StewardingYourFamilysFuture />} />
         <Route path="*" element={<div className="p-10 text-center text-xl">Page not found — <a href="/" className="text-indigo-600 underline">Go Home</a></div>} />
       </Routes>
     </BrowserRouter>
