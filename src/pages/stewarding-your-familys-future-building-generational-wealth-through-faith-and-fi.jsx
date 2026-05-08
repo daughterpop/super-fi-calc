@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function StewardingYourFamilysFutureBuildingGenerationalWealthThroughFaithAndFi() {
+export default function StewardingYourFamilysFuture() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-12 px-4">
       <div className="max-w-4xl mx-auto prose prose-slate">
@@ -12,44 +12,36 @@ export default function StewardingYourFamilysFutureBuildingGenerationalWealthThr
           Hey everyone,
         </p>
 
-        <p className="text-xl font-semibold text-gray-800 mb-4">
-          What if your financial decisions today could bless your kids, grandkids, and beyond?
+        <p className="mb-6">
+          Raising kids while chasing Financial Independence isn't just possible — it's one of the most meaningful ways to live out your faith. It's about stewarding money, time, and legacy with intention.
         </p>
 
         <p className="mb-6">
-          As parents chasing Financial Independence, we’re not just building our own freedom — we’re stewarding resources for the next generation. Faith calls us to be wise with what God has given us, and FI gives us the margin to do it well.
+          Too many families chase the next raise or bigger house while missing the chance to build real freedom. FI gives you margin — to be present with your kids, teach them faith and money habits, and break cycles of financial stress.
         </p>
 
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Practical ways to blend family, faith, and FI
-        </h2>
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Practical steps for faith-filled families</h2>
         <ul className="list-disc pl-6 space-y-3 mb-8 text-gray-700">
-          <li>Teach kids the difference between wants and needs through everyday examples</li>
-          <li>Automate savings and tithing so generosity becomes a family habit</li>
-          <li>Use low-cost index funds to grow wealth patiently — just like the parable of the talents</li>
-          <li>Create family memories now instead of waiting for “someday” after burnout</li>
+          <li>Live on less than you make and automate investments — create breathing room for family dinners and Sunday Mass</li>
+          <li>Involve your kids in age-appropriate money talks rooted in Proverbs and stewardship</li>
+          <li>Build an emergency fund and then a "legacy fund" for education, missions, or helping extended family</li>
+          <li>Choose experiences and faith formation over constant consumption</li>
         </ul>
 
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Faith + Finance Quick Tip</h2>
         <p className="mb-6">
-          Real talk: It’s easy to feel pulled in a thousand directions with kids. But small, consistent choices compound — both in your portfolio and in your family’s faith life.
+          Remember the Parable of the Talents? God entrusts us with resources to multiply them. One couple I know pays off debt aggressively while tithing first and teaching their kids to save 50% of any gift money. They're on track for FI in their 40s with peace of mind.
         </p>
 
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Faith + Finance tip
-        </h2>
-        <p className="mb-4">
-          Remember the widow’s mite? It wasn’t about the amount, but the heart behind it. Start where you are — even $50 a month into a brokerage account can grow into meaningful generational impact when paired with teaching your kids biblical money principles.
-        </p>
-
-        <p className="mb-4">
-          If you’re ready to start investing toward that future, I use Robinhood myself. Open an account through my link and you can get free stocks (up to $200 value) when you fund it — perfect for buying broad index funds:
+        <p className="mb-6">
+          If you're ready to start investing for your family's future:
         </p>
 
         <a
           href="https://join.robinhood.com/dustinh-1bff5a"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-8 py-4 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-all shadow-md hover:shadow-lg mb-6"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-all shadow-md hover:shadow-lg mb-8"
         >
           Get Your Free Stocks on Robinhood →
         </a>
