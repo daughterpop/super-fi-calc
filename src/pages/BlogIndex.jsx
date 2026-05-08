@@ -9,6 +9,13 @@ export default function BlogIndex() {
 
   const posts = [
     {
+      slug: 'stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi',
+      title: "Stewarding Your Family's Future: Building Generational Wealth Through Faith and FI",
+      date: 'May 8, 2026',
+      excerpt: 'What if your financial decisions today could bless your kids and grandkids? Discover how faith-driven stewardship and FI create lasting generational impact.',
+      readTime: '4 min',
+    },
+    {
       slug: 'raising-faith-filled-kids-while-building-financial-freedom',
       title: 'Raising Faith-Filled Kids While Building Financial Freedom: Simple Stewardship That Lasts',
       date: 'May 8, 2026',
