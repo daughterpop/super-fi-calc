@@ -12,30 +12,25 @@ export default function RaisingGenerousGroundedKidsFaithFamilyBudgetingAndShared
           Hey everyone,
         </p>
 
-        <p className="text-xl font-semibold text-gray-800 mb-4">
-          Raising kids in today’s world is tough enough without money stress. But what if your family’s budget became a tool for faith, generosity, and real freedom?
-        </p>
-
         <p className="mb-6">
-          When you blend Catholic stewardship with practical FI principles, you teach your kids both financial wisdom and eternal values. It’s about building a family that’s generous, grounded, and free.
+          Raising kids while pursuing FI can feel overwhelming, but when you bring your faith into family budgeting, it becomes a powerful tool for both financial freedom and raising generous, grounded children.
         </p>
 
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Practical family budgeting for FI</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Practical family stewardship steps</h2>
         <ul className="list-disc pl-6 space-y-3 mb-8 text-gray-700">
-          <li>Start with prayer over your budget — make God part of the conversation</li>
-          <li>Teach the 10-10-80 rule: Give 10%, save/invest 10%, live on 80%</li>
-          <li>Involve kids in tracking family goals like vacation or charity projects</li>
-          <li>Use the Super FI calculator together to show how small habits compound</li>
-          <li>Model contentment: Less stuff, more time for family and faith</li>
+          <li>Involve kids in age-appropriate budgeting meetings — start with prayer</li>
+          <li>Use the 10-10-80 rule: 10% to church/giving, 10% saved/invested for FI, 80% for living</li>
+          <li>Create shared family goals like a vacation fund or college fund using the Super FI calculator together</li>
+          <li>Model delayed gratification and contentment daily</li>
         </ul>
 
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Faith + Finance Quick Tip</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Quick faith + finance tip</h2>
         <p className="mb-6">
-          The Parable of the Talents reminds us to multiply what God gives us. One family started a “generosity jar” where kids put part of their allowance and prayed over it weekly. They saw God provide in amazing ways while hitting their savings targets faster.
+          The Parable of the Talents reminds us God entrusts us with resources to multiply. One family started a "faith savings jar" for goals tied to prayer. Their kids learned stewardship early, and the family hit FI milestones faster than expected.
         </p>
 
         <p className="mb-4">
-          Ready to invest for your family’s future? I use Robinhood myself. Open an account through my link and you can get free stocks (up to $200 value) when you fund it — perfect for buying broad index funds:
+          Ready to grow your family's future? I use Robinhood for easy index fund investing:
         </p>
 
         <a
