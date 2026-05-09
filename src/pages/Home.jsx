@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight } from 'lucide-react';
+import { TrendingUp, ArrowRight, Heart, Users } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -41,30 +41,35 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Robinhood Promo – exact copy from calculator page */}
-        <div className="mt-16 max-w-3xl mx-auto bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 shadow-sm border border-green-100">
-          <div className="flex items-start gap-6">
-            <div className="flex-shrink-0 w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center">
-              <TrendingUp className="text-white" size={28} />
+        {/* Enhanced Robinhood Promo - moved higher, more prominent, faith/family focused */}
+        <div className="mt-12 max-w-3xl mx-auto bg-gradient-to-r from-emerald-50 via-green-50 to-teal-50 rounded-3xl p-10 shadow-xl border border-emerald-100">
+          <div className="flex flex-col md:flex-row items-start gap-8">
+            <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center">
+              <TrendingUp className="text-white" size={36} />
             </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Ready to Start Investing?
+            <div className="flex-1 text-left">
+              <div className="flex items-center gap-2 mb-3">
+                <Heart className="text-rose-500" size={20} />
+                <Users className="text-emerald-600" size={20} />
+                <span className="text-emerald-700 font-medium text-sm uppercase tracking-widest">Steward Your Family's Future</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                Ready to Grow Your Investments with Faith & Wisdom?
               </h3>
-              <p className="text-gray-700 mb-4">
-                Get free stocks worth up to $200 when you open a Robinhood account and make your first investment.
+              <p className="text-gray-700 mb-6 text-lg">
+                Open a Robinhood account today and get free stocks worth up to $200. Start building generational wealth for your family while honoring your values.
               </p>
               <a
                 href="https://join.robinhood.com/dustinh-1bff5a"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-all shadow-md hover:shadow-lg text-lg"
+                className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold rounded-2xl hover:from-emerald-700 hover:to-teal-700 transition-all shadow-lg hover:shadow-xl text-xl w-full md:w-auto justify-center"
               >
-                Claim Your Free Stock
-                <ArrowRight size={20} />
+                Claim Your Free Stocks Now
+                <ArrowRight size={24} />
               </a>
-              <p className="text-sm text-gray-600 mt-4">
-                Commission-free trading • Easy to use • Perfect for beginners
+              <p className="text-sm text-emerald-700 mt-5 font-medium">
+                ✓ Commission-free • ✓ Easy app • ✓ Beginner-friendly • Trusted by millions building their legacy
               </p>
             </div>
           </div>
