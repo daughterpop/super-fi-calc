@@ -11,6 +11,7 @@ import WhyFIForEveryone from './pages/WhyFIForEveryone.jsx';
 import RaisingFaithFilledKidsWhileBuildingFinancialFreedom from './pages/RaisingFaithFilledKidsWhileBuildingFinancialFreedom.jsx';
 import StewardingYourFamilysFuture from './pages/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi.jsx';
 import RaisingGenerousGroundedKidsFaithFamilyBudgetingAndSharedFinancialFreedom from './pages/raising-generous-grounded-kids-faith-family-budgeting-and-shared-financial-freedom.jsx';
+import PrayingYourWayToFinancialFreedomHowChristianFamiliesCanBuildWealthGenerosityAndPeaceTogether from './pages/praying-your-way-to-financial-freedom-how-christian-families-can-build-wealth-generosity-and-peace-together.jsx';
 import BlogIndex from './pages/BlogIndex.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -25,6 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/blog/raising-faith-filled-kids-while-building-financial-freedom" element={<RaisingFaithFilledKidsWhileBuildingFinancialFreedom />} />
         <Route path="/blog/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi" element={<StewardingYourFamilysFuture />} />
         <Route path="/blog/raising-generous-grounded-kids-faith-family-budgeting-and-shared-financial-freedom" element={<RaisingGenerousGroundedKidsFaithFamilyBudgetingAndSharedFinancialFreedom />} />
+        <Route path="/blog/praying-your-way-to-financial-freedom-how-christian-families-can-build-wealth-generosity-and-peace-together" element={<PrayingYourWayToFinancialFreedomHowChristianFamiliesCanBuildWealthGenerosityAndPeaceTogether />} />
         <Route path="*" element={<div className="p-10 text-center text-xl">Page not found — <a href="/" className="text-indigo-600 underline">Go Home</a></div>} />
       </Routes>
     </BrowserRouter>
