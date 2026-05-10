@@ -3,6 +3,13 @@ import React from 'react';
 export default function BlogIndex() {
   const posts = [
     {
+      date: 'May 10, 2026',
+      title: 'Praying Your Way to Financial Freedom: How Christian Families Can Build Wealth, Generosity, and Peace Together',
+      excerpt: 'Discover how prayer, stewardship, and smart FI habits can bring financial peace and freedom to your Christian marriage and family.',
+      readTime: '4 min read',
+      slug: 'praying-your-way-to-financial-freedom-how-christian-families-can-build-wealth-generosity-and-peace-together'
+    },
+    {
       date: 'May 9, 2026',
       title: 'Raising Generous, Grounded Kids: Faith, Family Budgeting, and the Path to Shared Financial Freedom',
       excerpt: 'Discover how integrating faith into your family budget can raise kids who are generous, wise with money, and headed toward financial freedom together.',
