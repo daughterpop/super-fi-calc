@@ -3,6 +3,13 @@ import React from 'react';
 export default function BlogIndex() {
   const posts = [
     {
+      date: 'May 11, 2026',
+      title: 'Faithful Parenting on the Path to FI: Creating Margin for What Matters Most in Your Christian Home',
+      excerpt: 'Raising a family while pursuing FI doesn’t have to feel overwhelming. Discover how faith and smart money habits create margin for what matters most in your Christian home.',
+      readTime: '4 min read',
+      slug: 'faithful-parenting-on-the-path-to-fi-creating-margin-for-what-matters-most-in-your-christian-home'
+    },
+    {
       date: 'May 10, 2026',
       title: 'Praying Your Way to Financial Freedom: How Christian Families Can Build Wealth, Generosity, and Peace Together',
       excerpt: 'Discover how prayer, stewardship, and smart FI habits can bring financial peace and freedom to your Christian marriage and family.',
