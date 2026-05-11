@@ -3,31 +3,37 @@ import { Link } from 'react-router-dom';
 import { TrendingUp, ArrowRight, Heart, Users, Target, Sparkles } from 'lucide-react';
 
 export default function Home() {
-  const [kidsGoal, setKidsGoal] = useState(2);
-  const [dreamFund, setDreamFund] = useState(50000);
-  const [legacyMessage, setLegacyMessage] = useState('');
-  const [shared, setShared] = useState(false);
+  const [inspiration, setInspiration] = useState(null);
 
-  const buildLegacyVision = () => {
-    const messages = [
-      `Your vision for ${kidsGoal} children with a $${dreamFund.toLocaleString()} dream fund is a beautiful act of stewardship. Investing wisely today plants seeds for generational blessings.`,
-      `Faith-filled families like yours are building legacies that echo eternity. Start small, stay consistent — your ${kidsGoal} kids will thank you.`,
-      `Imagine the joy of funding family adventures and passing on wisdom. With $${dreamFund.toLocaleString()} as your target, you're on the path to true abundance.`
-    ];
-    setLegacyMessage(messages[Math.floor(Math.random() * messages.length)]);
+  const quotes = [
+    { quote: 'True wealth begins with faith and family. Financial independence lets you invest in what matters most — your legacy.', source: 'Super FI' },
+    { quote: 'Steward your resources today so your children can walk in freedom tomorrow. Generational wealth is built one faithful step at a time.', source: 'Proverbs-inspired' },
+    { quote: 'FI isn\'t the destination — it\'s the freedom to live out your calling with generosity and joy for your family.', source: 'Super FI' },
+    { quote: 'Plant seeds of financial wisdom today. Watch your family\'s harvest bless generations to come.', source: 'Super FI' },
+    { quote: 'With God and a solid plan, no mountain is too high. Build the future your faith deserves.', source: 'Super FI' },
+    { quote: 'Family first, freedom next. Use FI to create memories and margin that last forever.', source: 'Super FI' },
+    { quote: 'Generational blessings start with small, consistent steps rooted in faith and wise stewardship.', source: 'Super FI' },
+    { quote: 'Your family\'s story of abundance is written one faithful investment at a time.', source: 'Super FI' }
+  ];
+
+  const generateInspiration = () => {
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    setInspiration(randomQuote);
   };
 
-  const shareVision = () => {
+  const shareInspiration = () => {
+    if (!inspiration) return;
+    const shareText = `${inspiration.quote} — ${inspiration.source}\n\nDiscover tools for your own faith-filled financial freedom journey at https://super-fi-calculator.vercel.app/`;
     if (navigator.share) {
       navigator.share({
-        title: 'My Super FI Family Legacy Vision',
-        text: legacyMessage,
-        url: 'https://super-fi-calculator.vercel.app/'
+        title: 'Faith & Family FI Inspiration',
+        text: shareText,
       });
     } else {
-      alert('Share this vision with your family: ' + legacyMessage);
+      navigator.clipboard.writeText(shareText).then(() => {
+        alert('Inspiration copied to clipboard — share it with your loved ones!');
+      });
     }
-    setShared(true);
   };
 
   return (
@@ -68,54 +74,32 @@ export default function Home() {
           </div>
         </div>
 
-        {/* New: Family Legacy Vision Builder - delightful, interactive, faith-family focused to boost engagement and shares */}
-        <div className="mt-12 max-w-3xl mx-auto bg-white rounded-3xl p-10 shadow-xl border border-indigo-100">
+        {/* Fresh improvement: Faith & Family FI Inspiration Generator — clear, purposeful, delightful button + share to drive engagement, trust, and organic traffic/shares */}
+        <div className="mt-12 max-w-3xl mx-auto bg-white rounded-3xl p-10 shadow-xl border border-amber-100">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <Target className="text-indigo-600" size={32} />
-            <Sparkles className="text-amber-500" size={28} />
+            <Sparkles className="text-amber-500" size={32} />
+            <Heart className="text-rose-500" size={32} />
           </div>
-          <h3 className="text-3xl font-bold text-gray-900 mb-2">Build Your Family Legacy Vision</h3>
-          <p className="text-gray-600 mb-8 text-lg">Dream big with faith — interactive goals for generational impact.</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-3">Number of Children to Steward</label>
-              <input
-                type="range"
-                min="1"
-                max="6"
-                value={kidsGoal}
-                onChange={(e) => setKidsGoal(parseInt(e.target.value))}
-                className="w-full accent-indigo-600"
-              />
-              <div className="text-center text-2xl font-semibold text-indigo-700 mt-2">{kidsGoal}</div>
-            </div>
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-3">Dream Family Fund Target ($)</label>
-              <input
-                type="number"
-                value={dreamFund}
-                onChange={(e) => setDreamFund(parseInt(e.target.value) || 50000)}
-                className="w-full px-6 py-4 text-xl border-2 border-gray-200 rounded-2xl focus:border-indigo-500 focus:outline-none"
-              />
-            </div>
-          </div>
+          <h3 className="text-3xl font-bold text-gray-900 mb-2">Faith & Family FI Inspiration</h3>
+          <p className="text-gray-600 mb-8 text-lg">Uplifting wisdom to fuel your journey toward generational wealth and a faith-filled legacy.</p>
 
           <button
-            onClick={buildLegacyVision}
-            className="w-full mb-6 px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold rounded-2xl hover:from-indigo-700 hover:to-blue-700 transition-all text-lg flex items-center justify-center gap-3"
+            onClick={generateInspiration}
+            className="w-full mb-6 px-8 py-4 bg-gradient-to-r from-amber-500 to-rose-500 text-white font-semibold rounded-2xl hover:from-amber-600 hover:to-rose-600 transition-all text-lg flex items-center justify-center gap-3"
           >
-            Inspire My Legacy Vision <Sparkles size={20} />
+            Get Today's Inspiration <Sparkles size={20} />
           </button>
 
-          {legacyMessage && (
-            <div className="bg-gradient-to-br from-amber-50 to-indigo-50 p-8 rounded-2xl border border-amber-100 mb-6 text-left">
-              <p className="text-lg italic text-gray-800 leading-relaxed">“{legacyMessage}”</p>
+          {inspiration && (
+            <div className="bg-gradient-to-br from-amber-50 to-rose-50 p-8 rounded-2xl border border-amber-100 mb-6 text-left">
+              <p className="text-lg italic text-gray-800 leading-relaxed">“{inspiration.quote}”</p>
+              <p className="text-sm text-amber-700 mt-4 font-medium">— {inspiration.source}</p>
               <button
-                onClick={shareVision}
-                className="mt-6 w-full py-3 bg-white border border-indigo-200 text-indigo-700 rounded-xl hover:bg-indigo-50 font-medium"
+                onClick={shareInspiration}
+                className="mt-6 w-full py-3 bg-white border border-amber-200 text-amber-700 rounded-xl hover:bg-amber-50 font-medium flex items-center justify-center gap-2"
               >
-                Share This Faith-Filled Vision
+                Share This Inspiration with Family
+                <ArrowRight size={16} />
               </button>
             </div>
           )}
