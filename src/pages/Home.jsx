@@ -4,6 +4,9 @@ import { TrendingUp, ArrowRight, Heart, Users, Target, Sparkles } from 'lucide-r
 
 export default function Home() {
   const [inspiration, setInspiration] = useState(null);
+  const [monthlySave, setMonthlySave] = useState(500);
+  const [years, setYears] = useState(25);
+  const [rate, setRate] = useState(8);
 
   const quotes = [
     { quote: 'True wealth begins with faith and family. Financial independence lets you invest in what matters most — your legacy.', source: 'Super FI' },
@@ -34,6 +37,18 @@ export default function Home() {
         alert('Inspiration copied to clipboard — share it with your loved ones!');
       });
     }
+  };
+
+  const calculateLegacy = () => {
+    const monthlyRate = rate / 100 / 12;
+    const numPayments = years * 12;
+    let fv = 0;
+    if (monthlyRate === 0) {
+      fv = monthlySave * numPayments;
+    } else {
+      fv = monthlySave * ((Math.pow(1 + monthlyRate, numPayments) - 1) / monthlyRate);
+    }
+    return Math.round(fv);
   };
 
   return (
@@ -74,7 +89,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Fresh improvement: Faith & Family FI Inspiration Generator — clear, purposeful, delightful button + share to drive engagement, trust, and organic traffic/shares */}
+        {/* Faith & Family FI Inspiration Generator */}
         <div className="mt-12 max-w-3xl mx-auto bg-white rounded-3xl p-10 shadow-xl border border-amber-100">
           <div className="flex items-center justify-center gap-3 mb-6">
             <Sparkles className="text-amber-500" size={32} />
@@ -103,6 +118,72 @@ export default function Home() {
               </button>
             </div>
           )}
+        </div>
+
+        {/* Daily site improvement: Interactive "Watch Your Family Legacy Grow" teaser demo — sliders for savings/years/return with live legacy projection + faith-family messaging. Delights users, boosts engagement & dwell time, educates on compounding, encourages shares/full calculator use. Fresh, on-brand, non-repetitive. */}
+        <div className="mt-12 max-w-3xl mx-auto bg-white rounded-3xl p-10 shadow-xl border border-blue-100">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <Target className="text-blue-500" size={32} />
+            <TrendingUp className="text-emerald-500" size={32} />
+          </div>
+          <h3 className="text-3xl font-bold text-gray-900 mb-2">Watch Your Family Legacy Grow</h3>
+          <p className="text-gray-600 mb-8 text-lg">See how small, faithful steps today build generational abundance for your loved ones.</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Monthly Savings</label>
+              <input 
+                type="range" 
+                min="100" 
+                max="2000" 
+                step="50"
+                value={monthlySave}
+                onChange={(e) => setMonthlySave(Number(e.target.value))}
+                className="w-full accent-blue-600 cursor-pointer"
+              />
+              <div className="text-center font-mono text-2xl font-bold text-blue-700 mt-1">${monthlySave}</div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Years to Grow</label>
+              <input 
+                type="range" 
+                min="5" 
+                max="40" 
+                step="1"
+                value={years}
+                onChange={(e) => setYears(Number(e.target.value))}
+                className="w-full accent-blue-600 cursor-pointer"
+              />
+              <div className="text-center font-mono text-2xl font-bold text-blue-700 mt-1">{years} yrs</div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Est. Annual Return</label>
+              <input 
+                type="range" 
+                min="4" 
+                max="12" 
+                step="0.5"
+                value={rate}
+                onChange={(e) => setRate(Number(e.target.value))}
+                className="w-full accent-blue-600 cursor-pointer"
+              />
+              <div className="text-center font-mono text-2xl font-bold text-blue-700 mt-1">{rate}%</div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-200 text-center">
+            <div className="text-blue-600 text-sm font-semibold tracking-widest mb-1">YOUR PROJECTED FAMILY LEGACY</div>
+            <div className="text-6xl font-bold text-gray-900 mb-2">${calculateLegacy().toLocaleString()}</div>
+            <p className="text-emerald-700 italic">“A faithful steward who invests wisely leaves blessings that echo through generations.”</p>
+            <p className="text-xs text-gray-500 mt-6">This is the freedom FI brings — for faith, family, and future impact.</p>
+          </div>
+
+          <Link
+            to="/calculator"
+            className="mt-8 w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-indigo-700 transition-all text-lg flex items-center justify-center gap-3"
+          >
+            Build Your Full Plan in the FI Calculator <ArrowRight size={20} />
+          </Link>
         </div>
 
         <div className="mt-12 max-w-3xl mx-auto bg-gradient-to-r from-emerald-50 via-green-50 to-teal-50 rounded-3xl p-10 shadow-xl border border-emerald-100">
