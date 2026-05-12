@@ -3,6 +3,13 @@ import React from 'react';
 export default function BlogIndex() {
   const posts = [
     {
+      date: 'May 12, 2026',
+      title: 'How Christian Couples Unlock Financial Freedom Together: Faith, Teamwork, and a Legacy Your Family Will Thank You For',
+      excerpt: 'Marriage and money don’t have to fight. Discover how faith turns your pursuit of FI into powerful teamwork that strengthens your marriage and builds a legacy for your kids.',
+      readTime: '4 min read',
+      slug: 'how-christian-couples-unlock-financial-freedom-together-faith-teamwork-and-a-legacy-your-family-will-thank-you-for'
+    },
+    {
       date: 'May 11, 2026',
       title: 'Faithful Parenting on the Path to FI: Creating Margin for What Matters Most in Your Christian Home',
       excerpt: 'Raising a family while pursuing FI doesn’t have to feel overwhelming. Discover how faith and smart money habits create margin for what matters most in your Christian home.',
