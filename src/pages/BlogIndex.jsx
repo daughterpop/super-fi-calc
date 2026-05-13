@@ -3,6 +3,13 @@ import React from 'react';
 export default function BlogIndex() {
   const posts = [
     {
+      date: 'May 13, 2026',
+      title: 'AI-Assisted Stewardship: How Catholic Families Can Reach FI Faster',
+      excerpt: 'With AI in the headlines, Catholic families now have smart tools to accelerate financial independence while staying true to faith, marriage, and raising kids. Discover practical ways to use AI for stewardship and FI.',
+      readTime: '4 min read',
+      slug: 'ai-assisted-stewardship-how-catholic-families-leverage-smart-tools-for-fi-and-faithful-living'
+    },
+    {
       date: 'May 12, 2026',
       title: 'How Christian Couples Unlock Financial Freedom Together: Faith, Teamwork, and a Legacy Your Family Will Thank You For',
       excerpt: 'Marriage and money don’t have to fight. Discover how faith turns your pursuit of FI into powerful teamwork that strengthens your marriage and builds a legacy for your kids.',
