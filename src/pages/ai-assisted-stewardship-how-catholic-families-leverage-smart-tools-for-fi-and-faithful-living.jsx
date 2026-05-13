@@ -61,6 +61,54 @@ export default function AiAssistedStewardshipHowCatholicFamiliesLeverageSmartToo
           – Dustin
         </p>
 
+        <div className="mt-16 bg-gradient-to-br from-amber-50 to-white rounded-3xl p-8 border border-amber-300">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-4xl">🙏</span>
+            <h3 className="text-2xl font-semibold text-amber-900">Steward Your Legacy: Faith + FI Reflection</h3>
+          </div>
+          <p className="text-amber-700 mb-8 text-sm font-medium">Take a moment to pray and act. Your family’s generational wealth and faith legacy start here.</p>
+          
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="bg-white rounded-2xl p-6 border border-amber-100 flex flex-col">
+              <p className="font-medium text-gray-800 flex-1 mb-4">“Lord, bless our use of smart tools so we can steward more time for You, our marriage, and raising faith-filled kids. Amen.”</p>
+              <button 
+                onClick={() => {
+                  navigator.clipboard.writeText('“Lord, bless our use of smart tools so we can steward more time for You, our marriage, and raising faith-filled kids. Amen.”');
+                  alert('Prayer copied! Pray it together tonight.');
+                }}
+                className="text-xs bg-amber-100 hover:bg-amber-200 text-amber-700 px-4 py-2 rounded-xl flex items-center gap-1 self-start transition-colors"
+              >
+                📋 Copy Prayer
+              </button>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-amber-100 flex flex-col">
+              <p className="font-medium text-gray-800 flex-1 mb-4">As an act of stewardship, open or fund your Robinhood account today to build faith-aligned investments for your family’s future. (My link gives free stocks to get started!)</p>
+              <a 
+                href="https://join.robinhood.com/dustinh-1bff5a" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-xs bg-green-100 hover:bg-green-200 text-green-700 px-4 py-2 rounded-xl flex items-center gap-1 self-start transition-colors inline-flex"
+              >
+                🌱 Open Robinhood
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-amber-100 flex flex-col">
+              <p className="font-medium text-gray-800 flex-1 mb-4">Share this post with your spouse or family group chat: “How can we use AI and FI to live more generously for God’s kingdom?”</p>
+              <button 
+                onClick={() => {
+                  navigator.clipboard.writeText('Share this post with your spouse or family group chat: “How can we use AI and FI to live more generously for God’s kingdom?”');
+                  alert('Prompt copied! Paste it in your family chat.');
+                }}
+                className="text-xs bg-amber-100 hover:bg-amber-200 text-amber-700 px-4 py-2 rounded-xl flex items-center gap-1 self-start transition-colors"
+              >
+                📋 Copy Share Prompt
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div className="mt-12 pt-8 border-t border-gray-200">
           <a href="/blog" className="text-indigo-600 hover:text-indigo-800 font-medium">
             ← Back to Blog
