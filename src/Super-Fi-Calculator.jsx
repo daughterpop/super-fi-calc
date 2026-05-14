@@ -1,19 +1,10 @@
 import React, { useState, useMemo } from 'react';
-import { ArrowRight, ArrowLeft, Check, TrendingUp, Home, GraduationCap, DollarSign, Sparkles } from 'lucide-react';
-
-// If you use shadcn/ui or radix components, add them here (examples):
-// import { Slider } from '@radix-ui/react-slider';
-// import { Input } from '@/components/ui/input';
-// import { Label } from '@/components/ui/label';
-// import { Checkbox } from '@/components/ui/checkbox';
-// import { Button } from '@/components/ui/button';
-// ... add whatever is missing based on your JSX
+import { ArrowRight, ArrowLeft, Check, TrendingUp, Home, GraduationCap, DollarSign, Sparkles, Share2, Heart } from 'lucide-react';
 
 export default function SuperFiCalculator() {
   const [step, setStep] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [email, setEmail] = useState('');
-    // NEW: optional subscription form states
   const [phone, setPhone] = useState('');
   const [consent, setConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -130,26 +121,6 @@ export default function SuperFiCalculator() {
         }
       });
     }
-  const handleSubscribe = async () => {
-    if (!consent || !email.includes('@')) return;
-
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, phone }),
-      });
-
-      if (response.ok) {
-        setSubmitted(true);
-        setError(null);
-      } else {
-        throw new Error('Subscription failed');
-      }
-    } catch (err) {
-      setError('Oops, something went wrong. Try again later.');
-    }
-  };
     const expensesByYear = {};
     if (buyingVehicle) {
       vehicles.forEach(vehicle => {
@@ -249,7 +220,20 @@ export default function SuperFiCalculator() {
     if (step > 0) setStep(step - 1);
   };
 
-  // Static intro section (shown at the top of every page of the calculator)
+  const handleShareLegacy = () => {
+    const text = `My Stewardship Legacy: By God's grace, I will reach Financial Independence at age ${results.fiAge || 'XX'}. "Well done, good and faithful servant!" - Matthew 25:21. Join me on this journey of faithful family wealth building at super-fi-calculator.vercel.app`;
+    if (navigator.share) {
+      navigator.share({
+        title: 'My Catholic FI Stewardship Legacy',
+        text: text,
+      });
+    } else {
+      navigator.clipboard.writeText(text);
+      alert('Legacy copied to clipboard! Share it with your family.');
+    }
+  };
+
+  // Static intro section
   const IntroSection = () => (
     <div className="max-w-4xl mx-auto px-4 py-8 prose prose-slate dark:prose-invert">
       <h1 className="text-4xl font-bold text-center mb-4">Financial Independence Calculator</h1>
@@ -273,7 +257,6 @@ export default function SuperFiCalculator() {
     </div>
   );
 
-  // Robinhood Promo block (shown on the first page)
   const RobinhoodPromo = () => (
     <div className="w-full max-w-2xl mb-8 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 shadow-sm border border-green-100">
       <div className="flex items-start gap-4">
@@ -349,7 +332,7 @@ export default function SuperFiCalculator() {
             </div>
           </div>
 
-          {/* Robinhood CTA in results page (optional - you can keep or remove) */}
+          {/* Robinhood CTA */}
           <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 shadow-sm border border-green-100 mb-6">
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
@@ -401,6 +384,40 @@ export default function SuperFiCalculator() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* New Stewardship Legacy Card */}
+          <div className="bg-gradient-to-br from-amber-50 via-white to-rose-50 border border-amber-200 rounded-3xl p-8 mb-8 shadow-xl relative overflow-hidden">
+            <div className="absolute top-6 right-6 text-amber-300">
+              <Heart size={48} />
+            </div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-amber-100 rounded-2xl flex items-center justify-center">
+                <Sparkles className="text-amber-600" size={24} />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-amber-900">Your Stewardship Legacy</h3>
+                <p className="text-amber-700 text-sm">A faithful reflection for your family</p>
+              </div>
+            </div>
+            
+            <div className="prose prose-amber max-w-none mb-8">
+              <p className="text-lg italic leading-relaxed text-amber-800">
+                "Well done, good and faithful servant. You have been faithful with a few things; I will put you in charge of many things." — Matthew 25:21
+              </p>
+              <p className="mt-6 text-amber-700">
+                By God's grace, you are on track to achieve Financial Independence at age <span className="font-semibold text-amber-900">{results.fiAge || 'XX'}</span>. This is not merely wealth for comfort, but a sacred legacy of stewardship — providing for your family across generations, supporting the Church, and advancing the Kingdom. Invest wisely, teach your children diligence, and trust in Divine Providence.
+              </p>
+            </div>
+
+            <button
+              onClick={handleShareLegacy}
+              className="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-amber-600 to-rose-600 hover:from-amber-700 hover:to-rose-700 text-white font-semibold py-4 px-8 rounded-2xl transition-all shadow-lg active:scale-[0.985]"
+            >
+              <Share2 size={20} />
+              Bless & Share This Legacy
+            </button>
+            <p className="text-center text-amber-600 text-xs mt-4">Share with spouse, children, or parish community</p>
           </div>
 
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
@@ -489,7 +506,6 @@ export default function SuperFiCalculator() {
           </div>
         </div>
 
-        {/* Robinhood Promo - placed on the first page, after progress bar */}
         <RobinhoodPromo />
 
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10">
