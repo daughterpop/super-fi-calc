@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Heart, Users, Target, Sparkles } from 'lucide-react';
+import { TrendingUp, ArrowRight, Heart, Users, Target, Sparkles, Gift } from 'lucide-react';
 
 export default function Home() {
   const [inspiration, setInspiration] = useState(null);
   const [monthlySave, setMonthlySave] = useState(500);
   const [years, setYears] = useState(25);
   const [rate, setRate] = useState(8);
+
+  // Tithing Simulator states
+  const [tithePercent, setTithePercent] = useState(10);
+  const [monthlyIncome, setMonthlyIncome] = useState(8000);
 
   const quotes = [
     { quote: 'True wealth begins with faith and family. Financial independence lets you invest in what matters most — your legacy.', source: 'Super FI' },
@@ -50,6 +54,31 @@ export default function Home() {
     }
     return Math.round(fv);
   };
+
+  const calculateLegacyWithSavings = (savings) => {
+    const monthlyRate = rate / 100 / 12;
+    const numPayments = years * 12;
+    let fv = 0;
+    if (monthlyRate === 0) {
+      fv = savings * numPayments;
+    } else {
+      fv = savings * ((Math.pow(1 + monthlyRate, numPayments) - 1) / monthlyRate);
+    }
+    return Math.round(fv);
+  };
+
+  const tithingImpact = (() => {
+    const monthlyTithe = Math.round(monthlyIncome * (tithePercent / 100) / 12);
+    const titheAdjustedSavings = Math.max(100, monthlySave - monthlyTithe);
+    const legacyWithout = calculateLegacyWithSavings(monthlySave);
+    const legacyWith = calculateLegacyWithSavings(titheAdjustedSavings);
+    return {
+      monthlyTithe,
+      legacyWithout,
+      legacyWith,
+      difference: legacyWithout - legacyWith
+    };
+  })();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col items-center justify-center p-6">
@@ -120,7 +149,7 @@ export default function Home() {
           )}
         </div>
 
-        {/* Daily site improvement: Interactive "Watch Your Family Legacy Grow" teaser demo — sliders for savings/years/return with live legacy projection + faith-family messaging. Delights users, boosts engagement & dwell time, educates on compounding, encourages shares/full calculator use. Fresh, on-brand, non-repetitive. */}
+        {/* Legacy Grow Teaser */}
         <div className="mt-12 max-w-3xl mx-auto bg-white rounded-3xl p-10 shadow-xl border border-blue-100">
           <div className="flex items-center justify-center gap-3 mb-6">
             <Target className="text-blue-500" size={32} />
@@ -184,6 +213,78 @@ export default function Home() {
           >
             Build Your Full Plan in the FI Calculator <ArrowRight size={20} />
           </Link>
+        </div>
+
+        {/* Tithing Impact Simulator */}
+        <div className="mt-12 max-w-3xl mx-auto bg-white rounded-3xl p-10 shadow-xl border border-purple-100">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <Gift className="text-purple-500" size={32} />
+            <Heart className="text-rose-500" size={32} />
+          </div>
+          <h3 className="text-3xl font-bold text-gray-900 mb-2">Tithing Impact Simulator</h3>
+          <p className="text-gray-600 mb-8 text-lg">See how faithful giving (tithing) pairs with smart investing to multiply blessings and legacy — God honors the cheerful giver (2 Cor 9:7).</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Monthly Household Income</label>
+              <input 
+                type="range" 
+                min="3000" 
+                max="20000" 
+                step="100"
+                value={monthlyIncome}
+                onChange={(e) => setMonthlyIncome(Number(e.target.value))}
+                className="w-full accent-purple-600 cursor-pointer"
+              />
+              <div className="text-center font-mono text-2xl font-bold text-purple-700 mt-1">${monthlyIncome.toLocaleString()}</div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Tithe Percentage</label>
+              <input 
+                type="range" 
+                min="5" 
+                max="15" 
+                step="1"
+                value={tithePercent}
+                onChange={(e) => setTithePercent(Number(e.target.value))}
+                className="w-full accent-purple-600 cursor-pointer"
+              />
+              <div className="text-center font-mono text-2xl font-bold text-purple-700 mt-1">{tithePercent}%</div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-2xl border border-purple-200 text-center mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div>
+                <div className="text-xs uppercase tracking-widest text-purple-600 mb-1">Monthly Tithe</div>
+                <div className="text-4xl font-bold text-purple-900">${tithingImpact.monthlyTithe}</div>
+              </div>
+              <div>
+                <div className="text-xs uppercase tracking-widest text-emerald-600 mb-1">Legacy w/ Tithe</div>
+                <div className="text-4xl font-bold text-emerald-700">${tithingImpact.legacyWith.toLocaleString()}</div>
+              </div>
+              <div>
+                <div className="text-xs uppercase tracking-widest text-amber-600 mb-1">Legacy w/o Tithe</div>
+                <div className="text-4xl font-bold text-amber-700">${tithingImpact.legacyWithout.toLocaleString()}</div>
+              </div>
+            </div>
+            <p className="mt-6 text-purple-700 italic text-sm">Even with giving, your legacy remains strong — and faith-multiplied. Start investing the rest wisely!</p>
+          </div>
+
+          <Link
+            to="/calculator"
+            className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-2xl hover:from-purple-700 hover:to-indigo-700 transition-all text-lg flex items-center justify-center gap-3"
+          >
+            Model Full Tithing + FI Strategy in Calculator <ArrowRight size={20} />
+          </Link>
+          <a
+            href="https://join.robinhood.com/dustinh-1bff5a"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 block text-center text-sm text-purple-600 hover:text-purple-700 underline"
+          >
+            Invest your stewardship savings with Robinhood →
+          </a>
         </div>
 
         <div className="mt-12 max-w-3xl mx-auto bg-gradient-to-r from-emerald-50 via-green-50 to-teal-50 rounded-3xl p-10 shadow-xl border border-emerald-100">
