@@ -3,6 +3,13 @@ import React from 'react';
 export default function BlogIndex() {
   const posts = [
     {
+      date: 'May 15, 2026',
+      title: 'Catholic Dads Leading Family FI with AI and Faith',
+      excerpt: 'Dads, lead your family to financial independence using faith-aligned AI tools. Practical ways to steward resources, strengthen marriage, and raise generous kids without missing what matters most.',
+      readTime: '4 min read',
+      slug: 'catholic-dads-leading-family-fi-with-ai-and-faith'
+    },
+    {
       date: 'May 13, 2026',
       title: 'AI-Assisted Stewardship: How Catholic Families Can Reach FI Faster',
       excerpt: 'With AI in the headlines, Catholic families now have smart tools to accelerate financial independence while staying true to faith, marriage, and raising kids. Discover practical ways to use AI for stewardship and FI.',
@@ -61,20 +68,22 @@ export default function BlogIndex() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-gray-900 mb-4">Super FI Blog</h1>
-        <p className="text-center text-gray-600 mb-12">Insights, strategies, and tools for your journey to financial independence</p>
-        
-        {posts.map((post, index) => (
-          <div key={index} className="bg-white rounded-2xl shadow-sm p-8 mb-8">
-            <div className="text-sm text-gray-500 mb-2">{post.date} · {post.readTime}</div>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-3">{post.title}</h2>
-            <p className="text-gray-700 mb-6">{post.excerpt}</p>
-            <a href={`/blog/${post.slug}`} className="text-indigo-600 hover:text-indigo-700 font-medium">Read full post →</a>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+
+# Super FI Blog
+
+Insights, strategies, and tools for your journey to financial independence
+
+{posts.map((post, index) => (
+
+{post.date} · {post.readTime}
+
+## {post.title}
+
+{post.excerpt}
+
+Read full post →
+
+))}
+
+);
 }
