@@ -68,22 +68,40 @@ export default function BlogIndex() {
   ];
 
   return (
-
-# Super FI Blog
-
-Insights, strategies, and tools for your journey to financial independence
-
-{posts.map((post, index) => (
-
-{post.date} · {post.readTime}
-
-## {post.title}
-
-{post.excerpt}
-
-Read full post →
-
-))}
-
-);
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">Super FI Blog</h1>
+          <p className="text-xl text-gray-600 max-w-md mx-auto">Insights, strategies, and tools for your journey to financial independence — with faith and family at the center.</p>
+        </div>
+        <div className="space-y-8">
+          {posts.map((post, index) => (
+            <div key={index} className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                <span>{post.date}</span>
+                <span className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-medium">{post.readTime}</span>
+              </div>
+              <a 
+                href={`/blog/${post.slug}`} 
+                className="block group"
+              >
+                <h2 className="text-2xl font-semibold text-gray-900 group-hover:text-indigo-700 transition-colors mb-3 leading-tight">
+                  {post.title}
+                </h2>
+              </a>
+              <p className="text-gray-700 leading-relaxed mb-6 text-base">
+                {post.excerpt}
+              </p>
+              <a 
+                href={`/blog/${post.slug}`} 
+                className="inline-flex items-center gap-2 text-indigo-600 font-medium hover:text-indigo-800 transition-colors"
+              >
+                Read full post →
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
