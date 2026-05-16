@@ -3,6 +3,13 @@ import React from 'react';
 export default function BlogIndex() {
   const posts = [
     {
+      date: 'May 16, 2026',
+      title: 'Catholic Moms & Dads: Use AI to Build a Debt-Free, Faith-Filled Family Legacy',
+      excerpt: 'Catholic parents can leverage AI for smarter stewardship, faster FI, and stronger family faith life. Practical tips for budgeting, teaching kids, and building legacy without gatekeeping.',
+      readTime: '4 min read',
+      slug: 'catholic-moms-dads-use-ai-to-build-debt-free-faith-filled-family-legacy'
+    },
+    {
       date: 'May 15, 2026',
       title: 'Catholic Dads Leading Family FI with AI and Faith',
       excerpt: 'Dads, lead your family to financial independence using faith-aligned AI tools. Practical ways to steward resources, strengthen marriage, and raise generous kids without missing what matters most.',
