@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Heart, Users, Target, Sparkles, Gift } from 'lucide-react';
+import { TrendingUp, ArrowRight, Heart, Users, Target, Sparkles, Gift, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Home() {
   const [inspiration, setInspiration] = useState(null);
@@ -11,6 +11,36 @@ export default function Home() {
   // Tithing Simulator states
   const [tithePercent, setTithePercent] = useState(10);
   const [monthlyIncome, setMonthlyIncome] = useState(8000);
+
+  // New Carousel State
+  const [currentStory, setCurrentStory] = useState(0);
+
+  const stories = [
+    {
+      title: "The Rodriguez Family",
+      before: "Living paycheck to paycheck with little time for faith or kids",
+      after: "Debt-free, tithing generously, and leading family prayer nights",
+      legacy: "Building a Catholic homeschool fund and mission trips",
+      faith: "Matthew 6:33 - Seeking first the Kingdom"
+    },
+    {
+      title: "The Thompson Family",
+      before: "High stress, minimal savings, worried about kids' future",
+      after: "FI in sight, more family dinners, volunteering at parish",
+      legacy: "Generational wealth for grandkids' education and service",
+      faith: "Proverbs 13:22 - A good man leaves an inheritance"
+    },
+    {
+      title: "The Patel Family",
+      before: "Busy careers, little margin for spiritual growth",
+      after: "Part-time work, strong family bond, regular adoration",
+      legacy: "Supporting local Catholic charities and family vocations",
+      faith: "Psalm 127 - Unless the Lord builds the house"
+    }
+  ];
+
+  const nextStory = () => setCurrentStory((prev) => (prev + 1) % stories.length);
+  const prevStory = () => setCurrentStory((prev) => (prev - 1 + stories.length) % stories.length);
 
   const quotes = [
     { quote: 'True wealth begins with faith and family. Financial independence lets you invest in what matters most — your legacy.', source: 'Super FI' },
@@ -285,6 +315,70 @@ export default function Home() {
           >
             Invest your stewardship savings with Robinhood →
           </a>
+        </div>
+
+        {/* NEW: Catholic Family Legacy Stories Carousel */}
+        <div className="mt-12 max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Heart className="text-rose-500" size={32} />
+              <Users className="text-indigo-600" size={32} />
+            </div>
+            <h3 className="text-3xl font-bold text-gray-900">Catholic Family Legacy Stories</h3>
+            <p className="text-gray-600 max-w-md mx-auto">Real-inspired journeys of faith-filled families building generational wealth and legacy.</p>
+          </div>
+
+          <div className="relative bg-white rounded-3xl p-8 shadow-xl border border-rose-100 overflow-hidden">
+            <div className="flex items-center justify-between mb-6">
+              <button onClick={prevStory} className="p-3 hover:bg-gray-100 rounded-full transition-colors">
+                <ChevronLeft size={28} />
+              </button>
+              <div className="text-sm font-medium text-rose-600 tracking-widest">STORY {currentStory + 1} OF {stories.length}</div>
+              <button onClick={nextStory} className="p-3 hover:bg-gray-100 rounded-full transition-colors">
+                <ChevronRight size={28} />
+              </button>
+            </div>
+
+            <div className="min-h-[320px] flex flex-col items-center text-center px-4">
+              <div className="w-20 h-20 bg-gradient-to-br from-rose-100 to-indigo-100 rounded-full flex items-center justify-center mb-6">
+                <Users size={40} className="text-rose-600" />
+              </div>
+              <h4 className="text-2xl font-bold text-gray-900 mb-4">{stories[currentStory].title}</h4>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl mb-8">
+                <div className="bg-amber-50 p-6 rounded-2xl">
+                  <div className="uppercase text-amber-600 text-xs tracking-widest mb-2">Before</div>
+                  <p className="text-gray-700">{stories[currentStory].before}</p>
+                </div>
+                <div className="bg-emerald-50 p-6 rounded-2xl">
+                  <div className="uppercase text-emerald-600 text-xs tracking-widest mb-2">After</div>
+                  <p className="text-gray-700">{stories[currentStory].after}</p>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-2xl mb-6 w-full max-w-2xl">
+                <p className="italic text-gray-700">“{stories[currentStory].legacy}”</p>
+                <p className="text-xs text-indigo-600 mt-3 font-medium">— {stories[currentStory].faith}</p>
+              </div>
+            </div>
+
+            <div className="flex justify-center gap-2 mt-4">
+              {stories.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentStory(idx)}
+                  className={`w-3 h-3 rounded-full transition-all ${idx === currentStory ? 'bg-rose-600 scale-125' : 'bg-gray-300'}`}
+                />
+              ))}
+            </div>
+
+            <Link
+              to="/blog"
+              className="mt-8 inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-medium"
+            >
+              Read more inspiring stories in our blog <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
 
         <div className="mt-12 max-w-3xl mx-auto bg-gradient-to-r from-emerald-50 via-green-50 to-teal-50 rounded-3xl p-10 shadow-xl border border-emerald-100">
