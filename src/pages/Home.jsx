@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Heart, Users, Target, Sparkles, Gift, ChevronLeft, ChevronRight } from 'lucide-react';
+import { TrendingUp, ArrowRight, Heart, Users, Target, Sparkles, Gift, ChevronLeft, ChevronRight, BookOpen, Share2 } from 'lucide-react';
 
 export default function Home() {
   const [inspiration, setInspiration] = useState(null);
@@ -14,6 +14,11 @@ export default function Home() {
 
   // New Carousel State
   const [currentStory, setCurrentStory] = useState(0);
+
+  // Legacy Commitment Wall states
+  const [pledgeGoal, setPledgeGoal] = useState('');
+  const [pledgePrayer, setPledgePrayer] = useState('');
+  const [generatedPledge, setGeneratedPledge] = useState(null);
 
   const stories = [
     {
@@ -110,6 +115,44 @@ export default function Home() {
     };
   })();
 
+  // Legacy Pledge Generator
+  const generatePledge = () => {
+    if (!pledgeGoal.trim()) {
+      alert('Please enter a family goal to create your pledge!');
+      return;
+    }
+    const scriptures = [
+      "Proverbs 13:22 - A good man leaves an inheritance to his children's children.",
+      "Matthew 6:33 - But seek first the kingdom of God and his righteousness.",
+      "Psalm 127:1 - Unless the Lord builds the house, those who build it labor in vain.",
+      "2 Corinthians 9:7 - God loves a cheerful giver.",
+      "Deuteronomy 6:7 - Impress them on your children."
+    ];
+    const randomScripture = scriptures[Math.floor(Math.random() * scriptures.length)];
+    const newPledge = {
+      goal: pledgeGoal,
+      prayer: pledgePrayer || "Lord, guide our steps to steward Your gifts faithfully for our family's future.",
+      scripture: randomScripture,
+      date: new Date().toLocaleDateString()
+    };
+    setGeneratedPledge(newPledge);
+  };
+
+  const sharePledge = () => {
+    if (!generatedPledge) return;
+    const shareText = `Our Family Stewardship Pledge: ${generatedPledge.goal}\n${generatedPledge.prayer}\n${generatedPledge.scripture}\n\nJoined the Super FI journey on ${generatedPledge.date}. Build your legacy at https://super-fi-calculator.vercel.app/`;
+    if (navigator.share) {
+      navigator.share({
+        title: 'Our Family Stewardship Pledge',
+        text: shareText,
+      });
+    } else {
+      navigator.clipboard.writeText(shareText).then(() => {
+        alert('Pledge copied! Share this beautiful commitment with your family and friends.');
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col items-center justify-center p-6">
       <div className="max-w-4xl w-full text-center">
@@ -177,6 +220,94 @@ export default function Home() {
               </button>
             </div>
           )}
+        </div>
+
+        {/* Legacy Commitment Wall - NEW SECTION */}
+        <div className="mt-12 max-w-3xl mx-auto bg-white rounded-3xl p-10 shadow-xl border border-rose-100">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <BookOpen className="text-rose-500" size={32} />
+            <Heart className="text-indigo-600" size={32} />
+            <Users className="text-amber-500" size={32} />
+          </div>
+          <h3 className="text-3xl font-bold text-gray-900 mb-2">Legacy Commitment Wall</h3>
+          <p className="text-gray-600 mb-8 text-lg">Create a personal Stewardship Pledge for your family's faith-filled financial journey. Make it shareable and inspiring!</p>
+
+          <div className="space-y-6 mb-8">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Your Family Goal (e.g., Homeschool fund, Mission trips, Debt-free by 2035)</label>
+              <input
+                type="text"
+                value={pledgeGoal}
+                onChange={(e) => setPledgeGoal(e.target.value)}
+                placeholder="Build a generous Catholic education fund for our kids"
+                className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:border-rose-300 text-lg"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">A short family prayer or intention (optional)</label>
+              <textarea
+                value={pledgePrayer}
+                onChange={(e) => setPledgePrayer(e.target.value)}
+                placeholder="Lord, bless our efforts to steward Your gifts for generations to come."
+                className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:border-rose-300 h-24 resize-y text-lg"
+              />
+            </div>
+          </div>
+
+          <button
+            onClick={generatePledge}
+            className="w-full mb-6 px-8 py-4 bg-gradient-to-r from-rose-500 to-indigo-600 text-white font-semibold rounded-2xl hover:from-rose-600 hover:to-indigo-700 transition-all text-lg flex items-center justify-center gap-3"
+          >
+            Generate My Stewardship Pledge Card <Sparkles size={20} />
+          </button>
+
+          {generatedPledge && (
+            <div className="bg-gradient-to-br from-rose-50 via-amber-50 to-indigo-50 p-10 rounded-3xl border-2 border-rose-200 text-left shadow-inner">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full shadow mb-4">
+                  <Heart className="text-rose-500" size={32} />
+                </div>
+                <div className="text-rose-700 font-semibold tracking-widest text-sm">FAMILY STEWARDSHIP PLEDGE</div>
+                <div className="text-xs text-gray-500 mt-1">{generatedPledge.date}</div>
+              </div>
+
+              <div className="text-2xl font-bold text-gray-900 mb-6 leading-tight text-center">“{generatedPledge.goal}”</div>
+
+              <div className="italic text-gray-700 text-lg mb-8 border-l-4 border-rose-300 pl-6">
+                {generatedPledge.prayer}
+              </div>
+
+              <div className="text-sm text-indigo-700 font-medium text-center mb-8">
+                {generatedPledge.scripture}
+              </div>
+
+              <button
+                onClick={sharePledge}
+                className="w-full py-4 bg-white border-2 border-rose-200 text-rose-700 rounded-2xl hover:bg-rose-50 font-semibold flex items-center justify-center gap-3 text-lg"
+              >
+                Share This Pledge Card with Family & Friends
+                <Share2 size={20} />
+              </button>
+              <p className="text-center text-xs text-gray-500 mt-6">A visible reminder of your commitment to faith, family, and generational wealth.</p>
+            </div>
+          )}
+
+          <div className="mt-8 text-center">
+            <Link
+              to="/calculator"
+              className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-medium"
+            >
+              Turn this pledge into action with our FI Calculator <ArrowRight size={16} />
+            </Link>
+            <a
+              href="https://join.robinhood.com/dustinh-1bff5a"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 block text-sm text-emerald-600 hover:text-emerald-700"
+            >
+              Start investing today with Robinhood to live out your legacy →
+            </a>
+          </div>
         </div>
 
         {/* Legacy Grow Teaser */}
