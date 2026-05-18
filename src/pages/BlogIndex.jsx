@@ -3,6 +3,13 @@ import React from 'react';
 export default function BlogIndex() {
   const posts = [
     {
+      date: 'May 18, 2026',
+      title: 'Catholic Families: Harness AI for Prayerful FI and Generational Legacy',
+      excerpt: 'Catholic families can use AI tools alongside prayer and stewardship to build financial independence and a lasting faith-filled legacy for their children. Practical, encouraging steps for real households.',
+      readTime: '4 min read',
+      slug: 'catholic-families-harness-ai-for-prayerful-fi-and-generational-legacy'
+    },
+    {
       date: 'May 17, 2026',
       title: 'Catholic Parents: Build Your FI Legacy with AI Tools and Daily Prayer',
       excerpt: 'Catholic parents can combine AI tools with prayer and stewardship for faster progress toward financial independence and a strong faith-filled family life. Simple, practical steps that work for real families.',
