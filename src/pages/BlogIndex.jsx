@@ -3,6 +3,13 @@ import React from 'react';
 export default function BlogIndex() {
   const posts = [
     {
+      date: 'May 19, 2026',
+      title: 'Catholic Families: Using AI to Protect Sabbath Rest on the Path to FI',
+      excerpt: 'AI tools can automate the grind so Catholic families protect true Sabbath rest, prayer time, and build financial independence without burnout. Practical tips for faith-first living.',
+      readTime: '4 min read',
+      slug: 'catholic-families-using-ai-for-sabbath-rest-and-fi-stewardship'
+    },
+    {
       date: 'May 18, 2026',
       title: 'Catholic Families: Harness AI for Prayerful FI and Generational Legacy',
       excerpt: 'Catholic families can use AI tools alongside prayer and stewardship to build financial independence and a lasting faith-filled legacy for their children. Practical, encouraging steps for real households.',
