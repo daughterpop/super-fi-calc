@@ -3,6 +3,13 @@ import React from 'react';
 export default function BlogIndex() {
   const posts = [
     {
+      date: 'May 21, 2026',
+      title: 'Catholic Families: AI Budgeting for More Tithing, Faster FI, No Burnout',
+      excerpt: 'AI makes budgeting effortless for Catholic families — freeing time for tithing, prayer, and building FI without burnout. Practical faith-first tips that work.',
+      readTime: '4 min read',
+      slug: 'catholic-families-ai-budgeting-tithing-faster-fi-without-burnout'
+    },
+    {
       date: 'May 19, 2026',
       title: 'Catholic Families: Using AI to Protect Sabbath Rest on the Path to FI',
       excerpt: 'AI tools can automate the grind so Catholic families protect true Sabbath rest, prayer time, and build financial independence without burnout. Practical tips for faith-first living.',
