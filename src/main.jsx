@@ -20,8 +20,9 @@ import CatholicMomsDadsUseAiToBuildDebtFreeFaithFilledFamilyLegacy from './pages
 import CatholicParentsBuildingFiLegacyWithAiAndPrayer from './pages/catholic-parents-building-fi-legacy-with-ai-and-prayer.jsx';
 import CatholicFamiliesHarnessAiForPrayerfulFiAndGenerationalLegacy from './pages/catholic-families-harness-ai-for-prayerful-fi-and-generational-legacy.jsx';
 import CatholicFamiliesUsingAiForSabbathRestAndFiStewardship from './pages/catholic-families-using-ai-for-sabbath-rest-and-fi-stewardship.jsx';
-import BlogIndex from './pages/BlogIndex.jsx';
 import CatholicFamiliesAiBudgetingTithingFasterFiWithoutBurnout from './pages/catholic-families-ai-budgeting-tithing-faster-fi-without-burnout.jsx';
+import CatholicFamiliesAiSummerStewardshipFaithFunAndFi from './pages/catholic-families-ai-summer-stewardship-faith-fun-and-fi.jsx';
+import BlogIndex from './pages/BlogIndex.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -45,6 +46,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/blog/catholic-families-harness-ai-for-prayerful-fi-and-generational-legacy" element={<CatholicFamiliesHarnessAiForPrayerfulFiAndGenerationalLegacy />} />
         <Route path="/blog/catholic-families-using-ai-for-sabbath-rest-and-fi-stewardship" element={<CatholicFamiliesUsingAiForSabbathRestAndFiStewardship />} />
         <Route path="/blog/catholic-families-ai-budgeting-tithing-faster-fi-without-burnout" element={<CatholicFamiliesAiBudgetingTithingFasterFiWithoutBurnout />} />
+        <Route path="/blog/catholic-families-ai-summer-stewardship-faith-fun-and-fi" element={<CatholicFamiliesAiSummerStewardshipFaithFunAndFi />} />
         <Route path="*" element={<div className="p-10 text-center text-xl">Page not found — <a href="/" className="text-indigo-600 underline">Go Home</a></div>} />
       </Routes>
     </BrowserRouter>
