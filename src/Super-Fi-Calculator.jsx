@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ArrowRight, ArrowLeft, Check, TrendingUp, Home, GraduationCap, DollarSign, Sparkles, Share2, Heart } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Check, TrendingUp, Home, GraduationCap, DollarSign, Sparkles, Share2, Heart, RefreshCw } from 'lucide-react';
 
 export default function SuperFiCalculator() {
   const [step, setStep] = useState(0);
@@ -233,7 +233,21 @@ export default function SuperFiCalculator() {
     }
   };
 
-  // Static intro section
+  // New Saintly Wisdom quotes for delight and engagement
+  const saintlyQuotes = [
+    { quote: "Seek first the kingdom of God and his righteousness, and all these things will be added to you.", author: "Matthew 6:33", saint: "Our Lord" },
+    { quote: "The generous will themselves be blessed, for they share their food with the poor.", author: "Proverbs 22:9", saint: "King Solomon" },
+    { quote: "Well done, good and faithful servant! You have been faithful with a few things; I will put you in charge of many things.", author: "Matthew 25:21", saint: "Jesus Christ" },
+    { quote: "To whom much is given, much will be required.", author: "Luke 12:48", saint: "Our Lord" }
+  ];
+
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+
+  const nextQuote = () => {
+    setCurrentQuoteIndex((prev) => (prev + 1) % saintlyQuotes.length);
+  };
+
+  // Static intro section with new delightful element
   const IntroSection = () => (
     <div className="max-w-4xl mx-auto px-4 py-8 prose prose-slate dark:prose-invert">
       <h1 className="text-4xl font-bold text-center mb-4">Financial Independence Calculator</h1>
@@ -253,6 +267,31 @@ export default function SuperFiCalculator() {
           <h2 className="text-lg font-semibold mb-2">Popular searches</h2>
           <p className="text-muted-foreground">financial independence calculator • fi calculator • fire calculator • retire early tool • fi number calculator</p>
         </div>
+      </div>
+
+      {/* New Saintly Wisdom Rotator - delightful, faith-filled engagement booster */}
+      <div className="mt-12 bg-gradient-to-br from-amber-50 to-white border border-amber-100 rounded-3xl p-8 shadow-sm">
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 bg-amber-100 rounded-2xl flex items-center justify-center">
+              <Sparkles className="text-amber-600" size={20} />
+            </div>
+            <h3 className="text-xl font-semibold text-amber-900">Saintly Wisdom on Stewardship</h3>
+          </div>
+          <button
+            onClick={nextQuote}
+            className="flex items-center gap-2 text-amber-600 hover:text-amber-700 text-sm font-medium transition-colors"
+          >
+            New Wisdom <RefreshCw size={16} />
+          </button>
+        </div>
+        <div className="italic text-lg text-amber-800 leading-relaxed mb-4">
+          “{saintlyQuotes[currentQuoteIndex].quote}”
+        </div>
+        <div className="text-sm text-amber-600 font-medium">
+          — {saintlyQuotes[currentQuoteIndex].author} ({saintlyQuotes[currentQuoteIndex].saint})
+        </div>
+        <p className="text-xs text-amber-500 mt-6">Refresh for inspiration. Let faithful wisdom guide your investments toward generational blessings.</p>
       </div>
     </div>
   );
