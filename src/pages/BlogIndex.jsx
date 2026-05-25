@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 
 const posts = [
   {
+    title: 'Tithe More, Retire Earlier: AI for Catholic Family FI',
+    slug: 'tithe-more-retire-earlier-ai-for-catholic-family-fi',
+    excerpt: 'Hey everyone, discover how AI helps Catholic families tithe more generously, reduce financial stress, and reach FI faster while staying true to faith and family values.',
+    date: 'May 25, 2026',
+    readTime: '4 min read'
+  },
+  {
     title: 'AI for Catholic Families: Tithe More, Stress Less, Reach FI Faster',
     slug: 'ai-for-catholic-families-tithe-more-stress-less-reach-fi-faster',
     excerpt: 'Hey everyone, discover how AI helps Catholic families tithe generously, reduce money stress, and reach financial independence faster while staying true to faith and family life.',
