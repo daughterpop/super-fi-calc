@@ -6,6 +6,7 @@ import BlogIndex from './pages/BlogIndex.jsx';
 import HowCatholicCouplesUseAiToBuildFiAndStrongerMarriages from './pages/how-catholic-couples-use-ai-to-build-fi-and-stronger-marriages.jsx';
 import CatholicFamiliesAiForTithingAndFiWithoutTheStress from './pages/catholic-families-ai-for-tithing-and-fi-without-the-stress.jsx';
 import HowAiHelpsCatholicParentsBuildFiAndRaiseGenerousKids from './pages/how-ai-helps-catholic-parents-build-fi-and-raise-generous-kids.jsx';
+import AiForCatholicFamiliesTitheMoreStressLessReachFiFaster from './pages/ai-for-catholic-families-tithe-more-stress-less-reach-fi-faster.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/blog/how-catholic-couples-use-ai-to-build-fi-and-stronger-marriages" element={<HowCatholicCouplesUseAiToBuildFiAndStrongerMarriages />} />
         <Route path="/blog/catholic-families-ai-for-tithing-and-fi-without-the-stress" element={<CatholicFamiliesAiForTithingAndFiWithoutTheStress />} />
         <Route path="/blog/how-ai-helps-catholic-parents-build-fi-and-raise-generous-kids" element={<HowAiHelpsCatholicParentsBuildFiAndRaiseGenerousKids />} />
+        <Route path="/blog/ai-for-catholic-families-tithe-more-stress-less-reach-fi-faster" element={<AiForCatholicFamiliesTitheMoreStressLessReachFiFaster />} />
         {/* Add other post routes as needed for full functionality */}
       </Routes>
     </Router>
