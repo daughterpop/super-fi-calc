@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 
 const posts = [
   {
+    title: 'How AI Helps Catholic Parents Build FI and Raise Generous Kids',
+    slug: 'how-ai-helps-catholic-parents-build-fi-and-raise-generous-kids',
+    excerpt: 'Hey everyone, discover how AI makes family budgeting easier for Catholic parents, helping you tithe generously, hit FI goals, and raise kids who understand stewardship.',
+    date: 'May 25, 2026',
+    readTime: '4 min read'
+  },
+  {
     title: 'How Catholic Couples Use AI to Build FI and Stronger Marriages',
     slug: 'how-catholic-couples-use-ai-to-build-fi-and-stronger-marriages',
     excerpt: 'Hey everyone, AI is helping Catholic couples build financial independence while strengthening their marriage and raising faith-filled kids. No stress, just smart stewardship.',
