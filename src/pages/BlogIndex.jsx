@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 
 const posts = [
   {
+    title: 'AI Stewardship for Catholic Families: Tithing Boldly While Building FI',
+    slug: 'ai-stewardship-catholic-families-tithing-boldly-fi',
+    excerpt: 'Hey everyone, discover how AI helps Catholic families tithe boldly, steward money wisely, and reach financial independence with faith at the center.',
+    date: 'May 25, 2026',
+    readTime: '4 min read'
+  },
+  {
     title: 'Make Tithing Easy: AI Tools for Catholic Families Chasing FI',
     slug: 'make-tithing-easy-ai-tools-for-catholic-families-chasing-fi',
     excerpt: 'Hey everyone, discover how AI makes tithing simple and accelerates your family\'s journey to financial independence while staying rooted in faith.',
