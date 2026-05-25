@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 
 const posts = [
   {
+    title: 'How Catholic Couples Use AI to Build FI and Stronger Marriages',
+    slug: 'how-catholic-couples-use-ai-to-build-fi-and-stronger-marriages',
+    excerpt: 'Hey everyone, AI is helping Catholic couples build financial independence while strengthening their marriage and raising faith-filled kids. No stress, just smart stewardship.',
+    date: 'May 25, 2026',
+    readTime: '4 min read'
+  },
+  {
     title: 'Catholic Families: AI for Tithing and FI Without the Stress',
     slug: 'catholic-families-ai-for-tithing-and-fi-without-the-stress',
     excerpt: 'Hey everyone, discover how AI makes tithing easier and accelerates your family\'s path to financial independence with faith at the center.',
@@ -16,7 +23,6 @@ const posts = [
     date: 'May 24, 2026',
     readTime: '5 min read'
   }
-  // more posts can be added from existing
 ];
 
 export default function BlogIndex() {

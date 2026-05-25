@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import App from './App.jsx';
 import BlogIndex from './pages/BlogIndex.jsx';
 import CatholicFamiliesAiForTithingAndFiWithoutTheStress from './pages/catholic-families-ai-for-tithing-and-fi-without-the-stress.jsx';
+import HowCatholicCouplesUseAiToBuildFiAndStrongerMarriages from './pages/how-catholic-couples-use-ai-to-build-fi-and-stronger-marriages.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -12,6 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/catholic-families-ai-for-tithing-and-fi-without-the-stress" element={<CatholicFamiliesAiForTithingAndFiWithoutTheStress />} />
+        <Route path="/blog/how-catholic-couples-use-ai-to-build-fi-and-stronger-marriages" element={<HowCatholicCouplesUseAiToBuildFiAndStrongerMarriages />} />
         {/* Add other post routes as needed for full functionality */}
       </Routes>
     </Router>
