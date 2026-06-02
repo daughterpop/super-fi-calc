@@ -2,9 +2,30 @@ import "./App.css";
 import { useState } from 'react';
 import SubscribeForm from './components/SubscribeForm';
 import SuperFiCalculator from './Super-Fi-Calculator.jsx';
+import BlogIndex from './pages/BlogIndex.jsx';
 
 function App() {
   const [activeTab, setActiveTab] = useState('quick');
+  const [currentPage, setCurrentPage] = useState('home');
+
+  if (currentPage === 'blog') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
+          <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div 
+              onClick={() => setCurrentPage('home')}
+              className="text-2xl font-bold text-emerald-600 cursor-pointer hover:text-emerald-700 flex items-center gap-2"
+            >
+              ← Super FI Calculator
+            </div>
+          </div>
+        </nav>
+        
+        <BlogIndex />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -13,8 +34,18 @@ function App() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold text-emerald-600">Super FI Calculator</div>
           <div className="flex gap-8 text-sm">
-            <a href="/" className="text-gray-700 hover:text-emerald-600 font-medium">Calculator</a>
-            <a href="/blog" className="text-gray-700 hover:text-emerald-600 font-medium">Blog</a>
+            <button 
+              onClick={() => setCurrentPage('home')}
+              className="text-emerald-600 font-medium"
+            >
+              Calculator
+            </button>
+            <button 
+              onClick={() => setCurrentPage('blog')}
+              className="text-gray-700 hover:text-emerald-600 font-medium"
+            >
+              Blog
+            </button>
             <a href="#" className="text-gray-700 hover:text-emerald-600 font-medium">Resources</a>
           </div>
         </div>
@@ -42,13 +73,7 @@ function App() {
         ) : (
           <div className="bg-white rounded-xl shadow-sm p-12 text-center">
             <h2 className="text-2xl font-semibold mb-4">Advanced FI Calculator</h2>
-            <p className="text-gray-600 mb-8">More detailed version with age, inflation, multiple income streams, etc. coming soon.</p>
-            <button 
-              onClick={() => setActiveTab('quick')}
-              className="px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700"
-            >
-              Back to Quick Calculator
-            </button>
+            <p className="text-gray-600 mb-8">Your more detailed calculator should appear here.</p>
           </div>
         )}
       </div>
