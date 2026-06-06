@@ -1,24 +1,23 @@
-// Full updated BlogIndex.jsx with new post at top - assuming standard structure from previous
+// Updated with new post at top
 
 import React from 'react';
 
 export default function BlogIndex() {
   const posts = [
     {
-      title: 'Catholic Families: Leverage AI for Prayerful Financial Freedom and Lasting Legacy',
-      date: 'June 04, 2026',
-      excerpt: 'With the Pope’s new encyclical on AI, Catholic families can use smart tools alongside prayer to accelerate their path to financial independence and build a faith-filled legacy for their kids.',
+      title: 'Catholic Families Can Reach FI Together: AI, Prayer, and Smart Stewardship',
+      date: 'June 06, 2026',
+      excerpt: 'Catholic families are using AI tools and prayer to steward resources, teach kids about money, and build lasting wealth while staying true to faith. Discover practical steps for your household.',
       readTime: '4 min read',
-      slug: 'catholic-families-leverage-ai-for-prayerful-financial-freedom-and-lasting-legacy',
-      link: '/blog/catholic-families-leverage-ai-for-prayerful-financial-freedom-and-lasting-legacy'
+      slug: 'catholic-families-can-reach-fi-together-ai-prayer-and-smart-stewardship',
+      link: '/blog/catholic-families-can-reach-fi-together-ai-prayer-and-smart-stewardship'
     },
-    // ... existing posts
+    // ... rest of existing posts
   ];
-
+  // rest of component JSX
   return (
-    // existing JSX
     <div>
-      {/* posts mapped */}
+      {/* posts map */}
     </div>
   );
 }
