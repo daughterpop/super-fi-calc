@@ -13,7 +13,7 @@ const allPosts = [
   {
     title: 'Why Financial Independence Is for Everyone',
     date: 'May 18, 2026',
-    excerpt: 'Financial independence isn’t just for tech bros...',
+    excerpt: 'Financial independence isn’t just for tech bros or high earners — it’s for regular families ready to build margin, faith, and freedom.',
     readTime: '4 min read',
     slug: 'why-fi-for-everyone',
     link: '/blog/why-fi-for-everyone'
@@ -21,7 +21,7 @@ const allPosts = [
   {
     title: 'Catholic Dads Leading Family FI with AI and Faith',
     date: 'June 10, 2026',
-    excerpt: 'Practical ways Catholic dads are using AI tools to steward family finances while leading in faith.',
+    excerpt: 'Practical ways Catholic dads are using AI tools to steward family finances while leading in faith and presence for their kids.',
     readTime: '4 min read',
     slug: 'catholic-dads-leading-family-fi-with-ai-and-faith',
     link: '/blog/catholic-dads-leading-family-fi-with-ai-and-faith'
@@ -29,12 +29,75 @@ const allPosts = [
   {
     title: 'Raising Faith-Filled Kids While Building Financial Freedom',
     date: 'June 12, 2026',
-    excerpt: 'How to teach your children about money, faith, and stewardship for a strong generational legacy.',
+    excerpt: 'How to teach your children about money, faith, and stewardship for a strong generational legacy and debt-free future.',
     readTime: '4 min read',
     slug: 'raising-faith-filled-kids-while-building-financial-freedom',
     link: '/blog/raising-faith-filled-kids-while-building-financial-freedom'
+  },
+  {
+    title: 'Catholic Families Can Reach FI Together: AI, Prayer, and Smart Stewardship',
+    date: 'June 17, 2026',
+    excerpt: 'How Catholic families are combining AI tools, prayer, and wise stewardship to reach financial independence together as a faith-filled team.',
+    readTime: '4 min read',
+    slug: 'catholic-families-can-reach-fi-together-ai-prayer-and-smart-stewardship',
+    link: '/blog/catholic-families-can-reach-fi-together-ai-prayer-and-smart-stewardship'
+  },
+  {
+    title: 'AI-Assisted Stewardship: How Catholic Families Leverage Smart Tools for FI and Faithful Living',
+    date: 'June 15, 2026',
+    excerpt: 'Discover practical AI prompts and tools Catholic families are using to budget, plan, and live out faithful stewardship on the path to FI.',
+    readTime: '4 min read',
+    slug: 'ai-assisted-stewardship-how-catholic-families-leverage-smart-tools-for-fi-and-faithful-living',
+    link: '/blog/ai-assisted-stewardship-how-catholic-families-leverage-smart-tools-for-fi-and-faithful-living'
+  },
+  {
+    title: 'Catholic Families Harness AI for Prayerful FI and Generational Legacy',
+    date: 'June 16, 2026',
+    excerpt: 'Learn how Catholic families are using AI alongside prayer to build lasting financial freedom and a legacy of faith for generations.',
+    readTime: '4 min read',
+    slug: 'catholic-families-harness-ai-for-prayerful-fi-and-generational-legacy',
+    link: '/blog/catholic-families-harness-ai-for-prayerful-fi-and-generational-legacy'
+  },
+  {
+    title: 'Catholic Moms & Dads Use AI to Build Debt-Free, Faith-Filled Family Legacy',
+    date: 'June 18, 2026',
+    excerpt: 'Real strategies for Catholic parents to use AI for budgeting, debt payoff, and raising kids with faith and financial wisdom.',
+    readTime: '4 min read',
+    slug: 'catholic-moms-dads-use-ai-to-build-debt-free-faith-filled-family-legacy',
+    link: '/blog/catholic-moms-dads-use-ai-to-build-debt-free-faith-filled-family-legacy'
+  },
+  {
+    title: 'Catholic Parents Building FI Legacy with AI and Prayer',
+    date: 'June 19, 2026',
+    excerpt: 'A practical guide for Catholic parents to integrate AI tools and daily prayer into their journey toward financial independence and family legacy.',
+    readTime: '4 min read',
+    slug: 'catholic-parents-building-fi-legacy-with-ai-and-prayer',
+    link: '/blog/catholic-parents-building-fi-legacy-with-ai-and-prayer'
+  },
+  {
+    title: 'Faithful Parenting on the Path to FI: Creating Margin for What Matters Most in Your Christian Home',
+    date: 'June 20, 2026',
+    excerpt: 'How faithful parenting and FI work together to create margin for faith, family time, and raising kids with strong values.',
+    readTime: '4 min read',
+    slug: 'faithful-parenting-on-the-path-to-fi-creating-margin-for-what-matters-most-in-your-christian-home',
+    link: '/blog/faithful-parenting-on-the-path-to-fi-creating-margin-for-what-matters-most-in-your-christian-home'
+  },
+  {
+    title: 'How Christian Couples Unlock Financial Freedom Together: Faith, Teamwork, and a Legacy Your Family Will Thank You For',
+    date: 'June 21, 2026',
+    excerpt: 'Christian couples sharing practical steps to build FI as a team, rooted in faith, communication, and shared vision for their family\'s future.',
+    readTime: '4 min read',
+    slug: 'how-christian-couples-unlock-financial-freedom-together-faith-teamwork-and-a-legacy-your-family-will-thank-you-for',
+    link: '/blog/how-christian-couples-unlock-financial-freedom-together-faith-teamwork-and-a-legacy-your-family-will-thank-you-for'
+  },
+  {
+    title: 'Praying Your Way to Financial Freedom: How Christian Families Can Build Wealth, Generosity, and Peace Together',
+    date: 'June 22, 2026',
+    excerpt: 'A faith-first approach to FI: how prayer, generosity, and smart planning help Christian families build wealth and peace.',
+    readTime: '4 min read',
+    slug: 'praying-your-way-to-financial-freedom-how-christian-families-can-build-wealth-generosity-and-peace-together',
+    link: '/blog/praying-your-way-to-financial-freedom-how-christian-families-can-build-wealth-generosity-and-peace-together'
   }
-  // TODO: Expand allPosts with every post from src/pages/ for complete coverage
 ];
 
 export default function BlogIndex() {
