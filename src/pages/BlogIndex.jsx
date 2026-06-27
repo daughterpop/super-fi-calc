@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom';
 
 const allPosts = [
   {
+    title: 'Catholic Families: AI-Powered Summer Planning for Faith, Fun, and Faster FI',
+    date: 'June 27, 2026',
+    excerpt: 'Catholic families using AI to plan affordable, faith-filled summer activities that create lasting memories while accelerating their path to financial independence.',
+    readTime: '4 min read',
+    slug: 'catholic-families-ai-powered-summer-planning-for-faith-fun-and-faster-fi',
+    link: '/blog/catholic-families-ai-powered-summer-planning-for-faith-fun-and-faster-fi'
+  },
+  {
     title: 'Strengthen Your Catholic Marriage with AI for Family FI and Deeper Faith',
     date: 'June 25, 2026',
     excerpt: 'Catholic couples are using AI tools alongside prayer to align finances with faith, reduce money stress, and build a strong foundation for family freedom and legacy.',
@@ -21,28 +29,11 @@ const allPosts = [
   {
     title: 'Why Financial Independence Is for Everyone',
     date: 'May 18, 2026',
-    excerpt: 'Financial independence isn’t just for tech bros...',
+    excerpt: 'Financial independence isn’t just for tech bros or high earners — it’s for regular families ready to build margin, faith, and freedom.',
     readTime: '4 min read',
     slug: 'why-fi-for-everyone',
     link: '/blog/why-fi-for-everyone'
-  },
-  {
-    title: 'Catholic Dads Leading Family FI with AI and Faith',
-    date: 'June 10, 2026',
-    excerpt: 'Practical ways Catholic dads are using AI tools to steward family finances while leading in faith.',
-    readTime: '4 min read',
-    slug: 'catholic-dads-leading-family-fi-with-ai-and-faith',
-    link: '/blog/catholic-dads-leading-family-fi-with-ai-and-faith'
-  },
-  {
-    title: 'Raising Faith-Filled Kids While Building Financial Freedom',
-    date: 'June 12, 2026',
-    excerpt: 'How to teach your children about money, faith, and stewardship for a strong generational legacy.',
-    readTime: '4 min read',
-    slug: 'raising-faith-filled-kids-while-building-financial-freedom',
-    link: '/blog/raising-faith-filled-kids-while-building-financial-freedom'
   }
-  // TODO: Expand allPosts with every post from src/pages/ for complete coverage
 ];
 
 export default function BlogIndex() {
