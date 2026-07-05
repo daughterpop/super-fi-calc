@@ -18,6 +18,7 @@ import HowChristianCouplesUnlockFinancialFreedomTogetherFaithTeamworkAndALegacyY
 import PrayingYourWayToFinancialFreedomHowChristianFamiliesCanBuildWealthGenerosityAndPeaceTogether from './pages/praying-your-way-to-financial-freedom-how-christian-families-can-build-wealth-generosity-and-peace-together';
 import StrengthenYourCatholicMarriageWithAiForFamilyFiAndDeeperFaith from './pages/strengthen-your-catholic-marriage-with-ai-for-family-fi-and-deeper-faith';
 import CatholicFamiliesAiPoweredSummerPlanningForFaithFunAndFasterFi from './pages/catholic-families-ai-powered-summer-planning-for-faith-fun-and-faster-fi';
+import CatholicFamiliesAiForBackToSchoolSavingsAndFaithFilledFinancialFreedom from './pages/catholic-families-ai-for-back-to-school-savings-and-faith-filled-financial-freedom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -39,6 +40,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/blog/praying-your-way-to-financial-freedom-how-christian-families-can-build-wealth-generosity-and-peace-together" element={<PrayingYourWayToFinancialFreedomHowChristianFamiliesCanBuildWealthGenerosityAndPeaceTogether />} />
         <Route path="/blog/strengthen-your-catholic-marriage-with-ai-for-family-fi-and-deeper-faith" element={<StrengthenYourCatholicMarriageWithAiForFamilyFiAndDeeperFaith />} />
         <Route path="/blog/catholic-families-ai-powered-summer-planning-for-faith-fun-and-faster-fi" element={<CatholicFamiliesAiPoweredSummerPlanningForFaithFunAndFasterFi />} />
+        <Route path="/blog/catholic-families-ai-for-back-to-school-savings-and-faith-filled-financial-freedom" element={<CatholicFamiliesAiForBackToSchoolSavingsAndFaithFilledFinancialFreedom />} />
         {/* Catch-all for any other blog posts or 404 handling - falls back to home or can add a 404 page */}
         <Route path="*" element={<Home />} />
       </Routes>
