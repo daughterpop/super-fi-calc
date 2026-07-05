@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom';
 
 const allPosts = [
   {
+    title: 'Catholic Families: AI for Back-to-School Savings and Faith-Filled Financial Freedom',
+    date: 'July 05, 2026',
+    excerpt: 'As back-to-school season hits, Catholic families can use AI to save on supplies, plan wisely, and stay on the fast track to FI while teaching kids stewardship and generosity.',
+    readTime: '4 min read',
+    slug: 'catholic-families-ai-for-back-to-school-savings-and-faith-filled-financial-freedom',
+    link: '/blog/catholic-families-ai-for-back-to-school-savings-and-faith-filled-financial-freedom'
+  },
+  {
     title: 'Catholic Families: AI-Powered Summer Planning for Faith, Fun, and Faster FI',
     date: 'June 27, 2026',
     excerpt: 'Catholic families using AI to plan affordable, faith-filled summer activities that create lasting memories while accelerating their path to financial independence.',
