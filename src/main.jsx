@@ -17,7 +17,7 @@ import FaithfulParentingOnThePathToFiCreatingMarginForWhatMattersMostInYourChris
 import HowChristianCouplesUnlockFinancialFreedomTogetherFaithTeamworkAndALegacyYourFamilyWillThankYouFor from './pages/how-christian-couples-unlock-financial-freedom-together-faith-teamwork-and-a-legacy-your-family-will-thank-you-for';
 import PrayingYourWayToFinancialFreedomHowChristianFamiliesCanBuildWealthGenerosityAndPeaceTogether from './pages/praying-your-way-to-financial-freedom-how-christian-families-can-build-wealth-generosity-and-peace-together';
 import CatholicFamiliesAiForBackToSchoolSavingsAndFaithFilledFinancialFreedom from './pages/catholic-families-ai-for-back-to-school-savings-and-faith-filled-financial-freedom';
-import CatholicFamiliesAiSummerRoadTripsFaithAndFi from './pages/catholic-families-ai-summer-road-trips-faith-and-fi';
+import CatholicFamiliesAiForSummerStewardshipAndBuildingFamilyFiLegacy from './pages/catholic-families-ai-for-summer-stewardship-and-building-family-fi-legacy';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -38,7 +38,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/blog/how-christian-couples-unlock-financial-freedom-together-faith-teamwork-and-a-legacy-your-family-will-thank-you-for" element={<HowChristianCouplesUnlockFinancialFreedomTogetherFaithTeamworkAndALegacyYourFamilyWillThankYouFor />} />
         <Route path="/blog/praying-your-way-to-financial-freedom-how-christian-families-can-build-wealth-generosity-and-peace-together" element={<PrayingYourWayToFinancialFreedomHowChristianFamiliesCanBuildWealthGenerosityAndPeaceTogether />} />
         <Route path="/blog/catholic-families-ai-for-back-to-school-savings-and-faith-filled-financial-freedom" element={<CatholicFamiliesAiForBackToSchoolSavingsAndFaithFilledFinancialFreedom />} />
-        <Route path="/blog/catholic-families-ai-summer-road-trips-faith-and-fi" element={<CatholicFamiliesAiSummerRoadTripsFaithAndFi />} />
+        <Route path="/blog/catholic-families-ai-for-summer-stewardship-and-building-family-fi-legacy" element={<CatholicFamiliesAiForSummerStewardshipAndBuildingFamilyFiLegacy />} />
         {/* Catch-all for any other blog posts or 404 handling - falls back to home or can add a 404 page */}
         <Route path="*" element={<Home />} />
       </Routes>

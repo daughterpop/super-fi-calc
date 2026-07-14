@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 const allPosts = [
   {
-    title: 'Catholic Families: AI for Epic Summer Road Trips That Build Faith and Accelerate FI',
-    date: 'July 12, 2026',
-    excerpt: 'Use AI to plan affordable, faith-filled summer road trips that create lasting memories and keep your family FI journey strong.',
+    title: 'Catholic Families: AI for Summer Stewardship and Building Family FI Legacy',
+    date: 'July 14, 2026',
+    excerpt: 'Summer is perfect for Catholic families to use AI for joyful stewardship, create faith-filled memories, and accelerate their path to financial independence together.',
     readTime: '4 min read',
-    slug: 'catholic-families-ai-summer-road-trips-faith-and-fi',
-    link: '/blog/catholic-families-ai-summer-road-trips-faith-and-fi'
+    slug: 'catholic-families-ai-for-summer-stewardship-and-building-family-fi-legacy',
+    link: '/blog/catholic-families-ai-for-summer-stewardship-and-building-family-fi-legacy'
   },
   {
     title: 'Catholic Families: AI for Back-to-School Savings and Faith-Filled Financial Freedom',
