@@ -1,51 +1,33 @@
 import "./App.css";
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import SubscribeForm from './components/SubscribeForm';
 import SuperFiCalculator from './Super-Fi-Calculator.jsx';
-import BlogIndex from './pages/BlogIndex.jsx';
 
 function App() {
   const [activeTab, setActiveTab] = useState('quick');
-  const [currentPage, setCurrentPage] = useState('home');
-
-  if (currentPage === 'blog') {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
-          <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div 
-              onClick={() => setCurrentPage('home')}
-              className="text-2xl font-bold text-emerald-600 cursor-pointer hover:text-emerald-700 flex items-center gap-2"
-            >
-              ← Super FI Calculator
-            </div>
-          </div>
-        </nav>
-        
-        <BlogIndex />
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
       <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-emerald-600">Super FI Calculator</div>
+          <Link to="/" className="text-2xl font-bold text-emerald-600 hover:text-emerald-700">
+            Super FI Calculator
+          </Link>
           <div className="flex gap-8 text-sm">
-            <button 
-              onClick={() => setCurrentPage('home')}
+            <Link 
+              to="/"
               className="text-emerald-600 font-medium"
             >
               Calculator
-            </button>
-            <button 
-              onClick={() => setCurrentPage('blog')}
+            </Link>
+            <Link 
+              to="/blog"
               className="text-gray-700 hover:text-emerald-600 font-medium"
             >
               Blog
-            </button>
+            </Link>
             <a href="#" className="text-gray-700 hover:text-emerald-600 font-medium">Resources</a>
           </div>
         </div>
@@ -73,7 +55,8 @@ function App() {
         ) : (
           <div className="bg-white rounded-xl shadow-sm p-12 text-center">
             <h2 className="text-2xl font-semibold mb-4">Advanced FI Calculator</h2>
-            <p className="text-gray-600 mb-8">Your more detailed calculator should appear here.</p>
+            <p className="text-gray-600 mb-8">Coming soon — more detailed scenario modeling, Monte Carlo, and tax-aware projections.</p>
+            <p className="text-sm text-gray-500">For now, the Quick Calculator covers mortgage, college, vehicles, and large expenses with full projections.</p>
           </div>
         )}
       </div>
