@@ -135,10 +135,11 @@ export default function Tools() {
         <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
           <Link to="/" className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight">
             <span className="sm:hidden text-base">Super FI</span>
-            <span className="hidden sm:inline text-2xl">Super FI Calculator</span>
+            <span className="hidden sm:inline text-2xl">Super FI</span>
           </Link>
           <div className="flex items-center gap-3 sm:gap-8 text-sm">
-            <Link to="/" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Calculator</Link>
+            <Link to="/" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Home</Link>
+            <Link to="/calculators" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Calculators</Link>
             <Link to="/blog" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Blog</Link>
             <Link to="/tools" className="text-emerald-600 font-medium whitespace-nowrap">Tools</Link>
           </div>
@@ -207,8 +208,8 @@ export default function Tools() {
         </div>
 
         <div className="mt-8 text-center">
-          <Link to="/" className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium text-sm">
-            Back to FI Calculator <ArrowRight size={16} />
+          <Link to="/calculators" className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium text-sm">
+            Go to FI Calculators <ArrowRight size={16} />
           </Link>
         </div>
       </div>
