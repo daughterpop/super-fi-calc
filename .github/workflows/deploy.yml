@@ -1,1 +1,16 @@
-test
+name: Deploy (noop)
+
+# This workflow is intentionally a no-op.
+# Actual deploys are handled by the Vercel Git integration.
+# The previous file contained only the word "test", which is invalid YAML
+# and caused the GitHub annotation error.
+
+on:
+  workflow_dispatch:  # manual only, never runs on push
+
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: No-op
+        run: echo "Vercel handles deployment. This workflow does nothing."
