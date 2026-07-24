@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake, ShoppingBag } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake, ShoppingBag, Gem } from 'lucide-react';
 
 const tools = [
   {
@@ -102,6 +102,26 @@ const tools = [
     accent: 'blue',
     icon: 'bitcoin',
     footnote: 'Limited-time offers. New customers only; must complete qualifying activity. Advanced rewards based on trading volume in first 14 days. Terms set by Coinbase; rewards not guaranteed.',
+  },
+  {
+    id: 'gemini',
+    name: 'Gemini',
+    category: 'Crypto',
+    badge: '$50 in crypto',
+    headline: 'Claim an extra $50 in crypto when you qualify',
+    description:
+      'Regulated U.S. crypto exchange from the Winklevoss twins. Sign up through this link and claim an extra $50 in crypto when you get approved for the Gemini Credit Card or trade at least $100.',
+    perks: [
+      'Extra $50 in crypto when approved for the Gemini Credit Card or you trade $100+',
+      'Full-reserve exchange with strong U.S. regulatory focus',
+      'Trade major cryptocurrencies with a clean app experience',
+      'Gemini Credit Card option for crypto rewards on spending',
+    ],
+    cta: 'Join Gemini — Claim $50',
+    href: 'https://exchange.gemini.com/register?referral=kewa4resr&type=referral&unified=true',
+    accent: 'cyan',
+    icon: 'gem',
+    footnote: 'Offer requires signup via referral and either Gemini Credit Card approval or $100+ in trades. Terms set by Gemini; crypto rewards and eligibility can change.',
   },
   {
     id: 'venmo',
@@ -232,6 +252,15 @@ function accentClasses(accent) {
       soft: 'from-blue-50 to-sky-50',
       sparkle: 'text-blue-500',
     },
+    cyan: {
+      badge: 'bg-cyan-100 text-cyan-700',
+      icon: 'bg-cyan-600',
+      button: 'bg-cyan-600 hover:bg-cyan-700',
+      buttonOutline: 'border-cyan-600 text-cyan-700 hover:bg-cyan-50',
+      border: 'border-cyan-100 hover:border-cyan-200',
+      soft: 'from-cyan-50 to-sky-50',
+      sparkle: 'text-cyan-500',
+    },
     sky: {
       badge: 'bg-sky-100 text-sky-700',
       icon: 'bg-sky-500',
@@ -277,6 +306,7 @@ function ToolIcon({ type }) {
   if (type === 'chart') return <BarChart3 className="text-white" size={24} />;
   if (type === 'wallet') return <Wallet className="text-white" size={24} />;
   if (type === 'bitcoin') return <Bitcoin className="text-white" size={24} />;
+  if (type === 'gem') return <Gem className="text-white" size={24} />;
   if (type === 'send') return <Send className="text-white" size={24} />;
   if (type === 'banknote') return <Banknote className="text-white" size={24} />;
   if (type === 'heart') return <HeartHandshake className="text-white" size={24} />;
