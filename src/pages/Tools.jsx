@@ -31,7 +31,7 @@ const tools = [
       'Automated investing and a high-yield Cash Account in one place. When you sign up through this referral, you both can earn a +0.75% APY boost, a 0.50% investing deposit match — or both. Limited-time offer.',
     perks: [
       'Cash Account boost to 4.05% APY (+0.75% for up to 3 months, up to $150k) when you open a Cash or taxable investing account',
-      'Up to $500 invested on you — 0. pen50% match on investing deposits for 3 months (up to $100k deposited) with a taxable individual account',
+      'Up to $500 invested on you — 0.50% match on investing deposits for 3 months (up to $100k deposited) with a taxable individual account',
       'Automated portfolio management built for long-term FI',
       'Clean cash + investing experience for busy families',
     ],
@@ -52,7 +52,7 @@ const tools = [
     perks: [
       'Deposit $500+ for $30 in NVDA stock; higher tiers up to $1,000 in NVDA (offer terms apply)',
       'Promotional high APY on uninvested cash (e.g. up to ~8.1% during the welcome period — subject to change)',
-      '$0 commission U U. stock & ETF trading for eligible residents',
+      '$0 commission U.S. stock & ETF trading for eligible residents',
       'Advanced charts and market data useful for serious FI investors',
     ],
     cta: 'Open Moomoo with This Link',
@@ -183,7 +183,7 @@ export default function Tools() {
                 </div>
 
                 <div className="px-5 sm:px-8 py-5 sm:py-6">
-                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-5">{tool.description}</p>
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-5">{tool.description.description}</p>
                   <ul className="space-y-2.5 mb-6">
                     {tool.perks.map((perk, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
