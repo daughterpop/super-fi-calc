@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake, ShoppingBag, Gem, Tag, UtensilsCrossed, Building2 } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake, ShoppingBag, Gem, Tag, UtensilsCrossed, Building2, Camera } from 'lucide-react';
 
 const tools = [
   {
@@ -264,7 +264,27 @@ const tools = [
     footnote: 'Referral and signup bonuses vary by promotion. Terms set by Capital One Shopping.',
   },
   {
-    id: 'ink',
+    id: 'fetch',
+    name: 'Fetch',
+    category: 'Rewards',
+    badge: 'First-receipt bonus',
+    headline: 'Snap receipts, earn gift cards — both get a bonus',
+    description:
+      'Snap any store receipt and earn points toward gift cards. 6M+ five-star reviews and $1B+ in points awarded. Sign up with this link and we’ll both get a bonus when you scan your first receipt.',
+    perks: [
+      'Both get a bonus on your first receipt',
+      'Snap receipts from any store — groceries, gas, online orders',
+      'Redeem points for popular gift cards',
+      'Code QQGAF3 if prompted at signup',
+    ],
+    cta: 'Join Fetch — Snap Your First Receipt',
+    href: 'https://referral.fetch.com/vvv3/referralqr?code=QQGAF3',
+    accent: 'fuchsia',
+    icon: 'camera',
+    footnote: 'Referral bonus requires signup via link and scanning a first receipt. Terms set by Fetch Rewards.',
+  },
+  {
+    id: 'inkind',
     name: 'inKind',
     category: 'Dining',
     badge: 'Dining rewards',
@@ -413,6 +433,15 @@ function accentClasses(accent) {
       soft: 'from-amber-50 to-orange-50',
       sparkle: 'text-amber-600',
     },
+    fuchsia: {
+      badge: 'bg-fuchsia-100 text-fuchsia-700',
+      icon: 'bg-fuchsia-600',
+      button: 'bg-fuchsia-600 hover:bg-fuchsia-700',
+      buttonOutline: 'border-fuchsia-600 text-fuchsia-700 hover:bg-fuchsia-50',
+      border: 'border-fuchsia-100 hover:border-fuchsia-200',
+      soft: 'from-fuchsia-50 to-pink-50',
+      sparkle: 'text-fuchsia-500',
+    },
   };
   return map[accent] || map.emerald;
 }
@@ -430,6 +459,7 @@ function ToolIcon({ type }) {
   if (type === 'shopping') return <ShoppingBag className="text-white" size={24} />;
   if (type === 'tag') return <Tag className="text-white" size={24} />;
   if (type === 'utensils') return <UtensilsCrossed className="text-white" size={24} />;
+  if (type === 'camera') return <Camera className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
