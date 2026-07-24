@@ -14,7 +14,18 @@ const newPost = {
     featured: false
   };
 
-const allPostsWithNew = [newPost, ...allPosts];
+const latestPost = {
+    title: 'How Catholic Families Can Turn Summer Adventures Into Faith & Financial Freedom Lessons',
+    date: 'July 24, 2026',
+    dateSort: '2026-07-24',
+    excerpt: 'Summer adventures give Catholic families the perfect chance to teach kids practical money skills, generosity, and faith while making real progress toward financial freedom — right in the middle of making memories.',
+    readTime: '4 min read',
+    link: '/blog/how-catholic-families-can-turn-summer-adventures-into-faith-and-financial-freedom-lessons',
+    tags: ['Parenting', 'Stewardship', 'Seasonal', 'Legacy'],
+    featured: false
+  };
+
+const allPostsWithNew = [latestPost, newPost, ...allPosts];
 
 export default function BlogIndex() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -106,7 +117,6 @@ export default function BlogIndex() {
                   ? 'bg-emerald-600 text-white'
                   : 'text-gray-600 hover:bg-gray-50'
               }`}
-            >
               Newest
             </button>
             <button
@@ -116,7 +126,6 @@ export default function BlogIndex() {
                   ? 'bg-emerald-600 text-white'
                   : 'text-gray-600 hover:bg-gray-50'
               }`}
-            >
               Oldest
             </button>
           </div>
