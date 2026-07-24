@@ -17,7 +17,7 @@ const tools = [
       'Great for dollar-cost averaging toward FI',
     ],
     cta: 'Claim Your Free Stock',
-    href: 'https://join.robinhood.com/dustinh-1bff5a',
+    href: 'https://join.join.robinhood.com/dustinh-1bff5a',
     accent: 'emerald',
     icon: 'trending',
   },
@@ -31,7 +31,7 @@ const tools = [
       'Automated investing and a high-yield Cash Account in one place. When you sign up through this referral, you both can earn a +0.75% APY boost, a 0.50% investing deposit match — or both. Limited-time offer.',
     perks: [
       'Cash Account boost to 4.05% APY (+0.75% for up to 3 months, up to $150k) when you open a Cash or taxable investing account',
-      'Up to $500 invested on you — 0.50% match on investing on investing deposits for 3 months (up to $100k deposited) with a taxable individual account',
+      'Up to $500 invested on you — 0.50% match on investing deposits for 3 months (up to $100k deposited) with a taxable individual account',
       'Automated portfolio management built for long-term FI',
       'Clean cash + investing experience for busy families',
     ],
@@ -95,8 +95,7 @@ function accentClasses(accent) {
     },
     indigo: {
       badge: 'bg-indigo-100 text-indigo-700',
-      icon: 'bg-indigo-600',
-      button: 'bg-indigo-600 hover:bg-indigo-700',
+      icon: 'bg-indigo-600',\n      button: 'bg-indigo-600 hover:bg-indigo-700',
       border: 'border-indigo-100 hover:border-indigo-200',
       soft: 'from-indigo-50 to-violet-50',
       sparkle: 'text-indigo-500',
@@ -162,7 +161,7 @@ export default function Tools() {
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 leading-tight">
             Tools to Speed Up Your FI Journey
           </h1>
-          <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto leading- coached">
+          <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
             Hand-picked apps and platforms we actually use. Some links include referral bonuses — you get a perk, and it helps keep Super FI free.
           </p>
         </div>
