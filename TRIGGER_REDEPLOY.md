@@ -1,8 +1,12 @@
-# Redeploy trigger - July 23 2026 full fix v2
+# Redeploy trigger - July 23 2026 full fix v3
 
-- Converted tailwind.config.js from CJS (module.exports) to ESM (export default) to match package.json "type": "module". This was almost certainly causing the Vite/Tailwind build to fail silently or produce a broken production bundle.
-- Cleaned leading whitespace from @tailwind directives in src/index.css.
-- Explicitly set buildCommand, outputDirectory, and framework in vercel.json for reliable Vite SPA builds on Vercel.
-- Content paths in Tailwind updated for accuracy.
+Root cause: package.json has "type": "module" but tailwind.config.js used CommonJS module.exports. This breaks Tailwind/Vite config loading on build, resulting in no CSS and/or failed production bundle → blank page on Vercel.
 
-All source double-checked. Site should now build and serve the React app correctly with no blank page.
+Fixes applied:
+1. Removed the broken tailwind.config.js
+2. Added proper tailwind.config.cjs (CommonJS, standard for configs in type:module projects)
+3. Cleaned src/index.css (removed leading whitespace on @tailwind)
+4. Strengthened vercel.json with explicit buildCommand, outputDirectory=dist, framework=vite + SPA rewrite
+5. Updated content paths for Tailwind accuracy
+
+This should produce a clean Vite production build. Double-checked all core files (main.jsx, App.jsx, Super-Fi-Calculator.jsx, index.html, routes). No other syntax/import issues found.
