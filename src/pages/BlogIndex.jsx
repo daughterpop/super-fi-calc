@@ -47,16 +47,23 @@ export default function BlogIndex() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <div className="mb-6">
-          <Link
-            to="/"
-            className="text-emerald-600 hover:text-emerald-700 font-medium text-sm inline-flex items-center gap-1"
-          >
-            ← Back to Calculator
+      {/* Simple nav */}
+      <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
+          <Link to="/" className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight">
+            <span className="sm:hidden text-base">Super FI</span>
+            <span className="hidden sm:inline text-2xl">Super FI</span>
           </Link>
+          <div className="flex items-center gap-3 sm:gap-8 text-sm">
+            <Link to="/" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Home</Link>
+            <Link to="/calculators" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Calculators</Link>
+            <Link to="/blog" className="text-emerald-600 font-medium whitespace-nowrap">Blog</Link>
+            <Link to="/tools" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Tools</Link>
+          </div>
         </div>
+      </nav>
 
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="mb-8">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">Blog</h1>
           <p className="text-gray-600 mt-2 text-base sm:text-lg">
