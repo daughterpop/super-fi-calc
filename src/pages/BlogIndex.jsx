@@ -3,38 +3,14 @@ import { Link } from 'react-router-dom';
 import { Search, X, Filter } from 'lucide-react';
 import { allPosts, allTags } from '../data/posts';
 
-const newPost = {
-    title: 'How Catholic Families Can Turn Summer into a Season of Faith and Financial Freedom',
-    date: 'July 24, 2026',
-    dateSort: '2026-07-24',
-    excerpt: 'Summer gives Catholic families extra time to deepen faith, build money habits together, and make meaningful progress toward financial independence while enjoying family life.',
-    readTime: '4 min read',
-    link: '/blog/how-catholic-families-can-turn-summer-into-a-season-of-faith-and-financial-freedom',
-    tags: ['Stewardship', 'Parenting', 'Seasonal', 'Legacy'],
-    featured: false
-  };
-
-const latestPost = {
-    title: 'How Catholic Families Can Turn Summer Adventures Into Faith & Financial Freedom Lessons',
-    date: 'July 24, 2026',
-    dateSort: '2026-07-24',
-    excerpt: 'Summer adventures give Catholic families the perfect chance to teach kids practical money skills, generosity, and faith while making real progress toward financial freedom — right in the middle of making memories.',
-    readTime: '4 min read',
-    link: '/blog/how-catholic-families-can-turn-summer-adventures-into-faith-and-financial-freedom-lessons',
-    tags: ['Parenting', 'Stewardship', 'Seasonal', 'Legacy'],
-    featured: false
-  };
-
-const allPostsWithNew = [latestPost, newPost, ...allPosts];
-
 export default function BlogIndex() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTags, setActiveTags] = useState([]);
-  const [sortOrder, setSortOrder] = useState('newest'); // 'newest' | 'oldest'
+  const [sortOrder, setSortOrder] = useState('newest');
 
   const toggleTag = (tag) => {
-    setActiveTags(prev =>
-      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+    setActiveTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
     );
   };
 
@@ -44,15 +20,15 @@ export default function BlogIndex() {
   };
 
   const filteredPosts = useMemo(() => {
-    let result = allPostsWithNew.filter(post => {
+    let result = allPosts.filter((post) => {
       const matchesSearch =
         post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         (post.excerpt && post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        post.tags.some(t => t.toLowerCase().includes(searchTerm.toLowerCase()));
+        post.tags.some((t) => t.toLowerCase().includes(searchTerm.toLowerCase()));
 
       const matchesTags =
         activeTags.length === 0 ||
-        activeTags.every(tag => post.tags.includes(tag));
+        activeTags.every((tag) => post.tags.includes(tag));
 
       return matchesSearch && matchesTags;
     });
@@ -72,14 +48,15 @@ export default function BlogIndex() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        {/* Back link */}
         <div className="mb-6">
-          <Link to="/" className="text-emerald-600 hover:text-emerald-700 font-medium text-sm inline-flex items-center gap-1">
+          <Link
+            to="/"
+            className="text-emerald-600 hover:text-emerald-700 font-medium text-sm inline-flex items-center gap-1"
+          >
             ← Back to Calculator
           </Link>
         </div>
 
-        {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">Blog</h1>
           <p className="text-gray-600 mt-2 text-base sm:text-lg">
@@ -87,10 +64,12 @@ export default function BlogIndex() {
           </p>
         </div>
 
-        {/* Search + Sort row */}
         <div className="flex flex-col sm:flex-row gap-3 mb-6">
           <div className="relative flex-1">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+            <Search
+              className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
+              size={18}
+            />
             <input
               type="text"
               placeholder="Search posts by title, topic, or tag..."
@@ -102,44 +81,46 @@ export default function BlogIndex() {
               <button
                 onClick={() => setSearchTerm('')}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                type="button"
               >
                 <X size={16} />
               </button>
             )}
           </div>
 
-          {/* Sort toggle */}
           <div className="flex rounded-xl border border-gray-300 overflow-hidden bg-white shrink-0">
             <button
+              type="button"
               onClick={() => setSortOrder('newest')}
-              className={`px-4 py-3 text-sm font-medium transition-colors ${
+              className={
                 sortOrder === 'newest'
-                  ? 'bg-emerald-600 text-white'
-                  : 'text-gray-600 hover:bg-gray-50'
-              }`}
+                  ? 'px-4 py-3 text-sm font-medium transition-colors bg-emerald-600 text-white'
+                  : 'px-4 py-3 text-sm font-medium transition-colors text-gray-600 hover:bg-gray-50'
+              }
             >
               Newest
             </button>
             <button
+              type="button"
               onClick={() => setSortOrder('oldest')}
-              className={`px-4 py-3 text-sm font-medium transition-colors ${
+              className={
                 sortOrder === 'oldest'
-                  ? 'bg-emerald-600 text-white'
-                  : 'text-gray-600 hover:bg-gray-50'
-              }`}
+                  ? 'px-4 py-3 text-sm font-medium transition-colors bg-emerald-600 text-white'
+                  : 'px-4 py-3 text-sm font-medium transition-colors text-gray-600 hover:bg-gray-50'
+              }
             >
               Oldest
             </button>
           </div>
         </div>
 
-        {/* Tag filters */}
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-3">
             <Filter size={16} className="text-gray-500" />
             <span className="text-sm font-medium text-gray-700">Filter by topic</span>
             {hasActiveFilters && (
               <button
+                type="button"
                 onClick={clearFilters}
                 className="ml-auto text-sm text-emerald-600 hover:text-emerald-700 font-medium"
               >
@@ -148,17 +129,18 @@ export default function BlogIndex() {
             )}
           </div>
           <div className="flex flex-wrap gap-2">
-            {allTags.map(tag => {
+            {allTags.map((tag) => {
               const isActive = activeTags.includes(tag);
               return (
                 <button
                   key={tag}
+                  type="button"
                   onClick={() => toggleTag(tag)}
-                  className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-all border ${
+                  className={
                     isActive
-                      ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm'
-                      : 'bg-white text-gray-700 border-gray-200 hover:border-emerald-300 hover:text-emerald-700'
-                  }`}
+                      ? 'px-3.5 py-1.5 rounded-full text-sm font-medium transition-all border bg-emerald-600 text-white border-emerald-600 shadow-sm'
+                      : 'px-3.5 py-1.5 rounded-full text-sm font-medium transition-all border bg-white text-gray-700 border-gray-200 hover:border-emerald-300 hover:text-emerald-700'
+                  }
                 >
                   {tag}
                 </button>
@@ -167,13 +149,11 @@ export default function BlogIndex() {
           </div>
         </div>
 
-        {/* Results count */}
         <div className="mb-4 text-sm text-gray-500">
           {filteredPosts.length} {filteredPosts.length === 1 ? 'post' : 'posts'}
           {hasActiveFilters && ' matching your filters'}
         </div>
 
-        {/* Posts list */}
         {filteredPosts.length > 0 ? (
           <div className="space-y-5">
             {filteredPosts.map((post, index) => (
@@ -194,17 +174,17 @@ export default function BlogIndex() {
                   {post.excerpt}
                 </p>
 
-                {/* Tags on card */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
-                  {post.tags.map(tag => (
+                  {post.tags.map((tag) => (
                     <button
                       key={tag}
+                      type="button"
                       onClick={() => toggleTag(tag)}
-                      className={`text-xs px-2.5 py-1 rounded-full border transition-colors ${
+                      className={
                         activeTags.includes(tag)
-                          ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                          : 'bg-gray-50 text-gray-600 border-gray-100 hover:border-emerald-200'
-                      }`}
+                          ? 'text-xs px-2.5 py-1 rounded-full border transition-colors bg-emerald-50 text-emerald-700 border-emerald-200'
+                          : 'text-xs px-2.5 py-1 rounded-full border transition-colors bg-gray-50 text-gray-600 border-gray-100 hover:border-emerald-200'
+                      }
                     >
                       {tag}
                     </button>
@@ -227,6 +207,7 @@ export default function BlogIndex() {
               Try different keywords or clear the filters.
             </p>
             <button
+              type="button"
               onClick={clearFilters}
               className="px-6 py-2.5 bg-emerald-600 text-white rounded-xl font-medium hover:bg-emerald-700 transition-colors"
             >
