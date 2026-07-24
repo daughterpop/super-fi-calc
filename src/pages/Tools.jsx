@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark } from 'lucide-react';
 
 const tools = [
   {
@@ -19,6 +19,27 @@ const tools = [
     cta: 'Claim Your Free Stock',
     href: 'https://join.robinhood.com/dustinh-1bff5a',
     accent: 'emerald',
+    icon: 'trending',
+  },
+  {
+    id: 'wealthfront',
+    name: 'Wealthfront',
+    category: 'Cash + Investing',
+    badge: 'Limited-time referral',
+    headline: 'Boost cash APY and get investing deposits matched',
+    description:
+      'Automated investing and a high-yield Cash Account in one place. When you sign up through this referral, you both can earn a +0.75% APY boost, a 0.50% investing deposit match — or both. Limited-time offer.',
+    perks: [
+      'Cash Account boost to 4.05% APY (+0.75% for up to 3 months, up to $150k) when you open a Cash or taxable investing account',
+      'Up to $500 invested on you — 0.50% match on investing deposits for 3 months (up to $100k deposited) with a taxable individual account',
+      'Automated portfolio management built for long-term FI',
+      'Clean cash + investing experience for busy families',
+    ],
+    cta: 'Join Wealthfront with This Link',
+    href: 'https://www.wealthfront.com/c/affiliates/invited/AFFD-AL7T-QSBZ-J0Q8',
+    accent: 'indigo',
+    icon: 'landmark',
+    footnote: 'Base APY as of 7/24/26 and subject to change. Offer terms set by Wealthfront.',
   },
 ];
 
@@ -30,15 +51,28 @@ function accentClasses(accent) {
       button: 'bg-emerald-600 hover:bg-emerald-700',
       border: 'border-emerald-100 hover:border-emerald-200',
       soft: 'from-emerald-50 to-green-50',
+      sparkle: 'text-emerald-500',
+    },
+    indigo: {
+      badge: 'bg-indigo-100 text-indigo-700',
+      icon: 'bg-indigo-600',
+      button: 'bg-indigo-600 hover:bg-indigo-700',
+      border: 'border-indigo-100 hover:border-indigo-200',
+      soft: 'from-indigo-50 to-violet-50',
+      sparkle: 'text-indigo-500',
     },
   };
   return map[accent] || map.emerald;
 }
 
+function ToolIcon({ type }) {
+  if (type === 'landmark') return <Landmark className="text-white" size={24} />;
+  return <TrendingUp className="text-white" size={24} />;
+}
+
 export default function Tools() {
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
-      {/* Navigation */}
       <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
           <Link
@@ -63,7 +97,6 @@ export default function Tools() {
       </nav>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
-        {/* Header */}
         <div className="text-center mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-semibold tracking-[1.5px] mb-4">
             STEWARDSHIP TOOLS • REFERRAL PERKS
@@ -76,7 +109,6 @@ export default function Tools() {
           </p>
         </div>
 
-        {/* Tool cards */}
         <div className="space-y-6">
           {tools.map((tool) => {
             const a = accentClasses(tool.accent);
@@ -95,7 +127,7 @@ export default function Tools() {
                   </div>
                   <div className="flex items-start gap-4">
                     <div className={`w-12 h-12 shrink-0 ${a.icon} rounded-xl flex items-center justify-center shadow-sm`}>
-                      <TrendingUp className="text-white" size={24} />
+                      <ToolIcon type={tool.icon} />
                     </div>
                     <div className="min-w-0 flex-1">
                       <h2 className="text-xl sm:text-2xl font-bold text-gray-900">{tool.name}</h2>
@@ -110,7 +142,7 @@ export default function Tools() {
                   <ul className="space-y-2.5 mb-6">
                     {tool.perks.map((perk, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
-                        <Sparkles className="text-emerald-500 shrink-0 mt-0.5" size={16} />
+                        <Sparkles className={`${a.sparkle} shrink-0 mt-0.5`} size={16} />
                         <span>{perk}</span>
                       </li>
                     ))}
@@ -125,13 +157,16 @@ export default function Tools() {
                     {tool.cta}
                     <ExternalLink size={18} />
                   </a>
+
+                  {tool.footnote && (
+                    <p className="text-xs text-gray-400 mt-3">{tool.footnote}</p>
+                  )}
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Note */}
         <div className="mt-10 sm:mt-12 p-5 sm:p-6 bg-white rounded-2xl border border-gray-100 text-center">
           <div className="flex justify-center mb-3">
             <Shield className="text-gray-400" size={22} />
