@@ -1,10 +1,12 @@
 import "./App.css";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Home, Heart, ArrowRight, BookOpen } from 'lucide-react';
+import { GraduationCap, Home, Heart, ArrowRight, BookOpen, Gift, ExternalLink } from 'lucide-react';
 import SubscribeForm from './components/SubscribeForm';
 import SuperFiCalculator from './Super-Fi-Calculator.jsx';
 import { featuredPosts } from './data/posts';
+
+const ROBINHOOD_URL = 'https://join.robinhood.com/dustinh-1bff5a';
 
 function App() {
   const [activeTab, setActiveTab] = useState('quick');
@@ -25,6 +27,28 @@ function App() {
           </div>
         </div>
       </nav>
+
+      {/* Slim referral strip — high on page for conversion */}
+      <div className="bg-emerald-700 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-center sm:text-left">
+          <div className="flex items-center gap-2 text-sm sm:text-[15px]">
+            <Gift size={16} className="shrink-0 text-emerald-200" />
+            <span>
+              <strong className="font-semibold">Free stocks up to $200</strong>
+              <span className="text-emerald-100"> — start investing your surplus toward FI</span>
+            </span>
+          </div>
+          <a
+            href={ROBINHOOD_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white text-emerald-800 font-semibold text-sm rounded-lg hover:bg-emerald-50 transition-colors shrink-0"
+          >
+            Claim free stock
+            <ExternalLink size={14} />
+          </a>
+        </div>
+      </div>
 
       {/* Hero + Audience cards */}
       <div className="bg-white border-b">
@@ -84,7 +108,7 @@ function App() {
         </div>
       </div>
 
-      {/* Featured Posts Section */}
+      {/* Featured Blog Posts — each card links to a specific post */}
       <div className="bg-gradient-to-b from-white to-gray-50 border-b">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
           <div className="flex items-center justify-between mb-6">
@@ -93,15 +117,15 @@ function App() {
                 <BookOpen className="text-emerald-600" size={18} />
               </div>
               <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Featured Insights</h2>
-                <p className="text-sm text-gray-500 hidden sm:block">Fresh faith + FI wisdom for Catholic families</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900">From the Blog</h2>
+                <p className="text-sm text-gray-500 hidden sm:block">Latest faith + FI insights for Catholic families</p>
               </div>
             </div>
             <Link
               to="/blog"
               className="text-emerald-600 hover:text-emerald-700 font-medium text-sm inline-flex items-center gap-1 shrink-0"
             >
-              View all
+              View all posts
               <ArrowRight size={14} />
             </Link>
           </div>
@@ -131,7 +155,7 @@ function App() {
                 </p>
                 <div className="mt-3 pt-3 border-t border-gray-50 flex items-center justify-between text-xs text-gray-400">
                   <span>{post.date}</span>
-                  <span className="text-emerald-600 font-medium group-hover:underline">Read →</span>
+                  <span className="text-emerald-600 font-medium group-hover:underline">Read post →</span>
                 </div>
               </Link>
             ))}
@@ -176,6 +200,30 @@ function App() {
             </p>
           </div>
         )}
+      </div>
+
+      {/* Secondary Robinhood CTA after calculator (when people see their number) */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-6">
+        <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-1">
+              <Gift className="text-emerald-600" size={18} />
+              <span className="text-sm font-semibold text-emerald-800 uppercase tracking-wide">Ready to invest the surplus?</span>
+            </div>
+            <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+              Open a Robinhood account and get <strong>free stocks worth up to $200</strong> when you make your first investment. Commission-free and beginner-friendly.
+            </p>
+          </div>
+          <a
+            href={ROBINHOOD_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors shrink-0 text-sm sm:text-base w-full sm:w-auto"
+          >
+            Claim free stock
+            <ExternalLink size={16} />
+          </a>
+        </div>
       </div>
 
       {/* Subscribe */}
