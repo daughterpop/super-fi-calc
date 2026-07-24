@@ -85,21 +85,23 @@ const tools = [
     id: 'coinbase',
     name: 'Coinbase',
     category: 'Crypto',
-    badge: '$20 in Bitcoin',
-    headline: 'Sign up and get $20 in Bitcoin',
+    badge: '$20 BTC · up to $50 USDC',
+    headline: 'Retail: $20 Bitcoin · Advanced: up to $50 USDC',
     description:
-      'One of the most trusted places to buy, sell, and hold cryptocurrency. New users who sign up through this link and complete a qualifying trade can receive $20 in Bitcoin. A simple on-ramp if you want a small crypto allocation as part of a diversified FI plan.',
+      'Trusted crypto exchange for buying, selling, and holding. Two referral paths: the standard app is best for beginners (new users can get $20 in Bitcoin after a qualifying trade). Coinbase Advanced is for more active traders — trade in the first 14 days and earn up to $50 in USDC based on volume.',
     perks: [
-      '$20 in Bitcoin for new users after a qualifying transaction',
-      'Trade hundreds of digital assets including Bitcoin and Ethereum',
+      'Standard: $20 in Bitcoin for new users after a qualifying transaction',
+      'Advanced: $5 / $20 / $50 USDC for >$100 / >$5k / >$10k volume in first 14 days',
+      'Trade Bitcoin, Ethereum, and hundreds of other assets',
       'Insured custody for crypto stored on Coinbase servers',
-      'Easy app for checking prices, news, and portfolio',
     ],
     cta: 'Get $20 in Bitcoin',
     href: 'https://coinbase.com/join/EJUZBJS?src=ios-link',
+    secondaryCta: 'Advanced: Up to $50 USDC',
+    secondaryHref: 'https://advanced.coinbase.com/join/6V396V9',
     accent: 'blue',
     icon: 'bitcoin',
-    footnote: 'Limited-time offer. New customers only; must complete a qualifying transaction. WA residents may be ineligible for text-shared links. Terms set by Coinbase; rewards not guaranteed.',
+    footnote: 'Limited-time offers. New customers only; must complete qualifying activity. Advanced rewards based on trading volume in first 14 days. Terms set by Coinbase; rewards not guaranteed.',
   },
 ];
 
@@ -109,6 +111,7 @@ function accentClasses(accent) {
       badge: 'bg-emerald-100 text-emerald-700',
       icon: 'bg-emerald-500',
       button: 'bg-emerald-600 hover:bg-emerald-700',
+      buttonOutline: 'border-emerald-600 text-emerald-700 hover:bg-emerald-50',
       border: 'border-emerald-100 hover:border-emerald-200',
       soft: 'from-emerald-50 to-green-50',
       sparkle: 'text-emerald-500',
@@ -117,6 +120,7 @@ function accentClasses(accent) {
       badge: 'bg-indigo-100 text-indigo-700',
       icon: 'bg-indigo-600',
       button: 'bg-indigo-600 hover:bg-indigo-700',
+      buttonOutline: 'border-indigo-600 text-indigo-700 hover:bg-indigo-50',
       border: 'border-indigo-100 hover:border-indigo-200',
       soft: 'from-indigo-50 to-violet-50',
       sparkle: 'text-indigo-500',
@@ -125,6 +129,7 @@ function accentClasses(accent) {
       badge: 'bg-orange-100 text-orange-700',
       icon: 'bg-orange-500',
       button: 'bg-orange-600 hover:bg-orange-700',
+      buttonOutline: 'border-orange-600 text-orange-700 hover:bg-orange-50',
       border: 'border-orange-100 hover:border-orange-200',
       soft: 'from-orange-50 to-amber-50',
       sparkle: 'text-orange-500',
@@ -133,6 +138,7 @@ function accentClasses(accent) {
       badge: 'bg-teal-100 text-teal-700',
       icon: 'bg-teal-600',
       button: 'bg-teal-600 hover:bg-teal-700',
+      buttonOutline: 'border-teal-600 text-teal-700 hover:bg-teal-50',
       border: 'border-teal-100 hover:border-teal-200',
       soft: 'from-teal-50 to-cyan-50',
       sparkle: 'text-teal-500',
@@ -141,6 +147,7 @@ function accentClasses(accent) {
       badge: 'bg-blue-100 text-blue-700',
       icon: 'bg-blue-600',
       button: 'bg-blue-600 hover:bg-blue-700',
+      buttonOutline: 'border-blue-600 text-blue-700 hover:bg-blue-50',
       border: 'border-blue-100 hover:border-blue-200',
       soft: 'from-blue-50 to-sky-50',
       sparkle: 'text-blue-500',
@@ -221,15 +228,28 @@ export default function Tools() {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href={tool.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 ${a.button} text-white font-semibold rounded-xl transition-all shadow-md hover:shadow-lg text-sm sm:text-base`}
-                  >
-                    {tool.cta}
-                    <ExternalLink size={18} />
-                  </a>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href={tool.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 ${a.button} text-white font-semibold rounded-xl transition-all shadow-md hover:shadow-lg text-sm sm:text-base`}
+                    >
+                      {tool.cta}
+                      <ExternalLink size={18} />
+                    </a>
+                    {tool.secondaryCta && tool.secondaryHref && (
+                      <a
+                        href={tool.secondaryHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 border-2 ${a.buttonOutline} bg-white font-semibold rounded-xl transition-all text-sm sm:text-base`}
+                      >
+                        {tool.secondaryCta}
+                        <ExternalLink size={18} />
+                      </a>
+                    )}
+                  </div>
                   {tool.footnote && (
                     <p className="text-xs text-gray-400 mt-3">{tool.footnote}</p>
                   )}
