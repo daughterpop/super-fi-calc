@@ -22,7 +22,7 @@ import {
   Camera,
   Percent,
   MapPin,
-  SlidersHorizontal,
+  <PRIVATE_ADDRESS>SlidersHorizontal,
   ArrowUpDown,
   Search,
   Smartphone,
@@ -408,6 +408,27 @@ const tools = [
     footnote: 'Referral credit appears after activation (typically ~15 days). Offer terms set by Mint Mobile. Availability and plan pricing subject to change.',
     valueScore: 15,
   },
+  {
+    id: 'surfshark',
+    name: 'Surfshark',
+    category: 'Privacy & Security',
+    badge: 'Up to 3 free months',
+    headline: 'Protect your family’s privacy online — free months when you start a plan',
+    description:
+      'Fast, unlimited-device VPN for secure browsing, safer public Wi-Fi, and extra privacy for the whole household. Sign up through this friend link and get free months added to your plan.',
+    perks: [
+      '1 free month when you purchase a 1-month plan',
+      '3 free months when you purchase a 12-month plan',
+      '3 free months when you purchase a 24-month plan',
+      'Unlimited devices on one account — practical for a family',
+    ],
+    cta: 'Get Surfshark + Free Months',
+    href: 'https://surfshark.club/friend/sgSt5YqV',
+    accent: 'slate',
+    icon: 'shield',
+    footnote: 'Free months apply to the plan you purchase via this friend link. Offer terms set by Surfshark.',
+    valueScore: 35,
+  },
 ];
 
 const CATEGORY_ORDER = [
@@ -418,6 +439,7 @@ const CATEGORY_ORDER = [
   'Dining',
   'Giving',
   'Wireless Savings',
+  'Privacy & Security',
 ];
 const CATEGORIES = ['All', ...CATEGORY_ORDER];
 
@@ -588,6 +610,7 @@ function ToolIcon({ type }) {
   if (type === 'percent') return <Percent className="text-white" size={24} />;
   if (type === 'mappin') return <MapPin className="text-white" size={24} />;
   if (type === 'phone') return <Smartphone className="text-white" size={24} />;
+  if (type === 'shield') return <Shield className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
