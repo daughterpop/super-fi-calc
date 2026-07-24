@@ -31,7 +31,7 @@ const tools = [
       'Automated investing and a high-yield Cash Account in one place. When you sign up through this referral, you both can earn a +0.75% APY boost, a 0.50% investing deposit match — or both. Limited-time offer.',
     perks: [
       'Cash Account boost to 4.05% APY (+0.75% for up to 3 months, up to $150k) when you open a Cash or taxable investing account',
-      'Up to $500 invested on you — 0.50% match on investing deposits for 3 months (up to $100k deposited) with a taxable individual account',
+      'Up to $500 invested on you — 0. pen50% match on investing deposits for 3 months (up to $100k deposited) with a taxable individual account',
       'Automated portfolio management built for long-term FI',
       'Clean cash + investing experience for busy families',
     ],
@@ -52,7 +52,7 @@ const tools = [
     perks: [
       'Deposit $500+ for $30 in NVDA stock; higher tiers up to $1,000 in NVDA (offer terms apply)',
       'Promotional high APY on uninvested cash (e.g. up to ~8.1% during the welcome period — subject to change)',
-      '$0 commission U.S. stock & ETF trading for eligible residents',
+      '$0 commission U U. stock & ETF trading for eligible residents',
       'Advanced charts and market data useful for serious FI investors',
     ],
     cta: 'Open Moomoo with This Link',
@@ -133,23 +133,14 @@ export default function Tools() {
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
-          <Link
-            to="/"
-            className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight"
-          >
+          <Link to="/" className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight">
             <span className="sm:hidden text-base">Super FI</span>
             <span className="hidden sm:inline text-2xl">Super FI Calculator</span>
           </Link>
           <div className="flex items-center gap-3 sm:gap-8 text-sm">
-            <Link to="/" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">
-              Calculator
-            </Link>
-            <Link to="/blog" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">
-              Blog
-            </Link>
-            <Link to="/tools" className="text-emerald-600 font-medium whitespace-nowrap">
-              Tools
-            </Link>
+            <Link to="/" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Calculator</Link>
+            <Link to="/blog" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Blog</Link>
+            <Link to="/tools" className="text-emerald-600 font-medium whitespace-nowrap">Tools</Link>
           </div>
         </div>
       </nav>
@@ -171,13 +162,10 @@ export default function Tools() {
           {tools.map((tool) => {
             const a = accentClasses(tool.accent);
             return (
-              <div
-                key={tool.id}
-                className={`bg-white rounded-2xl sm:rounded-3xl shadow-sm border ${a.border} overflow-hidden transition-all`}
-              >
+              <div key={tool.id} className={`bg-white rounded-2xl sm:rounded-3xl shadow-sm border ${a.border} overflow-hidden transition-all`}>
                 <div className={`bg-gradient-to-r ${a.soft} px-5 sm:px-8 pt-6 sm:pt-8 pb-4`}>
                   <div className="flex flex-wrap items-center gap-2 mb-3">
-                    <span className={`inline-flex inter items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${a.badge}`}>
+                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${a.badge}`}>
                       <Gift size={12} />
                       {tool.badge}
                     </span>
@@ -196,7 +184,6 @@ export default function Tools() {
 
                 <div className="px-5 sm:px-8 py-5 sm:py-6">
                   <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-5">{tool.description}</p>
-
                   <ul className="space-y-2.5 mb-6">
                     {tool.perks.map((perk, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
@@ -205,7 +192,6 @@ export default function Tools() {
                       </li>
                     ))}
                   </ul>
-
                   <a
                     href={tool.href}
                     target="_blank"
@@ -215,7 +201,6 @@ export default function Tools() {
                     {tool.cta}
                     <ExternalLink size={18} />
                   </a>
-
                   {tool.footnote && (
                     <p className="text-xs text-gray-400 mt-3">{tool.footnote}</p>
                   )}
@@ -235,10 +220,7 @@ export default function Tools() {
         </div>
 
         <div className="mt-8 text-center">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium text-sm"
-          >
+          <Link to="/" className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium text-sm">
             Back to FI Calculator
             <ArrowRight size={16} />
           </Link>
