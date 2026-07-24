@@ -32,17 +32,17 @@ const tools = [
     id: 'robinhood',
     name: 'Robinhood',
     category: 'Investing',
-    badge: 'Free stocks',
-    headline: 'Start investing with free stocks worth up to $200',
+    badge: 'Up to $200 free stock',
+    headline: 'Open an account and get free stock after your first investment',
     description:
-      'Commission-free trading, easy mobile app, and a solid starting point for building long-term wealth. Open an account through this link and get free stock(s) after your first investment.',
+      'Commission-free stock and ETF trading in a simple app — built for long-term investing, not day-trading noise. Use this link so new accounts can receive free stock worth up to $200 after funding and making a first investment.',
     perks: [
-      'Free stocks worth up to $200 when you fund and invest',
-      'Commission-free stock & ETF trades',
-      'Beginner-friendly app',
-      'Great for dollar-cost averaging toward FI',
+      'Free stock(s) worth up to $200 after you fund and invest (new accounts via this link)',
+      'Zero commissions on U.S. stocks and ETFs',
+      'Clean mobile app that’s easy for beginners',
+      'Solid starting point for dollar-cost averaging toward FI',
     ],
-    cta: 'Claim Your Free Stock',
+    cta: 'Claim Free Stock on Robinhood',
     href: 'https://join.robinhood.com/dustinh-1bff5a',
     accent: 'emerald',
     icon: 'trending',
@@ -52,17 +52,17 @@ const tools = [
     id: 'wealthfront',
     name: 'Wealthfront',
     category: 'Investing',
-    badge: 'Limited-time referral',
-    headline: 'Boost cash APY and get investing deposits matched',
+    badge: 'APY boost + deposit match',
+    headline: 'Automated investing + cash — with a temporary APY boost and deposit match',
     description:
-      'Automated investing and a high-yield Cash Account in one place. When you sign up through this referral, you both can earn a +0.75% APY boost, a 0.50% investing deposit match — or both. Limited-time offer.',
+      'Set-it-and-forget-it investing plus a high-yield Cash Account in one place. Sign up through this referral and you can both unlock a limited-time +0.75% APY boost on cash, a 0.50% investing deposit match, or both.',
     perks: [
-      'Cash Account boost to 4.05% APY (+0.75% for up to 3 months, up to $150k) when you open a Cash or taxable investing account',
-      'Up to $500 invested on you — 0.50% match on investing deposits for 3 months (up to $100k deposited) with a taxable individual account',
-      'Automated portfolio management built for long-term FI',
-      'Clean cash + investing experience for busy families',
+      '+0.75% APY boost on Cash (up to 3 months / $150k) when you open a Cash or taxable investing account',
+      '0.50% match on investing deposits for 3 months (up to $100k) — up to $500 invested for you',
+      'Automated portfolios designed for long-term wealth building',
+      'One clean app for cash and investing — ideal for busy families',
     ],
-    cta: 'Join Wealthfront with This Link',
+    cta: 'Get the Wealthfront Referral Bonus',
     href: 'https://www.wealthfront.com/c/affiliates/invited/AFFD-AL7T-QSBZ-J0Q8',
     accent: 'indigo',
     icon: 'landmark',
@@ -73,17 +73,17 @@ const tools = [
     id: 'moomoo',
     name: 'Moomoo',
     category: 'Investing',
-    badge: 'Up to $1,000 NVDA',
-    headline: 'Welcome bonus: free NVDA stock + promotional cash APY',
+    badge: 'Up to $1,000 in NVDA',
+    headline: 'Deposit and unlock free NVDA stock plus promo cash APY',
     description:
-      'Powerful charts, research tools, and $0 commission U.S. stock trading. Sign up through this link to unlock the current welcome rewards — deposit tiers can earn free NVDA stock (from $30 at $500 deposited up to $1,000 at higher levels) plus promotional APY on uninvested cash.',
+      'Serious charts, research tools, and $0 commission U.S. stock trading. Sign up with this link to access the current welcome offer — deposit tiers can unlock free NVIDIA stock (from $30 at $500 deposited, up to $1,000 at higher levels) plus promotional APY on uninvested cash.',
     perks: [
-      'Deposit $500+ for $30 in NVDA stock; higher tiers up to $1,000 in NVDA (offer terms apply)',
-      'Promotional high APY on uninvested cash (e.g. up to ~8.1% during the welcome period — subject to change)',
-      '$0 commission U.S. stock & ETF trading for eligible residents',
-      'Advanced charts and market data useful for serious FI investors',
+      'Free NVDA stock by deposit tier: from $30 (at $500+) up to $1,000 at higher levels',
+      'Promotional high APY on uninvested cash during the welcome period (rates change)',
+      '$0 commission U.S. stock and ETF trading for eligible residents',
+      'Advanced charts and market data for investors who want deeper research',
     ],
-    cta: 'Open Moomoo with This Link',
+    cta: 'Open Moomoo & Claim NVDA Bonus',
     href: 'https://j.moomoo.com/02NLJm',
     accent: 'orange',
     icon: 'chart',
@@ -95,16 +95,16 @@ const tools = [
     name: 'Monarch Money',
     category: 'Budgeting',
     badge: '50% off year 1',
-    headline: '50% off your first year of a Core subscription',
+    headline: 'See every dollar in one place — half off your first year of Core',
     description:
-      'All-in-one money app for tracking spending, budgeting, net worth, investments, and shared household finances. Use this referral link to get 50% off your first year of Core — ideal for Catholic families who want clear stewardship of every dollar.',
+      'All-in-one money app for spending, budgets, net worth, investments, and shared household finances. Use this referral to get 50% off your first year of Core — clear stewardship without the spreadsheet chaos.',
     perks: [
-      '50% off first year of Core when you sign up through this link',
-      'Track accounts, budgets, goals, and investments in one place',
-      'Collaborate with your spouse at no extra cost',
-      'Ad-free; does not sell your financial data',
+      '50% off first year of Core when you join through this link',
+      'Track accounts, budgets, goals, and investments together',
+      'Invite your spouse at no extra cost',
+      'Ad-free and does not sell your financial data',
     ],
-    cta: 'Get 50% Off Monarch',
+    cta: 'Get 50% Off Monarch Core',
     href: 'https://monarch.com/referral/hvup58srp1?r_source=share',
     accent: 'teal',
     icon: 'wallet',
@@ -115,15 +115,15 @@ const tools = [
     id: 'coinbase',
     name: 'Coinbase',
     category: 'Investing',
-    badge: '$20 BTC · up to $50 USDC',
-    headline: 'Retail: $20 Bitcoin · Advanced: up to $50 USDC',
+    badge: '$20 BTC or up to $50 USDC',
+    headline: 'Buy crypto the trusted way — pick the path that fits you',
     description:
-      'Trusted crypto exchange for buying, selling, and holding. Two referral paths: the standard app is best for beginners (new users can get $20 in Bitcoin after a qualifying trade). Coinbase Advanced is for more active traders — trade in the first 14 days and earn up to $50 in USDC based on volume.',
+      'One of the most established U.S. crypto platforms. New users on the standard app can get $20 in Bitcoin after a qualifying trade. More active traders can use Coinbase Advanced and earn up to $50 in USDC based on volume in the first 14 days.',
     perks: [
-      'Standard: $20 in Bitcoin for new users after a qualifying transaction',
+      'Standard app: $20 in Bitcoin after a qualifying first transaction',
       'Advanced: $5 / $20 / $50 USDC for >$100 / >$5k / >$10k volume in first 14 days',
       'Trade Bitcoin, Ethereum, and hundreds of other assets',
-      'Insured custody for crypto stored on Coinbase servers',
+      'Insured custody for crypto held on Coinbase servers',
     ],
     cta: 'Get $20 in Bitcoin',
     href: 'https://coinbase.com/join/EJUZBJS?src=ios-link',
@@ -138,17 +138,17 @@ const tools = [
     id: 'gemini',
     name: 'Gemini',
     category: 'Investing',
-    badge: '$50 in crypto',
-    headline: 'Claim an extra $50 in crypto when you qualify',
+    badge: 'Extra $50 in crypto',
+    headline: 'Regulated U.S. exchange — earn $50 crypto when you qualify',
     description:
-      'Regulated U.S. crypto exchange from the Winklevoss twins. Sign up through this link and claim an extra $50 in crypto when you get approved for the Gemini Credit Card or trade at least $100.',
+      'Full-reserve crypto exchange from the Winklevoss twins with a strong regulatory focus. Sign up through this link and claim an extra $50 in crypto when you’re approved for the Gemini Credit Card or trade at least $100.',
     perks: [
-      'Extra $50 in crypto when approved for the Gemini Credit Card or you trade $100+',
-      'Full-reserve exchange with strong U.S. regulatory focus',
-      'Trade major cryptocurrencies with a clean app experience',
-      'Gemini Credit Card option for crypto rewards on spending',
+      'Extra $50 in crypto after Gemini Credit Card approval or $100+ in trades',
+      'Full-reserve exchange with strong U.S. regulatory posture',
+      'Clean app for major cryptocurrencies',
+      'Optional Gemini Credit Card for crypto rewards on everyday spending',
     ],
-    cta: 'Join Gemini — Claim $50',
+    cta: 'Join Gemini — Claim $50 Crypto',
     href: 'https://exchange.gemini.com/register?referral=kewa4resr&type=referral&unified=true',
     accent: 'cyan',
     icon: 'gem',
@@ -159,17 +159,17 @@ const tools = [
     id: 'venmo',
     name: 'Venmo',
     category: 'Banking & Payments',
-    badge: '$5 each',
-    headline: 'Join Venmo — you and a friend can each get $5',
+    badge: '$5 for you & a friend',
+    headline: 'Split bills and send money — both of you can earn $5',
     description:
-      'Simple peer-to-peer payments for splitting bills, sending gifts, and everyday money between friends and family. Sign up through this link, complete a qualifying payment of $5 or more from a linked bank or card, and both of you can earn a $5 reward (terms apply).',
+      'The go-to app for splitting dinner, gifts, and everyday transfers with friends and family. Sign up with this link, complete a qualifying $5+ payment from a linked bank or card, and both of you can earn a $5 reward.',
     perks: [
-      'New users and referrers can each earn $5 after a qualifying $5+ payment',
-      'Quick P2P payments with bank or card funding',
-      'Handy for family allowance tracking and shared expenses',
-      'Limit applies (e.g. one reward per new user; referrer caps apply)',
+      'You and the new user can each get $5 after a qualifying $5+ payment',
+      'Fast peer-to-peer payments funded by bank or card',
+      'Handy for family allowances and shared expenses',
+      'Social payment history that keeps small transfers organized',
     ],
-    cta: 'Join Venmo with This Link',
+    cta: 'Join Venmo & Get $5',
     href: 'https://get.venmo.com/RfoiNhtu24b',
     accent: 'sky',
     icon: 'send',
@@ -181,16 +181,16 @@ const tools = [
     name: 'Cash App',
     category: 'Banking & Payments',
     badge: 'Get $5',
-    headline: 'Get $5 when you send $5+ with Cash App',
+    headline: 'Send $5+ after signup and get $5 back',
     description:
-      'Fast mobile payments, debit card, and investing features in one app. Create your account with referral code 42DKBR2 (or use this link), send $5 or more, and get $5 — terms apply.',
+      'Instant mobile payments, optional debit card, and light investing tools in one app. Create your account with code 42DKBR2 (or this link), send $5 or more, and get $5 — simple and fast.',
     perks: [
       'Get $5 when you send $5+ after signing up with code 42DKBR2',
       'Instant peer-to-peer payments',
-      'Optional Cash App Card and stock/Bitcoin investing tools',
-      'Useful for allowances, reimbursements, and everyday transfers',
+      'Optional Cash App Card plus stock and Bitcoin investing tools',
+      'Useful for allowances, reimbursements, and everyday sends',
     ],
-    cta: 'Join Cash App — Code 42DKBR2',
+    cta: 'Join Cash App with Code 42DKBR2',
     href: 'https://cash.app/refer/42DKBR2',
     accent: 'lime',
     icon: 'banknote',
@@ -202,14 +202,14 @@ const tools = [
     name: 'Chime',
     category: 'Banking & Payments',
     badge: 'Get $100',
-    headline: 'Join Chime and get $100 — terms apply',
+    headline: 'Fee-friendly mobile banking — earn $100 when you qualify',
     description:
-      'Fee-friendly mobile banking with early direct deposit, no monthly fees, and a debit card. Sign up through this link and get $100 when you complete the qualifying steps (terms apply).',
+      'Checking and savings without monthly fees, plus early direct deposit on eligible paychecks. Sign up through this link and get $100 when you complete Chime’s qualifying steps (terms apply).',
     perks: [
-      'Get $100 when you join and meet offer requirements',
+      'Get $100 when you join and meet the current offer requirements',
       'No monthly fees or overdraft fees on eligible accounts',
-      'Get paid up to 2 days early with direct deposit',
-      'Mobile-first checking and savings experience',
+      'Get paid up to 2 days early with qualifying direct deposit',
+      'Mobile-first checking and savings designed for everyday use',
     ],
     cta: 'Join Chime — Get $100',
     href: 'https://www.chime.com/r/dustinhimmerich/?c=s',
@@ -223,14 +223,14 @@ const tools = [
     name: 'Daffy',
     category: 'Giving',
     badge: '$25 for charity',
-    headline: 'Get $25 for charity when you make your first contribution',
+    headline: 'Make giving a habit — $25 added for charity on your first gift',
     description:
-      'Modern donor-advised fund that makes charitable giving simple and habitual — give to nearly any U.S. nonprofit, involve family, and build generosity into your FI plan. Join through this invite and get $25 added for charity after Daffy receives your first contribution.',
+      'A modern donor-advised fund for everyday families, not just the ultra-wealthy. Give to nearly any U.S. nonprofit, involve your spouse and kids, and build generosity into your FI plan. Join with this invite and get $25 for charity after Daffy receives your first contribution.',
     perks: [
-      '$25 for charity when Daffy receives your first contribution',
-      'Donor-advised fund built for everyday families, not just the ultra-wealthy',
-      'Invite spouse and kids so giving becomes a shared family practice',
-      'Give to nearly any U.S. public charity from one place',
+      '$25 credited for charity after your first contribution is received',
+      'Donor-advised fund designed for regular family giving',
+      'Invite spouse and kids so generosity becomes shared practice',
+      'Support nearly any U.S. public charity from one place',
     ],
     cta: 'Join Daffy — $25 for Charity',
     href: 'https://www.daffy.org/dhimmer1/invite',
@@ -243,17 +243,17 @@ const tools = [
     id: 'kudos',
     name: 'Kudos',
     category: 'Shopping & Rewards',
-    badge: '$20 bonus',
-    headline: 'Get $20 when you shop $30+ at a Boost merchant',
+    badge: '$20 after $30 shop',
+    headline: 'Shop through Kudos, earn cashback, unlock $20 with code Super_FI',
     description:
-      'Cashback shopping portal and browser extension that passes through affiliate commissions. Sign up with code Super_FI, then make a qualifying purchase of $30 or more at a Kudos Boost merchant to unlock the $20 referral bonus (confirmation can take 60–120 days).',
+      'Cashback portal and browser extension that routes affiliate commissions back to you. Sign up with code Super_FI, then make a $30+ purchase at a Kudos Boost merchant to unlock the $20 referral bonus (merchant confirmation can take 60–120 days).',
     perks: [
       '$20 referral bonus after a $30+ purchase at a Boost merchant',
-      'Use referral code Super_FI at signup',
-      'Cashback / rewards on everyday shopping',
-      'Chrome extension + app for one-click activation',
+      'Enter code Super_FI at signup',
+      'Cashback on everyday online shopping',
+      'Chrome extension and app for one-click activation',
     ],
-    cta: 'Join Kudos — Code Super_FI',
+    cta: 'Join Kudos with Code Super_FI',
     href: 'https://www.joinkudos.com',
     accent: 'violet',
     icon: 'shopping',
@@ -264,17 +264,17 @@ const tools = [
     id: 'rakuten',
     name: 'Rakuten',
     category: 'Shopping & Rewards',
-    badge: 'Up to $50 bonus',
-    headline: 'Join and get a cash-back signup bonus after you shop',
+    badge: 'Up to $50 signup bonus',
+    headline: 'Cash back at thousands of stores — plus a signup bonus after you shop',
     description:
-      'One of the best cash-back portals for everyday online shopping. Sign up through this link — new members who make a qualifying purchase (often about $50 within 90 days; amount varies by promo) can earn a signup bonus, and you both benefit.',
+      'One of the most reliable cash-back portals for Amazon, Target, hotels, and more. Join through this link; new members who make a qualifying purchase (often around $50 within 90 days — amount varies by promo) can earn a signup bonus paid as real cash or gift cards.',
     perks: [
-      'Signup bonus for new members after a qualifying purchase (commonly ~$50 when you spend ~$50 — check current promo)',
-      'Cash back at thousands of stores (Amazon, Target, hotels, and more)',
-      'Browser extension makes activation automatic',
-      'Paid out quarterly as real cash or gift cards',
+      'Signup bonus after a qualifying first purchase (commonly ~$50 when you spend ~$50 — check current promo)',
+      'Cash back at thousands of major retailers',
+      'Browser extension activates cash back automatically',
+      'Paid quarterly as cash or gift cards',
     ],
-    cta: 'Join Rakuten for Cash Back',
+    cta: 'Join Rakuten & Earn Cash Back',
     href: 'https://www.rakuten.com/r/DHIMME9?eeid=44749',
     accent: 'red',
     icon: 'shopping',
@@ -285,17 +285,17 @@ const tools = [
     id: 'capitaloneshopping',
     name: 'Capital One Shopping',
     category: 'Shopping & Rewards',
-    badge: 'Coupons + rewards',
-    headline: 'Automatic coupons, price drops, and shopping rewards',
+    badge: 'Auto coupons + rewards',
+    headline: 'Never miss a coupon code — automatic savings at checkout',
     description:
-      'Browser extension and app that finds coupon codes, tracks prices, and unlocks Capital One Shopping rewards. Sign up through this referral link to get started — great alongside Rakuten for stacking everyday savings.',
+      'Free browser extension and app that finds coupon codes, tracks prices, and unlocks Capital One Shopping rewards. Install through this referral link and stack it with portals like Rakuten for everyday online savings.',
     perks: [
-      'Auto-applies coupons at checkout when available',
-      'Price drop alerts and shopping rewards',
-      'Works across thousands of online stores',
-      'Easy browser extension setup',
+      'Tests and applies coupon codes at checkout when available',
+      'Price-drop alerts so you can buy smarter',
+      'Shopping rewards across thousands of online stores',
+      'Quick install — works in the background while you shop',
     ],
-    cta: 'Get Capital One Shopping',
+    cta: 'Install Capital One Shopping',
     href: 'https://capitaloneshopping.com/r/3045fb28-0a5c-4f54-91b0-5f52a22652ee',
     accent: 'slate',
     icon: 'tag',
@@ -306,17 +306,17 @@ const tools = [
     id: 'honey',
     name: 'Honey',
     category: 'Shopping & Rewards',
-    badge: 'Coupons + PayPal',
-    headline: 'Auto-apply coupons and earn Honey Gold rewards',
+    badge: 'Coupons + Honey Gold',
+    headline: 'PayPal’s coupon tool — auto-apply codes and earn rewards',
     description:
-      'PayPal’s popular browser extension that tests coupon codes at checkout and can earn Honey Gold on eligible purchases. Install through this referral link to start saving on everyday online shopping.',
+      'Honey (a PayPal service) tests working coupon codes at checkout and can earn Honey Gold on eligible purchases. Install free through this link and let it work while you shop the stores you already use.',
     perks: [
-      'Automatically tests and applies coupon codes at checkout',
+      'Automatically finds and applies coupon codes when available',
       'Earn Honey Gold rewards on eligible stores',
       'Works across thousands of online retailers',
-      'Free browser extension — easy setup',
+      'Free browser extension with a one-click setup',
     ],
-    cta: 'Get Honey',
+    cta: 'Add Honey to Your Browser',
     href: 'https://www.joinhoney.com/ref/55s1vcv',
     accent: 'orange',
     icon: 'percent',
@@ -327,17 +327,17 @@ const tools = [
     id: 'fetch',
     name: 'Fetch',
     category: 'Shopping & Rewards',
-    badge: 'First-receipt bonus',
-    headline: 'Snap receipts, earn gift cards — both get a bonus',
+    badge: 'Bonus on 1st receipt',
+    headline: 'Snap any receipt, earn gift cards — we both get a bonus',
     description:
-      'Snap any store receipt and earn points toward gift cards. 6M+ five-star reviews and $1B+ in points awarded. Sign up with this link and we’ll both get a bonus when you scan your first receipt.',
+      'Point your phone at grocery, gas, or online order receipts and turn them into gift-card points. 6M+ five-star reviews and $1B+ in points awarded. Sign up with this link (code QQGAF3) and both of you get a bonus when you scan your first receipt.',
     perks: [
-      'Both get a bonus on your first receipt',
-      'Snap receipts from any store — groceries, gas, online orders',
+      'Both of you get a bonus on your first scanned receipt',
+      'Works with almost any store receipt — groceries, gas, online orders',
       'Redeem points for popular gift cards',
-      'Code QQGAF3 if prompted at signup',
+      'Code QQGAF3 if the app asks at signup',
     ],
-    cta: 'Join Fetch — Snap Your First Receipt',
+    cta: 'Join Fetch — Scan Your First Receipt',
     href: 'https://referral.fetch.com/vvv3/referralqr?code=QQGAF3',
     accent: 'fuchsia',
     icon: 'camera',
@@ -348,17 +348,17 @@ const tools = [
     id: 'inkind',
     name: 'inKind',
     category: 'Dining',
-    badge: 'Dining rewards',
-    headline: 'Get rewards back at thousands of restaurants',
+    badge: 'Up to ~20% back',
+    headline: 'Dine out smarter — rewards at thousands of restaurants',
     description:
-      'Restaurant rewards app with up to ~20% back at participating spots nationwide. New guests can often get a promo like $25 off a $50+ meal — check the offer when you sign up through this link.',
+      'Restaurant rewards app with up to about 20% back at participating spots nationwide. New guests often see a promo such as $25 off a $50+ meal — check the current offer when you join through this link, and stack it with your dining credit card when you can.',
     perks: [
       'Earn up to ~20% back at participating restaurants',
-      'New-guest promos common (e.g. $25 off $50+ — varies)',
+      'New-guest promos common (e.g. $25 off $50+ — varies by market)',
       'Thousands of restaurants, bars, and cafés',
-      'Stack with credit-card dining rewards when possible',
+      'Stack with credit-card dining rewards for extra value',
     ],
-    cta: 'Join inKind',
+    cta: 'Join inKind for Dining Rewards',
     href: 'https://app.inkind.com/refer/MV6NGAWF',
     accent: 'amber',
     icon: 'utensils',
@@ -369,17 +369,17 @@ const tools = [
     id: 'franki',
     name: 'Franki',
     category: 'Dining',
-    badge: 'Cash back dining',
-    headline: 'Find spots, earn cash back on real-world dining',
+    badge: 'Cash back on dining',
+    headline: 'Discover local spots and earn cash back when you pay',
     description:
-      'Discover local restaurants and experiences, then earn cash back when you pay with a linked card. Referrals can earn $2 when a friend signs up and connects a card, plus $10 when they make their first cash-back purchase.',
+      'Find restaurants and experiences nearby, link your card, and earn cash back when you dine — no special checkout process. Friends who join through this link can unlock referral rewards after signup and their first cash-back purchase.',
     perks: [
-      'Cash back at participating restaurants and local experiences',
-      'Referrer earns $2 on signup + card connect, $10 on first cash-back purchase',
-      'Link your card and earn automatically when you dine',
-      'Great complement to inKind for family nights out',
+      'Cash back at participating local restaurants and experiences',
+      'Link your card once; earn automatically when you dine',
+      'Referral path: rewards when friends sign up, connect a card, and make a first cash-back purchase',
+      'Pairs well with inKind for family nights out',
     ],
-    cta: 'Join Franki',
+    cta: 'Join Franki for Dining Cash Back',
     href: 'https://frankiapp.com/referral?user=stormyknightjumps420',
     accent: 'pink',
     icon: 'mappin',
@@ -388,7 +388,6 @@ const tools = [
   },
 ];
 
-// Prefer a fixed, readable order of categories
 const CATEGORY_ORDER = [
   'Investing',
   'Banking & Payments',
@@ -572,13 +571,11 @@ export default function Tools() {
   const [category, setCategory] = useState('All');
   const [sortBy, setSortBy] = useState('default');
   const [search, setSearch] = useState('');
-  const [bonusOnly, setBonusOnly] = useState(false);
 
   const filteredTools = useMemo(() => {
     const q = search.trim().toLowerCase();
     let list = tools.filter((t) => {
       if (category !== 'All' && t.category !== category) return false;
-      if (bonusOnly && (t.valueScore || 0) < 20) return false;
       if (q) {
         const hay = `${t.name} ${t.headline} ${t.badge} ${t.category} ${t.description}`.toLowerCase();
         if (!hay.includes(q)) return false;
@@ -595,7 +592,7 @@ export default function Tools() {
     }
 
     return list;
-  }, [category, sortBy, search, bonusOnly]);
+  }, [category, sortBy, search]);
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
@@ -628,13 +625,11 @@ export default function Tools() {
             Tools to Speed Up Your FI Journey
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
-            Hand-picked apps and platforms we actually use. Some links include referral bonuses — you get a perk, and it helps keep Super FI free.
+            Hand-picked apps and platforms we actually use. Each card spells out what it is and what you get when you join through these links — you get the perk, and it helps keep Super FI free.
           </p>
         </div>
 
-        {/* Filters */}
         <div className="mb-8 space-y-4">
-          {/* Search */}
           <div className="relative">
             <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
@@ -674,39 +669,26 @@ export default function Tools() {
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-1">
-            <div className="flex flex-wrap items-center gap-3 text-sm text-gray-600">
-              <div className="flex items-center gap-2">
-                <ArrowUpDown size={16} className="text-emerald-600 shrink-0" />
-                <label htmlFor="sort-tools" className="font-medium text-gray-700">
-                  Sort
-                </label>
-                <select
-                  id="sort-tools"
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                >
-                  <option value="default">Default order</option>
-                  <option value="value-desc">Highest value first</option>
-                  <option value="value-asc">Lowest value first</option>
-                  <option value="name">Name A–Z</option>
-                </select>
-              </div>
-
-              <label className="inline-flex items-center gap-2 cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  checked={bonusOnly}
-                  onChange={(e) => setBonusOnly(e.target.checked)}
-                  className="rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
-                />
-                <span className="text-sm text-gray-700">Clear $ bonus only</span>
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <ArrowUpDown size={16} className="text-emerald-600 shrink-0" />
+              <label htmlFor="sort-tools" className="font-medium text-gray-700">
+                Sort
               </label>
+              <select
+                id="sort-tools"
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              >
+                <option value="default">Default order</option>
+                <option value="value-desc">Highest value first</option>
+                <option value="value-asc">Lowest value first</option>
+                <option value="name">Name A–Z</option>
+              </select>
             </div>
             <p className="text-xs text-gray-500">
               Showing {filteredTools.length} of {tools.length}
               {category !== 'All' ? ` · ${category}` : ''}
-              {bonusOnly ? ' · bonus deals' : ''}
               {search.trim() ? ` · “${search.trim()}”` : ''}
             </p>
           </div>
