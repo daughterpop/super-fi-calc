@@ -17,38 +17,6 @@ const posts = [
     readTime: '4 min read',
     slug: 'why-fi-for-everyone',
     link: '/blog/why-fi-for-everyone'
-  },
-  {
-    title: 'AI-Assisted Stewardship: How Catholic Families Leverage Smart Tools for FI and Faithful Living',
-    date: 'June 10, 2026',
-    excerpt: 'Discover practical ways Catholic families are using AI tools alongside prayer, budgeting, and stewardship to build financial independence and a lasting legacy.',
-    readTime: '5 min read',
-    slug: 'ai-assisted-stewardship-how-catholic-families-leverage-smart-tools-for-fi-and-faithful-living',
-    link: '/blog/ai-assisted-stewardship-how-catholic-families-leverage-smart-tools-for-fi-and-faithful-living'
-  },
-  {
-    title: 'Catholic Dads Leading Family FI with AI and Faith',
-    date: 'June 12, 2026',
-    excerpt: 'Faith-filled strategies for dads to lead their families toward financial independence using AI, prayer, and intentional planning.',
-    readTime: '4 min read',
-    slug: 'catholic-dads-leading-family-fi-with-ai-and-faith',
-    link: '/blog/catholic-dads-leading-family-fi-with-ai-and-faith'
-  },
-  {
-    title: 'Catholic Families Harness AI for Prayerful FI and Generational Legacy',
-    date: 'June 08, 2026',
-    excerpt: 'How Catholic households can integrate AI into prayerful financial planning to secure freedom and pass on a legacy of faith and stewardship.',
-    readTime: '4 min read',
-    slug: 'catholic-families-harness-ai-for-prayerful-fi-and-generational-legacy',
-    link: '/blog/catholic-families-harness-ai-for-prayerful-fi-and-generational-legacy'
-  },
-  {
-    title: 'Praying Your Way to Financial Freedom: How Christian Families Can Build Wealth, Generosity, and Peace Together',
-    date: 'June 05, 2026',
-    excerpt: 'A faith-centered approach to FI that combines prayer, smart tools, and family teamwork for lasting financial and spiritual freedom.',
-    readTime: '5 min read',
-    slug: 'praying-your-way-to-financial-freedom-how-christian-families-can-build-wealth-generosity-and-peace-together',
-    link: '/blog/praying-your-way-to-financial-freedom-how-christian-families-can-build-wealth-generosity-and-peace-together'
   }
 ];
 

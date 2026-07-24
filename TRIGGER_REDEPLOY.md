@@ -1,5 +1,4 @@
-# Redeploy trigger
+# Redeploy trigger - July 23 2026 full fix
 
-This empty file is used to force a new Vercel deployment from the complete Fixed branch source.
-
-All calculator, blog, and routing fixes are present.
+Forced clean redeploy after isolating routes, adding critical CSS import, and verifying calculator + core blog.
+All source double-checked. Site should be fully functional.
