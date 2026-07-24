@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send } from 'lucide-react';
 
 const tools = [
   {
@@ -103,6 +103,26 @@ const tools = [
     icon: 'bitcoin',
     footnote: 'Limited-time offers. New customers only; must complete qualifying activity. Advanced rewards based on trading volume in first 14 days. Terms set by Coinbase; rewards not guaranteed.',
   },
+  {
+    id: 'venmo',
+    name: 'Venmo',
+    category: 'Payments',
+    badge: '$5 each',
+    headline: 'Join Venmo — you and a friend can each get $5',
+    description:
+      'Simple peer-to-peer payments for splitting bills, sending gifts, and everyday money between friends and family. Sign up through this link, complete a qualifying payment of $5 or more from a linked bank or card, and both of you can earn a $5 reward (terms apply).',
+    perks: [
+      'New users and referrers can each earn $5 after a qualifying $5+ payment',
+      'Quick P2P payments with bank or card funding',
+      'Handy for family allowance tracking and shared expenses',
+      'Limit applies (e.g. one reward per new user; referrer caps apply)',
+    ],
+    cta: 'Join Venmo with This Link',
+    href: 'https://get.venmo.com/RfoiNhtu24b',
+    accent: 'sky',
+    icon: 'send',
+    footnote: 'Reward requires signup via referral link and a qualifying personal payment of $5+ using a linked funding source. Terms: https://payp.al/ref — offer subject to change.',
+  },
 ];
 
 function accentClasses(accent) {
@@ -152,6 +172,15 @@ function accentClasses(accent) {
       soft: 'from-blue-50 to-sky-50',
       sparkle: 'text-blue-500',
     },
+    sky: {
+      badge: 'bg-sky-100 text-sky-700',
+      icon: 'bg-sky-500',
+      button: 'bg-sky-600 hover:bg-sky-700',
+      buttonOutline: 'border-sky-600 text-sky-700 hover:bg-sky-50',
+      border: 'border-sky-100 hover:border-sky-200',
+      soft: 'from-sky-50 to-blue-50',
+      sparkle: 'text-sky-500',
+    },
   };
   return map[accent] || map.emerald;
 }
@@ -161,6 +190,7 @@ function ToolIcon({ type }) {
   if (type === 'chart') return <BarChart3 className="text-white" size={24} />;
   if (type === 'wallet') return <Wallet className="text-white" size={24} />;
   if (type === 'bitcoin') return <Bitcoin className="text-white" size={24} />;
+  if (type === 'send') return <Send className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
