@@ -22,10 +22,11 @@ import {
   Camera,
   Percent,
   MapPin,
-  <PRIVATE_ADDRESS>SlidersHorizontal,
+  SlidersHorizontal,
   ArrowUpDown,
   Search,
   Smartphone,
+  Lock,
 } from 'lucide-react';
 
 const tools = [
@@ -119,7 +120,7 @@ const tools = [
     badge: '$20 BTC or up to $50 USDC',
     headline: 'Buy crypto the trusted way — pick the path that fits you',
     description:
-      'One of the most established U.S. crypto platforms. New users on the standard app can get $20 in Bitcoin after a qualifying trade. More active traders can use Coinbase Advanced and earn up to $50 in USDC based on volume in the first 14 days.',
+      'One of the most established U.S. crypto platforms. New users on the standard app can get $20 in Bitcoin after a qualifying first transaction. More active traders can use Coinbase Advanced and earn up to $50 in USDC based on volume in the first 14 days.',
     perks: [
       'Standard app: $20 in Bitcoin after a qualifying first transaction',
       'Advanced: $5 / $20 / $50 USDC for >$100 / >$5k / >$10k volume in first 14 days',
@@ -429,6 +430,27 @@ const tools = [
     footnote: 'Free months apply to the plan you purchase via this friend link. Offer terms set by Surfshark.',
     valueScore: 35,
   },
+  {
+    id: 'incogni',
+    name: 'Incogni',
+    category: 'Privacy & Security',
+    badge: 'Up to 58% off annual',
+    headline: 'Remove your family’s data from broker sites — friends-only discount',
+    description:
+      'Automated service that finds and removes your personal info from 420+ data brokers and people-search sites (and keeps removing it when it reappears). Use this link for a deep friends-only discount — code GIFTOFPRIVACY is applied at checkout. Family plans cover up to 5 members.',
+    perks: [
+      'Up to 58% off annual plans (and 16% off monthly) via this friends link',
+      'Automated + recurring removals from 420+ data brokers',
+      'Family plans protect up to 5 people from one account',
+      '30-day money-back guarantee',
+    ],
+    cta: 'Get Incogni at Friends Pricing',
+    href: 'https://incogni.cello.so/C622q7UjoeJ',
+    accent: 'indigo',
+    icon: 'lock',
+    footnote: 'Discount auto-applied via referral code GIFTOFPRIVACY. Offer terms set by Incogni. 30-day money-back guarantee applies.',
+    valueScore: 90,
+  },
 ];
 
 const CATEGORY_ORDER = [
@@ -611,6 +633,7 @@ function ToolIcon({ type }) {
   if (type === 'mappin') return <MapPin className="text-white" size={24} />;
   if (type === 'phone') return <Smartphone className="text-white" size={24} />;
   if (type === 'shield') return <Shield className="text-white" size={24} />;
+  if (type === 'lock') return <Lock className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
