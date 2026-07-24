@@ -235,14 +235,14 @@ export default function SuperFiCalculator() {
 
   // Static intro section
   const IntroSection = () => (
-    <div className="max-w-4xl mx-auto px-4 py-8 prose prose-slate dark:prose-invert">
-      <h1 className="text-4xl font-bold text-center mb-4">Financial Independence Calculator</h1>
-      <p className="text-xl text-center text-muted-foreground mb-8">
+    <div className="w-full max-w-4xl mx-auto px-1 sm:px-4 py-4 sm:py-8 prose prose-slate dark:prose-invert">
+      <h1 className="text-2xl sm:text-4xl font-bold text-center mb-3 sm:mb-4 leading-tight">Financial Independence Calculator</h1>
+      <p className="text-base sm:text-xl text-center text-muted-foreground mb-6 sm:mb-8">
         Free tool to calculate your <strong>FI Number</strong> and see exactly when you can achieve financial independence.
       </p>
-      <div className="grid md:grid-cols-2 gap-6 mb-10 text-sm">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-10 text-sm text-left">
         <div>
-          <h2 className="text-lg font-semibold mb-2">How it works</h2>
+          <h2 className="text-base sm:text-lg font-semibold mb-2">How it works</h2>
           <ul className="list-disc pl-5 space-y-1">
             <li>Enter your savings rate, expenses, and investment returns</li>
             <li>Watch real-time updates to your FI number and timeline</li>
@@ -250,36 +250,36 @@ export default function SuperFiCalculator() {
           </ul>
         </div>
         <div>
-          <h2 className="text-lg font-semibold mb-2">Popular searches</h2>
-          <p className="text-muted-foreground">financial independence calculator • fi calculator • fire calculator • retire early tool • fi number calculator</p>
+          <h2 className="text-base sm:text-lg font-semibold mb-2">Popular searches</h2>
+          <p className="text-muted-foreground text-sm">financial independence calculator • fi calculator • fire calculator • retire early tool • fi number calculator</p>
         </div>
       </div>
     </div>
   );
 
   const RobinhoodPromo = () => (
-    <div className="w-full max-w-2xl mb-8 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 shadow-sm border border-green-100">
-      <div className="flex items-start gap-4">
-        <div className="flex-shrink-0 w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
-          <TrendingUp className="text-white" size={24} />
+    <div className="w-full max-w-2xl mb-6 sm:mb-8 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 sm:p-6 shadow-sm border border-green-100">
+      <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+        <div className="flex-shrink-0 w-11 h-11 sm:w-12 sm:h-12 bg-green-500 rounded-xl flex items-center justify-center">
+          <TrendingUp className="text-white" size={22} />
         </div>
-        <div className="flex-1">
-          <h3 className="text-lg font-bold text-gray-900 mb-1">
+        <div className="flex-1 min-w-0">
+          <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
             Ready to Start Investing?
           </h3>
-          <p className="text-sm text-gray-600 mb-4">
+          <p className="text-sm text-gray-600 mb-3 sm:mb-4">
             Get free stocks worth up to $200 when you open a Robinhood account and make your first investment.
           </p>
           <a
             href="https://join.robinhood.com/dustinh-1bff5a"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-all shadow-md hover:shadow-lg"
+            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-all shadow-md hover:shadow-lg text-sm sm:text-base"
           >
             Claim Your Free Stock
             <ArrowRight size={18} />
           </a>
-          <p className="text-xs text-gray-500 mt-3">
+          <p className="text-xs text-gray-500 mt-2 sm:mt-3">
             Commission-free trading • Easy to use • Perfect for beginners
           </p>
         </div>
@@ -289,20 +289,20 @@ export default function SuperFiCalculator() {
 
   if (showResults) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-        <div className="max-w-6xl mx-auto p-4 md:p-8">
+      <div className="w-full">
+        <div className="max-w-6xl mx-auto">
           <button
             onClick={() => setShowResults(false)}
-            className="mb-6 flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
+            className="mb-4 sm:mb-6 flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
           >
             <ArrowLeft size={16} />
             Edit Inputs
           </button>
 
-          <div className="grid md:grid-cols-3 gap-4 mb-6">
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100">
               <div className="text-sm font-medium text-gray-500 mb-2">FI Progress</div>
-              <div className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent mb-3">
+              <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent mb-3">
                 {results.fiProgress.toFixed(1)}%
               </div>
               <div className="w-full bg-gray-100 rounded-full h-2">
@@ -312,18 +312,18 @@ export default function SuperFiCalculator() {
                 />
               </div>
             </div>
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100">
               <div className="text-sm font-medium text-gray-500 mb-2">Current Savings</div>
-              <div className="text-3xl font-bold text-gray-900 mb-1">
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
                 ${(currentSavings / 1000000).toFixed(2)}M
               </div>
               <div className="text-xs text-gray-500">
                 Target: ${(results.currentTotalFI / 1000000).toFixed(2)}M
               </div>
             </div>
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100">
               <div className="text-sm font-medium text-gray-500 mb-2">Time to FI</div>
-              <div className="text-3xl font-bold text-green-600">
+              <div className="text-2xl sm:text-3xl font-bold text-green-600">
                 {results.yearsFIReached !== null ? `${results.yearsFIReached} years` : 'Off track'}
               </div>
               {results.fiAge && (
@@ -333,40 +333,40 @@ export default function SuperFiCalculator() {
           </div>
 
           {/* Robinhood CTA */}
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 shadow-sm border border-green-100 mb-6">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
-                <TrendingUp className="text-white" size={24} />
+          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 sm:p-6 shadow-sm border border-green-100 mb-4 sm:mb-6">
+            <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+              <div className="flex-shrink-0 w-11 h-11 sm:w-12 sm:h-12 bg-green-500 rounded-xl flex items-center justify-center">
+                <TrendingUp className="text-white" size={22} />
               </div>
-              <div className="flex-1">
-                <h3 className="text-lg font-bold text-gray-900 mb-1">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
                   Ready to Start Investing?
                 </h3>
-                <p className="text-sm text-gray-600 mb-4">
+                <p className="text-sm text-gray-600 mb-3 sm:mb-4">
                   Get free stocks worth up to $200 when you join Robinhood and make your first investment.
                 </p>
                 <a
                   href="https://join.robinhood.com/dustinh-1bff5a"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-all shadow-md hover:shadow-lg"
+                  className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-all shadow-md hover:shadow-lg text-sm sm:text-base"
                 >
                   Claim Your Free Stock
                   <ArrowRight size={18} />
                 </a>
-                <p className="text-xs text-gray-500 mt-3">
+                <p className="text-xs text-gray-500 mt-2 sm:mt-3">
                   Commission-free trading • Easy to use • Perfect for beginners
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
+          <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100 mb-4 sm:mb-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">FI Milestones</h3>
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
               {results.milestones.map((milestone, idx) => (
                 <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 border border-gray-100">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                  <div className={`w-8 h-8 shrink-0 rounded-full flex items-center justify-center ${
                     milestone.achieved ? 'bg-green-100 text-green-600' : 'bg-gray-100 text-gray-400'
                   }`}>
                     {milestone.achieved ? <Check size={16} /> : <div className="w-2 h-2 rounded-full bg-gray-300" />}
@@ -386,71 +386,72 @@ export default function SuperFiCalculator() {
             </div>
           </div>
 
-          {/* New Stewardship Legacy Card */}
-          <div className="bg-gradient-to-br from-amber-50 via-white to-rose-50 border border-amber-200 rounded-3xl p-8 mb-8 shadow-xl relative overflow-hidden">
-            <div className="absolute top-6 right-6 text-amber-300">
-              <Heart size={48} />
+          {/* Stewardship Legacy Card */}
+          <div className="bg-gradient-to-br from-amber-50 via-white to-rose-50 border border-amber-200 rounded-3xl p-5 sm:p-8 mb-6 sm:mb-8 shadow-xl relative overflow-hidden">
+            <div className="absolute top-4 right-4 sm:top-6 sm:right-6 text-amber-300 opacity-60 pointer-events-none">
+              <Heart size={36} className="sm:hidden" />
+              <Heart size={48} className="hidden sm:block" />
             </div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-amber-100 rounded-2xl flex items-center justify-center">
-                <Sparkles className="text-amber-600" size={24} />
+            <div className="flex items-center gap-3 mb-4 sm:mb-6 pr-10">
+              <div className="w-10 h-10 shrink-0 bg-amber-100 rounded-2xl flex items-center justify-center">
+                <Sparkles className="text-amber-600" size={22} />
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-amber-900">Your Stewardship Legacy</h3>
+              <div className="min-w-0">
+                <h3 className="text-xl sm:text-2xl font-bold text-amber-900 leading-tight">Your Stewardship Legacy</h3>
                 <p className="text-amber-700 text-sm">A faithful reflection for your family</p>
               </div>
             </div>
-            
-            <div className="prose prose-amber max-w-none mb-8">
-              <p className="text-lg italic leading-relaxed text-amber-800">
+
+            <div className="prose prose-amber max-w-none mb-6 sm:mb-8">
+              <p className="text-base sm:text-lg italic leading-relaxed text-amber-800">
                 "Well done, good and faithful servant. You have been faithful with a few things; I will put you in charge of many things." — Matthew 25:21
               </p>
-              <p className="mt-6 text-amber-700">
+              <p className="mt-4 sm:mt-6 text-sm sm:text-base text-amber-700">
                 By God's grace, you are on track to achieve Financial Independence at age <span className="font-semibold text-amber-900">{results.fiAge || 'XX'}</span>. This is not merely wealth for comfort, but a sacred legacy of stewardship — providing for your family across generations, supporting the Church, and advancing the Kingdom. Invest wisely, teach your children diligence, and trust in Divine Providence.
               </p>
             </div>
 
             <button
               onClick={handleShareLegacy}
-              className="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-amber-600 to-rose-600 hover:from-amber-700 hover:to-rose-700 text-white font-semibold py-4 px-8 rounded-2xl transition-all shadow-lg active:scale-[0.985]"
+              className="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-amber-600 to-rose-600 hover:from-amber-700 hover:to-rose-700 text-white font-semibold py-3.5 sm:py-4 px-6 sm:px-8 rounded-2xl transition-all shadow-lg active:scale-[0.985] text-sm sm:text-base"
             >
               <Share2 size={20} />
-              Bless & Share This Legacy
+              Bless &amp; Share This Legacy
             </button>
-            <p className="text-center text-amber-600 text-xs mt-4">Share with spouse, children, or parish community</p>
+            <p className="text-center text-amber-600 text-xs mt-3 sm:mt-4">Share with spouse, children, or parish community</p>
           </div>
 
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-            <div className="p-6 border-b border-gray-100">
+            <div className="p-4 sm:p-6 border-b border-gray-100">
               <h3 className="text-lg font-semibold text-gray-900">Projection Timeline</h3>
             </div>
-            <div className="overflow-x-auto">
-              <table className="w-full">
+            <div className="overflow-x-auto -mx-0">
+              <table className="w-full min-w-[540px]">
                 <thead className="bg-gray-50 text-xs uppercase text-gray-500">
                   <tr>
-                    <th className="px-4 py-3 text-left font-medium">Year</th>
-                    <th className="px-4 py-3 text-left font-medium">Age</th>
-                    <th className="px-4 py-3 text-right font-medium">Balance</th>
-                    <th className="px-4 py-3 text-right font-medium">FI Target</th>
-                    <th className="px-4 py-3 text-right font-medium">College</th>
-                    <th className="px-4 py-3 text-center font-medium">Status</th>
+                    <th className="px-3 sm:px-4 py-3 text-left font-medium">Year</th>
+                    <th className="px-3 sm:px-4 py-3 text-left font-medium">Age</th>
+                    <th className="px-3 sm:px-4 py-3 text-right font-medium">Balance</th>
+                    <th className="px-3 sm:px-4 py-3 text-right font-medium">FI Target</th>
+                    <th className="px-3 sm:px-4 py-3 text-right font-medium">College</th>
+                    <th className="px-3 sm:px-4 py-3 text-center font-medium">Status</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {results.projections.slice(0, 25).map((proj, idx) => (
                     <tr key={idx} className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-3 text-sm text-gray-900">{proj.year}</td>
-                      <td className="px-4 py-3 text-sm text-gray-600">{proj.age}</td>
-                      <td className="px-4 py-3 text-sm text-right font-semibold text-gray-900">
+                      <td className="px-3 sm:px-4 py-3 text-sm text-gray-900">{proj.year}</td>
+                      <td className="px-3 sm:px-4 py-3 text-sm text-gray-600">{proj.age}</td>
+                      <td className="px-3 sm:px-4 py-3 text-sm text-right font-semibold text-gray-900">
                         ${(proj.balance / 1000000).toFixed(2)}M
                       </td>
-                      <td className="px-4 py-3 text-sm text-right text-indigo-600">
+                      <td className="px-3 sm:px-4 py-3 text-sm text-right text-indigo-600">
                         ${(proj.totalFINumber / 1000000).toFixed(2)}M
                       </td>
-                      <td className="px-4 py-3 text-sm text-right text-orange-600">
+                      <td className="px-3 sm:px-4 py-3 text-sm text-right text-orange-600">
                         {proj.collegeExpense > 0 ? `-$${(proj.collegeExpense / 1000).toFixed(0)}k` : '-'}
                       </td>
-                      <td className="px-4 py-3 text-center">
+                      <td className="px-3 sm:px-4 py-3 text-center">
                         {proj.balance >= proj.totalFINumber ? (
                           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
                             FI ✓
@@ -471,35 +472,36 @@ export default function SuperFiCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col items-center p-4">
+    <div className="w-full flex flex-col items-center">
       <IntroSection />
 
       <div className="w-full max-w-2xl">
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-gray-100 mb-4">
-            <TrendingUp className="text-indigo-600" size={20} />
-            <span className="text-sm font-medium text-gray-700">Financial Independence Calculator</span>
+        <div className="text-center mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white shadow-sm border border-gray-100 mb-3 sm:mb-4">
+            <TrendingUp className="text-indigo-600" size={18} />
+            <span className="text-xs sm:text-sm font-medium text-gray-700">Financial Independence Calculator</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
             Plan Your Path to <span className="bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">Financial Freedom</span>
           </h1>
-          <p className="text-gray-600 text-lg">Answer a few questions to see when you can achieve FI</p>
+          <p className="text-gray-600 text-sm sm:text-lg">Answer a few questions to see when you can achieve FI</p>
         </div>
 
-        <div className="flex justify-center mb-8">
-          <div className="flex items-center gap-2">
+        {/* Step indicator — icons only on mobile to prevent overflow */}
+        <div className="flex justify-center mb-6 sm:mb-8 overflow-x-auto">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             {steps.map((s, idx) => (
               <React.Fragment key={idx}>
-                <div className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all ${
+                <div className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all shrink-0 ${
                   idx === step ? 'bg-indigo-600 text-white shadow-lg scale-105' :
                   idx < step ? 'bg-white text-indigo-600 border border-indigo-200' :
                   'bg-white text-gray-400 border border-gray-200'
                 }`}>
-                  {idx < step ? <Check size={16} /> : <s.icon size={16} />}
+                  {idx < step ? <Check size={14} /> : <s.icon size={14} />}
                   <span className="text-sm font-medium hidden sm:inline">{s.title}</span>
                 </div>
                 {idx < steps.length - 1 && (
-                  <div className={`w-8 h-0.5 ${idx < step ? 'bg-indigo-600' : 'bg-gray-200'}`} />
+                  <div className={`w-4 sm:w-8 h-0.5 shrink-0 ${idx < step ? 'bg-indigo-600' : 'bg-gray-200'}`} />
                 )}
               </React.Fragment>
             ))}
@@ -508,10 +510,10 @@ export default function SuperFiCalculator() {
 
         <RobinhoodPromo />
 
-        <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-gray-100 p-5 sm:p-8 md:p-10">
           {step === 0 && (
-            <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Tell us about your finances</h2>
+            <div className="space-y-5 sm:space-y-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Tell us about your finances</h2>
 
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -523,20 +525,20 @@ export default function SuperFiCalculator() {
                     type="number"
                     value={annualExpenses}
                     onChange={(e) => setAnnualExpenses(parseFloat(e.target.value) || 0)}
-                    className="w-full pl-8 pr-4 py-4 text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                    className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
                   />
                 </div>
                 <p className="text-sm text-gray-500 mt-2">FI Target: ${(annualExpenses * 25).toLocaleString()}</p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Your Age</label>
                   <input
                     type="number"
                     value={currentAge}
                     onChange={(e) => setCurrentAge(parseInt(e.target.value) || 0)}
-                    className="w-full px-4 py-4 text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
                   />
                 </div>
                 <div>
@@ -547,7 +549,7 @@ export default function SuperFiCalculator() {
                       type="number"
                       value={currentSavings}
                       onChange={(e) => setCurrentSavings(parseFloat(e.target.value) || 0)}
-                      className="w-full pl-8 pr-4 py-4 text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                      className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -561,13 +563,13 @@ export default function SuperFiCalculator() {
                     type="number"
                     value={annualSavings}
                     onChange={(e) => setAnnualSavings(parseFloat(e.target.value) || 0)}
-                    className="w-full pl-8 pr-4 py-4 text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                    className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
                   />
                 </div>
                 <p className="text-xs text-gray-500 mt-2">Increases with inflation automatically</p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Expected Rate of Return <span className="text-gray-500 font-normal text-xs">(before inflation)</span>
@@ -578,7 +580,7 @@ export default function SuperFiCalculator() {
                       step="0.1"
                       value={rateOfReturn}
                       onChange={(e) => setRateOfReturn(parseFloat(e.target.value) || 0)}
-                      className="w-full px-4 py-4 text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
                     />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">%</span>
                   </div>
@@ -592,7 +594,7 @@ export default function SuperFiCalculator() {
                       step="0.1"
                       value={inflationRate}
                       onChange={(e) => setInflationRate(parseFloat(e.target.value) || 0)}
-                      className="w-full px-4 py-4 text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
                     />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">%</span>
                   </div>
@@ -603,8 +605,8 @@ export default function SuperFiCalculator() {
           )}
 
           {step === 1 && (
-            <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Mortgage Information</h2>
+            <div className="space-y-5 sm:space-y-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Mortgage Information</h2>
 
               <label className="flex items-center gap-3 cursor-pointer">
                 <input
@@ -613,7 +615,7 @@ export default function SuperFiCalculator() {
                   onChange={(e) => setHasMortgage(e.target.checked)}
                   className="w-5 h-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                 />
-                <span className="text-lg font-medium text-gray-700">I have a mortgage</span>
+                <span className="text-base sm:text-lg font-medium text-gray-700">I have a mortgage</span>
               </label>
 
               {hasMortgage && (
@@ -626,12 +628,12 @@ export default function SuperFiCalculator() {
                         type="number"
                         value={mortgageBalance}
                         onChange={(e) => setMortgageBalance(parseFloat(e.target.value) || 0)}
-                        className="w-full pl-8 pr-4 py-4 text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                        className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Interest Rate</label>
                       <div className="relative">
@@ -640,7 +642,7 @@ export default function SuperFiCalculator() {
                           step="0.01"
                           value={mortgageRate}
                           onChange={(e) => setMortgageRate(parseFloat(e.target.value) || 0)}
-                          className="w-full px-4 py-4 text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
                         />
                         <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">%</span>
                       </div>
@@ -654,7 +656,7 @@ export default function SuperFiCalculator() {
                           type="number"
                           value={monthlyPayment}
                           onChange={(e) => setMonthlyPayment(parseFloat(e.target.value) || 0)}
-                          className="w-full pl-8 pr-4 py-4 text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                          className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -665,33 +667,33 @@ export default function SuperFiCalculator() {
           )}
 
           {step === 2 && (
-            <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Children & College</h2>
+            <div className="space-y-5 sm:space-y-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Children &amp; College</h2>
 
-              <label className="flex items-center gap-3 cursor-pointer p-4 border-2 border-gray-200 rounded-xl hover:border-indigo-300 transition-colors">
+              <label className="flex items-start sm:items-center gap-3 cursor-pointer p-3 sm:p-4 border-2 border-gray-200 rounded-xl hover:border-indigo-300 transition-colors">
                 <input
                   type="checkbox"
                   checked={payingForCollege}
                   onChange={(e) => setPayingForCollege(e.target.checked)}
-                  className="w-5 h-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  className="w-5 h-5 mt-0.5 sm:mt-0 shrink-0 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                 />
-                <span className="text-lg font-medium text-gray-700">I'm paying for my children's college</span>
+                <span className="text-base sm:text-lg font-medium text-gray-700">I'm paying for my children's college</span>
               </label>
 
               {payingForCollege && (
                 <>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center gap-2">
                     <span className="text-sm text-gray-600">How many children?</span>
                     <button
                       onClick={addKid}
-                      className="text-sm font-medium text-indigo-600 hover:text-indigo-700"
+                      className="text-sm font-medium text-indigo-600 hover:text-indigo-700 whitespace-nowrap"
                     >
                       + Add Child
                     </button>
                   </div>
 
                   {kids.map((kid, idx) => (
-                    <div key={kid.id} className="p-4 border-2 border-gray-100 rounded-xl space-y-3">
+                    <div key={kid.id} className="p-3 sm:p-4 border-2 border-gray-100 rounded-xl space-y-3">
                       <div className="flex justify-between items-center">
                         <span className="text-sm font-semibold text-gray-700">Child {idx + 1}</span>
                         {kids.length > 1 && (
@@ -711,7 +713,7 @@ export default function SuperFiCalculator() {
                             type="number"
                             value={kid.age}
                             onChange={(e) => updateKid(idx, 'age', parseInt(e.target.value) || 0)}
-                            className="w-full px-3 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                            className="w-full px-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
                           />
                         </div>
                         <div>
@@ -722,7 +724,7 @@ export default function SuperFiCalculator() {
                               type="number"
                               value={kid.annualTuition}
                               onChange={(e) => updateKid(idx, 'annualTuition', parseFloat(e.target.value) || 0)}
-                              className="w-full pl-7 pr-3 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                              className="w-full pl-7 pr-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
                             />
                           </div>
                         </div>
@@ -739,33 +741,33 @@ export default function SuperFiCalculator() {
           )}
 
           {step === 3 && (
-            <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Large Planned Expenses</h2>
+            <div className="space-y-5 sm:space-y-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Large Planned Expenses</h2>
 
-              <label className="flex items-center gap-3 cursor-pointer p-4 border-2 border-gray-200 rounded-xl hover:border-indigo-300 transition-colors">
+              <label className="flex items-center gap-3 cursor-pointer p-3 sm:p-4 border-2 border-gray-200 rounded-xl hover:border-indigo-300 transition-colors">
                 <input
                   type="checkbox"
                   checked={buyingVehicle}
                   onChange={(e) => setBuyingVehicle(e.target.checked)}
-                  className="w-5 h-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  className="w-5 h-5 shrink-0 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                 />
-                <span className="text-lg font-medium text-gray-700">Vehicle purchase(s)</span>
+                <span className="text-base sm:text-lg font-medium text-gray-700">Vehicle purchase(s)</span>
               </label>
 
               {buyingVehicle && (
                 <>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center gap-2">
                     <span className="text-sm text-gray-600">Plan to buy vehicle(s)?</span>
                     <button
                       onClick={addVehicle}
-                      className="text-sm font-medium text-indigo-600 hover:text-indigo-700"
+                      className="text-sm font-medium text-indigo-600 hover:text-indigo-700 whitespace-nowrap"
                     >
                       + Add Vehicle
                     </button>
                   </div>
 
                   {vehicles.map((vehicle, idx) => (
-                    <div key={vehicle.id} className="p-4 border-2 border-gray-100 rounded-xl space-y-3">
+                    <div key={vehicle.id} className="p-3 sm:p-4 border-2 border-gray-100 rounded-xl space-y-3">
                       <div className="flex justify-between items-center">
                         <span className="text-sm font-semibold text-gray-700">Vehicle {idx + 1}</span>
                         {vehicles.length > 1 && (
@@ -787,7 +789,7 @@ export default function SuperFiCalculator() {
                               type="number"
                               value={vehicle.amount}
                               onChange={(e) => updateVehicle(idx, 'amount', parseFloat(e.target.value) || 0)}
-                              className="w-full pl-7 pr-3 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                              className="w-full pl-7 pr-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
                             />
                           </div>
                         </div>
@@ -797,7 +799,7 @@ export default function SuperFiCalculator() {
                             type="number"
                             value={vehicle.year}
                             onChange={(e) => updateVehicle(idx, 'year', parseInt(e.target.value) || 0)}
-                            className="w-full px-3 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                            className="w-full px-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
                           />
                         </div>
                       </div>
@@ -806,41 +808,41 @@ export default function SuperFiCalculator() {
                 </>
               )}
 
-              <label className="flex items-center gap-3 cursor-pointer p-4 border-2 border-gray-200 rounded-xl hover:border-indigo-300 transition-colors">
+              <label className="flex items-center gap-3 cursor-pointer p-3 sm:p-4 border-2 border-gray-200 rounded-xl hover:border-indigo-300 transition-colors">
                 <input
                   type="checkbox"
                   checked={hasOtherExpenses}
                   onChange={(e) => setHasOtherExpenses(e.target.checked)}
-                  className="w-5 h-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  className="w-5 h-5 shrink-0 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                 />
-                <span className="text-lg font-medium text-gray-700">Other large expenses</span>
+                <span className="text-base sm:text-lg font-medium text-gray-700">Other large expenses</span>
               </label>
 
               {hasOtherExpenses && (
                 <>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center gap-2">
                     <span className="text-sm text-gray-600">Add your planned expenses</span>
                     <button
                       onClick={addOtherExpense}
-                      className="text-sm font-medium text-indigo-600 hover:text-indigo-700"
+                      className="text-sm font-medium text-indigo-600 hover:text-indigo-700 whitespace-nowrap"
                     >
                       + Add Expense
                     </button>
                   </div>
 
                   {otherExpenses.map((expense, idx) => (
-                    <div key={expense.id} className="p-4 border-2 border-gray-100 rounded-xl space-y-3">
-                      <div className="flex justify-between items-center">
+                    <div key={expense.id} className="p-3 sm:p-4 border-2 border-gray-100 rounded-xl space-y-3">
+                      <div className="flex justify-between items-center gap-2">
                         <input
                           type="text"
                           value={expense.name}
                           onChange={(e) => updateOtherExpense(idx, 'name', e.target.value)}
                           placeholder="Expense name (e.g., Home renovation)"
-                          className="flex-1 px-3 py-2 text-sm font-semibold border-0 focus:outline-none"
+                          className="flex-1 min-w-0 px-2 sm:px-3 py-2 text-sm font-semibold border-0 focus:outline-none"
                         />
                         <button
                           onClick={() => removeOtherExpense(idx)}
-                          className="text-sm text-red-600 hover:text-red-700"
+                          className="text-sm text-red-600 hover:text-red-700 shrink-0"
                         >
                           Remove
                         </button>
@@ -855,7 +857,7 @@ export default function SuperFiCalculator() {
                               type="number"
                               value={expense.amount}
                               onChange={(e) => updateOtherExpense(idx, 'amount', parseFloat(e.target.value) || 0)}
-                              className="w-full pl-7 pr-3 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                              className="w-full pl-7 pr-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
                             />
                           </div>
                         </div>
@@ -865,7 +867,7 @@ export default function SuperFiCalculator() {
                             type="number"
                             value={expense.year}
                             onChange={(e) => updateOtherExpense(idx, 'year', parseInt(e.target.value) || 0)}
-                            className="w-full px-3 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                            className="w-full px-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
                           />
                         </div>
                       </div>
@@ -876,11 +878,11 @@ export default function SuperFiCalculator() {
             </div>
           )}
 
-          <div className="flex gap-3 mt-8 pt-6 border-t border-gray-100">
+          <div className="flex flex-col-reverse sm:flex-row gap-3 mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-gray-100">
             {step > 0 && (
               <button
                 onClick={prevStep}
-                className="flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-gray-200 text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+                className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-gray-200 text-gray-700 font-medium hover:bg-gray-50 transition-colors w-full sm:w-auto"
               >
                 <ArrowLeft size={20} />
                 Back
@@ -888,7 +890,7 @@ export default function SuperFiCalculator() {
             )}
 
             {step === steps.length - 1 ? (
-              <div className="flex-1 space-y-3">
+              <div className="flex-1 space-y-3 w-full">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Email address to see your results
@@ -916,7 +918,7 @@ export default function SuperFiCalculator() {
             ) : (
               <button
                 onClick={nextStep}
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold hover:from-indigo-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl"
+                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold hover:from-indigo-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl w-full"
               >
                 Continue
                 <ArrowRight size={20} />
