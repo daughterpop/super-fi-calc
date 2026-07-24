@@ -203,6 +203,26 @@ const tools = [
     icon: 'shopping',
     footnote: 'Bonus issues after merchant confirms the qualifying Boost purchase (often 60–120 days). $30 minimum cashout typically applies. Terms set by Kudos.',
   },
+  {
+    id: 'rakuten',
+    name: 'Rakuten',
+    category: 'Cashback',
+    badge: 'Up to $50 bonus',
+    headline: 'Join and get a cash-back signup bonus after you shop',
+    description:
+      'One of the best cash-back portals for everyday online shopping. Sign up through this link — new members who make a qualifying purchase (often about $50 within 90 days; amount varies by promo) can earn a signup bonus, and you both benefit.',
+    perks: [
+      'Signup bonus for new members after a qualifying purchase (commonly ~$50 when you spend ~$50 — check current promo)',
+      'Cash back at thousands of stores (Amazon, Target, hotels, and more)',
+      'Browser extension makes activation automatic',
+      'Paid out quarterly as real cash or gift cards',
+    ],
+    cta: 'Join Rakuten for Cash Back',
+    href: 'https://www.rakuten.com/r/DHIMME9?eeid=44749',
+    accent: 'red',
+    icon: 'shopping',
+    footnote: 'Bonus amount and spend requirement vary by promotion and are shown at signup. New members only. Terms set by Rakuten.',
+  },
 ];
 
 function accentClasses(accent) {
@@ -228,7 +248,7 @@ function accentClasses(accent) {
     orange: {
       badge: 'bg-orange-100 text-orange-700',
       icon: 'bg-orange-500',
-      button: 'bg-orange-600 hover:bg-orange-700',
+n      button: 'bg-orange-600 hover:bg-orange-700',
       buttonOutline: 'border-orange-600 text-orange-700 hover:bg-orange-50',
       border: 'border-orange-100 hover:border-orange-200',
       soft: 'from-orange-50 to-amber-50',
@@ -296,6 +316,15 @@ function accentClasses(accent) {
       border: 'border-violet-100 hover:border-violet-200',
       soft: 'from-violet-50 to-purple-50',
       sparkle: 'text-violet-500',
+    },
+    red: {
+      badge: 'bg-red-100 text-red-700',
+      icon: 'bg-red-600',
+      button: 'bg-red-600 hover:bg-red-700',
+      buttonOutline: 'border-red-600 text-red-700 hover:bg-red-50',
+      border: 'border-red-100 hover:border-red-200',
+      soft: 'from-red-50 to-rose-50',
+      sparkle: 'text-red-500',
     },
   };
   return map[accent] || map.emerald;
@@ -372,6 +401,7 @@ export default function Tools() {
                   <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-5">{tool.description}</p>
                   <ul className="space-y-2.5 mb-6">
                     {tool.perks.map((perk, i) => (
+                     
                       <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
                         <Sparkles className={`${a.sparkle} shrink-0 mt-0.5`} size={16} />
                         <span>{perk}</span>
