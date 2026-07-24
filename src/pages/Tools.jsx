@@ -65,7 +65,7 @@ const tools = [
     id: 'monarch',
     name: 'Monarch Money',
     category: 'Budgeting',
-    badge: '50% off year 1',
+       badge: '50% off year 1',
     headline: '50% off your first year of a Core subscription',
     description:
       'All-in-one money app for tracking spending, budgeting, net worth, investments, and shared household finances. Use this referral link to get 50% off your first year of Core — ideal for Catholic families who want clear stewardship of every dollar.',
@@ -183,7 +183,7 @@ export default function Tools() {
                 </div>
 
                 <div className="px-5 sm:px-8 py-5 sm:py-6">
-                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-5">{tool.description.description}</p>
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-5">{tool.description}</p>
                   <ul className="space-y-2.5 mb-6">
                     {tool.perks.map((perk, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
@@ -195,7 +195,7 @@ export default function Tools() {
                   <a
                     href={tool.href}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"noopener noreferrer"
                     className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 ${a.button} text-white font-semibold rounded-xl transition-all shadow-md hover:shadow-lg text-sm sm:text-base`}
                   >
                     {tool.cta}
