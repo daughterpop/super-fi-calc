@@ -1,10 +1,5 @@
-# Redeploy trigger - July 24 2026
+# Redeploy trigger - July 24 2026 13:55 CDT
 
-Force production redeploy so homepage shows:
-1. Top emerald Robinhood referral strip (free stocks up to $200)
-2. "From the Blog" featured posts section with links to individual posts
-3. Sticky nav with Calculator / Blog / Tools
-4. Secondary Robinhood CTA after calculator
-5. Mint Mobile on Tools page
+Force production redeploy after fixing JSX syntax error in BlogIndex.jsx so the new blog post and updated index appear live.
 
-Previous live site was still serving an older successful build.
+New post: How Catholic Families Can Turn Summer Adventures Into Faith & Financial Freedom Lessons
