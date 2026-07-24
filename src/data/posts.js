@@ -10,6 +10,16 @@ const rawPosts = [
     featured: false
   },
   {
+    title: 'Protect Your Family’s Digital Privacy: Stewardship Tools That Belong on the Path to FI',
+    date: 'July 12, 2026',
+    dateSort: '2026-07-12',
+    excerpt: 'Identity theft and data brokers drain time, money, and peace. How Incogni and Surfshark help Catholic families protect their household as part of faithful financial independence.',
+    readTime: '5 min read',
+    link: '/blog/protect-your-familys-digital-privacy-stewardship-tools-for-catholic-fi',
+    tags: ['Privacy', 'Stewardship', 'Tools'],
+    featured: false
+  },
+  {
     title: 'Catholic Families: AI for Back-to-School Savings and Faith-Filled Financial Freedom',
     date: 'July 05, 2026',
     dateSort: '2026-07-05',
@@ -177,7 +187,9 @@ export const allTags = [
   'Stewardship',
   'Tithing',
   'Couples',
-  'Seasonal'
+  'Seasonal',
+  'Privacy',
+  'Tools'
 ];
 
 export const featuredPosts = allPosts.filter((p) => p.featured);
