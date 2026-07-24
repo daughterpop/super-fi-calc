@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake } from 'lucide-react';
 
 const tools = [
   {
@@ -143,6 +143,26 @@ const tools = [
     icon: 'banknote',
     footnote: 'Offer requires new account via referral and a qualifying send of $5+. Terms apply and may change.',
   },
+  {
+    id: 'daffy',
+    name: 'Daffy',
+    category: 'Giving',
+    badge: '$25 for charity',
+    headline: 'Get $25 for charity when you make your first contribution',
+    description:
+      'Modern donor-advised fund that makes charitable giving simple and habitual — give to nearly any U.S. nonprofit, involve family, and build generosity into your FI plan. Join through this invite and get $25 added for charity after Daffy receives your first contribution.',
+    perks: [
+      '$25 for charity when Daffy receives your first contribution',
+      'Donor-advised fund built for everyday families, not just the ultra-wealthy',
+      'Invite spouse and kids so giving becomes a shared family practice',
+      'Give to nearly any U.S. public charity from one place',
+    ],
+    cta: 'Join Daffy — $25 for Charity',
+    href: 'https://www.daffy.org/dhimmer1/invite',
+    accent: 'rose',
+    icon: 'heart',
+    footnote: 'Reward credits to your Daffy charitable account after first contribution. See Daffy’s referral terms. Offer subject to change.',
+  },
 ];
 
 function accentClasses(accent) {
@@ -210,6 +230,15 @@ function accentClasses(accent) {
       soft: 'from-lime-50 to-green-50',
       sparkle: 'text-lime-600',
     },
+    rose: {
+      badge: 'bg-rose-100 text-rose-700',
+      icon: 'bg-rose-500',
+      button: 'bg-rose-600 hover:bg-rose-700',
+      buttonOutline: 'border-rose-600 text-rose-700 hover:bg-rose-50',
+      border: 'border-rose-100 hover:border-rose-200',
+      soft: 'from-rose-50 to-pink-50',
+      sparkle: 'text-rose-500',
+    },
   };
   return map[accent] || map.emerald;
 }
@@ -221,6 +250,7 @@ function ToolIcon({ type }) {
   if (type === 'bitcoin') return <Bitcoin className="text-white" size={24} />;
   if (type === 'send') return <Send className="text-white" size={24} />;
   if (type === 'banknote') return <Banknote className="text-white" size={24} />;
+  if (type === 'heart') return <HeartHandshake className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
