@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake, ShoppingBag, Gem } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake, ShoppingBag, Gem, Tag, UtensilsCrossed } from 'lucide-react';
 
 const tools = [
   {
@@ -131,7 +131,7 @@ const tools = [
     headline: 'Join Venmo — you and a friend can each get $5',
     description:
       'Simple peer-to-peer payments for splitting bills, sending gifts, and everyday money between friends and family. Sign up through this link, complete a qualifying payment of $5 or more from a linked bank or card, and both of you can earn a $5 reward (terms apply).',
-    perks: [
+    per: [
       'New users and referrers can each earn $5 after a qualifying $5+ payment',
       'Quick P2P payments with bank or card funding',
       'Handy for family allowance tracking and shared expenses',
@@ -222,6 +222,46 @@ const tools = [
     accent: 'red',
     icon: 'shopping',
     footnote: 'Bonus amount and spend requirement vary by promotion and are shown at signup. New members only. Terms set by Rakuten.',
+  },
+  {
+    id: 'capitaloneshopping',
+    name: 'Capital One Shopping',
+    category: 'Cashback',
+    badge: 'Coupons + rewards',
+    headline: 'Automatic coupons, price drops, and shopping rewards',
+    description:
+      'Browser extension and app that finds coupon codes, tracks prices, and unlocks Capital One Shopping rewards. Sign up through this referral link to get started — great alongside Rakuten for stacking everyday savings.',
+    perks: [
+      'Auto-applies coupons at checkout when available',
+      'Price drop alerts and shopping rewards',
+      'Works across thousands of online stores',
+      'Easy browser extension setup',
+    ],
+    cta: 'Get Capital One Shopping',
+    href: 'https://capitaloneshopping.com/r/3045fb28-0a5c-4f54-91b0-5f52a22652ee',
+    accent: 'slate',
+    icon: 'tag',
+    footnote: 'Referral and signup bonuses vary by promotion. Terms set by Capital One Shopping.',
+  },
+  {
+    id: 'inkind',
+    name: 'inKind',
+    category: 'Dining',
+    badge: 'Dining rewards',
+    headline: 'Get rewards back at thousands of restaurants',
+    description:
+      'Restaurant rewards app with up to ~20% back at participating spots nationwide. New guests can often get a promo like $25 off a $50+ meal — check the offer when you sign up through this link.',
+    perks: [
+      'Earn up to ~20% back at participating restaurants',
+      'New-guest promos common (e.g. $25 off $50+ — varies)',
+      'Thousands of restaurants, bars, and cafés',
+      'Stack with credit-card dining rewards when possible',
+    ],
+    cta: 'Join inKind',
+    href: 'https://app.inkind.com/refer/MV6NGAWF',
+    accent: 'amber',
+    icon: 'utensils',
+    footnote: 'Promos and reward rates vary by market and restaurant. Terms set by inKind.',
   },
 ];
 
@@ -326,6 +366,24 @@ function accentClasses(accent) {
       soft: 'from-red-50 to-rose-50',
       sparkle: 'text-red-500',
     },
+    slate: {
+      badge: 'bg-slate-100 text-slate-700',
+      icon: 'bg-slate-700',
+      button: 'bg-slate-800 hover:bg-slate-900',
+      buttonOutline: 'border-slate-700 text-slate-800 hover:bg-slate-50',
+      border: 'border-slate-100 hover:border-slate-200',
+      soft: 'from-slate-50 to-gray-50',
+      sparkle: 'text-slate-500',
+    },
+    amber: {
+      badge: 'bg-amber-100 text-amber-800',
+      icon: 'bg-amber-500',
+      button: 'bg-amber-600 hover:bg-amber-700',
+      buttonOutline: 'border-amber-600 text-amber-800 hover:bg-amber-50',
+      border: 'border-amber-100 hover:border-amber-200',
+      soft: 'from-amber-50 to-orange-50',
+      sparkle: 'text-amber-600',
+    },
   };
   return map[accent] || map.emerald;
 }
@@ -340,6 +398,8 @@ function ToolIcon({ type }) {
   if (type === 'banknote') return <Banknote className="text-white" size={24} />;
   if (type === 'heart') return <HeartHandshake className="text-white" size={24} />;
   if (type === 'shopping') return <ShoppingBag className="text-white" size={24} />;
+  if (type === 'tag') return <Tag className="text-white" size={24} />;
+  if (type === 'utensils') return <UtensilsCrossed className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
@@ -380,7 +440,7 @@ export default function Tools() {
               <div key={tool.id} className={`bg-white rounded-2xl sm:rounded-3xl shadow-sm border ${a.border} overflow-hidden transition-all`}>
                 <div className={`bg-gradient-to-r ${a.soft} px-5 sm:px-8 pt-6 sm:pt-8 pb-4`}>
                   <div className="flex flex-wrap items-center gap-2 mb-3">
-                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${a.badge}`}>
+                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${ ${a.badge}`}>
                       <Gift size={12} />
                       {tool.badge}
                     </span>
