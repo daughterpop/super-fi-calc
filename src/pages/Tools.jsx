@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake, ShoppingBag, Gem, Tag, UtensilsCrossed } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake, ShoppingBag, Gem, Tag, UtensilsCrossed, Building2 } from 'lucide-react';
 
 const tools = [
   {
@@ -157,11 +157,31 @@ const tools = [
       'Optional Cash App Card and stock/Bitcoin investing tools',
       'Useful for allowances, reimbursements, and everyday transfers',
     ],
-   cta: 'Join Cash App — Code 42DKBR2',
+    cta: 'Join Cash App — Code 42DKBR2',
     href: 'https://cash.app/refer/42DKBR2',
     accent: 'lime',
     icon: 'banknote',
     footnote: 'Offer requires new account via referral and a qualifying send of $5+. Terms apply and may change.',
+  },
+  {
+    id: 'chime',
+    name: 'Chime',
+    category: 'Banking',
+    badge: 'Get $100',
+    headline: 'Join Chime and get $100 — terms apply',
+    description:
+      'Fee-friendly mobile banking with early direct deposit, no monthly fees, and a debit card. Sign up through this link and get $100 when you complete the qualifying steps (terms apply).',
+    perks: [
+      'Get $100 when you join and meet offer requirements',
+      'No monthly fees or overdraft fees on eligible accounts',
+      'Get paid up to 2 days early with direct deposit',
+      'Mobile-first checking and savings experience',
+    ],
+    cta: 'Join Chime — Get $100',
+    href: 'https://www.chime.com/r/dustinhimmerich/?c=s',
+    accent: 'green',
+    icon: 'building',
+    footnote: 'Bonus requires qualifying activity per Chime’s current referral terms. Offer subject to change.',
   },
   {
     id: 'daffy',
@@ -244,7 +264,7 @@ const tools = [
     footnote: 'Referral and signup bonuses vary by promotion. Terms set by Capital One Shopping.',
   },
   {
-    id: 'inkind',
+    id: 'ink',
     name: 'inKind',
     category: 'Dining',
     badge: 'Dining rewards',
@@ -339,6 +359,15 @@ function accentClasses(accent) {
       soft: 'from-lime-50 to-green-50',
       sparkle: 'text-lime-600',
     },
+    green: {
+      badge: 'bg-green-100 text-green-700',
+      icon: 'bg-green-600',
+      button: 'bg-green-600 hover:bg-green-700',
+      buttonOutline: 'border-green-600 text-green-700 hover:bg-green-50',
+      border: 'border-green-100 hover:border-green-200',
+      soft: 'from-green-50 to-emerald-50',
+      sparkle: 'text-green-500',
+    },
     rose: {
       badge: 'bg-rose-100 text-rose-700',
       icon: 'bg-rose-500',
@@ -396,6 +425,7 @@ function ToolIcon({ type }) {
   if (type === 'gem') return <Gem className="text-white" size={24} />;
   if (type === 'send') return <Send className="text-white" size={24} />;
   if (type === 'banknote') return <Banknote className="text-white" size={24} />;
+  if (type === 'building') return <Building2 className="text-white" size={24} />;
   if (type === 'heart') return <HeartHandshake className="text-white" size={24} />;
   if (type === 'shopping') return <ShoppingBag className="text-white" size={24} />;
   if (type === 'tag') return <Tag className="text-white" size={24} />;
