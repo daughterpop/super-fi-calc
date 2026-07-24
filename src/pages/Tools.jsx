@@ -1,5 +1,30 @@
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake, ShoppingBag, Gem, Tag, UtensilsCrossed, Building2, Camera, Percent, MapPin } from 'lucide-react';
+import {
+  TrendingUp,
+  ArrowRight,
+  Gift,
+  Shield,
+  Sparkles,
+  ExternalLink,
+  Landmark,
+  BarChart3,
+  Wallet,
+  Bitcoin,
+  Send,
+  Banknote,
+  HeartHandshake,
+  ShoppingBag,
+  Gem,
+  Tag,
+  UtensilsCrossed,
+  Building2,
+  Camera,
+  Percent,
+  MapPin,
+  SlidersHorizontal,
+  ArrowUpDown,
+} from 'lucide-react';
 
 const tools = [
   {
@@ -20,6 +45,7 @@ const tools = [
     href: 'https://join.robinhood.com/dustinh-1bff5a',
     accent: 'emerald',
     icon: 'trending',
+    valueScore: 200,
   },
   {
     id: 'wealthfront',
@@ -40,6 +66,7 @@ const tools = [
     accent: 'indigo',
     icon: 'landmark',
     footnote: 'Base APY as of 7/24/26 and subject to change. Offer terms set by Wealthfront.',
+    valueScore: 500,
   },
   {
     id: 'moomoo',
@@ -60,6 +87,7 @@ const tools = [
     accent: 'orange',
     icon: 'chart',
     footnote: 'Welcome / referral terms set by Moomoo Financial Inc. Deposit thresholds, stock values, and APY rates change — check current offer on sign-up. Investing involves risk.',
+    valueScore: 1000,
   },
   {
     id: 'monarch',
@@ -80,6 +108,7 @@ const tools = [
     accent: 'teal',
     icon: 'wallet',
     footnote: 'Discount applies to first year of Core subscription per Monarch’s referral terms. Offer subject to change.',
+    valueScore: 60,
   },
   {
     id: 'coinbase',
@@ -102,6 +131,7 @@ const tools = [
     accent: 'blue',
     icon: 'bitcoin',
     footnote: 'Limited-time offers. New customers only; must complete qualifying activity. Advanced rewards based on trading volume in first 14 days. Terms set by Coinbase; rewards not guaranteed.',
+    valueScore: 50,
   },
   {
     id: 'gemini',
@@ -122,6 +152,7 @@ const tools = [
     accent: 'cyan',
     icon: 'gem',
     footnote: 'Offer requires signup via referral and either Gemini Credit Card approval or $100+ in trades. Terms set by Gemini; crypto rewards and eligibility can change.',
+    valueScore: 50,
   },
   {
     id: 'venmo',
@@ -142,6 +173,7 @@ const tools = [
     accent: 'sky',
     icon: 'send',
     footnote: 'Reward requires signup via referral link and a qualifying personal payment of $5+ using a linked funding source. Terms: https://payp.al/ref — offer subject to change.',
+    valueScore: 5,
   },
   {
     id: 'cashapp',
@@ -162,6 +194,7 @@ const tools = [
     accent: 'lime',
     icon: 'banknote',
     footnote: 'Offer requires new account via referral and a qualifying send of $5+. Terms apply and may change.',
+    valueScore: 5,
   },
   {
     id: 'chime',
@@ -182,6 +215,7 @@ const tools = [
     accent: 'green',
     icon: 'building',
     footnote: 'Bonus requires qualifying activity per Chime’s current referral terms. Offer subject to change.',
+    valueScore: 100,
   },
   {
     id: 'daffy',
@@ -202,6 +236,7 @@ const tools = [
     accent: 'rose',
     icon: 'heart',
     footnote: 'Reward credits to your Daffy charitable account after first contribution. See Daffy’s referral terms. Offer subject to change.',
+    valueScore: 25,
   },
   {
     id: 'kudos',
@@ -222,6 +257,7 @@ const tools = [
     accent: 'violet',
     icon: 'shopping',
     footnote: 'Bonus issues after merchant confirms the qualifying Boost purchase (often 60–120 days). $30 minimum cashout typically applies. Terms set by Kudos.',
+    valueScore: 20,
   },
   {
     id: 'rakuten',
@@ -242,6 +278,7 @@ const tools = [
     accent: 'red',
     icon: 'shopping',
     footnote: 'Bonus amount and spend requirement vary by promotion and are shown at signup. New members only. Terms set by Rakuten.',
+    valueScore: 50,
   },
   {
     id: 'capitaloneshopping',
@@ -262,6 +299,7 @@ const tools = [
     accent: 'slate',
     icon: 'tag',
     footnote: 'Referral and signup bonuses vary by promotion. Terms set by Capital One Shopping.',
+    valueScore: 30,
   },
   {
     id: 'honey',
@@ -282,6 +320,7 @@ const tools = [
     accent: 'orange',
     icon: 'percent',
     footnote: 'Honey is a PayPal service. Rewards and coupon availability vary by store. Terms set by Honey / PayPal.',
+    valueScore: 15,
   },
   {
     id: 'fetch',
@@ -302,6 +341,7 @@ const tools = [
     accent: 'fuchsia',
     icon: 'camera',
     footnote: 'Referral bonus requires signup via link and scanning a first receipt. Terms set by Fetch Rewards.',
+    valueScore: 10,
   },
   {
     id: 'inkind',
@@ -322,6 +362,7 @@ const tools = [
     accent: 'amber',
     icon: 'utensils',
     footnote: 'Promos and reward rates vary by market and restaurant. Terms set by inKind.',
+    valueScore: 25,
   },
   {
     id: 'franki',
@@ -342,8 +383,11 @@ const tools = [
     accent: 'pink',
     icon: 'mappin',
     footnote: 'Referral amounts and cash-back rates vary by market and offer. Terms set by Franki.',
+    valueScore: 12,
   },
 ];
+
+const CATEGORIES = ['All', ...Array.from(new Set(tools.map((t) => t.category)))];
 
 function accentClasses(accent) {
   const map = {
@@ -515,6 +559,23 @@ function ToolIcon({ type }) {
 }
 
 export default function Tools() {
+  const [category, setCategory] = useState('All');
+  const [sortBy, setSortBy] = useState('default');
+
+  const filteredTools = useMemo(() => {
+    let list = category === 'All' ? [...tools] : tools.filter((t) => t.category === category);
+
+    if (sortBy === 'value-desc') {
+      list = [...list].sort((a, b) => (b.valueScore || 0) - (a.valueScore || 0));
+    } else if (sortBy === 'value-asc') {
+      list = [...list].sort((a, b) => (a.valueScore || 0) - (b.valueScore || 0));
+    } else if (sortBy === 'name') {
+      list = [...list].sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+    return list;
+  }, [category, sortBy]);
+
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
@@ -524,15 +585,21 @@ export default function Tools() {
             <span className="hidden sm:inline text-2xl">Super FI Calculator</span>
           </Link>
           <div className="flex items-center gap-3 sm:gap-8 text-sm">
-            <Link to="/" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Calculator</Link>
-            <Link to="/blog" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Blog</Link>
-            <Link to="/tools" className="text-emerald-600 font-medium whitespace-nowrap">Tools</Link>
+            <Link to="/" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">
+              Calculator
+            </Link>
+            <Link to="/blog" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">
+              Blog
+            </Link>
+            <Link to="/tools" className="text-emerald-600 font-medium whitespace-nowrap">
+              Tools
+            </Link>
           </div>
         </div>
       </nav>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
-        <div className="text-center mb-10 sm:mb-12">
+        <div className="text-center mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-semibold tracking-[1.5px] mb-4">
             STEWARDSHIP TOOLS • REFERRAL PERKS
           </div>
@@ -544,69 +611,143 @@ export default function Tools() {
           </p>
         </div>
 
-        <div className="space-y-6">
-          {tools.map((tool) => {
-            const a = accentClasses(tool.accent);
-            return (
-              <div key={tool.id} className={`bg-white rounded-2xl sm:rounded-3xl shadow-sm border ${a.border} overflow-hidden transition-all`}>
-                <div className={`bg-gradient-to-r ${a.soft} px-5 sm:px-8 pt-6 sm:pt-8 pb-4`}>
-                  <div className="flex flex-wrap items-center gap-2 mb-3">
-                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${a.badge}`}>
-                      <Gift size={12} />
-                      {tool.badge}
+        {/* Filters */}
+        <div className="mb-8 space-y-4">
+          <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
+            <SlidersHorizontal size={16} className="text-emerald-600 shrink-0" />
+            <span>Filter by category</span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {CATEGORIES.map((cat) => {
+              const active = category === cat;
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setCategory(cat)}
+                  className={`px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all border ${
+                    active
+                      ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm'
+                      : 'bg-white text-gray-700 border-gray-200 hover:border-emerald-300 hover:text-emerald-700'
+                  }`}
+                >
+                  {cat}
+                  {cat !== 'All' && (
+                    <span className={`ml-1.5 ${active ? 'text-emerald-100' : 'text-gray-400'}`}>
+                      {tools.filter((t) => t.category === cat).length}
                     </span>
-                    <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">{tool.category}</span>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className={`w-12 h-12 shrink-0 ${a.icon} rounded-xl flex items-center justify-center shadow-sm`}>
-                      <ToolIcon type={tool.icon} />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <h2 className="text-xl sm:text-2xl font-bold text-gray-900">{tool.name}</h2>
-                      <p className="text-sm sm:text-base text-gray-700 mt-1 font-medium">{tool.headline}</p>
-                    </div>
-                  </div>
-                </div>
+                  )}
+                  {cat === 'All' && (
+                    <span className={`ml-1.5 ${active ? 'text-emerald-100' : 'text-gray-400'}`}>
+                      {tools.length}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
 
-                <div className="px-5 sm:px-8 py-5 sm:py-6">
-                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-5">{tool.description}</p>
-                  <ul className="space-y-2.5 mb-6">
-                    {tool.perks.map((perk, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
-                        <Sparkles className={`${a.sparkle} shrink-0 mt-0.5`} size={16} />
-                        <span>{perk}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <a
-                      href={tool.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 ${a.button} text-white font-semibold rounded-xl transition-all shadow-md hover:shadow-lg text-sm sm:text-base`}
-                    >
-                      {tool.cta}
-                      <ExternalLink size={18} />
-                    </a>
-                    {tool.secondaryCta && tool.secondaryHref && (
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-1">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <ArrowUpDown size={16} className="text-emerald-600 shrink-0" />
+              <label htmlFor="sort-tools" className="font-medium text-gray-700">
+                Sort by
+              </label>
+              <select
+                id="sort-tools"
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              >
+                <option value="default">Default order</option>
+                <option value="value-desc">Highest value first</option>
+                <option value="value-asc">Lowest value first</option>
+                <option value="name">Name A–Z</option>
+              </select>
+            </div>
+            <p className="text-xs text-gray-500">
+              Showing {filteredTools.length} of {tools.length} tools
+              {category !== 'All' ? ` in ${category}` : ''}
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {filteredTools.length === 0 ? (
+            <div className="bg-white rounded-2xl border border-gray-100 p-8 text-center text-gray-500">
+              No tools in this category yet.
+            </div>
+          ) : (
+            filteredTools.map((tool) => {
+              const a = accentClasses(tool.accent);
+              return (
+                <div
+                  key={tool.id}
+                  className={`bg-white rounded-2xl sm:rounded-3xl shadow-sm border ${a.border} overflow-hidden transition-all`}
+                >
+                  <div className={`bg-gradient-to-r ${a.soft} px-5 sm:px-8 pt-6 sm:pt-8 pb-4`}>
+                    <div className="flex flex-wrap items-center gap-2 mb-3">
+                      <span
+                        className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${a.badge}`}
+                      >
+                        <Gift size={12} />
+                        {tool.badge}
+                      </span>
+                      <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                        {tool.category}
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div
+                        className={`w-12 h-12 shrink-0 ${a.icon} rounded-xl flex items-center justify-center shadow-sm`}
+                      >
+                        <ToolIcon type={tool.icon} />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <h2 className="text-xl sm:text-2xl font-bold text-gray-900">{tool.name}</h2>
+                        <p className="text-sm sm:text-base text-gray-700 mt-1 font-medium">{tool.headline}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="px-5 sm:px-8 py-5 sm:py-6">
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-5">{tool.description}</p>
+                    <ul className="space-y-2.5 mb-6">
+                      {tool.perks.map((perk, i) => (
+                        <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
+                          <Sparkles className={`${a.sparkle} shrink-0 mt-0.5`} size={16} />
+                          <span>{perk}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-col sm:flex-row gap-3">
                       <a
-                        href={tool.secondaryHref}
+                        href={tool.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 border-2 ${a.buttonOutline} bg-white font-semibold rounded-xl transition-all text-sm sm:text-base`}
+                        className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 ${a.button} text-white font-semibold rounded-xl transition-all shadow-md hover:shadow-lg text-sm sm:text-base`}
                       >
-                        {tool.secondaryCta}
+                        {tool.cta}
                         <ExternalLink size={18} />
                       </a>
-                    )}
+                      {tool.secondaryCta && tool.secondaryHref && (
+                        <a
+                          href={tool.secondaryHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 border-2 ${a.buttonOutline} bg-white font-semibold rounded-xl transition-all text-sm sm:text-base`}
+                        >
+                          {tool.secondaryCta}
+                          <ExternalLink size={18} />
+                        </a>
+                      )}
+                    </div>
+                    {tool.footnote && <p className="text-xs text-gray-400 mt-3">{tool.footnote}</p>}
                   </div>
-                  {tool.footnote && (
-                    <p className="text-xs text-gray-400 mt-3">{tool.footnote}</p>
-                  )}
                 </div>
-              </div>
-            );
-          })}
+              );
+            })
+          )}
         </div>
 
         <div className="mt-10 sm:mt-12 p-5 sm:p-6 bg-white rounded-2xl border border-gray-100 text-center">
@@ -614,7 +755,10 @@ export default function Tools() {
             <Shield className="text-gray-400" size={22} />
           </div>
           <p className="text-sm text-gray-600 leading-relaxed max-w-lg mx-auto">
-            These are affiliate / referral links. If you sign up through them, you often get a bonus and Super FI may earn a small commission — at no extra cost to you. We only list tools we'd use ourselves on the path to faithful financial independence.
+            These are affiliate / referral links. If you sign up through them, you often get a bonus and Super FI may earn a
+            small commission — at no extra cost to you. We only list tools we'd use ourselves on the path to faithful
+            financial independence. Value sort ranks approximate signup / referral bonus potential and may change with
+            offers.
           </p>
         </div>
 
