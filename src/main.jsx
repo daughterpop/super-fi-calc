@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './index.css';
 import App from './App.jsx';
+import Calculators from './pages/Calculators.jsx';
 import BlogIndex from './pages/BlogIndex.jsx';
 import Tools from './pages/Tools.jsx';
 import WhyFIForEveryone from './pages/WhyFIForEveryone.jsx';
@@ -27,6 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/calculators" element={<Calculators />} />
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/tools" element={<Tools />} />
 
