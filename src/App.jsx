@@ -10,40 +10,20 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
-      {/* Navigation — compact on mobile so brand + links never collide */}
       <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
-          <Link
-            to="/"
-            className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight"
-          >
+          <Link to="/" className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight">
             <span className="sm:hidden text-base">Super FI</span>
             <span className="hidden sm:inline text-2xl">Super FI Calculator</span>
           </Link>
           <div className="flex items-center gap-3 sm:gap-8 text-sm">
-            <Link
-              to="/"
-              className="text-emerald-600 font-medium whitespace-nowrap"
-            >
-              Calculator
-            </Link>
-            <Link
-              to="/blog"
-              className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap"
-            >
-              Blog
-            </Link>
-            <a
-              href="#"
-              className="hidden md:inline text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap"
-            >
-              Resources
-            </a>
+            <Link to="/" className="text-emerald-600 font-medium whitespace-nowrap">Calculator</Link>
+            <Link to="/blog" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Blog</Link>
+            <Link to="/tools" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Tools</Link>
           </div>
         </div>
       </nav>
 
-      {/* Who This Is For — Trust & Relevance Strip */}
       <div className="bg-white border-b">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
           <div className="text-center mb-6 sm:mb-8">
@@ -68,7 +48,6 @@ function App() {
               </div>
               <p className="text-gray-600 text-sm leading-relaxed">See the real impact of tuition inflation and multiple kids on your FI timeline. Plan with margin for faith formation and family experiences that matter most.</p>
             </div>
-
             <div className="group bg-gray-50 hover:bg-white border border-gray-100 hover:border-emerald-200 rounded-2xl p-5 sm:p-6 transition-all">
               <div className="flex items-center gap-3 mb-3 sm:mb-4">
                 <div className="w-10 h-10 shrink-0 bg-emerald-100 group-hover:bg-emerald-200 rounded-xl flex items-center justify-center transition-colors">
@@ -78,7 +57,6 @@ function App() {
               </div>
               <p className="text-gray-600 text-sm leading-relaxed">Model paying down your home while investing. Understand how becoming debt-free faster creates more room for tithing, hospitality, and Kingdom work.</p>
             </div>
-
             <div className="group bg-gray-50 hover:bg-white border border-gray-100 hover:border-emerald-200 rounded-2xl p-5 sm:p-6 transition-all">
               <div className="flex items-center gap-3 mb-3 sm:mb-4">
                 <div className="w-10 h-10 shrink-0 bg-emerald-100 group-hover:bg-emerald-200 rounded-xl flex items-center justify-center transition-colors">
@@ -90,12 +68,13 @@ function App() {
             </div>
           </div>
 
-          <div className="mt-6 sm:mt-8 text-center">
-            <Link
-              to="/blog"
-              className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium text-sm group"
-            >
+          <div className="mt-6 sm:mt-8 text-center flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+            <Link to="/blog" className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium text-sm group">
               Explore family stories &amp; faith-based FI insights
+              <ArrowRight size={16} className="group-hover:translate-x-0.5 transition" />
+            </Link>
+            <Link to="/tools" className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium text-sm group">
+              See recommended tools &amp; perks
               <ArrowRight size={16} className="group-hover:translate-x-0.5 transition" />
             </Link>
           </div>
@@ -103,22 +82,10 @@ function App() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        {/* Tabs */}
         <div className="flex border-b mb-6 sm:mb-8 bg-white rounded-t-lg overflow-hidden">
-          <button
-            onClick={() => setActiveTab('quick')}
-            className={`flex-1 px-3 sm:px-8 py-3 sm:py-4 font-medium text-sm sm:text-lg transition-colors text-center ${activeTab === 'quick' ? 'border-b-4 border-emerald-600 text-emerald-600' : 'text-gray-500 hover:text-gray-700'}`}
-          >
-            Quick Calculator
-          </button>
-          <button
-            onClick={() => setActiveTab('advanced')}
-            className={`flex-1 px-3 sm:px-8 py-3 sm:py-4 font-medium text-sm sm:text-lg transition-colors text-center ${activeTab === 'advanced' ? 'border-b-4 border-emerald-600 text-emerald-600' : 'text-gray-500 hover:text-gray-700'}`}
-          >
-            Advanced Calculator
-          </button>
+          <button onClick={() => setActiveTab('quick')} className={`flex-1 px-3 sm:px-8 py-3 sm:py-4 font-medium text-sm sm:text-lg transition-colors text-center ${activeTab === 'quick' ? 'border-b-4 border-emerald-600 text-emerald-600' : 'text-gray-500 hover:text-gray-700'}`}>Quick Calculator</button>
+          <button onClick={() => setActiveTab('advanced')} className={`flex-1 px-3 sm:px-8 py-3 sm:py-4 font-medium text-sm sm:text-lg transition-colors text-center ${activeTab === 'advanced' ? 'border-b-4 border-emerald-600 text-emerald-600' : 'text-gray-500 hover:text-gray-700'}`}>Advanced Calculator</button>
         </div>
-
         {activeTab === 'quick' ? (
           <SuperFiCalculator />
         ) : (
