@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake, ShoppingBag } from 'lucide-react';
 
 const tools = [
   {
@@ -163,6 +163,26 @@ const tools = [
     icon: 'heart',
     footnote: 'Reward credits to your Daffy charitable account after first contribution. See Daffy’s referral terms. Offer subject to change.',
   },
+  {
+    id: 'kudos',
+    name: 'Kudos',
+    category: 'Cashback',
+    badge: '$20 bonus',
+    headline: 'Get $20 when you shop $30+ at a Boost merchant',
+    description:
+      'Cashback shopping portal and browser extension that passes through affiliate commissions. Sign up with code Super_FI, then make a qualifying purchase of $30 or more at a Kudos Boost merchant to unlock the $20 referral bonus (confirmation can take 60–120 days).',
+    perks: [
+      '$20 referral bonus after a $30+ purchase at a Boost merchant',
+      'Use referral code Super_FI at signup',
+      'Cashback / rewards on everyday shopping',
+      'Chrome extension + app for one-click activation',
+    ],
+    cta: 'Join Kudos — Code Super_FI',
+    href: 'https://www.joinkudos.com',
+    accent: 'violet',
+    icon: 'shopping',
+    footnote: 'Bonus issues after merchant confirms the qualifying Boost purchase (often 60–120 days). $30 minimum cashout typically applies. Terms set by Kudos.',
+  },
 ];
 
 function accentClasses(accent) {
@@ -239,6 +259,15 @@ function accentClasses(accent) {
       soft: 'from-rose-50 to-pink-50',
       sparkle: 'text-rose-500',
     },
+    violet: {
+      badge: 'bg-violet-100 text-violet-700',
+      icon: 'bg-violet-600',
+      button: 'bg-violet-600 hover:bg-violet-700',
+      buttonOutline: 'border-violet-600 text-violet-700 hover:bg-violet-50',
+      border: 'border-violet-100 hover:border-violet-200',
+      soft: 'from-violet-50 to-purple-50',
+      sparkle: 'text-violet-500',
+    },
   };
   return map[accent] || map.emerald;
 }
@@ -251,6 +280,7 @@ function ToolIcon({ type }) {
   if (type === 'send') return <Send className="text-white" size={24} />;
   if (type === 'banknote') return <Banknote className="text-white" size={24} />;
   if (type === 'heart') return <HeartHandshake className="text-white" size={24} />;
+  if (type === 'shopping') return <ShoppingBag className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
