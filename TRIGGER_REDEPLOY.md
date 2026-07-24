@@ -1,4 +1,3 @@
-# Redeploy trigger - July 23 2026 full fix (synced to main)
+# Redeploy trigger - July 23 2026 full fix FINAL (synced to main)
 
-Forced clean redeploy after isolating routes, adding critical CSS import, and verifying calculator + core blog.
-All source double-checked. Site should be fully functional.
+Root cause: CJS/ESM mismatch in Tailwind config under "type": "module". Fixed with pure ESM config + explicit Vite settings in vercel.json + cleaned CSS. Calculator and blog should load fully after this deploy.
