@@ -33,12 +33,12 @@ function App() {
             >
               Blog
             </Link>
-            <a
-              href="#"
-              className="hidden md:inline text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap"
+            <Link
+              to="/tools"
+              className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap"
             >
-              Resources
-            </a>
+              Tools
+            </Link>
           </div>
         </div>
       </nav>
@@ -90,12 +90,19 @@ function App() {
             </div>
           </div>
 
-          <div className="mt-6 sm:mt-8 text-center">
+          <div className="mt-6 sm:mt-8 text-center flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
             <Link
               to="/blog"
               className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium text-sm group"
             >
               Explore family stories &amp; faith-based FI insights
+              <ArrowRight size={16} className="group-hover:translate-x-0.5 transition" />
+            </Link>
+            <Link
+              to="/tools"
+              className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium text-sm group"
+            >
+              See recommended tools &amp; perks
               <ArrowRight size={16} className="group-hover:translate-x-0.5 transition" />
             </Link>
           </div>
