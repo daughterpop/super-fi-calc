@@ -72,5 +72,16 @@
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+  html {
+    overflow-x: hidden;
+  }
+}
+
+/* Prevent huge currency figures from blowing out mobile layouts */
+@layer utilities {
+  .fi-number {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold tabular-nums tracking-tight break-all max-w-full;
   }
 }

@@ -10,13 +10,17 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
-      {/* Navigation */}
+      {/* Navigation — compact on mobile so brand + links never collide */}
       <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center gap-3">
-          <Link to="/" className="text-lg sm:text-2xl font-bold text-emerald-600 hover:text-emerald-700 shrink-0">
-            Super FI Calculator
+        <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
+          <Link
+            to="/"
+            className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight"
+          >
+            <span className="sm:hidden text-base">Super FI</span>
+            <span className="hidden sm:inline text-2xl">Super FI Calculator</span>
           </Link>
-          <div className="flex items-center gap-4 sm:gap-8 text-sm">
+          <div className="flex items-center gap-3 sm:gap-8 text-sm">
             <Link
               to="/"
               className="text-emerald-600 font-medium whitespace-nowrap"
@@ -29,7 +33,12 @@ function App() {
             >
               Blog
             </Link>
-            <a href="#" className="hidden sm:inline text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Resources</a>
+            <a
+              href="#"
+              className="hidden md:inline text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap"
+            >
+              Resources
+            </a>
           </div>
         </div>
       </nav>
@@ -41,7 +50,7 @@ function App() {
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-semibold tracking-[1.5px] mb-3 sm:mb-4">
               FAITH • FAMILY • GENERATIONAL WEALTH
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight px-1">
               Built for Catholic Families Who Steward with Purpose
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
