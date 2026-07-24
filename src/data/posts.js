@@ -1,4 +1,4 @@
-export const allPosts = [
+const rawPosts = [
   {
     title: 'Catholic Families: AI for Back-to-School Savings and Faith-Filled Financial Freedom',
     date: 'July 05, 2026',
@@ -103,7 +103,7 @@ export const allPosts = [
     title: 'How Christian Couples Unlock Financial Freedom Together',
     date: 'June 21, 2026',
     dateSort: '2026-06-21',
-    excerpt: 'Christian couples sharing practical steps to build FI as a team, rooted in faith, communication, and shared vision for their family\'s future.',
+    excerpt: "Christian couples sharing practical steps to build FI as a team, rooted in faith, communication, and shared vision for their family's future.",
     readTime: '4 min read',
     link: '/blog/how-christian-couples-unlock-financial-freedom-together-faith-teamwork-and-a-legacy-your-family-will-thank-you-for',
     tags: ['Couples', 'Legacy', 'Stewardship'],
@@ -151,6 +151,14 @@ export const allPosts = [
   }
 ];
 
+// Dedupe by link so the same post can never appear twice in the list
+const seen = new Set();
+export const allPosts = rawPosts.filter((post) => {
+  if (seen.has(post.link)) return false;
+  seen.add(post.link);
+  return true;
+});
+
 export const allTags = [
   'AI Tools',
   'Parenting',
@@ -162,4 +170,4 @@ export const allTags = [
   'Seasonal'
 ];
 
-export const featuredPosts = allPosts.filter(p => p.featured);
+export const featuredPosts = allPosts.filter((p) => p.featured);
