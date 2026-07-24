@@ -248,7 +248,7 @@ function accentClasses(accent) {
     orange: {
       badge: 'bg-orange-100 text-orange-700',
       icon: 'bg-orange-500',
-n      button: 'bg-orange-600 hover:bg-orange-700',
+      button: 'bg-orange-600 hover:bg-orange-700',
       buttonOutline: 'border-orange-600 text-orange-700 hover:bg-orange-50',
       border: 'border-orange-100 hover:border-orange-200',
       soft: 'from-orange-50 to-amber-50',
@@ -401,7 +401,6 @@ export default function Tools() {
                   <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-5">{tool.description}</p>
                   <ul className="space-y-2.5 mb-6">
                     {tool.perks.map((perk, i) => (
-                     
                       <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
                         <Sparkles className={`${a.sparkle} shrink-0 mt-0.5`} size={16} />
                         <span>{perk}</span>
