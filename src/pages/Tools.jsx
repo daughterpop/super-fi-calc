@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3 } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Smartphone } from 'lucide-react';
 
 const tools = [
   {
@@ -61,6 +61,26 @@ const tools = [
     icon: 'chart',
     footnote: 'Welcome / referral terms set by Moomoo Financial Inc. Deposit thresholds, stock values, and APY rates change — check current offer on sign-up. Investing involves risk.',
   },
+  {
+    id: 'mintmobile',
+    name: 'Mint Mobile',
+    category: 'Wireless Savings',
+    badge: '$15 credit',
+    headline: 'Stop overpaying for wireless — free up cash for FI and family',
+    description:
+      'Mint Mobile offers simple, affordable plans on a major network. Switch and stop spending so much on your wireless bill. Use this referral link to get $15 in renewal credit, then put the ongoing savings toward investing, tithing, or family priorities.',
+    perks: [
+      '$15 renewal credit when you sign up through this link',
+      'Plans often start around $15/mo equivalent (prepaid, multi-month options)',
+      'Same major-network coverage many families already use',
+      'Easy way to free up $20–50+/month for your FI plan or generosity',
+    ],
+    cta: 'Switch to Mint & Get $15 Credit',
+    href: 'https://my.mintmobile.com/refer/n5SgKMM',
+    accent: 'teal',
+    icon: 'phone',
+    footnote: 'Referral credit appears after activation (typically ~15 days). Offer terms set by Mint Mobile. Availability and plan pricing subject to change.',
+  },
 ];
 
 function accentClasses(accent) {
@@ -89,6 +109,14 @@ function accentClasses(accent) {
       soft: 'from-orange-50 to-amber-50',
       sparkle: 'text-orange-500',
     },
+    teal: {
+      badge: 'bg-teal-100 text-teal-700',
+      icon: 'bg-teal-500',
+      button: 'bg-teal-600 hover:bg-teal-700',
+      border: 'border-teal-100 hover:border-teal-200',
+      soft: 'from-teal-50 to-cyan-50',
+      sparkle: 'text-teal-500',
+    },
   };
   return map[accent] || map.emerald;
 }
@@ -96,6 +124,7 @@ function accentClasses(accent) {
 function ToolIcon({ type }) {
   if (type === 'landmark') return <Landmark className="text-white" size={24} />;
   if (type === 'chart') return <BarChart3 className="text-white" size={24} />;
+  if (type === 'phone') return <Smartphone className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
