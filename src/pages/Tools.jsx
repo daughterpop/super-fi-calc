@@ -131,7 +131,7 @@ const tools = [
     headline: 'Join Venmo — you and a friend can each get $5',
     description:
       'Simple peer-to-peer payments for splitting bills, sending gifts, and everyday money between friends and family. Sign up through this link, complete a qualifying payment of $5 or more from a linked bank or card, and both of you can earn a $5 reward (terms apply).',
-    per: [
+    perks: [
       'New users and referrers can each earn $5 after a qualifying $5+ payment',
       'Quick P2P payments with bank or card funding',
       'Handy for family allowance tracking and shared expenses',
@@ -157,7 +157,7 @@ const tools = [
       'Optional Cash App Card and stock/Bitcoin investing tools',
       'Useful for allowances, reimbursements, and everyday transfers',
     ],
-    cta: 'Join Cash App — Code 42DKBR2',
+   cta: 'Join Cash App — Code 42DKBR2',
     href: 'https://cash.app/refer/42DKBR2',
     accent: 'lime',
     icon: 'banknote',
@@ -440,7 +440,7 @@ export default function Tools() {
               <div key={tool.id} className={`bg-white rounded-2xl sm:rounded-3xl shadow-sm border ${a.border} overflow-hidden transition-all`}>
                 <div className={`bg-gradient-to-r ${a.soft} px-5 sm:px-8 pt-6 sm:pt-8 pb-4`}>
                   <div className="flex flex-wrap items-center gap-2 mb-3">
-                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${ ${a.badge}`}>
+                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${a.badge}`}>
                       <Gift size={12} />
                       {tool.badge}
                     </span>
