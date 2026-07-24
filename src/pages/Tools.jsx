@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3 } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet } from 'lucide-react';
 
 const tools = [
   {
@@ -31,7 +31,7 @@ const tools = [
       'Automated investing and a high-yield Cash Account in one place. When you sign up through this referral, you both can earn a +0.75% APY boost, a 0.50% investing deposit match — or both. Limited-time offer.',
     perks: [
       'Cash Account boost to 4.05% APY (+0.75% for up to 3 months, up to $150k) when you open a Cash or taxable investing account',
-      'Up to $500 invested on you — 0.50% match on investing deposits for 3 months (up to $100k deposited) with a taxable individual account',
+      'Up to $500 invested on you — 0.50% match on investing on investing deposits for 3 months (up to $100k deposited) with a taxable individual account',
       'Automated portfolio management built for long-term FI',
       'Clean cash + investing experience for busy families',
     ],
@@ -61,6 +61,26 @@ const tools = [
     icon: 'chart',
     footnote: 'Welcome / referral terms set by Moomoo Financial Inc. Deposit thresholds, stock values, and APY rates change — check current offer on sign-up. Investing involves risk.',
   },
+  {
+    id: 'monarch',
+    name: 'Monarch Money',
+    category: 'Budgeting',
+    badge: '50% off year 1',
+    headline: '50% off your first year of a Core subscription',
+    description:
+      'All-in-one money app for tracking spending, budgeting, net worth, investments, and shared household finances. Use this referral link to get 50% off your first year of Core — ideal for Catholic families who want clear stewardship of every dollar.',
+    perks: [
+      '50% off first year of Core when you sign up through this link',
+      'Track accounts, budgets, goals, and investments in one place',
+      'Collaborate with your spouse at no extra cost',
+      'Ad-free; does not sell your financial data',
+    ],
+    cta: 'Get 50% Off Monarch',
+    href: 'https://monarch.com/referral/hvup58srp1?r_source=share',
+    accent: 'teal',
+    icon: 'wallet',
+    footnote: 'Discount applies to first year of Core subscription per Monarch’s referral terms. Offer subject to change.',
+  },
 ];
 
 function accentClasses(accent) {
@@ -89,6 +109,14 @@ function accentClasses(accent) {
       soft: 'from-orange-50 to-amber-50',
       sparkle: 'text-orange-500',
     },
+    teal: {
+      badge: 'bg-teal-100 text-teal-700',
+      icon: 'bg-teal-600',
+      button: 'bg-teal-600 hover:bg-teal-700',
+      border: 'border-teal-100 hover:border-teal-200',
+      soft: 'from-teal-50 to-cyan-50',
+      sparkle: 'text-teal-500',
+    },
   };
   return map[accent] || map.emerald;
 }
@@ -96,6 +124,7 @@ function accentClasses(accent) {
 function ToolIcon({ type }) {
   if (type === 'landmark') return <Landmark className="text-white" size={24} />;
   if (type === 'chart') return <BarChart3 className="text-white" size={24} />;
+  if (type === 'wallet') return <Wallet className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
@@ -133,7 +162,7 @@ export default function Tools() {
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 leading-tight">
             Tools to Speed Up Your FI Journey
           </h1>
-          <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto leading- coached">
             Hand-picked apps and platforms we actually use. Some links include referral bonuses — you get a perk, and it helps keep Super FI free.
           </p>
         </div>
