@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3 } from 'lucide-react';
 
 const tools = [
   {
@@ -41,6 +41,26 @@ const tools = [
     icon: 'landmark',
     footnote: 'Base APY as of 7/24/26 and subject to change. Offer terms set by Wealthfront.',
   },
+  {
+    id: 'moomoo',
+    name: 'Moomoo',
+    category: 'Trading + Research',
+    badge: 'Up to $1,000 NVDA',
+    headline: 'Welcome bonus: free NVDA stock + promotional cash APY',
+    description:
+      'Powerful charts, research tools, and $0 commission U.S. stock trading. Sign up through this link to unlock the current welcome rewards — deposit tiers can earn free NVDA stock (from $30 at $500 deposited up to $1,000 at higher levels) plus promotional APY on uninvested cash.',
+    perks: [
+      'Deposit $500+ for $30 in NVDA stock; higher tiers up to $1,000 in NVDA (offer terms apply)',
+      'Promotional high APY on uninvested cash (e.g. up to ~8.1% during the welcome period — subject to change)',
+      '$0 commission U.S. stock & ETF trading for eligible residents',
+      'Advanced charts and market data useful for serious FI investors',
+    ],
+    cta: 'Open Moomoo with This Link',
+    href: 'https://j.moomoo.com/02NLJm',
+    accent: 'orange',
+    icon: 'chart',
+    footnote: 'Welcome / referral terms set by Moomoo Financial Inc. Deposit thresholds, stock values, and APY rates change — check current offer on sign-up. Investing involves risk.',
+  },
 ];
 
 function accentClasses(accent) {
@@ -61,12 +81,21 @@ function accentClasses(accent) {
       soft: 'from-indigo-50 to-violet-50',
       sparkle: 'text-indigo-500',
     },
+    orange: {
+      badge: 'bg-orange-100 text-orange-700',
+      icon: 'bg-orange-500',
+      button: 'bg-orange-600 hover:bg-orange-700',
+      border: 'border-orange-100 hover:border-orange-200',
+      soft: 'from-orange-50 to-amber-50',
+      sparkle: 'text-orange-500',
+    },
   };
   return map[accent] || map.emerald;
 }
 
 function ToolIcon({ type }) {
   if (type === 'landmark') return <Landmark className="text-white" size={24} />;
+  if (type === 'chart') return <BarChart3 className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
