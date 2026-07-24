@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake, ShoppingBag, Gem, Tag, UtensilsCrossed, Building2, Camera } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake, ShoppingBag, Gem, Tag, UtensilsCrossed, Building2, Camera, Percent } from 'lucide-react';
 
 const tools = [
   {
@@ -264,6 +264,26 @@ const tools = [
     footnote: 'Referral and signup bonuses vary by promotion. Terms set by Capital One Shopping.',
   },
   {
+    id: 'honey',
+    name: 'Honey',
+    category: 'Cashback',
+    badge: 'Coupons + PayPal',
+    headline: 'Auto-apply coupons and earn Honey Gold rewards',
+    description:
+      'PayPal’s popular browser extension that tests coupon codes at checkout and can earn Honey Gold on eligible purchases. Install through this referral link to start saving on everyday online shopping.',
+    perks: [
+      'Automatically tests and applies coupon codes at checkout',
+      'Earn Honey Gold rewards on eligible stores',
+      'Works across thousands of online retailers',
+      'Free browser extension — easy setup',
+    ],
+    cta: 'Get Honey',
+    href: 'https://www.joinhoney.com/ref/55s1vcv',
+    accent: 'orange',
+    icon: 'percent',
+    footnote: 'Honey is a PayPal service. Rewards and coupon availability vary by store. Terms set by Honey / PayPal.',
+  },
+  {
     id: 'fetch',
     name: 'Fetch',
     category: 'Rewards',
@@ -460,6 +480,7 @@ function ToolIcon({ type }) {
   if (type === 'tag') return <Tag className="text-white" size={24} />;
   if (type === 'utensils') return <UtensilsCrossed className="text-white" size={24} />;
   if (type === 'camera') return <Camera className="text-white" size={24} />;
+  if (type === 'percent') return <Percent className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
