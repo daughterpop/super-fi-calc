@@ -24,6 +24,7 @@ import {
   MapPin,
   SlidersHorizontal,
   ArrowUpDown,
+  Search,
 } from 'lucide-react';
 
 const tools = [
@@ -50,7 +51,7 @@ const tools = [
   {
     id: 'wealthfront',
     name: 'Wealthfront',
-    category: 'Cash + Investing',
+    category: 'Investing',
     badge: 'Limited-time referral',
     headline: 'Boost cash APY and get investing deposits matched',
     description:
@@ -71,7 +72,7 @@ const tools = [
   {
     id: 'moomoo',
     name: 'Moomoo',
-    category: 'Trading + Research',
+    category: 'Investing',
     badge: 'Up to $1,000 NVDA',
     headline: 'Welcome bonus: free NVDA stock + promotional cash APY',
     description:
@@ -113,7 +114,7 @@ const tools = [
   {
     id: 'coinbase',
     name: 'Coinbase',
-    category: 'Crypto',
+    category: 'Investing',
     badge: '$20 BTC · up to $50 USDC',
     headline: 'Retail: $20 Bitcoin · Advanced: up to $50 USDC',
     description:
@@ -136,7 +137,7 @@ const tools = [
   {
     id: 'gemini',
     name: 'Gemini',
-    category: 'Crypto',
+    category: 'Investing',
     badge: '$50 in crypto',
     headline: 'Claim an extra $50 in crypto when you qualify',
     description:
@@ -157,7 +158,7 @@ const tools = [
   {
     id: 'venmo',
     name: 'Venmo',
-    category: 'Payments',
+    category: 'Banking & Payments',
     badge: '$5 each',
     headline: 'Join Venmo — you and a friend can each get $5',
     description:
@@ -178,7 +179,7 @@ const tools = [
   {
     id: 'cashapp',
     name: 'Cash App',
-    category: 'Payments',
+    category: 'Banking & Payments',
     badge: 'Get $5',
     headline: 'Get $5 when you send $5+ with Cash App',
     description:
@@ -199,7 +200,7 @@ const tools = [
   {
     id: 'chime',
     name: 'Chime',
-    category: 'Banking',
+    category: 'Banking & Payments',
     badge: 'Get $100',
     headline: 'Join Chime and get $100 — terms apply',
     description:
@@ -241,7 +242,7 @@ const tools = [
   {
     id: 'kudos',
     name: 'Kudos',
-    category: 'Cashback',
+    category: 'Shopping & Rewards',
     badge: '$20 bonus',
     headline: 'Get $20 when you shop $30+ at a Boost merchant',
     description:
@@ -262,7 +263,7 @@ const tools = [
   {
     id: 'rakuten',
     name: 'Rakuten',
-    category: 'Cashback',
+    category: 'Shopping & Rewards',
     badge: 'Up to $50 bonus',
     headline: 'Join and get a cash-back signup bonus after you shop',
     description:
@@ -283,7 +284,7 @@ const tools = [
   {
     id: 'capitaloneshopping',
     name: 'Capital One Shopping',
-    category: 'Cashback',
+    category: 'Shopping & Rewards',
     badge: 'Coupons + rewards',
     headline: 'Automatic coupons, price drops, and shopping rewards',
     description:
@@ -304,7 +305,7 @@ const tools = [
   {
     id: 'honey',
     name: 'Honey',
-    category: 'Cashback',
+    category: 'Shopping & Rewards',
     badge: 'Coupons + PayPal',
     headline: 'Auto-apply coupons and earn Honey Gold rewards',
     description:
@@ -325,7 +326,7 @@ const tools = [
   {
     id: 'fetch',
     name: 'Fetch',
-    category: 'Rewards',
+    category: 'Shopping & Rewards',
     badge: 'First-receipt bonus',
     headline: 'Snap receipts, earn gift cards — both get a bonus',
     description:
@@ -387,7 +388,16 @@ const tools = [
   },
 ];
 
-const CATEGORIES = ['All', ...Array.from(new Set(tools.map((t) => t.category)))];
+// Prefer a fixed, readable order of categories
+const CATEGORY_ORDER = [
+  'Investing',
+  'Banking & Payments',
+  'Budgeting',
+  'Shopping & Rewards',
+  'Dining',
+  'Giving',
+];
+const CATEGORIES = ['All', ...CATEGORY_ORDER];
 
 function accentClasses(accent) {
   const map = {
@@ -561,9 +571,20 @@ function ToolIcon({ type }) {
 export default function Tools() {
   const [category, setCategory] = useState('All');
   const [sortBy, setSortBy] = useState('default');
+  const [search, setSearch] = useState('');
+  const [bonusOnly, setBonusOnly] = useState(false);
 
   const filteredTools = useMemo(() => {
-    let list = category === 'All' ? [...tools] : tools.filter((t) => t.category === category);
+    const q = search.trim().toLowerCase();
+    let list = tools.filter((t) => {
+      if (category !== 'All' && t.category !== category) return false;
+      if (bonusOnly && (t.valueScore || 0) < 20) return false;
+      if (q) {
+        const hay = `${t.name} ${t.headline} ${t.badge} ${t.category} ${t.description}`.toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
 
     if (sortBy === 'value-desc') {
       list = [...list].sort((a, b) => (b.valueScore || 0) - (a.valueScore || 0));
@@ -574,7 +595,7 @@ export default function Tools() {
     }
 
     return list;
-  }, [category, sortBy]);
+  }, [category, sortBy, search, bonusOnly]);
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
@@ -613,13 +634,27 @@ export default function Tools() {
 
         {/* Filters */}
         <div className="mb-8 space-y-4">
+          {/* Search */}
+          <div className="relative">
+            <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+            <input
+              type="search"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search tools…"
+              className="w-full pl-9 pr-3 py-2.5 text-sm border border-gray-200 rounded-xl bg-white text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+            />
+          </div>
+
           <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
             <SlidersHorizontal size={16} className="text-emerald-600 shrink-0" />
-            <span>Filter by category</span>
+            <span>Category</span>
           </div>
           <div className="flex flex-wrap gap-2">
             {CATEGORIES.map((cat) => {
               const active = category === cat;
+              const count =
+                cat === 'All' ? tools.length : tools.filter((t) => t.category === cat).length;
               return (
                 <button
                   key={cat}
@@ -632,42 +667,47 @@ export default function Tools() {
                   }`}
                 >
                   {cat}
-                  {cat !== 'All' && (
-                    <span className={`ml-1.5 ${active ? 'text-emerald-100' : 'text-gray-400'}`}>
-                      {tools.filter((t) => t.category === cat).length}
-                    </span>
-                  )}
-                  {cat === 'All' && (
-                    <span className={`ml-1.5 ${active ? 'text-emerald-100' : 'text-gray-400'}`}>
-                      {tools.length}
-                    </span>
-                  )}
+                  <span className={`ml-1.5 ${active ? 'text-emerald-100' : 'text-gray-400'}`}>{count}</span>
                 </button>
               );
             })}
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-1">
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <ArrowUpDown size={16} className="text-emerald-600 shrink-0" />
-              <label htmlFor="sort-tools" className="font-medium text-gray-700">
-                Sort by
+            <div className="flex flex-wrap items-center gap-3 text-sm text-gray-600">
+              <div className="flex items-center gap-2">
+                <ArrowUpDown size={16} className="text-emerald-600 shrink-0" />
+                <label htmlFor="sort-tools" className="font-medium text-gray-700">
+                  Sort
+                </label>
+                <select
+                  id="sort-tools"
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                >
+                  <option value="default">Default order</option>
+                  <option value="value-desc">Highest value first</option>
+                  <option value="value-asc">Lowest value first</option>
+                  <option value="name">Name A–Z</option>
+                </select>
+              </div>
+
+              <label className="inline-flex items-center gap-2 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  checked={bonusOnly}
+                  onChange={(e) => setBonusOnly(e.target.checked)}
+                  className="rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
+                />
+                <span className="text-sm text-gray-700">Clear $ bonus only</span>
               </label>
-              <select
-                id="sort-tools"
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-              >
-                <option value="default">Default order</option>
-                <option value="value-desc">Highest value first</option>
-                <option value="value-asc">Lowest value first</option>
-                <option value="name">Name A–Z</option>
-              </select>
             </div>
             <p className="text-xs text-gray-500">
-              Showing {filteredTools.length} of {tools.length} tools
-              {category !== 'All' ? ` in ${category}` : ''}
+              Showing {filteredTools.length} of {tools.length}
+              {category !== 'All' ? ` · ${category}` : ''}
+              {bonusOnly ? ' · bonus deals' : ''}
+              {search.trim() ? ` · “${search.trim()}”` : ''}
             </p>
           </div>
         </div>
@@ -675,7 +715,7 @@ export default function Tools() {
         <div className="space-y-6">
           {filteredTools.length === 0 ? (
             <div className="bg-white rounded-2xl border border-gray-100 p-8 text-center text-gray-500">
-              No tools in this category yet.
+              No tools match these filters. Try clearing search or choosing All.
             </div>
           ) : (
             filteredTools.map((tool) => {
