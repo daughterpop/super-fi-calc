@@ -5,11 +5,35 @@ import { GraduationCap, Home, Heart, ArrowRight, BookOpen, Gift, ExternalLink } 
 import SubscribeForm from './components/SubscribeForm';
 import SuperFiCalculator from './Super-Fi-Calculator.jsx';
 import { featuredPosts } from './data/posts';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './components/ui/accordion';
 
 const ROBINHOOD_URL = 'https://join.robinhood.com/dustinh-1bff5a';
 
 function App() {
   const [activeTab, setActiveTab] = useState('quick');
+
+  const faqs = [
+    {
+      q: "How does this calculator align with Catholic teaching on stewardship and wealth?",
+      a: "It helps you build financial margin not for selfish accumulation, but to live generously, tithe faithfully, educate your children in the faith, and leave a legacy of virtue and provision. The projections include real family costs so your plan protects what matters most — time for prayer, service, and presence.",
+      link: "/blog/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi"
+    },
+    {
+      q: "Should I factor tithing or charitable giving into my FI number?",
+      a: "Yes — many Catholic families treat giving as a non-negotiable 'expense' in their FI planning. This ensures generosity continues even after you stop working for income. The surplus the calculator reveals becomes fuel for parish support, missions, and family hospitality.",
+      link: null
+    },
+    {
+      q: "How can I plan for both college savings and my children's faith formation?",
+      a: "Model tuition in the Children section (with realistic inflation). The timeline reveals how disciplined saving creates margin for Catholic education, youth groups, family prayer traditions, and retreats — so faith formation isn't squeezed out by financial pressure.",
+      link: "/blog/raising-faith-filled-kids-while-building-financial-freedom"
+    },
+    {
+      q: "What if the numbers show a long road to FI — have I failed as a faithful steward?",
+      a: "Not at all. Faithful stewardship is shown in consistent, prayerful action over time. This tool simply gives you clarity to adjust course, trust Providence more deeply, and celebrate every year of progress. Your legacy is built in the daily 'yes' to wise planning and generous living.",
+      link: null
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
@@ -200,6 +224,49 @@ function App() {
             </p>
           </div>
         )}
+      </div>
+
+      {/* Faith & Stewardship FAQ — right after calculator for immediate relevance to results */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 bg-white border-t border-b border-gray-100">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold tracking-[1.5px] mb-4">
+            FAITH • FAMILY • STEWARDSHIP
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Common Questions from Catholic Families</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">Answers rooted in practical faith and generational legacy building</p>
+        </div>
+
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqs.map((faq, index) => (
+              <AccordionItem 
+                key={index} 
+                value={`faq-${index}`} 
+                className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm"
+              >
+                <AccordionTrigger className="px-5 sm:px-6 py-4 text-left text-base sm:text-lg font-semibold text-gray-900 hover:no-underline data-[state=open]:text-emerald-700">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="px-5 sm:px-6 pb-5 text-gray-700 text-sm sm:text-[15px] leading-relaxed">
+                  {faq.a}
+                  {faq.link && (
+                    <span className="block mt-3">
+                      <Link 
+                        to={faq.link} 
+                        className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-700 font-medium text-sm group"
+                      >
+                        Explore related insights in the blog 
+                        <span className="group-hover:translate-x-0.5 transition">→</span>
+                      </Link>
+                    </span>
+                  )}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+
+        <p className="text-center text-xs text-gray-500 mt-6">Have a question we missed? Share your story or thoughts on the blog.</p>
       </div>
 
       {/* Secondary Robinhood CTA after calculator (when people see their number) */}
