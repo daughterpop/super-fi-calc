@@ -25,6 +25,28 @@ function App() {
         </div>
       </nav>
 
+      {/* Top referral strip - matching calculator page */}
+      <div className="bg-emerald-700 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-center sm:text-left">
+          <div className="flex items-center gap-2 text-sm sm:text-[15px]">
+            <Gift size={16} className="shrink-0 text-emerald-200" />
+            <span>
+              <strong className="font-semibold">Free stocks up to $200</strong>
+              <span className="text-emerald-100"> — start investing your surplus toward FI</span>
+            </span>
+          </div>
+          <a
+            href={ROBINHOOD_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white text-emerald-800 font-semibold text-sm rounded-lg hover:bg-emerald-50 transition-colors shrink-0"
+          >
+            Claim free stock
+            <ExternalLink size={14} />
+          </a>
+        </div>
+      </div>
+
       {/* Hero — short and site-focused */}
       <div className="bg-white border-b">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14 text-center">
