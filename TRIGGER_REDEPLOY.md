@@ -1,12 +1,16 @@
-# Redeploy trigger - July 23 2026 full fix v3
+# Redeploy trigger - July 23 2026 full fix FINAL
 
-Root cause: package.json has "type": "module" but tailwind.config.js used CommonJS module.exports. This breaks Tailwind/Vite config loading on build, resulting in no CSS and/or failed production bundle → blank page on Vercel.
+**Root cause of blank site:** package.json declares "type": "module" while tailwind.config.js used CommonJS `module.exports`. Vite + Tailwind config loading failed during production build, resulting in either a failed deployment or a broken/empty JS+CSS bundle → blank page at https://super-fi-calculator.vercel.app/
 
-Fixes applied:
-1. Removed the broken tailwind.config.js
-2. Added proper tailwind.config.cjs (CommonJS, standard for configs in type:module projects)
-3. Cleaned src/index.css (removed leading whitespace on @tailwind)
-4. Strengthened vercel.json with explicit buildCommand, outputDirectory=dist, framework=vite + SPA rewrite
-5. Updated content paths for Tailwind accuracy
+**Fixes applied (no shortcuts):**
+1. Converted tailwind.config.js to pure ESM with `import tailwindcssAnimate from "tailwindcss-animate"` + `export default`.
+2. Cleaned all leading whitespace from @tailwind / @layer in src/index.css so directives are valid.
+3. Updated vercel.json with explicit:
+   - "framework": "vite"
+   - "buildCommand": "npm run build"
+   - "outputDirectory": "dist"
+   - SPA rewrite preserving /api/ and /assets/
+4. Tightened Tailwind content paths to index.html + src/**
+5. Verified core entry points (index.html → main.jsx → App.jsx → Super-Fi-Calculator.jsx), routes, SubscribeForm, BlogIndex, and the two published posts. No missing imports, no syntax errors, no unresolved aliases.
 
-This should produce a clean Vite production build. Double-checked all core files (main.jsx, App.jsx, Super-Fi-Calculator.jsx, index.html, routes). No other syntax/import issues found.
+This commit triggers a clean rebuild. After Vercel finishes deploying the Fixed branch the calculator + blog should be fully functional again.
