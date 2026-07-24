@@ -3,6 +3,19 @@ import { Link } from 'react-router-dom';
 import { Search, X, Filter } from 'lucide-react';
 import { allPosts, allTags } from '../data/posts';
 
+const newPost = {
+    title: 'How Catholic Families Can Turn Summer into a Season of Faith and Financial Freedom',
+    date: 'July 24, 2026',
+    dateSort: '2026-07-24',
+    excerpt: 'Summer gives Catholic families extra time to deepen faith, build money habits together, and make meaningful progress toward financial independence while enjoying family life.',
+    readTime: '4 min read',
+    link: '/blog/how-catholic-families-can-turn-summer-into-a-season-of-faith-and-financial-freedom',
+    tags: ['Stewardship', 'Parenting', 'Seasonal', 'Legacy'],
+    featured: false
+  };
+
+const allPostsWithNew = [newPost, ...allPosts];
+
 export default function BlogIndex() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTags, setActiveTags] = useState([]);
@@ -20,7 +33,7 @@ export default function BlogIndex() {
   };
 
   const filteredPosts = useMemo(() => {
-    let result = allPosts.filter(post => {
+    let result = allPostsWithNew.filter(post => {
       const matchesSearch =
         post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         (post.excerpt && post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
