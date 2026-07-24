@@ -20,7 +20,11 @@ export default function BlogIndex() {
   };
 
   const filteredPosts = useMemo(() => {
+    const seen = new Set();
     let result = allPosts.filter((post) => {
+      if (seen.has(post.link)) return false;
+      seen.add(post.link);
+
       const matchesSearch =
         post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         (post.excerpt && post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
@@ -163,9 +167,9 @@ export default function BlogIndex() {
 
         {filteredPosts.length > 0 ? (
           <div className="space-y-5">
-            {filteredPosts.map((post, index) => (
+            {filteredPosts.map((post) => (
               <article
-                key={index}
+                key={post.link}
                 className="bg-white rounded-2xl shadow-sm p-5 sm:p-7 hover:shadow-md transition-shadow border border-gray-100"
               >
                 <div className="flex justify-between text-sm text-gray-500 mb-2.5">
