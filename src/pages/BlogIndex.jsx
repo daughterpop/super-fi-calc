@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const posts = [
+const allPosts = [
   {
     title: 'Catholic Families: Leverage AI for Prayerful Financial Freedom and Lasting Legacy',
     date: 'June 04, 2026',
@@ -242,7 +242,7 @@ const posts = [
   },
   {
     title: 'Catholic Families: AI for Back-to-School Savings and Faith-Filled Financial Freedom',
-    date: 'April 08, 2026',
+    date: 'July 05, 2026',
     excerpt: 'Navigate back-to-school costs without derailing your FI plan or your family values.',
     readTime: '3 min read',
     link: '/blog/catholic-families-ai-for-back-to-school-savings-and-faith-filled-financial-freedom'
@@ -264,28 +264,60 @@ const posts = [
 ];
 
 export default function BlogIndex() {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredPosts = allPosts.filter(post =>
+    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (post.excerpt && post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+
   return (
     <div className="max-w-4xl mx-auto px-6 py-12">
-      <div className="mb-10">
+      <div className="mb-6">
         <Link to="/" className="text-emerald-600 hover:text-emerald-700 font-medium text-sm">← Back to Calculator</Link>
       </div>
-      <h1 className="text-4xl font-bold mb-4">Blog</h1>
-      <p className="text-gray-600 mb-10 text-lg">Faith-filled insights on financial independence, family stewardship, and building generational legacy.</p>
-      <div className="space-y-6">
-        {posts.map((post, index) => (
-          <div key={index} className="bg-white rounded-2xl shadow-sm p-6 md:p-8 hover:shadow-md transition-shadow border border-gray-100">
-            <div className="flex justify-between text-sm text-gray-500 mb-3">
-              <span>{post.date}</span>
-              <span>{post.readTime}</span>
-            </div>
-            <h2 className="text-xl md:text-2xl font-semibold mb-3">
-              <Link to={post.link} className="hover:text-emerald-600 transition-colors">{post.title}</Link>
-            </h2>
-            <p className="text-gray-600 mb-4">{post.excerpt}</p>
-            <Link to={post.link} className="text-emerald-600 font-medium hover:underline">Read more →</Link>
-          </div>
-        ))}
+
+      <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+        <div>
+          <h1 className="text-4xl font-bold text-gray-900">Blog</h1>
+          <p className="text-gray-600 mt-2">Faith-filled insights on financial independence, family stewardship, and building generational legacy.</p>
+        </div>
+        <input
+          type="text"
+          placeholder="Search posts by title or topic..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full md:w-96 px-5 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500 focus:ring-1 text-base"
+        />
       </div>
+
+      {filteredPosts.length > 0 ? (
+        <div className="space-y-6">
+          {filteredPosts.map((post, index) => (
+            <div key={index} className="bg-white rounded-2xl shadow-sm p-6 md:p-8 hover:shadow-md transition-shadow border border-gray-100">
+              <div className="flex justify-between text-sm text-gray-500 mb-3">
+                <span>{post.date}</span>
+                <span>{post.readTime}</span>
+              </div>
+              <h2 className="text-xl md:text-2xl font-semibold mb-3">
+                <Link to={post.link} className="hover:text-emerald-600 transition-colors">{post.title}</Link>
+              </h2>
+              <p className="text-gray-600 mb-4 leading-relaxed">{post.excerpt}</p>
+              <Link to={post.link} className="text-emerald-600 font-medium hover:underline">Read more →</Link>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-16 bg-white rounded-2xl p-8 border border-gray-100">
+          <p className="text-xl text-gray-500">No matching posts found for "{searchTerm}".</p>
+          <button
+            onClick={() => setSearchTerm('')}
+            className="mt-6 px-6 py-2 text-emerald-600 hover:bg-emerald-50 rounded-xl font-medium"
+          >
+            Clear search and show all
+          </button>
+        </div>
+      )}
     </div>
   );
 }
