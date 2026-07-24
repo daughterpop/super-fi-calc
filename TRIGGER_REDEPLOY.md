@@ -1,11 +1,10 @@
-# Redeploy trigger - July 23 2026 Tailwind fix
+# Redeploy trigger - July 24 2026
 
-Vercel build was failing with:
-- "The content option in your Tailwind CSS configuration is missing or empty"
-- "The `border-border` class does not exist"
+Force production redeploy so homepage shows:
+1. Top emerald Robinhood referral strip (free stocks up to $200)
+2. "From the Blog" featured posts section with links to individual posts
+3. Sticky nav with Calculator / Blog / Tools
+4. Secondary Robinhood CTA after calculator
+5. Mint Mobile on Tools page
 
-Cause: Tailwind config not loading correctly under "type": "module".
-
-Fix: Full working config now lives in tailwind.config.cjs (CommonJS + require). This is the most reliable pattern for Vite + Tailwind v3 + type:module projects. Content paths and theme colors (including border) are correctly defined so @apply border-border works.
-
-This commit should produce a successful vite build.
+Previous live site was still serving an older successful build.
