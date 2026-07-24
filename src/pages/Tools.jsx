@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin } from 'lucide-react';
 
 const tools = [
   {
@@ -81,6 +81,26 @@ const tools = [
     icon: 'wallet',
     footnote: 'Discount applies to first year of Core subscription per Monarch’s referral terms. Offer subject to change.',
   },
+  {
+    id: 'coinbase',
+    name: 'Coinbase',
+    category: 'Crypto',
+    badge: '$20 in Bitcoin',
+    headline: 'Sign up and get $20 in Bitcoin',
+    description:
+      'One of the most trusted places to buy, sell, and hold cryptocurrency. New users who sign up through this link and complete a qualifying trade can receive $20 in Bitcoin. A simple on-ramp if you want a small crypto allocation as part of a diversified FI plan.',
+    perks: [
+      '$20 in Bitcoin for new users after a qualifying transaction',
+      'Trade hundreds of digital assets including Bitcoin and Ethereum',
+      'Insured custody for crypto stored on Coinbase servers',
+      'Easy app for checking prices, news, and portfolio',
+    ],
+    cta: 'Get $20 in Bitcoin',
+    href: 'https://coinbase.com/join/EJUZBJS?src=ios-link',
+    accent: 'blue',
+    icon: 'bitcoin',
+    footnote: 'Limited-time offer. New customers only; must complete a qualifying transaction. WA residents may be ineligible for text-shared links. Terms set by Coinbase; rewards not guaranteed.',
+  },
 ];
 
 function accentClasses(accent) {
@@ -117,6 +137,14 @@ function accentClasses(accent) {
       soft: 'from-teal-50 to-cyan-50',
       sparkle: 'text-teal-500',
     },
+    blue: {
+      badge: 'bg-blue-100 text-blue-700',
+      icon: 'bg-blue-600',
+      button: 'bg-blue-600 hover:bg-blue-700',
+      border: 'border-blue-100 hover:border-blue-200',
+      soft: 'from-blue-50 to-sky-50',
+      sparkle: 'text-blue-500',
+    },
   };
   return map[accent] || map.emerald;
 }
@@ -125,6 +153,7 @@ function ToolIcon({ type }) {
   if (type === 'landmark') return <Landmark className="text-white" size={24} />;
   if (type === 'chart') return <BarChart3 className="text-white" size={24} />;
   if (type === 'wallet') return <Wallet className="text-white" size={24} />;
+  if (type === 'bitcoin') return <Bitcoin className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
