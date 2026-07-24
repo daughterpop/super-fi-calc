@@ -22,7 +22,7 @@ import {
   Camera,
   Percent,
   MapPin,
-  <PRIVATE_ADDRESS>SlidersHorizontal,
+  SlidersHorizontal,
   ArrowUpDown,
   Search,
   Smartphone,
