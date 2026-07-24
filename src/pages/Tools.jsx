@@ -22,11 +22,12 @@ import {
   Camera,
   Percent,
   MapPin,
-  SlidersHorizontal,
+  <PRIVATE_ADDRESS>SlidersHorizontal,
   ArrowUpDown,
   Search,
   Smartphone,
   Lock,
+  Calendar,
 } from 'lucide-react';
 
 const tools = [
@@ -451,6 +452,27 @@ const tools = [
     footnote: 'Discount auto-applied via referral code GIFTOFPRIVACY. Offer terms set by Incogni. 30-day money-back guarantee applies.',
     valueScore: 90,
   },
+  {
+    id: 'skylight',
+    name: 'Skylight Calendar',
+    category: 'Family & Home',
+    badge: '$40 off',
+    headline: 'Get the whole family organized — $40 off your Calendar',
+    description:
+      'Skylight Calendar helps get the whole family organized with chore charts, meal planning, lists, and shared schedules on a simple wall display. Use this link for $40 off your Calendar.',
+    perks: [
+      '$40 off your Skylight Calendar through this referral link',
+      'Chore charts, meal planning, and shared lists in one place',
+      'Wall-mounted display the whole family can see and use',
+      'Practical tool for busy households managing kids, meals, and routines',
+    ],
+    cta: 'Get $40 Off Skylight Calendar',
+    href: 'https://refer.skylightframe.com/mad3w9w8',
+    accent: 'teal',
+    icon: 'calendar',
+    footnote: 'Discount applied via referral link. Offer terms set by Skylight.',
+    valueScore: 40,
+  },
 ];
 
 const CATEGORY_ORDER = [
@@ -462,6 +484,7 @@ const CATEGORY_ORDER = [
   'Giving',
   'Wireless Savings',
   'Privacy & Security',
+  'Family & Home',
 ];
 const CATEGORIES = ['All', ...CATEGORY_ORDER];
 
@@ -634,6 +657,7 @@ function ToolIcon({ type }) {
   if (type === 'phone') return <Smartphone className="text-white" size={24} />;
   if (type === 'shield') return <Shield className="text-white" size={24} />;
   if (type === 'lock') return <Lock className="text-white" size={24} />;
+  if (type === 'calendar') return <Calendar className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
