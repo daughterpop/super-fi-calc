@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake, ShoppingBag, Gem, Tag, UtensilsCrossed, Building2, Camera, Percent } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote, HeartHandshake, ShoppingBag, Gem, Tag, UtensilsCrossed, Building2, Camera, Percent, MapPin } from 'lucide-react';
 
 const tools = [
   {
@@ -323,6 +323,26 @@ const tools = [
     icon: 'utensils',
     footnote: 'Promos and reward rates vary by market and restaurant. Terms set by inKind.',
   },
+  {
+    id: 'franki',
+    name: 'Franki',
+    category: 'Dining',
+    badge: 'Cash back dining',
+    headline: 'Find spots, earn cash back on real-world dining',
+    description:
+      'Discover local restaurants and experiences, then earn cash back when you pay with a linked card. Referrals can earn $2 when a friend signs up and connects a card, plus $10 when they make their first cash-back purchase.',
+    perks: [
+      'Cash back at participating restaurants and local experiences',
+      'Referrer earns $2 on signup + card connect, $10 on first cash-back purchase',
+      'Link your card and earn automatically when you dine',
+      'Great complement to inKind for family nights out',
+    ],
+    cta: 'Join Franki',
+    href: 'https://frankiapp.com/referral?user=stormyknightjumps420',
+    accent: 'pink',
+    icon: 'mappin',
+    footnote: 'Referral amounts and cash-back rates vary by market and offer. Terms set by Franki.',
+  },
 ];
 
 function accentClasses(accent) {
@@ -462,6 +482,15 @@ function accentClasses(accent) {
       soft: 'from-fuchsia-50 to-pink-50',
       sparkle: 'text-fuchsia-500',
     },
+    pink: {
+      badge: 'bg-pink-100 text-pink-700',
+      icon: 'bg-pink-500',
+      button: 'bg-pink-600 hover:bg-pink-700',
+      buttonOutline: 'border-pink-600 text-pink-700 hover:bg-pink-50',
+      border: 'border-pink-100 hover:border-pink-200',
+      soft: 'from-pink-50 to-rose-50',
+      sparkle: 'text-pink-500',
+    },
   };
   return map[accent] || map.emerald;
 }
@@ -481,6 +510,7 @@ function ToolIcon({ type }) {
   if (type === 'utensils') return <UtensilsCrossed className="text-white" size={24} />;
   if (type === 'camera') return <Camera className="text-white" size={24} />;
   if (type === 'percent') return <Percent className="text-white" size={24} />;
+  if (type === 'mappin') return <MapPin className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
