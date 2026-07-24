@@ -117,6 +117,7 @@ export default function BlogIndex() {
                   ? 'bg-emerald-600 text-white'
                   : 'text-gray-600 hover:bg-gray-50'
               }`}
+            >
               Newest
             </button>
             <button
@@ -126,6 +127,7 @@ export default function BlogIndex() {
                   ? 'bg-emerald-600 text-white'
                   : 'text-gray-600 hover:bg-gray-50'
               }`}
+            >
               Oldest
             </button>
           </div>
