@@ -17,7 +17,7 @@ const tools = [
       'Great for dollar-cost averaging toward FI',
     ],
     cta: 'Claim Your Free Stock',
-    href: 'https://join.join.robinhood.com/dustinh-1bff5a',
+    href: 'https://join.robinhood.com/dustinh-1bff5a',
     accent: 'emerald',
     icon: 'trending',
   },
@@ -95,7 +95,8 @@ function accentClasses(accent) {
     },
     indigo: {
       badge: 'bg-indigo-100 text-indigo-700',
-      icon: 'bg-indigo-600',\n      button: 'bg-indigo-600 hover:bg-indigo-700',
+      icon: 'bg-indigo-600',
+      button: 'bg-indigo-600 hover:bg-indigo-700',
       border: 'border-indigo-100 hover:border-indigo-200',
       soft: 'from-indigo-50 to-violet-50',
       sparkle: 'text-indigo-500',
@@ -176,7 +177,7 @@ export default function Tools() {
               >
                 <div className={`bg-gradient-to-r ${a.soft} px-5 sm:px-8 pt-6 sm:pt-8 pb-4`}>
                   <div className="flex flex-wrap items-center gap-2 mb-3">
-                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${a.badge}`}>
+                    <span className={`inline-flex inter items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${a.badge}`}>
                       <Gift size={12} />
                       {tool.badge}
                     </span>
