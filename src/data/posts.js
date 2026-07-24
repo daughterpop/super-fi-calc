@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'AI Meal Planning for Catholic Families: Stretch the Budget and Accelerate FI',
+    date: 'July 24, 2026',
+    dateSort: '2026-07-24',
+    excerpt: 'Busy Catholic parents can use simple AI prompts to cut grocery waste, plan realistic family meals, and free up real cash that accelerates the path to financial independence.',
+    readTime: '4 min read',
+    link: '/blog/ai-meal-planning-for-catholic-families-stretch-the-budget-and-accelerate-fi',
+    tags: ['AI Tools', 'Parenting', 'Stewardship'],
+    featured: false
+  },
+  {
     title: 'Catholic Families: AI for Back-to-School Savings and Faith-Filled Financial Freedom',
     date: 'July 05, 2026',
     dateSort: '2026-07-05',

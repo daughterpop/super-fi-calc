@@ -22,6 +22,7 @@ import RaisingGenerousGroundedKidsFaithFamilyBudgetingAndSharedFinancialFreedom 
 import StewardingYourFamilysFutureBuildingGenerationalWealthThroughFaithAndFi from './pages/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi.jsx';
 import HowCatholicFamiliesCanTurnSummerIntoASeasonOfFaithAndFinancialFreedom from './pages/how-catholic-families-can-turn-summer-into-a-season-of-faith-and-financial-freedom.jsx';
 import HowCatholicFamiliesCanTurnSummerAdventuresIntoFaithAndFinancialFreedomLessons from './pages/how-catholic-families-can-turn-summer-adventures-into-faith-and-financial-freedom-lessons.jsx';
+import AiMealPlanningForCatholicFamiliesStretchTheBudgetAndAccelerateFi from './pages/ai-meal-planning-for-catholic-families-stretch-the-budget-and-accelerate-fi.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -48,6 +49,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/blog/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi" element={<StewardingYourFamilysFutureBuildingGenerationalWealthThroughFaithAndFi />} />
         <Route path="/blog/how-catholic-families-can-turn-summer-into-a-season-of-faith-and-financial-freedom" element={<HowCatholicFamiliesCanTurnSummerIntoASeasonOfFaithAndFinancialFreedom />} />
         <Route path="/blog/how-catholic-families-can-turn-summer-adventures-into-faith-and-financial-freedom-lessons" element={<HowCatholicFamiliesCanTurnSummerAdventuresIntoFaithAndFinancialFreedomLessons />} />
+        <Route path="/blog/ai-meal-planning-for-catholic-families-stretch-the-budget-and-accelerate-fi" element={<AiMealPlanningForCatholicFamiliesStretchTheBudgetAndAccelerateFi />} />
 
         <Route path="*" element={<App />} />
       </Routes>
