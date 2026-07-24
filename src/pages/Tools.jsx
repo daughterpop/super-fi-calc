@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send } from 'lucide-react';
+import { TrendingUp, ArrowRight, Gift, Shield, Sparkles, ExternalLink, Landmark, BarChart3, Wallet, Bitcoin, Send, Banknote } from 'lucide-react';
 
 const tools = [
   {
@@ -123,6 +123,26 @@ const tools = [
     icon: 'send',
     footnote: 'Reward requires signup via referral link and a qualifying personal payment of $5+ using a linked funding source. Terms: https://payp.al/ref — offer subject to change.',
   },
+  {
+    id: 'cashapp',
+    name: 'Cash App',
+    category: 'Payments',
+    badge: 'Get $5',
+    headline: 'Get $5 when you send $5+ with Cash App',
+    description:
+      'Fast mobile payments, debit card, and investing features in one app. Create your account with referral code 42DKBR2 (or use this link), send $5 or more, and get $5 — terms apply.',
+    perks: [
+      'Get $5 when you send $5+ after signing up with code 42DKBR2',
+      'Instant peer-to-peer payments',
+      'Optional Cash App Card and stock/Bitcoin investing tools',
+      'Useful for allowances, reimbursements, and everyday transfers',
+    ],
+    cta: 'Join Cash App — Code 42DKBR2',
+    href: 'https://cash.app/refer/42DKBR2',
+    accent: 'lime',
+    icon: 'banknote',
+    footnote: 'Offer requires new account via referral and a qualifying send of $5+. Terms apply and may change.',
+  },
 ];
 
 function accentClasses(accent) {
@@ -181,6 +201,15 @@ function accentClasses(accent) {
       soft: 'from-sky-50 to-blue-50',
       sparkle: 'text-sky-500',
     },
+    lime: {
+      badge: 'bg-lime-100 text-lime-800',
+      icon: 'bg-lime-500',
+      button: 'bg-lime-600 hover:bg-lime-700',
+      buttonOutline: 'border-lime-600 text-lime-800 hover:bg-lime-50',
+      border: 'border-lime-100 hover:border-lime-200',
+      soft: 'from-lime-50 to-green-50',
+      sparkle: 'text-lime-600',
+    },
   };
   return map[accent] || map.emerald;
 }
@@ -191,6 +220,7 @@ function ToolIcon({ type }) {
   if (type === 'wallet') return <Wallet className="text-white" size={24} />;
   if (type === 'bitcoin') return <Bitcoin className="text-white" size={24} />;
   if (type === 'send') return <Send className="text-white" size={24} />;
+  if (type === 'banknote') return <Banknote className="text-white" size={24} />;
   return <TrendingUp className="text-white" size={24} />;
 }
 
