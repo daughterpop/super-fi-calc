@@ -1,15 +1,17 @@
 import "./App.css";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Home, Heart, ArrowRight } from 'lucide-react';
+import { GraduationCap, Home, Heart, ArrowRight, BookOpen } from 'lucide-react';
 import SubscribeForm from './components/SubscribeForm';
 import SuperFiCalculator from './Super-Fi-Calculator.jsx';
+import { featuredPosts } from './data/posts';
 
 function App() {
   const [activeTab, setActiveTab] = useState('quick');
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
+      {/* Sticky Nav */}
       <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
           <Link to="/" className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight">
@@ -24,15 +26,16 @@ function App() {
         </div>
       </nav>
 
+      {/* Hero + Audience cards */}
       <div className="bg-white border-b">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
           <div className="text-center mb-6 sm:mb-8">
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-semibold tracking-[1.5px] mb-3 sm:mb-4">
               FAITH • FAMILY • GENERATIONAL WEALTH
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight px-1">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight px-1">
               Built for Catholic Families Who Steward with Purpose
-            </h2>
+            </h1>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               This calculator helps parents and couples model real-life expenses like college, vehicles, and mortgages — while keeping faith, generosity, and legacy at the center of every decision.
             </p>
@@ -81,22 +84,101 @@ function App() {
         </div>
       </div>
 
+      {/* Featured Posts Section */}
+      <div className="bg-gradient-to-b from-white to-gray-50 border-b">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-2.5">
+              <div className="w-9 h-9 bg-emerald-100 rounded-lg flex items-center justify-center">
+                <BookOpen className="text-emerald-600" size={18} />
+              </div>
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Featured Insights</h2>
+                <p className="text-sm text-gray-500 hidden sm:block">Fresh faith + FI wisdom for Catholic families</p>
+              </div>
+            </div>
+            <Link
+              to="/blog"
+              className="text-emerald-600 hover:text-emerald-700 font-medium text-sm inline-flex items-center gap-1 shrink-0"
+            >
+              View all
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {featuredPosts.map((post, idx) => (
+              <Link
+                key={idx}
+                to={post.link}
+                className="group bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 hover:shadow-md transition-all p-5 flex flex-col"
+              >
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {post.tags.slice(0, 2).map(tag => (
+                    <span
+                      key={tag}
+                      className="text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h3 className="font-semibold text-gray-900 group-hover:text-emerald-700 transition-colors leading-snug mb-2 text-[15px] sm:text-base">
+                  {post.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 flex-1">
+                  {post.excerpt}
+                </p>
+                <div className="mt-3 pt-3 border-t border-gray-50 flex items-center justify-between text-xs text-gray-400">
+                  <span>{post.date}</span>
+                  <span className="text-emerald-600 font-medium group-hover:underline">Read →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Calculator Section */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         <div className="flex border-b mb-6 sm:mb-8 bg-white rounded-t-lg overflow-hidden">
-          <button onClick={() => setActiveTab('quick')} className={`flex-1 px-3 sm:px-8 py-3 sm:py-4 font-medium text-sm sm:text-lg transition-colors text-center ${activeTab === 'quick' ? 'border-b-4 border-emerald-600 text-emerald-600' : 'text-gray-500 hover:text-gray-700'}`}>Quick Calculator</button>
-          <button onClick={() => setActiveTab('advanced')} className={`flex-1 px-3 sm:px-8 py-3 sm:py-4 font-medium text-sm sm:text-lg transition-colors text-center ${activeTab === 'advanced' ? 'border-b-4 border-emerald-600 text-emerald-600' : 'text-gray-500 hover:text-gray-700'}`}>Advanced Calculator</button>
+          <button
+            onClick={() => setActiveTab('quick')}
+            className={`flex-1 px-3 sm:px-8 py-3 sm:py-4 font-medium text-sm sm:text-lg transition-colors text-center ${
+              activeTab === 'quick'
+                ? 'border-b-4 border-emerald-600 text-emerald-600'
+                : 'text-gray-500 hover:text-gray-700'
+            }`}
+          >
+            Quick Calculator
+          </button>
+          <button
+            onClick={() => setActiveTab('advanced')}
+            className={`flex-1 px-3 sm:px-8 py-3 sm:py-4 font-medium text-sm sm:text-lg transition-colors text-center ${
+              activeTab === 'advanced'
+                ? 'border-b-4 border-emerald-600 text-emerald-600'
+                : 'text-gray-500 hover:text-gray-700'
+            }`}
+          >
+            Advanced Calculator
+          </button>
         </div>
         {activeTab === 'quick' ? (
           <SuperFiCalculator />
         ) : (
           <div className="bg-white rounded-xl shadow-sm p-6 sm:p-12 text-center">
             <h2 className="text-xl sm:text-2xl font-semibold mb-4">Advanced FI Calculator</h2>
-            <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">Coming soon — more detailed scenario modeling, Monte Carlo, and tax-aware projections.</p>
-            <p className="text-sm text-gray-500">For now, the Quick Calculator covers mortgage, college, vehicles, and large expenses with full projections.</p>
+            <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
+              Coming soon — more detailed scenario modeling, Monte Carlo, and tax-aware projections.
+            </p>
+            <p className="text-sm text-gray-500">
+              For now, the Quick Calculator covers mortgage, college, vehicles, and large expenses with full projections.
+            </p>
           </div>
         )}
       </div>
 
+      {/* Subscribe */}
       <div className="px-4 sm:px-6 pb-10">
         <SubscribeForm />
       </div>

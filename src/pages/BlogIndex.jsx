@@ -1,169 +1,216 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-
-const allPosts = [
-  {
-    title: 'Catholic Families: AI for Back-to-School Savings and Faith-Filled Financial Freedom',
-    date: 'July 05, 2026',
-    excerpt: 'As back-to-school season hits, Catholic families can use AI to save on supplies, plan wisely, and stay on the fast track to FI while teaching kids stewardship and generosity.',
-    readTime: '4 min read',
-    link: '/blog/catholic-families-ai-for-back-to-school-savings-and-faith-filled-financial-freedom'
-  },
-  {
-    title: 'Catholic Families: Leverage AI for Prayerful Financial Freedom and Lasting Legacy',
-    date: 'June 04, 2026',
-    excerpt: 'With the Pope’s new encyclical on AI, Catholic families can use smart tools alongside prayer to accelerate their path to financial independence and build a faith-filled legacy for their kids.',
-    readTime: '4 min read',
-    link: '/blog/catholic-families-leverage-ai-for-prayerful-financial-freedom-and-lasting-legacy'
-  },
-  {
-    title: 'Catholic Parents Building FI Legacy with AI and Prayer',
-    date: 'June 19, 2026',
-    excerpt: 'A practical guide for Catholic parents to integrate AI tools and daily prayer into their journey toward financial independence and family legacy.',
-    readTime: '4 min read',
-    link: '/blog/catholic-parents-building-fi-legacy-with-ai-and-prayer'
-  },
-  {
-    title: 'Catholic Moms & Dads Use AI to Build Debt-Free, Faith-Filled Family Legacy',
-    date: 'June 18, 2026',
-    excerpt: 'Real strategies for Catholic parents to use AI for budgeting, debt payoff, and raising kids with faith and financial wisdom.',
-    readTime: '4 min read',
-    link: '/blog/catholic-moms-dads-use-ai-to-build-debt-free-faith-filled-family-legacy'
-  },
-  {
-    title: 'Catholic Families Can Reach FI Together: AI, Prayer, and Smart Stewardship',
-    date: 'June 17, 2026',
-    excerpt: 'How Catholic families are combining AI tools, prayer, and wise stewardship to reach financial independence together as a faith-filled team.',
-    readTime: '4 min read',
-    link: '/blog/catholic-families-can-reach-fi-together-ai-prayer-and-smart-stewardship'
-  },
-  {
-    title: 'Catholic Families Harness AI for Prayerful FI and Generational Legacy',
-    date: 'June 16, 2026',
-    excerpt: 'Learn how Catholic families are using AI alongside prayer to build lasting financial freedom and a legacy of faith for generations.',
-    readTime: '4 min read',
-    link: '/blog/catholic-families-harness-ai-for-prayerful-fi-and-generational-legacy'
-  },
-  {
-    title: 'AI-Assisted Stewardship: How Catholic Families Leverage Smart Tools for FI and Faithful Living',
-    date: 'June 15, 2026',
-    excerpt: 'Discover practical AI prompts and tools Catholic families are using to budget, plan, and live out faithful stewardship on the path to FI.',
-    readTime: '4 min read',
-    link: '/blog/ai-assisted-stewardship-how-catholic-families-leverage-smart-tools-for-fi-and-faithful-living'
-  },
-  {
-    title: 'Raising Faith-Filled Kids While Building Financial Freedom',
-    date: 'June 12, 2026',
-    excerpt: 'How to teach your children about money, faith, and stewardship for a strong generational legacy and debt-free future.',
-    readTime: '4 min read',
-    link: '/blog/raising-faith-filled-kids-while-building-financial-freedom'
-  },
-  {
-    title: 'Catholic Dads Leading Family FI with AI and Faith',
-    date: 'June 10, 2026',
-    excerpt: 'Practical ways Catholic dads are using AI tools to steward family finances while leading in faith and presence for their kids.',
-    readTime: '4 min read',
-    link: '/blog/catholic-dads-leading-family-fi-with-ai-and-faith'
-  },
-  {
-    title: 'Praying Your Way to Financial Freedom',
-    date: 'June 22, 2026',
-    excerpt: 'A faith-first approach to FI: how prayer, generosity, and smart planning help Christian families build wealth and peace.',
-    readTime: '4 min read',
-    link: '/blog/praying-your-way-to-financial-freedom-how-christian-families-can-build-wealth-generosity-and-peace-together'
-  },
-  {
-    title: 'How Christian Couples Unlock Financial Freedom Together',
-    date: 'June 21, 2026',
-    excerpt: 'Christian couples sharing practical steps to build FI as a team, rooted in faith, communication, and shared vision for their family\'s future.',
-    readTime: '4 min read',
-    link: '/blog/how-christian-couples-unlock-financial-freedom-together-faith-teamwork-and-a-legacy-your-family-will-thank-you-for'
-  },
-  {
-    title: 'Faithful Parenting on the Path to FI',
-    date: 'June 20, 2026',
-    excerpt: 'How faithful parenting and FI work together to create margin for faith, family time, and raising kids with strong values.',
-    readTime: '4 min read',
-    link: '/blog/faithful-parenting-on-the-path-to-fi-creating-margin-for-what-matters-most-in-your-christian-home'
-  },
-  {
-    title: 'Raising Generous, Grounded Kids: Faith, Family Budgeting & Shared Financial Freedom',
-    date: 'May 22, 2026',
-    excerpt: 'Teach kids generosity early, model contentment, and build a household culture where money serves the mission instead of the other way around.',
-    readTime: '3 min read',
-    link: '/blog/raising-generous-grounded-kids-faith-family-budgeting-and-shared-financial-freedom'
-  },
-  {
-    title: 'Stewarding Your Family’s Future: Building Generational Wealth Through Faith and FI',
-    date: 'May 20, 2026',
-    excerpt: 'Financial independence isn’t just about early retirement — it’s about creating a lasting legacy of faith, generosity, and wise stewardship for the next generation.',
-    readTime: '4 min read',
-    link: '/blog/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi'
-  },
-  {
-    title: 'Why Financial Independence Is for Everyone',
-    date: 'May 18, 2026',
-    excerpt: 'Financial independence isn’t just for tech bros or high earners — it’s for regular families ready to build margin, faith, and freedom.',
-    readTime: '4 min read',
-    link: '/blog/why-fi-for-everyone'
-  }
-];
+import { Search, X, Filter } from 'lucide-react';
+import { allPosts, allTags } from '../data/posts';
 
 export default function BlogIndex() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [activeTags, setActiveTags] = useState([]);
+  const [sortOrder, setSortOrder] = useState('newest'); // 'newest' | 'oldest'
 
-  const filteredPosts = allPosts.filter(post =>
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    (post.excerpt && post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+  const toggleTag = (tag) => {
+    setActiveTags(prev =>
+      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+    );
+  };
+
+  const clearFilters = () => {
+    setSearchTerm('');
+    setActiveTags([]);
+  };
+
+  const filteredPosts = useMemo(() => {
+    let result = allPosts.filter(post => {
+      const matchesSearch =
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (post.excerpt && post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        post.tags.some(t => t.toLowerCase().includes(searchTerm.toLowerCase()));
+
+      const matchesTags =
+        activeTags.length === 0 ||
+        activeTags.every(tag => post.tags.includes(tag));
+
+      return matchesSearch && matchesTags;
+    });
+
+    result = [...result].sort((a, b) => {
+      if (sortOrder === 'newest') {
+        return b.dateSort.localeCompare(a.dateSort);
+      }
+      return a.dateSort.localeCompare(b.dateSort);
+    });
+
+    return result;
+  }, [searchTerm, activeTags, sortOrder]);
+
+  const hasActiveFilters = searchTerm || activeTags.length > 0;
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <div className="mb-6">
-        <Link to="/" className="text-emerald-600 hover:text-emerald-700 font-medium text-sm">← Back to Calculator</Link>
-      </div>
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        {/* Back link */}
+        <div className="mb-6">
+          <Link to="/" className="text-emerald-600 hover:text-emerald-700 font-medium text-sm inline-flex items-center gap-1">
+            ← Back to Calculator
+          </Link>
+        </div>
 
-      <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
-        <div>
-          <h1 className="text-4xl font-bold text-gray-900">Blog</h1>
-          <p className="text-gray-600 mt-2">Faith-filled insights on financial independence, family stewardship, and building generational legacy.</p>
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">Blog</h1>
+          <p className="text-gray-600 mt-2 text-base sm:text-lg">
+            Faith-filled insights on financial independence, family stewardship, and building generational legacy.
+          </p>
         </div>
-        <input
-          type="text"
-          placeholder="Search posts by title or topic..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full md:w-96 px-5 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500 focus:ring-1 text-base"
-        />
-      </div>
 
-      {filteredPosts.length > 0 ? (
-        <div className="space-y-6">
-          {filteredPosts.map((post, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-sm p-6 md:p-8 hover:shadow-md transition-shadow border border-gray-100">
-              <div className="flex justify-between text-sm text-gray-500 mb-3">
-                <span>{post.date}</span>
-                <span>{post.readTime}</span>
-              </div>
-              <h2 className="text-xl md:text-2xl font-semibold mb-3">
-                <Link to={post.link} className="hover:text-emerald-600 transition-colors">{post.title}</Link>
-              </h2>
-              <p className="text-gray-600 mb-4 leading-relaxed">{post.excerpt}</p>
-              <Link to={post.link} className="text-emerald-600 font-medium hover:underline">Read more →</Link>
-            </div>
-          ))}
+        {/* Search + Sort row */}
+        <div className="flex flex-col sm:flex-row gap-3 mb-6">
+          <div className="relative flex-1">
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+            <input
+              type="text"
+              placeholder="Search posts by title, topic, or tag..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-base bg-white"
+            />
+            {searchTerm && (
+              <button
+                onClick={() => setSearchTerm('')}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              >
+                <X size={16} />
+              </button>
+            )}
+          </div>
+
+          {/* Sort toggle */}
+          <div className="flex rounded-xl border border-gray-300 overflow-hidden bg-white shrink-0">
+            <button
+              onClick={() => setSortOrder('newest')}
+              className={`px-4 py-3 text-sm font-medium transition-colors ${
+                sortOrder === 'newest'
+                  ? 'bg-emerald-600 text-white'
+                  : 'text-gray-600 hover:bg-gray-50'
+              }`}
+            >
+              Newest
+            </button>
+            <button
+              onClick={() => setSortOrder('oldest')}
+              className={`px-4 py-3 text-sm font-medium transition-colors ${
+                sortOrder === 'oldest'
+                  ? 'bg-emerald-600 text-white'
+                  : 'text-gray-600 hover:bg-gray-50'
+              }`}
+            >
+              Oldest
+            </button>
+          </div>
         </div>
-      ) : (
-        <div className="text-center py-16 bg-white rounded-2xl p-8 border border-gray-100">
-          <p className="text-xl text-gray-500">No matching posts found for "{searchTerm}".</p>
-          <button
-            onClick={() => setSearchTerm('')}
-            className="mt-6 px-6 py-2 text-emerald-600 hover:bg-emerald-50 rounded-xl font-medium"
-          >
-            Clear search and show all
-          </button>
+
+        {/* Tag filters */}
+        <div className="mb-8">
+          <div className="flex items-center gap-2 mb-3">
+            <Filter size={16} className="text-gray-500" />
+            <span className="text-sm font-medium text-gray-700">Filter by topic</span>
+            {hasActiveFilters && (
+              <button
+                onClick={clearFilters}
+                className="ml-auto text-sm text-emerald-600 hover:text-emerald-700 font-medium"
+              >
+                Clear all
+              </button>
+            )}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {allTags.map(tag => {
+              const isActive = activeTags.includes(tag);
+              return (
+                <button
+                  key={tag}
+                  onClick={() => toggleTag(tag)}
+                  className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-all border ${
+                    isActive
+                      ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm'
+                      : 'bg-white text-gray-700 border-gray-200 hover:border-emerald-300 hover:text-emerald-700'
+                  }`}
+                >
+                  {tag}
+                </button>
+              );
+            })}
+          </div>
         </div>
-      )}
+
+        {/* Results count */}
+        <div className="mb-4 text-sm text-gray-500">
+          {filteredPosts.length} {filteredPosts.length === 1 ? 'post' : 'posts'}
+          {hasActiveFilters && ' matching your filters'}
+        </div>
+
+        {/* Posts list */}
+        {filteredPosts.length > 0 ? (
+          <div className="space-y-5">
+            {filteredPosts.map((post, index) => (
+              <article
+                key={index}
+                className="bg-white rounded-2xl shadow-sm p-5 sm:p-7 hover:shadow-md transition-shadow border border-gray-100"
+              >
+                <div className="flex justify-between text-sm text-gray-500 mb-2.5">
+                  <span>{post.date}</span>
+                  <span>{post.readTime}</span>
+                </div>
+                <h2 className="text-xl sm:text-2xl font-semibold mb-2.5 leading-snug">
+                  <Link to={post.link} className="hover:text-emerald-600 transition-colors">
+                    {post.title}
+                  </Link>
+                </h2>
+                <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">
+                  {post.excerpt}
+                </p>
+
+                {/* Tags on card */}
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {post.tags.map(tag => (
+                    <button
+                      key={tag}
+                      onClick={() => toggleTag(tag)}
+                      className={`text-xs px-2.5 py-1 rounded-full border transition-colors ${
+                        activeTags.includes(tag)
+                          ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                          : 'bg-gray-50 text-gray-600 border-gray-100 hover:border-emerald-200'
+                      }`}
+                    >
+                      {tag}
+                    </button>
+                  ))}
+                </div>
+
+                <Link
+                  to={post.link}
+                  className="text-emerald-600 font-medium hover:underline text-sm inline-flex items-center gap-1"
+                >
+                  Read more →
+                </Link>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-16 bg-white rounded-2xl p-8 border border-gray-100">
+            <p className="text-xl text-gray-500 mb-2">No matching posts found.</p>
+            <p className="text-gray-400 text-sm mb-6">
+              Try different keywords or clear the filters.
+            </p>
+            <button
+              onClick={clearFilters}
+              className="px-6 py-2.5 bg-emerald-600 text-white rounded-xl font-medium hover:bg-emerald-700 transition-colors"
+            >
+              Clear filters & show all
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
