@@ -1,5 +1,7 @@
-# Redeploy trigger - July 24 2026 13:55 CDT
+# Redeploy trigger - July 25 2026 07:50 CDT
 
-Force production redeploy after fixing JSX syntax error in BlogIndex.jsx so the new blog post and updated index appear live.
+Force production redeploy so the new blog post appears live.
 
-New post: How Catholic Families Can Turn Summer Adventures Into Faith & Financial Freedom Lessons
+New post: Treat Your FI Journey Like a Pilgrimage: Lessons from St. James for Catholic Families
+
+https://super-fi-calculator.vercel.app/blog/treat-your-fi-journey-like-a-pilgrimage-lessons-from-st-james-for-catholic-families
