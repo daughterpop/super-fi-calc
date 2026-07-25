@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Gift, ExternalLink } from 'lucide-react';
+import { Gift, ExternalLink, Heart, BookOpen, Wrench, Users, TrendingUp } from 'lucide-react';
 import SubscribeForm from '../components/SubscribeForm';
 import SiteHeader, { ROBINHOOD_URL } from '../components/SiteHeader';
 import SuperFiCalculator from '../Super-Fi-Calculator.jsx';
@@ -34,6 +34,33 @@ export default function Calculators() {
       q: "Can this calculator help us leave a generational inheritance while still living generously today?",
       a: "Absolutely. By modeling large future expenses (college, vehicles, debt payoff) alongside steady investing, you see the true surplus available for both present tithing and long-term family provision. Generational wealth and cheerful giving are not opposites — they reinforce each other when planned together.",
       link: "/blog/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi"
+    }
+  ];
+
+  const nextSteps = [
+    {
+      icon: Users,
+      title: "Pray & talk with your spouse",
+      body: "Share the timeline. Ask: Does this plan free us for more prayer, presence, and generosity? Adjust inputs together until the numbers serve the mission.",
+      cta: null
+    },
+    {
+      icon: BookOpen,
+      title: "Read a related insight",
+      body: "Deepen the "why" behind the numbers with practical faith + FI articles written for Catholic families.",
+      cta: { to: "/blog", label: "Browse the blog" }
+    },
+    {
+      icon: TrendingUp,
+      title: "Put surplus to work",
+      body: "If the projection shows investable margin, open a simple brokerage and start dollar-cost averaging. Free stocks up to $200 make the first step easier.",
+      cta: { href: ROBINHOOD_URL, label: "Claim free stock", external: true }
+    },
+    {
+      icon: Wrench,
+      title: "Explore trusted tools",
+      body: "Privacy, investing, and household tools we actually use — chosen to protect time, money, and peace on the path to FI.",
+      cta: { to: "/tools", label: "See recommended tools" }
     }
   ];
 
@@ -87,6 +114,65 @@ export default function Calculators() {
             </p>
           </div>
         )}
+      </div>
+
+      {/* Next Faithful Steps — high-leverage action card */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold tracking-[1.5px] mb-4">
+            AFTER THE NUMBERS
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Your Next Faithful Steps</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+            The calculator gives clarity. These four moves turn that clarity into progress for your family and the next generation.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          {nextSteps.map((step, idx) => {
+            const Icon = step.icon;
+            return (
+              <div
+                key={idx}
+                className="bg-white border border-gray-100 rounded-2xl p-5 sm:p-6 hover:border-emerald-200 hover:shadow-md transition-all flex flex-col"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 shrink-0 bg-emerald-100 rounded-xl flex items-center justify-center">
+                    <Icon className="text-emerald-600" size={20} />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 text-base sm:text-[17px] leading-snug">{step.title}</h3>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-4">{step.body}</p>
+                {step.cta && (
+                  step.cta.external ? (
+                    <a
+                      href={step.cta.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-emerald-600 hover:text-emerald-700 font-medium text-sm group"
+                    >
+                      {step.cta.label}
+                      <ExternalLink size={14} className="group-hover:translate-x-0.5 transition" />
+                    </a>
+                  ) : (
+                    <Link
+                      to={step.cta.to}
+                      className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-700 font-medium text-sm group"
+                    >
+                      {step.cta.label}
+                      <span className="group-hover:translate-x-0.5 transition">→</span>
+                    </Link>
+                  )
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        <p className="text-center text-xs text-gray-500 mt-6 flex items-center justify-center gap-1.5">
+          <Heart size={12} className="text-emerald-500" />
+          Stewardship is a daily "yes" — start with one step today.
+        </p>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 bg-white border-t border-b border-gray-100">
