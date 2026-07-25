@@ -29,6 +29,7 @@ import {
   Lock,
   Calendar,
 } from 'lucide-react';
+import SiteHeader from '../components/SiteHeader';
 
 const tools = [
   {
@@ -690,28 +691,7 @@ export default function Tools() {
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
-      <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
-          <Link to="/" className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight">
-            <span className="sm:hidden text-base">Fidelitas</span>
-            <span className="hidden sm:inline text-2xl">Fidelitas</span>
-          </Link>
-          <div className="flex items-center gap-3 sm:gap-8 text-sm">
-            <Link to="/" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">
-              Home
-            </Link>
-            <Link to="/calculators" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">
-              Calculators
-            </Link>
-            <Link to="/blog" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">
-              Blog
-            </Link>
-            <Link to="/tools" className="text-emerald-600 font-medium whitespace-nowrap">
-              Tools
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <SiteHeader showReferralStrip={false} />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
         <div className="text-center mb-8 sm:mb-10">
