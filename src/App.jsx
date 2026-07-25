@@ -13,8 +13,8 @@ function App() {
       <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
           <Link to="/" className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight">
-            <span className="sm:hidden text-base">Super FI</span>
-            <span className="hidden sm:inline text-2xl">Super FI</span>
+            <span className="sm:hidden text-base">Fidelitas</span>
+            <span className="hidden sm:inline text-2xl">Fidelitas</span>
           </Link>
           <div className="flex items-center gap-3 sm:gap-8 text-sm">
             <Link to="/" className="text-emerald-600 font-medium whitespace-nowrap">Home</Link>
@@ -25,7 +25,7 @@ function App() {
         </div>
       </nav>
 
-      {/* Top referral strip - matching calculator page */}
+      {/* Top referral strip */}
       <div className="bg-emerald-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-center sm:text-left">
           <div className="flex items-center gap-2 text-sm sm:text-[15px]">
@@ -47,17 +47,20 @@ function App() {
         </div>
       </div>
 
-      {/* Hero — short and site-focused */}
+      {/* Hero */}
       <div className="bg-white border-b">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14 text-center">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-semibold tracking-[1.5px] mb-4">
             FAITH • FAMILY • GENERATIONAL WEALTH
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-            Super FI
+            Fidelitas
           </h1>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
-            Practical tools, faith-filled insights, and trusted resources to help Catholic families build financial independence with purpose.
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-2">
+            Faithful financial independence for Catholic families.
+          </p>
+          <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto leading-relaxed mb-8">
+            Practical tools, faith-filled insights, and trusted resources to build freedom with purpose — for your household and the next generation.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
@@ -115,7 +118,7 @@ function App() {
         </div>
       </div>
 
-      {/* Who it’s for — shorter cards */}
+      {/* Who it’s for */}
       <div className="bg-white border-y">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-8">Built for Catholic families</h2>

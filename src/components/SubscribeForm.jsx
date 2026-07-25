@@ -32,9 +32,9 @@ export default function SubscribeForm() {
 
   return (
     <div className="mt-8 sm:mt-12 p-6 sm:p-8 bg-white rounded-2xl shadow-md max-w-md mx-auto text-center w-full">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-3">Join the Super FI List</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold mb-3">Join the Fidelitas List</h2>
       <p className="text-gray-600 mb-6 text-sm sm:text-base">
-        No big deal — free tips, tricks &amp; tools to speed up your financial independence journey.<br />
+        Free tips, tools, and stewardship ideas for Catholic families on the path to financial independence.<br />
         (Max 1 email per week. Unsubscribe anytime.)
       </p>
 
@@ -81,7 +81,7 @@ export default function SubscribeForm() {
           </div>
         </div>
       ) : (
-        <p className="text-green-600 text-lg sm:text-xl">✅ You're in! Welcome to the club.</p>
+        <p className="text-green-600 text-lg sm:text-xl">✅ You're in! Welcome to Fidelitas.</p>
       )}
     </div>
   );
