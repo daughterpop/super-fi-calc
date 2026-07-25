@@ -35,7 +35,7 @@ export default function WhyFIForEveryone() {
         </ul>
 
         <p className="mb-6">
-          I built the Super FI calculator because I believe this path should be accessible to anyone willing to run the numbers and take consistent action. No gatekeeping. No fancy degrees required.
+          I built the Fidelitas calculator because I believe this path should be accessible to anyone willing to run the numbers and take consistent action. No gatekeeping. No fancy degrees required.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">

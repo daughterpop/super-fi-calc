@@ -25,7 +25,7 @@ export default function CatholicFamiliesLeverageAiForPrayerfulFinancialFreedomAn
         </h2>
         <ul className="list-disc pl-6 space-y-3 mb-8 text-gray-700">
           <li>Use AI chat tools to build a simple family budget that aligns with your values — ask it to factor in tithing, education funds, and charity goals.</li>
-          <li>Run “what if” scenarios on your Super FI calculator: different savings rates, side hustles that fit family life, or investing consistently.</li>
+          <li>Run “what if” scenarios on the Fidelitas calculator: different savings rates, side hustles that fit family life, or investing consistently.</li>
           <li>Have AI help create age-appropriate money lessons for kids rooted in Catholic teaching on stewardship and generosity.</li>
           <li>Track progress weekly as a family — turn it into a prayerful review of God’s provision.</li>
         </ul>
