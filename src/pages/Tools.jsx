@@ -693,8 +693,8 @@ export default function Tools() {
       <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
           <Link to="/" className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight">
-            <span className="sm:hidden text-base">Super FI</span>
-            <span className="hidden sm:inline text-2xl">Super FI</span>
+            <span className="sm:hidden text-base">Fidelitas</span>
+            <span className="hidden sm:inline text-2xl">Fidelitas</span>
           </Link>
           <div className="flex items-center gap-3 sm:gap-8 text-sm">
             <Link to="/" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">
@@ -722,7 +722,7 @@ export default function Tools() {
             Tools to Speed Up Your FI Journey
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
-            Hand-picked apps and platforms we actually use. Each card spells out what it is and what you get when you join through these links — you get the perk, and it helps keep Super FI free.
+            Hand-picked apps and platforms we actually use. Each card spells out what it is and what you get when you join through these links — you get the perk, and it helps keep Fidelitas free.
           </p>
         </div>
 
@@ -874,7 +874,7 @@ export default function Tools() {
             <Shield className="text-gray-400" size={22} />
           </div>
           <p className="text-sm text-gray-600 leading-relaxed max-w-lg mx-auto">
-            These are affiliate / referral links. If you sign up through them, you often get a bonus and Super FI may earn a
+            These are affiliate / referral links. If you sign up through them, you often get a bonus and Fidelitas may earn a
             small commission — at no extra cost to you. We only list tools we'd use ourselves on the path to faithful
             financial independence. Value sort ranks approximate signup / referral bonus potential and may change with
             offers.
