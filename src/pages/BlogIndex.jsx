@@ -1,9 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, X, Filter, Gift, ExternalLink } from 'lucide-react';
+import { Search, X, Filter } from 'lucide-react';
 import { allPosts, allTags } from '../data/posts';
-
-const ROBINHOOD_URL = 'https://join.robinhood.com/dustinh-1bff5a';
+import SiteHeader from '../components/SiteHeader';
 
 export default function BlogIndex() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -53,41 +52,7 @@ export default function BlogIndex() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
-          <Link to="/" className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight">
-            <span className="sm:hidden text-base">Fidelitas</span>
-            <span className="hidden sm:inline text-2xl">Fidelitas</span>
-          </Link>
-          <div className="flex items-center gap-3 sm:gap-8 text-sm">
-            <Link to="/" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Home</Link>
-            <Link to="/calculators" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Calculators</Link>
-            <Link to="/blog" className="text-emerald-600 font-medium whitespace-nowrap">Blog</Link>
-            <Link to="/tools" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Tools</Link>
-          </div>
-        </div>
-      </nav>
-
-      <div className="bg-emerald-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-center sm:text-left">
-          <div className="flex items-center gap-2 text-sm sm:text-[15px]">
-            <Gift size={16} className="shrink-0 text-emerald-200" />
-            <span>
-              <strong className="font-semibold">Free stocks up to $200</strong>
-              <span className="text-emerald-100"> — start investing your surplus toward FI</span>
-            </span>
-          </div>
-          <a
-            href={ROBINHOOD_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white text-emerald-800 font-semibold text-sm rounded-lg hover:bg-emerald-50 transition-colors shrink-0"
-          >
-            Claim free stock
-            <ExternalLink size={14} />
-          </a>
-        </div>
-      </div>
+      <SiteHeader />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="mb-8">
