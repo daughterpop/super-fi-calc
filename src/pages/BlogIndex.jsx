@@ -53,12 +53,11 @@ export default function BlogIndex() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Simple nav */}
       <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
           <Link to="/" className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight">
-            <span className="sm:hidden text-base">Super FI</span>
-            <span className="hidden sm:inline text-2xl">Super FI</span>
+            <span className="sm:hidden text-base">Fidelitas</span>
+            <span className="hidden sm:inline text-2xl">Fidelitas</span>
           </Link>
           <div className="flex items-center gap-3 sm:gap-8 text-sm">
             <Link to="/" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Home</Link>
@@ -69,7 +68,6 @@ export default function BlogIndex() {
         </div>
       </nav>
 
-      {/* Top referral strip - matching calculator page */}
       <div className="bg-emerald-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-center sm:text-left">
           <div className="flex items-center gap-2 text-sm sm:text-[15px]">

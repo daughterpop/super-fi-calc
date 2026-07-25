@@ -40,12 +40,11 @@ export default function Calculators() {
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
-      {/* Sticky Nav */}
       <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
           <Link to="/" className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight">
-            <span className="sm:hidden text-base">Super FI</span>
-            <span className="hidden sm:inline text-2xl">Super FI</span>
+            <span className="sm:hidden text-base">Fidelitas</span>
+            <span className="hidden sm:inline text-2xl">Fidelitas</span>
           </Link>
           <div className="flex items-center gap-3 sm:gap-8 text-sm">
             <Link to="/" className="text-gray-700 hover:text-emerald-600 font-medium whitespace-nowrap">Home</Link>
@@ -56,7 +55,6 @@ export default function Calculators() {
         </div>
       </nav>
 
-      {/* Top referral strip */}
       <div className="bg-emerald-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-center sm:text-left">
           <div className="flex items-center gap-2 text-sm sm:text-[15px]">
@@ -78,7 +76,6 @@ export default function Calculators() {
         </div>
       </div>
 
-      {/* Page header */}
       <div className="bg-white border-b">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 text-center">
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">FI Calculators</h1>
@@ -88,7 +85,6 @@ export default function Calculators() {
         </div>
       </div>
 
-      {/* Calculator tabs + content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         <div className="flex border-b mb-6 sm:mb-8 bg-white rounded-t-lg overflow-hidden">
           <button
@@ -128,7 +124,6 @@ export default function Calculators() {
         )}
       </div>
 
-      {/* Faith & Stewardship FAQ — right after calculator for immediate relevance */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 bg-white border-t border-b border-gray-100">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold tracking-[1.5px] mb-4">
@@ -171,7 +166,6 @@ export default function Calculators() {
         <p className="text-center text-xs text-gray-500 mt-6">Have a question we missed? Share your story or thoughts on the blog.</p>
       </div>
 
-      {/* Secondary Robinhood CTA */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
         <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <div className="flex-1">
