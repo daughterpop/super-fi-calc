@@ -47,7 +47,7 @@ export default function Calculators() {
     {
       icon: BookOpen,
       title: "Read a related insight",
-      body: "Deepen the "why" behind the numbers with practical faith + FI articles written for Catholic families.",
+      body: 'Deepen the "why" behind the numbers with practical faith + FI articles written for Catholic families.',
       cta: { to: "/blog", label: "Browse the blog" }
     },
     {
