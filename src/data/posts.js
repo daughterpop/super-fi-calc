@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Treat Your FI Journey Like a Pilgrimage: Lessons from St. James for Catholic Families',
+    date: 'July 25, 2026',
+    dateSort: '2026-07-25',
+    excerpt: 'On the Feast of St. James, Catholic families can see the path to financial independence as a pilgrimage — one step, one prayer, one faithful decision at a time that builds lasting freedom and legacy.',
+    readTime: '4 min read',
+    link: '/blog/treat-your-fi-journey-like-a-pilgrimage-lessons-from-st-james-for-catholic-families',
+    tags: ['Prayer', 'Legacy', 'Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
     title: 'AI Meal Planning for Catholic Families: Stretch the Budget and Accelerate FI',
     date: 'July 24, 2026',
     dateSort: '2026-07-24',

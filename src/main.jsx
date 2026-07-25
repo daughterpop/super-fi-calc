@@ -25,6 +25,7 @@ import HowCatholicFamiliesCanTurnSummerAdventuresIntoFaithAndFinancialFreedomLes
 import AiMealPlanningForCatholicFamiliesStretchTheBudgetAndAccelerateFi from './pages/ai-meal-planning-for-catholic-families-stretch-the-budget-and-accelerate-fi.jsx';
 import CatholicFamiliesAiForBackToSchoolSavingsAndFaithFilledFinancialFreedom from './pages/catholic-families-ai-for-back-to-school-savings-and-faith-filled-financial-freedom.jsx';
 import ProtectYourFamilysDigitalPrivacyStewardshipToolsForCatholicFi from './pages/protect-your-familys-digital-privacy-stewardship-tools-for-catholic-fi.jsx';
+import TreatYourFiJourneyLikeAPilgrimageLessonsFromStJamesForCatholicFamilies from './pages/treat-your-fi-journey-like-a-pilgrimage-lessons-from-st-james-for-catholic-families.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -54,6 +55,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/blog/ai-meal-planning-for-catholic-families-stretch-the-budget-and-accelerate-fi" element={<AiMealPlanningForCatholicFamiliesStretchTheBudgetAndAccelerateFi />} />
         <Route path="/blog/catholic-families-ai-for-back-to-school-savings-and-faith-filled-financial-freedom" element={<CatholicFamiliesAiForBackToSchoolSavingsAndFaithFilledFinancialFreedom />} />
         <Route path="/blog/protect-your-familys-digital-privacy-stewardship-tools-for-catholic-fi" element={<ProtectYourFamilysDigitalPrivacyStewardshipToolsForCatholicFi />} />
+        <Route path="/blog/treat-your-fi-journey-like-a-pilgrimage-lessons-from-st-james-for-catholic-families" element={<TreatYourFiJourneyLikeAPilgrimageLessonsFromStJamesForCatholicFamilies />} />
 
         <Route path="*" element={<App />} />
       </Routes>
