@@ -3,15 +3,13 @@ import { Link } from 'react-router-dom';
 import { ExternalLink, Heart, BookOpen, Wrench, Users, TrendingUp } from 'lucide-react';
 import SubscribeForm from '../components/SubscribeForm';
 import SiteHeader from '../components/SiteHeader';
-import ReferralCard from '../components/ReferralCard';
 import SuperFiCalculator from '../Super-Fi-Calculator.jsx';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
 import { getReferral } from '../data/referrals';
 
 export default function Calculators() {
   const [activeTab, setActiveTab] = useState('quick');
-  // Investing pool + different slot from header so footer isn't the same offer as the strip
-  const calcReferral = getReferral({ slot: 2, pool: 'investing' });
+  // Investing pool for the single "put surplus to work" step (no second footer CTA)
   const investStep = getReferral({ slot: 3, pool: 'investing' });
 
   const faqs = [
@@ -52,8 +50,17 @@ export default function Calculators() {
     {
       icon: BookOpen,
       title: "Read a related insight",
-      body: 'Deepen the "why" behind the numbers with practical faith + FI articles written for Catholic families.',
-      cta: { to: "/blog", label: "Browse the blog" }
+      body: "Deepen the why behind the numbers with practical faith + FI writing for Catholic families.",
+      links: [
+        {
+          to: "/blog/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi",
+          label: "Stewarding your family's future"
+        },
+        {
+          to: "/blog/raising-faith-filled-kids-while-building-financial-freedom",
+          label: "Raising faith-filled kids on the path to FI"
+        }
+      ]
     },
     {
       icon: TrendingUp,
@@ -121,7 +128,7 @@ export default function Calculators() {
         )}
       </div>
 
-      {/* Next Faithful Steps */}
+      {/* Next Faithful Steps — page-level path for everyone (also mirrored compactly after results) */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold tracking-[1.5px] mb-4">
@@ -148,6 +155,20 @@ export default function Calculators() {
                   <h3 className="font-semibold text-gray-900 text-base sm:text-[17px] leading-snug">{step.title}</h3>
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-4">{step.body}</p>
+                {step.links && (
+                  <div className="flex flex-col gap-1.5">
+                    {step.links.map((l) => (
+                      <Link
+                        key={l.to}
+                        to={l.to}
+                        className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-700 font-medium text-sm group"
+                      >
+                        {l.label}
+                        <span className="group-hover:translate-x-0.5 transition">→</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
                 {step.cta && (
                   step.cta.external ? (
                     <a
@@ -222,11 +243,7 @@ export default function Calculators() {
         <p className="text-center text-xs text-gray-500 mt-6">Have a question we missed? Share your story or thoughts on the blog.</p>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
-        <ReferralCard referral={calcReferral} />
-      </div>
-
-      <div className="px-4 sm:px-6 pb-10">
+      <div className="px-4 sm:px-6 pb-10 pt-6">
         <SubscribeForm />
       </div>
     </div>
