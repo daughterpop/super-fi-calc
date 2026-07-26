@@ -1,9 +1,6 @@
 import "./App.css";
 import { Link } from 'react-router-dom';
 import {
-  GraduationCap,
-  Home as HomeIcon,
-  Heart,
   ArrowRight,
   BookOpen,
   Gift,
@@ -59,8 +56,11 @@ function App() {
       {/* Clear path: Calculate → Understand → Act */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
         <h2 className="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-2">A simple path</h2>
-        <p className="text-gray-600 text-sm sm:text-base text-center max-w-xl mx-auto mb-8">
+        <p className="text-gray-600 text-sm sm:text-base text-center max-w-xl mx-auto mb-3">
           Know the number. See the plan. Put surplus to work — without losing sight of faith and family.
+        </p>
+        <p className="text-gray-500 text-xs sm:text-sm text-center max-w-lg mx-auto mb-8">
+          Designed for households juggling tuition, mortgage, tithing, and legacy — not just a FIRE spreadsheet.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
@@ -123,53 +123,8 @@ function App() {
         </div>
       </div>
 
-      {/* Who it’s for */}
-      <div className="bg-white border-y">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-2">Built for Catholic families</h2>
-          <p className="text-gray-600 text-sm sm:text-base text-center max-w-xl mx-auto mb-8">
-            FI here isn’t escape from responsibility — it’s capacity for presence, generosity, and formation.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div className="bg-gray-50 rounded-2xl p-5">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-9 h-9 bg-emerald-100 rounded-lg flex items-center justify-center">
-                  <GraduationCap className="text-emerald-600" size={18} />
-                </div>
-                <h3 className="font-semibold text-gray-900">College & kids</h3>
-              </div>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Plan tuition and family priorities without squeezing out faith formation.
-              </p>
-            </div>
-            <div className="bg-gray-50 rounded-2xl p-5">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-9 h-9 bg-emerald-100 rounded-lg flex items-center justify-center">
-                  <HomeIcon className="text-emerald-600" size={18} />
-                </div>
-                <h3 className="font-semibold text-gray-900">Mortgage & debt</h3>
-              </div>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Model becoming debt-free while still investing and tithing generously.
-              </p>
-            </div>
-            <div className="bg-gray-50 rounded-2xl p-5">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-9 h-9 bg-emerald-100 rounded-lg flex items-center justify-center">
-                  <Heart className="text-emerald-600" size={18} />
-                </div>
-                <h3 className="font-semibold text-gray-900">Legacy builders</h3>
-              </div>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Align your numbers with stewardship, generosity, and the next generation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Featured blog posts */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 border-t border-gray-100">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900">From the Blog</h2>
           <Link
