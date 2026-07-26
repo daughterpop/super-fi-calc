@@ -70,16 +70,6 @@ const rawPosts = [
     featured: true
   },
   {
-    title: 'Catholic Families Can Reach FI Together: AI, Prayer, and Smart Stewardship',
-    date: 'June 17, 2026',
-    dateSort: '2026-06-17',
-    excerpt: 'How Catholic families are combining AI tools, prayer, and wise stewardship to reach financial independence together as a faith-filled team.',
-    readTime: '4 min read',
-    link: '/blog/catholic-families-can-reach-fi-together-ai-prayer-and-smart-stewardship',
-    tags: ['AI Tools', 'Prayer', 'Stewardship'],
-    featured: false
-  },
-  {
     title: 'Catholic Families Harness AI for Prayerful FI and Generational Legacy',
     date: 'June 16, 2026',
     dateSort: '2026-06-16',
