@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Lessons from Joachim and Anne for Building a Lasting Family Legacy',
+    date: 'July 26, 2026',
+    dateSort: '2026-07-26',
+    excerpt: 'On the Feast of Saints Joachim and Anne, Catholic families can rediscover that the greatest inheritance is a child formed in faith and freedom — and that financial independence is one of the practical tools that makes this formation possible.',
+    readTime: '4 min read',
+    link: '/blog/lessons-from-joachim-and-anne-for-building-a-lasting-family-legacy',
+    tags: ['Parenting', 'Legacy', 'Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
     title: 'Treat Your FI Journey Like a Pilgrimage: Lessons from St. James for Catholic Families',
     date: 'July 25, 2026',
     dateSort: '2026-07-25',
