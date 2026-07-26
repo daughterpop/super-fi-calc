@@ -1,13 +1,18 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Gift, ExternalLink, Heart, BookOpen, Wrench, Users, TrendingUp } from 'lucide-react';
+import { ExternalLink, Heart, BookOpen, Wrench, Users, TrendingUp } from 'lucide-react';
 import SubscribeForm from '../components/SubscribeForm';
-import SiteHeader, { ROBINHOOD_URL } from '../components/SiteHeader';
+import SiteHeader from '../components/SiteHeader';
+import ReferralCard from '../components/ReferralCard';
 import SuperFiCalculator from '../Super-Fi-Calculator.jsx';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
+import { getReferral } from '../data/referrals';
 
 export default function Calculators() {
   const [activeTab, setActiveTab] = useState('quick');
+  // Investing pool + different slot from header so footer isn't the same offer as the strip
+  const calcReferral = getReferral({ slot: 2, pool: 'investing' });
+  const investStep = getReferral({ slot: 3, pool: 'investing' });
 
   const faqs = [
     {
@@ -53,8 +58,8 @@ export default function Calculators() {
     {
       icon: TrendingUp,
       title: "Put surplus to work",
-      body: "If the projection shows investable margin, open a simple brokerage and start dollar-cost averaging. Free stocks up to $200 make the first step easier.",
-      cta: { href: ROBINHOOD_URL, label: "Claim free stock", external: true }
+      body: investStep.cardBody,
+      cta: { href: investStep.href, label: investStep.cardCta, external: true }
     },
     {
       icon: Wrench,
@@ -116,7 +121,7 @@ export default function Calculators() {
         )}
       </div>
 
-      {/* Next Faithful Steps — high-leverage action card */}
+      {/* Next Faithful Steps */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold tracking-[1.5px] mb-4">
@@ -218,26 +223,7 @@ export default function Calculators() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
-        <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-1">
-              <Gift className="text-emerald-600" size={18} />
-              <span className="text-sm font-semibold text-emerald-800 uppercase tracking-wide">Ready to invest the surplus?</span>
-            </div>
-            <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-              Open a Robinhood account and get <strong>free stocks worth up to $200</strong> when you make your first investment. Commission-free and beginner-friendly.
-            </p>
-          </div>
-          <a
-            href={ROBINHOOD_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors shrink-0 text-sm sm:text-base w-full sm:w-auto"
-          >
-            Claim free stock
-            <ExternalLink size={16} />
-          </a>
-        </div>
+        <ReferralCard referral={calcReferral} />
       </div>
 
       <div className="px-4 sm:px-6 pb-10">
