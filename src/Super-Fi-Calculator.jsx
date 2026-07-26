@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { ArrowRight, ArrowLeft, Check, TrendingUp, Home, GraduationCap, DollarSign, Sparkles, Share2, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, ArrowLeft, Check, TrendingUp, Home, GraduationCap, DollarSign, Sparkles, Share2, Heart, BookOpen, Wrench } from 'lucide-react';
 import ReferralPromo from './components/ReferralPromo';
 
 export default function SuperFiCalculator() {
@@ -299,6 +300,40 @@ export default function SuperFiCalculator() {
               {results.fiAge && (
                 <div className="text-xs text-gray-500 mt-1">At age {results.fiAge}</div>
               )}
+            </div>
+          </div>
+
+          {/* Compact next steps — right after the numbers */}
+          <div className="bg-white border border-emerald-100 rounded-2xl p-4 sm:p-5 mb-4 sm:mb-6">
+            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700 mb-3">What now?</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <Link
+                to="/blog/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi"
+                className="flex items-start gap-2.5 p-3 rounded-xl bg-gray-50 hover:bg-emerald-50 border border-transparent hover:border-emerald-100 transition-colors group"
+              >
+                <BookOpen className="text-emerald-600 shrink-0 mt-0.5" size={18} />
+                <span className="text-sm text-gray-700 group-hover:text-emerald-800 leading-snug">
+                  Read: Stewarding your family's future
+                </span>
+              </Link>
+              <Link
+                to="/blog/raising-faith-filled-kids-while-building-financial-freedom"
+                className="flex items-start gap-2.5 p-3 rounded-xl bg-gray-50 hover:bg-emerald-50 border border-transparent hover:border-emerald-100 transition-colors group"
+              >
+                <BookOpen className="text-emerald-600 shrink-0 mt-0.5" size={18} />
+                <span className="text-sm text-gray-700 group-hover:text-emerald-800 leading-snug">
+                  Read: Raising faith-filled kids on the path to FI
+                </span>
+              </Link>
+              <Link
+                to="/tools"
+                className="flex items-start gap-2.5 p-3 rounded-xl bg-gray-50 hover:bg-emerald-50 border border-transparent hover:border-emerald-100 transition-colors group"
+              >
+                <Wrench className="text-emerald-600 shrink-0 mt-0.5" size={18} />
+                <span className="text-sm text-gray-700 group-hover:text-emerald-800 leading-snug">
+                  Browse tools to put surplus to work
+                </span>
+              </Link>
             </div>
           </div>
 
