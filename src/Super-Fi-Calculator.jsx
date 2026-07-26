@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { ArrowRight, ArrowLeft, Check, TrendingUp, Home, GraduationCap, DollarSign, Sparkles, Share2, Heart } from 'lucide-react';
+import ReferralPromo from './components/ReferralPromo';
 
 export default function SuperFiCalculator() {
   const [step, setStep] = useState(0);
@@ -233,7 +234,6 @@ export default function SuperFiCalculator() {
     }
   };
 
-  // Static intro section
   const IntroSection = () => (
     <div className="w-full max-w-4xl mx-auto px-1 sm:px-4 py-4 sm:py-8 prose prose-slate dark:prose-invert">
       <h1 className="text-2xl sm:text-4xl font-bold text-center mb-3 sm:mb-4 leading-tight">Financial Independence Calculator</h1>
@@ -252,36 +252,6 @@ export default function SuperFiCalculator() {
         <div>
           <h2 className="text-base sm:text-lg font-semibold mb-2">Popular searches</h2>
           <p className="text-muted-foreground text-sm">financial independence calculator • fi calculator • fire calculator • retire early tool • fi number calculator</p>
-        </div>
-      </div>
-    </div>
-  );
-
-  const RobinhoodPromo = () => (
-    <div className="w-full max-w-2xl mb-6 sm:mb-8 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 sm:p-6 shadow-sm border border-green-100">
-      <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
-        <div className="flex-shrink-0 w-11 h-11 sm:w-12 sm:h-12 bg-green-500 rounded-xl flex items-center justify-center">
-          <TrendingUp className="text-white" size={22} />
-        </div>
-        <div className="flex-1 min-w-0">
-          <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
-            Ready to Start Investing?
-          </h3>
-          <p className="text-sm text-gray-600 mb-3 sm:mb-4">
-            Get free stocks worth up to $200 when you open a Robinhood account and make your first investment.
-          </p>
-          <a
-            href="https://join.robinhood.com/dustinh-1bff5a"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-all shadow-md hover:shadow-lg text-sm sm:text-base"
-          >
-            Claim Your Free Stock
-            <ArrowRight size={18} />
-          </a>
-          <p className="text-xs text-gray-500 mt-2 sm:mt-3">
-            Commission-free trading • Easy to use • Perfect for beginners
-          </p>
         </div>
       </div>
     </div>
@@ -332,33 +302,9 @@ export default function SuperFiCalculator() {
             </div>
           </div>
 
-          {/* Robinhood CTA */}
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 sm:p-6 shadow-sm border border-green-100 mb-4 sm:mb-6">
-            <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
-              <div className="flex-shrink-0 w-11 h-11 sm:w-12 sm:h-12 bg-green-500 rounded-xl flex items-center justify-center">
-                <TrendingUp className="text-white" size={22} />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
-                  Ready to Start Investing?
-                </h3>
-                <p className="text-sm text-gray-600 mb-3 sm:mb-4">
-                  Get free stocks worth up to $200 when you join Robinhood and make your first investment.
-                </p>
-                <a
-                  href="https://join.robinhood.com/dustinh-1bff5a"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-all shadow-md hover:shadow-lg text-sm sm:text-base"
-                >
-                  Claim Your Free Stock
-                  <ArrowRight size={18} />
-                </a>
-                <p className="text-xs text-gray-500 mt-2 sm:mt-3">
-                  Commission-free trading • Easy to use • Perfect for beginners
-                </p>
-              </div>
-            </div>
+          {/* Rotating investing referral */}
+          <div className="mb-4 sm:mb-6 max-w-2xl">
+            <ReferralPromo slot={5} pool="investing" />
           </div>
 
           <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100 mb-4 sm:mb-6">
@@ -386,7 +332,6 @@ export default function SuperFiCalculator() {
             </div>
           </div>
 
-          {/* Stewardship Legacy Card */}
           <div className="bg-gradient-to-br from-amber-50 via-white to-rose-50 border border-amber-200 rounded-3xl p-5 sm:p-8 mb-6 sm:mb-8 shadow-xl relative overflow-hidden">
             <div className="absolute top-4 right-4 sm:top-6 sm:right-6 text-amber-300 opacity-60 pointer-events-none">
               <Heart size={36} className="sm:hidden" />
@@ -487,7 +432,6 @@ export default function SuperFiCalculator() {
           <p className="text-gray-600 text-sm sm:text-lg">Answer a few questions to see when you can achieve FI</p>
         </div>
 
-        {/* Step indicator — icons only on mobile to prevent overflow */}
         <div className="flex justify-center mb-6 sm:mb-8 overflow-x-auto">
           <div className="flex items-center gap-1.5 sm:gap-2">
             {steps.map((s, idx) => (
@@ -508,7 +452,7 @@ export default function SuperFiCalculator() {
           </div>
         </div>
 
-        <RobinhoodPromo />
+        <ReferralPromo slot={4} pool="investing" />
 
         <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-gray-100 p-5 sm:p-8 md:p-10">
           {step === 0 && (
