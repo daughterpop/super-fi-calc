@@ -3,16 +3,19 @@ import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   BookOpen,
-  Gift,
-  ExternalLink,
   Calculator,
   Wrench,
 } from 'lucide-react';
 import SubscribeForm from './components/SubscribeForm';
-import SiteHeader, { ROBINHOOD_URL } from './components/SiteHeader';
+import SiteHeader from './components/SiteHeader';
+import ReferralCard from './components/ReferralCard';
 import { featuredPosts } from './data/posts';
+import { getReferral } from './data/referrals';
 
 function App() {
+  // Slot 1 so homepage card usually differs from header strip the same day
+  const homeReferral = getReferral({ slot: 1, pool: 'all' });
+
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <SiteHeader />
@@ -164,31 +167,9 @@ function App() {
         </div>
       </div>
 
-      {/* Soft Robinhood CTA */}
+      {/* Rotating soft referral CTA */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-8">
-        <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-1">
-              <Gift className="text-emerald-600" size={18} />
-              <span className="text-sm font-semibold text-emerald-800 uppercase tracking-wide">
-                Put the plan to work
-              </span>
-            </div>
-            <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-              Once you know your surplus, invest it. Open a Robinhood account and get{' '}
-              <strong>free stocks worth up to $200</strong> when you fund it.
-            </p>
-          </div>
-          <a
-            href={ROBINHOOD_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors shrink-0 text-sm sm:text-base w-full sm:w-auto"
-          >
-            Claim free stock
-            <ExternalLink size={16} />
-          </a>
-        </div>
+        <ReferralCard referral={homeReferral} />
       </div>
 
       <div className="px-4 sm:px-6 pb-10">

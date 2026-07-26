@@ -1,7 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Gift, ExternalLink } from 'lucide-react';
+import { getReferral, ROBINHOOD_URL } from '../data/referrals';
 
-export const ROBINHOOD_URL = 'https://join.robinhood.com/dustinh-1bff5a';
+export { ROBINHOOD_URL };
 
 const NAV = [
   { to: '/', label: 'Home' },
@@ -16,11 +17,13 @@ function navActive(pathname, to) {
 }
 
 /**
- * Shared sticky nav + optional Robinhood referral strip.
+ * Shared sticky nav + optional rotating referral strip.
  * @param {{ showReferralStrip?: boolean }} props
  */
 export default function SiteHeader({ showReferralStrip = true }) {
   const { pathname } = useLocation();
+  // Slot 0 = sitewide header strip; rotates daily across the full catalog
+  const referral = getReferral({ slot: 0, pool: 'all' });
 
   return (
     <>
@@ -60,17 +63,17 @@ export default function SiteHeader({ showReferralStrip = true }) {
             <div className="flex items-center gap-2 text-sm sm:text-[15px]">
               <Gift size={16} className="shrink-0 text-emerald-200" />
               <span>
-                <strong className="font-semibold">Free stocks up to $200</strong>
-                <span className="text-emerald-100"> — start investing your surplus toward FI</span>
+                <strong className="font-semibold">{referral.stripHeadline}</strong>
+                <span className="text-emerald-100">{referral.stripSub}</span>
               </span>
             </div>
             <a
-              href={ROBINHOOD_URL}
+              href={referral.href}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white text-emerald-800 font-semibold text-sm rounded-lg hover:bg-emerald-50 transition-colors shrink-0"
             >
-              Claim free stock
+              {referral.stripCta}
               <ExternalLink size={14} />
             </a>
           </div>
