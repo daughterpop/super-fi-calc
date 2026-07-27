@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 
 import './index.css';
 import App from './App.jsx';
@@ -32,6 +33,7 @@ import BuildMarginToGiveFreelyLessonsFromStPantaleon from './pages/build-margin-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
+      <Analytics />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/calculators" element={<Calculators />} />
