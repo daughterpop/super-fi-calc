@@ -702,7 +702,7 @@ export default function Tools() {
             Tools to Speed Up Your FI Journey
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
-            Hand-picked apps and platforms we actually use. Each card spells out what it is and what you get when you join through these links — you get the perk, and it helps keep Fidelitas free.
+            Hand-picked apps and platforms we actually use. Each card spells out what it is and what you get when you join through these links — you get the perk, and it helps keep Via Fidelitatis free.
           </p>
         </div>
 
@@ -854,7 +854,7 @@ export default function Tools() {
             <Shield className="text-gray-400" size={22} />
           </div>
           <p className="text-sm text-gray-600 leading-relaxed max-w-lg mx-auto">
-            These are affiliate / referral links. If you sign up through them, you often get a bonus and Fidelitas may earn a
+            These are affiliate / referral links. If you sign up through them, you often get a bonus and Via Fidelitatis may earn a
             small commission — at no extra cost to you. We only list tools we'd use ourselves on the path to faithful
             financial independence. Value sort ranks approximate signup / referral bonus potential and may change with
             offers.
