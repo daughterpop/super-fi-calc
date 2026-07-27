@@ -219,7 +219,7 @@ export default function SuperFiCalculator() {
   };
 
   const handleShareLegacy = () => {
-    const text = `My Stewardship Legacy: By God's grace, I will reach Financial Independence at age ${results.fiAge || 'XX'}. "Well done, good and faithful servant!" - Matthew 25:21. Join me on this journey of faithful family wealth building at super-fi-calculator.vercel.app`;
+    const text = `My Stewardship Legacy: By God's grace, I will reach Financial Independence at age ${results.fiAge || 'XX'}. "Well done, good and faithful servant!" - Matthew 25:21. Join me on this journey of faithful family wealth building at viafidelitatis.com`;
     if (navigator.share) {
       navigator.share({
         title: 'My Catholic FI Stewardship Legacy',
@@ -499,7 +499,7 @@ export default function SuperFiCalculator() {
                       type="number"
                       value={currentSavings}
                       onChange={(e) => setCurrentSavings(parseFloat(e.target.value) || 0)}
-                      className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                      className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none"
                     />
                   </div>
                 </div>
