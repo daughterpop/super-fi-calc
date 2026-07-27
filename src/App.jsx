@@ -30,8 +30,8 @@ function App() {
             Freedom to live your vocation
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-3">
-            <span className="font-semibold text-gray-800">Fidelitas</span> helps Catholic families build financial
-            independence so money serves the mission — not the other way around.
+            <span className="font-semibold text-gray-800">Via Fidelitatis</span> — the way of fidelity — helps Catholic families build financial
+            independence so money serves the mission, not the other way around.
           </p>
           <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto leading-relaxed mb-8">
             More margin for Mass, kids, generosity, and the next generation. Start by knowing your number.

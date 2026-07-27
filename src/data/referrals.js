@@ -1,5 +1,5 @@
 /**
- * Central referral catalog for Fidelitas.
+ * Central referral catalog for Via Fidelitatis.
  * getReferral() rotates by day + slot so the same page isn't stuck on one offer,
  * and different slots (header vs card) usually show different tools the same day.
  */

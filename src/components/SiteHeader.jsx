@@ -33,10 +33,10 @@ export default function SiteHeader({ showReferralStrip = true }) {
             to="/"
             className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight"
           >
-            <span className="sm:hidden text-base">Fidelitas</span>
-            <span className="hidden sm:inline text-2xl">Fidelitas</span>
+            <span className="sm:hidden text-sm tracking-tight">Via Fidelitatis</span>
+            <span className="hidden sm:inline text-xl lg:text-2xl tracking-tight">Via Fidelitatis</span>
           </Link>
-          <div className="flex items-center gap-3 sm:gap-8 text-sm">
+          <div className="flex items-center gap-2.5 sm:gap-8 text-sm">
             {NAV.map(({ to, label }) => {
               const active = navActive(pathname, to);
               return (
