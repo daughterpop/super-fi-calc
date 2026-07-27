@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin to Give Freely: Lessons from St. Pantaleon',
+    date: 'July 27, 2026',
+    dateSort: '2026-07-27',
+    excerpt: 'On the feast of St. Pantaleon, the unmercenary physician, Catholic families learn that financial independence creates the practical freedom to serve and give without calculating the return.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-to-give-freely-lessons-from-st-pantaleon',
+    tags: ['Stewardship', 'Tithing', 'Seasonal', 'Legacy'],
+    featured: false
+  },
+  {
     title: 'Lessons from Joachim and Anne for Building a Lasting Family Legacy',
     date: 'July 26, 2026',
     dateSort: '2026-07-26',

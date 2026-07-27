@@ -27,6 +27,7 @@ import CatholicFamiliesAiForBackToSchoolSavingsAndFaithFilledFinancialFreedom fr
 import ProtectYourFamilysDigitalPrivacyStewardshipToolsForCatholicFi from './pages/protect-your-familys-digital-privacy-stewardship-tools-for-catholic-fi.jsx';
 import TreatYourFiJourneyLikeAPilgrimageLessonsFromStJamesForCatholicFamilies from './pages/treat-your-fi-journey-like-a-pilgrimage-lessons-from-st-james-for-catholic-families.jsx';
 import LessonsFromJoachimAndAnneForBuildingALastingFamilyLegacy from './pages/lessons-from-joachim-and-anne-for-building-a-lasting-family-legacy.jsx';
+import BuildMarginToGiveFreelyLessonsFromStPantaleon from './pages/build-margin-to-give-freely-lessons-from-st-pantaleon.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -58,6 +59,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/blog/protect-your-familys-digital-privacy-stewardship-tools-for-catholic-fi" element={<ProtectYourFamilysDigitalPrivacyStewardshipToolsForCatholicFi />} />
         <Route path="/blog/treat-your-fi-journey-like-a-pilgrimage-lessons-from-st-james-for-catholic-families" element={<TreatYourFiJourneyLikeAPilgrimageLessonsFromStJamesForCatholicFamilies />} />
         <Route path="/blog/lessons-from-joachim-and-anne-for-building-a-lasting-family-legacy" element={<LessonsFromJoachimAndAnneForBuildingALastingFamilyLegacy />} />
+        <Route path="/blog/build-margin-to-give-freely-lessons-from-st-pantaleon" element={<BuildMarginToGiveFreelyLessonsFromStPantaleon />} />
 
         <Route path="*" element={<App />} />
       </Routes>
