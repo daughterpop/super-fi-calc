@@ -7,10 +7,6 @@ export default function SuperFiCalculator() {
   const [step, setStep] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [consent, setConsent] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(null);
 
   // Form data
   const [annualExpenses, setAnnualExpenses] = useState(90000);
@@ -235,29 +231,6 @@ export default function SuperFiCalculator() {
     }
   };
 
-  const IntroSection = () => (
-    <div className="w-full max-w-4xl mx-auto px-1 sm:px-4 py-4 sm:py-8 prose prose-slate dark:prose-invert">
-      <h1 className="text-2xl sm:text-4xl font-bold text-center mb-3 sm:mb-4 leading-tight">Financial Independence Calculator</h1>
-      <p className="text-base sm:text-xl text-center text-muted-foreground mb-6 sm:mb-8">
-        Free tool to calculate your <strong>FI Number</strong> and see exactly when you can achieve financial independence.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-10 text-sm text-left">
-        <div>
-          <h2 className="text-base sm:text-lg font-semibold mb-2">How it works</h2>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Enter your savings rate, expenses, and investment returns</li>
-            <li>Watch real-time updates to your FI number and timeline</li>
-            <li>Built with the 4% safe withdrawal rule</li>
-          </ul>
-        </div>
-        <div>
-          <h2 className="text-base sm:text-lg font-semibold mb-2">Popular searches</h2>
-          <p className="text-muted-foreground text-sm">financial independence calculator • fi calculator • fire calculator • retire early tool • fi number calculator</p>
-        </div>
-      </div>
-    </div>
-  );
-
   if (showResults) {
     return (
       <div className="w-full">
@@ -453,8 +426,6 @@ export default function SuperFiCalculator() {
 
   return (
     <div className="w-full flex flex-col items-center">
-      <IntroSection />
-
       <div className="w-full max-w-2xl">
         <div className="text-center mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white shadow-sm border border-gray-100 mb-3 sm:mb-4">
@@ -464,7 +435,7 @@ export default function SuperFiCalculator() {
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
             Plan Your Path to <span className="bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">Financial Freedom</span>
           </h1>
-          <p className="text-gray-600 text-sm sm:text-lg">Answer a few questions to see when you can achieve FI</p>
+          <p className="text-gray-600 text-sm sm:text-lg">Answer a few questions to see when you can achieve FI for your family</p>
         </div>
 
         <div className="flex justify-center mb-6 sm:mb-8 overflow-x-auto">
