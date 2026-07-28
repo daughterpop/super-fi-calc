@@ -9,12 +9,14 @@ import {
 import SubscribeForm from './components/SubscribeForm';
 import SiteHeader from './components/SiteHeader';
 import ReferralCard from './components/ReferralCard';
-import { featuredPosts } from './data/posts';
+import { allPosts } from './data/posts';
 import { getReferral } from './data/referrals';
 
 function App() {
   // Slot 1 so homepage card usually differs from header strip the same day
   const homeReferral = getReferral({ slot: 1, pool: 'all' });
+  // Always surface the three newest posts (posts.js is ordered newest-first)
+  const recentPosts = allPosts.slice(0, 3);
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
@@ -126,7 +128,7 @@ function App() {
         </div>
       </div>
 
-      {/* Featured blog posts */}
+      {/* Recent blog posts */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 border-t border-gray-100">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900">From the Blog</h2>
@@ -138,7 +140,7 @@ function App() {
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {featuredPosts.slice(0, 3).map((post, idx) => (
+          {recentPosts.map((post, idx) => (
             <Link
               key={idx}
               to={post.link}
