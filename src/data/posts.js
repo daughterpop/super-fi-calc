@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build a Money Sabbath into Your Week',
+    date: 'July 28, 2026',
+    dateSort: '2026-07-28',
+    excerpt: 'A simple weekly habit that quiets money anxiety, protects family time, and helps Catholic households practice the detachment St. Augustine described — so financial independence can actually feel free.',
+    readTime: '4 min read',
+    link: '/blog/build-a-money-sabbath-into-your-week',
+    tags: ['Stewardship', 'Prayer', 'Parenting', 'Couples'],
+    featured: false
+  },
+  {
     title: 'Build Margin to Give Freely: Lessons from St. Pantaleon',
     date: 'July 27, 2026',
     dateSort: '2026-07-27',

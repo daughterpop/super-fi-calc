@@ -29,6 +29,7 @@ import ProtectYourFamilysDigitalPrivacyStewardshipToolsForCatholicFi from './pag
 import TreatYourFiJourneyLikeAPilgrimageLessonsFromStJamesForCatholicFamilies from './pages/treat-your-fi-journey-like-a-pilgrimage-lessons-from-st-james-for-catholic-families.jsx';
 import LessonsFromJoachimAndAnneForBuildingALastingFamilyLegacy from './pages/lessons-from-joachim-and-anne-for-building-a-lasting-family-legacy.jsx';
 import BuildMarginToGiveFreelyLessonsFromStPantaleon from './pages/build-margin-to-give-freely-lessons-from-st-pantaleon.jsx';
+import BuildAMoneySabbathIntoYourWeek from './pages/build-a-money-sabbath-into-your-week.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -62,6 +63,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/blog/treat-your-fi-journey-like-a-pilgrimage-lessons-from-st-james-for-catholic-families" element={<TreatYourFiJourneyLikeAPilgrimageLessonsFromStJamesForCatholicFamilies />} />
         <Route path="/blog/lessons-from-joachim-and-anne-for-building-a-lasting-family-legacy" element={<LessonsFromJoachimAndAnneForBuildingALastingFamilyLegacy />} />
         <Route path="/blog/build-margin-to-give-freely-lessons-from-st-pantaleon" element={<BuildMarginToGiveFreelyLessonsFromStPantaleon />} />
+        <Route path="/blog/build-a-money-sabbath-into-your-week" element={<BuildAMoneySabbathIntoYourWeek />} />
 
         <Route path="*" element={<App />} />
       </Routes>
