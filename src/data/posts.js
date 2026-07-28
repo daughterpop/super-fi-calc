@@ -223,3 +223,12 @@ export const allTags = [
 ];
 
 export const featuredPosts = allPosts.filter((p) => p.featured);
+
+/** Lookup post metadata by pathname (e.g. /blog/slug) for SEO. */
+export function getPostByPath(pathname) {
+  if (!pathname) return null;
+  const normalized = pathname.endsWith('/') && pathname.length > 1
+    ? pathname.slice(0, -1)
+    : pathname;
+  return allPosts.find((p) => p.link === normalized) || null;
+}
