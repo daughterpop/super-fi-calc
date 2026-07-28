@@ -246,12 +246,12 @@ export default function SuperFiCalculator() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
             <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100">
               <div className="text-sm font-medium text-gray-500 mb-2">FI Progress</div>
-              <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent mb-3">
+              <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-3">
                 {results.fiProgress.toFixed(1)}%
               </div>
               <div className="w-full bg-gray-100 rounded-full h-2">
                 <div
-                  className="bg-gradient-to-r from-indigo-600 to-blue-600 h-2 rounded-full transition-all duration-1000"
+                  className="bg-gradient-to-r from-emerald-600 to-teal-600 h-2 rounded-full transition-all duration-1000"
                   style={{ width: `${Math.min(results.fiProgress, 100)}%` }}
                 />
               </div>
@@ -398,7 +398,7 @@ export default function SuperFiCalculator() {
                       <td className="px-3 sm:px-4 py-3 text-sm text-right font-semibold text-gray-900">
                         ${(proj.balance / 1000000).toFixed(2)}M
                       </td>
-                      <td className="px-3 sm:px-4 py-3 text-sm text-right text-indigo-600">
+                      <td className="px-3 sm:px-4 py-3 text-sm text-right text-emerald-600">
                         ${(proj.totalFINumber / 1000000).toFixed(2)}M
                       </td>
                       <td className="px-3 sm:px-4 py-3 text-sm text-right text-orange-600">
@@ -429,11 +429,11 @@ export default function SuperFiCalculator() {
       <div className="w-full max-w-2xl">
         <div className="text-center mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white shadow-sm border border-gray-100 mb-3 sm:mb-4">
-            <TrendingUp className="text-indigo-600" size={18} />
+            <TrendingUp className="text-emerald-600" size={18} />
             <span className="text-xs sm:text-sm font-medium text-gray-700">Financial Independence Calculator</span>
           </div>
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
-            Plan Your Path to <span className="bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">Financial Freedom</span>
+            Plan Your Path to <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Financial Freedom</span>
           </h1>
           <p className="text-gray-600 text-sm sm:text-lg">Answer a few questions to see when you can achieve FI for your family</p>
         </div>
@@ -443,15 +443,15 @@ export default function SuperFiCalculator() {
             {steps.map((s, idx) => (
               <React.Fragment key={idx}>
                 <div className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all shrink-0 ${
-                  idx === step ? 'bg-indigo-600 text-white shadow-lg scale-105' :
-                  idx < step ? 'bg-white text-indigo-600 border border-indigo-200' :
+                  idx === step ? 'bg-emerald-600 text-white shadow-lg scale-105' :
+                  idx < step ? 'bg-white text-emerald-600 border border-emerald-200' :
                   'bg-white text-gray-400 border border-gray-200'
                 }`}>
                   {idx < step ? <Check size={14} /> : <s.icon size={14} />}
                   <span className="text-sm font-medium hidden sm:inline">{s.title}</span>
                 </div>
                 {idx < steps.length - 1 && (
-                  <div className={`w-4 sm:w-8 h-0.5 shrink-0 ${idx < step ? 'bg-indigo-600' : 'bg-gray-200'}`} />
+                  <div className={`w-4 sm:w-8 h-0.5 shrink-0 ${idx < step ? 'bg-emerald-600' : 'bg-gray-200'}`} />
                 )}
               </React.Fragment>
             ))}
@@ -475,7 +475,7 @@ export default function SuperFiCalculator() {
                     type="number"
                     value={annualExpenses}
                     onChange={(e) => setAnnualExpenses(parseFloat(e.target.value) || 0)}
-                    className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                    className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
                   />
                 </div>
                 <p className="text-sm text-gray-500 mt-2">FI Target: ${(annualExpenses * 25).toLocaleString()}</p>
@@ -488,7 +488,7 @@ export default function SuperFiCalculator() {
                     type="number"
                     value={currentAge}
                     onChange={(e) => setCurrentAge(parseInt(e.target.value) || 0)}
-                    className="w-full px-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
                   />
                 </div>
                 <div>
@@ -499,7 +499,7 @@ export default function SuperFiCalculator() {
                       type="number"
                       value={currentSavings}
                       onChange={(e) => setCurrentSavings(parseFloat(e.target.value) || 0)}
-                      className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none"
+                      className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none"
                     />
                   </div>
                 </div>
@@ -513,7 +513,7 @@ export default function SuperFiCalculator() {
                     type="number"
                     value={annualSavings}
                     onChange={(e) => setAnnualSavings(parseFloat(e.target.value) || 0)}
-                    className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                    className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
                   />
                 </div>
                 <p className="text-xs text-gray-500 mt-2">Increases with inflation automatically</p>
@@ -530,7 +530,7 @@ export default function SuperFiCalculator() {
                       step="0.1"
                       value={rateOfReturn}
                       onChange={(e) => setRateOfReturn(parseFloat(e.target.value) || 0)}
-                      className="w-full px-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
                     />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">%</span>
                   </div>
@@ -544,7 +544,7 @@ export default function SuperFiCalculator() {
                       step="0.1"
                       value={inflationRate}
                       onChange={(e) => setInflationRate(parseFloat(e.target.value) || 0)}
-                      className="w-full px-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
                     />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">%</span>
                   </div>
@@ -563,7 +563,7 @@ export default function SuperFiCalculator() {
                   type="checkbox"
                   checked={hasMortgage}
                   onChange={(e) => setHasMortgage(e.target.checked)}
-                  className="w-5 h-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  className="w-5 h-5 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
                 />
                 <span className="text-base sm:text-lg font-medium text-gray-700">I have a mortgage</span>
               </label>
@@ -578,7 +578,7 @@ export default function SuperFiCalculator() {
                         type="number"
                         value={mortgageBalance}
                         onChange={(e) => setMortgageBalance(parseFloat(e.target.value) || 0)}
-                        className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                        className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -592,7 +592,7 @@ export default function SuperFiCalculator() {
                           step="0.01"
                           value={mortgageRate}
                           onChange={(e) => setMortgageRate(parseFloat(e.target.value) || 0)}
-                          className="w-full px-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
                         />
                         <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">%</span>
                       </div>
@@ -606,7 +606,7 @@ export default function SuperFiCalculator() {
                           type="number"
                           value={monthlyPayment}
                           onChange={(e) => setMonthlyPayment(parseFloat(e.target.value) || 0)}
-                          className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                          className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -620,12 +620,12 @@ export default function SuperFiCalculator() {
             <div className="space-y-5 sm:space-y-6">
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Children &amp; College</h2>
 
-              <label className="flex items-start sm:items-center gap-3 cursor-pointer p-3 sm:p-4 border-2 border-gray-200 rounded-xl hover:border-indigo-300 transition-colors">
+              <label className="flex items-start sm:items-center gap-3 cursor-pointer p-3 sm:p-4 border-2 border-gray-200 rounded-xl hover:border-emerald-300 transition-colors">
                 <input
                   type="checkbox"
                   checked={payingForCollege}
                   onChange={(e) => setPayingForCollege(e.target.checked)}
-                  className="w-5 h-5 mt-0.5 sm:mt-0 shrink-0 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  className="w-5 h-5 mt-0.5 sm:mt-0 shrink-0 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
                 />
                 <span className="text-base sm:text-lg font-medium text-gray-700">I'm paying for my children's college</span>
               </label>
@@ -636,7 +636,7 @@ export default function SuperFiCalculator() {
                     <span className="text-sm text-gray-600">How many children?</span>
                     <button
                       onClick={addKid}
-                      className="text-sm font-medium text-indigo-600 hover:text-indigo-700 whitespace-nowrap"
+                      className="text-sm font-medium text-emerald-600 hover:text-emerald-700 whitespace-nowrap"
                     >
                       + Add Child
                     </button>
@@ -663,7 +663,7 @@ export default function SuperFiCalculator() {
                             type="number"
                             value={kid.age}
                             onChange={(e) => updateKid(idx, 'age', parseInt(e.target.value) || 0)}
-                            className="w-full px-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                            className="w-full px-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-emerald-500 focus:outline-none"
                           />
                         </div>
                         <div>
@@ -674,7 +674,7 @@ export default function SuperFiCalculator() {
                               type="number"
                               value={kid.annualTuition}
                               onChange={(e) => updateKid(idx, 'annualTuition', parseFloat(e.target.value) || 0)}
-                              className="w-full pl-7 pr-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                              className="w-full pl-7 pr-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-emerald-500 focus:outline-none"
                             />
                           </div>
                         </div>
@@ -694,12 +694,12 @@ export default function SuperFiCalculator() {
             <div className="space-y-5 sm:space-y-6">
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Large Planned Expenses</h2>
 
-              <label className="flex items-center gap-3 cursor-pointer p-3 sm:p-4 border-2 border-gray-200 rounded-xl hover:border-indigo-300 transition-colors">
+              <label className="flex items-center gap-3 cursor-pointer p-3 sm:p-4 border-2 border-gray-200 rounded-xl hover:border-emerald-300 transition-colors">
                 <input
                   type="checkbox"
                   checked={buyingVehicle}
                   onChange={(e) => setBuyingVehicle(e.target.checked)}
-                  className="w-5 h-5 shrink-0 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  className="w-5 h-5 shrink-0 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
                 />
                 <span className="text-base sm:text-lg font-medium text-gray-700">Vehicle purchase(s)</span>
               </label>
@@ -710,7 +710,7 @@ export default function SuperFiCalculator() {
                     <span className="text-sm text-gray-600">Plan to buy vehicle(s)?</span>
                     <button
                       onClick={addVehicle}
-                      className="text-sm font-medium text-indigo-600 hover:text-indigo-700 whitespace-nowrap"
+                      className="text-sm font-medium text-emerald-600 hover:text-emerald-700 whitespace-nowrap"
                     >
                       + Add Vehicle
                     </button>
@@ -739,7 +739,7 @@ export default function SuperFiCalculator() {
                               type="number"
                               value={vehicle.amount}
                               onChange={(e) => updateVehicle(idx, 'amount', parseFloat(e.target.value) || 0)}
-                              className="w-full pl-7 pr-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                              className="w-full pl-7 pr-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-emerald-500 focus:outline-none"
                             />
                           </div>
                         </div>
@@ -749,7 +749,7 @@ export default function SuperFiCalculator() {
                             type="number"
                             value={vehicle.year}
                             onChange={(e) => updateVehicle(idx, 'year', parseInt(e.target.value) || 0)}
-                            className="w-full px-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                            className="w-full px-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-emerald-500 focus:outline-none"
                           />
                         </div>
                       </div>
@@ -758,12 +758,12 @@ export default function SuperFiCalculator() {
                 </>
               )}
 
-              <label className="flex items-center gap-3 cursor-pointer p-3 sm:p-4 border-2 border-gray-200 rounded-xl hover:border-indigo-300 transition-colors">
+              <label className="flex items-center gap-3 cursor-pointer p-3 sm:p-4 border-2 border-gray-200 rounded-xl hover:border-emerald-300 transition-colors">
                 <input
                   type="checkbox"
                   checked={hasOtherExpenses}
                   onChange={(e) => setHasOtherExpenses(e.target.checked)}
-                  className="w-5 h-5 shrink-0 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  className="w-5 h-5 shrink-0 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
                 />
                 <span className="text-base sm:text-lg font-medium text-gray-700">Other large expenses</span>
               </label>
@@ -774,7 +774,7 @@ export default function SuperFiCalculator() {
                     <span className="text-sm text-gray-600">Add your planned expenses</span>
                     <button
                       onClick={addOtherExpense}
-                      className="text-sm font-medium text-indigo-600 hover:text-indigo-700 whitespace-nowrap"
+                      className="text-sm font-medium text-emerald-600 hover:text-emerald-700 whitespace-nowrap"
                     >
                       + Add Expense
                     </button>
@@ -807,7 +807,7 @@ export default function SuperFiCalculator() {
                               type="number"
                               value={expense.amount}
                               onChange={(e) => updateOtherExpense(idx, 'amount', parseFloat(e.target.value) || 0)}
-                              className="w-full pl-7 pr-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                              className="w-full pl-7 pr-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-emerald-500 focus:outline-none"
                             />
                           </div>
                         </div>
@@ -817,7 +817,7 @@ export default function SuperFiCalculator() {
                             type="number"
                             value={expense.year}
                             onChange={(e) => updateOtherExpense(idx, 'year', parseInt(e.target.value) || 0)}
-                            className="w-full px-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none"
+                            className="w-full px-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-emerald-500 focus:outline-none"
                           />
                         </div>
                       </div>
@@ -850,13 +850,13 @@ export default function SuperFiCalculator() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="your@email.com"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
                   />
                 </div>
                 <button
                   onClick={nextStep}
                   disabled={!email.includes('@')}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold hover:from-indigo-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   See Your Results
                   <ArrowRight size={20} />
@@ -868,7 +868,7 @@ export default function SuperFiCalculator() {
             ) : (
               <button
                 onClick={nextStep}
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold hover:from-indigo-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl w-full"
+                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all shadow-lg hover:shadow-xl w-full"
               >
                 Continue
                 <ArrowRight size={20} />
