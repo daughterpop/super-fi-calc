@@ -8,25 +8,43 @@ export default function SubscribeForm() {
   const [consent, setConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleSubscribe = async () => {
     if (!consent || !email.includes('@')) return;
 
+    setLoading(true);
+    setError(null);
+
     try {
-      const response = await fetch('/api/subscribe', {
+      // Sends the submission straight to your email via formsubmit.co
+      // (first time you get a one-time confirmation email from them)
+      const response = await fetch('https://formsubmit.co/ajax/dustin.himmerich@protonmail.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, phone }),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          phone: phone || 'not provided',
+          _subject: 'New Via Fidelitatis subscriber',
+          _template: 'table',
+          _captcha: 'false',
+        }),
       });
 
       if (response.ok) {
         setSubmitted(true);
-        setError(null);
       } else {
-        throw new Error('Subscription failed');
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.message || 'Subscription failed');
       }
     } catch (err) {
+      console.error(err);
       setError('Oops, something went wrong. Try again later.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -46,6 +64,7 @@ export default function SubscribeForm() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Your email"
             className="w-full p-3 sm:p-4 border border-gray-300 rounded-xl focus:outline-none focus:border-indigo-500 text-base"
+            disabled={loading}
           />
           <input
             type="tel"
@@ -53,6 +72,7 @@ export default function SubscribeForm() {
             onChange={(e) => setPhone(e.target.value)}
             placeholder="Phone (optional for SMS)"
             className="w-full p-3 sm:p-4 border border-gray-300 rounded-xl focus:outline-none focus:border-indigo-500 text-base"
+            disabled={loading}
           />
           <label className="flex items-start sm:items-center justify-center gap-2 text-left">
             <input
@@ -60,6 +80,7 @@ export default function SubscribeForm() {
               checked={consent}
               onChange={(e) => setConsent(e.target.checked)}
               className="h-5 w-5 mt-0.5 sm:mt-0 shrink-0 text-indigo-600 border-gray-300 rounded"
+              disabled={loading}
             />
             <span className="text-sm text-gray-600">Yes, send me FI updates</span>
           </label>
@@ -67,14 +88,15 @@ export default function SubscribeForm() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <button
               onClick={handleSubscribe}
-              disabled={!consent || !email.includes('@')}
+              disabled={!consent || !email.includes('@') || loading}
               className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-indigo-600 text-white rounded-2xl disabled:opacity-50 hover:bg-indigo-700 text-base sm:text-lg"
             >
-              Subscribe Free <ArrowRight size={20} />
+              {loading ? 'Sending…' : 'Subscribe Free'} <ArrowRight size={20} />
             </button>
             <button
               onClick={() => setSubmitted(true)}
               className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gray-100 text-gray-700 rounded-2xl hover:bg-gray-200 text-base sm:text-lg"
+              disabled={loading}
             >
               Maybe Later
             </button>
