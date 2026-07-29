@@ -42,6 +42,18 @@ export const REFERRALS = [
     href: 'https://americanexpress.com/en-us/referral/bluebusinesscash-credit-card?ref=DUSTIHtvYM&XL=MIMNS',
   },
   {
+    id: 'marriott-bonvoy',
+    categories: ['investing', 'household'],
+    stripHeadline: '125k pts + free night',
+    stripSub: ' — Marriott Bonvoy Boundless after $3k spend',
+    stripCta: 'Choose a card',
+    cardEyebrow: 'Travel rewards for the family',
+    cardBody:
+      'Chase Marriott Bonvoy cards: Boundless offers 125,000 bonus points + a Free Night Award (up to 50k pts) after $3,000 spend in 3 months. Bold is $0 annual fee with 60k points. Pick the card that fits — we both earn if you\'re approved.',
+    cardCta: 'Apply for Marriott Bonvoy',
+    href: 'https://www.referyourchasecard.com/252v/4CYRWB2LIZ',
+  },
+  {
     id: 'monarch',
     categories: ['budgeting', 'household'],
     stripHeadline: '50% off Monarch Core',
