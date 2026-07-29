@@ -1,4 +1,5 @@
 import React from 'react';
+import BlogPostFooter from '../components/BlogPostFooter';
 
 export default function WhyFIForEveryone() {
   return (
@@ -35,7 +36,7 @@ export default function WhyFIForEveryone() {
         </ul>
 
         <p className="mb-6">
-          I built the Fidelitas calculator because I believe this path should be accessible to anyone willing to run the numbers and take consistent action. No gatekeeping. No fancy degrees required.
+          I built the Fidelitatis calculator because I believe this path should be accessible to anyone willing to run the numbers and take consistent action. No gatekeeping. No fancy degrees required.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
@@ -62,11 +63,7 @@ export default function WhyFIForEveryone() {
           – Dustin
         </p>
 
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <a href="/" className="text-indigo-600 hover:text-indigo-800 font-medium">
-            ← Back to Home
-          </a>
-        </div>
+        <BlogPostFooter />
       </div>
     </div>
   );
