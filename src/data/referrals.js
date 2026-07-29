@@ -90,6 +90,18 @@ export const REFERRALS = [
     href: 'https://ouraring.com/discount/b79278c3ad?utm_source=user&utm_medium=iac_raf&utm_type=alwayson-cvr&utm_campaign=2026RAF&utm_variant=2026_raf_may',
   },
   {
+    id: 'form-swim',
+    categories: ['household'],
+    stripHeadline: 'FORM smart swim goggles',
+    stripSub: ' — real-time metrics in the pool for triathlon',
+    stripCta: 'Shop FORM',
+    cardEyebrow: 'Train smarter in the water',
+    cardBody:
+      'FORM Smart Swim goggles show pace, distance, stroke rate, and more right in your field of view. Use this referral link for the one-month reward campaign — great for swim technique work and race prep.',
+    cardCta: 'Get FORM goggles',
+    href: 'https://www.formswim.com/cart/40479402065991:1?attributes[referrerUserId]=019cf7d0-367d-7dd4-ac63-df4fbd8b42a3&attributes[referralCampaign]=one-month-reward',
+  },
+  {
     id: 'monarch',
     categories: ['budgeting', 'household'],
     stripHeadline: '50% off Monarch Core',
