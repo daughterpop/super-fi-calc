@@ -22,7 +22,7 @@ import {
   Camera,
   Percent,
   MapPin,
-  SidersHorizontal,
+  SlidersHorizontal,
   ArrowUpDown,
   Search,
   Smartphone,
@@ -238,7 +238,7 @@ const tools = [
     perks: [
       'Boundless: 125,000 bonus points + Free Night Award (up to 50k pts) after $3,000 spend in 3 months',
       'Boundless also: up to $100 in airline statement credits (special offer through mid-2027)',
-      'Bold: 60,000 bonus points after $1,000 spend in 3 months — $0 annual fee',
+      'Bold: 60,000 points after $1,000 spend in 3 months — $0 annual fee',
       'Automatic elite status and elite night credits with the right card',
     ],
     cta: 'Choose a Marriott Bonvoy Card',
