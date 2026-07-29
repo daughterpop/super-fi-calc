@@ -223,6 +223,28 @@ const tools = [
     valueScore: 800,
   },
   {
+    id: 'rakuten-amex',
+    name: 'Rakuten Rewards Amex',
+    category: 'Banking & Payments',
+    badge: 'No annual fee',
+    headline: 'Extra cash back on Rakuten shopping — stack portal + card',
+    description:
+      'The Rakuten Rewards American Express Card (Imprint) has no annual fee and pays extra cash back when you shop through Rakuten — on top of the portal rates you already earn. Apply through this referral link; if you’re approved, we can both benefit. Welcome offer and rates are shown at application and can change.',
+    perks: [
+      'No annual fee',
+      'Extra cash back on eligible Rakuten purchases (stacks with portal Cash Back; annual cap applies)',
+      'Useful if your household already shops through Rakuten',
+      'Apply via this Imprint referral link',
+    ],
+    cta: 'Apply for Rakuten Amex',
+    href: 'https://r.imprint.co/qTwhQA',
+    accent: 'red',
+    icon: 'banknote',
+    footnote:
+      'Issued by First Electronic Bank via Imprint. Approval not guaranteed. Welcome bonus, cash-back rates, and caps are set by Rakuten/Imprint and subject to change — check the application page for current terms.',
+    valueScore: 100,
+  },
+  {
     id: 'venmo',
     name: 'Venmo',
     category: 'Banking & Payments',
