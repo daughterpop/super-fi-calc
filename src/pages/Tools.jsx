@@ -665,31 +665,25 @@ const tools = [
   },
   {
     id: 'airbnb-host',
-    name: 'Airbnb Host Referrals',
+    name: 'Airbnb Hosting',
     category: 'Travel & Hosting',
-    badge: 'Host referral reward',
-    headline: 'Refer a home, experience, or service host — earn when they get a qualifying booking',
+    badge: '$115 new host bonus',
+    headline: 'Become an Airbnb host — get $115 after your first qualifying booking',
     description:
-      'Invite someone to host on Airbnb. When they publish via your link and complete a qualifying first booking, you can earn a referral reward (amount varies by location and listing type). Use the matching link for homes, experiences, or services.',
+      'Start hosting a home on Airbnb through this link. New hosts get an extra $115 after their first qualifying booking within 180 days — a practical way to turn a spare room or vacant space into FI cash.',
     perks: [
-      'Home hosts: reward after they list an eligible entire-home listing and complete a qualifying first booking (typically $100+ value)',
-      'Experience hosts: reward after a qualifying first booking (typically $50+ value before fees)',
-      'Service hosts: same pattern for chefs, photography, training, spa, and similar services',
-      'Useful side-income path for families with a spare room, a skill to teach, or a local service to offer',
+      'Extra $115 after your first qualifying booking within 180 days',
+      'List an entire home or eligible space and start earning guest income',
+      'Useful side income for families with a spare room or seasonal vacancy',
+      'Sign up through this referral link so the new-host bonus applies',
     ],
-    cta: 'Refer a Home Host',
+    cta: 'Become an Airbnb Host — $115 Bonus',
     href: 'https://www.airbnb.com/rp/dustinh15591?p=stay&s=76&unique_share_id=A07C9D7C-DCE9-4CF5-81A0-23108904059F',
-    secondaryCta: 'Refer an Experience Host',
-    secondaryHref:
-      'https://www.airbnb.com/rp/dustinh15591?p=experience&s=76&unique_share_id=6F0D0BFB-1050-4502-943F-1E5057526805',
-    tertiaryCta: 'Refer a Service Host',
-    tertiaryHref:
-      'https://www.airbnb.com/rp/dustinh15591?p=service&s=76&unique_share_id=411A211D-8C57-45B2-A31C-79AF7C4B244B',
     accent: 'rose',
     icon: 'mappin',
     footnote:
-      'Rewards and eligible locations vary. New hosts must publish via the referral link and complete a qualifying first booking. Terms set by Airbnb and subject to change.',
-    valueScore: 200,
+      'New host bonus of $115 requires first qualifying booking within 180 days. Terms set by Airbnb and subject to change.',
+    valueScore: 115,
   },
 ];
 
