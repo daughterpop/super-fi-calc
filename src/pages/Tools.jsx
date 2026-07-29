@@ -181,6 +181,27 @@ const tools = [
     valueScore: 250,
   },
   {
+    id: 'marriott-bonvoy',
+    name: 'Marriott Bonvoy (Chase)',
+    category: 'Banking & Payments',
+    badge: '125k pts + free night',
+    headline: 'Choose Boundless, Bold, or another Marriott Bonvoy card — strong welcome bonuses',
+    description:
+      'Apply for a Chase Marriott Bonvoy credit card through this referral and pick the one that fits your travel and spend. The Boundless card currently offers 125,000 bonus points plus a Free Night Award (valued up to 50,000 points) after $3,000 in purchases within 3 months. The Bold card is $0 annual fee with 60,000 points after $1,000 spend. We can both earn rewards if you’re approved.',
+    perks: [
+      'Boundless: 125,000 bonus points + Free Night Award (up to 50k pts) after $3,000 spend in 3 months',
+      'Boundless also: up to $100 in airline statement credits (special offer through mid-2027)',
+      'Bold: 60,000 bonus points after $1,000 spend in 3 months — $0 annual fee',
+      'Automatic elite status and elite night credits with the right card',
+    ],
+    cta: 'Choose a Marriott Bonvoy Card',
+    href: 'https://www.referyourchasecard.com/252v/4CYRWB2LIZ',
+    accent: 'indigo',
+    icon: 'landmark',
+    footnote: 'Offers vary by card and are subject to change. Boundless annual fee $95. Approval not guaranteed. Chase 5/24 rule may apply. See Chase site for current rates, fees, and full terms.',
+    valueScore: 800,
+  },
+  {
     id: 'venmo',
     name: 'Venmo',
     category: 'Banking & Payments',
