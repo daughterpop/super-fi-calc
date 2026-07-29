@@ -1,4 +1,5 @@
 import React from 'react';
+import BlogPostFooter from '../components/BlogPostFooter';
 
 export default function CatholicFamiliesLeverageAiForPrayerfulFinancialFreedomAndLastingLegacy() {
   return (
@@ -25,7 +26,7 @@ export default function CatholicFamiliesLeverageAiForPrayerfulFinancialFreedomAn
         </h2>
         <ul className="list-disc pl-6 space-y-3 mb-8 text-gray-700">
           <li>Use AI chat tools to build a simple family budget that aligns with your values — ask it to factor in tithing, education funds, and charity goals.</li>
-          <li>Run “what if” scenarios on the Fidelitas calculator: different savings rates, side hustles that fit family life, or investing consistently.</li>
+          <li>Run “what if” scenarios on the Fidelitatis calculator: different savings rates, side hustles that fit family life, or investing consistently.</li>
           <li>Have AI help create age-appropriate money lessons for kids rooted in Catholic teaching on stewardship and generosity.</li>
           <li>Track progress weekly as a family — turn it into a prayerful review of God’s provision.</li>
         </ul>
@@ -58,11 +59,7 @@ export default function CatholicFamiliesLeverageAiForPrayerfulFinancialFreedomAn
           – Dustin
         </p>
 
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <a href="/blog" className="text-indigo-600 hover:text-indigo-800 font-medium">
-            ← Back to Blog
-          </a>
-        </div>
+        <BlogPostFooter />
       </div>
     </div>
   );
