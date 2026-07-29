@@ -205,6 +205,19 @@ export const REFERRALS = [
     cardCta: 'Get Incogni at friends pricing',
     href: 'https://incogni.cello.so/C622q7UjoeJ',
   },
+  {
+    id: 'proton',
+    categories: ['privacy'],
+    inBanner: false,
+    stripHeadline: '$20 Proton credit each',
+    stripSub: ' — private Mail, VPN, Pass, or Drive when they go premium',
+    stripCta: 'Try Proton',
+    cardEyebrow: 'Privacy that sticks',
+    cardBody:
+      'Proton offers encrypted Mail, VPN, Pass, Drive, and Unlimited plans. When someone subscribes to a qualifying premium plan through this link, you both get a $20 credit.',
+    cardCta: 'Join Proton — $20 credit',
+    href: 'https://pr.tn/ref/MFBV7SGM',
+  },
 ];
 
 function dayOfYear(d = new Date()) {
