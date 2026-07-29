@@ -74,6 +74,19 @@ export const REFERRALS = [
     href: 'https://www.referyourchasecard.com/252v/4CYRWB2LIZ',
   },
   {
+    id: 'rakuten-amex',
+    categories: ['investing', 'household'],
+    inBanner: true,
+    stripHeadline: 'Rakuten Amex Card',
+    stripSub: ' — no annual fee + extra cash back on Rakuten shops',
+    stripCta: 'Apply via referral',
+    cardEyebrow: 'Stack portal + card cash back',
+    cardBody:
+      'Rakuten Rewards American Express Card: no annual fee, plus extra cash back when you shop through Rakuten (stacks with the portal). Apply through this referral link — if you\'re approved, we can both benefit.',
+    cardCta: 'Apply for Rakuten Amex',
+    href: 'https://r.imprint.co/qTwhQA',
+  },
+  {
     id: 'airbnb-host',
     categories: ['household', 'savings'],
     inBanner: true,
@@ -142,7 +155,7 @@ export const REFERRALS = [
     id: 'mintmobile',
     categories: ['savings', 'household'],
     inBanner: true,
-    stripHeadline: '$15 Mint Mobile credit',
+    stripHeadline: '15% Mint Mobile credit',
     stripSub: ' — free up monthly cash for FI and family',
     stripCta: 'Switch & save',
     cardEyebrow: 'Cut a recurring bill',
