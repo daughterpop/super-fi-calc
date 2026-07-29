@@ -87,6 +87,19 @@ export const REFERRALS = [
     href: 'https://r.imprint.co/qTwhQA',
   },
   {
+    id: 'gondola',
+    categories: ['household', 'savings'],
+    inBanner: true,
+    stripHeadline: '$50 each after first hotel booking',
+    stripSub: ' — Gondola tracks rate drops + cash back',
+    stripCta: 'Join Gondola',
+    cardEyebrow: 'Smarter hotel booking',
+    cardBody:
+      'Gondola books hotels, tracks rate drops, and pays extra cash back. Join with this link and we both get $50 after your first booking.',
+    cardCta: 'Join Gondola — $50 each',
+    href: 'https://gondola.ai/invite/0WGYR4PEY',
+  },
+  {
     id: 'airbnb-host',
     categories: ['household', 'savings'],
     inBanner: true,
