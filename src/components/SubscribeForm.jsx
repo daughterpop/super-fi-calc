@@ -63,7 +63,7 @@ export default function SubscribeForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Your email"
-            className="w-full p-3 sm:p-4 border border-gray-300 rounded-xl focus:outline-none focus:border-indigo-500 text-base"
+            className="w-full p-3 sm:p-4 border border-gray-300 rounded-xl focus:outline-none focus:border-emerald-500 text-base"
             disabled={loading}
           />
           <input
@@ -71,7 +71,7 @@ export default function SubscribeForm() {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="Phone (optional for SMS)"
-            className="w-full p-3 sm:p-4 border border-gray-300 rounded-xl focus:outline-none focus:border-indigo-500 text-base"
+            className="w-full p-3 sm:p-4 border border-gray-300 rounded-xl focus:outline-none focus:border-emerald-500 text-base"
             disabled={loading}
           />
           <label className="flex items-start sm:items-center justify-center gap-2 text-left">
@@ -79,7 +79,7 @@ export default function SubscribeForm() {
               type="checkbox"
               checked={consent}
               onChange={(e) => setConsent(e.target.checked)}
-              className="h-5 w-5 mt-0.5 sm:mt-0 shrink-0 text-indigo-600 border-gray-300 rounded"
+              className="h-5 w-5 mt-0.5 sm:mt-0 shrink-0 text-emerald-600 border-gray-300 rounded"
               disabled={loading}
             />
             <span className="text-sm text-gray-600">Yes, send me FI updates</span>
@@ -89,7 +89,7 @@ export default function SubscribeForm() {
             <button
               onClick={handleSubscribe}
               disabled={!consent || !email.includes('@') || loading}
-              className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-indigo-600 text-white rounded-2xl disabled:opacity-50 hover:bg-indigo-700 text-base sm:text-lg"
+              className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-emerald-600 text-white rounded-2xl disabled:opacity-50 hover:bg-emerald-700 text-base sm:text-lg"
             >
               {loading ? 'Sending…' : 'Subscribe Free'} <ArrowRight size={20} />
             </button>
