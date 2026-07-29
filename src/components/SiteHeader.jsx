@@ -9,6 +9,7 @@ const NAV = [
   { to: '/calculators', label: 'Calculators' },
   { to: '/blog', label: 'Blog' },
   { to: '/tools', label: 'Tools' },
+  { to: '/subscribe', label: 'Subscribe' },
 ];
 
 function navActive(pathname, to) {
@@ -37,7 +38,7 @@ export default function SiteHeader({ showReferralStrip = true }) {
             <span className="sm:hidden text-sm tracking-tight">Via Fidelitatis</span>
             <span className="hidden sm:inline text-xl lg:text-2xl tracking-tight">Via Fidelitatis</span>
           </Link>
-          <div className="flex items-center gap-2.5 sm:gap-8 text-sm">
+          <div className="flex items-center gap-2.5 sm:gap-6 lg:gap-8 text-sm overflow-x-auto">
             {NAV.map(({ to, label }) => {
               const active = navActive(pathname, to);
               return (
