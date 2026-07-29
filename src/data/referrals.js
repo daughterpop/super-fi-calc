@@ -32,12 +32,12 @@ export const REFERRALS = [
   {
     id: 'amex-bbc',
     categories: ['investing', 'household'],
-    stripHeadline: 'Blue Business Cash — earn rewards',
-    stripSub: ' — no annual fee business card for everyday spend',
+    stripHeadline: '$250 after $5k spend',
+    stripSub: ' — Blue Business Cash, no annual fee',
     stripCta: 'Apply via referral',
     cardEyebrow: 'Put spend to work',
     cardBody:
-      'Amex Blue Business Cash earns 2% cash back on the first $50k of eligible purchases each calendar year (then 1%). No annual fee. Apply through this link and we can both earn rewards if you\'re approved.',
+      'Amex Blue Business Cash: $250 statement credit after $5,000 in qualifying purchases within the first 6 months, plus 2% cash back on the first $50k each year (then 1%). No annual fee. Apply through this link and we can both earn rewards if you\'re approved.',
     cardCta: 'Apply for Blue Business Cash',
     href: 'https://americanexpress.com/en-us/referral/bluebusinesscash-credit-card?ref=DUSTIHtvYM&XL=MIMNS',
   },
