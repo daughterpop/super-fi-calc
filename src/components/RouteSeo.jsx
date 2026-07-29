@@ -32,6 +32,12 @@ const STATIC = {
       'Investing, budgeting, privacy, and household tools Catholic families use on the path to FI — with clear referral perks.',
     type: 'website',
   },
+  '/subscribe': {
+    title: 'Subscribe — Via Fidelitatis List | Faithful FI Updates',
+    description:
+      'Join the Via Fidelitatis list for tips, tools, and stewardship ideas for Catholic families on the path to financial independence.',
+    type: 'website',
+  },
 };
 
 function absoluteUrl(path) {
