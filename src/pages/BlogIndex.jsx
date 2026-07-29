@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Search, X, Filter } from 'lucide-react';
 import { allPosts, allTags } from '../data/posts';
 import SiteHeader from '../components/SiteHeader';
+import SubscribeForm from '../components/SubscribeForm';
 
 export default function BlogIndex() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -213,6 +214,10 @@ export default function BlogIndex() {
             </button>
           </div>
         )}
+
+        <div className="pt-4 pb-2">
+          <SubscribeForm />
+        </div>
       </div>
     </div>
   );
