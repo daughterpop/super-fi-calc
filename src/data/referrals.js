@@ -66,6 +66,30 @@ export const REFERRALS = [
     href: 'https://merc.li/MrZD2EDtb',
   },
   {
+    id: 'minty',
+    categories: ['savings', 'household'],
+    stripHeadline: '$10 cashback bonus',
+    stripSub: ' — auto coupons + cashback at 30k+ stores',
+    stripCta: 'Get $10 on Minty',
+    cardEyebrow: 'Shop smarter automatically',
+    cardBody:
+      'Minty is an AI shopping companion that applies coupons and earns cashback at 30,000+ stores. New users get a $10 cashback bonus when they get started.',
+    cardCta: 'Claim $10 Minty bonus',
+    href: 'https://www.minty.com/me/1SFMA1',
+  },
+  {
+    id: 'oura',
+    categories: ['household'],
+    stripHeadline: '10% off Oura Ring',
+    stripSub: ' — track recovery, sleep, and readiness',
+    stripCta: 'Get 10% off',
+    cardEyebrow: 'Steward body data',
+    cardBody:
+      'Oura Ring tracks sleep, recovery, and readiness in a comfortable smart ring. Use this referral for 10% off a new ring — useful for triathlon training, recovery, and family health awareness.',
+    cardCta: 'Get 10% off Oura Ring',
+    href: 'https://ouraring.com/discount/b79278c3ad?utm_source=user&utm_medium=iac_raf&utm_type=alwayson-cvr&utm_campaign=2026RAF&utm_variant=2026_raf_may',
+  },
+  {
     id: 'monarch',
     categories: ['budgeting', 'household'],
     stripHeadline: '50% off Monarch Core',
