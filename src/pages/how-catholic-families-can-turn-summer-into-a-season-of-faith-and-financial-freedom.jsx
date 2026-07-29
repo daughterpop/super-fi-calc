@@ -1,4 +1,5 @@
 import React from 'react';
+import BlogPostFooter from '../components/BlogPostFooter';
 
 export default function HowCatholicFamiliesCanTurnSummerIntoASeasonOfFaithAndFinancialFreedom() {
   return (
@@ -73,11 +74,7 @@ export default function HowCatholicFamiliesCanTurnSummerIntoASeasonOfFaithAndFin
           – Dustin
         </p>
 
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <a href="/" className="text-indigo-600 hover:text-indigo-800 font-medium">
-            ← Back to Home
-          </a>
-        </div>
+        <BlogPostFooter />
       </div>
     </div>
   );
