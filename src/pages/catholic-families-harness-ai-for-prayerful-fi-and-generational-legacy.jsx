@@ -1,4 +1,5 @@
 import React from 'react';
+import BlogPostFooter from '../components/BlogPostFooter';
 
 export default function CatholicFamiliesHarnessAiForPrayerfulFiAndGenerationalLegacy() {
   return (
@@ -58,11 +59,7 @@ export default function CatholicFamiliesHarnessAiForPrayerfulFiAndGenerationalLe
           – Dustin
         </p>
 
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <a href="/blog" className="text-indigo-600 hover:text-indigo-800 font-medium">
-            ← Back to Blog
-          </a>
-        </div>
+        <BlogPostFooter />
       </div>
     </div>
   );
