@@ -663,6 +663,34 @@ const tools = [
     footnote: 'Discount applied via referral link. Offer terms set by Skylight.',
     valueScore: 40,
   },
+  {
+    id: 'airbnb-host',
+    name: 'Airbnb Host Referrals',
+    category: 'Travel & Hosting',
+    badge: 'Host referral reward',
+    headline: 'Refer a home, experience, or service host — earn when they get a qualifying booking',
+    description:
+      'Invite someone to host on Airbnb. When they publish via your link and complete a qualifying first booking, you can earn a referral reward (amount varies by location and listing type). Use the matching link for homes, experiences, or services.',
+    perks: [
+      'Home hosts: reward after they list an eligible entire-home listing and complete a qualifying first booking (typically $100+ value)',
+      'Experience hosts: reward after a qualifying first booking (typically $50+ value before fees)',
+      'Service hosts: same pattern for chefs, photography, training, spa, and similar services',
+      'Useful side-income path for families with a spare room, a skill to teach, or a local service to offer',
+    ],
+    cta: 'Refer a Home Host',
+    href: 'https://www.airbnb.com/rp/dustinh15591?p=stay&s=76&unique_share_id=A07C9D7C-DCE9-4CF5-81A0-23108904059F',
+    secondaryCta: 'Refer an Experience Host',
+    secondaryHref:
+      'https://www.airbnb.com/rp/dustinh15591?p=experience&s=76&unique_share_id=6F0D0BFB-1050-4502-943F-1E5057526805',
+    tertiaryCta: 'Refer a Service Host',
+    tertiaryHref:
+      'https://www.airbnb.com/rp/dustinh15591?p=service&s=76&unique_share_id=411A211D-8C57-45B2-A31C-79AF7C4B244B',
+    accent: 'rose',
+    icon: 'mappin',
+    footnote:
+      'Rewards and eligible locations vary. New hosts must publish via the referral link and complete a qualifying first booking. Terms set by Airbnb and subject to change.',
+    valueScore: 200,
+  },
 ];
 
 const CATEGORY_ORDER = [
@@ -676,6 +704,7 @@ const CATEGORY_ORDER = [
   'Privacy & Security',
   'Health & Training',
   'Family & Home',
+  'Travel & Hosting',
 ];
 const CATEGORIES = ['All', ...CATEGORY_ORDER];
 
@@ -1009,7 +1038,7 @@ export default function Tools() {
                         </li>
                       ))}
                     </ul>
-                    <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
                       <a
                         href={tool.href}
                         target="_blank"
@@ -1027,6 +1056,17 @@ export default function Tools() {
                           className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 border-2 ${a.buttonOutline} bg-white font-semibold rounded-xl transition-all text-sm sm:text-base`}
                         >
                           {tool.secondaryCta}
+                          <ExternalLink size={18} />
+                        </a>
+                      )}
+                      {tool.tertiaryCta && tool.tertiaryHref && (
+                        <a
+                          href={tool.tertiaryHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 border-2 ${a.buttonOutline} bg-white font-semibold rounded-xl transition-all text-sm sm:text-base`}
+                        >
+                          {tool.tertiaryCta}
                           <ExternalLink size={18} />
                         </a>
                       )}
