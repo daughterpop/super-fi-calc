@@ -559,9 +559,30 @@ const tools = [
     valueScore: 90,
   },
   {
+    id: 'transition',
+    name: 'Transition',
+    category: 'Health & Training',
+    badge: '1 month free',
+    headline: 'AI triathlon coaching — adaptive swim, bike, and run plans',
+    description:
+      'Transition is an AI triathlon training app built for busy age-groupers. Get personalized swim, bike, and run plans that adapt to your schedule, recovery, and race goals. Use code TRANSITIONVTRTF4 for 1 month free.',
+    perks: [
+      '1 month free with code TRANSITIONVTRTF4',
+      'Adaptive plans across swim, bike, run, and strength',
+      'Syncs with Garmin, Strava, Apple Health, and smart trainers',
+      'Practical for balancing training with family and work',
+    ],
+    cta: 'Try Transition — 1 Month Free',
+    href: 'https://www.transition.fun?ref=TRANSITIONVTRTF4',
+    accent: 'emerald',
+    icon: 'trending',
+    footnote: 'Referral code TRANSITIONVTRTF4. Trial and subscription terms set by Transition. Cancel anytime per their policy.',
+    valueScore: 20,
+  },
+  {
     id: 'oura',
     name: 'Oura Ring',
-    category: 'Family & Home',
+    category: 'Health & Training',
     badge: '10% off',
     headline: 'Track sleep, recovery, and readiness — 10% off a new ring',
     description:
@@ -582,7 +603,7 @@ const tools = [
   {
     id: 'form-swim',
     name: 'FORM Smart Swim',
-    category: 'Family & Home',
+    category: 'Health & Training',
     badge: 'One-month reward',
     headline: 'Smart swim goggles with real-time pace, distance, and stroke data',
     description:
@@ -632,6 +653,7 @@ const CATEGORY_ORDER = [
   'Giving',
   'Wireless Savings',
   'Privacy & Security',
+  'Health & Training',
   'Family & Home',
 ];
 const CATEGORIES = ['All', ...CATEGORY_ORDER];
