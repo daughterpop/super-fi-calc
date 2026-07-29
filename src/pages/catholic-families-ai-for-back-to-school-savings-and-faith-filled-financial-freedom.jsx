@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import BlogPostFooter from '../components/BlogPostFooter';
 
 export default function CatholicFamiliesAiForBackToSchoolSavingsAndFaithFilledFinancialFreedom() {
   return (
@@ -70,11 +70,7 @@ export default function CatholicFamiliesAiForBackToSchoolSavingsAndFaithFilledFi
           – Dustin
         </p>
 
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <Link to="/blog" className="text-indigo-600 hover:text-indigo-800 font-medium">
-            ← Back to Blog
-          </Link>
-        </div>
+        <BlogPostFooter />
       </div>
     </div>
   );
