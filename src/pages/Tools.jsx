@@ -686,6 +686,27 @@ const tools = [
     valueScore: 40,
   },
   {
+    id: 'gondola',
+    name: 'Gondola',
+    category: 'Travel & Hosting',
+    badge: '$50 each after first booking',
+    headline: 'Book hotels with rate-drop tracking and extra cash back',
+    description:
+      'Gondola is a hotel booking tool that tracks rate drops and pays extra cash back. Join with this link and we both get $50 after your first booking — a simple way to stretch the family travel budget.',
+    perks: [
+      'You and the referrer each get $50 after your first booking',
+      'Tracks hotel rate drops so you can rebook or claim savings',
+      'Extra cash back on eligible hotel stays',
+      'Useful for family trips and work travel without another annual fee',
+    ],
+    cta: 'Join Gondola — $50 Each',
+    href: 'https://gondola.ai/invite/0WGYR4PEY',
+    accent: 'indigo',
+    icon: 'mappin',
+    footnote: 'Referral bonus of $50 each requires a qualifying first booking. Terms set by Gondola and subject to change.',
+    valueScore: 50,
+  },
+  {
     id: 'airbnb-host',
     name: 'Airbnb Hosting',
     category: 'Travel & Hosting',
