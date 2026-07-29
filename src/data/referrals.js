@@ -74,6 +74,19 @@ export const REFERRALS = [
     href: 'https://www.referyourchasecard.com/252v/4CYRWB2LIZ',
   },
   {
+    id: 'airbnb-host',
+    categories: ['household', 'savings'],
+    inBanner: true,
+    stripHeadline: 'Refer an Airbnb host',
+    stripSub: ' — earn a reward when they list and get a qualifying booking',
+    stripCta: 'Share host link',
+    cardEyebrow: 'Side income for the household',
+    cardBody:
+      'Invite someone to host a home, experience, or service on Airbnb. When they publish via this link and complete a qualifying first booking, you can earn a referral reward (amount varies by location and listing type).',
+    cardCta: 'Refer a home host',
+    href: 'https://www.airbnb.com/rp/dustinh15591?p=stay&s=76&unique_share_id=A07C9D7C-DCE9-4CF5-81A0-23108904059F',
+  },
+  {
     id: 'mercari',
     categories: ['savings', 'household'],
     inBanner: true,
