@@ -35,6 +35,19 @@ export const REFERRALS = [
     href: 'https://www.wealthfront.com/c/affiliates/invited/AFFD-AL7T-QSBZ-J0Q8',
   },
   {
+    id: 'kalshi',
+    categories: ['investing'],
+    inBanner: true,
+    stripHeadline: 'Kalshi trading credit',
+    stripSub: ' — event contracts; bonus after you trade ~$25',
+    stripCta: 'Sign up via referral',
+    cardEyebrow: 'Trade on real-world events',
+    cardBody:
+      'Kalshi is a CFTC-regulated exchange for event contracts (elections, economics, weather, and more). Sign up through this referral link; new users who complete a small qualifying trade often unlock a trading credit (amount varies — sometimes advertised up to $500).',
+    cardCta: 'Join Kalshi',
+    href: 'https://kalshi.com/sign-up/?referral=4a67c61f-1958-4a0a-a02c-18aa478ef653&m=true&utm_source=mobile_app&utm_medium=copy&utm_campaign=referral&utm_content=referral_qr_sheet',
+  },
+  {
     id: 'amex-bbc',
     categories: ['investing', 'household'],
     inBanner: true,
