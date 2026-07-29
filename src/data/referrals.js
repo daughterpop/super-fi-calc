@@ -155,7 +155,7 @@ export const REFERRALS = [
     id: 'mintmobile',
     categories: ['savings', 'household'],
     inBanner: true,
-    stripHeadline: '15% Mint Mobile credit',
+    stripHeadline: '$15 Mint Mobile credit',
     stripSub: ' — free up monthly cash for FI and family',
     stripCta: 'Switch & save',
     cardEyebrow: 'Cut a recurring bill',
