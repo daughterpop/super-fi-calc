@@ -30,6 +30,18 @@ export const REFERRALS = [
     href: 'https://www.wealthfront.com/c/affiliates/invited/AFFD-AL7T-QSBZ-J0Q8',
   },
   {
+    id: 'amex-bbc',
+    categories: ['investing', 'household'],
+    stripHeadline: 'Blue Business Cash — earn rewards',
+    stripSub: ' — no annual fee business card for everyday spend',
+    stripCta: 'Apply via referral',
+    cardEyebrow: 'Put spend to work',
+    cardBody:
+      'Amex Blue Business Cash earns 2% cash back on the first $50k of eligible purchases each calendar year (then 1%). No annual fee. Apply through this link and we can both earn rewards if you\'re approved.',
+    cardCta: 'Apply for Blue Business Cash',
+    href: 'https://americanexpress.com/en-us/referral/bluebusinesscash-credit-card?ref=DUSTIHtvYM&XL=MIMNS',
+  },
+  {
     id: 'monarch',
     categories: ['budgeting', 'household'],
     stripHeadline: '50% off Monarch Core',
