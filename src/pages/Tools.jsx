@@ -22,7 +22,7 @@ import {
   Camera,
   Percent,
   MapPin,
-  SlidersHorizontal,
+  SidersHorizontal,
   ArrowUpDown,
   Search,
   Smartphone,
@@ -101,19 +101,23 @@ const tools = [
     badge: 'Trading credit (varies)',
     headline: 'CFTC-regulated event contracts — trade on real-world outcomes',
     description:
-      'Kalshi is a regulated U.S. exchange for event contracts (elections, economics, weather, sports milestones, and more). Sign up through this referral link. New users who complete a small qualifying trade (often around $25 within about a week) can unlock a trading credit — amounts vary and are sometimes advertised up to $500.',
+      'Kalshi is a regulated U.S. exchange for event contracts (elections, economics, weather, sports milestones, and more). Sign up through this referral link. New users who complete a small qualifying trade (often around $25 within about a week) can unlock a trading credit — amounts vary and are sometimes advertised up to $500. Prefer Perps? Use the Perps signup path below — same referral.',
     perks: [
       'Referral / welcome trading credit after a qualifying trade (amount varies)',
       'CFTC-regulated event contracts, not traditional sportsbook odds',
       'Trade yes/no outcomes on public data and scheduled events',
+      'Perps path available via secondary link (same referral ID)',
       'Not available in every state — check eligibility at signup',
     ],
     cta: 'Join Kalshi',
     href: 'https://kalshi.com/sign-up/?referral=4a67c61f-1958-4a0a-a02c-18aa478ef653&m=true&utm_source=mobile_app&utm_medium=copy&utm_campaign=referral&utm_content=referral_qr_sheet',
+    secondaryCta: 'Kalshi Perps',
+    secondaryHref:
+      'https://kalshi.com/sign-up/?referral=4a67c61f-1958-4a0a-a02c-18aa478ef653&m=true&utm_source=perps_app_int&utm_medium=copy&utm_campaign=referral&utm_content=referral_qr_sheet',
     accent: 'violet',
     icon: 'chart',
     footnote:
-      'Event contracts involve risk of loss. Bonus amounts and qualifying trade rules vary and are set by Kalshi. Not available in all U.S. states. Credits are typically for trading, not cash withdrawal. 18+.',
+      'Event contracts and perps involve risk of loss. Bonus amounts and qualifying trade rules vary and are set by Kalshi. Not available in all U.S. states. Credits are typically for trading, not cash withdrawal. 18+.',
     valueScore: 50,
   },
   {
