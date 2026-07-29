@@ -559,6 +559,27 @@ const tools = [
     valueScore: 90,
   },
   {
+    id: 'proton',
+    name: 'Proton',
+    category: 'Privacy & Security',
+    badge: '$20 credit each',
+    headline: 'Private Mail, VPN, Pass & Drive — both get $20 when they go premium',
+    description:
+      'Proton is a privacy suite (Mail, VPN, Pass, Drive, and Unlimited) built for encrypted everyday tools. Refer someone who subscribes to VPN Plus, Mail Plus, Pass Plus, Drive Plus, or Proton Unlimited and you both get a $20 credit. Use this link so new members can join and both of you earn the reward.',
+    perks: [
+      'You and your friend each get a $20 credit when they subscribe to a qualifying premium plan',
+      'Works for VPN Plus, Mail Plus, Pass Plus, Drive Plus, or Proton Unlimited',
+      'End-to-end encrypted mail, VPN, password manager, and cloud storage in one ecosystem',
+      'Practical for families who want less data exposure without juggling five vendors',
+    ],
+    cta: 'Try Proton — $20 Referral Credit',
+    href: 'https://pr.tn/ref/MFBV7SGM',
+    accent: 'violet',
+    icon: 'shield',
+    footnote: 'Both parties receive $20 credit after the referred user subscribes to a qualifying paid plan. Terms set by Proton; offers subject to change.',
+    valueScore: 20,
+  },
+  {
     id: 'transition',
     name: 'Transition',
     category: 'Health & Training',
