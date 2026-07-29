@@ -42,6 +42,18 @@ export const REFERRALS = [
     href: 'https://americanexpress.com/en-us/referral/bluebusinesscash-credit-card?ref=DUSTIHtvYM&XL=MIMNS',
   },
   {
+    id: 'amazon-visa',
+    categories: ['investing', 'household'],
+    stripHeadline: 'Amazon gift card on approval',
+    stripSub: ' — Amazon Visa, rewards on Amazon & everyday spend',
+    stripCta: 'Apply for Amazon Visa',
+    cardEyebrow: 'Everyday Amazon spend',
+    cardBody:
+      'Amazon Visa (Chase): get an Amazon Gift Card instantly upon approval. Strong rewards at Amazon, Whole Foods, and everyday categories. Apply through this link and we can both benefit if you\'re approved.',
+    cardCta: 'Apply for Amazon Visa',
+    href: 'https://www.amazon.com/dp/BT00LN946S?externalReferenceId=c404395c-ab3c-4b14-b637-54046a347ee6',
+  },
+  {
     id: 'marriott-bonvoy',
     categories: ['investing', 'household'],
     stripHeadline: '125k pts + free night',
