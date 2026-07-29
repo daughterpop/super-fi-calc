@@ -18,12 +18,13 @@ function navActive(pathname, to) {
 
 /**
  * Shared sticky nav + optional rotating referral strip.
+ * Banner only rotates FI-focused referrals (inBanner: true) — not health/privacy.
  * @param {{ showReferralStrip?: boolean }} props
  */
 export default function SiteHeader({ showReferralStrip = true }) {
   const { pathname } = useLocation();
-  // Slot 0 = sitewide header strip; rotates daily across the full catalog
-  const referral = getReferral({ slot: 0, pool: 'all' });
+  // Slot 0 = sitewide header strip; banner pool keeps money/FI offers only
+  const referral = getReferral({ slot: 0, pool: 'banner' });
 
   return (
     <>
