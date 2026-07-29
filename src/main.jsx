@@ -10,6 +10,7 @@ import App from './App.jsx';
 import Calculators from './pages/Calculators.jsx';
 import BlogIndex from './pages/BlogIndex.jsx';
 import Tools from './pages/Tools.jsx';
+import Subscribe from './pages/Subscribe.jsx';
 import RouteSeo from './components/RouteSeo.jsx';
 import WhyFIForEveryone from './pages/WhyFIForEveryone.jsx';
 import CatholicFamiliesLeverageAiForPrayerfulFinancialFreedomAndLastingLegacy from './pages/catholic-families-leverage-ai-for-prayerful-financial-freedom-and-lasting-legacy.jsx';
@@ -47,6 +48,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/calculators" element={<Calculators />} />
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/tools" element={<Tools />} />
+          <Route path="/subscribe" element={<Subscribe />} />
 
           {/* Blog posts */}
           <Route path="/blog/why-fi-for-everyone" element={<WhyFIForEveryone />} />
