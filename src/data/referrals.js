@@ -77,13 +77,13 @@ export const REFERRALS = [
     id: 'airbnb-host',
     categories: ['household', 'savings'],
     inBanner: true,
-    stripHeadline: 'Refer an Airbnb host',
-    stripSub: ' — earn a reward when they list and get a qualifying booking',
-    stripCta: 'Share host link',
+    stripHeadline: '$115 for new Airbnb hosts',
+    stripSub: ' — after your first qualifying booking within 180 days',
+    stripCta: 'Start hosting',
     cardEyebrow: 'Side income for the household',
     cardBody:
-      'Invite someone to host a home, experience, or service on Airbnb. When they publish via this link and complete a qualifying first booking, you can earn a referral reward (amount varies by location and listing type).',
-    cardCta: 'Refer a home host',
+      'Become an Airbnb host through this link and get an extra $115 after your first qualifying booking within 180 days. A practical way to turn a spare room or vacant space into FI cash.',
+    cardCta: 'Become an Airbnb host — $115 bonus',
     href: 'https://www.airbnb.com/rp/dustinh15591?p=stay&s=76&unique_share_id=A07C9D7C-DCE9-4CF5-81A0-23108904059F',
   },
   {
