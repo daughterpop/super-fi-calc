@@ -286,6 +286,27 @@ const tools = [
     valueScore: 25,
   },
   {
+    id: 'mercari',
+    name: 'Mercari',
+    category: 'Shopping & Rewards',
+    badge: 'Up to $20 to start',
+    headline: 'Buy used deals or sell clutter — simple side hustle and frugal shopping',
+    description:
+      'Mercari is an easy marketplace to buy gently used items at a discount or sell what your family no longer needs. Great for stretching the household budget and turning unused stuff into FI cash. Sign up with code DMBTWC and get up to $20 when you get started.',
+    perks: [
+      'Up to $20 when you sign up with code DMBTWC and get started',
+      'Buy used clothing, toys, electronics, and home goods at lower prices',
+      'Sell items you no longer need — simple listing and shipping options',
+      'Practical way to practice frugality and add a light side hustle',
+    ],
+    cta: 'Join Mercari — Code DMBTWC',
+    href: 'https://merc.li/MrZD2EDtb',
+    accent: 'teal',
+    icon: 'shopping',
+    footnote: 'Bonus terms set by Mercari. Amount and eligibility can vary. Use code DMBTWC at signup when prompted.',
+    valueScore: 20,
+  },
+  {
     id: 'kudos',
     name: 'Kudos',
     category: 'Shopping & Rewards',
