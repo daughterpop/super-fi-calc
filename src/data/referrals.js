@@ -2,12 +2,16 @@
  * Central referral catalog for Via Fidelitatis.
  * getReferral() rotates by day + slot so the same page isn't stuck on one offer,
  * and different slots (header vs card) usually show different tools the same day.
+ *
+ * Banner strip only rotates referrals with inBanner: true (FI / money-focused).
+ * Health & training tools live in the Tools page under Health & Training.
  */
 
 export const REFERRALS = [
   {
     id: 'robinhood',
     categories: ['investing'],
+    inBanner: true,
     stripHeadline: 'Free stocks up to $200',
     stripSub: ' — start investing your surplus toward FI',
     stripCta: 'Claim free stock',
@@ -20,6 +24,7 @@ export const REFERRALS = [
   {
     id: 'wealthfront',
     categories: ['investing'],
+    inBanner: true,
     stripHeadline: 'APY boost + deposit match',
     stripSub: ' — automate investing and high-yield cash toward FI',
     stripCta: 'Get Wealthfront bonus',
@@ -32,6 +37,7 @@ export const REFERRALS = [
   {
     id: 'amex-bbc',
     categories: ['investing', 'household'],
+    inBanner: true,
     stripHeadline: '$250 after $5k spend',
     stripSub: ' — Blue Business Cash, no annual fee',
     stripCta: 'Apply via referral',
@@ -44,6 +50,7 @@ export const REFERRALS = [
   {
     id: 'amazon-visa',
     categories: ['investing', 'household'],
+    inBanner: true,
     stripHeadline: 'Amazon gift card on approval',
     stripSub: ' — Amazon Visa, rewards on Amazon & everyday spend',
     stripCta: 'Apply for Amazon Visa',
@@ -56,6 +63,7 @@ export const REFERRALS = [
   {
     id: 'marriott-bonvoy',
     categories: ['investing', 'household'],
+    inBanner: true,
     stripHeadline: '125k pts + free night',
     stripSub: ' — Marriott Bonvoy Boundless after $3k spend',
     stripCta: 'Choose a card',
@@ -68,6 +76,7 @@ export const REFERRALS = [
   {
     id: 'mercari',
     categories: ['savings', 'household'],
+    inBanner: true,
     stripHeadline: 'Up to $20 to start',
     stripSub: ' — buy used deals or sell clutter for FI cash',
     stripCta: 'Join Mercari',
@@ -80,6 +89,7 @@ export const REFERRALS = [
   {
     id: 'minty',
     categories: ['savings', 'household'],
+    inBanner: true,
     stripHeadline: '$10 cashback bonus',
     stripSub: ' — auto coupons + cashback at 30k+ stores',
     stripCta: 'Get $10 on Minty',
@@ -90,32 +100,9 @@ export const REFERRALS = [
     href: 'https://www.minty.com/me/1SFMA1',
   },
   {
-    id: 'oura',
-    categories: ['household'],
-    stripHeadline: '10% off Oura Ring',
-    stripSub: ' — track recovery, sleep, and readiness',
-    stripCta: 'Get 10% off',
-    cardEyebrow: 'Steward body data',
-    cardBody:
-      'Oura Ring tracks sleep, recovery, and readiness in a comfortable smart ring. Use this referral for 10% off a new ring — useful for triathlon training, recovery, and family health awareness.',
-    cardCta: 'Get 10% off Oura Ring',
-    href: 'https://ouraring.com/discount/b79278c3ad?utm_source=user&utm_medium=iac_raf&utm_type=alwayson-cvr&utm_campaign=2026RAF&utm_variant=2026_raf_may',
-  },
-  {
-    id: 'form-swim',
-    categories: ['household'],
-    stripHeadline: 'FORM smart swim goggles',
-    stripSub: ' — real-time metrics in the pool for triathlon',
-    stripCta: 'Shop FORM',
-    cardEyebrow: 'Train smarter in the water',
-    cardBody:
-      'FORM Smart Swim goggles show pace, distance, stroke rate, and more right in your field of view. Use this referral link for the one-month reward campaign — great for swim technique work and race prep.',
-    cardCta: 'Get FORM goggles',
-    href: 'https://www.formswim.com/cart/40479402065991:1?attributes[referrerUserId]=019cf7d0-367d-7dd4-ac63-df4fbd8b42a3&attributes[referralCampaign]=one-month-reward',
-  },
-  {
     id: 'monarch',
     categories: ['budgeting', 'household'],
+    inBanner: true,
     stripHeadline: '50% off Monarch Core',
     stripSub: ' — see every dollar in one place with your spouse',
     stripCta: 'Get 50% off',
@@ -128,6 +115,7 @@ export const REFERRALS = [
   {
     id: 'daffy',
     categories: ['giving'],
+    inBanner: true,
     stripHeadline: '$25 for charity on first gift',
     stripSub: ' — build generosity into your FI plan',
     stripCta: 'Join Daffy',
@@ -138,8 +126,63 @@ export const REFERRALS = [
     href: 'https://www.daffy.org/dhimmer1/invite',
   },
   {
+    id: 'mintmobile',
+    categories: ['savings', 'household'],
+    inBanner: true,
+    stripHeadline: '$15 Mint Mobile credit',
+    stripSub: ' — free up monthly cash for FI and family',
+    stripCta: 'Switch & save',
+    cardEyebrow: 'Cut a recurring bill',
+    cardBody:
+      'Mint Mobile offers simple prepaid plans on a major network. Use this link for $15 renewal credit, then put the ongoing savings toward investing or tithing.',
+    cardCta: 'Get $15 Mint credit',
+    href: 'https://my.mintmobile.com/refer/n5SgKMM',
+  },
+  // --- Health & training (Tools page; not in sitewide banner) ---
+  {
+    id: 'oura',
+    categories: ['health'],
+    inBanner: false,
+    stripHeadline: '10% off Oura Ring',
+    stripSub: ' — track recovery, sleep, and readiness',
+    stripCta: 'Get 10% off',
+    cardEyebrow: 'Steward body data',
+    cardBody:
+      'Oura Ring tracks sleep, recovery, and readiness in a comfortable smart ring. Use this referral for 10% off a new ring — useful for triathlon training, recovery, and family health awareness.',
+    cardCta: 'Get 10% off Oura Ring',
+    href: 'https://ouraring.com/discount/b79278c3ad?utm_source=user&utm_medium=iac_raf&utm_type=alwayson-cvr&utm_campaign=2026RAF&utm_variant=2026_raf_may',
+  },
+  {
+    id: 'form-swim',
+    categories: ['health'],
+    inBanner: false,
+    stripHeadline: 'FORM smart swim goggles',
+    stripSub: ' — real-time metrics in the pool for triathlon',
+    stripCta: 'Shop FORM',
+    cardEyebrow: 'Train smarter in the water',
+    cardBody:
+      'FORM Smart Swim goggles show pace, distance, stroke rate, and more right in your field of view. Use this referral link for the one-month reward campaign — great for swim technique work and race prep.',
+    cardCta: 'Get FORM goggles',
+    href: 'https://www.formswim.com/cart/40479402065991:1?attributes[referrerUserId]=019cf7d0-367d-7dd4-ac63-df4fbd8b42a3&attributes[referralCampaign]=one-month-reward',
+  },
+  {
+    id: 'transition',
+    categories: ['health'],
+    inBanner: false,
+    stripHeadline: '1 month free Transition',
+    stripSub: ' — AI triathlon coaching for swim, bike, run',
+    stripCta: 'Try Transition free',
+    cardEyebrow: 'Train for your next race',
+    cardBody:
+      'Transition is an AI triathlon training app with adaptive swim, bike, and run plans. Use code TRANSITIONVTRTF4 for 1 month free — built for busy age-groupers balancing training with family and work.',
+    cardCta: 'Get 1 month free',
+    href: 'https://www.transition.fun?ref=TRANSITIONVTRTF4',
+  },
+  // --- Privacy (Tools page; not in sitewide banner) ---
+  {
     id: 'surfshark',
     categories: ['privacy'],
+    inBanner: false,
     stripHeadline: 'Up to 3 free months of VPN',
     stripSub: ' — protect the whole household on one plan',
     stripCta: 'Get Surfshark',
@@ -152,6 +195,7 @@ export const REFERRALS = [
   {
     id: 'incogni',
     categories: ['privacy'],
+    inBanner: false,
     stripHeadline: 'Up to 58% off data removal',
     stripSub: ' — pull your family off broker sites',
     stripCta: 'Get Incogni deal',
@@ -161,18 +205,6 @@ export const REFERRALS = [
     cardCta: 'Get Incogni at friends pricing',
     href: 'https://incogni.cello.so/C622q7UjoeJ',
   },
-  {
-    id: 'mintmobile',
-    categories: ['savings', 'household'],
-    stripHeadline: '$15 Mint Mobile credit',
-    stripSub: ' — free up monthly cash for FI and family',
-    stripCta: 'Switch & save',
-    cardEyebrow: 'Cut a recurring bill',
-    cardBody:
-      'Mint Mobile offers simple prepaid plans on a major network. Use this link for $15 renewal credit, then put the ongoing savings toward investing or tithing.',
-    cardCta: 'Get $15 Mint credit',
-    href: 'https://my.mintmobile.com/refer/n5SgKMM',
-  },
 ];
 
 function dayOfYear(d = new Date()) {
@@ -181,13 +213,19 @@ function dayOfYear(d = new Date()) {
 }
 
 /**
- * @param {{ slot?: number, pool?: 'all' | 'investing' | 'household' | 'privacy' | 'giving' }} opts
+ * @param {{
+ *   slot?: number,
+ *   pool?: 'all' | 'banner' | 'investing' | 'household' | 'privacy' | 'giving' | 'health' | 'savings' | 'budgeting'
+ * }} opts
  */
 export function getReferral({ slot = 0, pool = 'all' } = {}) {
   let list = REFERRALS;
-  if (pool !== 'all') {
+  if (pool === 'banner') {
+    list = REFERRALS.filter((r) => r.inBanner);
+  } else if (pool !== 'all') {
     list = REFERRALS.filter((r) => r.categories.includes(pool));
   }
+  if (list.length === 0) list = REFERRALS.filter((r) => r.inBanner);
   if (list.length === 0) list = REFERRALS;
   const idx = (dayOfYear() + slot) % list.length;
   return list[idx];
