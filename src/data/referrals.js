@@ -54,6 +54,18 @@ export const REFERRALS = [
     href: 'https://www.referyourchasecard.com/252v/4CYRWB2LIZ',
   },
   {
+    id: 'mercari',
+    categories: ['savings', 'household'],
+    stripHeadline: 'Up to $20 to start',
+    stripSub: ' — buy used deals or sell clutter for FI cash',
+    stripCta: 'Join Mercari',
+    cardEyebrow: 'Frugal finds & side hustle',
+    cardBody:
+      'Mercari makes it easy to buy gently used items at a discount or sell what your family no longer needs. Sign up with code DMBTWC and get up to $20 when you get started.',
+    cardCta: 'Get up to $20 on Mercari',
+    href: 'https://merc.li/MrZD2EDtb',
+  },
+  {
     id: 'monarch',
     categories: ['budgeting', 'household'],
     stripHeadline: '50% off Monarch Core',
