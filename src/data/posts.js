@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Serve Without the Anxiety: Lessons from Martha, Mary, and Lazarus',
+    date: 'July 29, 2026',
+    dateSort: '2026-07-29',
+    excerpt: 'On the Memorial of Saints Martha, Mary, and Lazarus, Catholic families learn how financial independence creates the margin to serve like Martha without the anxiety Jesus corrected — and to be present like Mary.',
+    readTime: '4 min read',
+    link: '/blog/serve-without-the-anxiety-lessons-from-martha-mary-and-lazarus',
+    tags: ['Stewardship', 'Parenting', 'Seasonal', 'Couples'],
+    featured: false
+  },
+  {
     title: 'Build a Money Sabbath into Your Week',
     date: 'July 28, 2026',
     dateSort: '2026-07-28',

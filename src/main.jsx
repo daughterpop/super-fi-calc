@@ -33,6 +33,7 @@ import TreatYourFiJourneyLikeAPilgrimageLessonsFromStJamesForCatholicFamilies fr
 import LessonsFromJoachimAndAnneForBuildingALastingFamilyLegacy from './pages/lessons-from-joachim-and-anne-for-building-a-lasting-family-legacy.jsx';
 import BuildMarginToGiveFreelyLessonsFromStPantaleon from './pages/build-margin-to-give-freely-lessons-from-st-pantaleon.jsx';
 import BuildAMoneySabbathIntoYourWeek from './pages/build-a-money-sabbath-into-your-week.jsx';
+import ServeWithoutTheAnxietyLessonsFromMarthaMaryAndLazarus from './pages/serve-without-the-anxiety-lessons-from-martha-mary-and-lazarus.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -70,6 +71,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/lessons-from-joachim-and-anne-for-building-a-lasting-family-legacy" element={<LessonsFromJoachimAndAnneForBuildingALastingFamilyLegacy />} />
           <Route path="/blog/build-margin-to-give-freely-lessons-from-st-pantaleon" element={<BuildMarginToGiveFreelyLessonsFromStPantaleon />} />
           <Route path="/blog/build-a-money-sabbath-into-your-week" element={<BuildAMoneySabbathIntoYourWeek />} />
+          <Route path="/blog/serve-without-the-anxiety-lessons-from-martha-mary-and-lazarus" element={<ServeWithoutTheAnxietyLessonsFromMarthaMaryAndLazarus />} />
 
           <Route path="*" element={<App />} />
         </Routes>
