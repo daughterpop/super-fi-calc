@@ -52,8 +52,8 @@ export default function SubscribeForm() {
     <div className="mt-8 sm:mt-12 p-6 sm:p-8 bg-white rounded-2xl shadow-md max-w-md mx-auto text-center w-full">
       <h2 className="text-2xl sm:text-3xl font-bold mb-3">Join the Via Fidelitatis List</h2>
       <p className="text-gray-600 mb-6 text-sm sm:text-base">
-        Free tips, tools, and stewardship ideas for Catholic families on the path to financial independence.<br />
-        (Max 1 email per week. Unsubscribe anytime.)
+        Free tips, tools, and stewardship ideas for Catholic families on the path to financial independence.
+        Unsubscribe anytime.
       </p>
 
       {!submitted ? (
