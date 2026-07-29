@@ -160,6 +160,27 @@ const tools = [
     valueScore: 50,
   },
   {
+    id: 'amex-bbc',
+    name: 'Amex Blue Business Cash',
+    category: 'Banking & Payments',
+    badge: '2% cash back · no annual fee',
+    headline: 'Business cash-back card — put everyday spend to work toward FI',
+    description:
+      'American Express Blue Business Cash earns 2% cash back on the first $50,000 of eligible purchases each calendar year (then 1%). No annual fee. Apply through this referral link and we can both earn rewards if you’re approved and get the card.',
+    perks: [
+      '2% cash back on the first $50k of eligible purchases per calendar year, then 1%',
+      'No annual fee',
+      'Employee cards at no additional cost',
+      'Flexible Payment terms and Membership Rewards flexibility via Amex',
+    ],
+    cta: 'Apply for Blue Business Cash',
+    href: 'https://americanexpress.com/en-us/referral/bluebusinesscash-credit-card?ref=DUSTIHtvYM&XL=MIMNS',
+    accent: 'blue',
+    icon: 'banknote',
+    footnote: 'Referral terms set by American Express. Approval not guaranteed. Offers and rates subject to change. See Amex site for current details and eligibility.',
+    valueScore: 150,
+  },
+  {
     id: 'venmo',
     name: 'Venmo',
     category: 'Banking & Payments',
