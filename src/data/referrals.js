@@ -152,6 +152,19 @@ export const REFERRALS = [
     href: 'https://www.minty.com/me/1SFMA1',
   },
   {
+    id: 'thrive-market',
+    categories: ['savings', 'household'],
+    inBanner: true,
+    stripHeadline: '40% off first order + $40 Thrive Cash',
+    stripSub: ' — organic groceries at wholesale prices',
+    stripCta: 'Join Thrive Market',
+    cardEyebrow: 'Healthy groceries, lower cost',
+    cardBody:
+      'Thrive Market is a membership grocery store for organic, non-GMO, and sustainable food & household products at wholesale prices. Friends get 40% off their first order; after they stay an annual member for 30+ days you earn $40 Thrive Cash.',
+    cardCta: 'Get 40% off first order',
+    href: 'http://thrv.me/PxCk1V',
+  },
+  {
     id: 'monarch',
     categories: ['budgeting', 'household'],
     inBanner: true,
@@ -250,7 +263,6 @@ export const REFERRALS = [
     inBanner: false,
     stripHeadline: 'Up to 58% off data removal',
     stripSub: ' — pull your family off broker sites',
-    stripCta: 'Get Incogni deal',
     cardEyebrow: 'Protect time and peace',
     cardBody:
       'Incogni removes personal info from 420+ data brokers and keeps at it when data reappears. Friends pricing via this link; family plans cover up to 5.',
