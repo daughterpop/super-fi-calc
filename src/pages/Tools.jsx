@@ -345,6 +345,27 @@ const tools = [
     valueScore: 10,
   },
   {
+    id: 'thrive-market',
+    name: 'Thrive Market',
+    category: 'Shopping & Rewards',
+    badge: '40% off first order',
+    headline: 'Organic groceries at wholesale prices — 40% off your first order',
+    description:
+      'Membership grocery store for organic, non-GMO, and sustainable food and household products at wholesale prices. Join with this link: you get 40% off your first order; after you stay an annual member for 30+ days the referrer earns $40 Thrive Cash.',
+    perks: [
+      '40% off your first order when you sign up through this link',
+      'Organic and non-GMO food & household staples at wholesale prices',
+      'Annual membership often pays for itself in savings for a family',
+      'Referrer earns $40 Thrive Cash after you are an annual member 30+ days',
+    ],
+    cta: 'Get 40% Off First Order',
+    href: 'http://thrv.me/PxCk1V',
+    accent: 'emerald',
+    icon: 'shopping',
+    footnote: 'Friend discount and Thrive Cash terms set by Thrive Market. Annual membership required for referrer reward.',
+    valueScore: 40,
+  },
+  {
     id: 'inkind',
     name: 'inKind',
     category: 'Dining',
