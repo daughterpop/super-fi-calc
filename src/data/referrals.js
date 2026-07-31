@@ -61,6 +61,19 @@ export const REFERRALS = [
     href: 'https://americanexpress.com/en-us/referral/bluebusinesscash-credit-card?ref=DUSTIHtvYM&XL=MIMNS',
   },
   {
+    id: 'chase-sapphire',
+    categories: ['investing', 'household'],
+    inBanner: true,
+    stripHeadline: '100k Chase Ultimate Rewards',
+    stripSub: ' — Sapphire Reserve or Preferred after qualifying spend',
+    stripCta: 'Choose a Sapphire card',
+    cardEyebrow: 'Premium travel rewards',
+    cardBody:
+      'Chase Sapphire Reserve or Sapphire Preferred: earn 100,000 bonus Ultimate Rewards points when you meet the welcome offer on either card through this referral. Strong travel and everyday value for families building FI margin. Apply here and we can both be rewarded if you\'re approved.',
+    cardCta: 'Apply for Sapphire Reserve or Preferred',
+    href: 'https://www.referyourchasecard.com/19x/RO2CCHE1LT',
+  },
+  {
     id: 'amazon-visa',
     categories: ['investing', 'household'],
     inBanner: true,
