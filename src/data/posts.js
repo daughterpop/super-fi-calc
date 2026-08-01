@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Detachment Creates Real Freedom: Lessons from St. Alphonsus Liguori',
+    date: 'August 1, 2026',
+    dateSort: '2026-08-01',
+    excerpt: 'On the Memorial of St. Alphonsus Liguori, Catholic families learn that true financial freedom begins with detachment from status and anxiety — and that FI is one practical way to create the margin that makes that freedom possible.',
+    readTime: '4 min read',
+    link: '/blog/detachment-creates-real-freedom-lessons-from-st-alphonsus-liguori',
+    tags: ['Stewardship', 'Seasonal', 'Prayer', 'Legacy'],
+    featured: false
+  },
+  {
     title: 'Serve Without the Anxiety: Lessons from Martha, Mary, and Lazarus',
     date: 'July 29, 2026',
     dateSort: '2026-07-29',
