@@ -243,7 +243,7 @@ export default function SuperFiCalculator() {
             Edit Inputs
           </button>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-3 sm:mb-4">
             <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100">
               <div className="text-sm font-medium text-gray-500 mb-2">FI Progress</div>
               <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-3">
@@ -268,13 +268,22 @@ export default function SuperFiCalculator() {
             <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100">
               <div className="text-sm font-medium text-gray-500 mb-2">Time to FI</div>
               <div className="text-2xl sm:text-3xl font-bold text-green-600">
-                {results.yearsFIReached !== null ? `${results.yearsFIReached} years` : 'Off track'}
+                {results.yearsFIReached !== null ? `${results.yearsFIReached} years` : '50+ years'}
               </div>
               {results.fiAge && (
                 <div className="text-xs text-gray-500 mt-1">At age {results.fiAge}</div>
               )}
+              {results.yearsFIReached === null && (
+                <div className="text-xs text-gray-500 mt-1">Beyond this projection window</div>
+              )}
             </div>
           </div>
+
+          <p className="text-xs sm:text-sm text-gray-500 text-center mb-4 sm:mb-6 max-w-2xl mx-auto leading-relaxed">
+            “Time to FI” is the first year your projected portfolio stays above the inflation-adjusted FI target
+            (annual expenses × 25 + remaining mortgage) for every year afterward. Adjust inputs and re-run if the
+            timeline feels long — small changes in savings or expenses often move the date meaningfully.
+          </p>
 
           {/* Compact next steps — right after the numbers */}
           <div className="bg-white border border-emerald-100 rounded-2xl p-4 sm:p-5 mb-4 sm:mb-6">
