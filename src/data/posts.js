@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'When Little Is Enough: Lessons from the Loaves and Fishes',
+    date: 'August 2, 2026',
+    dateSort: '2026-08-02',
+    excerpt: 'On the Eighteenth Sunday in Ordinary Time, Catholic families learn from the multiplication of the loaves that trust and margin turn scarcity into generosity — and that financial independence is one practical way to live that Gospel freedom.',
+    readTime: '4 min read',
+    link: '/blog/when-little-is-enough-lessons-from-the-loaves-and-fishes',
+    tags: ['Stewardship', 'Tithing', 'Seasonal', 'Legacy'],
+    featured: false
+  },
+  {
     title: 'Detachment Creates Real Freedom: Lessons from St. Alphonsus Liguori',
     date: 'August 1, 2026',
     dateSort: '2026-08-01',
