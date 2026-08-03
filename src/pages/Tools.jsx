@@ -777,6 +777,27 @@ const tools = [
     valueScore: 50,
   },
   {
+    id: 'rove',
+    name: 'Rove Miles',
+    category: 'Travel & Hosting',
+    badge: '500 miles free',
+    headline: 'Flexible travel miles — 500 miles instantly on signup',
+    description:
+      'Rove is a flexible travel rewards program: earn miles on shopping, hotels, and flights (often stacking with your existing card rewards), then transfer to airline and hotel partners. Sign up free through this link and get 500 Rove Miles instantly.',
+    perks: [
+      '500 Rove Miles credited instantly when you sign up via this link',
+      'Earn on online shopping, hotel bookings, and flights — on top of card rewards',
+      'Transfer miles to airline and hotel partners',
+      'No credit card required to start earning',
+    ],
+    cta: 'Join Rove — Get 500 Miles',
+    href: 'https://www.rove.com/?signup&referralCode=SRLE48GZ',
+    accent: 'sky',
+    icon: 'mappin',
+    footnote: 'Signup bonus of 500 miles for new accounts via referral. Referrer rewards may apply after the new user earns qualifying miles. Terms set by Rove and subject to change.',
+    valueScore: 50,
+  },
+  {
     id: 'airbnb-host',
     name: 'Airbnb Hosting',
     category: 'Travel & Hosting',
