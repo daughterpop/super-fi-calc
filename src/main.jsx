@@ -37,6 +37,7 @@ import BuildAMoneySabbathIntoYourWeek from './pages/build-a-money-sabbath-into-y
 import ServeWithoutTheAnxietyLessonsFromMarthaMaryAndLazarus from './pages/serve-without-the-anxiety-lessons-from-martha-mary-and-lazarus.jsx';
 import DetachmentCreatesRealFreedomLessonsFromStAlphonsusLiguori from './pages/detachment-creates-real-freedom-lessons-from-st-alphonsus-liguori.jsx';
 import WhenLittleIsEnoughLessonsFromTheLoavesAndFishes from './pages/when-little-is-enough-lessons-from-the-loaves-and-fishes.jsx';
+import BuildMarginForTrueHospitalityLessonsFromStLydia from './pages/build-margin-for-true-hospitality-lessons-from-st-lydia.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -78,6 +79,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/serve-without-the-anxiety-lessons-from-martha-mary-and-lazarus" element={<ServeWithoutTheAnxietyLessonsFromMarthaMaryAndLazarus />} />
           <Route path="/blog/detachment-creates-real-freedom-lessons-from-st-alphonsus-liguori" element={<DetachmentCreatesRealFreedomLessonsFromStAlphonsusLiguori />} />
           <Route path="/blog/when-little-is-enough-lessons-from-the-loaves-and-fishes" element={<WhenLittleIsEnoughLessonsFromTheLoavesAndFishes />} />
+          <Route path="/blog/build-margin-for-true-hospitality-lessons-from-st-lydia" element={<BuildMarginForTrueHospitalityLessonsFromStLydia />} />
 
           <Route path="*" element={<App />} />
         </Routes>

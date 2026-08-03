@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin for True Hospitality: Lessons from St. Lydia',
+    date: 'August 3, 2026',
+    dateSort: '2026-08-03',
+    excerpt: 'On the Memorial of St. Lydia, Catholic families learn that financial independence creates the practical margin to open their homes and tables without anxiety — turning everyday hospitality into a living act of faith.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-for-true-hospitality-lessons-from-st-lydia',
+    tags: ['Stewardship', 'Seasonal', 'Parenting', 'Couples'],
+    featured: false
+  },
+  {
     title: 'When Little Is Enough: Lessons from the Loaves and Fishes',
     date: 'August 2, 2026',
     dateSort: '2026-08-02',
