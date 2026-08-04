@@ -5,13 +5,25 @@
     <link>https://viafidelitatis.com/</link>
     <description>Practical financial independence tools and faith-filled stewardship insights for Catholic families. FI calculator, college planning, and generational wealth rooted in fidelity.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viafidelitatis.com/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://viafidelitatis.com/og-image.png</url>
       <title>Via Fidelitatis</title>
       <link>https://viafidelitatis.com/</link>
     </image>
+
+    <item>
+      <title>Simplicity Creates Real Margin: Lessons from St. John Vianney</title>
+      <link>https://viafidelitatis.com/blog/simplicity-creates-real-margin-lessons-from-st-john-vianney</link>
+      <guid isPermaLink="true">https://viafidelitatis.com/blog/simplicity-creates-real-margin-lessons-from-st-john-vianney</guid>
+      <pubDate>Tue, 04 Aug 2026 12:00:00 GMT</pubDate>
+      <description>On the Memorial of St. John Vianney, Catholic families learn that deliberate simplicity creates the practical margin that turns financial independence from a distant goal into everyday freedom.</description>
+      <category>Stewardship</category>
+      <category>Seasonal</category>
+      <category>Legacy</category>
+      <category>Prayer</category>
+    </item>
 
     <item>
       <title>Build Margin for True Hospitality: Lessons from St. Lydia</title>

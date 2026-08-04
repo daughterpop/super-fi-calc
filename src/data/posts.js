@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Simplicity Creates Real Margin: Lessons from St. John Vianney',
+    date: 'August 4, 2026',
+    dateSort: '2026-08-04',
+    excerpt: 'On the Memorial of St. John Vianney, Catholic families learn that deliberate simplicity creates the practical margin that turns financial independence from a distant goal into everyday freedom.',
+    readTime: '4 min read',
+    link: '/blog/simplicity-creates-real-margin-lessons-from-st-john-vianney',
+    tags: ['Stewardship', 'Seasonal', 'Legacy', 'Prayer'],
+    featured: false
+  },
+  {
     title: 'Build Margin for True Hospitality: Lessons from St. Lydia',
     date: 'August 3, 2026',
     dateSort: '2026-08-03',
