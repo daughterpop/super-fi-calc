@@ -21,7 +21,7 @@ export default function Calculators() {
     {
       q: "Should I factor tithing or charitable giving into my FI number?",
       a: "Yes — many Catholic families treat giving as a non-negotiable 'expense' in their FI planning. This ensures generosity continues even after you stop working for income. The surplus the calculator reveals becomes fuel for parish support, missions, and family hospitality.",
-      link: null
+      link: "/blog/build-margin-to-give-freely-lessons-from-st-pantaleon"
     },
     {
       q: "How can I plan for both college savings and my children's faith formation?",
@@ -31,12 +31,12 @@ export default function Calculators() {
     {
       q: "What if the numbers show a long road to FI — have I failed as a faithful steward?",
       a: "Not at all. Faithful stewardship is shown in consistent, prayerful action over time. This tool simply gives you clarity to adjust course, trust Providence more deeply, and celebrate every year of progress. Your legacy is built in the daily 'yes' to wise planning and generous living.",
-      link: null
+      link: "/blog/detachment-creates-real-freedom-lessons-from-st-alphonsus-liguori"
     },
     {
       q: "Can this calculator help us leave a generational inheritance while still living generously today?",
       a: "Absolutely. By modeling large future expenses (college, vehicles, debt payoff) alongside steady investing, you see the true surplus available for both present tithing and long-term family provision. Generational wealth and cheerful giving are not opposites — they reinforce each other when planned together.",
-      link: "/blog/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi"
+      link: "/blog/when-little-is-enough-lessons-from-the-loaves-and-fishes"
     }
   ];
 
@@ -53,12 +53,12 @@ export default function Calculators() {
       body: "Deepen the why behind the numbers with practical faith + FI writing for Catholic families.",
       links: [
         {
-          to: "/blog/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi",
-          label: "Stewarding your family's future"
+          to: "/blog/build-margin-for-true-hospitality-lessons-from-st-lydia",
+          label: "Build margin for true hospitality"
         },
         {
-          to: "/blog/raising-faith-filled-kids-while-building-financial-freedom",
-          label: "Raising faith-filled kids on the path to FI"
+          to: "/blog/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi",
+          label: "Stewarding your family's future"
         }
       ]
     },

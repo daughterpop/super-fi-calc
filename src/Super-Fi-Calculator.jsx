@@ -290,21 +290,21 @@ export default function SuperFiCalculator() {
             <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700 mb-3">What now?</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <Link
-                to="/blog/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi"
+                to="/blog/build-margin-for-true-hospitality-lessons-from-st-lydia"
                 className="flex items-start gap-2.5 p-3 rounded-xl bg-gray-50 hover:bg-emerald-50 border border-transparent hover:border-emerald-100 transition-colors group"
               >
                 <BookOpen className="text-emerald-600 shrink-0 mt-0.5" size={18} />
                 <span className="text-sm text-gray-700 group-hover:text-emerald-800 leading-snug">
-                  Read: Stewarding your family's future
+                  Read: Build margin for true hospitality
                 </span>
               </Link>
               <Link
-                to="/blog/raising-faith-filled-kids-while-building-financial-freedom"
+                to="/blog/when-little-is-enough-lessons-from-the-loaves-and-fishes"
                 className="flex items-start gap-2.5 p-3 rounded-xl bg-gray-50 hover:bg-emerald-50 border border-transparent hover:border-emerald-100 transition-colors group"
               >
                 <BookOpen className="text-emerald-600 shrink-0 mt-0.5" size={18} />
                 <span className="text-sm text-gray-700 group-hover:text-emerald-800 leading-snug">
-                  Read: Raising faith-filled kids on the path to FI
+                  Read: When little is enough
                 </span>
               </Link>
               <Link
