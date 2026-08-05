@@ -5,13 +5,25 @@
     <link>https://viafidelitatis.com/</link>
     <description>Practical financial independence tools and faith-filled stewardship insights for Catholic families. FI calculator, college planning, and generational wealth rooted in fidelity.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viafidelitatis.com/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://viafidelitatis.com/og-image.png</url>
       <title>Via Fidelitatis</title>
       <link>https://viafidelitatis.com/</link>
     </image>
+
+    <item>
+      <title>Build on Trust, Not Anxiety: Lessons from Our Lady of the Snows</title>
+      <link>https://viafidelitatis.com/blog/build-on-trust-not-anxiety-lessons-from-our-lady-of-the-snows</link>
+      <guid isPermaLink="true">https://viafidelitatis.com/blog/build-on-trust-not-anxiety-lessons-from-our-lady-of-the-snows</guid>
+      <pubDate>Wed, 05 Aug 2026 12:00:00 GMT</pubDate>
+      <description>On the Dedication of the Basilica of Saint Mary Major, Catholic families learn that trusting Providence — the same trust that marked the snow in summer — creates the practical margin that turns financial independence into everyday freedom from anxiety.</description>
+      <category>Stewardship</category>
+      <category>Seasonal</category>
+      <category>Prayer</category>
+      <category>Legacy</category>
+    </item>
 
     <item>
       <title>Simplicity Creates Real Margin: Lessons from St. John Vianney</title>

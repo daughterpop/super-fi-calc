@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build on Trust, Not Anxiety: Lessons from Our Lady of the Snows',
+    date: 'August 5, 2026',
+    dateSort: '2026-08-05',
+    excerpt: 'On the Dedication of the Basilica of Saint Mary Major, Catholic families learn that trusting Providence — the same trust that marked the snow in summer — creates the practical margin that turns financial independence into everyday freedom from anxiety.',
+    readTime: '4 min read',
+    link: '/blog/build-on-trust-not-anxiety-lessons-from-our-lady-of-the-snows',
+    tags: ['Stewardship', 'Seasonal', 'Prayer', 'Legacy'],
+    featured: false
+  },
+  {
     title: 'Simplicity Creates Real Margin: Lessons from St. John Vianney',
     date: 'August 4, 2026',
     dateSort: '2026-08-04',
