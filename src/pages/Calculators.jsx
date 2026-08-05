@@ -31,7 +31,7 @@ export default function Calculators() {
     {
       q: "What if the numbers show a long road to FI — have I failed as a faithful steward?",
       a: "Not at all. Faithful stewardship is shown in consistent, prayerful action over time. This tool simply gives you clarity to adjust course, trust Providence more deeply, and celebrate every year of progress. Your legacy is built in the daily 'yes' to wise planning and generous living.",
-      link: "/blog/detachment-creates-real-freedom-lessons-from-st-alphonsus-liguori"
+      link: "/blog/simplicity-creates-real-margin-lessons-from-st-john-vianney"
     },
     {
       q: "Can this calculator help us leave a generational inheritance while still living generously today?",
@@ -53,12 +53,12 @@ export default function Calculators() {
       body: "Deepen the why behind the numbers with practical faith + FI writing for Catholic families.",
       links: [
         {
-          to: "/blog/build-margin-for-true-hospitality-lessons-from-st-lydia",
-          label: "Build margin for true hospitality"
+          to: "/blog/simplicity-creates-real-margin-lessons-from-st-john-vianney",
+          label: "Simplicity creates real margin"
         },
         {
-          to: "/blog/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi",
-          label: "Stewarding your family's future"
+          to: "/blog/build-margin-for-true-hospitality-lessons-from-st-lydia",
+          label: "Build margin for true hospitality"
         }
       ]
     },
