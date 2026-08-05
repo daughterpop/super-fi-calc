@@ -46,8 +46,8 @@ function absoluteUrl(path) {
 }
 
 /**
- * Single route-level SEO layer: unique title/description/canonical + Article JSON-LD
- * for blog posts. No visual UI; runs on every navigation.
+ * Single route-level SEO layer: unique title/description/canonical + JSON-LD
+ * for Organization, WebSite, Blog, and Article.
  */
 export default function RouteSeo() {
   const { pathname } = useLocation();
@@ -68,7 +68,7 @@ export default function RouteSeo() {
 
     jsonLd = {
       '@context': 'https://schema.org',
-      '@type': 'Article',
+      '@type': 'BlogPosting',
       headline: post.title,
       description: post.excerpt,
       datePublished: post.dateSort,
@@ -81,12 +81,17 @@ export default function RouteSeo() {
         '@type': 'Organization',
         name: SITE_NAME,
         url: SITE,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${SITE}/logo.svg`,
+        },
       },
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': absoluteUrl(post.link),
       },
       keywords: (post.tags || []).join(', '),
+      image: DEFAULT_OG,
     };
   } else if (staticMeta) {
     title = staticMeta.title;
@@ -94,18 +99,59 @@ export default function RouteSeo() {
     type = staticMeta.type;
 
     if (pathname === '/') {
+      // Full Organization + WebSite graph for the homepage
       jsonLd = {
         '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: SITE_NAME,
-        url: SITE,
-        description: staticMeta.description,
-        applicationCategory: 'FinanceApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD',
-        },
+        '@graph': [
+          {
+            '@type': 'Organization',
+            '@id': `${SITE}/#organization`,
+            name: SITE_NAME,
+            url: SITE,
+            logo: {
+              '@type': 'ImageObject',
+              url: `${SITE}/logo.svg`,
+            },
+            description:
+              'Helps Catholic families build financial independence so money serves the mission, not the other way around.',
+            founder: {
+              '@type': 'Person',
+              name: AUTHOR,
+            },
+          },
+          {
+            '@type': 'WebSite',
+            '@id': `${SITE}/#website`,
+            url: SITE,
+            name: SITE_NAME,
+            description: staticMeta.description,
+            publisher: {
+              '@id': `${SITE}/#organization`,
+            },
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: {
+                '@type': 'EntryPoint',
+                urlTemplate: `${SITE}/blog?q={search_term_string}`,
+              },
+              'query-input': 'required name=search_term_string',
+            },
+          },
+          {
+            '@type': 'WebApplication',
+            name: `${SITE_NAME} FI Calculator`,
+            url: `${SITE}/calculators`,
+            applicationCategory: 'FinanceApplication',
+            operatingSystem: 'Any',
+            offers: {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'USD',
+            },
+            description:
+              'Free FI calculator designed for Catholic families modeling college, mortgage, tithing, and real household expenses.',
+          },
+        ],
       };
     } else if (pathname === '/blog') {
       jsonLd = {
@@ -113,6 +159,26 @@ export default function RouteSeo() {
         '@type': 'Blog',
         name: `${SITE_NAME} Blog`,
         url: absoluteUrl('/blog'),
+        description: staticMeta.description,
+        publisher: {
+          '@type': 'Organization',
+          name: SITE_NAME,
+          url: SITE,
+        },
+      };
+    } else if (pathname === '/calculators') {
+      jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        name: `${SITE_NAME} FI Calculator`,
+        url: absoluteUrl('/calculators'),
+        applicationCategory: 'FinanceApplication',
+        operatingSystem: 'Any',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD',
+        },
         description: staticMeta.description,
         publisher: {
           '@type': 'Organization',

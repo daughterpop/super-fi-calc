@@ -9,6 +9,7 @@ import {
 import SubscribeForm from './components/SubscribeForm';
 import SiteHeader from './components/SiteHeader';
 import ReferralCard from './components/ReferralCard';
+import MiniCalculatorCard from './components/MiniCalculatorCard';
 import { allPosts } from './data/posts';
 import { getReferral } from './data/referrals';
 
@@ -69,24 +70,8 @@ function App() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
-          <Link
-            to="/calculators"
-            className="group relative bg-white border border-gray-100 hover:border-emerald-200 rounded-2xl p-6 transition-all hover:shadow-md"
-          >
-            <div className="absolute -top-3 left-6 w-7 h-7 rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center shadow-sm">
-              1
-            </div>
-            <div className="w-11 h-11 bg-emerald-100 group-hover:bg-emerald-200 rounded-xl flex items-center justify-center mb-4 mt-1 transition-colors">
-              <Calculator className="text-emerald-600" size={22} />
-            </div>
-            <h3 className="font-semibold text-lg text-gray-900 mb-2">Calculate</h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-3">
-              Model college, mortgage, vehicles, and real family expenses. See years to FI and your progress.
-            </p>
-            <span className="text-emerald-600 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">
-              Open calculator <ArrowRight size={14} />
-            </span>
-          </Link>
+          {/* Interactive Calculate card */}
+          <MiniCalculatorCard />
 
           <Link
             to="/blog"
