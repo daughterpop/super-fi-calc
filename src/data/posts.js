@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'See the Glory Ahead: Lessons from the Transfiguration',
+    date: 'August 6, 2026',
+    dateSort: '2026-08-06',
+    excerpt: 'On the Feast of the Transfiguration, Catholic families learn that building real financial margin is the practical way to see the glory ahead — freedom to serve, rest, and raise children without constant money anxiety.',
+    readTime: '4 min read',
+    link: '/blog/see-the-glory-ahead-lessons-from-the-transfiguration',
+    tags: ['Stewardship', 'Seasonal', 'Prayer', 'Legacy'],
+    featured: false
+  },
+  {
     title: 'Build on Trust, Not Anxiety: Lessons from Our Lady of the Snows',
     date: 'August 5, 2026',
     dateSort: '2026-08-05',

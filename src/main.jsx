@@ -40,6 +40,7 @@ import WhenLittleIsEnoughLessonsFromTheLoavesAndFishes from './pages/when-little
 import BuildMarginForTrueHospitalityLessonsFromStLydia from './pages/build-margin-for-true-hospitality-lessons-from-st-lydia.jsx';
 import SimplicityCreatesRealMarginLessonsFromStJohnVianney from './pages/simplicity-creates-real-margin-lessons-from-st-john-vianney.jsx';
 import BuildOnTrustNotAnxietyLessonsFromOurLadyOfTheSnows from './pages/build-on-trust-not-anxiety-lessons-from-our-lady-of-the-snows.jsx';
+import SeeTheGloryAheadLessonsFromTheTransfiguration from './pages/see-the-glory-ahead-lessons-from-the-transfiguration.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -84,6 +85,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/build-margin-for-true-hospitality-lessons-from-st-lydia" element={<BuildMarginForTrueHospitalityLessonsFromStLydia />} />
           <Route path="/blog/simplicity-creates-real-margin-lessons-from-st-john-vianney" element={<SimplicityCreatesRealMarginLessonsFromStJohnVianney />} />
           <Route path="/blog/build-on-trust-not-anxiety-lessons-from-our-lady-of-the-snows" element={<BuildOnTrustNotAnxietyLessonsFromOurLadyOfTheSnows />} />
+          <Route path="/blog/see-the-glory-ahead-lessons-from-the-transfiguration" element={<SeeTheGloryAheadLessonsFromTheTransfiguration />} />
 
           <Route path="*" element={<App />} />
         </Routes>
