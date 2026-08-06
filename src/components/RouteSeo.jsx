@@ -45,9 +45,127 @@ function absoluteUrl(path) {
   return `${SITE}${path.startsWith('/') ? path : `/${path}`}`;
 }
 
+/** Build a BreadcrumbList for the current path. */
+function buildBreadcrumbs(pathname, post) {
+  const items = [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: SITE,
+    },
+  ];
+
+  if (pathname === '/calculators') {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'FI Calculator',
+      item: absoluteUrl('/calculators'),
+    });
+  } else if (pathname === '/blog') {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: absoluteUrl('/blog'),
+    });
+  } else if (pathname === '/tools') {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Tools',
+      item: absoluteUrl('/tools'),
+    });
+  } else if (pathname === '/subscribe') {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Subscribe',
+      item: absoluteUrl('/subscribe'),
+    });
+  } else if (post) {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: absoluteUrl('/blog'),
+    });
+    items.push({
+      '@type': 'ListItem',
+      position: 3,
+      name: post.title,
+      item: absoluteUrl(post.link),
+    });
+  }
+
+  if (items.length < 2) return null;
+
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: items,
+  };
+}
+
+/** HowTo schema describing the FI calculator flow. */
+const CALCULATOR_HOWTO = {
+  '@type': 'HowTo',
+  name: 'How to Calculate Your Family\'s Path to Financial Independence',
+  description:
+    'Use the free Via Fidelitatis FI calculator to model college, mortgage, vehicles, and real household expenses — including tithing — and see years to financial independence for Catholic families.',
+  image: DEFAULT_OG,
+  totalTime: 'PT10M',
+  estimatedCost: {
+    '@type': 'MonetaryAmount',
+    currency: 'USD',
+    value: '0',
+  },
+  tool: {
+    '@type': 'HowToTool',
+    name: 'Via Fidelitatis FI Calculator',
+  },
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Enter current finances',
+      text: 'Input your current investable assets (retirement accounts, taxable investments, cash) and any outstanding debts.',
+      url: `${SITE}/calculators`,
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Set annual spending and surplus',
+      text: 'Enter your current annual household spending and the monthly surplus available after tithing and essential expenses.',
+      url: `${SITE}/calculators`,
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Model major family expenses',
+      text: 'Add college costs for each child, remaining mortgage, future vehicle replacements, and other large planned expenses with realistic inflation.',
+      url: `${SITE}/calculators`,
+    },
+    {
+      '@type': 'HowToStep',
+      position: 4,
+      name: 'Review your years-to-FI projection',
+      text: 'See how many years until your investments can support your family’s lifestyle — including continued generosity and faith formation.',
+      url: `${SITE}/calculators`,
+    },
+    {
+      '@type': 'HowToStep',
+      position: 5,
+      name: 'Take the next faithful steps',
+      text: 'Adjust inputs with your spouse, put surplus to work through disciplined investing, and protect the margin that frees time for prayer, presence, and service.',
+      url: `${SITE}/calculators`,
+    },
+  ],
+};
+
 /**
  * Single route-level SEO layer: unique title/description/canonical + JSON-LD
- * for Organization, WebSite, Blog, and Article.
+ * for Organization, WebSite, Blog, Article, HowTo, and BreadcrumbList.
  */
 export default function RouteSeo() {
   const { pathname } = useLocation();
@@ -60,38 +178,48 @@ export default function RouteSeo() {
   let datePublished;
   let jsonLd = null;
 
+  const breadcrumbs = buildBreadcrumbs(pathname, post);
+
   if (post) {
     title = `${post.title} | ${SITE_NAME}`;
     description = post.excerpt;
     type = 'article';
     datePublished = post.dateSort;
 
+    const graph = [
+      {
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description: post.excerpt,
+        datePublished: post.dateSort,
+        dateModified: post.dateSort,
+        author: {
+          '@type': 'Person',
+          name: AUTHOR,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: SITE_NAME,
+          url: SITE,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${SITE}/logo.svg`,
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': absoluteUrl(post.link),
+        },
+        keywords: (post.tags || []).join(', '),
+        image: DEFAULT_OG,
+      },
+    ];
+
+    if (breadcrumbs) graph.push(breadcrumbs);
+
     jsonLd = {
       '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
-      headline: post.title,
-      description: post.excerpt,
-      datePublished: post.dateSort,
-      dateModified: post.dateSort,
-      author: {
-        '@type': 'Person',
-        name: AUTHOR,
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: SITE_NAME,
-        url: SITE,
-        logo: {
-          '@type': 'ImageObject',
-          url: `${SITE}/logo.svg`,
-        },
-      },
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': absoluteUrl(post.link),
-      },
-      keywords: (post.tags || []).join(', '),
-      image: DEFAULT_OG,
+      '@graph': graph,
     };
   } else if (staticMeta) {
     title = staticMeta.title;
@@ -99,7 +227,6 @@ export default function RouteSeo() {
     type = staticMeta.type;
 
     if (pathname === '/') {
-      // Full Organization + WebSite graph for the homepage
       jsonLd = {
         '@context': 'https://schema.org',
         '@graph': [
@@ -154,38 +281,58 @@ export default function RouteSeo() {
         ],
       };
     } else if (pathname === '/blog') {
+      const graph = [
+        {
+          '@type': 'Blog',
+          name: `${SITE_NAME} Blog`,
+          url: absoluteUrl('/blog'),
+          description: staticMeta.description,
+          publisher: {
+            '@type': 'Organization',
+            name: SITE_NAME,
+            url: SITE,
+          },
+        },
+      ];
+      if (breadcrumbs) graph.push(breadcrumbs);
       jsonLd = {
         '@context': 'https://schema.org',
-        '@type': 'Blog',
-        name: `${SITE_NAME} Blog`,
-        url: absoluteUrl('/blog'),
-        description: staticMeta.description,
-        publisher: {
-          '@type': 'Organization',
-          name: SITE_NAME,
-          url: SITE,
-        },
+        '@graph': graph,
       };
     } else if (pathname === '/calculators') {
+      const graph = [
+        {
+          '@type': 'WebApplication',
+          name: `${SITE_NAME} FI Calculator`,
+          url: absoluteUrl('/calculators'),
+          applicationCategory: 'FinanceApplication',
+          operatingSystem: 'Any',
+          offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+          },
+          description: staticMeta.description,
+          publisher: {
+            '@type': 'Organization',
+            name: SITE_NAME,
+            url: SITE,
+          },
+        },
+        CALCULATOR_HOWTO,
+      ];
+      if (breadcrumbs) graph.push(breadcrumbs);
       jsonLd = {
         '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: `${SITE_NAME} FI Calculator`,
-        url: absoluteUrl('/calculators'),
-        applicationCategory: 'FinanceApplication',
-        operatingSystem: 'Any',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD',
-        },
-        description: staticMeta.description,
-        publisher: {
-          '@type': 'Organization',
-          name: SITE_NAME,
-          url: SITE,
-        },
+        '@graph': graph,
       };
+    } else if (pathname === '/tools' || pathname === '/subscribe') {
+      if (breadcrumbs) {
+        jsonLd = {
+          '@context': 'https://schema.org',
+          '@graph': [breadcrumbs],
+        };
+      }
     }
   } else {
     title = `${SITE_NAME} — Faithful FI for Catholic Families`;
