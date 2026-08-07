@@ -33,8 +33,15 @@ export default function SiteHeader({ showReferralStrip = true }) {
         <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
           <Link
             to="/"
-            className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight"
+            className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight inline-flex items-center gap-2"
           >
+            <img
+              src="/logo.svg"
+              alt=""
+              width={28}
+              height={28}
+              className="w-7 h-7 sm:w-8 sm:h-8"
+            />
             <span className="sm:hidden text-sm tracking-tight">Via Fidelitatis</span>
             <span className="hidden sm:inline text-xl lg:text-2xl tracking-tight">Via Fidelitatis</span>
           </Link>

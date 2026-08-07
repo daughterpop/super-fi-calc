@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { getPostByPath } from '../data/posts';
+import { getPostByPath, allPosts } from '../data/posts';
 
 const SITE = 'https://viafidelitatis.com';
 const SITE_NAME = 'Via Fidelitatis';
@@ -107,6 +107,22 @@ function buildBreadcrumbs(pathname, post) {
   };
 }
 
+/** ItemList of recent blog posts for the blog index. */
+function buildBlogItemList() {
+  const recent = allPosts.slice(0, 12);
+  return {
+    '@type': 'ItemList',
+    name: `${SITE_NAME} Blog — Recent Posts`,
+    numberOfItems: recent.length,
+    itemListElement: recent.map((post, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: absoluteUrl(post.link),
+      name: post.title,
+    })),
+  };
+}
+
 /** HowTo schema describing the FI calculator flow. */
 const CALCULATOR_HOWTO = {
   '@type': 'HowTo',
@@ -185,10 +201,10 @@ const CALCULATOR_FAQ = {
     },
     {
       '@type': 'Question',
-      name: 'How can I plan for both college savings and my children\'s faith formation?',
+      name: "How can I plan for both college savings and my children's faith formation?",
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Model tuition in the Children section (with realistic inflation). The timeline reveals how disciplined saving creates margin for Catholic education, youth groups, family prayer traditions, and retreats — so faith formation isn\'t squeezed out by financial pressure.',
+        text: "Model tuition in the Children section (with realistic inflation). The timeline reveals how disciplined saving creates margin for Catholic education, youth groups, family prayer traditions, and retreats — so faith formation isn't squeezed out by financial pressure.",
       },
     },
     {
@@ -212,7 +228,7 @@ const CALCULATOR_FAQ = {
 
 /**
  * Single route-level SEO layer: unique title/description/canonical + JSON-LD
- * for Organization, WebSite, Blog, Article, HowTo, FAQPage, and BreadcrumbList.
+ * for Organization, WebSite, Blog, Article, HowTo, FAQPage, ItemList, and BreadcrumbList.
  */
 export default function RouteSeo() {
   const { pathname } = useLocation();
@@ -338,8 +354,13 @@ export default function RouteSeo() {
             '@type': 'Organization',
             name: SITE_NAME,
             url: SITE,
+            logo: {
+              '@type': 'ImageObject',
+              url: `${SITE}/logo.svg`,
+            },
           },
         },
+        buildBlogItemList(),
       ];
       if (breadcrumbs) graph.push(breadcrumbs);
       jsonLd = {
