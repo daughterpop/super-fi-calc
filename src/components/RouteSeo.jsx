@@ -2,9 +2,9 @@ import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { getPostByPath, allPosts } from '../data/posts';
 
-const SITE = 'https://viafidelitatis.com';
+const SITE = 'https://www.viafidelitatis.com';
 const SITE_NAME = 'Via Fidelitatis';
-const DEFAULT_OG = `${SITE}/og-image.jpg`;
+const DEFAULT_OG = `${SITE}/IMG_3729.jpeg`;
 const AUTHOR = 'Dustin Himmerich';
 
 const STATIC = {
