@@ -7,11 +7,17 @@ import SiteFooter from '../components/SiteFooter';
 import SuperFiCalculator from '../Super-Fi-Calculator.jsx';
 import LoanPaymentCalculator from '../components/LoanPaymentCalculator';
 import BonusValueCalculator from '../components/BonusValueCalculator';
+import College529Calculator from '../components/College529Calculator';
+import VehicleTcoCalculator from '../components/VehicleTcoCalculator';
+import SavingsRateRunwayCalculator from '../components/SavingsRateRunwayCalculator';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
 import { getReferral } from '../data/referrals';
 
 const TABS = [
   { id: 'fi', label: 'FI path' },
+  { id: 'runway', label: 'Savings rate' },
+  { id: 'college', label: 'College / 529' },
+  { id: 'vehicle', label: 'Vehicle TCO' },
   { id: 'loan', label: 'Loan payment' },
   { id: 'bonus', label: 'Bonus value' },
 ];
@@ -103,19 +109,19 @@ export default function Calculators() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 text-center">
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Calculators</h1>
           <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
-            FI path for the big picture — plus loan payments and bonus math for everyday decisions that affect surplus.
+            FI path for the big picture — plus savings rate, college/529 (with state tax lookup), vehicle TCO, loans, and bonus math.
           </p>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        <div className="flex border-b mb-6 sm:mb-8 bg-white rounded-t-lg overflow-x-auto">
+        <div className="flex border-b mb-6 sm:mb-8 bg-white rounded-t-lg overflow-x-auto scrollbar-thin">
           {TABS.map((tab) => (
             <button
               key={tab.id}
               type="button"
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 min-w-[7.5rem] px-3 sm:px-6 py-3 sm:py-4 font-medium text-sm sm:text-base transition-colors text-center whitespace-nowrap ${
+              className={`flex-1 min-w-[6.75rem] px-2.5 sm:px-4 py-3 sm:py-4 font-medium text-xs sm:text-sm transition-colors text-center whitespace-nowrap ${
                 activeTab === tab.id
                   ? 'border-b-4 border-emerald-600 text-emerald-600'
                   : 'text-gray-500 hover:text-gray-700'
@@ -127,6 +133,9 @@ export default function Calculators() {
         </div>
 
         {activeTab === 'fi' && <SuperFiCalculator />}
+        {activeTab === 'runway' && <SavingsRateRunwayCalculator />}
+        {activeTab === 'college' && <College529Calculator />}
+        {activeTab === 'vehicle' && <VehicleTcoCalculator />}
         {activeTab === 'loan' && <LoanPaymentCalculator />}
         {activeTab === 'bonus' && <BonusValueCalculator />}
       </div>
