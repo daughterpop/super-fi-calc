@@ -4,7 +4,7 @@ import { getPostByPath, allPosts } from '../data/posts';
 
 const SITE = 'https://viafidelitatis.com';
 const SITE_NAME = 'Via Fidelitatis';
-const DEFAULT_OG = `${SITE}/og-image.png`;
+const DEFAULT_OG = `${SITE}/og-image.jpg`;
 const AUTHOR = 'Dustin Himmerich';
 
 const STATIC = {
