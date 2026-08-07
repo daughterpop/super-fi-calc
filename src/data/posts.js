@@ -20,6 +20,16 @@ const rawPosts = [
     featured: true
   },
   {
+    title: 'Triple Savings on Online Purchases',
+    date: 'August 7, 2026',
+    dateSort: '2026-08-07',
+    excerpt: 'Stack credit-card rewards, cashback portals, and checkout offers so everyday shopping funds the FI path — without debt and without turning thrift into a second full-time job.',
+    readTime: '7 min read',
+    link: '/blog/triple-savings-online-purchases',
+    tags: ['Stewardship', 'Tools'],
+    featured: true
+  },
+  {
     title: 'Build Margin to Trust Providence: Lessons from St. Cajetan',
     date: 'August 7, 2026',
     dateSort: '2026-08-07',
