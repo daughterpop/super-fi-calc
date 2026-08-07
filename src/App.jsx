@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import SubscribeForm from './components/SubscribeForm';
 import SiteHeader from './components/SiteHeader';
+import SiteFooter from './components/SiteFooter';
 import ReferralCard from './components/ReferralCard';
 import MiniCalculatorCard from './components/MiniCalculatorCard';
 import { allPosts } from './data/posts';
@@ -168,6 +169,7 @@ function App() {
       <div className="px-4 sm:px-6 pb-10">
         <SubscribeForm />
       </div>
+      <SiteFooter />
     </div>
   );
 }
