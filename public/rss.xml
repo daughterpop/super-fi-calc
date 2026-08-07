@@ -1,1 +1,68 @@
-PLACEHOLDER_RSS
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Via Fidelitatis — Faithful FI for Catholic Families</title>
+    <link>https://www.viafidelitatis.com/</link>
+    <description>Practical financial independence tools and faith-filled stewardship insights for Catholic families. FI calculator, college planning, and generational wealth rooted in fidelity.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://www.viafidelitatis.com/rss.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>How to Get Started on Your FI Path</title>
+      <link>https://www.viafidelitatis.com/blog/how-to-get-started-on-your-fi-path</link>
+      <guid isPermaLink="true">https://www.viafidelitatis.com/blog/how-to-get-started-on-your-fi-path</guid>
+      <pubDate>Fri, 07 Aug 2026 12:00:00 GMT</pubDate>
+      <description>A simple, faith-aligned starting point for Catholic families: name the goal, get honest numbers, run the calculator once, and pick one lever this month.</description>
+      <category>Stewardship</category>
+      <category>Legacy</category>
+      <category>Couples</category>
+    </item>
+    <item>
+      <title>Why FI for Catholics</title>
+      <link>https://www.viafidelitatis.com/blog/why-fi-for-catholics</link>
+      <guid isPermaLink="true">https://www.viafidelitatis.com/blog/why-fi-for-catholics</guid>
+      <pubDate>Fri, 07 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Financial independence for Catholic families means margin for vocation — Providence and prudence together, tithing in the plan, honest math for large households.</description>
+      <category>Stewardship</category>
+      <category>Prayer</category>
+      <category>Legacy</category>
+    </item>
+    <item>
+      <title>Triple Savings on Online Purchases</title>
+      <link>https://www.viafidelitatis.com/blog/triple-savings-online-purchases</link>
+      <guid isPermaLink="true">https://www.viafidelitatis.com/blog/triple-savings-online-purchases</guid>
+      <pubDate>Fri, 07 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Stack credit-card rewards, cashback portals, and checkout offers so everyday shopping funds the FI path without debt.</description>
+      <category>Stewardship</category>
+      <category>Tools</category>
+    </item>
+    <item>
+      <title>Build Margin to Trust Providence: Lessons from St. Cajetan</title>
+      <link>https://www.viafidelitatis.com/blog/build-margin-to-trust-providence-lessons-from-st-cajetan</link>
+      <guid isPermaLink="true">https://www.viafidelitatis.com/blog/build-margin-to-trust-providence-lessons-from-st-cajetan</guid>
+      <pubDate>Fri, 07 Aug 2026 12:00:00 GMT</pubDate>
+      <description>On the Memorial of St. Cajetan, Catholic families learn that real financial margin is the practical foundation that lets trust in Providence replace anxiety.</description>
+      <category>Stewardship</category>
+      <category>Prayer</category>
+    </item>
+    <item>
+      <title>See the Glory Ahead: Lessons from the Transfiguration</title>
+      <link>https://www.viafidelitatis.com/blog/see-the-glory-ahead-lessons-from-the-transfiguration</link>
+      <guid isPermaLink="true">https://www.viafidelitatis.com/blog/see-the-glory-ahead-lessons-from-the-transfiguration</guid>
+      <pubDate>Thu, 06 Aug 2026 12:00:00 GMT</pubDate>
+      <description>The Transfiguration reminds families that a clear vision of the end — including faithful FI — sustains the hard work of the present.</description>
+      <category>Stewardship</category>
+      <category>Prayer</category>
+    </item>
+    <item>
+      <title>Why FI for Everyone</title>
+      <link>https://www.viafidelitatis.com/blog/why-fi-for-everyone</link>
+      <guid isPermaLink="true">https://www.viafidelitatis.com/blog/why-fi-for-everyone</guid>
+      <pubDate>Sun, 18 May 2026 12:00:00 GMT</pubDate>
+      <description>Financial independence isn’t just for tech bros or high earners — it’s for regular families ready to build margin, faith, and freedom.</description>
+      <category>Stewardship</category>
+      <category>Legacy</category>
+    </item>
+  </channel>
+</rss>
