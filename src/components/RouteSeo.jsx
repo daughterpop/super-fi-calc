@@ -38,6 +38,12 @@ const STATIC = {
       'Join the Via Fidelitatis list for tips, tools, and stewardship ideas for Catholic families on the path to financial independence.',
     type: 'website',
   },
+  '/faq': {
+    title: 'FAQ — Catholic Financial Independence Questions | Via Fidelitatis',
+    description:
+      'Answers for Catholic families on FI, tithing, college, generational wealth, the 4% rule, and trusting Providence while building margin.',
+    type: 'website',
+  },
 };
 
 function absoluteUrl(path) {
@@ -83,6 +89,13 @@ function buildBreadcrumbs(pathname, post) {
       position: 2,
       name: 'Subscribe',
       item: absoluteUrl('/subscribe'),
+    });
+  } else if (pathname === '/faq') {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'FAQ',
+      item: absoluteUrl('/faq'),
     });
   } else if (post) {
     items.push({
@@ -179,7 +192,7 @@ const CALCULATOR_HOWTO = {
   ],
 };
 
-/** FAQPage schema matching the calculator FAQ section. */
+/** FAQPage schema — used on /faq and /calculators. */
 const CALCULATOR_FAQ = {
   '@type': 'FAQPage',
   mainEntity: [
@@ -221,6 +234,46 @@ const CALCULATOR_FAQ = {
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'Absolutely. By modeling large future expenses (college, vehicles, debt payoff) alongside steady investing, you see the true surplus available for both present tithing and long-term family provision. Generational wealth and cheerful giving are not opposites — they reinforce each other when planned together.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is financial independence the same as early retirement or the FIRE movement?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Not exactly. Classic FIRE often aims to stop working as early as possible. Via Fidelitatis treats FI as freedom to live your vocation — more time for Mass, kids, parish, and the work God actually called you to, whether that includes paid work or not. The number is a tool for margin, not an idol of leisure.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How should a large Catholic family think about the 4% rule?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The classic 4% rule is a starting point, not gospel. Larger families often have higher ongoing costs (food, education, vehicles, healthcare) and may prefer a more conservative withdrawal rate or a floor of guaranteed income. The calculator lets you stress-test different spending levels so your plan matches your actual household.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should we prioritize 529 plans, Catholic school tuition, or retirement accounts first?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A common order is: capture any employer match, build a real emergency fund, fund the next few years of known tuition if cash-flow is tight, then balance long-term retirement and education savings. The calculator helps you see the trade-offs in years-to-FI rather than guessing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does pursuing FI conflict with trusting Providence?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Scripture and the saints repeatedly pair wise planning with radical trust. Building margin is one practical way to reduce the anxiety that crowds out prayer and generosity — so you can actually trust more, not less.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where should we start if we feel overwhelmed?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Open the calculator, enter rough numbers, and look at the years-to-FI result. That single number usually clarifies the next concrete step — whether it is cutting one expense, increasing surplus, or simply talking with your spouse. Clarity reduces overwhelm.',
       },
     },
   ],
@@ -390,6 +443,13 @@ export default function RouteSeo() {
         CALCULATOR_HOWTO,
         CALCULATOR_FAQ,
       ];
+      if (breadcrumbs) graph.push(breadcrumbs);
+      jsonLd = {
+        '@context': 'https://schema.org',
+        '@graph': graph,
+      };
+    } else if (pathname === '/faq') {
+      const graph = [CALCULATOR_FAQ];
       if (breadcrumbs) graph.push(breadcrumbs);
       jsonLd = {
         '@context': 'https://schema.org',
