@@ -4,11 +4,11 @@ import { getReferral, ROBINHOOD_URL } from '../data/referrals';
 
 export { ROBINHOOD_URL };
 
+/** Top nav — Subscribe lives in footer + homepage CTAs (keeps mobile row short). */
 const NAV = [
   { to: '/calculators', label: 'Calculators' },
   { to: '/blog', label: 'Blog' },
   { to: '/tools', label: 'Tools' },
-  { to: '/subscribe', label: 'Subscribe' },
 ];
 
 function navActive(pathname, to) {
@@ -18,33 +18,35 @@ function navActive(pathname, to) {
 
 /**
  * Shared sticky nav + optional rotating referral strip.
- * Banner only rotates FI-focused referrals (inBanner: true) — not health/privacy.
+ * Strip only shows on home and /tools (not FAQ, blog, calculators, subscribe).
  * @param {{ showReferralStrip?: boolean }} props
  */
 export default function SiteHeader({ showReferralStrip = true }) {
   const { pathname } = useLocation();
-  // Slot 0 = sitewide header strip; banner pool keeps money/FI offers only
   const referral = getReferral({ slot: 0, pool: 'banner' });
+  const stripAllowed =
+    showReferralStrip && (pathname === '/' || pathname === '/tools');
 
   return (
     <>
       <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-2">
+        <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center gap-3">
           <Link
             to="/"
-            className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight inline-flex items-center gap-2"
+            className="font-bold text-emerald-600 hover:text-emerald-700 shrink-0 leading-tight inline-flex items-center gap-2 min-w-0"
           >
             <img
               src="/logo.svg"
               alt=""
               width={28}
               height={28}
-              className="w-7 h-7 sm:w-8 sm:h-8"
+              className="w-7 h-7 sm:w-8 sm:h-8 shrink-0"
             />
-            <span className="sm:hidden text-sm tracking-tight">Via Fidelitatis</span>
+            {/* Logo mark only on narrow phones; full name from sm up */}
             <span className="hidden sm:inline text-xl lg:text-2xl tracking-tight">Via Fidelitatis</span>
+            <span className="sr-only">Via Fidelitatis home</span>
           </Link>
-          <div className="flex items-center gap-2.5 sm:gap-6 lg:gap-8 text-sm overflow-x-auto">
+          <div className="flex items-center gap-3 sm:gap-6 lg:gap-8 text-sm shrink-0">
             {NAV.map(({ to, label }) => {
               const active = navActive(pathname, to);
               return (
@@ -65,7 +67,7 @@ export default function SiteHeader({ showReferralStrip = true }) {
         </div>
       </nav>
 
-      {showReferralStrip && (
+      {stripAllowed && referral && (
         <div className="bg-emerald-700 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-center sm:text-left">
             <div className="flex items-center gap-2 text-sm sm:text-[15px]">
