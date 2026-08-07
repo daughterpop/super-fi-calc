@@ -15,6 +15,7 @@ import Faq from './pages/Faq.jsx';
 import RouteSeo from './components/RouteSeo.jsx';
 import WhyFIForEveryone from './pages/WhyFIForEveryone.jsx';
 import HowToGetStartedOnYourFiPath from './pages/how-to-get-started-on-your-fi-path.jsx';
+import WhyFiForCatholics from './pages/why-fi-for-catholics.jsx';
 import CatholicFamiliesLeverageAiForPrayerfulFinancialFreedomAndLastingLegacy from './pages/catholic-families-leverage-ai-for-prayerful-financial-freedom-and-lasting-legacy.jsx';
 import CatholicParentsBuildingFiLegacyWithAiAndPrayer from './pages/catholic-parents-building-fi-legacy-with-ai-and-prayer.jsx';
 import CatholicMomsDadsUseAiToBuildDebtFreeFaithFilledFamilyLegacy from './pages/catholic-moms-dads-use-ai-to-build-debt-free-faith-filled-family-legacy.jsx';
@@ -62,6 +63,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
           {/* Blog posts */}
           <Route path="/blog/how-to-get-started-on-your-fi-path" element={<HowToGetStartedOnYourFiPath />} />
+          <Route path="/blog/why-fi-for-catholics" element={<WhyFiForCatholics />} />
           <Route path="/blog/why-fi-for-everyone" element={<WhyFIForEveryone />} />
           <Route path="/blog/catholic-families-leverage-ai-for-prayerful-financial-freedom-and-lasting-legacy" element={<CatholicFamiliesLeverageAiForPrayerfulFinancialFreedomAndLastingLegacy />} />
           <Route path="/blog/catholic-parents-building-fi-legacy-with-ai-and-prayer" element={<CatholicParentsBuildingFiLegacyWithAiAndPrayer />} />
