@@ -3,12 +3,25 @@ import { Link } from 'react-router-dom';
 import { Search, X, Filter } from 'lucide-react';
 import { allPosts, allTags } from '../data/posts';
 import SiteHeader from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
 
 export default function BlogIndex() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTags, setActiveTags] = useState([]);
-  const [sortOrder, setSortOrder] = useState('newest');
+
+  const filteredPosts = useMemo(() => {
+    return allPosts.filter((post) => {
+      const matchesSearch =
+        !searchTerm ||
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (post.tags || []).some((t) => t.toLowerCase().includes(searchTerm.toLowerCase()));
+      const matchesTags =
+        activeTags.length === 0 || activeTags.every((tag) => (post.tags || []).includes(tag));
+      return matchesSearch && matchesTags;
+    });
+  }, [searchTerm, activeTags]);
 
   const toggleTag = (tag) => {
     setActiveTags((prev) =>
@@ -21,190 +34,100 @@ export default function BlogIndex() {
     setActiveTags([]);
   };
 
-  const filteredPosts = useMemo(() => {
-    const seen = new Set();
-    let result = allPosts.filter((post) => {
-      if (seen.has(post.link)) return false;
-      seen.add(post.link);
-
-      const matchesSearch =
-        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (post.excerpt && post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        post.tags.some((t) => t.toLowerCase().includes(searchTerm.toLowerCase()));
-
-      const matchesTags =
-        activeTags.length === 0 ||
-        activeTags.every((tag) => post.tags.includes(tag));
-
-      return matchesSearch && matchesTags;
-    });
-
-    result = [...result].sort((a, b) => {
-      if (sortOrder === 'newest') {
-        return b.dateSort.localeCompare(a.dateSort);
-      }
-      return a.dateSort.localeCompare(b.dateSort);
-    });
-
-    return result;
-  }, [searchTerm, activeTags, sortOrder]);
-
-  const hasActiveFilters = searchTerm || activeTags.length > 0;
-
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <SiteHeader />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <div className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">Blog</h1>
-          <p className="text-gray-600 mt-2 text-base sm:text-lg">
-            Faith-filled insights on financial independence, family stewardship, and building generational legacy.
+      <div className="bg-white border-b">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 text-center">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-semibold tracking-[1.5px] mb-4">
+            FAITH · FAMILY · FINANCIAL INDEPENDENCE
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 leading-tight">
+            From the blog
+          </h1>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Stewardship, margin, and vocation for Catholic families on the path to FI.
           </p>
         </div>
+      </div>
 
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
         <div className="flex flex-col sm:flex-row gap-3 mb-6">
           <div className="relative flex-1">
-            <Search
-              className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
-              size={18}
-            />
+            <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
-              type="text"
-              placeholder="Search posts by title, topic, or tag..."
+              type="search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-base bg-white"
+              placeholder="Search posts…"
+              className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400"
             />
-            {searchTerm && (
-              <button
-                onClick={() => setSearchTerm('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                type="button"
-              >
-                <X size={16} />
-              </button>
-            )}
           </div>
-
-          <div className="flex rounded-xl border border-gray-300 overflow-hidden bg-white shrink-0">
+          {(searchTerm || activeTags.length > 0) && (
             <button
               type="button"
-              onClick={() => setSortOrder('newest')}
-              className={
-                sortOrder === 'newest'
-                  ? 'px-4 py-3 text-sm font-medium transition-colors bg-emerald-600 text-white'
-                  : 'px-4 py-3 text-sm font-medium transition-colors text-gray-600 hover:bg-gray-50'
-              }
+              onClick={clearFilters}
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-600 hover:bg-gray-50"
             >
-              Newest
+              <X size={14} /> Clear
             </button>
-            <button
-              type="button"
-              onClick={() => setSortOrder('oldest')}
-              className={
-                sortOrder === 'oldest'
-                  ? 'px-4 py-3 text-sm font-medium transition-colors bg-emerald-600 text-white'
-                  : 'px-4 py-3 text-sm font-medium transition-colors text-gray-600 hover:bg-gray-50'
-              }
-            >
-              Oldest
-            </button>
-          </div>
+          )}
         </div>
 
-        <div className="mb-8">
-          <div className="flex items-center gap-2 mb-3">
-            <Filter size={16} className="text-gray-500" />
-            <span className="text-sm font-medium text-gray-700">Filter by topic</span>
-            {hasActiveFilters && (
+        <div className="flex flex-wrap gap-2 mb-8">
+          {allTags.map((tag) => {
+            const active = activeTags.includes(tag);
+            return (
               <button
+                key={tag}
                 type="button"
-                onClick={clearFilters}
-                className="ml-auto text-sm text-emerald-600 hover:text-emerald-700 font-medium"
+                onClick={() => toggleTag(tag)}
+                className={
+                  active
+                    ? 'px-3 py-1 rounded-full text-xs font-semibold bg-emerald-600 text-white'
+                    : 'px-3 py-1 rounded-full text-xs font-medium bg-white border border-gray-200 text-gray-600 hover:border-emerald-300'
+                }
               >
-                Clear all
+                {tag}
               </button>
-            )}
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {allTags.map((tag) => {
-              const isActive = activeTags.includes(tag);
-              return (
-                <button
-                  key={tag}
-                  type="button"
-                  onClick={() => toggleTag(tag)}
-                  className={
-                    isActive
-                      ? 'px-3.5 py-1.5 rounded-full text-sm font-medium transition-all border bg-emerald-600 text-white border-emerald-600 shadow-sm'
-                      : 'px-3.5 py-1.5 rounded-full text-sm font-medium transition-all border bg-white text-gray-700 border-gray-200 hover:border-emerald-300 hover:text-emerald-700'
-                  }
-                >
-                  {tag}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        <div className="mb-4 text-sm text-gray-500">
-          {filteredPosts.length} {filteredPosts.length === 1 ? 'post' : 'posts'}
-          {hasActiveFilters && ' matching your filters'}
+            );
+          })}
         </div>
 
         {filteredPosts.length > 0 ? (
-          <div className="space-y-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             {filteredPosts.map((post) => (
-              <article
+              <Link
                 key={post.link}
-                className="bg-white rounded-2xl shadow-sm p-5 sm:p-7 hover:shadow-md transition-shadow border border-gray-100"
+                to={post.link}
+                className="group bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 hover:shadow-md transition-all p-5 flex flex-col"
               >
-                <div className="flex justify-between text-sm text-gray-500 mb-2.5">
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {(post.tags || []).slice(0, 3).map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h2 className="font-semibold text-gray-900 group-hover:text-emerald-700 transition-colors leading-snug mb-2 text-[15px] sm:text-base">
+                  {post.title}
+                </h2>
+                <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 flex-1">{post.excerpt}</p>
+                <div className="mt-3 pt-3 border-t border-gray-50 text-xs text-gray-400 flex justify-between">
                   <span>{post.date}</span>
                   <span>{post.readTime}</span>
                 </div>
-                <h2 className="text-xl sm:text-2xl font-semibold mb-2.5 leading-snug">
-                  <Link to={post.link} className="hover:text-emerald-600 transition-colors">
-                    {post.title}
-                  </Link>
-                </h2>
-                <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">
-                  {post.excerpt}
-                </p>
-
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {post.tags.map((tag) => (
-                    <button
-                      key={tag}
-                      type="button"
-                      onClick={() => toggleTag(tag)}
-                      className={
-                        activeTags.includes(tag)
-                          ? 'text-xs px-2.5 py-1 rounded-full border transition-colors bg-emerald-50 text-emerald-700 border-emerald-200'
-                          : 'text-xs px-2.5 py-1 rounded-full border transition-colors bg-gray-50 text-gray-600 border-gray-100 hover:border-emerald-200'
-                      }
-                    >
-                      {tag}
-                    </button>
-                  ))}
-                </div>
-
-                <Link
-                  to={post.link}
-                  className="text-emerald-600 font-medium hover:underline text-sm inline-flex items-center gap-1"
-                >
-                  Read more →
-                </Link>
-              </article>
+              </Link>
             ))}
           </div>
         ) : (
-          <div className="text-center py-16 bg-white rounded-2xl p-8 border border-gray-100">
-            <p className="text-xl text-gray-500 mb-2">No matching posts found.</p>
-            <p className="text-gray-400 text-sm mb-6">
-              Try different keywords or clear the filters.
-            </p>
+          <div className="text-center py-12">
+            <Filter className="mx-auto text-gray-300 mb-3" size={32} />
+            <p className="text-gray-600 mb-4">No posts match those filters.</p>
             <button
               type="button"
               onClick={clearFilters}
@@ -219,6 +142,7 @@ export default function BlogIndex() {
           <SubscribeForm />
         </div>
       </div>
+      <SiteFooter />
     </div>
   );
 }
