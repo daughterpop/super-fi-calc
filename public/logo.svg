@@ -1,8 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Via Fidelitatis">
-  <!-- Path forming a gentle upward V / way -->
-  <path d="M8 44 C18 44 22 28 32 20 C42 28 46 44 56 44" stroke="#059669" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <!-- Subtle cross at the horizon of the path -->
-  <path d="M32 8 V22 M26 14 H38" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
-  <!-- Small footing / foundation -->
-  <circle cx="32" cy="20" r="2.5" fill="#059669"/>
+  <!-- Path / way rising toward the cross -->
+  <path d="M6 42 C18 42 22 30 32 22 C42 30 46 42 58 42" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Cross at the peak -->
+  <path d="M32 10 V26 M25 16 H39" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
 </svg>
