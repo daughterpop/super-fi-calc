@@ -41,7 +41,7 @@ const STATIC = {
   '/faq': {
     title: 'FAQ — Catholic Financial Independence Questions | Via Fidelitatis',
     description:
-      'Answers for Catholic families on FI, tithing, college, generational wealth, the 4% rule, and trusting Providence while building margin.',
+      'What Via Fidelitatis is, who it is for, and how Catholic families can pursue FI without losing the plot — tithing, Providence, 4% rule, and more.',
     type: 'website',
   },
 };
@@ -192,72 +192,32 @@ const CALCULATOR_HOWTO = {
   ],
 };
 
-/** FAQPage schema — used on /faq and /calculators. */
+/** FAQPage schema — site-wide (used on /faq and /calculators). */
 const CALCULATOR_FAQ = {
   '@type': 'FAQPage',
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'How does this calculator align with Catholic teaching on stewardship and wealth?',
+      name: 'What is Via Fidelitatis?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'It helps you build financial margin not for selfish accumulation, but to live generously, tithe faithfully, educate your children in the faith, and leave a legacy of virtue and provision. The projections include real family costs so your plan protects what matters most — time for prayer, service, and presence.',
+        text: 'Via Fidelitatis means “the way of fidelity.” It is a small set of practical tools and writing for Catholic families who want financial independence so money serves the mission — Mass, kids, generosity, and vocation — instead of the other way around.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Should I factor tithing or charitable giving into my FI number?',
+      name: 'Who is this for?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Yes — many Catholic families treat giving as a non-negotiable 'expense' in their FI planning. This ensures generosity continues even after you stop working for income. The surplus the calculator reveals becomes fuel for parish support, missions, and family hospitality.",
+        text: 'Catholic households (and other Christian families of goodwill) who are juggling real costs — tuition, mortgage, vehicles, tithing — and want clearer numbers without adopting a secular FIRE lifestyle. Large families, dual-income couples, and single-income homes are all welcome.',
       },
     },
     {
       '@type': 'Question',
-      name: "How can I plan for both college savings and my children's faith formation?",
+      name: 'Is financial independence the same as early retirement or FIRE?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Model tuition in the Children section (with realistic inflation). The timeline reveals how disciplined saving creates margin for Catholic education, youth groups, family prayer traditions, and retreats — so faith formation isn't squeezed out by financial pressure.",
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What if the numbers show a long road to FI — have I failed as a faithful steward?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: "Not at all. Faithful stewardship is shown in consistent, prayerful action over time. This tool simply gives you clarity to adjust course, trust Providence more deeply, and celebrate every year of progress. Your legacy is built in the daily 'yes' to wise planning and generous living.",
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can this calculator help us leave a generational inheritance while still living generously today?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Absolutely. By modeling large future expenses (college, vehicles, debt payoff) alongside steady investing, you see the true surplus available for both present tithing and long-term family provision. Generational wealth and cheerful giving are not opposites — they reinforce each other when planned together.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Is financial independence the same as early retirement or the FIRE movement?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Not exactly. Classic FIRE often aims to stop working as early as possible. Via Fidelitatis treats FI as freedom to live your vocation — more time for Mass, kids, parish, and the work God actually called you to, whether that includes paid work or not. The number is a tool for margin, not an idol of leisure.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How should a large Catholic family think about the 4% rule?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'The classic 4% rule is a starting point, not gospel. Larger families often have higher ongoing costs (food, education, vehicles, healthcare) and may prefer a more conservative withdrawal rate or a floor of guaranteed income. The calculator lets you stress-test different spending levels so your plan matches your actual household.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Should we prioritize 529 plans, Catholic school tuition, or retirement accounts first?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A common order is: capture any employer match, build a real emergency fund, fund the next few years of known tuition if cash-flow is tight, then balance long-term retirement and education savings. The calculator helps you see the trade-offs in years-to-FI rather than guessing.',
+        text: 'Not exactly. Classic FIRE often aims to stop working as early as possible. Here, FI means freedom to live your vocation: more margin for prayer, presence, parish, and the work God actually called you to — whether or not that includes paid work. The number is a tool for margin, not an idol of leisure.',
       },
     },
     {
@@ -265,7 +225,47 @@ const CALCULATOR_FAQ = {
       name: 'Does pursuing FI conflict with trusting Providence?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. Scripture and the saints repeatedly pair wise planning with radical trust. Building margin is one practical way to reduce the anxiety that crowds out prayer and generosity — so you can actually trust more, not less.',
+        text: 'No. Scripture and the saints repeatedly pair wise planning with radical trust. Building margin is one practical way to reduce the anxiety that crowds out prayer and generosity — so you can trust more, not less.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should tithing and charitable giving be part of an FI plan?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Many Catholic families treat giving as a non-negotiable expense, not an afterthought. Planning for it keeps generosity alive after the paycheck stops and turns surplus into fuel for parish, missions, and hospitality.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How should a large Catholic family think about the 4% rule?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Treat 4% as a starting point, not gospel. Larger households often have higher ongoing costs and may prefer a more conservative withdrawal rate or a floor of guaranteed income. Stress-test your real spending, not a single-person spreadsheet.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What should we prioritize: emergency fund, retirement, 529s, or Catholic school tuition?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A common order is: capture any employer match, build a real emergency fund, cover the next few years of known tuition if cash-flow is tight, then balance long-term retirement and education savings. Clarity on years-to-FI usually reveals the right next dollar better than a rigid rule.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What will I find on this site?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A free FI calculator built for family realities, a blog of faith-filled stewardship essays, practical tools and referral perks that free up cash, and this FAQ. Everything is aimed at margin for vocation, not lifestyle inflation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is anything for sale? Are the referral links affiliate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The calculator and articles are free. Some tool recommendations include referral links; if you use them, the site may earn a small commission at no extra cost to you. Those offers are chosen because they can help a household free up cash or simplify money management on the path to FI.',
       },
     },
     {
@@ -273,7 +273,7 @@ const CALCULATOR_FAQ = {
       name: 'Where should we start if we feel overwhelmed?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Open the calculator, enter rough numbers, and look at the years-to-FI result. That single number usually clarifies the next concrete step — whether it is cutting one expense, increasing surplus, or simply talking with your spouse. Clarity reduces overwhelm.',
+        text: 'Start with the calculator and rough numbers — they do not need to be perfect. One clear years-to-FI figure usually makes the next step obvious. Then read a post or two that matches your season of life.',
       },
     },
   ],
