@@ -33,8 +33,8 @@ function App() {
             Freedom to live your vocation
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-3">
-            <span className="font-semibold text-gray-800">Via Fidelitatis</span> — the way of fidelity — helps Catholic families build financial
-            independence so money serves the mission, not the other way around.
+            <span className="font-semibold text-gray-800">Via Fidelitatis</span> — the way of fidelity — helps Catholic
+            families build financial independence so money serves the mission, not the other way around.
           </p>
           <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto leading-relaxed mb-8">
             More margin for Mass, kids, generosity, and the next generation. Start by knowing your number.
@@ -56,6 +56,12 @@ function App() {
               Read the Blog
             </Link>
           </div>
+          <p className="mt-5 text-sm text-gray-500">
+            New here?{' '}
+            <Link to="/faq" className="text-emerald-700 hover:text-emerald-800 font-medium underline-offset-2 hover:underline">
+              Common questions
+            </Link>
+          </p>
         </div>
       </div>
 
@@ -85,7 +91,7 @@ function App() {
             </div>
             <h3 className="font-semibold text-lg text-gray-900 mb-2">Understand</h3>
             <p className="text-gray-600 text-sm leading-relaxed mb-3">
-              Stewardship, tithing with FI, parenting money habits, and building a faith-filled legacy.
+              Faith-filled writing on stewardship, tithing, parenting, and building margin without anxiety.
             </p>
             <span className="text-emerald-600 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">
               Read the blog <ArrowRight size={14} />
