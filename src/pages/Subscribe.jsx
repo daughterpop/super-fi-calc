@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { BookOpen, Calculator, Wrench } from 'lucide-react';
 import SiteHeader from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
 
 export default function Subscribe() {
@@ -53,6 +54,7 @@ export default function Subscribe() {
           </Link>
         </div>
       </div>
+      <SiteFooter />
     </div>
   );
 }
