@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d9488"/>
+      <stop offset="100%" style="stop-color:#047857"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity="0.12" stroke="#fff" stroke-width="2" fill="none">
+    <path d="M600 280 L200 630"/>
+    <path d="M600 280 L400 630"/>
+    <path d="M600 280 L600 630"/>
+    <path d="M600 280 L800 630"/>
+    <path d="M600 280 L1000 630"/>
+  </g>
+  <g transform="translate(600, 200)" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M-80 40 C-40 40 -20 -10 0 -30 C20 -10 40 40 80 40"/>
+    <path d="M0 -70 V-20 M-22 -50 H22"/>
+  </g>
+  <text x="600" y="360" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" fill="#ffffff">Via Fidelitatis</text>
+  <text x="600" y="430" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#ecfdf5">Freedom to live your vocation</text>
+</svg>
