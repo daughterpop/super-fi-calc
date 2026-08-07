@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { BookOpen, Calculator, ChevronDown, Wrench } from 'lucide-react';
 import { useState } from 'react';
 import SiteHeader from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter';
 
 const FAQS = [
   {
@@ -136,6 +137,7 @@ export default function Faq() {
           </Link>
         </div>
       </div>
+      <SiteFooter />
     </div>
   );
 }
