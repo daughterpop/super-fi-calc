@@ -10,6 +10,16 @@ const rawPosts = [
     featured: true
   },
   {
+    title: 'Why FI for Catholics',
+    date: 'August 7, 2026',
+    dateSort: '2026-08-07',
+    excerpt: 'Financial independence for Catholic families means margin for vocation — Providence and prudence together, tithing in the plan, honest math for large households, and freedom for the mission rather than secular FIRE cosplay.',
+    readTime: '6 min read',
+    link: '/blog/why-fi-for-catholics',
+    tags: ['Stewardship', 'Prayer', 'Legacy', 'Tithing'],
+    featured: true
+  },
+  {
     title: 'Build Margin to Trust Providence: Lessons from St. Cajetan',
     date: 'August 7, 2026',
     dateSort: '2026-08-07',
