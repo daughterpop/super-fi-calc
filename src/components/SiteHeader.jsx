@@ -5,7 +5,6 @@ import { getReferral, ROBINHOOD_URL } from '../data/referrals';
 export { ROBINHOOD_URL };
 
 const NAV = [
-  { to: '/', label: 'Home' },
   { to: '/calculators', label: 'Calculators' },
   { to: '/blog', label: 'Blog' },
   { to: '/tools', label: 'Tools' },
