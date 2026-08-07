@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'How to Get Started on Your FI Path',
+    date: 'August 7, 2026',
+    dateSort: '2026-08-07',
+    excerpt: 'A simple, faith-aligned starting point for Catholic families: name the goal, get honest numbers, run the calculator once, and pick one lever this month — without turning money into an idol.',
+    readTime: '6 min read',
+    link: '/blog/how-to-get-started-on-your-fi-path',
+    tags: ['Stewardship', 'Legacy', 'Couples'],
+    featured: true
+  },
+  {
     title: 'Build Margin to Trust Providence: Lessons from St. Cajetan',
     date: 'August 7, 2026',
     dateSort: '2026-08-07',
