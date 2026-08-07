@@ -1,17 +1,35 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Heart, BookOpen, Wrench, Users, TrendingUp } from 'lucide-react';
 import SubscribeForm from '../components/SubscribeForm';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SuperFiCalculator from '../Super-Fi-Calculator.jsx';
+import LoanPaymentCalculator from '../components/LoanPaymentCalculator';
+import BonusValueCalculator from '../components/BonusValueCalculator';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
 import { getReferral } from '../data/referrals';
 
+const TABS = [
+  { id: 'fi', label: 'FI path' },
+  { id: 'loan', label: 'Loan payment' },
+  { id: 'bonus', label: 'Bonus value' },
+];
+
 export default function Calculators() {
-  const [activeTab, setActiveTab] = useState('quick');
-  // Investing pool for the single "put surplus to work" step (no second footer CTA)
+  const [activeTab, setActiveTab] = useState('fi');
   const investStep = getReferral({ slot: 3, pool: 'investing' });
+
+  useEffect(() => {
+    const onTab = (e) => {
+      if (e?.detail && TABS.some((t) => t.id === e.detail)) {
+        setActiveTab(e.detail);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+    window.addEventListener('vf-calc-tab', onTab);
+    return () => window.removeEventListener('vf-calc-tab', onTab);
+  }, []);
 
   const faqs = [
     {
@@ -54,12 +72,12 @@ export default function Calculators() {
       body: "Deepen the why behind the numbers with practical faith + FI writing for Catholic families.",
       links: [
         {
-          to: "/blog/see-the-glory-ahead-lessons-from-the-transfiguration",
-          label: "See the glory ahead"
+          to: "/blog/how-to-get-started-on-your-fi-path",
+          label: "How to get started"
         },
         {
-          to: "/blog/build-on-trust-not-anxiety-lessons-from-our-lady-of-the-snows",
-          label: "Build on trust, not anxiety"
+          to: "/blog/why-fi-for-catholics",
+          label: "Why FI for Catholics"
         }
       ]
     },
@@ -83,53 +101,36 @@ export default function Calculators() {
 
       <div className="bg-white border-b">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 text-center">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">FI Calculators</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Calculators</h1>
           <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
-            Model real family expenses — college, mortgage, vehicles — and see your path to financial independence.
+            FI path for the big picture — plus loan payments and bonus math for everyday decisions that affect surplus.
           </p>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        <div className="flex border-b mb-6 sm:mb-8 bg-white rounded-t-lg overflow-hidden">
-          <button
-            onClick={() => setActiveTab('quick')}
-            className={`flex-1 px-3 sm:px-8 py-3 sm:py-4 font-medium text-sm sm:text-lg transition-colors text-center ${
-              activeTab === 'quick'
-                ? 'border-b-4 border-emerald-600 text-emerald-600'
-                : 'text-gray-500 hover:text-gray-700'
-            }`}
-          >
-            Quick Calculator
-          </button>
-          <button
-            onClick={() => setActiveTab('advanced')}
-            className={`flex-1 px-3 sm:px-8 py-3 sm:py-4 font-medium text-sm sm:text-lg transition-colors text-center ${
-              activeTab === 'advanced'
-                ? 'border-b-4 border-emerald-600 text-emerald-600'
-                : 'text-gray-500 hover:text-gray-700'
-            }`}
-          >
-            Advanced Calculator
-          </button>
+        <div className="flex border-b mb-6 sm:mb-8 bg-white rounded-t-lg overflow-x-auto">
+          {TABS.map((tab) => (
+            <button
+              key={tab.id}
+              type="button"
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex-1 min-w-[7.5rem] px-3 sm:px-6 py-3 sm:py-4 font-medium text-sm sm:text-base transition-colors text-center whitespace-nowrap ${
+                activeTab === tab.id
+                  ? 'border-b-4 border-emerald-600 text-emerald-600'
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
 
-        {activeTab === 'quick' ? (
-          <SuperFiCalculator />
-        ) : (
-          <div className="bg-white rounded-xl shadow-sm p-6 sm:p-12 text-center">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-4">Advanced FI Calculator</h2>
-            <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
-              Coming soon — more detailed scenario modeling, Monte Carlo, and tax-aware projections.
-            </p>
-            <p className="text-sm text-gray-500">
-              For now, the Quick Calculator covers mortgage, college, vehicles, and large expenses with full projections.
-            </p>
-          </div>
-        )}
+        {activeTab === 'fi' && <SuperFiCalculator />}
+        {activeTab === 'loan' && <LoanPaymentCalculator />}
+        {activeTab === 'bonus' && <BonusValueCalculator />}
       </div>
 
-      {/* Next Faithful Steps — page-level path for everyone (also mirrored compactly after results) */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold tracking-[1.5px] mb-4">
