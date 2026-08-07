@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin to Trust Providence: Lessons from St. Cajetan',
+    date: 'August 7, 2026',
+    dateSort: '2026-08-07',
+    excerpt: 'On the Memorial of St. Cajetan, Catholic families learn that real financial margin is the practical foundation that lets trust in Providence replace anxiety — turning financial independence into everyday freedom to serve.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-to-trust-providence-lessons-from-st-cajetan',
+    tags: ['Stewardship', 'Seasonal', 'Prayer', 'Legacy'],
+    featured: false
+  },
+  {
     title: 'See the Glory Ahead: Lessons from the Transfiguration',
     date: 'August 6, 2026',
     dateSort: '2026-08-06',
