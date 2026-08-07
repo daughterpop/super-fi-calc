@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useMemo, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ExternalLink, Heart, BookOpen, Wrench, Users, TrendingUp } from 'lucide-react';
 import SubscribeForm from '../components/SubscribeForm';
 import SiteHeader from '../components/SiteHeader';
@@ -73,19 +73,45 @@ const NUDGE_BY_ID = {
 const HAS_INTERNAL_NUDGE = new Set(['debt', 'refi', 'tithe', 'emergency', 'compound', 'rentbuy', 'match']);
 
 export default function Calculators() {
-  const [activeId, setActiveId] = useState('fi');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const validIds = useMemo(() => {
+    const ids = new Set();
+    CALCULATOR_CATALOG.forEach((g) => g.items.forEach((i) => ids.add(i.id)));
+    return ids;
+  }, []);
+
+  const toolFromUrl = searchParams.get('tool');
+  const initial = toolFromUrl && validIds.has(toolFromUrl) ? toolFromUrl : 'fi';
+  const [activeId, setActiveId] = useState(initial);
   const investStep = getReferral({ slot: 3, pool: 'investing' });
+
+  const selectTool = (id) => {
+    if (!validIds.has(id)) return;
+    setActiveId(id);
+    if (id === 'fi') {
+      setSearchParams({}, { replace: true });
+    } else {
+      setSearchParams({ tool: id }, { replace: true });
+    }
+  };
+
+  useEffect(() => {
+    const t = searchParams.get('tool');
+    if (t && validIds.has(t) && t !== activeId) {
+      setActiveId(t);
+    }
+  }, [searchParams, validIds]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const onTab = (e) => {
-      if (e?.detail) {
-        setActiveId(e.detail);
+      if (e?.detail && validIds.has(e.detail)) {
+        selectTool(e.detail);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
     window.addEventListener('vf-calc-tab', onTab);
     return () => window.removeEventListener('vf-calc-tab', onTab);
-  }, []);
+  }, [validIds]);
 
   const faqs = [
     {
@@ -173,7 +199,7 @@ export default function Calculators() {
                     key={item.id}
                     type="button"
                     onClick={() => {
-                      setActiveId(item.id);
+                      selectTool(item.id);
                       document.getElementById('calc-active')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
                     className={`text-left rounded-xl border px-4 py-3 transition ${
