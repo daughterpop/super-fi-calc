@@ -110,7 +110,7 @@ function buildBreadcrumbs(pathname, post) {
 /** HowTo schema describing the FI calculator flow. */
 const CALCULATOR_HOWTO = {
   '@type': 'HowTo',
-  name: 'How to Calculate Your Family\'s Path to Financial Independence',
+  name: "How to Calculate Your Family's Path to Financial Independence",
   description:
     'Use the free Via Fidelitatis FI calculator to model college, mortgage, vehicles, and real household expenses — including tithing — and see years to financial independence for Catholic families.',
   image: DEFAULT_OG,
@@ -163,9 +163,56 @@ const CALCULATOR_HOWTO = {
   ],
 };
 
+/** FAQPage schema matching the calculator FAQ section. */
+const CALCULATOR_FAQ = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How does this calculator align with Catholic teaching on stewardship and wealth?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It helps you build financial margin not for selfish accumulation, but to live generously, tithe faithfully, educate your children in the faith, and leave a legacy of virtue and provision. The projections include real family costs so your plan protects what matters most — time for prayer, service, and presence.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should I factor tithing or charitable giving into my FI number?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Yes — many Catholic families treat giving as a non-negotiable 'expense' in their FI planning. This ensures generosity continues even after you stop working for income. The surplus the calculator reveals becomes fuel for parish support, missions, and family hospitality.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How can I plan for both college savings and my children\'s faith formation?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Model tuition in the Children section (with realistic inflation). The timeline reveals how disciplined saving creates margin for Catholic education, youth groups, family prayer traditions, and retreats — so faith formation isn\'t squeezed out by financial pressure.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if the numbers show a long road to FI — have I failed as a faithful steward?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Not at all. Faithful stewardship is shown in consistent, prayerful action over time. This tool simply gives you clarity to adjust course, trust Providence more deeply, and celebrate every year of progress. Your legacy is built in the daily 'yes' to wise planning and generous living.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can this calculator help us leave a generational inheritance while still living generously today?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Absolutely. By modeling large future expenses (college, vehicles, debt payoff) alongside steady investing, you see the true surplus available for both present tithing and long-term family provision. Generational wealth and cheerful giving are not opposites — they reinforce each other when planned together.',
+      },
+    },
+  ],
+};
+
 /**
  * Single route-level SEO layer: unique title/description/canonical + JSON-LD
- * for Organization, WebSite, Blog, Article, HowTo, and BreadcrumbList.
+ * for Organization, WebSite, Blog, Article, HowTo, FAQPage, and BreadcrumbList.
  */
 export default function RouteSeo() {
   const { pathname } = useLocation();
@@ -320,6 +367,7 @@ export default function RouteSeo() {
           },
         },
         CALCULATOR_HOWTO,
+        CALCULATOR_FAQ,
       ];
       if (breadcrumbs) graph.push(breadcrumbs);
       jsonLd = {
