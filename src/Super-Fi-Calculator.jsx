@@ -290,21 +290,21 @@ export default function SuperFiCalculator() {
             <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700 mb-3">What now?</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <Link
+                to="/blog/see-the-glory-ahead-lessons-from-the-transfiguration"
+                className="flex items-start gap-2.5 p-3 rounded-xl bg-gray-50 hover:bg-emerald-50 border border-transparent hover:border-emerald-100 transition-colors group"
+              >
+                <BookOpen className="text-emerald-600 shrink-0 mt-0.5" size={18} />
+                <span className="text-sm text-gray-700 group-hover:text-emerald-800 leading-snug">
+                  Read: See the glory ahead
+                </span>
+              </Link>
+              <Link
                 to="/blog/build-on-trust-not-anxiety-lessons-from-our-lady-of-the-snows"
                 className="flex items-start gap-2.5 p-3 rounded-xl bg-gray-50 hover:bg-emerald-50 border border-transparent hover:border-emerald-100 transition-colors group"
               >
                 <BookOpen className="text-emerald-600 shrink-0 mt-0.5" size={18} />
                 <span className="text-sm text-gray-700 group-hover:text-emerald-800 leading-snug">
                   Read: Build on trust, not anxiety
-                </span>
-              </Link>
-              <Link
-                to="/blog/simplicity-creates-real-margin-lessons-from-st-john-vianney"
-                className="flex items-start gap-2.5 p-3 rounded-xl bg-gray-50 hover:bg-emerald-50 border border-transparent hover:border-emerald-100 transition-colors group"
-              >
-                <BookOpen className="text-emerald-600 shrink-0 mt-0.5" size={18} />
-                <span className="text-sm text-gray-700 group-hover:text-emerald-800 leading-snug">
-                  Read: Simplicity creates real margin
                 </span>
               </Link>
               <Link
