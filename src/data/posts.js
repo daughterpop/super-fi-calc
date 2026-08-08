@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin Through Gospel Poverty: Lessons from St. Dominic',
+    date: 'August 8, 2026',
+    dateSort: '2026-08-08',
+    excerpt: 'On the Memorial of St. Dominic, Catholic families learn that embracing Gospel poverty — owning less and clinging less — creates the practical margin that turns financial independence into everyday freedom and joy.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-through-gospel-poverty-lessons-from-st-dominic',
+    tags: ['Stewardship', 'Seasonal', 'Prayer', 'Legacy'],
+    featured: false
+  },
+  {
     title: 'How to Get Started on Your FI Path',
     date: 'August 7, 2026',
     dateSort: '2026-08-07',

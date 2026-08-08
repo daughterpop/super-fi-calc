@@ -46,6 +46,7 @@ import SimplicityCreatesRealMarginLessonsFromStJohnVianney from './pages/simplic
 import BuildOnTrustNotAnxietyLessonsFromOurLadyOfTheSnows from './pages/build-on-trust-not-anxiety-lessons-from-our-lady-of-the-snows.jsx';
 import SeeTheGloryAheadLessonsFromTheTransfiguration from './pages/see-the-glory-ahead-lessons-from-the-transfiguration.jsx';
 import BuildMarginToTrustProvidenceLessonsFromStCajetan from './pages/build-margin-to-trust-providence-lessons-from-st-cajetan.jsx';
+import BuildMarginThroughGospelPovertyLessonsFromStDominic from './pages/build-margin-through-gospel-poverty-lessons-from-st-dominic.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -96,6 +97,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/build-on-trust-not-anxiety-lessons-from-our-lady-of-the-snows" element={<BuildOnTrustNotAnxietyLessonsFromOurLadyOfTheSnows />} />
           <Route path="/blog/see-the-glory-ahead-lessons-from-the-transfiguration" element={<SeeTheGloryAheadLessonsFromTheTransfiguration />} />
           <Route path="/blog/build-margin-to-trust-providence-lessons-from-st-cajetan" element={<BuildMarginToTrustProvidenceLessonsFromStCajetan />} />
+          <Route path="/blog/build-margin-through-gospel-poverty-lessons-from-st-dominic" element={<BuildMarginThroughGospelPovertyLessonsFromStDominic />} />
 
           <Route path="*" element={<App />} />
         </Routes>
