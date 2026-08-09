@@ -250,7 +250,7 @@ export default function Tools() {
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
-      <SiteHeader showReferralStrip={false} />
+      <SiteHeader />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
         <div className="text-center mb-8 sm:mb-10">
