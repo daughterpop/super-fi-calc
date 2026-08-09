@@ -18,14 +18,15 @@ function navActive(pathname, to) {
 
 /**
  * Shared sticky nav + optional rotating referral strip.
- * Strip only shows on home and /tools (not FAQ, blog, calculators, subscribe).
+ * Strip shows on home, /calculators, and /tools (not FAQ, blog, subscribe).
  * @param {{ showReferralStrip?: boolean }} props
  */
 export default function SiteHeader({ showReferralStrip = true }) {
   const { pathname } = useLocation();
   const referral = getReferral({ slot: 0, pool: 'banner' });
   const stripAllowed =
-    showReferralStrip && (pathname === '/' || pathname === '/tools');
+    showReferralStrip &&
+    (pathname === '/' || pathname === '/tools' || pathname === '/calculators');
 
   return (
     <>
