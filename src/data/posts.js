@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin to Carry the Cross: Lessons from St. Edith Stein',
+    date: 'August 9, 2026',
+    dateSort: '2026-08-09',
+    excerpt: 'On the Memorial of St. Teresa Benedicta of the Cross, Catholic families learn that seeking financial truth and building real margin prepares us to carry the ordinary crosses of family life with freedom rather than fear.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-to-carry-the-cross-lessons-from-st-edith-stein',
+    tags: ['Stewardship', 'Seasonal', 'Prayer', 'Legacy'],
+    featured: false
+  },
+  {
     title: 'Build Margin Through Gospel Poverty: Lessons from St. Dominic',
     date: 'August 8, 2026',
     dateSort: '2026-08-08',
