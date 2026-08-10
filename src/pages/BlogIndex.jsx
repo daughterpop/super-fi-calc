@@ -79,7 +79,7 @@ export default function BlogIndex() {
           )}
         </div>
 
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-6">
           {allTags.map((tag) => {
             const active = activeTags.includes(tag);
             return (
@@ -98,6 +98,12 @@ export default function BlogIndex() {
             );
           })}
         </div>
+
+        {listReferral && (
+          <div className="mb-8">
+            <ReferralCard referral={listReferral} />
+          </div>
+        )}
 
         {filteredPosts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -139,12 +145,6 @@ export default function BlogIndex() {
             >
               Clear filters & show all
             </button>
-          </div>
-        )}
-
-        {listReferral && (
-          <div className="mb-8">
-            <ReferralCard referral={listReferral} />
           </div>
         )}
 
