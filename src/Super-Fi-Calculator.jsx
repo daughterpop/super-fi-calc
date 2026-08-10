@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, Check, TrendingUp, Home, GraduationCap, DollarSign, Sparkles, Share2, Heart, BookOpen, Wrench } from 'lucide-react';
-import ReferralPromo from './components/ReferralPromo';
 
 export default function SuperFiCalculator() {
   const [step, setStep] = useState(0);
@@ -319,11 +318,6 @@ export default function SuperFiCalculator() {
             </div>
           </div>
 
-          {/* Rotating investing referral */}
-          <div className="mb-4 sm:mb-6 max-w-2xl">
-            <ReferralPromo slot={5} pool="investing" />
-          </div>
-
           <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100 mb-4 sm:mb-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">FI Milestones</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
@@ -466,8 +460,6 @@ export default function SuperFiCalculator() {
             ))}
           </div>
         </div>
-
-        <ReferralPromo slot={4} pool="investing" />
 
         <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-gray-100 p-5 sm:p-8 md:p-10">
           {step === 0 && (
