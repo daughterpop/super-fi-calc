@@ -5,10 +5,14 @@ import { allPosts, allTags } from '../data/posts';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
+import ReferralCard from '../components/ReferralCard';
+import { getReferral } from '../data/referrals';
 
 export default function BlogIndex() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTags, setActiveTags] = useState([]);
+  // Slot 8 — distinct from post footer (7) and homepage slots
+  const listReferral = getReferral({ slot: 8, pool: 'all' });
 
   const filteredPosts = useMemo(() => {
     return allPosts.filter((post) => {
@@ -135,6 +139,12 @@ export default function BlogIndex() {
             >
               Clear filters & show all
             </button>
+          </div>
+        )}
+
+        {listReferral && (
+          <div className="mb-8">
+            <ReferralCard referral={listReferral} />
           </div>
         )}
 
