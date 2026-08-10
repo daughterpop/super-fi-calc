@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Make Generosity Ordinary: Lessons from St. Lawrence',
+    date: 'August 10, 2026',
+    dateSort: '2026-08-10',
+    excerpt: 'On the Feast of St. Lawrence, Catholic families learn that real financial margin turns generosity from a heroic stretch into an ordinary, joyful part of daily life — treating the poor as the true treasures of the Church.',
+    readTime: '4 min read',
+    link: '/blog/make-generosity-ordinary-lessons-from-st-lawrence',
+    tags: ['Stewardship', 'Seasonal', 'Tithing', 'Legacy'],
+    featured: false
+  },
+  {
     title: 'Build Margin to Carry the Cross: Lessons from St. Edith Stein',
     date: 'August 9, 2026',
     dateSort: '2026-08-09',
