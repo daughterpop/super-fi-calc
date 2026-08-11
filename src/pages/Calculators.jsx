@@ -70,7 +70,7 @@ const NUDGE_BY_ID = {
   bonus: { pool: 'household', slot: 6, hint: 'Compare live card and portal offers on the Tools page.' },
 };
 
-const HAS_INTERNAL_NUDGE = new Set(['debt', 'refi', 'tithe', 'emergency', 'compound', 'rentbuy', 'match']);
+const HAS_INTERNAL_NUDGE = new Set(['fi', 'debt', 'refi', 'tithe', 'emergency', 'compound', 'rentbuy', 'match']);
 
 export default function Calculators() {
   const [searchParams, setSearchParams] = useSearchParams();
