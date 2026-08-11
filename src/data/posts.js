@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Live Light Like St. Clare: Lessons for Family Freedom',
+    date: 'August 11, 2026',
+    dateSort: '2026-08-11',
+    excerpt: 'On the Memorial of St. Clare of Assisi, Catholic families learn that deliberately living light — fewer possessions, less lifestyle pressure — creates the practical margin that turns financial independence into everyday freedom for mission and family.',
+    readTime: '4 min read',
+    link: '/blog/live-light-like-st-clare-lessons-for-family-freedom',
+    tags: ['Stewardship', 'Seasonal', 'Prayer', 'Legacy'],
+    featured: false
+  },
+  {
     title: 'Make Generosity Ordinary: Lessons from St. Lawrence',
     date: 'August 10, 2026',
     dateSort: '2026-08-10',

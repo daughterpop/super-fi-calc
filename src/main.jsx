@@ -49,6 +49,7 @@ import BuildMarginToTrustProvidenceLessonsFromStCajetan from './pages/build-marg
 import BuildMarginThroughGospelPovertyLessonsFromStDominic from './pages/build-margin-through-gospel-poverty-lessons-from-st-dominic.jsx';
 import BuildMarginToCarryTheCrossLessonsFromStEdithStein from './pages/build-margin-to-carry-the-cross-lessons-from-st-edith-stein.jsx';
 import MakeGenerosityOrdinaryLessonsFromStLawrence from './pages/make-generosity-ordinary-lessons-from-st-lawrence.jsx';
+import LiveLightLikeStClareLessonsForFamilyFreedom from './pages/live-light-like-st-clare-lessons-for-family-freedom.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -102,6 +103,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/build-margin-through-gospel-poverty-lessons-from-st-dominic" element={<BuildMarginThroughGospelPovertyLessonsFromStDominic />} />
           <Route path="/blog/build-margin-to-carry-the-cross-lessons-from-st-edith-stein" element={<BuildMarginToCarryTheCrossLessonsFromStEdithStein />} />
           <Route path="/blog/make-generosity-ordinary-lessons-from-st-lawrence" element={<MakeGenerosityOrdinaryLessonsFromStLawrence />} />
+          <Route path="/blog/live-light-like-st-clare-lessons-for-family-freedom" element={<LiveLightLikeStClareLessonsForFamilyFreedom />} />
 
           <Route path="*" element={<App />} />
         </Routes>
