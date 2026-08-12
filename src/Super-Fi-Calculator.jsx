@@ -1,8 +1,9 @@
-import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useMemo, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, Check, TrendingUp, Home, GraduationCap, DollarSign, Sparkles, Share2, Heart, BookOpen, Wrench } from 'lucide-react';
 
 export default function SuperFiCalculator() {
+  const [searchParams] = useSearchParams();
   const [step, setStep] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [email, setEmail] = useState('');
@@ -37,6 +38,19 @@ export default function SuperFiCalculator() {
 
   const [hasOtherExpenses, setHasOtherExpenses] = useState(false);
   const [otherExpenses, setOtherExpenses] = useState([]);
+
+  // Prefill from homepage MiniCalculatorCard (?assets= & ?surplus= monthly)
+  useEffect(() => {
+    const assetsParam = searchParams.get('assets');
+    const surplusParam = searchParams.get('surplus');
+    if (assetsParam != null && assetsParam !== '' && !Number.isNaN(Number(assetsParam))) {
+      setCurrentSavings(Number(assetsParam));
+    }
+    if (surplusParam != null && surplusParam !== '' && !Number.isNaN(Number(surplusParam))) {
+      // Mini card collects monthly surplus; this form uses annual savings
+      setAnnualSavings(Math.round(Number(surplusParam) * 12));
+    }
+  }, [searchParams]);
 
   const updateVehicle = (index, field, value) => {
     const newVehicles = [...vehicles];
@@ -474,6 +488,7 @@ export default function SuperFiCalculator() {
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
                   <input
                     type="number"
+                    inputMode="decimal"
                     value={annualExpenses}
                     onChange={(e) => setAnnualExpenses(parseFloat(e.target.value) || 0)}
                     className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
@@ -487,6 +502,7 @@ export default function SuperFiCalculator() {
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Your Age</label>
                   <input
                     type="number"
+                    inputMode="numeric"
                     value={currentAge}
                     onChange={(e) => setCurrentAge(parseInt(e.target.value) || 0)}
                     className="w-full px-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
@@ -498,6 +514,7 @@ export default function SuperFiCalculator() {
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
                     <input
                       type="number"
+                      inputMode="decimal"
                       value={currentSavings}
                       onChange={(e) => setCurrentSavings(parseFloat(e.target.value) || 0)}
                       className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none"
@@ -512,6 +529,7 @@ export default function SuperFiCalculator() {
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
                   <input
                     type="number"
+                    inputMode="decimal"
                     value={annualSavings}
                     onChange={(e) => setAnnualSavings(parseFloat(e.target.value) || 0)}
                     className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
@@ -528,6 +546,7 @@ export default function SuperFiCalculator() {
                   <div className="relative">
                     <input
                       type="number"
+                      inputMode="decimal"
                       step="0.1"
                       value={rateOfReturn}
                       onChange={(e) => setRateOfReturn(parseFloat(e.target.value) || 0)}
@@ -542,6 +561,7 @@ export default function SuperFiCalculator() {
                   <div className="relative">
                     <input
                       type="number"
+                      inputMode="decimal"
                       step="0.1"
                       value={inflationRate}
                       onChange={(e) => setInflationRate(parseFloat(e.target.value) || 0)}
@@ -577,6 +597,7 @@ export default function SuperFiCalculator() {
                       <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
                       <input
                         type="number"
+                        inputMode="decimal"
                         value={mortgageBalance}
                         onChange={(e) => setMortgageBalance(parseFloat(e.target.value) || 0)}
                         className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
@@ -590,6 +611,7 @@ export default function SuperFiCalculator() {
                       <div className="relative">
                         <input
                           type="number"
+                          inputMode="decimal"
                           step="0.01"
                           value={mortgageRate}
                           onChange={(e) => setMortgageRate(parseFloat(e.target.value) || 0)}
@@ -605,6 +627,7 @@ export default function SuperFiCalculator() {
                         <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
                         <input
                           type="number"
+                          inputMode="decimal"
                           value={monthlyPayment}
                           onChange={(e) => setMonthlyPayment(parseFloat(e.target.value) || 0)}
                           className="w-full pl-8 pr-4 py-3 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
@@ -662,6 +685,7 @@ export default function SuperFiCalculator() {
                           <label className="block text-xs font-medium text-gray-600 mb-1">Age</label>
                           <input
                             type="number"
+                            inputMode="numeric"
                             value={kid.age}
                             onChange={(e) => updateKid(idx, 'age', parseInt(e.target.value) || 0)}
                             className="w-full px-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-emerald-500 focus:outline-none"
@@ -673,6 +697,7 @@ export default function SuperFiCalculator() {
                             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
                             <input
                               type="number"
+                              inputMode="decimal"
                               value={kid.annualTuition}
                               onChange={(e) => updateKid(idx, 'annualTuition', parseFloat(e.target.value) || 0)}
                               className="w-full pl-7 pr-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-emerald-500 focus:outline-none"
@@ -738,6 +763,7 @@ export default function SuperFiCalculator() {
                             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
                             <input
                               type="number"
+                              inputMode="decimal"
                               value={vehicle.amount}
                               onChange={(e) => updateVehicle(idx, 'amount', parseFloat(e.target.value) || 0)}
                               className="w-full pl-7 pr-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-emerald-500 focus:outline-none"
@@ -748,6 +774,7 @@ export default function SuperFiCalculator() {
                           <label className="block text-xs font-medium text-gray-600 mb-1">Year</label>
                           <input
                             type="number"
+                            inputMode="numeric"
                             value={vehicle.year}
                             onChange={(e) => updateVehicle(idx, 'year', parseInt(e.target.value) || 0)}
                             className="w-full px-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-emerald-500 focus:outline-none"
@@ -806,6 +833,7 @@ export default function SuperFiCalculator() {
                             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
                             <input
                               type="number"
+                              inputMode="decimal"
                               value={expense.amount}
                               onChange={(e) => updateOtherExpense(idx, 'amount', parseFloat(e.target.value) || 0)}
                               className="w-full pl-7 pr-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-emerald-500 focus:outline-none"
@@ -816,6 +844,7 @@ export default function SuperFiCalculator() {
                           <label className="block text-xs font-medium text-gray-600 mb-1">Year</label>
                           <input
                             type="number"
+                            inputMode="numeric"
                             value={expense.year}
                             onChange={(e) => updateOtherExpense(idx, 'year', parseInt(e.target.value) || 0)}
                             className="w-full px-3 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg focus:border-emerald-500 focus:outline-none"
