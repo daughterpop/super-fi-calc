@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin That Guards Your Peace: Lessons from St. Jane Frances de Chantal',
+    date: 'August 12, 2026',
+    dateSort: '2026-08-12',
+    excerpt: 'On the Memorial of St. Jane Frances de Chantal, Catholic families learn that building real financial margin is the practical way to protect inward peace — so money anxiety never crowds out charity, family, or prayer.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-that-guards-your-peace-lessons-from-st-jane-frances-de-chantal',
+    tags: ['Stewardship', 'Seasonal', 'Prayer', 'Legacy'],
+    featured: false
+  },
+  {
     title: 'Live Light Like St. Clare: Lessons for Family Freedom',
     date: 'August 11, 2026',
     dateSort: '2026-08-11',
