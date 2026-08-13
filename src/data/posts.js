@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Fidelity in Lean Seasons: Lessons from Sts. Pontian and Hippolytus',
+    date: 'August 13, 2026',
+    dateSort: '2026-08-13',
+    excerpt: 'On the Memorial of Saints Pontian and Hippolytus, Catholic families learn that real fidelity — staying the course when money pressure rises — is what turns a financial independence plan into lasting freedom rather than a fair-weather intention.',
+    readTime: '4 min read',
+    link: '/blog/fidelity-in-lean-seasons-lessons-from-sts-pontian-and-hippolytus',
+    tags: ['Stewardship', 'Seasonal', 'Prayer', 'Legacy'],
+    featured: false
+  },
+  {
     title: 'Build Margin That Guards Your Peace: Lessons from St. Jane Frances de Chantal',
     date: 'August 12, 2026',
     dateSort: '2026-08-12',
