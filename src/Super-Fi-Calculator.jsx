@@ -6,7 +6,6 @@ export default function SuperFiCalculator() {
   const [searchParams] = useSearchParams();
   const [step, setStep] = useState(0);
   const [showResults, setShowResults] = useState(false);
-  const [email, setEmail] = useState('');
 
   // Form data
   const [annualExpenses, setAnnualExpenses] = useState(90000);
@@ -219,11 +218,7 @@ export default function SuperFiCalculator() {
     if (step < steps.length - 1) {
       setStep(step + 1);
     } else {
-      if (email.includes('@')) {
-        setShowResults(true);
-      } else {
-        alert('Please enter a valid email to see results');
-      }
+      setShowResults(true);
     }
   };
 
@@ -303,21 +298,21 @@ export default function SuperFiCalculator() {
             <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700 mb-3">What now?</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <Link
-                to="/blog/see-the-glory-ahead-lessons-from-the-transfiguration"
+                to="/blog/how-to-get-started-on-your-fi-path"
                 className="flex items-start gap-2.5 p-3 rounded-xl bg-gray-50 hover:bg-emerald-50 border border-transparent hover:border-emerald-100 transition-colors group"
               >
                 <BookOpen className="text-emerald-600 shrink-0 mt-0.5" size={18} />
                 <span className="text-sm text-gray-700 group-hover:text-emerald-800 leading-snug">
-                  Read: See the glory ahead
+                  Read: How to get started
                 </span>
               </Link>
               <Link
-                to="/blog/build-on-trust-not-anxiety-lessons-from-our-lady-of-the-snows"
+                to="/blog/why-fi-for-catholics"
                 className="flex items-start gap-2.5 p-3 rounded-xl bg-gray-50 hover:bg-emerald-50 border border-transparent hover:border-emerald-100 transition-colors group"
               >
                 <BookOpen className="text-emerald-600 shrink-0 mt-0.5" size={18} />
                 <span className="text-sm text-gray-700 group-hover:text-emerald-800 leading-snug">
-                  Read: Build on trust, not anxiety
+                  Read: Why FI for Catholics
                 </span>
               </Link>
               <Link
@@ -870,31 +865,13 @@ export default function SuperFiCalculator() {
             )}
 
             {step === steps.length - 1 ? (
-              <div className="flex-1 space-y-3 w-full">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email address to see your results
-                  </label>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="your@email.com"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none transition-colors"
-                  />
-                </div>
-                <button
-                  onClick={nextStep}
-                  disabled={!email.includes('@')}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  See Your Results
-                  <ArrowRight size={20} />
-                </button>
-                <p className="text-xs text-gray-500 text-center">
-                  We'll never spam you. Results will be shown instantly.
-                </p>
-              </div>
+              <button
+                onClick={nextStep}
+                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all shadow-lg hover:shadow-xl w-full"
+              >
+                See Your Results
+                <ArrowRight size={20} />
+              </button>
             ) : (
               <button
                 onClick={nextStep}
