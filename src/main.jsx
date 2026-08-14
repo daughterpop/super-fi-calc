@@ -27,6 +27,16 @@ import AutomateInvestingAndCashWithWealthfrontForCatholicFamilies from './pages/
 import SeeEveryDollarWithMonarchMoneyForCatholicHouseholds from './pages/see-every-dollar-with-monarch-money-for-catholic-households.jsx';
 import BuildGenerosityIntoYourFiPlanWithDaffy from './pages/build-generosity-into-your-fi-plan-with-daffy.jsx';
 import StretchTheGroceryBudgetWithThriveMarketForCatholicFi from './pages/stretch-the-grocery-budget-with-thrive-market-for-catholic-fi.jsx';
+import CutThePhoneBillWithMintMobileForCatholicFi from './pages/cut-the-phone-bill-with-mint-mobile-for-catholic-fi.jsx';
+import SellClutterAndBuyUsedWithMercariForCatholicFi from './pages/sell-clutter-and-buy-used-with-mercari-for-catholic-fi.jsx';
+import SideIncomeFromASpareSpaceWithAirbnbHosting from './pages/side-income-from-a-spare-space-with-airbnb-hosting.jsx';
+import SmarterHotelBookingWithGondolaForFamilyTravel from './pages/smarter-hotel-booking-with-gondola-for-family-travel.jsx';
+import MarriottBonvoyTravelRewardsForCatholicFamilies from './pages/marriott-bonvoy-travel-rewards-for-catholic-families.jsx';
+import EventContractsOnKalshiCuriosityWithGuardrails from './pages/event-contracts-on-kalshi-curiosity-with-guardrails.jsx';
+import TrackRecoveryWithOuraRingForFamilyHealthAndFi from './pages/track-recovery-with-oura-ring-for-family-health-and-fi.jsx';
+import SwimMetricsInThePoolWithFormGoggles from './pages/swim-metrics-in-the-pool-with-form-goggles.jsx';
+import AiTriathlonCoachingWithTransitionForBusyParents from './pages/ai-triathlon-coaching-with-transition-for-busy-parents.jsx';
+import PrivateMailAndVpnWithProtonForCatholicFamilies from './pages/private-mail-and-vpn-with-proton-for-catholic-families.jsx';
 import CatholicFamiliesLeverageAiForPrayerfulFinancialFreedomAndLastingLegacy from './pages/catholic-families-leverage-ai-for-prayerful-financial-freedom-and-lasting-legacy.jsx';
 import CatholicParentsBuildingFiLegacyWithAiAndPrayer from './pages/catholic-parents-building-fi-legacy-with-ai-and-prayer.jsx';
 import CatholicMomsDadsUseAiToBuildDebtFreeFaithFilledFamilyLegacy from './pages/catholic-moms-dads-use-ai-to-build-debt-free-faith-filled-family-legacy.jsx';
@@ -79,7 +89,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/subscribe" element={<Subscribe />} />
           <Route path="/faq" element={<Faq />} />
 
-          {/* Blog posts — pillars first */}
           <Route path="/blog/how-to-get-started-on-your-fi-path" element={<HowToGetStartedOnYourFiPath />} />
           <Route path="/blog/why-fi-for-catholics" element={<WhyFiForCatholics />} />
           <Route path="/blog/build-margin-for-catholic-families" element={<BuildMarginForCatholicFamilies />} />
@@ -92,6 +101,16 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/see-every-dollar-with-monarch-money-for-catholic-households" element={<SeeEveryDollarWithMonarchMoneyForCatholicHouseholds />} />
           <Route path="/blog/build-generosity-into-your-fi-plan-with-daffy" element={<BuildGenerosityIntoYourFiPlanWithDaffy />} />
           <Route path="/blog/stretch-the-grocery-budget-with-thrive-market-for-catholic-fi" element={<StretchTheGroceryBudgetWithThriveMarketForCatholicFi />} />
+          <Route path="/blog/cut-the-phone-bill-with-mint-mobile-for-catholic-fi" element={<CutThePhoneBillWithMintMobileForCatholicFi />} />
+          <Route path="/blog/sell-clutter-and-buy-used-with-mercari-for-catholic-fi" element={<SellClutterAndBuyUsedWithMercariForCatholicFi />} />
+          <Route path="/blog/side-income-from-a-spare-space-with-airbnb-hosting" element={<SideIncomeFromASpareSpaceWithAirbnbHosting />} />
+          <Route path="/blog/smarter-hotel-booking-with-gondola-for-family-travel" element={<SmarterHotelBookingWithGondolaForFamilyTravel />} />
+          <Route path="/blog/marriott-bonvoy-travel-rewards-for-catholic-families" element={<MarriottBonvoyTravelRewardsForCatholicFamilies />} />
+          <Route path="/blog/event-contracts-on-kalshi-curiosity-with-guardrails" element={<EventContractsOnKalshiCuriosityWithGuardrails />} />
+          <Route path="/blog/track-recovery-with-oura-ring-for-family-health-and-fi" element={<TrackRecoveryWithOuraRingForFamilyHealthAndFi />} />
+          <Route path="/blog/swim-metrics-in-the-pool-with-form-goggles" element={<SwimMetricsInThePoolWithFormGoggles />} />
+          <Route path="/blog/ai-triathlon-coaching-with-transition-for-busy-parents" element={<AiTriathlonCoachingWithTransitionForBusyParents />} />
+          <Route path="/blog/private-mail-and-vpn-with-proton-for-catholic-families" element={<PrivateMailAndVpnWithProtonForCatholicFamilies />} />
           <Route path="/blog/triple-savings-online-purchases" element={<TripleSavingsOnlinePurchases />} />
           <Route path="/blog/why-fi-for-everyone" element={<WhyFIForEveryone />} />
           <Route path="/blog/catholic-families-leverage-ai-for-prayerful-financial-freedom-and-lasting-legacy" element={<CatholicFamiliesLeverageAiForPrayerfulFinancialFreedomAndLastingLegacy />} />
