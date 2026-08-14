@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { getPostByPath, allPosts } from '../data/posts';
+import { ALL_CALCULATORS, CALCULATOR_BY_SLUG } from '../data/calculators';
 
 const SITE = 'https://www.viafidelitatis.com';
 const SITE_NAME = 'Via Fidelitatis';
@@ -51,7 +52,13 @@ function absoluteUrl(path) {
   return `${SITE}${path.startsWith('/') ? path : `/${path}`}`;
 }
 
-function buildBreadcrumbs(pathname, post) {
+function calculatorSlugFromPath(pathname) {
+  if (!pathname.startsWith('/calculators/')) return null;
+  const slug = pathname.slice('/calculators/'.length).replace(/\/$/, '');
+  return slug || null;
+}
+
+function buildBreadcrumbs(pathname, post, calcTool) {
   const items = [
     {
       '@type': 'ListItem',
@@ -61,13 +68,21 @@ function buildBreadcrumbs(pathname, post) {
     },
   ];
 
-  if (pathname === '/calculators') {
+  if (pathname === '/calculators' || calcTool) {
     items.push({
       '@type': 'ListItem',
       position: 2,
       name: 'Calculators',
       item: absoluteUrl('/calculators'),
     });
+    if (calcTool) {
+      items.push({
+        '@type': 'ListItem',
+        position: 3,
+        name: calcTool.label,
+        item: absoluteUrl(`/calculators/${calcTool.slug}`),
+      });
+    }
   } else if (pathname === '/blog') {
     items.push({
       '@type': 'ListItem',
@@ -156,35 +171,35 @@ const CALCULATOR_HOWTO = {
       position: 1,
       name: 'Enter current finances',
       text: 'Input your current investable assets (retirement accounts, taxable investments, cash) and any outstanding debts.',
-      url: `${SITE}/calculators`,
+      url: `${SITE}/calculators/fi-path`,
     },
     {
       '@type': 'HowToStep',
       position: 2,
       name: 'Set annual spending and surplus',
       text: 'Enter your current annual household spending and the monthly surplus available after tithing and essential expenses.',
-      url: `${SITE}/calculators`,
+      url: `${SITE}/calculators/fi-path`,
     },
     {
       '@type': 'HowToStep',
       position: 3,
       name: 'Model major family expenses',
       text: 'Add college costs for each child, remaining mortgage, future vehicle replacements, and other large planned expenses with realistic inflation.',
-      url: `${SITE}/calculators`,
+      url: `${SITE}/calculators/fi-path`,
     },
     {
       '@type': 'HowToStep',
       position: 4,
       name: 'Review your years-to-FI projection',
       text: 'See how many years until your investments can support your family’s lifestyle — including continued generosity and faith formation.',
-      url: `${SITE}/calculators`,
+      url: `${SITE}/calculators/fi-path`,
     },
     {
       '@type': 'HowToStep',
       position: 5,
       name: 'Take the next faithful steps',
       text: 'Adjust inputs with your spouse, put surplus to work through disciplined investing, and protect the margin that frees time for prayer, presence, and service.',
-      url: `${SITE}/calculators`,
+      url: `${SITE}/calculators/fi-path`,
     },
   ],
 };
@@ -294,27 +309,20 @@ const CALCULATOR_FAQ = {
 const CALCULATOR_ITEM_LIST = {
   '@type': 'ItemList',
   name: 'Via Fidelitatis Calculators',
-  numberOfItems: 13,
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'FI path', url: `${SITE}/calculators` },
-    { '@type': 'ListItem', position: 2, name: 'Savings rate & runway', url: `${SITE}/calculators` },
-    { '@type': 'ListItem', position: 3, name: 'Emergency fund target', url: `${SITE}/calculators` },
-    { '@type': 'ListItem', position: 4, name: 'Compound growth', url: `${SITE}/calculators` },
-    { '@type': 'ListItem', position: 5, name: 'Employer match maximizer', url: `${SITE}/calculators` },
-    { '@type': 'ListItem', position: 6, name: 'College / 529 with state tax lookup', url: `${SITE}/calculators` },
-    { '@type': 'ListItem', position: 7, name: 'Vehicle total cost of ownership', url: `${SITE}/calculators` },
-    { '@type': 'ListItem', position: 8, name: 'Rent vs buy', url: `${SITE}/calculators` },
-    { '@type': 'ListItem', position: 9, name: 'Loan payment', url: `${SITE}/calculators` },
-    { '@type': 'ListItem', position: 10, name: 'Debt payoff planner', url: `${SITE}/calculators` },
-    { '@type': 'ListItem', position: 11, name: 'Refinance break-even', url: `${SITE}/calculators` },
-    { '@type': 'ListItem', position: 12, name: 'Tithing & surplus', url: `${SITE}/calculators` },
-    { '@type': 'ListItem', position: 13, name: 'Bonus value', url: `${SITE}/calculators` },
-  ],
+  numberOfItems: ALL_CALCULATORS.length,
+  itemListElement: ALL_CALCULATORS.map((c, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: c.label,
+    url: `${SITE}/calculators/${c.slug}`,
+  })),
 };
 
 export default function RouteSeo() {
   const { pathname } = useLocation();
   const post = getPostByPath(pathname);
+  const calcSlug = calculatorSlugFromPath(pathname);
+  const calcTool = calcSlug ? CALCULATOR_BY_SLUG[calcSlug] : null;
   const staticMeta = STATIC[pathname];
 
   let title;
@@ -323,9 +331,39 @@ export default function RouteSeo() {
   let datePublished;
   let jsonLd = null;
 
-  const breadcrumbs = buildBreadcrumbs(pathname, post);
+  const breadcrumbs = buildBreadcrumbs(pathname, post, calcTool);
 
-  if (post) {
+  if (calcTool) {
+    title = `${calcTool.title} | ${SITE_NAME}`;
+    description = calcTool.description;
+    type = 'website';
+
+    const graph = [
+      {
+        '@type': 'WebApplication',
+        name: calcTool.title,
+        url: absoluteUrl(`/calculators/${calcTool.slug}`),
+        applicationCategory: 'FinanceApplication',
+        operatingSystem: 'Any',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD',
+        },
+        description: calcTool.description,
+        publisher: {
+          '@type': 'Organization',
+          name: SITE_NAME,
+          url: SITE,
+        },
+      },
+    ];
+    if (breadcrumbs) graph.push(breadcrumbs);
+    jsonLd = {
+      '@context': 'https://schema.org',
+      '@graph': graph,
+    };
+  } else if (post) {
     title = `${post.title} | ${SITE_NAME}`;
     description = post.excerpt;
     type = 'article';
@@ -412,7 +450,7 @@ export default function RouteSeo() {
           {
             '@type': 'WebApplication',
             name: `${SITE_NAME} FI Calculator`,
-            url: `${SITE}/calculators`,
+            url: `${SITE}/calculators/fi-path`,
             applicationCategory: 'FinanceApplication',
             operatingSystem: 'Any',
             offers: {
@@ -453,7 +491,7 @@ export default function RouteSeo() {
       const graph = [
         {
           '@type': 'WebApplication',
-          name: `${SITE_NAME} FI Calculator`,
+          name: `${SITE_NAME} Calculator Suite`,
           url: absoluteUrl('/calculators'),
           applicationCategory: 'FinanceApplication',
           operatingSystem: 'Any',
