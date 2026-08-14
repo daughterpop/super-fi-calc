@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   TrendingUp,
@@ -22,32 +22,45 @@ import {
   Camera,
   Percent,
   MapPin,
-  SlidersHorizontal,
   ArrowUpDown,
   Search,
   Smartphone,
   Lock,
   Calendar,
+  X,
 } from 'lucide-react';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import { tools } from '../data/tools';
 
-const CATEGORY_ORDER = [
-  'Investing',
-  'Banking & Payments',
-  'Budgeting',
-  'Shopping & Rewards',
-  'Dining',
-  'Giving',
-  'Faith & Formation',
-  'Wireless Savings',
-  'Privacy & Security',
-  'Health & Training',
-  'Family & Home',
-  'Travel & Hosting',
+/** Coarse groups so mobile filters stay usable (raw tool.category still shown on cards). */
+const GROUP_ORDER = [
+  'Money',
+  'Save',
+  'Give & Faith',
+  'Privacy',
+  'Health',
+  'Home & Travel',
 ];
-const CATEGORIES = ['All', ...CATEGORY_ORDER];
+
+const RAW_TO_GROUP = {
+  Investing: 'Money',
+  'Banking & Payments': 'Money',
+  Budgeting: 'Money',
+  'Shopping & Rewards': 'Save',
+  Dining: 'Save',
+  'Wireless Savings': 'Save',
+  Giving: 'Give & Faith',
+  'Faith & Formation': 'Give & Faith',
+  'Privacy & Security': 'Privacy',
+  'Health & Training': 'Health',
+  'Family & Home': 'Home & Travel',
+  'Travel & Hosting': 'Home & Travel',
+};
+
+function toolGroup(tool) {
+  return RAW_TO_GROUP[tool.category] || 'Money';
+}
 
 function accentClasses(accent) {
   const map = {
@@ -223,14 +236,26 @@ function ToolIcon({ type }) {
 }
 
 export default function Tools() {
-  const [category, setCategory] = useState('All');
+  const [group, setGroup] = useState('All');
   const [sortBy, setSortBy] = useState('default');
   const [search, setSearch] = useState('');
+  const resultsRef = useRef(null);
+  const filtersTouched = useRef(false);
+
+  const groupCounts = useMemo(() => {
+    const counts = { All: tools.length };
+    for (const g of GROUP_ORDER) counts[g] = 0;
+    for (const t of tools) {
+      const g = toolGroup(t);
+      counts[g] = (counts[g] || 0) + 1;
+    }
+    return counts;
+  }, []);
 
   const filteredTools = useMemo(() => {
     const q = search.trim().toLowerCase();
     let list = tools.filter((t) => {
-      if (category !== 'All' && t.category !== category) return false;
+      if (group !== 'All' && toolGroup(t) !== group) return false;
       if (q) {
         const hay = `${t.name} ${t.headline} ${t.badge} ${t.category} ${t.description}`.toLowerCase();
         if (!hay.includes(q)) return false;
@@ -247,14 +272,29 @@ export default function Tools() {
     }
 
     return list;
-  }, [category, sortBy, search]);
+  }, [group, sortBy, search]);
+
+  // After the user changes filters, keep the results near the top of the viewport
+  useEffect(() => {
+    if (!filtersTouched.current) return;
+    const el = resultsRef.current;
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 12;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }, [group, search, sortBy]);
+
+  function markTouched() {
+    filtersTouched.current = true;
+  }
+
+  const hasActiveFilters = group !== 'All' || search.trim() !== '' || sortBy !== 'default';
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <SiteHeader />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
-        <div className="text-center mb-8 sm:mb-10">
+        <div className="text-center mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-semibold tracking-[1.5px] mb-4">
             STEWARDSHIP TOOLS • REFERRAL PERKS
           </div>
@@ -262,60 +302,73 @@ export default function Tools() {
             Tools to Speed Up Your FI Journey
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
-            Hand-picked apps and platforms we actually use. Each card spells out what it is and what you get when you join through these links — you get the perk, and it helps keep Via Fidelitatis free.
+            Hand-picked apps and platforms we actually use. Each card spells out what it is and what you get when you join through these links.
           </p>
         </div>
 
-        <div className="mb-8 space-y-4">
-          <div className="relative">
+        {/* Compact filters — selects instead of a wall of category chips */}
+        <div className="mb-5 sm:mb-6 sticky top-0 z-10 -mx-4 sm:-mx-6 px-4 sm:px-6 py-3 bg-gray-50/95 backdrop-blur-sm border-b border-gray-100/80">
+          <div className="relative mb-2.5">
             <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
               type="search"
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => {
+                markTouched();
+                setSearch(e.target.value);
+              }}
               placeholder="Search tools…"
-              className="w-full pl-9 pr-3 py-2.5 text-sm border border-gray-200 rounded-xl bg-white text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full pl-9 pr-9 py-2.5 text-sm border border-gray-200 rounded-xl bg-white text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
             />
+            {search.trim() && (
+              <button
+                type="button"
+                aria-label="Clear search"
+                onClick={() => {
+                  markTouched();
+                  setSearch('');
+                }}
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 rounded-md text-gray-400 hover:text-gray-600"
+              >
+                <X size={16} />
+              </button>
+            )}
           </div>
 
-          <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
-            <SlidersHorizontal size={16} className="text-emerald-600 shrink-0" />
-            <span>Category</span>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {CATEGORIES.map((cat) => {
-              const active = category === cat;
-              const count =
-                cat === 'All' ? tools.length : tools.filter((t) => t.category === cat).length;
-              return (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => setCategory(cat)}
-                  className={`px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all border ${
-                    active
-                      ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm'
-                      : 'bg-white text-gray-700 border-gray-200 hover:border-emerald-300 hover:text-emerald-700'
-                  }`}
-                >
-                  {cat}
-                  <span className={`ml-1.5 ${active ? 'text-emerald-100' : 'text-gray-400'}`}>{count}</span>
-                </button>
-              );
-            })}
-          </div>
+          <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center sm:gap-3">
+            <label className="sr-only" htmlFor="filter-group">
+              Category
+            </label>
+            <select
+              id="filter-group"
+              value={group}
+              onChange={(e) => {
+                markTouched();
+                setGroup(e.target.value);
+              }}
+              className="w-full sm:w-auto sm:min-w-[11rem] text-sm border border-gray-200 rounded-lg px-3 py-2 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+            >
+              <option value="All">All categories ({groupCounts.All})</option>
+              {GROUP_ORDER.map((g) => (
+                <option key={g} value={g}>
+                  {g} ({groupCounts[g] || 0})
+                </option>
+              ))}
+            </select>
 
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-1">
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <ArrowUpDown size={16} className="text-emerald-600 shrink-0" />
-              <label htmlFor="sort-tools" className="font-medium text-gray-700">
+            <div className="flex items-center gap-2 min-w-0">
+              <ArrowUpDown size={16} className="text-emerald-600 shrink-0 hidden sm:block" />
+              <label className="sr-only" htmlFor="sort-tools">
                 Sort
               </label>
               <select
                 id="sort-tools"
                 value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                onChange={(e) => {
+                  markTouched();
+                  setSortBy(e.target.value);
+                }}
+                className="w-full sm:w-auto text-sm border border-gray-200 rounded-lg px-3 py-2 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               >
                 <option value="default">Default order</option>
                 <option value="value-desc">Highest value first</option>
@@ -323,15 +376,32 @@ export default function Tools() {
                 <option value="name">Name A–Z</option>
               </select>
             </div>
-            <p className="text-xs text-gray-500">
-              Showing {filteredTools.length} of {tools.length}
-              {category !== 'All' ? ` · ${category}` : ''}
+          </div>
+
+          <div className="mt-2 flex items-center justify-between gap-2">
+            <p className="text-xs text-gray-500 truncate">
+              {filteredTools.length} of {tools.length}
+              {group !== 'All' ? ` · ${group}` : ''}
               {search.trim() ? ` · “${search.trim()}”` : ''}
             </p>
+            {hasActiveFilters && (
+              <button
+                type="button"
+                onClick={() => {
+                  markTouched();
+                  setGroup('All');
+                  setSearch('');
+                  setSortBy('default');
+                }}
+                className="text-xs font-medium text-emerald-700 hover:text-emerald-800 shrink-0"
+              >
+                Clear filters
+              </button>
+            )}
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div ref={resultsRef} className="space-y-6">
           {filteredTools.length === 0 ? (
             <div className="bg-white rounded-2xl border border-gray-100 p-8 text-center text-gray-500">
               No tools match these filters. Try clearing search or choosing All.
