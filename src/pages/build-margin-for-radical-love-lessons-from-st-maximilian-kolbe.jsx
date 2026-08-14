@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import BlogPostFooter from '../components/BlogPostFooter';
 
 export default function BuildMarginForRadicalLoveLessonsFromStMaximilianKolbe() {
@@ -22,7 +23,11 @@ export default function BuildMarginForRadicalLoveLessonsFromStMaximilianKolbe() 
         </p>
 
         <p className="mb-6">
-          Most Catholic families will never face that extreme. Yet the same pattern of radical love appears in ordinary life — the willingness to give time, attention, money, and comfort without first calculating the return. St. Maximilian’s life and writings return again and again to one truth: love is proven by the readiness to give everything. The practical foundation that makes such free, joyful giving possible for a household is real financial margin. When every dollar is already claimed by anxiety or lifestyle, generosity becomes a heroic stretch instead of a natural outflow of love.
+          Most Catholic families will never face that extreme. Yet the same pattern of radical love appears in ordinary life — the willingness to give time, attention, money, and comfort without first calculating the return. St. Maximilian’s life and writings return again and again to one truth: love is proven by the readiness to give everything. The practical foundation that makes such free, joyful giving possible for a household is real{' '}
+          <Link to="/blog/build-margin-for-catholic-families" className="text-emerald-700 font-medium hover:underline">
+            financial margin
+          </Link>
+          . When every dollar is already claimed by anxiety or lifestyle, generosity becomes a heroic stretch instead of a natural outflow of love.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
@@ -48,6 +53,17 @@ export default function BuildMarginForRadicalLoveLessonsFromStMaximilianKolbe() 
         </h2>
         <p className="mb-6">
           Once the gap appears, keep it simple. Low-cost index funds can grow quietly in the background while the family stays free of constant money drama. The goal is not accumulation for status. It is the same quiet strength St. Maximilian modeled: a life light enough and stable enough that ordinary ups and downs never extinguish the readiness to give.
+        </p>
+        <p className="mb-6">
+          If you want the fuller picture of how margin fits into a Catholic FI path — and a concrete sequence to start — read{' '}
+          <Link to="/blog/build-margin-for-catholic-families" className="text-emerald-700 font-medium hover:underline">
+            Build Margin for Catholic Families
+          </Link>{' '}
+          and run the{' '}
+          <Link to="/calculators" className="text-emerald-700 font-medium hover:underline">
+            FI calculator
+          </Link>{' '}
+          once with honest numbers.
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">
