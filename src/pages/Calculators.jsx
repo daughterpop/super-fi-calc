@@ -1,117 +1,22 @@
-import { useEffect, useMemo, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, Navigate, useSearchParams } from 'react-router-dom';
 import { ExternalLink, Heart, BookOpen, Wrench, Users, TrendingUp } from 'lucide-react';
 import SubscribeForm from '../components/SubscribeForm';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
-import SuperFiCalculator from '../Super-Fi-Calculator.jsx';
-import LoanPaymentCalculator from '../components/LoanPaymentCalculator';
-import BonusValueCalculator from '../components/BonusValueCalculator';
-import College529Calculator from '../components/College529Calculator';
-import VehicleTcoCalculator from '../components/VehicleTcoCalculator';
-import SavingsRateRunwayCalculator from '../components/SavingsRateRunwayCalculator';
-import DebtPayoffCalculator from '../components/DebtPayoffCalculator';
-import RefinanceBreakEvenCalculator from '../components/RefinanceBreakEvenCalculator';
-import TithingSurplusCalculator from '../components/TithingSurplusCalculator';
-import EmergencyFundCalculator from '../components/EmergencyFundCalculator';
-import CompoundGrowthCalculator from '../components/CompoundGrowthCalculator';
-import RentVsBuyCalculator from '../components/RentVsBuyCalculator';
-import EmployerMatchCalculator from '../components/EmployerMatchCalculator';
-import SoftSellNudge from '../components/calculators/SoftSellNudge';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
+import { CALCULATOR_CATALOG, LEGACY_TOOL_TO_SLUG, pathForCalculator } from '../data/calculators';
 import { getReferral } from '../data/referrals';
 
-export const CALCULATOR_CATALOG = [
-  {
-    category: 'FI planning',
-    description: 'Big-picture numbers: path, rate, reserves, and growth.',
-    items: [
-      { id: 'fi', label: 'FI path', blurb: 'Full family timeline to financial independence' },
-      { id: 'runway', label: 'Savings rate & runway', blurb: 'Surplus % and months of cash coverage' },
-      { id: 'emergency', label: 'Emergency fund', blurb: 'Target reserves and months to fill the gap' },
-      { id: 'compound', label: 'Compound growth', blurb: 'Principal + monthly investing over time' },
-      { id: 'match', label: 'Employer match', blurb: 'Stop leaving free 401(k) match on the table' },
-    ],
-  },
-  {
-    category: 'Family costs',
-    description: 'College, housing, and vehicles for larger households.',
-    items: [
-      { id: 'college', label: 'College / 529', blurb: 'Cost projection + state tax benefit lookup' },
-      { id: 'vehicle', label: 'Vehicle TCO', blurb: 'True cost per year and per mile' },
-      { id: 'rentbuy', label: 'Rent vs buy', blurb: 'Holding-period comparison with equity' },
-    ],
-  },
-  {
-    category: 'Debt & loans',
-    description: 'Payments, payoff order, and refinance math.',
-    items: [
-      { id: 'loan', label: 'Loan payment', blurb: 'Mortgage or auto payment + extra principal' },
-      { id: 'debt', label: 'Debt payoff', blurb: 'Snowball vs avalanche with extra payments' },
-      { id: 'refi', label: 'Refinance break-even', blurb: 'Months to recover closing costs' },
-    ],
-  },
-  {
-    category: 'Cash flow & rewards',
-    description: 'Giving first, then bonuses that actually help.',
-    items: [
-      { id: 'tithe', label: 'Tithing & surplus', blurb: 'Give first, then measure investable surplus' },
-      { id: 'bonus', label: 'Bonus value', blurb: 'Card/bank bonus after fees and real spend' },
-    ],
-  },
-];
-
-const NUDGE_BY_ID = {
-  fi: { pool: 'investing', slot: 1, hint: 'Once you know the timeline, put monthly surplus on autopilot.' },
-  runway: { pool: 'investing', slot: 2, hint: 'A strong savings rate needs a place to land — invest the surplus.' },
-  college: { pool: 'investing', slot: 3, hint: '529 contributions are only half the story; taxable surplus still compounds.' },
-  vehicle: { pool: 'household', slot: 4, hint: 'Lower TCO frees cash flow — stack rewards on necessary spend.' },
-  loan: { pool: 'household', slot: 5, hint: 'Payment clarity helps the budget; rewards help everyday purchases.' },
-  bonus: { pool: 'household', slot: 6, hint: 'Compare live card and portal offers on the Tools page.' },
-};
-
-const HAS_INTERNAL_NUDGE = new Set(['fi', 'debt', 'refi', 'tithe', 'emergency', 'compound', 'rentbuy', 'match']);
+export { CALCULATOR_CATALOG } from '../data/calculators';
 
 export default function Calculators() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const validIds = useMemo(() => {
-    const ids = new Set();
-    CALCULATOR_CATALOG.forEach((g) => g.items.forEach((i) => ids.add(i.id)));
-    return ids;
-  }, []);
+  const [searchParams] = useSearchParams();
+  const legacyTool = searchParams.get('tool');
+  if (legacyTool && LEGACY_TOOL_TO_SLUG[legacyTool]) {
+    return <Navigate to={pathForCalculator(legacyTool)} replace />;
+  }
 
-  const toolFromUrl = searchParams.get('tool');
-  const initial = toolFromUrl && validIds.has(toolFromUrl) ? toolFromUrl : 'fi';
-  const [activeId, setActiveId] = useState(initial);
   const investStep = getReferral({ slot: 3, pool: 'investing' });
-
-  const selectTool = (id) => {
-    if (!validIds.has(id)) return;
-    setActiveId(id);
-    if (id === 'fi') {
-      setSearchParams({}, { replace: true });
-    } else {
-      setSearchParams({ tool: id }, { replace: true });
-    }
-  };
-
-  useEffect(() => {
-    const t = searchParams.get('tool');
-    if (t && validIds.has(t) && t !== activeId) {
-      setActiveId(t);
-    }
-  }, [searchParams, validIds]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => {
-    const onTab = (e) => {
-      if (e?.detail && validIds.has(e.detail)) {
-        selectTool(e.detail);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    };
-    window.addEventListener('vf-calc-tab', onTab);
-    return () => window.removeEventListener('vf-calc-tab', onTab);
-  }, [validIds]);
 
   const faqs = [
     {
@@ -171,8 +76,6 @@ export default function Calculators() {
     },
   ];
 
-  const nudge = NUDGE_BY_ID[activeId];
-
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <SiteHeader />
@@ -181,7 +84,7 @@ export default function Calculators() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 text-center">
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Calculators</h1>
           <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
-            Free planning tools for Catholic families — FI path, college, debt, vehicles, tithing, and more. Pick a category, then run the numbers.
+            Free planning tools for Catholic families — FI path, college, debt, vehicles, tithing, and more. Open any tool on its own page.
           </p>
         </div>
       </div>
@@ -192,50 +95,19 @@ export default function Calculators() {
             <h2 className="text-lg font-bold text-gray-900 mb-1">{group.category}</h2>
             <p className="text-sm text-gray-500 mb-3">{group.description}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {group.items.map((item) => {
-                const active = activeId === item.id;
-                return (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => {
-                      selectTool(item.id);
-                      document.getElementById('calc-active')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }}
-                    className={`text-left rounded-xl border px-4 py-3 transition ${
-                      active
-                        ? 'border-emerald-500 bg-emerald-50 shadow-sm'
-                        : 'border-gray-100 bg-white hover:border-emerald-200'
-                    }`}
-                  >
-                    <p className={`font-semibold text-sm ${active ? 'text-emerald-800' : 'text-gray-900'}`}>{item.label}</p>
-                    <p className="text-xs text-gray-500 mt-0.5">{item.blurb}</p>
-                  </button>
-                );
-              })}
+              {group.items.map((item) => (
+                <Link
+                  key={item.slug}
+                  to={pathForCalculator(item.slug)}
+                  className="text-left rounded-xl border border-gray-100 bg-white px-4 py-3 transition hover:border-emerald-200 hover:bg-emerald-50/40 hover:shadow-sm"
+                >
+                  <p className="font-semibold text-sm text-gray-900">{item.label}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{item.blurb}</p>
+                </Link>
+              ))}
             </div>
           </section>
         ))}
-
-        <div id="calc-active" className="scroll-mt-4">
-          {activeId === 'fi' && <SuperFiCalculator />}
-          {activeId === 'runway' && <SavingsRateRunwayCalculator />}
-          {activeId === 'emergency' && <EmergencyFundCalculator />}
-          {activeId === 'compound' && <CompoundGrowthCalculator />}
-          {activeId === 'match' && <EmployerMatchCalculator />}
-          {activeId === 'college' && <College529Calculator />}
-          {activeId === 'vehicle' && <VehicleTcoCalculator />}
-          {activeId === 'rentbuy' && <RentVsBuyCalculator />}
-          {activeId === 'loan' && <LoanPaymentCalculator />}
-          {activeId === 'debt' && <DebtPayoffCalculator />}
-          {activeId === 'refi' && <RefinanceBreakEvenCalculator />}
-          {activeId === 'tithe' && <TithingSurplusCalculator />}
-          {activeId === 'bonus' && <BonusValueCalculator />}
-
-          {nudge && !HAS_INTERNAL_NUDGE.has(activeId) && (
-            <SoftSellNudge pool={nudge.pool} slot={nudge.slot} hint={nudge.hint} />
-          )}
-        </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
