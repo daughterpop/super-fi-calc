@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import BlogPostFooter from '../components/BlogPostFooter';
 
 export default function LiveLightLikeStClareLessonsForFamilyFreedom() {
@@ -22,7 +23,11 @@ export default function LiveLightLikeStClareLessonsForFamilyFreedom() {
         </p>
 
         <p className="mb-6">
-          Clare did not choose poverty as a punishment. She chose it as freedom. By owning almost nothing, she became available for prayer, for her sisters, and for whatever God asked next. That same principle works for Catholic families seeking financial independence. When we deliberately live light — fewer possessions, less lifestyle pressure, clearer limits — we create real margin. Margin turns financial independence from a distant number into everyday freedom to love and serve.
+          Clare did not choose poverty as a punishment. She chose it as freedom. By owning almost nothing, she became available for prayer, for her sisters, and for whatever God asked next. That same principle works for Catholic families seeking financial independence. When we deliberately live light — fewer possessions, less lifestyle pressure, clearer limits — we create real{' '}
+          <Link to="/blog/build-margin-for-catholic-families" className="text-emerald-700 font-medium hover:underline">
+            margin
+          </Link>
+          . Margin turns financial independence from a distant number into everyday freedom to love and serve.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
@@ -48,6 +53,17 @@ export default function LiveLightLikeStClareLessonsForFamilyFreedom() {
         </h2>
         <p className="mb-6">
           Once the margin appears, put it to work. Low-cost index funds can grow quietly in the background while the household stays light and free. The goal is not accumulation for its own sake. It is the same freedom Clare lived: a family light enough to move when God calls and free enough to give without calculation.
+        </p>
+        <p className="mb-6">
+          For the fuller picture of how margin fits a Catholic FI path — and a concrete sequence to start — read{' '}
+          <Link to="/blog/build-margin-for-catholic-families" className="text-emerald-700 font-medium hover:underline">
+            Build Margin for Catholic Families
+          </Link>{' '}
+          and run the{' '}
+          <Link to="/calculators" className="text-emerald-700 font-medium hover:underline">
+            FI calculator
+          </Link>{' '}
+          once with honest numbers.
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">

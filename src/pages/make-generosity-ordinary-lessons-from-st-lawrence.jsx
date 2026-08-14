@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import BlogPostFooter from '../components/BlogPostFooter';
 
 export default function MakeGenerosityOrdinaryLessonsFromStLawrence() {
@@ -26,7 +27,11 @@ export default function MakeGenerosityOrdinaryLessonsFromStLawrence() {
         </p>
 
         <p className="mb-6">
-          For Catholic families walking the path of financial independence, the same principle is pure practical wisdom. Generosity becomes ordinary only when the household has real margin. Without margin, every gift feels like a sacrifice that might break the budget. With margin, the same gift becomes a quiet, joyful act of fidelity.
+          For Catholic families walking the path of financial independence, the same principle is pure practical wisdom. Generosity becomes ordinary only when the household has real{' '}
+          <Link to="/blog/build-margin-for-catholic-families" className="text-emerald-700 font-medium hover:underline">
+            margin
+          </Link>
+          . Without margin, every gift feels like a sacrifice that might break the budget. With margin, the same gift becomes a quiet, joyful act of fidelity.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
@@ -52,6 +57,17 @@ export default function MakeGenerosityOrdinaryLessonsFromStLawrence() {
         </h2>
         <p className="mb-6">
           Once the gap appears, the surplus can do two quiet jobs at once: it can grow for the family’s future security, and it can fund the ordinary generosity that marks a Catholic home. Low-cost index funds handle the first. A simple, consistent plan for giving handles the second. The goal is the same one Lawrence lived: a household light enough to move freely and free enough to treat the poor as the Church’s true treasure.
+        </p>
+        <p className="mb-6">
+          For the fuller picture of how margin fits a Catholic FI path — and a concrete sequence to start — read{' '}
+          <Link to="/blog/build-margin-for-catholic-families" className="text-emerald-700 font-medium hover:underline">
+            Build Margin for Catholic Families
+          </Link>{' '}
+          and run the{' '}
+          <Link to="/calculators" className="text-emerald-700 font-medium hover:underline">
+            FI calculator
+          </Link>{' '}
+          once with honest numbers.
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">
