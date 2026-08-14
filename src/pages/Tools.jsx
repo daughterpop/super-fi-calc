@@ -40,6 +40,7 @@ const CATEGORY_ORDER = [
   'Shopping & Rewards',
   'Dining',
   'Giving',
+  'Faith & Formation',
   'Wireless Savings',
   'Privacy & Security',
   'Health & Training',
