@@ -15,8 +15,6 @@ export default function SubscribeForm() {
     setError(null);
 
     try {
-      // Sends the submission straight to your email via formsubmit.co
-      // (first time you get a one-time confirmation email from them)
       const response = await fetch('https://formsubmit.co/ajax/dustin.himmerich@protonmail.com', {
         method: 'POST',
         headers: {
@@ -47,9 +45,9 @@ export default function SubscribeForm() {
 
   return (
     <div className="mt-8 sm:mt-12 p-6 sm:p-8 bg-white rounded-2xl shadow-md max-w-md mx-auto text-center w-full">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-3">Join the Via Fidelitatis List</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold mb-3">Get the occasional email</h2>
       <p className="text-gray-600 mb-6 text-sm sm:text-base">
-        Free tips, tools, and stewardship ideas for Catholic families on the path to financial independence.
+        When there's a new calculator, a useful post, or a tool we actually use — not a weekly pep talk.
       </p>
 
       {!submitted ? (
@@ -69,12 +67,12 @@ export default function SubscribeForm() {
             disabled={!email.includes('@') || loading}
             className="flex items-center justify-center gap-2 w-full px-6 sm:px-8 py-3 sm:py-4 bg-emerald-600 text-white rounded-2xl disabled:opacity-50 hover:bg-emerald-700 text-base sm:text-lg"
           >
-            {loading ? 'Sending…' : 'Subscribe Free'} <ArrowRight size={20} />
+            {loading ? 'Sending…' : 'Subscribe'} <ArrowRight size={20} />
           </button>
           <p className="text-xs text-gray-500">Unsubscribe anytime. No spam.</p>
         </div>
       ) : (
-        <p className="text-green-600 text-lg sm:text-xl">✅ You're in! Welcome to Via Fidelitatis.</p>
+        <p className="text-green-600 text-lg sm:text-xl">You're on the list. Thanks for joining.</p>
       )}
     </div>
   );

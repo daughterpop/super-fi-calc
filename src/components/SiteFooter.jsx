@@ -24,7 +24,7 @@ export default function SiteFooter() {
               Via Fidelitatis
             </Link>
             <p className="mt-2 text-sm text-gray-500 leading-relaxed">
-              Practical tools and writing for Catholic families building financial independence so money serves the mission.
+              Calculators and writing for Catholic households who want clearer money numbers without a secular FIRE playbook.
             </p>
           </div>
 
@@ -45,7 +45,7 @@ export default function SiteFooter() {
         </div>
 
         <div className="mt-8 pt-5 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-gray-400">
-          <p>© {year} Via Fidelitatis. Faith · Family · Generational wealth.</p>
+          <p>© {year} Via Fidelitatis</p>
           <p className="sm:text-right max-w-md">
             Some tool links are affiliate referrals. If you use them, the site may earn a commission at no extra cost to you.
           </p>

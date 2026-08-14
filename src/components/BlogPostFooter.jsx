@@ -77,12 +77,12 @@ export default function BlogPostFooter() {
         {postReferral && <ReferralCard referral={postReferral} />}
 
         <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-          Want more faith-filled FI tips for your family?{' '}
+          Prefer email?{' '}
           <Link
             to="/subscribe"
             className="text-emerald-600 hover:text-emerald-700 font-semibold"
           >
-            Join the list →
+            Subscribe for occasional notes →
           </Link>
         </p>
         <Link to="/blog" className="text-indigo-600 hover:text-indigo-800 font-medium">
