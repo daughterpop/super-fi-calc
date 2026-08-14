@@ -50,6 +50,106 @@ const rawPosts = [
     featured: true
   },
   {
+    title: 'Cut the Phone Bill with Mint Mobile for Catholic FI',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'A recurring bill most households can shrink without lifestyle drama — freeing cash for the emergency fund, investing, or the tithe.',
+    readTime: '4 min read',
+    link: '/blog/cut-the-phone-bill-with-mint-mobile-for-catholic-fi',
+    tags: ['Stewardship', 'Tools'],
+    featured: false
+  },
+  {
+    title: 'Sell Clutter and Buy Used with Mercari for Catholic FI',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'Turn unused stuff into cash and buy what you need gently used — a simple way to free margin without a second job.',
+    readTime: '4 min read',
+    link: '/blog/sell-clutter-and-buy-used-with-mercari-for-catholic-fi',
+    tags: ['Stewardship', 'Tools'],
+    featured: false
+  },
+  {
+    title: 'Side Income from a Spare Space with Airbnb Hosting',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'When a room or secondary space sits empty, hosting can turn underused square footage into cash for the FI plan — if household capacity and local rules allow it.',
+    readTime: '4 min read',
+    link: '/blog/side-income-from-a-spare-space-with-airbnb-hosting',
+    tags: ['Stewardship', 'Tools'],
+    featured: false
+  },
+  {
+    title: 'Smarter Hotel Booking with Gondola for Family Travel',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'Rate tracking and cash back on hotels you were already going to book — small savings that add up when families travel for visits, retreats, or vacations.',
+    readTime: '4 min read',
+    link: '/blog/smarter-hotel-booking-with-gondola-for-family-travel',
+    tags: ['Stewardship', 'Tools'],
+    featured: false
+  },
+  {
+    title: 'Marriott Bonvoy Travel Rewards for Catholic Families',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'Hotel points can lower the cost of real family travel — when the card fits your spending, you pay the balance in full, and the annual fee is justified by use you already planned.',
+    readTime: '4 min read',
+    link: '/blog/marriott-bonvoy-travel-rewards-for-catholic-families',
+    tags: ['Stewardship', 'Tools'],
+    featured: false
+  },
+  {
+    title: 'Event Contracts on Kalshi: Curiosity with Guardrails',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'A CFTC-regulated exchange for event contracts — interesting for learning how markets price outcomes, not a core pillar of Catholic financial independence.',
+    readTime: '4 min read',
+    link: '/blog/event-contracts-on-kalshi-curiosity-with-guardrails',
+    tags: ['Tools', 'Stewardship'],
+    featured: false
+  },
+  {
+    title: 'Track Recovery with Oura Ring for Family Health and FI',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'Sleep and recovery data that helps busy parents train and work sustainably — because burnout is expensive for the household and the mission.',
+    readTime: '4 min read',
+    link: '/blog/track-recovery-with-oura-ring-for-family-health-and-fi',
+    tags: ['Tools', 'Stewardship'],
+    featured: false
+  },
+  {
+    title: 'Swim Metrics in the Pool with FORM Goggles',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'Real-time pace, distance, and stroke data in your field of view — useful for triathlon swim work when technique and consistency matter more than guessing.',
+    readTime: '4 min read',
+    link: '/blog/swim-metrics-in-the-pool-with-form-goggles',
+    tags: ['Tools'],
+    featured: false
+  },
+  {
+    title: 'AI Triathlon Coaching with Transition for Busy Parents',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'Adaptive swim, bike, and run plans when you do not have a full-time coach — structured enough to progress, flexible enough for family life.',
+    readTime: '4 min read',
+    link: '/blog/ai-triathlon-coaching-with-transition-for-busy-parents',
+    tags: ['Tools', 'AI Tools'],
+    featured: false
+  },
+  {
+    title: 'Private Mail and VPN with Proton for Catholic Families',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'Encrypted email, VPN, password manager, and drive under one privacy-focused provider — a practical layer of digital stewardship alongside data-broker removal.',
+    readTime: '4 min read',
+    link: '/blog/private-mail-and-vpn-with-proton-for-catholic-families',
+    tags: ['Privacy', 'Tools', 'Stewardship'],
+    featured: false
+  },
+  {
     title: 'Is FIRE Compatible with Catholicism?',
     date: 'August 14, 2026',
     dateSort: '2026-08-14',
@@ -330,7 +430,7 @@ const rawPosts = [
     featured: false
   },
   {
-    title: 'Protect Your Family’s Digital Privacy: Stewardship Tools That Belong on the Path to FI',
+    title: 'Protect Your Family\'s Digital Privacy: Stewardship Tools That Belong on the Path to FI',
     date: 'July 12, 2026',
     dateSort: '2026-07-12',
     excerpt: 'Identity theft and data brokers drain time, money, and peace. How Incogni and Surfshark help Catholic families protect their household as part of faithful financial independence.',
@@ -353,7 +453,7 @@ const rawPosts = [
     title: 'Catholic Families: Leverage AI for Prayerful Financial Freedom and Lasting Legacy',
     date: 'June 04, 2026',
     dateSort: '2026-06-04',
-    excerpt: 'With the Pope’s new encyclical on AI, Catholic families can use smart tools alongside prayer to accelerate their path to financial independence and build a faith-filled legacy for their kids.',
+    excerpt: 'With the Pope\'s new encyclical on AI, Catholic families can use smart tools alongside prayer to accelerate their path to financial independence and build a faith-filled legacy for their kids.',
     readTime: '4 min read',
     link: '/blog/catholic-families-leverage-ai-for-prayerful-financial-freedom-and-lasting-legacy',
     tags: ['AI Tools', 'Prayer', 'Legacy'],
@@ -460,10 +560,10 @@ const rawPosts = [
     featured: false
   },
   {
-    title: 'Stewarding Your Family’s Future: Building Generational Wealth Through Faith and FI',
+    title: 'Stewarding Your Family\'s Future: Building Generational Wealth Through Faith and FI',
     date: 'May 20, 2026',
     dateSort: '2026-05-20',
-    excerpt: 'Financial independence isn’t just about early retirement — it’s about creating a lasting legacy of faith, generosity, and wise stewardship for the next generation.',
+    excerpt: 'Financial independence isn\'t just about early retirement — it\'s about creating a lasting legacy of faith, generosity, and wise stewardship for the next generation.',
     readTime: '4 min read',
     link: '/blog/stewarding-your-familys-future-building-generational-wealth-through-faith-and-fi',
     tags: ['Legacy', 'Stewardship'],
@@ -473,7 +573,7 @@ const rawPosts = [
     title: 'Why Financial Independence Is for Everyone',
     date: 'May 18, 2026',
     dateSort: '2026-05-18',
-    excerpt: 'Financial independence isn’t just for tech bros or high earners — it’s for regular families ready to build margin, faith, and freedom.',
+    excerpt: 'Financial independence isn\'t just for tech bros or high earners — it\'s for regular families ready to build margin, faith, and freedom.',
     readTime: '4 min read',
     link: '/blog/why-fi-for-everyone',
     tags: ['Stewardship', 'Legacy'],
@@ -481,7 +581,6 @@ const rawPosts = [
   }
 ];
 
-// Dedupe by link so the same post can never appear twice in the list
 const seen = new Set();
 export const allPosts = rawPosts.filter((post) => {
   if (seen.has(post.link)) return false;
@@ -504,7 +603,6 @@ export const allTags = [
 
 export const featuredPosts = allPosts.filter((p) => p.featured);
 
-/** Primary evergreen pillars — always surface in post footers for internal linking. */
 export const PILLAR_LINKS = [
   {
     to: '/blog/why-fi-for-catholics',
@@ -523,7 +621,6 @@ export const PILLAR_LINKS = [
   }
 ];
 
-/** Lookup post metadata by pathname (e.g. /blog/slug) for SEO. */
 export function getPostByPath(pathname) {
   if (!pathname) return null;
   const normalized = pathname.endsWith('/') && pathname.length > 1
@@ -532,10 +629,6 @@ export function getPostByPath(pathname) {
   return allPosts.find((p) => p.link === normalized) || null;
 }
 
-/**
- * Related posts by shared tags (scored), excluding current page.
- * Used by BlogPostFooter for stronger internal linking.
- */
 export function getRelatedPosts(currentLink, limit = 3) {
   if (!currentLink) return allPosts.filter((p) => p.featured).slice(0, limit);
 
@@ -560,7 +653,6 @@ export function getRelatedPosts(currentLink, limit = 3) {
   const related = scored.slice(0, limit).map((x) => x.post);
   if (related.length >= limit) return related;
 
-  // Fill with featured if not enough tag overlap
   const used = new Set([normalized, ...related.map((p) => p.link)]);
   for (const p of allPosts) {
     if (related.length >= limit) break;
