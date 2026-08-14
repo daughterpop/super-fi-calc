@@ -23,7 +23,11 @@ export default function WhyFiForCatholics() {
         </p>
 
         <p className="mb-6">
-          The practical foundation of that freedom is{' '}
+          For a direct comparison of the two approaches, see{' '}
+          <Link to="/blog/is-fire-compatible-with-catholicism" className="text-emerald-700 font-medium hover:underline">
+            Is FIRE Compatible with Catholicism?
+          </Link>
+          . The practical foundation of that freedom is{' '}
           <Link to="/blog/build-margin-for-catholic-families" className="text-emerald-700 font-medium hover:underline">
             financial margin
           </Link>
@@ -74,7 +78,9 @@ export default function WhyFiForCatholics() {
         </p>
         <p className="mb-6">
           Model giving in your spending number. Then the surplus you invest is surplus after fidelity, not instead of it.
-          See how{' '}
+          A practical budget that puts the tithe first is laid out in{' '}
+          <Link to="/blog/how-to-budget-as-a-catholic-family-with-tithing-first" className="text-emerald-700 font-medium hover:underline">How to Budget as a Catholic Family</Link>.
+          See also how{' '}
           <Link to="/blog/make-generosity-ordinary-lessons-from-st-lawrence" className="text-emerald-700 font-medium hover:underline">St. Lawrence</Link>{' '}
           treated the poor as the true treasures of the Church — and why margin makes that ordinary rather than heroic.
         </p>
@@ -112,8 +118,10 @@ export default function WhyFiForCatholics() {
           <li>Pray and agree with your spouse on the real goal</li>
           <li>Get rough numbers (assets, spending, surplus, big future costs)</li>
           <li>Run the calculator once for a years-to-FI estimate</li>
-          <li>Protect match, emergency fund, and known near-term tuition</li>
-          <li>Invest surplus simply and consistently</li>
+          <li>Protect match,{' '}
+            <Link to="/blog/building-an-emergency-fund-without-neglecting-the-tithe" className="text-emerald-700 font-medium hover:underline">emergency fund</Link>, and known near-term tuition</li>
+          <li>Invest surplus simply and consistently — see{' '}
+            <Link to="/blog/faith-based-investing-basics-for-catholic-households" className="text-emerald-700 font-medium hover:underline">faith-based investing basics</Link></li>
           <li>Review a few times a year — live the plan between reviews</li>
         </ol>
         <p className="mb-6">

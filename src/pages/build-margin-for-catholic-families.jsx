@@ -28,7 +28,9 @@ export default function BuildMarginForCatholicFamilies() {
           Margin shows up in three places:
         </p>
         <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
-          <li><strong>Cash margin</strong> — an emergency fund and a real monthly surplus after essentials and giving</li>
+          <li><strong>Cash margin</strong> — an{' '}
+            <Link to="/blog/building-an-emergency-fund-without-neglecting-the-tithe" className="text-emerald-700 font-medium hover:underline">emergency fund</Link>{' '}
+            and a real monthly surplus after essentials and giving</li>
           <li><strong>Time margin</strong> — fewer required work hours or less debt pressure, so parents can be present</li>
           <li><strong>Attention margin</strong> — less money drama, so prayer and marriage are not always interrupted by fear</li>
         </ul>
@@ -66,10 +68,13 @@ export default function BuildMarginForCatholicFamilies() {
         <ol className="list-decimal pl-6 space-y-3 mb-6 text-gray-700">
           <li>
             <strong>Name the goal with your spouse.</strong> Margin for vocation — not “retire at 40 and never work.” See{' '}
-            <Link to="/blog/why-fi-for-catholics" className="text-emerald-700 font-medium hover:underline">Why FI for Catholics</Link>.
+            <Link to="/blog/why-fi-for-catholics" className="text-emerald-700 font-medium hover:underline">Why FI for Catholics</Link>{' '}
+            and the direct comparison in{' '}
+            <Link to="/blog/is-fire-compatible-with-catholicism" className="text-emerald-700 font-medium hover:underline">Is FIRE Compatible with Catholicism?</Link>.
           </li>
           <li>
-            <strong>Get one honest picture.</strong> Assets, real spending (include tithing if it is non-negotiable), monthly surplus, and the big future costs (tuition, vehicles, mortgage).
+            <strong>Get one honest picture.</strong> Assets, real spending (include tithing if it is non-negotiable), monthly surplus, and the big future costs (tuition, vehicles, mortgage). A concrete system is in{' '}
+            <Link to="/blog/how-to-budget-as-a-catholic-family-with-tithing-first" className="text-emerald-700 font-medium hover:underline">How to Budget as a Catholic Family</Link>.
           </li>
           <li>
             <strong>Run the calculator once.</strong> A years-to-FI number is a flashlight, not a prophecy.{' '}
@@ -85,6 +90,8 @@ export default function BuildMarginForCatholicFamilies() {
         <p className="mb-6">
           The full sequence lives in the{' '}
           <Link to="/blog/how-to-get-started-on-your-fi-path" className="text-emerald-700 font-medium hover:underline">Get Started guide</Link>.
+          Once the surplus appears, put it to work simply — see{' '}
+          <Link to="/blog/faith-based-investing-basics-for-catholic-households" className="text-emerald-700 font-medium hover:underline">Faith-Based Investing Basics</Link>.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">

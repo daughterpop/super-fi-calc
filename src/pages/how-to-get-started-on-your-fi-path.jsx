@@ -23,7 +23,9 @@ export default function HowToGetStartedOnYourFiPath() {
 
         <p className="mb-6">
           If you want the “why” first, start with{' '}
-          <Link to="/blog/why-fi-for-catholics" className="text-emerald-700 font-medium hover:underline">Why FI for Catholics</Link>.
+          <Link to="/blog/why-fi-for-catholics" className="text-emerald-700 font-medium hover:underline">Why FI for Catholics</Link>{' '}
+          or the direct comparison in{' '}
+          <Link to="/blog/is-fire-compatible-with-catholicism" className="text-emerald-700 font-medium hover:underline">Is FIRE Compatible with Catholicism?</Link>.
           If you want the practical foundation that makes everything else possible, read{' '}
           <Link to="/blog/build-margin-for-catholic-families" className="text-emerald-700 font-medium hover:underline">Build Margin for Catholic Families</Link>.
           This page is the concrete sequence.
@@ -48,7 +50,8 @@ export default function HowToGetStartedOnYourFiPath() {
           2. Get one honest money picture
         </h2>
         <p className="mb-6">
-          You don’t need perfect data. Rough numbers beat no numbers.
+          You don’t need perfect data. Rough numbers beat no numbers. A concrete budget that puts the tithe first is in{' '}
+          <Link to="/blog/how-to-budget-as-a-catholic-family-with-tithing-first" className="text-emerald-700 font-medium hover:underline">How to Budget as a Catholic Family</Link>.
         </p>
         <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
           <li><strong>Investable assets</strong> — retirement accounts, taxable investments, cash earmarked for long-term goals</li>
@@ -110,7 +113,8 @@ export default function HowToGetStartedOnYourFiPath() {
         </ul>
         <p className="mb-6">
           If the plan requires burning out the family to hit a number, the plan is wrong. Adjust the number.
-          Margin that costs the family’s peace is not the margin the saints modeled.
+          Margin that costs the family’s peace is not the margin the saints modeled. Build the cash buffer without dropping generosity — see{' '}
+          <Link to="/blog/building-an-emergency-fund-without-neglecting-the-tithe" className="text-emerald-700 font-medium hover:underline">Building an Emergency Fund Without Neglecting the Tithe</Link>.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
@@ -118,7 +122,8 @@ export default function HowToGetStartedOnYourFiPath() {
         </h2>
         <p className="mb-6">
           You do not need an exotic portfolio to begin. Capture any employer match, favor low-cost broad funds, and keep fees low.
-          Complexity can come later. Consistency matters more than cleverness in the first years.
+          Complexity can come later. Consistency matters more than cleverness in the first years. A simple Catholic starting point is in{' '}
+          <Link to="/blog/faith-based-investing-basics-for-catholic-households" className="text-emerald-700 font-medium hover:underline">Faith-Based Investing Basics</Link>.
         </p>
         <p className="mb-6">
           When you’re ready for practical tools (investing apps, budgeting, privacy, everyday savings), browse the Tools page — including referral perks that can free up cash without extra cost to you.
