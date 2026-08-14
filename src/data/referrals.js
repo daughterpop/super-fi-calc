@@ -3,8 +3,8 @@
  * getReferral() rotates by day + slot so the same page isn't stuck on one offer,
  * and different slots (header vs card) usually show different tools the same day.
  *
- * Banner strip only rotates a tight set of high-fit FI / stewardship offers
- * (Robinhood, Wealthfront, Monarch, Daffy, Thrive Market).
+ * Banner strip rotates a tight set of high-fit offers:
+ * Robinhood, Wealthfront, Monarch, Daffy, Thrive Market, Catholic Company.
  * Cards, shopping, health, privacy, and other tools live on the Tools page.
  */
 
@@ -179,6 +179,19 @@ export const REFERRALS = [
     href: 'http://thrv.me/PxCk1V',
   },
   {
+    id: 'catholic-company',
+    categories: ['faith', 'household'],
+    inBanner: true,
+    stripHeadline: '$10 off first $70+ order',
+    stripSub: ' — Bibles, books, and sacramentals from The Catholic Company',
+    stripCta: 'Shop Catholic Company',
+    cardEyebrow: 'Faith formation for the household',
+    cardBody:
+      'The Catholic Company carries Bibles, prayer books, rosaries, and gifts for the home. New customers get $10 off their first purchase of $70 or more through this referral link.',
+    cardCta: 'Get $10 off $70+',
+    href: 'https://rwrd.io/ref_O0T1BE2?c',
+  },
+  {
     id: 'monarch',
     categories: ['budgeting', 'household'],
     inBanner: true,
@@ -306,7 +319,7 @@ function dayOfYear(d = new Date()) {
 /**
  * @param {{
  *   slot?: number,
- *   pool?: 'all' | 'banner' | 'investing' | 'household' | 'privacy' | 'giving' | 'health' | 'savings' | 'budgeting'
+ *   pool?: 'all' | 'banner' | 'investing' | 'household' | 'privacy' | 'giving' | 'health' | 'savings' | 'budgeting' | 'faith'
  * }} opts
  */
 export function getReferral({ slot = 0, pool = 'all' } = {}) {
