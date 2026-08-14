@@ -1,5 +1,45 @@
 const rawPosts = [
   {
+    title: 'Is FIRE Compatible with Catholicism?',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'A clear Catholic answer to the Financial Independence, Retire Early movement — what to keep, what to leave behind, and how margin for vocation differs from the secular race to stop working.',
+    readTime: '6 min read',
+    link: '/blog/is-fire-compatible-with-catholicism',
+    tags: ['Stewardship', 'Prayer', 'Legacy'],
+    featured: true
+  },
+  {
+    title: 'How to Budget as a Catholic Family (with Tithing First)',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'A simple, faith-aligned budget that treats giving as a first claim, protects the non-negotiables, and still creates the surplus that builds real financial margin for Catholic households.',
+    readTime: '6 min read',
+    link: '/blog/how-to-budget-as-a-catholic-family-with-tithing-first',
+    tags: ['Stewardship', 'Tithing', 'Couples', 'Parenting'],
+    featured: true
+  },
+  {
+    title: 'Building an Emergency Fund Without Neglecting the Tithe',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'How Catholic families can build a real cash buffer and keep generosity as a first claim — so unexpected costs never force a choice between prudence and fidelity.',
+    readTime: '5 min read',
+    link: '/blog/building-an-emergency-fund-without-neglecting-the-tithe',
+    tags: ['Stewardship', 'Tithing', 'Legacy'],
+    featured: true
+  },
+  {
+    title: 'Faith-Based Investing Basics for Catholic Households',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'A simple starting point for Catholic families who want their investments to serve long-term margin without turning money into an idol or ignoring moral considerations.',
+    readTime: '5 min read',
+    link: '/blog/faith-based-investing-basics-for-catholic-households',
+    tags: ['Stewardship', 'Legacy', 'Tools'],
+    featured: true
+  },
+  {
     title: 'Build Margin for Catholic Families',
     date: 'August 14, 2026',
     dateSort: '2026-08-14',

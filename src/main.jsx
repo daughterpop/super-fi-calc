@@ -18,6 +18,10 @@ import HowToGetStartedOnYourFiPath from './pages/how-to-get-started-on-your-fi-p
 import WhyFiForCatholics from './pages/why-fi-for-catholics.jsx';
 import BuildMarginForCatholicFamilies from './pages/build-margin-for-catholic-families.jsx';
 import TripleSavingsOnlinePurchases from './pages/triple-savings-online-purchases.jsx';
+import IsFireCompatibleWithCatholicism from './pages/is-fire-compatible-with-catholicism.jsx';
+import HowToBudgetAsACatholicFamilyWithTithingFirst from './pages/how-to-budget-as-a-catholic-family-with-tithing-first.jsx';
+import BuildingAnEmergencyFundWithoutNeglectingTheTithe from './pages/building-an-emergency-fund-without-neglecting-the-tithe.jsx';
+import FaithBasedInvestingBasicsForCatholicHouseholds from './pages/faith-based-investing-basics-for-catholic-households.jsx';
 import CatholicFamiliesLeverageAiForPrayerfulFinancialFreedomAndLastingLegacy from './pages/catholic-families-leverage-ai-for-prayerful-financial-freedom-and-lasting-legacy.jsx';
 import CatholicParentsBuildingFiLegacyWithAiAndPrayer from './pages/catholic-parents-building-fi-legacy-with-ai-and-prayer.jsx';
 import CatholicMomsDadsUseAiToBuildDebtFreeFaithFilledFamilyLegacy from './pages/catholic-moms-dads-use-ai-to-build-debt-free-faith-filled-family-legacy.jsx';
@@ -74,6 +78,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/how-to-get-started-on-your-fi-path" element={<HowToGetStartedOnYourFiPath />} />
           <Route path="/blog/why-fi-for-catholics" element={<WhyFiForCatholics />} />
           <Route path="/blog/build-margin-for-catholic-families" element={<BuildMarginForCatholicFamilies />} />
+          <Route path="/blog/is-fire-compatible-with-catholicism" element={<IsFireCompatibleWithCatholicism />} />
+          <Route path="/blog/how-to-budget-as-a-catholic-family-with-tithing-first" element={<HowToBudgetAsACatholicFamilyWithTithingFirst />} />
+          <Route path="/blog/building-an-emergency-fund-without-neglecting-the-tithe" element={<BuildingAnEmergencyFundWithoutNeglectingTheTithe />} />
+          <Route path="/blog/faith-based-investing-basics-for-catholic-households" element={<FaithBasedInvestingBasicsForCatholicHouseholds />} />
           <Route path="/blog/triple-savings-online-purchases" element={<TripleSavingsOnlinePurchases />} />
           <Route path="/blog/why-fi-for-everyone" element={<WhyFIForEveryone />} />
           <Route path="/blog/catholic-families-leverage-ai-for-prayerful-financial-freedom-and-lasting-legacy" element={<CatholicFamiliesLeverageAiForPrayerfulFinancialFreedomAndLastingLegacy />} />
