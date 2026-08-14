@@ -8,6 +8,7 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 import './index.css';
 import App from './App.jsx';
 import Calculators from './pages/Calculators.jsx';
+import CalculatorTool from './pages/CalculatorTool.jsx';
 import BlogIndex from './pages/BlogIndex.jsx';
 import Tools from './pages/Tools.jsx';
 import Subscribe from './pages/Subscribe.jsx';
@@ -86,6 +87,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/calculators" element={<Calculators />} />
+          <Route path="/calculators/:slug" element={<CalculatorTool />} />
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/tools" element={<Tools />} />
           <Route path="/subscribe" element={<Subscribe />} />
