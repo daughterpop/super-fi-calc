@@ -1,5 +1,27 @@
 export const tools_other = [
   {
+    id: 'catholic-company',
+    name: 'The Catholic Company',
+    category: 'Faith & Formation',
+    badge: '$10 off $70+',
+    headline: 'Bibles, prayer books, and sacramentals — $10 off your first $70+ order',
+    description:
+      'The Catholic Company is a trusted source for Catholic Bibles, books, rosaries, medals, and gifts for the home. Use this referral link so new customers get $10 off their first purchase of $70 or more — practical for stocking a family prayer corner or gifting formation without overspending.',
+    perks: [
+      '$10 off your first order of $70 or more via this referral link',
+      'Wide selection of Bibles, prayer books, and spiritual reading',
+      'Rosaries, medals, and sacramentals for home and parish life',
+      'Fits a faith-first household building margin without neglecting formation',
+    ],
+    cta: 'Shop Catholic Company — $10 Off',
+    href: 'https://rwrd.io/ref_O0T1BE2?c',
+    accent: 'violet',
+    icon: 'heart',
+    footnote:
+      'Referral offer: $10 off first purchase of $70+. Terms set by The Catholic Company and subject to change. Affiliate / referral disclosure applies.',
+    valueScore: 10,
+  },
+  {
     id: 'surfshark',
     name: 'Surfshark',
     category: 'Privacy & Security',
