@@ -3,8 +3,9 @@
  * getReferral() rotates by day + slot so the same page isn't stuck on one offer,
  * and different slots (header vs card) usually show different tools the same day.
  *
- * Banner strip only rotates referrals with inBanner: true (FI / money-focused).
- * Health & training tools live in the Tools page under Health & Training.
+ * Banner strip only rotates a tight set of high-fit FI / stewardship offers
+ * (Robinhood, Wealthfront, Monarch, Daffy, Thrive Market).
+ * Cards, shopping, health, privacy, and other tools live on the Tools page.
  */
 
 export const REFERRALS = [
@@ -37,7 +38,7 @@ export const REFERRALS = [
   {
     id: 'kalshi',
     categories: ['investing'],
-    inBanner: true,
+    inBanner: false,
     stripHeadline: 'Kalshi trading credit',
     stripSub: ' — event contracts; bonus after you trade ~$25',
     stripCta: 'Sign up via referral',
@@ -50,7 +51,7 @@ export const REFERRALS = [
   {
     id: 'amex-bbc',
     categories: ['investing', 'household'],
-    inBanner: true,
+    inBanner: false,
     stripHeadline: '$250 after $5k spend',
     stripSub: ' — Blue Business Cash, no annual fee',
     stripCta: 'Apply via referral',
@@ -63,7 +64,7 @@ export const REFERRALS = [
   {
     id: 'chase-sapphire',
     categories: ['investing', 'household'],
-    inBanner: true,
+    inBanner: false,
     stripHeadline: '100k Chase Ultimate Rewards',
     stripSub: ' — Sapphire Reserve or Preferred after qualifying spend',
     stripCta: 'Choose a Sapphire card',
@@ -76,7 +77,7 @@ export const REFERRALS = [
   {
     id: 'amazon-visa',
     categories: ['investing', 'household'],
-    inBanner: true,
+    inBanner: false,
     stripHeadline: 'Amazon gift card on approval',
     stripSub: ' — Amazon Visa, rewards on Amazon & everyday spend',
     stripCta: 'Apply for Amazon Visa',
@@ -89,7 +90,7 @@ export const REFERRALS = [
   {
     id: 'marriott-bonvoy',
     categories: ['investing', 'household'],
-    inBanner: true,
+    inBanner: false,
     stripHeadline: '125k pts + free night',
     stripSub: ' — Marriott Bonvoy Boundless after $3k spend',
     stripCta: 'Choose a card',
@@ -102,7 +103,7 @@ export const REFERRALS = [
   {
     id: 'rakuten-amex',
     categories: ['investing', 'household'],
-    inBanner: true,
+    inBanner: false,
     stripHeadline: 'Rakuten Amex Card',
     stripSub: ' — no annual fee + extra cash back on Rakuten shops',
     stripCta: 'Apply via referral',
@@ -115,7 +116,7 @@ export const REFERRALS = [
   {
     id: 'gondola',
     categories: ['household', 'savings'],
-    inBanner: true,
+    inBanner: false,
     stripHeadline: '$50 each after first hotel booking',
     stripSub: ' — Gondola tracks rate drops + cash back',
     stripCta: 'Join Gondola',
@@ -128,7 +129,7 @@ export const REFERRALS = [
   {
     id: 'airbnb-host',
     categories: ['household', 'savings'],
-    inBanner: true,
+    inBanner: false,
     stripHeadline: '$115 for new Airbnb hosts',
     stripSub: ' — after your first qualifying booking within 180 days',
     stripCta: 'Start hosting',
@@ -141,7 +142,7 @@ export const REFERRALS = [
   {
     id: 'mercari',
     categories: ['savings', 'household'],
-    inBanner: true,
+    inBanner: false,
     stripHeadline: 'Up to $20 to start',
     stripSub: ' — buy used deals or sell clutter for FI cash',
     stripCta: 'Join Mercari',
@@ -154,7 +155,7 @@ export const REFERRALS = [
   {
     id: 'minty',
     categories: ['savings', 'household'],
-    inBanner: true,
+    inBanner: false,
     stripHeadline: '$10 cashback bonus',
     stripSub: ' — auto coupons + cashback at 30k+ stores',
     stripCta: 'Get $10 on Minty',
@@ -206,7 +207,7 @@ export const REFERRALS = [
   {
     id: 'mintmobile',
     categories: ['savings', 'household'],
-    inBanner: true,
+    inBanner: false,
     stripHeadline: '$15 Mint Mobile credit',
     stripSub: ' — free up monthly cash for FI and family',
     stripCta: 'Switch & save',
