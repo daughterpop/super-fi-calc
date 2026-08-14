@@ -13,6 +13,7 @@ import Tools from './pages/Tools.jsx';
 import Subscribe from './pages/Subscribe.jsx';
 import Faq from './pages/Faq.jsx';
 import RouteSeo from './components/RouteSeo.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
 import WhyFIForEveryone from './pages/WhyFIForEveryone.jsx';
 import HowToGetStartedOnYourFiPath from './pages/how-to-get-started-on-your-fi-path.jsx';
 import WhyFiForCatholics from './pages/why-fi-for-catholics.jsx';
@@ -78,6 +79,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
       <Router>
+        <ScrollToTop />
         <RouteSeo />
         <Analytics />
         <SpeedInsights />
