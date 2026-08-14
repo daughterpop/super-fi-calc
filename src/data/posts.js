@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin for Radical Love: Lessons from St. Maximilian Kolbe',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'On the Memorial of St. Maximilian Kolbe, Catholic families learn that real financial margin is the practical foundation that turns radical, self-giving love from a heroic stretch into an ordinary, joyful way of life.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-for-radical-love-lessons-from-st-maximilian-kolbe',
+    tags: ['Stewardship', 'Seasonal', 'Prayer', 'Legacy'],
+    featured: false
+  },
+  {
     title: 'Fidelity in Lean Seasons: Lessons from Sts. Pontian and Hippolytus',
     date: 'August 13, 2026',
     dateSort: '2026-08-13',
