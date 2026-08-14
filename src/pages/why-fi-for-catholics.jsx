@@ -7,7 +7,7 @@ export default function WhyFiForCatholics() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-12 px-4">
       <div className="max-w-4xl mx-auto prose prose-slate">
         <p className="text-sm text-emerald-700 font-semibold uppercase tracking-wide mb-3 not-prose">
-          Evergreen guide
+          Evergreen guide · Core pillar
         </p>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           Why FI for Catholics
@@ -22,6 +22,14 @@ export default function WhyFiForCatholics() {
           “How can we build enough margin that money stops crowding out prayer, presence, generosity, and the work God actually asked of us?”
         </p>
 
+        <p className="mb-6">
+          The practical foundation of that freedom is{' '}
+          <Link to="/blog/build-margin-for-catholic-families" className="text-emerald-700 font-medium hover:underline">
+            financial margin
+          </Link>
+          — cash, time, and attention that are not already claimed by anxiety or lifestyle. Without it, even good intentions stay theoretical.
+        </p>
+
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
           Providence and prudence belong together
         </h2>
@@ -31,7 +39,11 @@ export default function WhyFiForCatholics() {
         </p>
         <p className="mb-6">
           Building investable surplus is one modern way to practice that prudence. It does not replace prayer.
-          Done well, it reduces the anxiety that makes prayer and generosity harder.
+          Done well, it reduces the anxiety that makes prayer and generosity harder. Saints from{' '}
+          <Link to="/blog/build-margin-to-trust-providence-lessons-from-st-cajetan" className="text-emerald-700 font-medium hover:underline">Cajetan</Link>{' '}
+          to{' '}
+          <Link to="/blog/simplicity-creates-real-margin-lessons-from-st-john-vianney" className="text-emerald-700 font-medium hover:underline">John Vianney</Link>{' '}
+          show the same pattern: detachment creates capacity to serve.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
@@ -48,6 +60,9 @@ export default function WhyFiForCatholics() {
         </ul>
         <p className="mb-6">
           Paid work may continue. The point is that work is no longer a trap. The household can say yes when God asks.
+          That readiness is what{' '}
+          <Link to="/blog/build-margin-for-radical-love-lessons-from-st-maximilian-kolbe" className="text-emerald-700 font-medium hover:underline">St. Maximilian Kolbe</Link>{' '}
+          modeled in extreme form and what ordinary families practice when margin is present.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
@@ -59,6 +74,9 @@ export default function WhyFiForCatholics() {
         </p>
         <p className="mb-6">
           Model giving in your spending number. Then the surplus you invest is surplus after fidelity, not instead of it.
+          See how{' '}
+          <Link to="/blog/make-generosity-ordinary-lessons-from-st-lawrence" className="text-emerald-700 font-medium hover:underline">St. Lawrence</Link>{' '}
+          treated the poor as the true treasures of the Church — and why margin makes that ordinary rather than heroic.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
@@ -71,6 +89,7 @@ export default function WhyFiForCatholics() {
         </p>
         <p className="mb-6">
           Clarity is not faithlessness. It is how parents refuse magical thinking.
+          Run the numbers once with your actual household size in mind, then adjust the plan rather than the children’s needs.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
@@ -98,14 +117,24 @@ export default function WhyFiForCatholics() {
           <li>Review a few times a year — live the plan between reviews</li>
         </ol>
         <p className="mb-6">
-          That path is developed more fully in the Get Started guide.
+          That path is developed fully in the{' '}
+          <Link to="/blog/how-to-get-started-on-your-fi-path" className="text-emerald-700 font-medium hover:underline">Get Started guide</Link>.
+          The practical foundation — cash, time, and attention margin — is unpacked in{' '}
+          <Link to="/blog/build-margin-for-catholic-families" className="text-emerald-700 font-medium hover:underline">Build Margin for Catholic Families</Link>.
         </p>
+
         <p className="not-prose mb-8 flex flex-wrap gap-3">
           <Link
             to="/blog/how-to-get-started-on-your-fi-path"
             className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors text-sm sm:text-base shadow-sm"
           >
             How to get started →
+          </Link>
+          <Link
+            to="/blog/build-margin-for-catholic-families"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 hover:border-emerald-300 text-gray-800 font-medium rounded-xl transition-colors text-sm sm:text-base"
+          >
+            Build Margin hub
           </Link>
           <Link
             to="/calculators"

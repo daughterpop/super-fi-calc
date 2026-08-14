@@ -7,7 +7,7 @@ export default function HowToGetStartedOnYourFiPath() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-12 px-4">
       <div className="max-w-4xl mx-auto prose prose-slate">
         <p className="text-sm text-emerald-700 font-semibold uppercase tracking-wide mb-3 not-prose">
-          Evergreen guide
+          Evergreen guide · Core pillar
         </p>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           How to Get Started on Your FI Path
@@ -17,8 +17,16 @@ export default function HowToGetStartedOnYourFiPath() {
         </p>
 
         <p className="mb-6">
-          Most households don’t need a 40-page plan. They need a honest picture, one next step, and the courage to begin.
+          Most households don’t need a 40-page plan. They need an honest picture, one next step, and the courage to begin.
           Financial independence (FI) here means <strong>margin for vocation</strong> — more room for Mass, kids, generosity, and the work God actually called you to — not a secular race to never work again.
+        </p>
+
+        <p className="mb-6">
+          If you want the “why” first, start with{' '}
+          <Link to="/blog/why-fi-for-catholics" className="text-emerald-700 font-medium hover:underline">Why FI for Catholics</Link>.
+          If you want the practical foundation that makes everything else possible, read{' '}
+          <Link to="/blog/build-margin-for-catholic-families" className="text-emerald-700 font-medium hover:underline">Build Margin for Catholic Families</Link>.
+          This page is the concrete sequence.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
@@ -49,7 +57,7 @@ export default function HowToGetStartedOnYourFiPath() {
           <li><strong>Big future costs</strong> — remaining college years, vehicle replacements, mortgage payoff targets</li>
         </ul>
         <p className="mb-6">
-          Do this once together. Disagreement is normal; clarity is the point.
+          Do this once together. Disagreement is normal; clarity is the point. Large families especially need honest math — a single-person spreadsheet will understate reality.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
@@ -83,7 +91,9 @@ export default function HowToGetStartedOnYourFiPath() {
           <li><strong>Automate</strong> — raise the 401(k) contribution, set a recurring taxable transfer, or capture the employer match</li>
         </ul>
         <p className="mb-6">
-          One lever, done consistently, beats an elaborate system you abandon in three weeks.
+          One lever, done consistently, beats an elaborate system you abandon in three weeks. This is how real{' '}
+          <Link to="/blog/build-margin-for-catholic-families" className="text-emerald-700 font-medium hover:underline">margin</Link>{' '}
+          is built — not in theory, but in the next thirty days.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
@@ -100,13 +110,14 @@ export default function HowToGetStartedOnYourFiPath() {
         </ul>
         <p className="mb-6">
           If the plan requires burning out the family to hit a number, the plan is wrong. Adjust the number.
+          Margin that costs the family’s peace is not the margin the saints modeled.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
           6. Put surplus to work simply
         </h2>
         <p className="mb-6">
-          You do not need a exotic portfolio to begin. Capture any employer match, favor low-cost broad funds, and keep fees low.
+          You do not need an exotic portfolio to begin. Capture any employer match, favor low-cost broad funds, and keep fees low.
           Complexity can come later. Consistency matters more than cleverness in the first years.
         </p>
         <p className="mb-6">
@@ -142,6 +153,18 @@ export default function HowToGetStartedOnYourFiPath() {
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 hover:border-emerald-300 text-gray-800 font-medium rounded-xl transition-colors text-sm"
           >
             Read the FAQ
+          </Link>
+          <Link
+            to="/blog/why-fi-for-catholics"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 hover:border-emerald-300 text-gray-800 font-medium rounded-xl transition-colors text-sm"
+          >
+            Why FI for Catholics
+          </Link>
+          <Link
+            to="/blog/build-margin-for-catholic-families"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 hover:border-emerald-300 text-gray-800 font-medium rounded-xl transition-colors text-sm"
+          >
+            Build Margin
           </Link>
           <Link
             to="/subscribe"
