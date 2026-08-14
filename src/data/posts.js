@@ -198,6 +198,106 @@ const rawPosts = [
     link: '/blog/build-margin-for-catholic-families',
     tags: ['Stewardship'],
     featured: true
+  },
+  {
+    title: 'Build Margin for Radical Love: Lessons from St. Maximilian Kolbe',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'On the Memorial of St. Maximilian Kolbe, Catholic families learn that real financial margin is the practical foundation that turns radical, self-giving love from a heroic stretch into an ordinary, joyful way of life.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-for-radical-love-lessons-from-st-maximilian-kolbe',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Fidelity in Lean Seasons: Lessons from Sts. Pontian and Hippolytus',
+    date: 'August 13, 2026',
+    dateSort: '2026-08-13',
+    excerpt: 'On the Memorial of Saints Pontian and Hippolytus, Catholic families learn that real fidelity — staying the course when money pressure rises — is what turns a financial independence plan into lasting freedom rather than a fair-weather intention.',
+    readTime: '4 min read',
+    link: '/blog/fidelity-in-lean-seasons-lessons-from-sts-pontian-and-hippolytus',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Build Margin That Guards Your Peace: Lessons from St. Jane Frances de Chantal',
+    date: 'August 12, 2026',
+    dateSort: '2026-08-12',
+    excerpt: 'On the Memorial of St. Jane Frances de Chantal, Catholic families learn that building real financial margin is the practical way to protect inward peace — so money anxiety never crowds out charity, family, or prayer.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-that-guards-your-peace-lessons-from-st-jane-frances-de-chantal',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Live Light Like St. Clare: Lessons for Family Freedom',
+    date: 'August 11, 2026',
+    dateSort: '2026-08-11',
+    excerpt: 'On the Memorial of St. Clare of Assisi, Catholic families learn that deliberately living light — fewer possessions, less lifestyle pressure — creates the practical margin that turns financial independence into everyday freedom for mission and family.',
+    readTime: '4 min read',
+    link: '/blog/live-light-like-st-clare-lessons-for-family-freedom',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Make Generosity Ordinary: Lessons from St. Lawrence',
+    date: 'August 10, 2026',
+    dateSort: '2026-08-10',
+    excerpt: 'On the Feast of St. Lawrence, Catholic families learn that real financial margin turns generosity from a heroic stretch into an ordinary, joyful part of daily life — treating the poor as the true treasures of the Church.',
+    readTime: '4 min read',
+    link: '/blog/make-generosity-ordinary-lessons-from-st-lawrence',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Build Margin to Carry the Cross: Lessons from St. Edith Stein',
+    date: 'August 9, 2026',
+    dateSort: '2026-08-09',
+    excerpt: 'On the Memorial of St. Teresa Benedicta of the Cross, Catholic families learn that seeking financial truth and building real margin prepares us to carry the ordinary crosses of family life with freedom rather than fear.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-to-carry-the-cross-lessons-from-st-edith-stein',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Build Margin Through Gospel Poverty: Lessons from St. Dominic',
+    date: 'August 8, 2026',
+    dateSort: '2026-08-08',
+    excerpt: 'On the Memorial of St. Dominic, Catholic families learn that embracing Gospel poverty — owning less and clinging less — creates the practical margin that turns financial independence into everyday freedom and joy.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-through-gospel-poverty-lessons-from-st-dominic',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'How to Get Started on Your FI Path',
+    date: 'August 7, 2026',
+    dateSort: '2026-08-07',
+    excerpt: 'A clear, practical starting path for Catholic households: know the number, protect the tithe, build the buffer, then put surplus to work.',
+    readTime: '8 min read',
+    link: '/blog/how-to-get-started-on-your-fi-path',
+    tags: ['Stewardship'],
+    featured: true
+  },
+  {
+    title: 'Why FI for Catholics',
+    date: 'August 7, 2026',
+    dateSort: '2026-08-07',
+    excerpt: 'Financial independence for Catholic families means margin for vocation — Providence and prudence together, tithing in the plan, honest math for large households, and freedom for the mission rather than secular FIRE cosplay.',
+    readTime: '6 min read',
+    link: '/blog/why-fi-for-catholics',
+    tags: ['Stewardship'],
+    featured: true
+  },
+  {
+    title: 'Triple Savings on Online Purchases',
+    date: 'August 7, 2026',
+    dateSort: '2026-08-07',
+    excerpt: 'Stack credit-card rewards, cashback portals, and checkout offers so everyday shopping funds the FI path — without debt and without turning thrift into a second full-time job.',
+    readTime: '7 min read',
+    link: '/blog/triple-savings-online-purchases',
+    tags: ['Stewardship', 'Tools'],
+    featured: true
   }
 ];
 
