@@ -22,6 +22,11 @@ import IsFireCompatibleWithCatholicism from './pages/is-fire-compatible-with-cat
 import HowToBudgetAsACatholicFamilyWithTithingFirst from './pages/how-to-budget-as-a-catholic-family-with-tithing-first.jsx';
 import BuildingAnEmergencyFundWithoutNeglectingTheTithe from './pages/building-an-emergency-fund-without-neglecting-the-tithe.jsx';
 import FaithBasedInvestingBasicsForCatholicHouseholds from './pages/faith-based-investing-basics-for-catholic-households.jsx';
+import InvestYourSurplusWithRobinhoodForCatholicFi from './pages/invest-your-surplus-with-robinhood-for-catholic-fi.jsx';
+import AutomateInvestingAndCashWithWealthfrontForCatholicFamilies from './pages/automate-investing-and-cash-with-wealthfront-for-catholic-families.jsx';
+import SeeEveryDollarWithMonarchMoneyForCatholicHouseholds from './pages/see-every-dollar-with-monarch-money-for-catholic-households.jsx';
+import BuildGenerosityIntoYourFiPlanWithDaffy from './pages/build-generosity-into-your-fi-plan-with-daffy.jsx';
+import StretchTheGroceryBudgetWithThriveMarketForCatholicFi from './pages/stretch-the-grocery-budget-with-thrive-market-for-catholic-fi.jsx';
 import CatholicFamiliesLeverageAiForPrayerfulFinancialFreedomAndLastingLegacy from './pages/catholic-families-leverage-ai-for-prayerful-financial-freedom-and-lasting-legacy.jsx';
 import CatholicParentsBuildingFiLegacyWithAiAndPrayer from './pages/catholic-parents-building-fi-legacy-with-ai-and-prayer.jsx';
 import CatholicMomsDadsUseAiToBuildDebtFreeFaithFilledFamilyLegacy from './pages/catholic-moms-dads-use-ai-to-build-debt-free-faith-filled-family-legacy.jsx';
@@ -82,6 +87,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/how-to-budget-as-a-catholic-family-with-tithing-first" element={<HowToBudgetAsACatholicFamilyWithTithingFirst />} />
           <Route path="/blog/building-an-emergency-fund-without-neglecting-the-tithe" element={<BuildingAnEmergencyFundWithoutNeglectingTheTithe />} />
           <Route path="/blog/faith-based-investing-basics-for-catholic-households" element={<FaithBasedInvestingBasicsForCatholicHouseholds />} />
+          <Route path="/blog/invest-your-surplus-with-robinhood-for-catholic-fi" element={<InvestYourSurplusWithRobinhoodForCatholicFi />} />
+          <Route path="/blog/automate-investing-and-cash-with-wealthfront-for-catholic-families" element={<AutomateInvestingAndCashWithWealthfrontForCatholicFamilies />} />
+          <Route path="/blog/see-every-dollar-with-monarch-money-for-catholic-households" element={<SeeEveryDollarWithMonarchMoneyForCatholicHouseholds />} />
+          <Route path="/blog/build-generosity-into-your-fi-plan-with-daffy" element={<BuildGenerosityIntoYourFiPlanWithDaffy />} />
+          <Route path="/blog/stretch-the-grocery-budget-with-thrive-market-for-catholic-fi" element={<StretchTheGroceryBudgetWithThriveMarketForCatholicFi />} />
           <Route path="/blog/triple-savings-online-purchases" element={<TripleSavingsOnlinePurchases />} />
           <Route path="/blog/why-fi-for-everyone" element={<WhyFIForEveryone />} />
           <Route path="/blog/catholic-families-leverage-ai-for-prayerful-financial-freedom-and-lasting-legacy" element={<CatholicFamiliesLeverageAiForPrayerfulFinancialFreedomAndLastingLegacy />} />
