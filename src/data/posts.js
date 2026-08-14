@@ -18,6 +18,36 @@ const rawPosts = [
     link: '/blog/automate-investing-and-cash-with-wealthfront-for-catholic-families',
     tags: ['Stewardship', 'Tools', 'Legacy'],
     featured: true
+  },
+  {
+    title: 'See Every Dollar with Monarch Money for Catholic Households',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'Shared visibility for budgets, net worth, and investments — so spouses can steward the household together without spreadsheets becoming a second job.',
+    readTime: '5 min read',
+    link: '/blog/see-every-dollar-with-monarch-money-for-catholic-households',
+    tags: ['Stewardship', 'Tools', 'Couples'],
+    featured: true
+  },
+  {
+    title: 'Build Generosity into Your FI Plan with Daffy',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'A modern donor-advised fund for everyday families — so giving stays a first claim on the path to financial independence instead of an afterthought when cash is tight.',
+    readTime: '5 min read',
+    link: '/blog/build-generosity-into-your-fi-plan-with-daffy',
+    tags: ['Stewardship', 'Tithing', 'Tools'],
+    featured: true
+  },
+  {
+    title: 'Stretch the Grocery Budget with Thrive Market for Catholic FI',
+    date: 'August 14, 2026',
+    dateSort: '2026-08-14',
+    excerpt: 'Organic and pantry staples at membership pricing — one practical way large Catholic families can free real dollars from the grocery line without turning thrift into a full-time job.',
+    readTime: '5 min read',
+    link: '/blog/stretch-the-grocery-budget-with-thrive-market-for-catholic-fi',
+    tags: ['Stewardship', 'Tools', 'Parenting'],
+    featured: true
   }
 ];
 
