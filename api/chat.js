@@ -1,6 +1,6 @@
 // api/chat.js
-// Cheap, grounded Q&A for Via Fidelitatis visitors.
-// Prefers Google Gemini Flash-Lite (very low cost). Falls back to xAI Grok if configured.
+// Grounded Q&A for Via Fidelitatis visitors.
+// Prefers xAI Grok (best brand/voice fit). Falls back to Gemini if no XAI_API_KEY.
 
 const SYSTEM_PROMPT = `You are the Via Fidelitatis assistant — a calm, practical guide for Catholic families building financial independence so money serves vocation, not the other way around.
 
@@ -64,18 +64,19 @@ export default async function handler(req, res) {
       content: String(m.content || '').slice(0, 2000),
     }));
 
-    const googleKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY;
     const xaiKey = process.env.XAI_API_KEY;
+    const googleKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY;
 
     let reply = null;
 
-    if (googleKey) {
-      reply = await callGemini(googleKey, recent);
-    } else if (xaiKey) {
+    // Prefer Grok (best voice/brand fit for this site)
+    if (xaiKey) {
       reply = await callXai(xaiKey, recent);
+    } else if (googleKey) {
+      reply = await callGemini(googleKey, recent);
     } else {
       return res.status(500).json({
-        error: 'No AI key configured. Add GOOGLE_GENERATIVE_AI_API_KEY (preferred, cheapest) or XAI_API_KEY in Vercel env vars.',
+        error: 'No AI key configured. Add XAI_API_KEY (preferred) or GOOGLE_GENERATIVE_AI_API_KEY in Vercel env vars.',
       });
     }
 
@@ -84,6 +85,33 @@ export default async function handler(req, res) {
     console.error('chat error', err);
     return res.status(500).json({ error: 'Something went wrong. Please try again.' });
   }
+}
+
+async function callXai(apiKey, messages) {
+  const model = process.env.XAI_MODEL || 'grok-3-mini';
+  const r = await fetch('https://api.x.ai/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model,
+      messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...messages],
+      temperature: 0.4,
+      max_tokens: 700,
+    }),
+  });
+
+  if (!r.ok) {
+    const t = await r.text();
+    throw new Error(`xAI ${r.status}: ${t.slice(0, 300)}`);
+  }
+
+  const data = await r.json();
+  const text = data?.choices?.[0]?.message?.content;
+  if (!text) throw new Error('Empty xAI response');
+  return text.trim();
 }
 
 async function callGemini(apiKey, messages) {
@@ -118,32 +146,5 @@ async function callGemini(apiKey, messages) {
   const data = await r.json();
   const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
   if (!text) throw new Error('Empty Gemini response');
-  return text.trim();
-}
-
-async function callXai(apiKey, messages) {
-  const model = process.env.XAI_MODEL || 'grok-3-mini';
-  const r = await fetch('https://api.x.ai/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model,
-      messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...messages],
-      temperature: 0.4,
-      max_tokens: 700,
-    }),
-  });
-
-  if (!r.ok) {
-    const t = await r.text();
-    throw new Error(`xAI ${r.status}: ${t.slice(0, 300)}`);
-  }
-
-  const data = await r.json();
-  const text = data?.choices?.[0]?.message?.content;
-  if (!text) throw new Error('Empty xAI response');
   return text.trim();
 }
