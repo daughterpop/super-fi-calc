@@ -248,6 +248,106 @@ const rawPosts = [
     link: '/blog/make-generosity-ordinary-lessons-from-st-lawrence',
     tags: ['Stewardship', 'Seasonal'],
     featured: false
+  },
+  {
+    title: 'Build Margin to Carry the Cross: Lessons from St. Edith Stein',
+    date: 'August 9, 2026',
+    dateSort: '2026-08-09',
+    excerpt: 'On the Memorial of St. Teresa Benedicta of the Cross, Catholic families learn that seeking financial truth and building real margin prepares us to carry the ordinary crosses of family life with freedom rather than fear.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-to-carry-the-cross-lessons-from-st-edith-stein',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Build Margin Through Gospel Poverty: Lessons from St. Dominic',
+    date: 'August 8, 2026',
+    dateSort: '2026-08-08',
+    excerpt: 'On the Memorial of St. Dominic, Catholic families learn that embracing Gospel poverty — owning less and clinging less — creates the practical margin that turns financial independence into everyday freedom and joy.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-through-gospel-poverty-lessons-from-st-dominic',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'How to Get Started on Your FI Path',
+    date: 'August 7, 2026',
+    dateSort: '2026-08-07',
+    excerpt: 'A clear, practical starting path for Catholic households: know the number, protect the tithe, build the buffer, then put surplus to work.',
+    readTime: '8 min read',
+    link: '/blog/how-to-get-started-on-your-fi-path',
+    tags: ['Stewardship'],
+    featured: true
+  },
+  {
+    title: 'Why FI for Catholics',
+    date: 'August 7, 2026',
+    dateSort: '2026-08-07',
+    excerpt: 'Financial independence for Catholic families means margin for vocation — Providence and prudence together, tithing in the plan, honest math for large households, and freedom for the mission rather than secular FIRE cosplay.',
+    readTime: '6 min read',
+    link: '/blog/why-fi-for-catholics',
+    tags: ['Stewardship'],
+    featured: true
+  },
+  {
+    title: 'Triple Savings on Online Purchases',
+    date: 'August 7, 2026',
+    dateSort: '2026-08-07',
+    excerpt: 'Stack credit-card rewards, cashback portals, and checkout offers so everyday shopping funds the FI path — without debt and without turning thrift into a second full-time job.',
+    readTime: '7 min read',
+    link: '/blog/triple-savings-online-purchases',
+    tags: ['Stewardship', 'Tools'],
+    featured: true
+  },
+  {
+    title: 'Build Margin to Trust Providence: Lessons from St. Cajetan',
+    date: 'August 7, 2026',
+    dateSort: '2026-08-07',
+    excerpt: 'On the Memorial of St. Cajetan, Catholic families learn that real financial margin is the practical foundation that lets trust in Providence replace anxiety — turning financial independence into everyday freedom to serve.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-to-trust-providence-lessons-from-st-cajetan',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'See the Glory Ahead: Lessons from the Transfiguration',
+    date: 'August 6, 2026',
+    dateSort: '2026-08-06',
+    excerpt: 'On the Feast of the Transfiguration, Catholic families learn that building real financial margin is the practical way to see the glory ahead — freedom to serve, rest, and raise children without constant money anxiety.',
+    readTime: '4 min read',
+    link: '/blog/see-the-glory-ahead-lessons-from-the-transfiguration',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Build on Trust, Not Anxiety: Lessons from Our Lady of the Snows',
+    date: 'August 5, 2026',
+    dateSort: '2026-08-05',
+    excerpt: 'On the Dedication of the Basilica of Saint Mary Major, Catholic families learn that trusting Providence — the same trust that marked the snow in summer — creates the practical margin that turns financial independence into everyday freedom from anxiety.',
+    readTime: '4 min read',
+    link: '/blog/build-on-trust-not-anxiety-lessons-from-our-lady-of-the-snows',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Simplicity Creates Real Margin: Lessons from St. John Vianney',
+    date: 'August 4, 2026',
+    dateSort: '2026-08-04',
+    excerpt: 'On the Memorial of St. John Vianney, Catholic families learn that deliberate simplicity creates the practical margin that turns financial independence from a distant goal into everyday freedom.',
+    readTime: '4 min read',
+    link: '/blog/simplicity-creates-real-margin-lessons-from-st-john-vianney',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Build Margin for True Hospitality: Lessons from St. Lydia',
+    date: 'August 3, 2026',
+    dateSort: '2026-08-03',
+    excerpt: 'On the Memorial of St. Lydia, Catholic families learn that financial independence creates the practical margin to open their homes and tables without anxiety — turning everyday hospitality into a living act of faith.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-for-true-hospitality-lessons-from-st-lydia',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
   }
 ];
 
