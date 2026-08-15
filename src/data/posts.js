@@ -448,6 +448,136 @@ const rawPosts = [
     link: '/blog/catholic-families-ai-for-back-to-school-savings-and-faith-filled-financial-freedom',
     tags: ['Stewardship', 'Parenting', 'AI Tools'],
     featured: false
+  },
+  {
+    title: 'Using AI Without Losing the Plot',
+    date: 'July 21, 2026',
+    dateSort: '2026-07-21',
+    excerpt: 'How Catholic families can use AI for money tasks without letting the tool run the household or replace judgment and prayer.',
+    readTime: '5 min read',
+    link: '/blog/using-ai-without-losing-the-plot',
+    tags: ['AI Tools', 'Stewardship'],
+    featured: false
+  },
+  {
+    title: 'AI and Prayer in a Parent Budget',
+    date: 'July 20, 2026',
+    dateSort: '2026-07-20',
+    excerpt: 'Practical ways to keep prayer and presence first while still using smart tools for the numbers.',
+    readTime: '4 min read',
+    link: '/blog/ai-and-prayer-in-a-parent-budget',
+    tags: ['AI Tools', 'Prayer', 'Parenting'],
+    featured: false
+  },
+  {
+    title: 'Debt Payoff Prompts That Actually Help',
+    date: 'July 19, 2026',
+    dateSort: '2026-07-19',
+    excerpt: 'Simple, tested prompts that turn AI into a useful assistant for debt payoff planning without the hype.',
+    readTime: '5 min read',
+    link: '/blog/debt-payoff-prompts-that-actually-help',
+    tags: ['AI Tools', 'Stewardship'],
+    featured: false
+  },
+  {
+    title: 'Where AI Helps (and Where It Doesn’t)',
+    date: 'July 18, 2026',
+    dateSort: '2026-07-18',
+    excerpt: 'A clear-eyed look at the real usefulness of AI for family finances — and the places it still falls short.',
+    readTime: '5 min read',
+    link: '/blog/where-ai-helps-and-where-it-doesnt',
+    tags: ['AI Tools', 'Stewardship'],
+    featured: false
+  },
+  {
+    title: 'A Short List of Useful AI Prompts for Money',
+    date: 'July 17, 2026',
+    dateSort: '2026-07-17',
+    excerpt: 'A handful of prompts that actually save time on budgeting, investing questions, and family money conversations.',
+    readTime: '4 min read',
+    link: '/blog/a-short-list-of-useful-ai-prompts-for-money',
+    tags: ['AI Tools', 'Stewardship'],
+    featured: false
+  },
+  {
+    title: 'Teaching Kids About Money Without the Lecture',
+    date: 'July 16, 2026',
+    dateSort: '2026-07-16',
+    excerpt: 'Practical, age-appropriate ways to form kids in stewardship without turning every conversation into a lesson.',
+    readTime: '5 min read',
+    link: '/blog/teaching-kids-about-money-without-the-lecture',
+    tags: ['Parenting', 'Stewardship'],
+    featured: false
+  },
+  {
+    title: 'Presence First, Spreadsheets Second',
+    date: 'July 15, 2026',
+    dateSort: '2026-07-15',
+    excerpt: 'Why the order matters: the family that is present to each other can handle the numbers; the reverse is harder.',
+    readTime: '4 min read',
+    link: '/blog/presence-first-spreadsheets-second',
+    tags: ['Parenting', 'Stewardship'],
+    featured: false
+  },
+  {
+    title: 'Prayer and the Spreadsheet',
+    date: 'July 14, 2026',
+    dateSort: '2026-07-14',
+    excerpt: 'How to keep the budget from becoming an idol while still doing the honest math.',
+    readTime: '4 min read',
+    link: '/blog/prayer-and-the-spreadsheet',
+    tags: ['Prayer', 'Stewardship'],
+    featured: false
+  },
+  {
+    title: 'Money Talks That Don’t Blow Up',
+    date: 'July 13, 2026',
+    dateSort: '2026-07-13',
+    excerpt: 'Practical habits for couples so money conversations stay productive instead of becoming fights.',
+    readTime: '5 min read',
+    link: '/blog/money-talks-that-dont-blow-up',
+    tags: ['Couples', 'Stewardship'],
+    featured: false
+  },
+  {
+    title: 'Faithful Parenting on the Path to FI',
+    date: 'July 12, 2026',
+    dateSort: '2026-07-12',
+    excerpt: 'Raising kids while building margin: what actually helps and what turns into pressure.',
+    readTime: '5 min read',
+    link: '/blog/faithful-parenting-on-the-path-to-fi',
+    tags: ['Parenting', 'Stewardship'],
+    featured: false
+  },
+  {
+    title: 'Raising Generous, Grounded Kids: Faith, Family Budgeting & Shared Financial Freedom',
+    date: 'July 11, 2026',
+    dateSort: '2026-07-11',
+    excerpt: 'How the daily practices of tithing, saving, and talking openly about money form kids who can both steward and give.',
+    readTime: '6 min read',
+    link: '/blog/raising-generous-grounded-kids-faith-family-budgeting-and-shared-financial-freedom',
+    tags: ['Parenting', 'Stewardship', 'Legacy'],
+    featured: false
+  },
+  {
+    title: 'What You Actually Hand On',
+    date: 'July 10, 2026',
+    dateSort: '2026-07-10',
+    excerpt: 'Legacy is more than the portfolio. The habits, the peace, and the faith are what the kids actually receive.',
+    readTime: '4 min read',
+    link: '/blog/what-you-actually-hand-on',
+    tags: ['Legacy', 'Stewardship'],
+    featured: false
+  },
+  {
+    title: 'Why Financial Independence Is for Everyone',
+    date: 'July 9, 2026',
+    dateSort: '2026-07-09',
+    excerpt: 'FI is not a lifestyle brand. It is the practical freedom to live your vocation without money constantly calling the shots.',
+    readTime: '5 min read',
+    link: '/blog/why-financial-independence-is-for-everyone',
+    tags: ['Stewardship'],
+    featured: true
   }
 ];
 
