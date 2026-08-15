@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin for Heavenly Hope: Lessons from the Assumption',
+    date: 'August 15, 2026',
+    dateSort: '2026-08-15',
+    excerpt: 'On the Solemnity of the Assumption, Catholic families learn that real financial margin keeps eyes lifted toward heaven — so money serves the pilgrimage instead of becoming the destination.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-for-heavenly-hope-lessons-from-the-assumption',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
     title: 'Invest Your Surplus with Robinhood for Catholic FI',
     date: 'August 14, 2026',
     dateSort: '2026-08-14',

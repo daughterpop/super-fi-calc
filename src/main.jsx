@@ -75,6 +75,7 @@ import LiveLightLikeStClareLessonsForFamilyFreedom from './pages/live-light-like
 import BuildMarginThatGuardsYourPeaceLessonsFromStJaneFrancesDeChantal from './pages/build-margin-that-guards-your-peace-lessons-from-st-jane-frances-de-chantal.jsx';
 import FidelityInLeanSeasonsLessonsFromStsPontianAndHippolytus from './pages/fidelity-in-lean-seasons-lessons-from-sts-pontian-and-hippolytus.jsx';
 import BuildMarginForRadicalLoveLessonsFromStMaximilianKolbe from './pages/build-margin-for-radical-love-lessons-from-st-maximilian-kolbe.jsx';
+import BuildMarginForHeavenlyHopeLessonsFromTheAssumption from './pages/build-margin-for-heavenly-hope-lessons-from-the-assumption.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -153,6 +154,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/build-margin-that-guards-your-peace-lessons-from-st-jane-frances-de-chantal" element={<BuildMarginThatGuardsYourPeaceLessonsFromStJaneFrancesDeChantal />} />
           <Route path="/blog/fidelity-in-lean-seasons-lessons-from-sts-pontian-and-hippolytus" element={<FidelityInLeanSeasonsLessonsFromStsPontianAndHippolytus />} />
           <Route path="/blog/build-margin-for-radical-love-lessons-from-st-maximilian-kolbe" element={<BuildMarginForRadicalLoveLessonsFromStMaximilianKolbe />} />
+          <Route path="/blog/build-margin-for-heavenly-hope-lessons-from-the-assumption" element={<BuildMarginForHeavenlyHopeLessonsFromTheAssumption />} />
 
           <Route path="*" element={<App />} />
         </Routes>
