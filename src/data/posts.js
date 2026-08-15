@@ -348,6 +348,106 @@ const rawPosts = [
     link: '/blog/build-margin-for-true-hospitality-lessons-from-st-lydia',
     tags: ['Stewardship', 'Seasonal'],
     featured: false
+  },
+  {
+    title: 'When Little Is Enough: Lessons from the Loaves and Fishes',
+    date: 'August 2, 2026',
+    dateSort: '2026-08-02',
+    excerpt: 'When the disciples saw only scarcity, Jesus showed abundance. Catholic families learn that living as if little is enough creates the practical margin that turns financial independence into freedom to give.',
+    readTime: '4 min read',
+    link: '/blog/when-little-is-enough-lessons-from-the-loaves-and-fishes',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Detachment Creates Real Freedom: Lessons from St. Alphonsus Liguori',
+    date: 'August 1, 2026',
+    dateSort: '2026-08-01',
+    excerpt: 'On the Memorial of St. Alphonsus Liguori, Catholic families learn that true financial freedom begins with detachment from status and anxiety — and that FI is one practical way to create the margin that makes that freedom possible.',
+    readTime: '4 min read',
+    link: '/blog/detachment-creates-real-freedom-lessons-from-st-alphonsus-liguori',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Serve Without the Anxiety: Lessons from Martha, Mary, and Lazarus',
+    date: 'July 29, 2026',
+    dateSort: '2026-07-29',
+    excerpt: 'Martha was anxious and troubled about many things. Catholic families learn that building financial margin is one practical way to serve without the anxiety that crowds out the better part.',
+    readTime: '4 min read',
+    link: '/blog/serve-without-the-anxiety-lessons-from-martha-mary-and-lazarus',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Build a Money Sabbath into Your Week',
+    date: 'July 28, 2026',
+    dateSort: '2026-07-28',
+    excerpt: 'A practical weekly pause from money decisions so the household can rest, pray, and remember that provision is from the Lord — not from constant optimization.',
+    readTime: '5 min read',
+    link: '/blog/build-a-money-sabbath-into-your-week',
+    tags: ['Stewardship', 'Prayer'],
+    featured: false
+  },
+  {
+    title: 'Build Margin to Give Freely: Lessons from St. Pantaleon',
+    date: 'July 27, 2026',
+    dateSort: '2026-07-27',
+    excerpt: 'On the feast of St. Pantaleon, the unmercenary physician, Catholic families learn that financial independence creates the practical freedom to serve and give without calculating the return.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-to-give-freely-lessons-from-st-pantaleon',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Lessons from Joachim and Anne for Building a Lasting Family Legacy',
+    date: 'July 26, 2026',
+    dateSort: '2026-07-26',
+    excerpt: 'The parents of the Blessed Virgin show us that ordinary faithfulness in the home is the real foundation of lasting family legacy — including the financial kind.',
+    readTime: '4 min read',
+    link: '/blog/lessons-from-joachim-and-anne-for-building-a-lasting-family-legacy',
+    tags: ['Stewardship', 'Legacy', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Treat Your FI Journey Like a Pilgrimage: Lessons from St. James for Catholic Families',
+    date: 'July 25, 2026',
+    dateSort: '2026-07-25',
+    excerpt: 'The Camino reminds us that the path itself shapes us. Catholic families can treat the long work of financial independence the same way — steady steps, not a race.',
+    readTime: '4 min read',
+    link: '/blog/treat-your-fi-journey-like-a-pilgrimage-lessons-from-st-james-for-catholic-families',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
+    title: 'Meal Planning When You’re Tired',
+    date: 'July 24, 2026',
+    dateSort: '2026-07-24',
+    excerpt: 'Simple ways to keep food costs down and the table peaceful even on the days when energy is low.',
+    readTime: '5 min read',
+    link: '/blog/ai-meal-planning-for-catholic-families-stretch-the-budget-and-accelerate-fi',
+    tags: ['Stewardship', 'Parenting', 'AI Tools'],
+    featured: false
+  },
+  {
+    title: 'Protect Your Family’s Digital Privacy',
+    date: 'July 23, 2026',
+    dateSort: '2026-07-23',
+    excerpt: 'Practical tools and habits that keep the household’s data safer without turning privacy into a full-time job.',
+    readTime: '6 min read',
+    link: '/blog/protect-your-familys-digital-privacy-stewardship-tools-for-catholic-fi',
+    tags: ['Stewardship', 'Privacy', 'Tools'],
+    featured: false
+  },
+  {
+    title: 'Back-to-School Costs Without the Spiral',
+    date: 'July 22, 2026',
+    dateSort: '2026-07-22',
+    excerpt: 'A calm approach to the annual back-to-school spend so it doesn’t derail the savings plan.',
+    readTime: '5 min read',
+    link: '/blog/catholic-families-ai-for-back-to-school-savings-and-faith-filled-financial-freedom',
+    tags: ['Stewardship', 'Parenting', 'AI Tools'],
+    featured: false
   }
 ];
 
