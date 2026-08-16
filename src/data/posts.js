@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin for True Mercy: Lessons from St. Stephen of Hungary',
+    date: 'August 16, 2026',
+    dateSort: '2026-08-16',
+    excerpt: 'On the Memorial of St. Stephen of Hungary, Catholic families learn that real financial margin turns mercy and open-handed hospitality from a heroic stretch into an ordinary, joyful way of life.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-for-true-mercy-lessons-from-st-stephen-of-hungary',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
     title: 'Build Margin for Heavenly Hope: Lessons from the Assumption',
     date: 'August 15, 2026',
     dateSort: '2026-08-15',
