@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin to Carry What Matters: Lessons from St. Hyacinth',
+    date: 'August 17, 2026',
+    dateSort: '2026-08-17',
+    excerpt: 'On the Memorial of St. Hyacinth of Poland, Catholic families learn that real financial margin frees them to carry the true treasures — faith, family, and generosity — without being held back by possessions or anxiety.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-to-carry-what-matters-lessons-from-st-hyacinth',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
     title: 'Build Margin for True Mercy: Lessons from St. Stephen of Hungary',
     date: 'August 16, 2026',
     dateSort: '2026-08-16',
