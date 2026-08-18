@@ -78,6 +78,7 @@ import BuildMarginForRadicalLoveLessonsFromStMaximilianKolbe from './pages/build
 import BuildMarginForHeavenlyHopeLessonsFromTheAssumption from './pages/build-margin-for-heavenly-hope-lessons-from-the-assumption.jsx';
 import BuildMarginForTrueMercyLessonsFromStStephenOfHungary from './pages/build-margin-for-true-mercy-lessons-from-st-stephen-of-hungary.jsx';
 import BuildMarginToCarryWhatMattersLessonsFromStHyacinth from './pages/build-margin-to-carry-what-matters-lessons-from-st-hyacinth.jsx';
+import SeekTheTrueCrossLessonsFromStHelena from './pages/seek-the-true-cross-lessons-from-st-helena.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -159,6 +160,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/build-margin-for-heavenly-hope-lessons-from-the-assumption" element={<BuildMarginForHeavenlyHopeLessonsFromTheAssumption />} />
           <Route path="/blog/build-margin-for-true-mercy-lessons-from-st-stephen-of-hungary" element={<BuildMarginForTrueMercyLessonsFromStStephenOfHungary />} />
           <Route path="/blog/build-margin-to-carry-what-matters-lessons-from-st-hyacinth" element={<BuildMarginToCarryWhatMattersLessonsFromStHyacinth />} />
+          <Route path="/blog/seek-the-true-cross-lessons-from-st-helena" element={<SeekTheTrueCrossLessonsFromStHelena />} />
 
           <Route path="*" element={<App />} />
         </Routes>

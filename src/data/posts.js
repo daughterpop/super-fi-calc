@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Seek the True Cross: Lessons from St. Helena',
+    date: 'August 18, 2026',
+    dateSort: '2026-08-18',
+    excerpt: 'On the Memorial of St. Helena, Catholic families learn that real financial margin frees them to seek the true treasures — the Cross, generosity, and family life — without being held back by possessions or anxiety.',
+    readTime: '4 min read',
+    link: '/blog/seek-the-true-cross-lessons-from-st-helena',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
     title: 'Build Margin to Carry What Matters: Lessons from St. Hyacinth',
     date: 'August 17, 2026',
     dateSort: '2026-08-17',
