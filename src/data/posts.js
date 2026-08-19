@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin to Form the Heart: Lessons from St. John Eudes',
+    date: 'August 19, 2026',
+    dateSort: '2026-08-19',
+    excerpt: 'On the Memorial of St. John Eudes, Catholic families learn that real financial margin frees the heart from anxiety so it can be formed in devotion to the Sacred Hearts of Jesus and Mary — turning ordinary stewardship into a path of love.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-to-form-the-heart-lessons-from-st-john-eudes',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
     title: 'Seek the True Cross: Lessons from St. Helena',
     date: 'August 18, 2026',
     dateSort: '2026-08-18',
