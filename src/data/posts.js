@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Simplicity Frees the Soul: Lessons from St. Bernard of Clairvaux',
+    date: 'August 20, 2026',
+    dateSort: '2026-08-20',
+    excerpt: 'On the Memorial of St. Bernard of Clairvaux, Catholic families learn that choosing deliberate simplicity creates the practical financial margin that frees the heart for prayer, generosity, and the quiet strength of vocation.',
+    readTime: '4 min read',
+    link: '/blog/simplicity-frees-the-soul-lessons-from-st-bernard-of-clairvaux',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
     title: 'Build Margin to Form the Heart: Lessons from St. John Eudes',
     date: 'August 19, 2026',
     dateSort: '2026-08-19',
