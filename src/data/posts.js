@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Restore All Things in Christ: Lessons from St. Pius X',
+    date: 'August 21, 2026',
+    dateSort: '2026-08-21',
+    excerpt: 'On the Memorial of St. Pius X, Catholic families learn that restoring Christ at the center of the household begins with ordered finances — deliberate margin that frees the heart from anxiety and makes room for fidelity, generosity, and peace.',
+    readTime: '4 min read',
+    link: '/blog/restore-all-things-in-christ-lessons-from-st-pius-x',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
     title: 'Simplicity Frees the Soul: Lessons from St. Bernard of Clairvaux',
     date: 'August 20, 2026',
     dateSort: '2026-08-20',

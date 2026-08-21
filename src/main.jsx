@@ -81,6 +81,7 @@ import BuildMarginToCarryWhatMattersLessonsFromStHyacinth from './pages/build-ma
 import SeekTheTrueCrossLessonsFromStHelena from './pages/seek-the-true-cross-lessons-from-st-helena.jsx';
 import BuildMarginToFormTheHeartLessonsFromStJohnEudes from './pages/build-margin-to-form-the-heart-lessons-from-st-john-eudes.jsx';
 import SimplicityFreesTheSoulLessonsFromStBernardOfClairvaux from './pages/simplicity-frees-the-soul-lessons-from-st-bernard-of-clairvaux.jsx';
+import RestoreAllThingsInChristLessonsFromStPiusX from './pages/restore-all-things-in-christ-lessons-from-st-pius-x.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -165,6 +166,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/seek-the-true-cross-lessons-from-st-helena" element={<SeekTheTrueCrossLessonsFromStHelena />} />
           <Route path="/blog/build-margin-to-form-the-heart-lessons-from-st-john-eudes" element={<BuildMarginToFormTheHeartLessonsFromStJohnEudes />} />
           <Route path="/blog/simplicity-frees-the-soul-lessons-from-st-bernard-of-clairvaux" element={<SimplicityFreesTheSoulLessonsFromStBernardOfClairvaux />} />
+          <Route path="/blog/restore-all-things-in-christ-lessons-from-st-pius-x" element={<RestoreAllThingsInChristLessonsFromStPiusX />} />
 
           <Route path="*" element={<App />} />
         </Routes>
