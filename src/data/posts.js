@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin for Royal Peace: Lessons from the Queenship of Mary',
+    date: 'August 22, 2026',
+    dateSort: '2026-08-22',
+    excerpt: 'On the Memorial of the Queenship of Mary, Catholic families learn that real financial margin lets maternal peace reign in the home — freeing the household from anxiety so fidelity, generosity, and ordinary love can flourish under her care.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-for-royal-peace-lessons-from-the-queenship-of-mary',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
     title: 'Restore All Things in Christ: Lessons from St. Pius X',
     date: 'August 21, 2026',
     dateSort: '2026-08-21',
