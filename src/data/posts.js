@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin for True Beauty: Lessons from St. Rose of Lima',
+    date: 'August 23, 2026',
+    dateSort: '2026-08-23',
+    excerpt: 'On the Memorial of St. Rose of Lima, Catholic families learn that real financial margin frees the heart from vanity and anxiety so it can choose the better beauty — fidelity, generosity, and ordinary holiness in the home.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-for-true-beauty-lessons-from-st-rose-of-lima',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
     title: 'Build Margin for Royal Peace: Lessons from the Queenship of Mary',
     date: 'August 22, 2026',
     dateSort: '2026-08-22',

@@ -83,6 +83,7 @@ import BuildMarginToFormTheHeartLessonsFromStJohnEudes from './pages/build-margi
 import SimplicityFreesTheSoulLessonsFromStBernardOfClairvaux from './pages/simplicity-frees-the-soul-lessons-from-st-bernard-of-clairvaux.jsx';
 import RestoreAllThingsInChristLessonsFromStPiusX from './pages/restore-all-things-in-christ-lessons-from-st-pius-x.jsx';
 import BuildMarginForRoyalPeaceLessonsFromTheQueenshipOfMary from './pages/build-margin-for-royal-peace-lessons-from-the-queenship-of-mary.jsx';
+import BuildMarginForTrueBeautyLessonsFromStRoseOfLima from './pages/build-margin-for-true-beauty-lessons-from-st-rose-of-lima.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -169,6 +170,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/simplicity-frees-the-soul-lessons-from-st-bernard-of-clairvaux" element={<SimplicityFreesTheSoulLessonsFromStBernardOfClairvaux />} />
           <Route path="/blog/restore-all-things-in-christ-lessons-from-st-pius-x" element={<RestoreAllThingsInChristLessonsFromStPiusX />} />
           <Route path="/blog/build-margin-for-royal-peace-lessons-from-the-queenship-of-mary" element={<BuildMarginForRoyalPeaceLessonsFromTheQueenshipOfMary />} />
+          <Route path="/blog/build-margin-for-true-beauty-lessons-from-st-rose-of-lima" element={<BuildMarginForTrueBeautyLessonsFromStRoseOfLima />} />
 
           <Route path="*" element={<App />} />
         </Routes>
