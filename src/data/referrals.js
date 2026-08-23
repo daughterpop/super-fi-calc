@@ -114,6 +114,19 @@ export const REFERRALS = [
     href: 'https://r.imprint.co/qTwhQA',
   },
   {
+    id: 'gemini-cc',
+    categories: ['investing', 'household'],
+    inBanner: false,
+    stripHeadline: 'Extra $50 in crypto',
+    stripSub: ' — Gemini Credit Card, earn up to 4% back in crypto',
+    stripCta: 'Apply via referral',
+    cardEyebrow: 'Earn crypto while you spend',
+    cardBody:
+      'Gemini Credit Card: no annual fee, earn up to 4% back in bitcoin or 50+ other cryptos on gas/EV/transit (up to $300/mo), 3% dining, 2% groceries, 1% everything else. Use this referral link to apply and get an extra $50 in crypto when you\'re approved and make a qualifying purchase in the first billing cycle.',
+    cardCta: 'Apply for Gemini Credit Card',
+    href: 'https://creditcard.exchange.gemini.com/credit-card/apply?referral_code=jdbeq24gw',
+  },
+  {
     id: 'gondola',
     categories: ['household', 'savings'],
     inBanner: false,
