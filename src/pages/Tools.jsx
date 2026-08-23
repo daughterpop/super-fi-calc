@@ -306,8 +306,9 @@ export default function Tools() {
           </p>
         </div>
 
-        {/* Compact filters — selects instead of a wall of category chips */}
-        <div className="mb-5 sm:mb-6 sticky top-0 z-10 -mx-4 sm:-mx-6 px-4 sm:px-6 py-3 bg-gray-50/95 backdrop-blur-sm border-b border-gray-100/80">
+        {/* Compact filters — selects instead of a wall of category chips.
+            top-14 / sm:top-16 clears the sticky SiteHeader nav so filters do not sit under it on scroll. */}
+        <div className="mb-5 sm:mb-6 sticky top-14 sm:top-16 z-10 -mx-4 sm:-mx-6 px-4 sm:px-6 py-3 bg-gray-50/95 backdrop-blur-sm border-b border-gray-100/80">
           <div className="relative mb-2.5">
             <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
