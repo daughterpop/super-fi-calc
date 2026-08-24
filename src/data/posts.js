@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin for Honest Living: Lessons from St. Bartholomew',
+    date: 'August 24, 2026',
+    dateSort: '2026-08-24',
+    excerpt: 'On the Feast of St. Bartholomew, Catholic families learn that real financial margin frees the household to live without guile — honest numbers, transparent stewardship, and freedom from the quiet pressure of appearances.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-for-honest-living-lessons-from-st-bartholomew',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
     title: 'Build Margin for True Beauty: Lessons from St. Rose of Lima',
     date: 'August 23, 2026',
     dateSort: '2026-08-23',
