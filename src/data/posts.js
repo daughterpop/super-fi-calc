@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Build Margin for True Justice: Lessons from St. Louis',
+    date: 'August 25, 2026',
+    dateSort: '2026-08-25',
+    excerpt: 'On the feast of St. Louis IX, Catholic families learn that real financial margin turns justice and open-handed care for the poor from a heroic stretch into an ordinary, steady way of life in the home.',
+    readTime: '4 min read',
+    link: '/blog/build-margin-for-true-justice-lessons-from-st-louis',
+    tags: ['Stewardship', 'Seasonal'],
+    featured: false
+  },
+  {
     title: 'Build Margin for Honest Living: Lessons from St. Bartholomew',
     date: 'August 24, 2026',
     dateSort: '2026-08-24',

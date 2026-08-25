@@ -85,6 +85,7 @@ import RestoreAllThingsInChristLessonsFromStPiusX from './pages/restore-all-thin
 import BuildMarginForRoyalPeaceLessonsFromTheQueenshipOfMary from './pages/build-margin-for-royal-peace-lessons-from-the-queenship-of-mary.jsx';
 import BuildMarginForTrueBeautyLessonsFromStRoseOfLima from './pages/build-margin-for-true-beauty-lessons-from-st-rose-of-lima.jsx';
 import BuildMarginForHonestLivingLessonsFromStBartholomew from './pages/build-margin-for-honest-living-lessons-from-st-bartholomew.jsx';
+import BuildMarginForTrueJusticeLessonsFromStLouis from './pages/build-margin-for-true-justice-lessons-from-st-louis.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -173,6 +174,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/build-margin-for-royal-peace-lessons-from-the-queenship-of-mary" element={<BuildMarginForRoyalPeaceLessonsFromTheQueenshipOfMary />} />
           <Route path="/blog/build-margin-for-true-beauty-lessons-from-st-rose-of-lima" element={<BuildMarginForTrueBeautyLessonsFromStRoseOfLima />} />
           <Route path="/blog/build-margin-for-honest-living-lessons-from-st-bartholomew" element={<BuildMarginForHonestLivingLessonsFromStBartholomew />} />
+          <Route path="/blog/build-margin-for-true-justice-lessons-from-st-louis" element={<BuildMarginForTrueJusticeLessonsFromStLouis />} />
 
           <Route path="*" element={<App />} />
         </Routes>
