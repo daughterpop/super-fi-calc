@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, Calculator } from 'lucide-react';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
+import { pathForCalculator } from '../data/calculators';
 
 /**
  * Interactive Calculate card for the homepage.
@@ -21,7 +22,8 @@ export default function MiniCalculatorCard() {
     if (assets) params.set('assets', assets);
     if (surplus) params.set('surplus', surplus);
     const qs = params.toString();
-    navigate(`/calculators${qs ? `?${qs}` : ''}`);
+    const path = pathForCalculator('fi-path');
+    navigate(`${path}${qs ? `?${qs}` : ''}`);
   };
 
   // Very rough illustrative estimate (not the real calculator logic)
@@ -117,7 +119,7 @@ export default function MiniCalculatorCard() {
           </Button>
 
           <Link
-            to="/calculators"
+            to={pathForCalculator('fi-path')}
             className="block text-center text-xs text-gray-500 hover:text-emerald-600"
             onClick={(e) => e.stopPropagation()}
           >
