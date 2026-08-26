@@ -1,8 +1,29 @@
+import { useLayoutEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { createPortal } from 'react-dom';
 import SiteFooter from './SiteFooter';
 import ReferralCard from './ReferralCard';
+import { BlogArticleHeader } from './SiteHeader';
 import { getReferral } from '../data/referrals';
 import { getRelatedPosts, PILLAR_LINKS, getPostByPath } from '../data/posts';
+
+/**
+ * Puts the shared nav at the top of the document so blog articles match
+ * Calculators / Tools / Home. Portaled because this component renders at the
+ * end of each post; React context (router) is preserved through the portal.
+ */
+function BlogNavPortal() {
+  const [el, setEl] = useState(null);
+  useLayoutEffect(() => {
+    const node = document.createElement('div');
+    node.id = 'vf-blog-article-header';
+    document.body.prepend(node);
+    setEl(node);
+    return () => node.remove();
+  }, []);
+  if (!el) return null;
+  return createPortal(<BlogArticleHeader />, el);
+}
 
 /**
  * End-of-post CTA with strong internal linking:
@@ -23,6 +44,7 @@ export default function BlogPostFooter() {
 
   return (
     <>
+      <BlogNavPortal />
       <div className="mt-12 pt-8 border-t border-gray-200 not-prose space-y-10">
         {/* Related posts — primary internal linking signal */}
         {related.length > 0 && (
