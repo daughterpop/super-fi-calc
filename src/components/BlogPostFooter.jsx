@@ -85,7 +85,7 @@ export default function BlogPostFooter() {
             Subscribe for occasional notes →
           </Link>
         </p>
-        <Link to="/blog" className="text-indigo-600 hover:text-indigo-800 font-medium">
+        <Link to="/blog" className="text-emerald-600 hover:text-emerald-800 font-medium">
           ← Back to Blog
         </Link>
       </div>
