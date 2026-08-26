@@ -96,3 +96,16 @@ export default function SiteHeader({ showReferralStrip = true }) {
     </>
   );
 }
+
+/**
+ * Blog articles historically omitted the shared nav, which left search landings
+ * without a path to Calculators / Blog / Tools until the footer. Mounted from
+ * main.jsx so every /blog/* article gets the same chrome as the rest of the site.
+ */
+export function BlogArticleHeader() {
+  const { pathname } = useLocation();
+  const normalized =
+    pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
+  if (!normalized.startsWith('/blog/')) return null;
+  return <SiteHeader showReferralStrip={false} />;
+}
