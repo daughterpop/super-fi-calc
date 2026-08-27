@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Stay the Course: Lessons from St. Monica',
+    date: 'August 27, 2026',
+    dateSort: '2026-08-27',
+    excerpt: 'On the Memorial of St. Monica, Catholic families learn that faithful financial independence is a long game — patient persistence in prayer and in the budget, without quitting when the fruit is slow.',
+    readTime: '4 min read',
+    link: '/blog/stay-the-course-lessons-from-st-monica',
+    tags: ['Stewardship', 'Seasonal', 'Prayer', 'Parenting'],
+    featured: false
+  },
+  {
     title: 'Form Children, Not Status: Lessons from St. Joseph Calasanz',
     date: 'August 26, 2026',
     dateSort: '2026-08-26',

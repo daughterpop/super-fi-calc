@@ -87,6 +87,7 @@ import BuildMarginForTrueBeautyLessonsFromStRoseOfLima from './pages/build-margi
 import BuildMarginForHonestLivingLessonsFromStBartholomew from './pages/build-margin-for-honest-living-lessons-from-st-bartholomew.jsx';
 import BuildMarginForTrueJusticeLessonsFromStLouis from './pages/build-margin-for-true-justice-lessons-from-st-louis.jsx';
 import FormChildrenNotStatusLessonsFromStJosephCalasanz from './pages/form-children-not-status-lessons-from-st-joseph-calasanz.jsx';
+import StayTheCourseLessonsFromStMonica from './pages/stay-the-course-lessons-from-st-monica.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -177,6 +178,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/build-margin-for-honest-living-lessons-from-st-bartholomew" element={<BuildMarginForHonestLivingLessonsFromStBartholomew />} />
           <Route path="/blog/build-margin-for-true-justice-lessons-from-st-louis" element={<BuildMarginForTrueJusticeLessonsFromStLouis />} />
           <Route path="/blog/form-children-not-status-lessons-from-st-joseph-calasanz" element={<FormChildrenNotStatusLessonsFromStJosephCalasanz />} />
+          <Route path="/blog/stay-the-course-lessons-from-st-monica" element={<StayTheCourseLessonsFromStMonica />} />
 
           <Route path="*" element={<App />} />
         </Routes>
