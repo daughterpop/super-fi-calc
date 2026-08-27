@@ -1,13 +1,14 @@
 import { Link, Navigate, useSearchParams } from 'react-router-dom';
-import { ExternalLink, Heart, BookOpen, Wrench, Users, TrendingUp } from 'lucide-react';
 import SubscribeForm from '../components/SubscribeForm';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
 import { CALCULATOR_CATALOG, LEGACY_TOOL_TO_SLUG, pathForCalculator } from '../data/calculators';
-import { getReferral } from '../data/referrals';
 
 export { CALCULATOR_CATALOG } from '../data/calculators';
+
+const FAQ_LINK_CLASS =
+  'text-emerald-700 hover:text-emerald-800 font-medium underline-offset-2 hover:underline';
 
 export default function Calculators() {
   const [searchParams] = useSearchParams();
@@ -16,17 +17,47 @@ export default function Calculators() {
     return <Navigate to={pathForCalculator(legacyTool)} replace />;
   }
 
-  const investStep = getReferral({ slot: 3, pool: 'investing' });
-
   const faqs = [
     {
       q: 'Which calculator should I use first?',
-      a: 'Start with Savings rate & runway for a quick pulse, then FI path for the full family timeline. Use College/529, Vehicle TCO, and Debt payoff when those decisions are live.',
+      a: (
+        <>
+          Start with{' '}
+          <Link to={pathForCalculator('savings-rate-runway')} className={FAQ_LINK_CLASS}>
+            Savings rate &amp; runway
+          </Link>{' '}
+          for a quick pulse, then{' '}
+          <Link to={pathForCalculator('fi-path')} className={FAQ_LINK_CLASS}>
+            FI path
+          </Link>{' '}
+          for the full family timeline. Use{' '}
+          <Link to={pathForCalculator('college-529')} className={FAQ_LINK_CLASS}>
+            College/529
+          </Link>
+          ,{' '}
+          <Link to={pathForCalculator('vehicle-tco')} className={FAQ_LINK_CLASS}>
+            Vehicle TCO
+          </Link>
+          , and{' '}
+          <Link to={pathForCalculator('debt-payoff')} className={FAQ_LINK_CLASS}>
+            Debt payoff
+          </Link>{' '}
+          when those decisions are live.
+        </>
+      ),
       link: '/blog/how-to-get-started-on-your-fi-path',
     },
     {
       q: 'How does this align with Catholic stewardship?',
-      a: 'These tools build margin for vocation — prayer, presence, education, and generosity — not accumulation for its own sake. The tithing calculator puts giving in the plan before surplus.',
+      a: (
+        <>
+          These tools build margin for vocation — prayer, presence, education, and generosity — not accumulation for its own sake. The{' '}
+          <Link to={pathForCalculator('tithing-surplus')} className={FAQ_LINK_CLASS}>
+            tithing calculator
+          </Link>{' '}
+          puts giving in the plan before surplus.
+        </>
+      ),
       link: '/blog/why-fi-for-catholics',
     },
     {
@@ -41,38 +72,16 @@ export default function Calculators() {
     },
     {
       q: 'Do bonus and card calculators encourage debt?',
-      a: 'No. Bonuses only help if you pay in full and meet spend with purchases you already needed. The bonus tool flags manufactured spend explicitly.',
+      a: (
+        <>
+          No. Bonuses only help if you pay in full and meet spend with purchases you already needed. The{' '}
+          <Link to={pathForCalculator('bonus-value')} className={FAQ_LINK_CLASS}>
+            bonus tool
+          </Link>{' '}
+          flags manufactured spend explicitly.
+        </>
+      ),
       link: '/blog/triple-savings-online-purchases',
-    },
-  ];
-
-  const nextSteps = [
-    {
-      icon: Users,
-      title: 'Pray & talk with your spouse',
-      body: 'Share the timeline. Ask: Does this plan free us for more prayer, presence, and generosity?',
-      cta: null,
-    },
-    {
-      icon: BookOpen,
-      title: 'Read a related insight',
-      body: 'Deepen the why behind the numbers with practical faith + FI writing.',
-      links: [
-        { to: '/blog/how-to-get-started-on-your-fi-path', label: 'How to get started' },
-        { to: '/blog/why-fi-for-catholics', label: 'Why FI for Catholics' },
-      ],
-    },
-    {
-      icon: TrendingUp,
-      title: 'Put surplus to work',
-      body: investStep.cardBody,
-      cta: { href: investStep.href, label: investStep.cardCta, external: true },
-    },
-    {
-      icon: Wrench,
-      title: 'Explore trusted tools',
-      body: 'Investing, banking, shopping, and privacy tools with referral perks we actually use.',
-      cta: { to: '/tools', label: 'See recommended tools' },
     },
   ];
 
@@ -108,68 +117,6 @@ export default function Calculators() {
             </div>
           </section>
         ))}
-      </div>
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold tracking-[1.5px] mb-4">
-            AFTER THE NUMBERS
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Your Next Faithful Steps</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
-            Clarity is step one. These moves turn numbers into progress.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-          {nextSteps.map((step, idx) => {
-            const Icon = step.icon;
-            return (
-              <div
-                key={idx}
-                className="bg-white border border-gray-100 rounded-2xl p-5 sm:p-6 hover:border-emerald-200 hover:shadow-md transition-all flex flex-col"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 shrink-0 bg-emerald-100 rounded-xl flex items-center justify-center">
-                    <Icon className="text-emerald-600" size={20} />
-                  </div>
-                  <h3 className="font-semibold text-gray-900 text-base leading-snug">{step.title}</h3>
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-4">{step.body}</p>
-                {step.links && (
-                  <div className="flex flex-col gap-1.5">
-                    {step.links.map((l) => (
-                      <Link key={l.to} to={l.to} className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-700 font-medium text-sm">
-                        {l.label} →
-                      </Link>
-                    ))}
-                  </div>
-                )}
-                {step.cta &&
-                  (step.cta.external ? (
-                    <a
-                      href={step.cta.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-emerald-600 hover:text-emerald-700 font-medium text-sm"
-                    >
-                      {step.cta.label}
-                      <ExternalLink size={14} />
-                    </a>
-                  ) : (
-                    <Link to={step.cta.to} className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-700 font-medium text-sm">
-                      {step.cta.label} →
-                    </Link>
-                  ))}
-              </div>
-            );
-          })}
-        </div>
-
-        <p className="text-center text-xs text-gray-500 mt-6 flex items-center justify-center gap-1.5">
-          <Heart size={12} className="text-emerald-500" />
-          Stewardship is a daily "yes" — start with one step today.
-        </p>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 bg-white border-t border-b border-gray-100">
