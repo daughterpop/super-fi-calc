@@ -190,6 +190,28 @@ export const tools_other = [
     valueScore: 50,
   },
   {
+    id: 'priceline',
+    name: 'Priceline',
+    category: 'Travel & Hosting',
+    badge: '$10 off first hotel',
+    headline: 'Hotels, flights, and Express Deals — $10 off your first app hotel booking',
+    description:
+      'Priceline is a major travel marketplace for hotels, flights, cars, and vacation packages, including Express Deals for extra savings. Download the Priceline app and create an account through this referral link to get $10 off your first qualifying hotel booking in the app.',
+    perks: [
+      '$10 off your first Hotel Express Deals or qualifying hotel booking in the Priceline app',
+      'Minimum $100 stay (before taxes and fees), booked in USD',
+      'Hotels, flights, cars, and packages in one place for family trips',
+      'Coupon typically arrives in the app inbox after you sign up via this link',
+    ],
+    cta: 'Join Priceline — $10 Off First Hotel',
+    href: 'https://www.priceline.com/partner/v2/refer-a-friend-tracker?smartlink=https%3A%2F%2Fsmart.link%2Fq2u6lq1azz5ud%3FPAGEID%3DRAF_UNKNOWN_IOS%26REFCLICKID%3DRAF_IOS%26REFID%3DDTRAF%26creative_id%3D039aa9f2e00c1f9b9cab919888392c48%26device_id%3Ddevice_id%26site_id%3DF12226726C5341A5877DE496B3CFCDE0',
+    accent: 'blue',
+    icon: 'mappin',
+    footnote:
+      'New users must download the Priceline app and create an account via this link (promo period through 12/31/2026). $10 coupon applies to Hotel Express Deals or qualifying hotel bookings in the app with a $100+ subtotal before taxes/fees, USD only, one-time use, expires 30 days after issuance. Terms set by Priceline and subject to change.',
+    valueScore: 10,
+  },
+  {
     id: 'rove',
     name: 'Rove Miles',
     category: 'Travel & Hosting',
