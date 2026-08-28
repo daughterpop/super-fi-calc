@@ -1,6 +1,19 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { ArrowRight, ArrowLeft, Check, TrendingUp, Home, GraduationCap, DollarSign, Sparkles, Share2, Heart, BookOpen, Wrench } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Check, Home, GraduationCap, DollarSign, Sparkles, Share2, Heart, BookOpen, Wrench } from 'lucide-react';
+
+/** Display-only compact money. Does not change projection math. */
+function formatCompact(n) {
+  if (!Number.isFinite(n)) return '—';
+  const sign = n < 0 ? '-' : '';
+  const v = Math.abs(n);
+  if (v >= 1000000) {
+    const m = v / 1000000;
+    return `${sign}$${m >= 10 ? m.toFixed(1) : m.toFixed(2)}M`;
+  }
+  if (v >= 1000) return `${sign}$${Math.round(v / 1000).toLocaleString('en-US')}k`;
+  return `${sign}$${Math.round(v).toLocaleString('en-US')}`;
+}
 
 export default function SuperFiCalculator() {
   const [searchParams] = useSearchParams();
@@ -267,10 +280,10 @@ export default function SuperFiCalculator() {
             <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100">
               <div className="text-sm font-medium text-gray-500 mb-2">Current Savings</div>
               <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
-                ${(currentSavings / 1000000).toFixed(2)}M
+                {formatCompact(currentSavings)}
               </div>
               <div className="text-xs text-gray-500">
-                Target: ${(results.currentTotalFI / 1000000).toFixed(2)}M
+                Target: {formatCompact(results.currentTotalFI)}
               </div>
             </div>
             <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100">
@@ -344,7 +357,7 @@ export default function SuperFiCalculator() {
                       {milestone.name}
                     </div>
                     <div className="text-xs text-gray-500">
-                      ${(milestone.target / 1000).toFixed(0)}k
+                      {formatCompact(milestone.target)}
                     </div>
                   </div>
                 </div>
@@ -408,13 +421,13 @@ export default function SuperFiCalculator() {
                       <td className="px-3 sm:px-4 py-3 text-sm text-gray-900">{proj.year}</td>
                       <td className="px-3 sm:px-4 py-3 text-sm text-gray-600">{proj.age}</td>
                       <td className="px-3 sm:px-4 py-3 text-sm text-right font-semibold text-gray-900">
-                        ${(proj.balance / 1000000).toFixed(2)}M
+                        {formatCompact(proj.balance)}
                       </td>
                       <td className="px-3 sm:px-4 py-3 text-sm text-right text-emerald-600">
-                        ${(proj.totalFINumber / 1000000).toFixed(2)}M
+                        {formatCompact(proj.totalFINumber)}
                       </td>
                       <td className="px-3 sm:px-4 py-3 text-sm text-right text-orange-600">
-                        {proj.collegeExpense > 0 ? `-$${(proj.collegeExpense / 1000).toFixed(0)}k` : '-'}
+                        {proj.collegeExpense > 0 ? `−${formatCompact(proj.collegeExpense)}` : '-'}
                       </td>
                       <td className="px-3 sm:px-4 py-3 text-center">
                         {proj.balance >= proj.totalFINumber ? (
@@ -439,17 +452,6 @@ export default function SuperFiCalculator() {
   return (
     <div className="w-full flex flex-col items-center">
       <div className="w-full max-w-2xl">
-        <div className="text-center mb-6 sm:mb-8">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white shadow-sm border border-gray-100 mb-3 sm:mb-4">
-            <TrendingUp className="text-emerald-600" size={18} />
-            <span className="text-xs sm:text-sm font-medium text-gray-700">Financial Independence Calculator</span>
-          </div>
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
-            Plan Your Path to <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Financial Freedom</span>
-          </h1>
-          <p className="text-gray-600 text-sm sm:text-lg">Answer a few questions to see when you can achieve FI for your family</p>
-        </div>
-
         <div className="flex justify-center mb-6 sm:mb-8 overflow-x-auto">
           <div className="flex items-center gap-1.5 sm:gap-2">
             {steps.map((s, idx) => (
