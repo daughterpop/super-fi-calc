@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Order Your Loves: Lessons from St. Augustine',
+    date: 'August 28, 2026',
+    dateSort: '2026-08-28',
+    excerpt: 'On the Memorial of St. Augustine, Catholic families learn that ordered love — God first, then enough for the household, then the remainder for others — is the real foundation of faithful financial independence.',
+    readTime: '4 min read',
+    link: '/blog/order-your-loves-lessons-from-st-augustine',
+    tags: ['Stewardship', 'Seasonal', 'Tithing'],
+    featured: false
+  },
+  {
     title: 'Stay the Course: Lessons from St. Monica',
     date: 'August 27, 2026',
     dateSort: '2026-08-27',
