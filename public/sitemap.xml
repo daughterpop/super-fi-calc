@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.viafidelitatis.com/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -92,7 +92,7 @@
   </url>
   <url>
     <loc>https://www.viafidelitatis.com/blog</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
@@ -113,6 +113,12 @@
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://viafidelitatis.com/blog/he-must-increase-lessons-from-st-john-the-baptist</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://viafidelitatis.com/blog/order-your-loves-lessons-from-st-augustine</loc>

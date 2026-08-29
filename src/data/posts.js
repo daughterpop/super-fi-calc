@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'He Must Increase: Lessons from St. John the Baptist',
+    date: 'August 29, 2026',
+    dateSort: '2026-08-29',
+    excerpt: 'On the Memorial of the Passion of St. John the Baptist, Catholic families learn that decreasing the lifestyle — not the vocation — creates the margin to tell the truth, share the surplus, and let Christ increase in the home.',
+    readTime: '4 min read',
+    link: '/blog/he-must-increase-lessons-from-st-john-the-baptist',
+    tags: ['Stewardship', 'Seasonal', 'Tithing'],
+    featured: false
+  },
+  {
     title: 'Order Your Loves: Lessons from St. Augustine',
     date: 'August 28, 2026',
     dateSort: '2026-08-28',

@@ -89,6 +89,7 @@ import BuildMarginForTrueJusticeLessonsFromStLouis from './pages/build-margin-fo
 import FormChildrenNotStatusLessonsFromStJosephCalasanz from './pages/form-children-not-status-lessons-from-st-joseph-calasanz.jsx';
 import StayTheCourseLessonsFromStMonica from './pages/stay-the-course-lessons-from-st-monica.jsx';
 import OrderYourLovesLessonsFromStAugustine from './pages/order-your-loves-lessons-from-st-augustine.jsx';
+import HeMustIncreaseLessonsFromStJohnTheBaptist from './pages/he-must-increase-lessons-from-st-john-the-baptist.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -181,6 +182,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/form-children-not-status-lessons-from-st-joseph-calasanz" element={<FormChildrenNotStatusLessonsFromStJosephCalasanz />} />
           <Route path="/blog/stay-the-course-lessons-from-st-monica" element={<StayTheCourseLessonsFromStMonica />} />
           <Route path="/blog/order-your-loves-lessons-from-st-augustine" element={<OrderYourLovesLessonsFromStAugustine />} />
+          <Route path="/blog/he-must-increase-lessons-from-st-john-the-baptist" element={<HeMustIncreaseLessonsFromStJohnTheBaptist />} />
 
           <Route path="*" element={<App />} />
         </Routes>
