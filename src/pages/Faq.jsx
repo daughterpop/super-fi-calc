@@ -3,6 +3,10 @@ import { BookOpen, Calculator, ChevronDown, Wrench } from 'lucide-react';
 import { useState } from 'react';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
+import { pathForCalculator } from '../data/calculators';
+
+const LINK_CLASS =
+  'text-emerald-700 hover:text-emerald-800 font-medium underline-offset-2 hover:underline';
 
 const FAQS = [
   {
@@ -15,35 +19,127 @@ const FAQS = [
   },
   {
     q: 'Is financial independence the same as early retirement or FIRE?',
-    a: 'Not exactly. Classic FIRE often aims to stop working as early as possible. Here, FI means freedom to live your vocation: more margin for prayer, presence, parish, and the work God actually called you to — whether or not that includes paid work. The number is a tool for margin, not an idol of leisure.',
+    a: (
+      <>
+        Not exactly. Classic FIRE often aims to stop working as early as possible. Here, FI means freedom to live your vocation: more margin for prayer, presence, parish, and the work God actually called you to — whether or not that includes paid work. The number is a tool for margin, not an idol of leisure. See{' '}
+        <Link to="/blog/is-fire-compatible-with-catholicism" className={LINK_CLASS}>
+          Is FIRE Compatible with Catholicism?
+        </Link>{' '}
+        and{' '}
+        <Link to="/blog/why-fi-for-catholics" className={LINK_CLASS}>
+          Why FI for Catholics
+        </Link>
+        .
+      </>
+    ),
   },
   {
     q: 'Does pursuing FI conflict with trusting Providence?',
-    a: 'No. Scripture and the saints repeatedly pair wise planning with radical trust. Joseph stored grain; the wise virgins brought oil. Building margin is one practical way to reduce the anxiety that crowds out prayer and generosity — so you can trust more, not less.',
+    a: (
+      <>
+        No. Scripture and the saints repeatedly pair wise planning with radical trust. Joseph stored grain; the wise virgins brought oil. Building margin is one practical way to reduce the anxiety that crowds out prayer and generosity — so you can trust more, not less.{' '}
+        <Link to="/blog/why-fi-for-catholics" className={LINK_CLASS}>
+          Why FI for Catholics
+        </Link>{' '}
+        walks through that pairing.
+      </>
+    ),
   },
   {
     q: 'Should tithing and charitable giving be part of an FI plan?',
-    a: 'Yes. Many Catholic families treat giving as a non-negotiable expense, not an afterthought. Planning for it keeps generosity alive after the paycheck stops and turns surplus into fuel for parish, missions, and hospitality.',
+    a: (
+      <>
+        Yes. Many Catholic families treat giving as a non-negotiable expense, not an afterthought. The{' '}
+        <Link to={pathForCalculator('tithing-surplus')} className={LINK_CLASS}>
+          tithing &amp; surplus calculator
+        </Link>{' '}
+        puts giving in the plan before surplus. For the household sequence, see{' '}
+        <Link to="/blog/how-to-budget-as-a-catholic-family-with-tithing-first" className={LINK_CLASS}>
+          How to Budget as a Catholic Family
+        </Link>
+        .
+      </>
+    ),
   },
   {
     q: 'How should a large Catholic family think about the 4% rule?',
-    a: 'Treat 4% as a starting point, not gospel. Larger households often have higher ongoing costs (food, education, vehicles, healthcare) and may prefer a more conservative withdrawal rate or a floor of guaranteed income. Stress-test your real spending, not a single-person spreadsheet.',
+    a: (
+      <>
+        Treat 4% as a starting point, not gospel. Larger households often have higher ongoing costs (food, education, vehicles, healthcare) and may prefer a more conservative withdrawal rate or a floor of guaranteed income. Stress-test real spending in the{' '}
+        <Link to={pathForCalculator('fi-path')} className={LINK_CLASS}>
+          FI path calculator
+        </Link>
+        , not a single-person spreadsheet.
+      </>
+    ),
   },
   {
     q: 'What should we prioritize: emergency fund, retirement, 529s, or Catholic school tuition?',
-    a: 'A common order is: capture any employer match, build a real emergency fund, cover the next few years of known tuition if cash-flow is tight, then balance long-term retirement and education savings. Clarity on years-to-FI usually reveals the right next dollar better than a rigid rule.',
+    a: (
+      <>
+        A common order is: capture any{' '}
+        <Link to={pathForCalculator('employer-match')} className={LINK_CLASS}>
+          employer match
+        </Link>
+        , build a real{' '}
+        <Link to={pathForCalculator('emergency-fund')} className={LINK_CLASS}>
+          emergency fund
+        </Link>
+        , cover the next few years of known tuition if cash-flow is tight (see the{' '}
+        <Link to={pathForCalculator('college-529')} className={LINK_CLASS}>
+          college/529 calculator
+        </Link>
+        ), then balance long-term retirement and education savings. Clarity on years-to-FI usually reveals the right next dollar better than a rigid rule.
+      </>
+    ),
   },
   {
     q: 'What will I find on this site?',
-    a: 'A free FI calculator built for family realities, a blog of faith-filled stewardship essays (including seasonal saint reflections), practical tools and referral perks that free up cash, and this FAQ. Everything is aimed at margin for vocation, not lifestyle inflation.',
+    a: (
+      <>
+        A free{' '}
+        <Link to="/calculators" className={LINK_CLASS}>
+          FI calculator
+        </Link>{' '}
+        built for family realities, a{' '}
+        <Link to="/blog" className={LINK_CLASS}>
+          blog
+        </Link>{' '}
+        of faith-filled stewardship essays (including seasonal saint reflections), practical{' '}
+        <Link to="/tools" className={LINK_CLASS}>
+          tools
+        </Link>{' '}
+        and referral perks that free up cash, and this FAQ. Everything is aimed at margin for vocation, not lifestyle inflation.
+      </>
+    ),
   },
   {
     q: 'Is anything for sale? Are the referral links affiliate?',
-    a: 'The calculator and articles are free. Some tool recommendations include referral links; if you use them, the site may earn a small commission at no extra cost to you. Those offers are chosen because they can legitimately help a household free up cash or simplify money management on the path to FI.',
+    a: (
+      <>
+        The calculator and articles are free. Some recommendations on the{' '}
+        <Link to="/tools" className={LINK_CLASS}>
+          Tools
+        </Link>{' '}
+        page include referral links; if you use them, the site may earn a small commission at no extra cost to you. Those offers are chosen because they can legitimately help a household free up cash or simplify money management on the path to FI.
+      </>
+    ),
   },
   {
     q: 'Where should we start if we feel overwhelmed?',
-    a: 'Start with the calculator and rough numbers — they do not need to be perfect. One clear “years to FI” figure usually makes the next step obvious: one expense to cut, one surplus to increase, or a honest conversation with your spouse. Then read a post or two that matches your season of life.',
+    a: (
+      <>
+        Start with the{' '}
+        <Link to={pathForCalculator('fi-path')} className={LINK_CLASS}>
+          FI path calculator
+        </Link>{' '}
+        and rough numbers — they do not need to be perfect. One clear “years to FI” figure usually makes the next step obvious: one expense to cut, one surplus to increase, or an honest conversation with your spouse. Then read{' '}
+        <Link to="/blog/how-to-get-started-on-your-fi-path" className={LINK_CLASS}>
+          How to Get Started on Your FI Path
+        </Link>
+        .
+      </>
+    ),
   },
 ];
 
@@ -104,37 +200,24 @@ export default function Faq() {
             Ready for clearer numbers?
           </p>
           <Link
-            to="/calculators"
+            to={pathForCalculator('fi-path')}
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-sm transition-colors"
           >
             <Calculator size={16} />
             Open the FI calculator
           </Link>
-        </div>
-
-        <p className="text-center text-sm text-gray-500 mt-8 mb-4">Explore the site</p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <Link
-            to="/calculators"
-            className="flex items-center gap-2 justify-center px-4 py-3 bg-white border border-gray-100 hover:border-emerald-200 rounded-xl text-sm font-medium text-gray-800 hover:text-emerald-700 transition-colors"
-          >
-            <Calculator size={16} className="text-emerald-600" />
-            Calculators
-          </Link>
-          <Link
-            to="/blog"
-            className="flex items-center gap-2 justify-center px-4 py-3 bg-white border border-gray-100 hover:border-emerald-200 rounded-xl text-sm font-medium text-gray-800 hover:text-emerald-700 transition-colors"
-          >
-            <BookOpen size={16} className="text-emerald-600" />
-            Blog
-          </Link>
-          <Link
-            to="/tools"
-            className="flex items-center gap-2 justify-center px-4 py-3 bg-white border border-gray-100 hover:border-emerald-200 rounded-xl text-sm font-medium text-gray-800 hover:text-emerald-700 transition-colors"
-          >
-            <Wrench size={16} className="text-emerald-600" />
-            Tools
-          </Link>
+          <p className="mt-4 text-sm text-gray-500">
+            Or{' '}
+            <Link to="/blog" className={`${LINK_CLASS} inline-flex items-center gap-1`}>
+              <BookOpen size={14} />
+              read the blog
+            </Link>
+            {' · '}
+            <Link to="/tools" className={`${LINK_CLASS} inline-flex items-center gap-1`}>
+              <Wrench size={14} />
+              browse tools
+            </Link>
+          </p>
         </div>
       </div>
       <SiteFooter />
