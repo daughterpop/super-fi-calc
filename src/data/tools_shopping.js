@@ -169,6 +169,28 @@ export const tools_shopping = [
     valueScore: 10,
   },
   {
+    id: 'upromise',
+    name: 'Upromise',
+    category: 'Shopping & Rewards',
+    badge: '$3 bonus this month',
+    headline: 'Everyday cash back for college and gift cards — $3 bonus when you earn $3',
+    description:
+      'Upromise is a cash-back rewards program built around college savings: earn a little extra on shopping, dining, and offers, then send it to a 529, bank account, or gift card. Join through this referral link and get a $3 bonus this month when you earn $3 — $6 toward the gift card of your choice.',
+    perks: [
+      '$3 bonus this month when you earn $3 via this referral — $6 toward a gift card',
+      'Cash back on everyday shopping and partner offers',
+      'Can transfer rewards to a 529 college savings plan, student loans, or a bank account',
+      'A small, automatic way to keep extra cash flowing toward family education goals',
+    ],
+    cta: 'Join Upromise — Get the $3 Bonus',
+    href: 'https://www.upromise.com?rb=147216207',
+    accent: 'sky',
+    icon: 'percent',
+    footnote:
+      'Referral promo: earn $3 this month after signing up via this link to receive an extra $3 bonus. Standard Upromise terms also include a $25 referrer bonus when a referred member earns $25 in qualified rewards within 180 days. Offers and redemption options set by Upromise and subject to change.',
+    valueScore: 6,
+  },
+  {
     id: 'inkind',
     name: 'inKind',
     category: 'Dining',
