@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 const EXPLORE = [
   { to: '/calculators', label: 'Calculators' },
   { to: '/blog', label: 'Blog' },
+  { to: '/ledger', label: 'The Ledger' },
   { to: '/tools', label: 'Tools' },
   { to: '/faq', label: 'FAQ' },
   { to: '/subscribe', label: 'Subscribe' },
