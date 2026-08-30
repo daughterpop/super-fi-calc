@@ -15,14 +15,15 @@ export default function LedgerIndex() {
       <div className="bg-white border-b">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 text-center">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-semibold tracking-[1.5px] mb-4">
-            WEEKLY · SUNDAY ONLY
+            SUNDAYS
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 leading-tight">
             The Ledger
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            One household item, one vetted deal, one fidelity note. Not a news feed.
-            Monday through Saturday the saint essays stay on the blog. Sunday is this page.
+            A short Sunday read for the household. What actually matters in the
+            budget this week, whether a deal is worth it, and a note from the
+            Mass readings — so money stays in its place.
           </p>
         </div>
       </div>

@@ -37,13 +37,13 @@ const STATIC = {
   '/subscribe': {
     title: 'Subscribe — Get The Ledger on Sunday | Via Fidelitatis',
     description:
-      'Join the Via Fidelitatis list for The Ledger every Sunday: one household item, one vetted deal, one fidelity note for Catholic families.',
+      'Join the Via Fidelitatis list for The Ledger every Sunday — a short household read for Catholic families on the path to FI.',
     type: 'website',
   },
   '/ledger': {
     title: 'The Ledger — Sunday Surplus for Catholic Households | Via Fidelitatis',
     description:
-      'A weekly Sunday edition: one household money item, one vetted deal, one fidelity note. Not a news feed. Saint essays stay Monday through Saturday.',
+      'A short Sunday read for Catholic households: what matters in the budget this week, whether a deal is worth it, and a note from the Mass readings.',
     type: 'website',
   },
   '/faq': {

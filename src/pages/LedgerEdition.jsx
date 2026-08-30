@@ -81,14 +81,6 @@ export default function LedgerEdition() {
           ))}
         </div>
 
-        <p className="mt-8 text-sm text-gray-500 leading-relaxed">
-          Monday through Saturday the saint essays stay on the{' '}
-          <Link to="/blog" className="text-emerald-700 hover:underline font-medium">
-            blog
-          </Link>
-          . Sunday is The Ledger.
-        </p>
-
         <nav className="mt-10 flex flex-col sm:flex-row sm:justify-between gap-3 text-sm">
           {older ? (
             <Link to={`/ledger/${older.slug}`} className="text-gray-600 hover:text-emerald-700">

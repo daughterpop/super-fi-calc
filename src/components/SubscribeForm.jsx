@@ -50,7 +50,7 @@ export default function SubscribeForm() {
     <div className="mt-8 sm:mt-12 p-6 sm:p-8 bg-white rounded-2xl shadow-md max-w-md mx-auto text-center w-full">
       <h2 className="text-2xl sm:text-3xl font-bold mb-3">Get The Ledger on Sunday</h2>
       <p className="text-gray-600 mb-6 text-sm sm:text-base">
-        One email a week: household, deal, fidelity. Saint essays stay on the blog, Monday through Saturday.
+        One email on Sunday. The current issue is waiting after you join.
       </p>
 
       {!submitted ? (

@@ -53,11 +53,6 @@ export default function BlogIndex() {
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Stewardship, margin, and vocation for Catholic families on the path to FI.
-            Saint essays run Monday through Saturday. Sunday is{' '}
-            <Link to="/ledger" className="text-emerald-700 hover:underline font-medium">
-              The Ledger
-            </Link>
-            .
           </p>
         </div>
       </div>

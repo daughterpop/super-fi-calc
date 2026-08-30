@@ -12,7 +12,7 @@ export const LANES = [
   {
     id: 'fidelity',
     label: 'Fidelity',
-    blurb: 'Sunday’s readings or feast, applied to surplus. Weekday saint essays stay on the blog.',
+    blurb: 'The Sunday readings, applied to surplus — so the Gospel has somewhere to land in the budget.',
   },
 ];
 
@@ -71,7 +71,7 @@ export const editions = [
         body: [
           '“Whoever wishes to come after me must deny himself, take up his cross, and follow me.” The household cross this week is not theatrics. It is naming Tuesday’s bills and letting Friday’s ads go unanswered. Denial here is specific: the extra night, the extra cart, the extra “we deserve it” that was not in the plan on August 1.',
           'Paul is just as blunt: “Do not conform yourselves to this age, but be transformed by the renewal of your mind.” This age sells rest as spend. The renewal is a short list, written before Mass or after, that keeps the tithe and the school ahead of the weekend.',
-          '“What profit would there be for one to gain the whole world and forfeit his life?” A long weekend can be holy. A long weekend that forfeits September’s first-fruits is just the world, with a lake photo. There is no saint post today. This is Sunday’s essay.',
+          '“What profit would there be for one to gain the whole world and forfeit his life?” A long weekend can be holy. A long weekend that forfeits September’s first-fruits is just the world, with a lake photo.',
         ],
         tool: {
           label: 'FI path calculator',

@@ -18,8 +18,8 @@ export default function Subscribe() {
             Get The Ledger on Sunday
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
-            One email a week — household, deal, fidelity. Not this issue as a one-shot.
-            The welcome gift is this week’s edition; every Sunday after that is the next one.
+            One email on Sunday for Catholic households — a short read on the
+            budget, a deal worth taking or skipping, and a note from the readings.
           </p>
         </div>
       </div>
