@@ -13,14 +13,12 @@ import ReferralCard from './components/ReferralCard';
 import MiniCalculatorCard from './components/MiniCalculatorCard';
 import LedgerBand from './components/LedgerBand';
 import { allPosts } from './data/posts';
-import { latestEdition } from './data/ledger';
 import { getReferral } from './data/referrals';
 
 function App() {
   // Slot 1 so homepage card usually differs from header strip the same day
   const homeReferral = getReferral({ slot: 1, pool: 'all' });
   const recentPosts = allPosts.slice(0, 3);
-  const latestLedger = latestEdition();
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
@@ -64,17 +62,6 @@ function App() {
             <Link to="/faq" className="text-emerald-700 hover:text-emerald-800 font-medium underline-offset-2 hover:underline">
               Common questions
             </Link>
-            {latestLedger ? (
-              <>
-                {' · '}
-                <Link
-                  to={`/ledger/${latestLedger.slug}`}
-                  className="text-emerald-700 hover:text-emerald-800 font-medium underline-offset-2 hover:underline"
-                >
-                  This Sunday’s Ledger
-                </Link>
-              </>
-            ) : null}
           </p>
         </div>
       </div>
@@ -130,9 +117,9 @@ function App() {
         </div>
       </div>
 
-      {/* Sunday Ledger — own section, not a blog post */}
+      {/* Sunday Ledger — one card, one CTA; subscribe lives further down */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-4 sm:pb-6">
-        <LedgerBand />
+        <LedgerBand compact />
       </div>
 
       {/* Recent blog posts */}
