@@ -8,6 +8,7 @@ export { ROBINHOOD_URL };
 const NAV = [
   { to: '/calculators', label: 'Calculators' },
   { to: '/blog', label: 'Blog' },
+  { to: '/ledger', label: 'Ledger' },
   { to: '/tools', label: 'Tools' },
 ];
 
@@ -50,7 +51,7 @@ export default function SiteHeader({ showReferralStrip = true }) {
               Via Fidelitatis
             </span>
           </Link>
-          <div className="flex items-center gap-2.5 sm:gap-6 lg:gap-8 text-sm shrink-0">
+          <div className="flex items-center gap-2 sm:gap-5 lg:gap-8 text-xs sm:text-sm shrink-0">
             {NAV.map(({ to, label }) => {
               const active = navActive(pathname, to);
               return (

@@ -6,6 +6,7 @@ import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
 import ReferralCard from '../components/ReferralCard';
+import LedgerBand from '../components/LedgerBand';
 import { getReferral } from '../data/referrals';
 
 export default function BlogIndex() {
@@ -52,11 +53,20 @@ export default function BlogIndex() {
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Stewardship, margin, and vocation for Catholic families on the path to FI.
+            Saint essays run Monday through Saturday. Sunday is{' '}
+            <Link to="/ledger" className="text-emerald-700 hover:underline font-medium">
+              The Ledger
+            </Link>
+            .
           </p>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        <div className="mb-8">
+          <LedgerBand compact />
+        </div>
+
         <div className="flex flex-col sm:flex-row gap-3 mb-6">
           <div className="relative flex-1">
             <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />

@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { getPostByPath, allPosts } from '../data/posts';
 import { ALL_CALCULATORS, CALCULATOR_BY_SLUG } from '../data/calculators';
+import { editions, getEdition } from '../data/ledger';
 
 const SITE = 'https://www.viafidelitatis.com';
 const SITE_NAME = 'Via Fidelitatis';
@@ -34,9 +35,15 @@ const STATIC = {
     type: 'website',
   },
   '/subscribe': {
-    title: 'Subscribe — Via Fidelitatis List | Faithful FI Updates',
+    title: 'Subscribe — Get The Ledger on Sunday | Via Fidelitatis',
     description:
-      'Join the Via Fidelitatis list for tips, tools, and stewardship ideas for Catholic families on the path to financial independence.',
+      'Join the Via Fidelitatis list for The Ledger every Sunday: one household item, one vetted deal, one fidelity note for Catholic families.',
+    type: 'website',
+  },
+  '/ledger': {
+    title: 'The Ledger — Sunday Surplus for Catholic Households | Via Fidelitatis',
+    description:
+      'A weekly Sunday edition: one household money item, one vetted deal, one fidelity note. Not a news feed. Saint essays stay Monday through Saturday.',
     type: 'website',
   },
   '/faq': {
@@ -58,7 +65,13 @@ function calculatorSlugFromPath(pathname) {
   return slug || null;
 }
 
-function buildBreadcrumbs(pathname, post, calcTool) {
+function ledgerSlugFromPath(pathname) {
+  if (!pathname.startsWith('/ledger/')) return null;
+  const slug = pathname.slice('/ledger/'.length).replace(/\/$/, '');
+  return slug || null;
+}
+
+function buildBreadcrumbs(pathname, post, calcTool, edition) {
   const items = [
     {
       '@type': 'ListItem',
@@ -97,6 +110,21 @@ function buildBreadcrumbs(pathname, post, calcTool) {
       name: 'Tools',
       item: absoluteUrl('/tools'),
     });
+  } else if (pathname === '/ledger' || edition) {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'The Ledger',
+      item: absoluteUrl('/ledger'),
+    });
+    if (edition) {
+      items.push({
+        '@type': 'ListItem',
+        position: 3,
+        name: edition.title,
+        item: absoluteUrl(`/ledger/${edition.slug}`),
+      });
+    }
   } else if (pathname === '/subscribe') {
     items.push({
       '@type': 'ListItem',
@@ -323,6 +351,8 @@ export default function RouteSeo() {
   const post = getPostByPath(pathname);
   const calcSlug = calculatorSlugFromPath(pathname);
   const calcTool = calcSlug ? CALCULATOR_BY_SLUG[calcSlug] : null;
+  const ledgerSlug = ledgerSlugFromPath(pathname);
+  const edition = ledgerSlug ? getEdition(ledgerSlug) : null;
   const staticMeta = STATIC[pathname];
 
   let title;
@@ -331,7 +361,7 @@ export default function RouteSeo() {
   let datePublished;
   let jsonLd = null;
 
-  const breadcrumbs = buildBreadcrumbs(pathname, post, calcTool);
+  const breadcrumbs = buildBreadcrumbs(pathname, post, calcTool, edition);
 
   if (calcTool) {
     title = `${calcTool.title} | ${SITE_NAME}`;
@@ -400,6 +430,44 @@ export default function RouteSeo() {
 
     if (breadcrumbs) graph.push(breadcrumbs);
 
+    jsonLd = {
+      '@context': 'https://schema.org',
+      '@graph': graph,
+    };
+  } else if (edition) {
+    title = `${edition.title} | The Ledger | ${SITE_NAME}`;
+    description = edition.lede;
+    type = 'article';
+    datePublished = edition.date;
+
+    const graph = [
+      {
+        '@type': 'Article',
+        headline: edition.title,
+        description: edition.lede,
+        datePublished: edition.date,
+        dateModified: edition.date,
+        author: {
+          '@type': 'Person',
+          name: AUTHOR,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: SITE_NAME,
+          url: SITE,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${SITE}/logo.svg`,
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': absoluteUrl(`/ledger/${edition.slug}`),
+        },
+        image: DEFAULT_OG,
+      },
+    ];
+    if (breadcrumbs) graph.push(breadcrumbs);
     jsonLd = {
       '@context': 'https://schema.org',
       '@graph': graph,
@@ -481,6 +549,36 @@ export default function RouteSeo() {
           },
         },
         buildBlogItemList(),
+      ];
+      if (breadcrumbs) graph.push(breadcrumbs);
+      jsonLd = {
+        '@context': 'https://schema.org',
+        '@graph': graph,
+      };
+    } else if (pathname === '/ledger') {
+      const graph = [
+        {
+          '@type': 'CollectionPage',
+          name: 'The Ledger',
+          url: absoluteUrl('/ledger'),
+          description: staticMeta.description,
+          publisher: {
+            '@type': 'Organization',
+            name: SITE_NAME,
+            url: SITE,
+          },
+        },
+        {
+          '@type': 'ItemList',
+          name: 'The Ledger — Sunday editions',
+          numberOfItems: editions.length,
+          itemListElement: editions.map((ed, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            url: absoluteUrl(`/ledger/${ed.slug}`),
+            name: ed.title,
+          })),
+        },
       ];
       if (breadcrumbs) graph.push(breadcrumbs);
       jsonLd = {

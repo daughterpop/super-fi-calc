@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { BookOpen, Calculator, Wrench } from 'lucide-react';
+import { BookOpen, Calculator, Newspaper } from 'lucide-react';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
@@ -15,11 +15,11 @@ export default function Subscribe() {
             FAITH • FAMILY • STEWARDSHIP
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-            Stay on the path
+            Get The Ledger on Sunday
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
-            Join the Via Fidelitatis list for practical tips, tools, and stewardship ideas for Catholic families
-            building financial independence.
+            One email a week — household, deal, fidelity. Not this issue as a one-shot.
+            The welcome gift is this week’s edition; every Sunday after that is the next one.
           </p>
         </div>
       </div>
@@ -46,11 +46,11 @@ export default function Subscribe() {
             Blog
           </Link>
           <Link
-            to="/tools"
+            to="/ledger"
             className="flex items-center gap-2 justify-center px-4 py-3 bg-white border border-gray-100 hover:border-emerald-200 rounded-xl text-sm font-medium text-gray-800 hover:text-emerald-700 transition-colors"
           >
-            <Wrench size={16} className="text-emerald-600" />
-            Tools
+            <Newspaper size={16} className="text-emerald-600" />
+            The Ledger
           </Link>
         </div>
       </div>
