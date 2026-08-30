@@ -24,7 +24,7 @@ export const editions = [
     sundayLabel: 'Sunday, August 30, 2026',
     title: 'Take up September’s cross',
     lede:
-      'The 22nd Sunday in Ordinary Time lands on the doorstep of September. The first of the month is Tuesday. Labor Day ads are already selling a long weekend you did not plan. This week’s surplus is a first-fruits list, a travel offer that is almost certainly a skip, and a Gospel that will not let the household save its life by buying the whole weekend.',
+      'September starts Tuesday, and Labor Day ads are already here. This first Ledger is a simple Sunday read: the bills that should come first this month, a travel offer that only helps if you were already going, and a short note from this week’s Gospel.',
     lanes: [
       {
         lane: 'household',
