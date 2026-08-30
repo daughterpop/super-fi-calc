@@ -2,11 +2,14 @@ import { Link } from 'react-router-dom';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
+import ReferralCard from '../components/ReferralCard';
 import { editions, formatIssue, laneLabel, latestEdition } from '../data/ledger';
+import { getReferral } from '../data/referrals';
 
 export default function LedgerIndex() {
   const latest = latestEdition();
   const ordered = [...editions].sort((a, b) => b.date.localeCompare(a.date));
+  const listReferral = getReferral({ slot: 9, pool: 'all' });
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
@@ -54,6 +57,12 @@ export default function LedgerIndex() {
               Open the full edition →
             </span>
           </Link>
+        )}
+
+        {listReferral && (
+          <div className="mb-8">
+            <ReferralCard referral={listReferral} />
+          </div>
         )}
 
         {ordered.length > 1 && (

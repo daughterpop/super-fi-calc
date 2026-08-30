@@ -2,12 +2,14 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
+import ReferralCard from '../components/ReferralCard';
 import {
   adjacentEditions,
   formatIssue,
   getEdition,
   laneLabel,
 } from '../data/ledger';
+import { getReferral } from '../data/referrals';
 
 const VERDICT_CLASS = {
   'Take it': 'bg-emerald-50 text-emerald-800 border-emerald-200',
@@ -21,6 +23,7 @@ export default function LedgerEdition() {
   if (!edition) return <Navigate to="/ledger" replace />;
 
   const { newer, older } = adjacentEditions(slug);
+  const editionReferral = getReferral({ slot: 10, pool: 'all' });
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
@@ -80,6 +83,12 @@ export default function LedgerEdition() {
             </section>
           ))}
         </div>
+
+        {editionReferral && (
+          <div className="mt-10">
+            <ReferralCard referral={editionReferral} />
+          </div>
+        )}
 
         <nav className="mt-10 flex flex-col sm:flex-row sm:justify-between gap-3 text-sm">
           {older ? (
