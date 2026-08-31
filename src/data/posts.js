@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Give Away the Horse: Lessons from St. Aidan',
+    date: 'August 31, 2026',
+    dateSort: '2026-08-31',
+    excerpt: 'On the Memorial of St. Aidan of Lindisfarne, Catholic families learn that raises, bonuses, and extra stuff are meant to be given — not absorbed into a heavier life — so mercy can stay ordinary.',
+    readTime: '4 min read',
+    link: '/blog/give-away-the-horse-lessons-from-st-aidan',
+    tags: ['Stewardship', 'Seasonal', 'Tithing'],
+    featured: false
+  },
+  {
     title: 'He Must Increase: Lessons from St. John the Baptist',
     date: 'August 29, 2026',
     dateSort: '2026-08-29',

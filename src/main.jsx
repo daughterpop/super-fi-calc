@@ -92,6 +92,7 @@ import FormChildrenNotStatusLessonsFromStJosephCalasanz from './pages/form-child
 import StayTheCourseLessonsFromStMonica from './pages/stay-the-course-lessons-from-st-monica.jsx';
 import OrderYourLovesLessonsFromStAugustine from './pages/order-your-loves-lessons-from-st-augustine.jsx';
 import HeMustIncreaseLessonsFromStJohnTheBaptist from './pages/he-must-increase-lessons-from-st-john-the-baptist.jsx';
+import GiveAwayTheHorseLessonsFromStAidan from './pages/give-away-the-horse-lessons-from-st-aidan.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -187,6 +188,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/stay-the-course-lessons-from-st-monica" element={<StayTheCourseLessonsFromStMonica />} />
           <Route path="/blog/order-your-loves-lessons-from-st-augustine" element={<OrderYourLovesLessonsFromStAugustine />} />
           <Route path="/blog/he-must-increase-lessons-from-st-john-the-baptist" element={<HeMustIncreaseLessonsFromStJohnTheBaptist />} />
+          <Route path="/blog/give-away-the-horse-lessons-from-st-aidan" element={<GiveAwayTheHorseLessonsFromStAidan />} />
 
           <Route path="*" element={<App />} />
         </Routes>
