@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, BookOpen, Wrench, TrendingUp } from 'lucide-react';
+import { ArrowLeft, BookOpen, Wrench, Newspaper } from 'lucide-react';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
@@ -24,7 +24,6 @@ import {
   HAS_INTERNAL_NUDGE,
   pathForCalculator,
 } from '../data/calculators';
-import { getReferral } from '../data/referrals';
 
 function renderCalculator(id) {
   switch (id) {
@@ -62,7 +61,6 @@ function renderCalculator(id) {
 export default function CalculatorTool() {
   const { slug } = useParams();
   const tool = CALCULATOR_BY_SLUG[slug];
-  const investStep = getReferral({ slot: 3, pool: 'investing' });
 
   if (!tool) {
     return <Navigate to="/calculators" replace />;
@@ -115,6 +113,7 @@ export default function CalculatorTool() {
           </Link>
         </div>
 
+        {/* One next-step row: blog + Ledger + tools. Header strip / SoftSellNudge already cover referrals. */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <Link
             to="/blog/how-to-get-started-on-your-fi-path"
@@ -126,21 +125,16 @@ export default function CalculatorTool() {
               <p className="text-xs text-gray-500 mt-0.5">Path after the numbers</p>
             </div>
           </Link>
-          <a
-            href={investStep.href}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/ledger"
             className="bg-white border border-gray-100 rounded-xl p-4 hover:border-emerald-200 transition flex gap-3"
           >
-            <TrendingUp className="text-emerald-600 shrink-0" size={20} />
+            <Newspaper className="text-emerald-600 shrink-0" size={20} />
             <div>
-              <p className="font-semibold text-sm text-gray-900 inline-flex items-center gap-1">
-                Put surplus to work
-                <ExternalLink size={12} />
-              </p>
-              <p className="text-xs text-gray-500 mt-0.5">{investStep.stripHeadline}</p>
+              <p className="font-semibold text-sm text-gray-900">This week’s Ledger</p>
+              <p className="text-xs text-gray-500 mt-0.5">Sunday note for the household</p>
             </div>
-          </a>
+          </Link>
           <Link
             to="/tools"
             className="bg-white border border-gray-100 rounded-xl p-4 hover:border-emerald-200 transition flex gap-3"
