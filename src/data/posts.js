@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Purchasing Is a Moral Act: Lessons from Creation Day',
+    date: 'September 1, 2026',
+    dateSort: '2026-09-01',
+    excerpt: 'On the World Day of Prayer for the Care of Creation, Catholic families learn that every purchase is a moral act — naming “enough” frees margin for the poor, the vocation, and the common home.',
+    readTime: '4 min read',
+    link: '/blog/purchasing-is-a-moral-act-lessons-from-creation-day',
+    tags: ['Stewardship', 'Seasonal', 'Prayer'],
+    featured: false
+  },
+  {
     title: 'Give Away the Horse: Lessons from St. Aidan',
     date: 'August 31, 2026',
     dateSort: '2026-08-31',
