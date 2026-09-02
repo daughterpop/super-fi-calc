@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Give the Windfall a Job: Lessons from St. Ingrid',
+    date: 'September 2, 2026',
+    dateSort: '2026-09-02',
+    excerpt: 'On the Memorial of St. Ingrid of Sweden, Catholic families learn that a raise, refund, or inheritance is not a lifestyle upgrade — giving the windfall a job (give, buffer, invest) is how ordinary households stay free.',
+    readTime: '4 min read',
+    link: '/blog/give-the-windfall-a-job-lessons-from-st-ingrid',
+    tags: ['Stewardship', 'Seasonal', 'Legacy'],
+    featured: false
+  },
+  {
     title: 'Purchasing Is a Moral Act: Lessons from Creation Day',
     date: 'September 1, 2026',
     dateSort: '2026-09-01',

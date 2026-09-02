@@ -94,6 +94,7 @@ import OrderYourLovesLessonsFromStAugustine from './pages/order-your-loves-lesso
 import HeMustIncreaseLessonsFromStJohnTheBaptist from './pages/he-must-increase-lessons-from-st-john-the-baptist.jsx';
 import GiveAwayTheHorseLessonsFromStAidan from './pages/give-away-the-horse-lessons-from-st-aidan.jsx';
 import PurchasingIsAMoralActLessonsFromCreationDay from './pages/purchasing-is-a-moral-act-lessons-from-creation-day.jsx';
+import GiveTheWindfallAJobLessonsFromStIngrid from './pages/give-the-windfall-a-job-lessons-from-st-ingrid.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -191,6 +192,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/blog/he-must-increase-lessons-from-st-john-the-baptist" element={<HeMustIncreaseLessonsFromStJohnTheBaptist />} />
           <Route path="/blog/give-away-the-horse-lessons-from-st-aidan" element={<GiveAwayTheHorseLessonsFromStAidan />} />
           <Route path="/blog/purchasing-is-a-moral-act-lessons-from-creation-day" element={<PurchasingIsAMoralActLessonsFromCreationDay />} />
+          <Route path="/blog/give-the-windfall-a-job-lessons-from-st-ingrid" element={<GiveTheWindfallAJobLessonsFromStIngrid />} />
 
           <Route path="*" element={<App />} />
         </Routes>
