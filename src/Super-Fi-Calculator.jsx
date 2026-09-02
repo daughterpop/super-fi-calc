@@ -1,6 +1,6 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { ArrowRight, ArrowLeft, Check, Home, GraduationCap, DollarSign, Sparkles, Share2, Heart, BookOpen, Wrench } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Check, Home, GraduationCap, DollarSign, Sparkles, Share2, Heart, BookOpen, Wrench, Newspaper } from 'lucide-react';
 
 /** Display-only compact money. Does not change projection math. */
 function formatCompact(n) {
@@ -19,6 +19,8 @@ export default function SuperFiCalculator() {
   const [searchParams] = useSearchParams();
   const [step, setStep] = useState(0);
   const [showResults, setShowResults] = useState(false);
+  const wizardRef = useRef(null);
+  const skipWizardScroll = useRef(true);
 
   // Form data
   const [annualExpenses, setAnnualExpenses] = useState(90000);
@@ -63,6 +65,20 @@ export default function SuperFiCalculator() {
       setAnnualSavings(Math.round(Number(surplusParam) * 12));
     }
   }, [searchParams]);
+
+  // Keep the active step under the sticky header on mobile after Continue / Back / results.
+  useEffect(() => {
+    if (skipWizardScroll.current) {
+      skipWizardScroll.current = false;
+      return;
+    }
+    const el = wizardRef.current;
+    const navOffset = 80;
+    const y = el
+      ? el.getBoundingClientRect().top + window.scrollY - navOffset
+      : 0;
+    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+  }, [step, showResults]);
 
   const updateVehicle = (index, field, value) => {
     const newVehicles = [...vehicles];
@@ -254,7 +270,7 @@ export default function SuperFiCalculator() {
 
   if (showResults) {
     return (
-      <div className="w-full">
+      <div className="w-full" ref={wizardRef}>
         <div className="max-w-6xl mx-auto">
           <button
             onClick={() => setShowResults(false)}
@@ -320,12 +336,12 @@ export default function SuperFiCalculator() {
                 </span>
               </Link>
               <Link
-                to="/blog/why-fi-for-catholics"
+                to="/ledger"
                 className="flex items-start gap-2.5 p-3 rounded-xl bg-gray-50 hover:bg-emerald-50 border border-transparent hover:border-emerald-100 transition-colors group"
               >
-                <BookOpen className="text-emerald-600 shrink-0 mt-0.5" size={18} />
+                <Newspaper className="text-emerald-600 shrink-0 mt-0.5" size={18} />
                 <span className="text-sm text-gray-700 group-hover:text-emerald-800 leading-snug">
-                  Read: Why FI for Catholics
+                  Read this week’s Ledger
                 </span>
               </Link>
               <Link
@@ -450,7 +466,7 @@ export default function SuperFiCalculator() {
   }
 
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center" ref={wizardRef}>
       <div className="w-full max-w-2xl">
         <div className="flex justify-center mb-6 sm:mb-8 overflow-x-auto">
           <div className="flex items-center gap-1.5 sm:gap-2">
@@ -475,7 +491,10 @@ export default function SuperFiCalculator() {
         <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-gray-100 p-5 sm:p-8 md:p-10">
           {step === 0 && (
             <div className="space-y-5 sm:space-y-6">
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Tell us about your finances</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">Tell us about your finances</h2>
+              <p className="text-sm text-gray-500 mb-4 sm:mb-6 leading-relaxed">
+                Starter example for a large household. Replace every figure with yours before you trust the timeline.
+              </p>
 
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -639,7 +658,10 @@ export default function SuperFiCalculator() {
 
           {step === 2 && (
             <div className="space-y-5 sm:space-y-6">
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Children &amp; College</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">Children &amp; College</h2>
+              <p className="text-sm text-gray-500 mb-4 sm:mb-6 leading-relaxed">
+                Sample children are pre-filled so you can see the form. Remove any that aren’t yours, or uncheck college if you are not paying tuition.
+              </p>
 
               <label className="flex items-start sm:items-center gap-3 cursor-pointer p-3 sm:p-4 border-2 border-gray-200 rounded-xl hover:border-emerald-300 transition-colors">
                 <input
