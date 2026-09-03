@@ -1,1 +1,27 @@
-PLACEHOLDER
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
+import './index.css';
+import App from './App.jsx';
+import Calculators from './pages/Calculators.jsx';
+import CalculatorTool from './pages/CalculatorTool.jsx';
+import BlogIndex from './pages/BlogIndex.jsx';
+import Tools from './pages/Tools.jsx';
+import Subscribe from './pages/Subscribe.jsx';
+import Faq from './pages/Faq.jsx';
+import LedgerIndex from './pages/LedgerIndex.jsx';
+import LedgerEdition from './pages/LedgerEdition.jsx';
+import RouteSeo from './components/RouteSeo.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
+import WhyFIForEveryone from './pages/WhyFIForEveryone.jsx';
+import HowToGetStartedOnYourFiPath from './pages/how-to-get-started-on-your-fi-path.jsx';
+import WhyFiForCatholics from './pages/why-fi-for-catholics.jsx';
+import BuildMarginForCatholicFamilies from './pages/build-margin-for-catholic-families.jsx';
+import TripleSavingsOnlinePurchases from './pages/triple-savings-online-purchases.jsx';
+import IsFireCompatibleWithCatholicism from './pages/is-fire-compatible-with-catholicism.jsx';
+import BooksWeKeepInTheHouse from './pages/books-we-keep-in-the-house.jsx';
+import HowToBudgetAsACatholicFamilyWithTithingFirst from './pages/how-to-budget-as-a-catholic-family-with-tithing-first.jsx';
