@@ -3,15 +3,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import SiteFooter from './SiteFooter';
 import ReferralCard from './ReferralCard';
+import FavoriteBooksStrip from './FavoriteBooksStrip';
 import { BlogArticleHeader } from './SiteHeader';
 import { getReferral } from '../data/referrals';
 import { getRelatedPosts, PILLAR_LINKS, getPostByPath } from '../data/posts';
 
-/**
- * Puts the shared nav at the top of the document so blog articles match
- * Calculators / Tools / Home. Portaled because this component renders at the
- * end of each post; React context (router) is preserved through the portal.
- */
 function BlogNavPortal() {
   const [el, setEl] = useState(null);
   useLayoutEffect(() => {
@@ -25,28 +21,17 @@ function BlogNavPortal() {
   return createPortal(<BlogArticleHeader />, el);
 }
 
-/**
- * End-of-post CTA with strong internal linking:
- * - Related posts (tag overlap)
- * - Always-visible pillar guides (Why FI / Get Started / Build Margin)
- * - Calculator CTA
- * - Soft referral + subscribe + back to blog
- */
 export default function BlogPostFooter() {
   const { pathname } = useLocation();
   const current = getPostByPath(pathname);
   const related = getRelatedPosts(pathname, 3);
-  // Slot 7 so it usually differs from homepage header (slot 0) and home card (slot 1)
   const postReferral = getReferral({ slot: 7, pool: 'all' });
-
-  // Don't re-list the current page in pillars
   const pillars = PILLAR_LINKS.filter((p) => p.to !== pathname);
 
   return (
     <>
       <BlogNavPortal />
       <div className="mt-12 pt-8 border-t border-gray-200 not-prose space-y-10">
-        {/* Related posts — primary internal linking signal */}
         {related.length > 0 && (
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-400 mb-3">
@@ -71,7 +56,6 @@ export default function BlogPostFooter() {
           </div>
         )}
 
-        {/* Pillar guides + calculator — hub pages */}
         <div className="rounded-2xl bg-emerald-50/80 border border-emerald-100 p-5 sm:p-6">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-800 mb-3">
             Core guides
@@ -95,6 +79,8 @@ export default function BlogPostFooter() {
             Find your FI number →
           </Link>
         </div>
+
+        <FavoriteBooksStrip />
 
         {postReferral && <ReferralCard referral={postReferral} />}
 
