@@ -6,7 +6,6 @@ import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
 import ReferralCard from '../components/ReferralCard';
-import FavoriteBooksStrip from '../components/FavoriteBooksStrip';
 import LedgerBand from '../components/LedgerBand';
 import { getReferral } from '../data/referrals';
 
@@ -110,10 +109,6 @@ export default function BlogIndex() {
             <ReferralCard referral={listReferral} />
           </div>
         )}
-
-        <div className="mb-8">
-          <FavoriteBooksStrip />
-        </div>
 
         {filteredPosts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">

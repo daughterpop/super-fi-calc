@@ -5,25 +5,19 @@ Tracking: append `?afmc=28p` to any tanbooks.com product URL (LeadDyno). That ke
 Helper: `bookHref('Confessions')` in `src/data/tanBooks.js`.
 
 Do not put TAN on the Tools page. Use:
-- Favorite-books strip on `/blog` and at the end of posts (each chip = that product page)
-- One "Further reading" title inside a saint post when it earns it
+- Evergreen post `/blog/books-we-keep-in-the-house` for the household shelf
+- One "Further reading" title inside a saint post only when that book continues the argument
+- Do not put a books tile on `/blog` or in the post footer
 
 ## Daily automation rules
 
-If the saint or virtue has a clear classic TAN title that continues the argument, add `<FurtherReading title="..." note="..." />` after the last household application and before the sign-off. The component resolves the product URL from the title.
+Write the essay first. Only then ask whether one mapped TAN title continues THIS argument. Default is no book block.
+
+If yes, add `<FurtherReading title="..." note="..." />` after the last household application and before the sign-off. The component resolves the product URL from the title.
 
 - One title only
 - One sentence tying the book to today's claim
 - Do not mention codes, discounts, or "affiliate"
 - If no honest match, omit the block
 - Never invent that TAN publishes a title
-- If you add a new title, add it to BOOK_PAGES in tanBooks.js (that is an extra file — only do it when shipping a new mapped title)
-
-Starter map:
-- Augustine / Monica / ordered loves → Confessions
-- Detachment, surplus, Aidan, Clare, John the Baptist → The Imitation of Christ
-- Household peace, Jane Frances, marriage rule → Introduction to the Devout Life
-- Marian / consecration / Queenship / Assumption → True Devotion to Mary
-- Interior fight → The Spiritual Combat
-- Kids / family prayer → Oremus
-- Dominic / Rosary → The Secret of the Rosary
+- Do not shape the post around a TAN title

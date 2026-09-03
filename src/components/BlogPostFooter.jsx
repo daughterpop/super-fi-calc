@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import SiteFooter from './SiteFooter';
 import ReferralCard from './ReferralCard';
-import FavoriteBooksStrip from './FavoriteBooksStrip';
 import { BlogArticleHeader } from './SiteHeader';
 import { getReferral } from '../data/referrals';
 import { getRelatedPosts, PILLAR_LINKS, getPostByPath } from '../data/posts';
@@ -79,8 +78,6 @@ export default function BlogPostFooter() {
             Find your FI number →
           </Link>
         </div>
-
-        <FavoriteBooksStrip />
 
         {postReferral && <ReferralCard referral={postReferral} />}
 
