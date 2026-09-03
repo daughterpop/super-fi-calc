@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogPostFooter from '../components/BlogPostFooter';
+import FurtherReading from '../components/FurtherReading';
 
 export default function StayTheCourseLessonsFromStMonica() {
   return (
@@ -75,6 +76,11 @@ export default function StayTheCourseLessonsFromStMonica() {
         <p className="mb-6">
           St. Monica did not win her son by novelty. She won by remaining. Our part is smaller and still holy: order the household so the good work can continue when feelings fade — and remember, as she asked, to bring the whole family back to the altar.
         </p>
+
+        <FurtherReading
+          title="Confessions"
+          note="Augustine's own record of the long wait she kept — and of the God who finally answered."
+        />
 
         <p className="text-lg font-medium text-gray-800 mt-10">
           Financial freedom really is for everyone — including your family.

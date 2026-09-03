@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogPostFooter from '../components/BlogPostFooter';
+import FurtherReading from '../components/FurtherReading';
 
 export default function OrderYourLovesLessonsFromStAugustine() {
   return (
@@ -77,6 +78,11 @@ export default function OrderYourLovesLessonsFromStAugustine() {
         <p className="mb-6">
           St. Augustine did not find peace by accumulating a better life. He found it when love was put back in order. Our part is smaller and still holy: order the household money the same way — God first, enough next, remainder given and invested — so the heart can rest.
         </p>
+
+        <FurtherReading
+          title="Confessions"
+          note="the long road back to ordered love, written by a man who had already tried every cheaper rest."
+        />
 
         <p className="text-lg font-medium text-gray-800 mt-10">
           Financial freedom really is for everyone — including your family.

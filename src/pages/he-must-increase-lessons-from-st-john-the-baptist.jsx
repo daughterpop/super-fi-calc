@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogPostFooter from '../components/BlogPostFooter';
+import FurtherReading from '../components/FurtherReading';
 
 export default function HeMustIncreaseLessonsFromStJohnTheBaptist() {
   return (
@@ -77,6 +78,11 @@ export default function HeMustIncreaseLessonsFromStJohnTheBaptist() {
         <p className="mb-6">
           St. John the Baptist did not prepare the way by accumulating a safer life. He prepared it by decreasing. Our part is smaller and still holy: shrink what does not serve Christ, share the second tunic, and build the margin that lets the household tell the truth.
         </p>
+
+        <FurtherReading
+          title="The Imitation of Christ"
+          note="decrease as a daily habit, not a slogan — the second tunic given so Christ can increase."
+        />
 
         <p className="text-lg font-medium text-gray-800 mt-10">
           Financial freedom really is for everyone — including your family.

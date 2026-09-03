@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogPostFooter from '../components/BlogPostFooter';
+import FurtherReading from '../components/FurtherReading';
 
 export default function GiveAwayTheHorseLessonsFromStAidan() {
   return (
@@ -81,6 +82,11 @@ export default function GiveAwayTheHorseLessonsFromStAidan() {
         <p className="mb-6">
           St. Aidan did not become free by keeping the king's horse. He became free by handing it over. Our part is smaller and still holy: stop upgrading the life, give the surplus, and build the margin that makes mercy ordinary.
         </p>
+
+        <FurtherReading
+          title="The Imitation of Christ"
+          note="the same logic as Aidan's horse: what comes in is meant to pass through, not thicken the household."
+        />
 
         <p className="text-lg font-medium text-gray-800 mt-10">
           Financial freedom really is for everyone — including your family.
