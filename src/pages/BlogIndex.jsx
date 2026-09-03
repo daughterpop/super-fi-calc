@@ -6,6 +6,7 @@ import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
 import ReferralCard from '../components/ReferralCard';
+import FavoriteBooksStrip from '../components/FavoriteBooksStrip';
 import LedgerBand from '../components/LedgerBand';
 import { getReferral } from '../data/referrals';
 
@@ -84,7 +85,7 @@ export default function BlogIndex() {
           )}
         </div>
 
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-6">
           {allTags.map((tag) => {
             const active = activeTags.includes(tag);
             return (
@@ -102,6 +103,16 @@ export default function BlogIndex() {
               </button>
             );
           })}
+        </div>
+
+        {listReferral && (
+          <div className="mb-8">
+            <ReferralCard referral={listReferral} />
+          </div>
+        )}
+
+        <div className="mb-8">
+          <FavoriteBooksStrip />
         </div>
 
         {filteredPosts.length > 0 ? (
@@ -144,12 +155,6 @@ export default function BlogIndex() {
             >
               Clear filters & show all
             </button>
-          </div>
-        )}
-
-        {listReferral && (
-          <div className="mb-8">
-            <ReferralCard referral={listReferral} />
           </div>
         )}
 
