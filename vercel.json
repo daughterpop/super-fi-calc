@@ -5,7 +5,11 @@
   "framework": "vite",
   "rewrites": [
     {
-      "source": "/((?!api/|assets/).*)",
+      "source": "/blog/:slug",
+      "destination": "/blog/:slug.html"
+    },
+    {
+      "source": "/((?!api/|assets/|blog/).*)",
       "destination": "/index.html"
     }
   ]
