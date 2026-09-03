@@ -1,7 +1,7 @@
 import { BookOpen } from 'lucide-react';
-import { FAVORITE_BOOKS, TAN_AFFILIATE_URL } from '../data/tanBooks';
+import { FAVORITE_BOOKS, TAN_HOME_URL } from '../data/tanBooks';
 
-/** Household library strip — blog index and post footer only. Not on Tools. */
+/** Household library strip — each chip goes to that book's TAN page with tracking. */
 export default function FavoriteBooksStrip({ className = '' }) {
   return (
     <div
@@ -21,7 +21,7 @@ export default function FavoriteBooksStrip({ className = '' }) {
         {FAVORITE_BOOKS.map((book) => (
           <a
             key={book.title}
-            href={TAN_AFFILIATE_URL}
+            href={book.href}
             target="_blank"
             rel="noopener noreferrer"
             className="px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-100 hover:border-emerald-300 hover:bg-emerald-100 transition-colors"
@@ -31,12 +31,12 @@ export default function FavoriteBooksStrip({ className = '' }) {
         ))}
       </div>
       <a
-        href={TAN_AFFILIATE_URL}
+        href={TAN_HOME_URL}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center text-sm font-semibold text-emerald-700 hover:text-emerald-900"
       >
-        Browse TAN Books →
+        Browse all TAN Books →
       </a>
     </div>
   );
