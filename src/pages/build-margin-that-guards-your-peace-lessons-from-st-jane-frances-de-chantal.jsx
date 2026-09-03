@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogPostFooter from '../components/BlogPostFooter';
+import FurtherReading from '../components/FurtherReading';
 
 export default function BuildMarginThatGuardsYourPeaceLessonsFromStJaneFrancesDeChantal() {
   return (
@@ -49,6 +50,11 @@ export default function BuildMarginThatGuardsYourPeaceLessonsFromStJaneFrancesDe
         <p className="mb-6">
           Once the gap appears, keep it simple. Low-cost index funds can grow in the background while the family stays free of constant money drama. The goal is not accumulation for status. It is the same quiet strength Jane Frances modeled: a household light enough and stable enough that ordinary ups and downs no longer threaten its peace or its ability to love.
         </p>
+
+        <FurtherReading
+          title="Introduction to the Devout Life"
+          note="Francis de Sales wrote it for people in the world, including Jane's circle — a household rule that guards peace without leaving the home."
+        />
 
         <p className="text-lg font-medium text-gray-800 mt-10">
           Financial freedom really is for everyone — including your family.

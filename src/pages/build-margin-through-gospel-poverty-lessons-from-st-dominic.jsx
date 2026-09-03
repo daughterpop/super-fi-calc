@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogPostFooter from '../components/BlogPostFooter';
+import FurtherReading from '../components/FurtherReading';
 
 export default function BuildMarginThroughGospelPovertyLessonsFromStDominic() {
   return (
@@ -66,6 +67,11 @@ export default function BuildMarginThroughGospelPovertyLessonsFromStDominic() {
         <p className="mb-6">
           Use whatever brokerage keeps the process honest and low-friction. The goal is the same one St. Dominic lived: a household light enough to move freely and free enough to serve.
         </p>
+
+        <FurtherReading
+          title="The Secret of the Rosary"
+          note="Dominic's own weapon of poverty and preaching — a daily prayer that costs nothing and keeps the household from clutching."
+        />
 
         <p className="text-lg font-medium text-gray-800 mt-10">
           Financial freedom really is for everyone — including your family.

@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogPostFooter from '../components/BlogPostFooter';
+import FurtherReading from '../components/FurtherReading';
 
 export default function BuildMarginForRoyalPeaceLessonsFromTheQueenshipOfMary() {
   return (
@@ -38,6 +39,11 @@ export default function BuildMarginForRoyalPeaceLessonsFromTheQueenshipOfMary() 
         <p className="mb-6">
           When the household is no longer ruled by the fear of running short or the pressure to keep up, the family can more easily live under the Queen’s care. Financial independence, lived this way, becomes ordinary fidelity — the practical foundation that lets maternal love and royal peace shape the home.
         </p>
+
+        <FurtherReading
+          title="True Devotion to Mary"
+          note="a way to put the household under her care on purpose — not as a mood, as a consecration."
+        />
 
         <p className="text-lg font-medium text-gray-800 mt-10">
           Financial freedom really is for everyone — including your family.

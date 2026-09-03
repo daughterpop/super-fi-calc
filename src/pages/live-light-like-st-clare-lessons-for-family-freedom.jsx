@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BlogPostFooter from '../components/BlogPostFooter';
+import FurtherReading from '../components/FurtherReading';
 
 export default function LiveLightLikeStClareLessonsForFamilyFreedom() {
   return (
@@ -65,6 +66,11 @@ export default function LiveLightLikeStClareLessonsForFamilyFreedom() {
           </Link>{' '}
           once with honest numbers.
         </p>
+
+        <FurtherReading
+          title="The Imitation of Christ"
+          note="Clare's lighter load in book form: own less so the heart can follow without dragging a court behind it."
+        />
 
         <p className="text-lg font-medium text-gray-800 mt-10">
           Financial freedom really is for everyone — including your family.
