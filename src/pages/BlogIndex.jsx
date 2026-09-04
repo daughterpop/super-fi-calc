@@ -99,48 +99,42 @@ export default function BlogIndex() {
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <SiteHeader />
 
-      <div className="bg-white border-b">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">From the blog</h1>
-        </div>
-      </div>
-
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
         {!archive ? (
           <>
             {latest && (
-              <Link
-                to={latest.link}
-                className="block bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 hover:shadow-md transition-all p-6 sm:p-8 mb-10"
-              >
-                <p className="text-[10px] font-semibold uppercase tracking-[1.5px] text-emerald-700 mb-2">
-                  Latest
-                </p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 leading-tight">
-                  {latest.title}
-                </h2>
-                <p className="text-gray-600 leading-relaxed mb-3">{latest.excerpt}</p>
-                <p className="text-xs text-gray-400">{latest.date}</p>
-              </Link>
+              <section className="mb-12">
+                <h2 className="text-xl font-bold text-gray-900 mb-3">Latest</h2>
+                <Link
+                  to={latest.link}
+                  className="block bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 hover:shadow-md transition-all p-6"
+                >
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3 leading-tight">
+                    {latest.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-3">{latest.excerpt}</p>
+                  <p className="text-xs text-gray-400">{latest.date}</p>
+                </Link>
+              </section>
             )}
 
             {latestLedger && (
-              <p className="text-sm text-gray-600 mb-10">
-                This Sunday’s Ledger →{' '}
-                <Link
-                  to={`/ledger/${latestLedger.slug}`}
-                  className="font-medium text-emerald-800 hover:underline"
-                >
-                  {latestLedger.title}
-                </Link>
-                <span className="text-gray-400"> · {formatIssue(latestLedger)}</span>
-              </p>
+              <section className="mb-12">
+                <h2 className="text-xl font-bold text-gray-900 mb-3">This Sunday</h2>
+                <p className="text-sm text-gray-600">
+                  <Link
+                    to={`/ledger/${latestLedger.slug}`}
+                    className="font-medium text-emerald-800 hover:underline"
+                  >
+                    {latestLedger.title}
+                  </Link>
+                  <span className="text-gray-400"> · {formatIssue(latestLedger)}</span>
+                </p>
+              </section>
             )}
 
-            <section className="mb-10">
-              <h3 className="text-xs font-semibold uppercase tracking-[1.5px] text-gray-500 mb-3">
-                Start here
-              </h3>
+            <section className="mb-12">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">Start here</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {START_HERE.map((item) => (
                   <Link
@@ -155,10 +149,8 @@ export default function BlogIndex() {
               </div>
             </section>
 
-            <section className="mb-10">
-              <h3 className="text-xs font-semibold uppercase tracking-[1.5px] text-gray-500 mb-2">
-                This week
-              </h3>
+            <section className="mb-12">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">This week</h2>
               <div className="bg-white rounded-2xl border border-gray-100 px-5">
                 {thisWeek.map((post) => (
                   <PostRow key={post.link} post={post} />
@@ -166,10 +158,8 @@ export default function BlogIndex() {
               </div>
             </section>
 
-            <section className="mb-10">
-              <h3 className="text-xs font-semibold uppercase tracking-[1.5px] text-gray-500 mb-2">
-                Guides
-              </h3>
+            <section className="mb-12">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">Guides</h2>
               <div className="bg-white rounded-2xl border border-gray-100 px-5">
                 {guides.map((post) => (
                   <PostRow key={post.link} post={post} />
@@ -196,7 +186,7 @@ export default function BlogIndex() {
         ) : (
           <>
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-gray-900">All posts</h2>
+              <h1 className="text-xl font-bold text-gray-900">All posts</h1>
               <button
                 type="button"
                 onClick={closeArchive}
