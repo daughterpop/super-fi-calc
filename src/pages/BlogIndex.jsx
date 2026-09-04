@@ -124,7 +124,7 @@ export default function BlogIndex() {
             <section className="mb-12">
               <h2 className="text-xl font-bold text-gray-900 mb-3">Guides</h2>
               <p className="text-gray-600 leading-relaxed mb-3">
-                The starting map for a Catholic household: whether FIRE fits the faith, how to budget with the tithe first, the emergency fund, investing basics, and the books we actually keep in the house.
+                The standing map — how the household treats money when it isn’t a feast day.
               </p>
               <div className="bg-white rounded-2xl border border-gray-100 px-5">
                 {guides.map((post) => (
