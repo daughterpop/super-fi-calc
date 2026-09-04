@@ -121,10 +121,23 @@ export default function BlogIndex() {
               </button>
             </section>
 
+            <section className="mb-12">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">Guides</h2>
+              <div className="bg-white rounded-2xl border border-gray-100 px-5">
+                {guides.map((post) => (
+                  <PostRow key={post.link} post={post} />
+                ))}
+              </div>
+            </section>
+
             {latestLedger && (
               <section className="mb-12">
-                <h2 className="text-xl font-bold text-gray-900 mb-3">This Sunday</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-3">The Ledger</h2>
+                <p className="text-gray-600 leading-relaxed mb-3">
+                  A short Sunday note for the household: what actually matters in the budget this week, whether a deal is worth it, and a line from the Mass readings.
+                </p>
                 <p className="text-sm text-gray-600">
+                  This week:{' '}
                   <Link
                     to={`/ledger/${latestLedger.slug}`}
                     className="font-medium text-emerald-800 hover:underline"
@@ -135,15 +148,6 @@ export default function BlogIndex() {
                 </p>
               </section>
             )}
-
-            <section className="mb-12">
-              <h2 className="text-xl font-bold text-gray-900 mb-3">Guides</h2>
-              <div className="bg-white rounded-2xl border border-gray-100 px-5">
-                {guides.map((post) => (
-                  <PostRow key={post.link} post={post} />
-                ))}
-              </div>
-            </section>
 
             {listReferral && (
               <div className="mb-8">
