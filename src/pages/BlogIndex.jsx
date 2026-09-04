@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Search, X, Filter, ArrowRight } from 'lucide-react';
-import { allPosts, PILLAR_LINKS } from '../data/posts';
+import { allPosts } from '../data/posts';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
@@ -15,15 +15,6 @@ const GUIDE_LINKS = [
   '/blog/building-an-emergency-fund-without-neglecting-the-tithe',
   '/blog/faith-based-investing-basics-for-catholic-households',
   '/blog/books-we-keep-in-the-house',
-];
-
-const START_HERE = [
-  ...PILLAR_LINKS,
-  {
-    to: '/blog/books-we-keep-in-the-house',
-    label: 'Books We Keep in the House',
-    blurb: 'A short shelf, not a display stack',
-  },
 ];
 
 const ARCHIVE_LANES = [
@@ -60,14 +51,7 @@ export default function BlogIndex() {
   const latestLedger = latestEdition();
 
   const sorted = useMemo(() => [...allPosts].sort(byDate), []);
-  const latest = sorted[0];
-  const thisWeek = useMemo(
-    () =>
-      sorted
-        .filter((p) => p.link !== latest?.link && (p.tags || []).includes('Seasonal'))
-        .slice(0, 8),
-    [sorted, latest]
-  );
+  const latestThree = sorted.slice(0, 3);
   const guides = useMemo(
     () => GUIDE_LINKS.map((link) => sorted.find((p) => p.link === link)).filter(Boolean),
     [sorted]
@@ -102,21 +86,40 @@ export default function BlogIndex() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
         {!archive ? (
           <>
-            {latest && (
-              <section className="mb-12">
-                <h2 className="text-xl font-bold text-gray-900 mb-3">Latest</h2>
-                <Link
-                  to={latest.link}
-                  className="block bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 hover:shadow-md transition-all p-6"
-                >
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 leading-tight">
-                    {latest.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-3">{latest.excerpt}</p>
-                  <p className="text-xs text-gray-400">{latest.date}</p>
-                </Link>
-              </section>
-            )}
+            <section className="mb-10">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">Latest</h2>
+              <div className="space-y-3">
+                {latestThree.map((post, index) => (
+                  <Link
+                    key={post.link}
+                    to={post.link}
+                    className="block bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 hover:shadow-md transition-all p-5 sm:p-6"
+                  >
+                    {index === 0 ? (
+                      <>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2 leading-tight">
+                          {post.title}
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed mb-3">{post.excerpt}</p>
+                        <p className="text-xs text-gray-400">{post.date}</p>
+                      </>
+                    ) : (
+                      <div className="flex items-baseline justify-between gap-4">
+                        <h3 className="font-semibold text-gray-900 leading-snug">{post.title}</h3>
+                        <span className="shrink-0 text-xs text-gray-400">{post.date}</span>
+                      </div>
+                    )}
+                  </Link>
+                ))}
+              </div>
+              <button
+                type="button"
+                onClick={openArchive}
+                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-emerald-800 hover:underline"
+              >
+                All posts <ArrowRight size={16} />
+              </button>
+            </section>
 
             {latestLedger && (
               <section className="mb-12">
@@ -134,31 +137,6 @@ export default function BlogIndex() {
             )}
 
             <section className="mb-12">
-              <h2 className="text-xl font-bold text-gray-900 mb-3">Start here</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {START_HERE.map((item) => (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    className="bg-white rounded-xl border border-gray-100 hover:border-emerald-200 p-4"
-                  >
-                    <p className="font-semibold text-gray-900">{item.label}</p>
-                    <p className="text-sm text-gray-500 mt-1">{item.blurb}</p>
-                  </Link>
-                ))}
-              </div>
-            </section>
-
-            <section className="mb-12">
-              <h2 className="text-xl font-bold text-gray-900 mb-3">This week</h2>
-              <div className="bg-white rounded-2xl border border-gray-100 px-5">
-                {thisWeek.map((post) => (
-                  <PostRow key={post.link} post={post} />
-                ))}
-              </div>
-            </section>
-
-            <section className="mb-12">
               <h2 className="text-xl font-bold text-gray-900 mb-3">Guides</h2>
               <div className="bg-white rounded-2xl border border-gray-100 px-5">
                 {guides.map((post) => (
@@ -166,14 +144,6 @@ export default function BlogIndex() {
                 ))}
               </div>
             </section>
-
-            <button
-              type="button"
-              onClick={openArchive}
-              className="inline-flex items-center gap-2 text-sm font-medium text-emerald-800 hover:underline mb-10"
-            >
-              All posts <ArrowRight size={16} />
-            </button>
 
             {listReferral && (
               <div className="mb-8">
