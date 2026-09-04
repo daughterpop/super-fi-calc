@@ -117,7 +117,7 @@ export default function BlogIndex() {
             <section className="mb-12">
               <h2 className="text-xl font-bold text-gray-900 mb-3">Guides</h2>
               <p className="text-gray-600 leading-relaxed mb-3">
-                The Via Fidelitatis take on faith and finances.
+                Longer pieces on faith, money, and running a Catholic household.
               </p>
               <div className="bg-white rounded-2xl border border-gray-100 px-5">
                 {guides.map((post) => (
