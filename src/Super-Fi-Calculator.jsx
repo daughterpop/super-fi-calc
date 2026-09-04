@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
-import { ArrowRight, ArrowLeft, Check, Home, GraduationCap, DollarSign, Sparkles, Share2, Heart, BookOpen, Wrench, Newspaper } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
+import { ArrowRight, ArrowLeft, Check, Home, GraduationCap, DollarSign, Sparkles, Share2 } from 'lucide-react';
 
 function formatCompact(n) {
   if (!Number.isFinite(n)) return '—';
@@ -182,14 +182,6 @@ export default function SuperFiCalculator() {
             </div>
           </div>
           <p className="text-xs sm:text-sm text-gray-500 text-center mb-4 max-w-2xl mx-auto">“Time to FI” is the first year your projected portfolio stays above the inflation-adjusted FI target (annual expenses × 25 + remaining mortgage) for every year afterward.</p>
-          <div className="bg-white border border-emerald-100 rounded-2xl p-4 mb-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700 mb-3">What now?</p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <Link to="/blog/how-to-get-started-on-your-fi-path" className="flex gap-2.5 p-3 rounded-xl bg-gray-50"><BookOpen className="text-emerald-600 shrink-0" size={18} /><span className="text-sm">Read: How to get started</span></Link>
-              <Link to="/ledger" className="flex gap-2.5 p-3 rounded-xl bg-gray-50"><Newspaper className="text-emerald-600 shrink-0" size={18} /><span className="text-sm">Read this week’s Ledger</span></Link>
-              <Link to="/tools" className="flex gap-2.5 p-3 rounded-xl bg-gray-50"><Wrench className="text-emerald-600 shrink-0" size={18} /><span className="text-sm">Browse tools to put surplus to work</span></Link>
-            </div>
-          </div>
           <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 mb-4">
             <h3 className="text-lg font-semibold mb-4">FI Milestones</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
