@@ -1,42 +1,98 @@
-import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
-import { Search, X, Filter } from 'lucide-react';
-import { allPosts, allTags } from '../data/posts';
+import React, { useMemo, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { Search, X, Filter, ArrowRight } from 'lucide-react';
+import { allPosts, PILLAR_LINKS } from '../data/posts';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
 import ReferralCard from '../components/ReferralCard';
-import LedgerBand from '../components/LedgerBand';
+import { formatIssue, latestEdition } from '../data/ledger';
 import { getReferral } from '../data/referrals';
 
+const GUIDE_LINKS = [
+  '/blog/is-fire-compatible-with-catholicism',
+  '/blog/how-to-budget-as-a-catholic-family-with-tithing-first',
+  '/blog/building-an-emergency-fund-without-neglecting-the-tithe',
+  '/blog/faith-based-investing-basics-for-catholic-households',
+  '/blog/books-we-keep-in-the-house',
+];
+
+const START_HERE = [
+  ...PILLAR_LINKS,
+  {
+    to: '/blog/books-we-keep-in-the-house',
+    label: 'Books We Keep in the House',
+    blurb: 'A short shelf, not a display stack',
+  },
+];
+
+const ARCHIVE_LANES = [
+  { id: 'saints', label: 'Saints', match: (p) => (p.tags || []).includes('Seasonal') },
+  { id: 'guides', label: 'Guides', match: (p) => p.featured === true && !(p.tags || []).includes('Tools') },
+  { id: 'tools', label: 'Tools', match: (p) => (p.tags || []).includes('Tools') },
+  { id: 'family', label: 'Family', match: (p) => (p.tags || []).some((t) => t === 'Parenting' || t === 'Couples') },
+];
+
+function byDate(a, b) {
+  return (b.dateSort || '').localeCompare(a.dateSort || '');
+}
+
+function PostRow({ post }) {
+  return (
+    <Link
+      to={post.link}
+      className="group flex items-baseline justify-between gap-4 py-3 border-b border-gray-100 last:border-0"
+    >
+      <span className="font-medium text-gray-900 group-hover:text-emerald-700 leading-snug">
+        {post.title}
+      </span>
+      <span className="shrink-0 text-xs text-gray-400">{post.date}</span>
+    </Link>
+  );
+}
+
 export default function BlogIndex() {
+  const [params, setParams] = useSearchParams();
+  const archive = params.get('view') === 'all';
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeTags, setActiveTags] = useState([]);
-  // Slot 8 — distinct from post footer (7) and homepage slots
+  const [lane, setLane] = useState(null);
   const listReferral = getReferral({ slot: 8, pool: 'all' });
+  const latestLedger = latestEdition();
+
+  const sorted = useMemo(() => [...allPosts].sort(byDate), []);
+  const latest = sorted[0];
+  const thisWeek = useMemo(
+    () =>
+      sorted
+        .filter((p) => p.link !== latest?.link && (p.tags || []).includes('Seasonal'))
+        .slice(0, 8),
+    [sorted, latest]
+  );
+  const guides = useMemo(
+    () => GUIDE_LINKS.map((link) => sorted.find((p) => p.link === link)).filter(Boolean),
+    [sorted]
+  );
 
   const filteredPosts = useMemo(() => {
-    return allPosts.filter((post) => {
-      const matchesSearch =
-        !searchTerm ||
-        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (post.tags || []).some((t) => t.toLowerCase().includes(searchTerm.toLowerCase()));
-      const matchesTags =
-        activeTags.length === 0 || activeTags.every((tag) => (post.tags || []).includes(tag));
-      return matchesSearch && matchesTags;
+    const activeLane = ARCHIVE_LANES.find((l) => l.id === lane);
+    return sorted.filter((post) => {
+      const hay = `${post.title} ${post.excerpt} ${(post.tags || []).join(' ')}`.toLowerCase();
+      const matchesSearch = !searchTerm || hay.includes(searchTerm.toLowerCase());
+      const matchesLane = !activeLane || activeLane.match(post);
+      return matchesSearch && matchesLane;
     });
-  }, [searchTerm, activeTags]);
+  }, [sorted, searchTerm, lane]);
 
-  const toggleTag = (tag) => {
-    setActiveTags((prev) =>
-      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
-    );
+  const openArchive = () => {
+    setParams({ view: 'all' });
+    window.scrollTo(0, 0);
   };
 
-  const clearFilters = () => {
+  const closeArchive = () => {
+    setParams({});
     setSearchTerm('');
-    setActiveTags([]);
+    setLane(null);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -44,118 +100,176 @@ export default function BlogIndex() {
       <SiteHeader />
 
       <div className="bg-white border-b">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 text-center">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-semibold tracking-[1.5px] mb-4">
-            FAITH · FAMILY · FINANCIAL INDEPENDENCE
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 leading-tight">
-            From the blog
-          </h1>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Stewardship, margin, and vocation for Catholic families on the path to FI.
-          </p>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">From the blog</h1>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
-        <div className="mb-8">
-          <LedgerBand compact />
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-3 mb-6">
-          <div className="relative flex-1">
-            <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-            <input
-              type="search"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search posts…"
-              className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400"
-            />
-          </div>
-          {(searchTerm || activeTags.length > 0) && (
-            <button
-              type="button"
-              onClick={clearFilters}
-              className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-600 hover:bg-gray-50"
-            >
-              <X size={14} /> Clear
-            </button>
-          )}
-        </div>
-
-        <div className="flex flex-wrap gap-2 mb-6">
-          {allTags.map((tag) => {
-            const active = activeTags.includes(tag);
-            return (
-              <button
-                key={tag}
-                type="button"
-                onClick={() => toggleTag(tag)}
-                className={
-                  active
-                    ? 'px-3 py-1 rounded-full text-xs font-semibold bg-emerald-600 text-white'
-                    : 'px-3 py-1 rounded-full text-xs font-medium bg-white border border-gray-200 text-gray-600 hover:border-emerald-300'
-                }
-              >
-                {tag}
-              </button>
-            );
-          })}
-        </div>
-
-        {listReferral && (
-          <div className="mb-8">
-            <ReferralCard referral={listReferral} />
-          </div>
-        )}
-
-        {filteredPosts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            {filteredPosts.map((post) => (
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        {!archive ? (
+          <>
+            {latest && (
               <Link
-                key={post.link}
-                to={post.link}
-                className="group bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 hover:shadow-md transition-all p-5 flex flex-col"
+                to={latest.link}
+                className="block bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 hover:shadow-md transition-all p-6 sm:p-8 mb-10"
               >
-                <div className="flex flex-wrap gap-1.5 mb-3">
-                  {(post.tags || []).slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <h2 className="font-semibold text-gray-900 group-hover:text-emerald-700 transition-colors leading-snug mb-2 text-[15px] sm:text-base">
-                  {post.title}
+                <p className="text-[10px] font-semibold uppercase tracking-[1.5px] text-emerald-700 mb-2">
+                  Latest
+                </p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 leading-tight">
+                  {latest.title}
                 </h2>
-                <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 flex-1">{post.excerpt}</p>
-                <div className="mt-3 pt-3 border-t border-gray-50 text-xs text-gray-400 flex justify-between">
-                  <span>{post.date}</span>
-                  <span>{post.readTime}</span>
-                </div>
+                <p className="text-gray-600 leading-relaxed mb-3">{latest.excerpt}</p>
+                <p className="text-xs text-gray-400">{latest.date}</p>
               </Link>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-12">
-            <Filter className="mx-auto text-gray-300 mb-3" size={32} />
-            <p className="text-gray-600 mb-4">No posts match those filters.</p>
+            )}
+
+            {latestLedger && (
+              <p className="text-sm text-gray-600 mb-10">
+                This Sunday’s Ledger →{' '}
+                <Link
+                  to={`/ledger/${latestLedger.slug}`}
+                  className="font-medium text-emerald-800 hover:underline"
+                >
+                  {latestLedger.title}
+                </Link>
+                <span className="text-gray-400"> · {formatIssue(latestLedger)}</span>
+              </p>
+            )}
+
+            <section className="mb-10">
+              <h3 className="text-xs font-semibold uppercase tracking-[1.5px] text-gray-500 mb-3">
+                Start here
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {START_HERE.map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    className="bg-white rounded-xl border border-gray-100 hover:border-emerald-200 p-4"
+                  >
+                    <p className="font-semibold text-gray-900">{item.label}</p>
+                    <p className="text-sm text-gray-500 mt-1">{item.blurb}</p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
+            <section className="mb-10">
+              <h3 className="text-xs font-semibold uppercase tracking-[1.5px] text-gray-500 mb-2">
+                This week
+              </h3>
+              <div className="bg-white rounded-2xl border border-gray-100 px-5">
+                {thisWeek.map((post) => (
+                  <PostRow key={post.link} post={post} />
+                ))}
+              </div>
+            </section>
+
+            <section className="mb-10">
+              <h3 className="text-xs font-semibold uppercase tracking-[1.5px] text-gray-500 mb-2">
+                Guides
+              </h3>
+              <div className="bg-white rounded-2xl border border-gray-100 px-5">
+                {guides.map((post) => (
+                  <PostRow key={post.link} post={post} />
+                ))}
+              </div>
+            </section>
+
             <button
               type="button"
-              onClick={clearFilters}
-              className="px-6 py-2.5 bg-emerald-600 text-white rounded-xl font-medium hover:bg-emerald-700 transition-colors"
+              onClick={openArchive}
+              className="inline-flex items-center gap-2 text-sm font-medium text-emerald-800 hover:underline mb-10"
             >
-              Clear filters & show all
+              All posts <ArrowRight size={16} />
             </button>
-          </div>
-        )}
 
-        <div className="pt-4 pb-2">
-          <SubscribeForm />
-        </div>
+            {listReferral && (
+              <div className="mb-8">
+                <ReferralCard referral={listReferral} />
+              </div>
+            )}
+
+            <SubscribeForm />
+          </>
+        ) : (
+          <>
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-xl font-bold text-gray-900">All posts</h2>
+              <button
+                type="button"
+                onClick={closeArchive}
+                className="text-sm text-gray-500 hover:text-gray-800"
+              >
+                Back to blog
+              </button>
+            </div>
+
+            <div className="relative mb-4">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
+              <input
+                type="search"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search posts"
+                className="w-full pl-9 pr-9 py-2.5 rounded-xl border border-gray-200 bg-white text-sm"
+              />
+              {searchTerm && (
+                <button
+                  type="button"
+                  onClick={() => setSearchTerm('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+                  aria-label="Clear search"
+                >
+                  <X size={16} />
+                </button>
+              )}
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-6">
+              {ARCHIVE_LANES.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => setLane((prev) => (prev === item.id ? null : item.id))}
+                  className={
+                    lane === item.id
+                      ? 'px-3 py-1 rounded-full text-xs font-medium bg-emerald-700 text-white'
+                      : 'px-3 py-1 rounded-full text-xs font-medium bg-white border border-gray-200 text-gray-600'
+                  }
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+
+            {filteredPosts.length > 0 ? (
+              <div className="bg-white rounded-2xl border border-gray-100 px-5 mb-8">
+                {filteredPosts.map((post) => (
+                  <PostRow key={post.link} post={post} />
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-12">
+                <Filter className="mx-auto text-gray-300 mb-3" size={32} />
+                <p className="text-gray-600 mb-4">No posts match those filters.</p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSearchTerm('');
+                    setLane(null);
+                  }}
+                  className="text-sm text-emerald-800 hover:underline"
+                >
+                  Clear filters
+                </button>
+              </div>
+            )}
+
+            <SubscribeForm />
+          </>
+        )}
       </div>
       <SiteFooter />
     </div>
