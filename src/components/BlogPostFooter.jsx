@@ -5,7 +5,8 @@ import SiteFooter from './SiteFooter';
 import ReferralCard from './ReferralCard';
 import { BlogArticleHeader } from './SiteHeader';
 import { getReferral } from '../data/referrals';
-import { getRelatedPosts, PILLAR_LINKS, getPostByPath } from '../data/posts';
+import { allPosts, getPostByPath } from '../data/posts';
+import { GUIDE_LINKS, isGuideLink } from '../data/guides';
 
 function BlogNavPortal() {
   const [el, setEl] = useState(null);
@@ -20,31 +21,80 @@ function BlogNavPortal() {
   return createPortal(<BlogArticleHeader />, el);
 }
 
+function normalize(path) {
+  if (!path) return '';
+  return path.endsWith('/') && path.length > 1 ? path.slice(0, -1) : path;
+}
+
+function guideScore(guide, current) {
+  if (!current) return 0;
+  const tags = new Set(current.tags || []);
+  let score = (guide.tags || []).filter((t) => tags.has(t)).length;
+  const hay = `${current.title} ${current.excerpt} ${(current.tags || []).join(' ')}`.toLowerCase();
+  if (hay.includes('tithe') || hay.includes('giving') || hay.includes('generos')) {
+    if (guide.link.includes('budget') || guide.link.includes('emergency') || guide.link.includes('margin')) score += 2;
+  }
+  if (hay.includes('invest') || hay.includes('surplus') || hay.includes('windfall')) {
+    if (guide.link.includes('investing') || guide.link.includes('margin')) score += 2;
+  }
+  if (hay.includes('prayer') || hay.includes('book') || hay.includes('child') || hay.includes('parent')) {
+    if (guide.link.includes('books') || guide.link.includes('get-started')) score += 2;
+  }
+  if (hay.includes('fire') || hay.includes('vocation') || hay.includes('retire')) {
+    if (guide.link.includes('fire') || guide.link.includes('get-started') || guide.link.includes('margin')) score += 2;
+  }
+  return score;
+}
+
+function pickKeepReading(pathname) {
+  const currentPath = normalize(pathname);
+  const current = getPostByPath(currentPath);
+  const others = allPosts.filter((p) => p.link !== currentPath);
+  const guides = GUIDE_LINKS.map((link) => others.find((p) => p.link === link)).filter(Boolean);
+  const rankedGuides = [...guides].sort((a, b) => guideScore(b, current) - guideScore(a, current));
+  const recent = [...others]
+    .filter((p) => !isGuideLink(p.link))
+    .sort((a, b) => (b.dateSort || '').localeCompare(a.dateSort || ''));
+
+  const picks = [];
+  if (recent[0]) picks.push({ post: recent[0], kind: 'recent' });
+  for (const g of rankedGuides) {
+    if (picks.length >= 3) break;
+    picks.push({ post: g, kind: 'guide' });
+  }
+  if (picks.length < 3) {
+    for (const p of others) {
+      if (picks.length >= 3) break;
+      if (picks.some((x) => x.post.link === p.link)) continue;
+      picks.push({ post: p, kind: isGuideLink(p.link) ? 'guide' : 'recent' });
+    }
+  }
+  return picks.slice(0, 3);
+}
+
 export default function BlogPostFooter() {
   const { pathname } = useLocation();
-  const current = getPostByPath(pathname);
-  const related = getRelatedPosts(pathname, 3);
+  const picks = pickKeepReading(pathname);
   const postReferral = getReferral({ slot: 7, pool: 'all' });
-  const pillars = PILLAR_LINKS.filter((p) => p.to !== pathname);
 
   return (
     <>
       <BlogNavPortal />
       <div className="mt-12 pt-8 border-t border-gray-200 not-prose space-y-10">
-        {related.length > 0 && (
+        {picks.length > 0 && (
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-400 mb-3">
               Keep reading
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {related.map((post) => (
+              {picks.map(({ post, kind }) => (
                 <Link
                   key={post.link}
                   to={post.link}
                   className="group block rounded-xl border border-gray-100 bg-white p-4 hover:border-emerald-200 hover:shadow-sm transition-all"
                 >
                   <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-700 mb-1.5">
-                    {(post.tags || []).slice(0, 1).join('') || 'Stewardship'}
+                    {kind === 'guide' ? 'Evergreen guide' : 'Latest'}
                   </p>
                   <p className="text-sm font-semibold text-gray-900 group-hover:text-emerald-700 leading-snug line-clamp-2">
                     {post.title}
@@ -55,29 +105,12 @@ export default function BlogPostFooter() {
           </div>
         )}
 
-        <div className="rounded-2xl bg-emerald-50/80 border border-emerald-100 p-5 sm:p-6">
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-800 mb-3">
-            Core guides
-          </h3>
-          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-3 mb-4">
-            {pillars.map((p) => (
-              <Link
-                key={p.to}
-                to={p.to}
-                className="inline-flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-2 px-4 py-2.5 rounded-xl bg-white border border-emerald-100 hover:border-emerald-300 text-left transition-colors"
-              >
-                <span className="text-sm font-semibold text-emerald-800">{p.label}</span>
-                <span className="text-xs text-gray-500 hidden sm:inline">· {p.blurb}</span>
-              </Link>
-            ))}
-          </div>
-          <Link
-            to="/calculators"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-xl transition-colors shadow-sm"
-          >
-            Find your FI number →
-          </Link>
-        </div>
+        <Link
+          to="/calculators"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-xl transition-colors shadow-sm"
+        >
+          Find your FI number →
+        </Link>
 
         {postReferral && <ReferralCard referral={postReferral} />}
 
