@@ -117,7 +117,7 @@ export default function BlogIndex() {
             <section className="mb-12">
               <h2 className="text-xl font-bold text-gray-900 mb-3">Guides</h2>
               <p className="text-gray-600 leading-relaxed mb-3">
-                The standing map — how the household treats money when it isn’t a feast day.
+                If you want how we think about faith and money on this site, start here.
               </p>
               <div className="bg-white rounded-2xl border border-gray-100 px-5">
                 {guides.map((post) => (
