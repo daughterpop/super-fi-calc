@@ -10,7 +10,9 @@ import { formatIssue, latestEdition } from '../data/ledger';
 import { getReferral } from '../data/referrals';
 
 const GUIDE_LINKS = [
+  '/blog/how-to-get-started-on-your-fi-path',
   '/blog/is-fire-compatible-with-catholicism',
+  '/blog/build-margin-for-catholic-families',
   '/blog/how-to-budget-as-a-catholic-family-with-tithing-first',
   '/blog/building-an-emergency-fund-without-neglecting-the-tithe',
   '/blog/faith-based-investing-basics-for-catholic-households',
