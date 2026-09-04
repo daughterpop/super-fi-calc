@@ -2,22 +2,13 @@ import React, { useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Search, X, Filter, ArrowRight } from 'lucide-react';
 import { allPosts } from '../data/posts';
+import { GUIDE_LINKS } from '../data/guides';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
 import ReferralCard from '../components/ReferralCard';
 import { formatIssue, latestEdition } from '../data/ledger';
 import { getReferral } from '../data/referrals';
-
-const GUIDE_LINKS = [
-  '/blog/how-to-get-started-on-your-fi-path',
-  '/blog/is-fire-compatible-with-catholicism',
-  '/blog/build-margin-for-catholic-families',
-  '/blog/how-to-budget-as-a-catholic-family-with-tithing-first',
-  '/blog/building-an-emergency-fund-without-neglecting-the-tithe',
-  '/blog/faith-based-investing-basics-for-catholic-households',
-  '/blog/books-we-keep-in-the-house',
-];
 
 const ARCHIVE_LANES = [
   { id: 'saints', label: 'Saints', match: (p) => (p.tags || []).includes('Seasonal') },
