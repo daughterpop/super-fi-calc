@@ -46,27 +46,39 @@ function guideScore(guide, current) {
   return score;
 }
 
+function previousInFeed(currentPath) {
+  const ordered = [...allPosts].sort((a, b) => (b.dateSort || '').localeCompare(a.dateSort || ''));
+  const index = ordered.findIndex((p) => p.link === currentPath);
+  if (index === -1) return ordered[0] || null;
+  // Next card down the Latest list (older than the one you just read).
+  return ordered[index + 1] || ordered[index - 1] || null;
+}
+
 function pickKeepReading(pathname) {
   const currentPath = normalize(pathname);
   const current = getPostByPath(currentPath);
   const others = allPosts.filter((p) => p.link !== currentPath);
+  const neighbor = previousInFeed(currentPath);
   const guides = GUIDE_LINKS.map((link) => others.find((p) => p.link === link)).filter(Boolean);
   const rankedGuides = [...guides].sort((a, b) => guideScore(b, current) - guideScore(a, current));
-  const recent = [...others]
-    .filter((p) => !isGuideLink(p.link))
-    .sort((a, b) => (b.dateSort || '').localeCompare(a.dateSort || ''));
 
   const picks = [];
-  if (recent[0]) picks.push({ post: recent[0], kind: 'recent' });
+  if (neighbor) {
+    picks.push({
+      post: neighbor,
+      kind: isGuideLink(neighbor.link) ? 'guide' : 'previous',
+    });
+  }
   for (const g of rankedGuides) {
     if (picks.length >= 3) break;
+    if (picks.some((x) => x.post.link === g.link)) continue;
     picks.push({ post: g, kind: 'guide' });
   }
   if (picks.length < 3) {
     for (const p of others) {
       if (picks.length >= 3) break;
       if (picks.some((x) => x.post.link === p.link)) continue;
-      picks.push({ post: p, kind: isGuideLink(p.link) ? 'guide' : 'recent' });
+      picks.push({ post: p, kind: isGuideLink(p.link) ? 'guide' : 'previous' });
     }
   }
   return picks.slice(0, 3);
@@ -94,7 +106,7 @@ export default function BlogPostFooter() {
                   className="group block rounded-xl border border-gray-100 bg-white p-4 hover:border-emerald-200 hover:shadow-sm transition-all"
                 >
                   <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-700 mb-1.5">
-                    {kind === 'guide' ? 'Evergreen guide' : 'Latest'}
+                    {kind === 'guide' ? 'Evergreen guide' : 'Previous'}
                   </p>
                   <p className="text-sm font-semibold text-gray-900 group-hover:text-emerald-700 leading-snug line-clamp-2">
                     {post.title}
