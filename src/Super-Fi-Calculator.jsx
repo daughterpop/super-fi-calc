@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, Check, Home, GraduationCap, DollarSign, Sparkles, Share2 } from 'lucide-react';
 
 function formatCompact(n) {
@@ -42,6 +42,8 @@ function MoneyField({ value, onChange, className, id, ariaLabel }) {
 }
 
 const mc = 'w-full pl-8 pr-4 py-3 text-base border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:outline-none';
+
+const STEP_SHORT = ['Money', 'Home', 'Kids', 'Large'];
 
 export default function SuperFiCalculator() {
   const [searchParams] = useSearchParams();
@@ -138,7 +140,7 @@ export default function SuperFiCalculator() {
     const currentMortgage = hasMortgage ? mortgageBalance : 0;
     const currentTotalFI = fiNumber + currentMortgage;
     const milestones = [
-      { name: 'F-You Money', target: annualExpenses * 2, achieved: currentSavings >= annualExpenses * 2 },
+      { name: 'Two-year cushion', target: annualExpenses * 2, achieved: currentSavings >= annualExpenses * 2 },
       { name: 'Coast FI', target: fiNumber * 0.25, achieved: currentSavings >= fiNumber * 0.25 },
       { name: 'Half FI', target: fiNumber * 0.50, achieved: currentSavings >= fiNumber * 0.50 },
       { name: 'Lean FI', target: fiNumber * 0.65, achieved: currentSavings >= fiNumber * 0.65 },
@@ -179,9 +181,32 @@ export default function SuperFiCalculator() {
               <div className="text-sm text-gray-500 mb-2">Time to FI</div>
               <div className="text-2xl font-bold text-green-600">{results.yearsFIReached != null ? `${results.yearsFIReached} years` : '50+ years'}</div>
               {results.fiAge && <div className="text-xs text-gray-500 mt-1">At age {results.fiAge}</div>}
+              {results.yearsFIReached == null && (
+                <div className="text-xs text-gray-500 mt-1">Past a 50-year horizon — raise surplus or trim expenses, then edit inputs.</div>
+              )}
             </div>
           </div>
           <p className="text-xs sm:text-sm text-gray-500 text-center mb-4 max-w-2xl mx-auto">FI uses total investments only — not net worth. The house is assumed kept. Remaining mortgage is added to the FI target (annual expenses × 25 + mortgage left), not counted as an asset. “Time to FI” is the first year the projected portfolio stays above that inflation-adjusted target every year afterward.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+            <Link
+              to="/blog/how-to-get-started-on-your-fi-path"
+              className="bg-white border border-gray-100 rounded-xl p-4 hover:border-emerald-200 transition"
+            >
+              <p className="font-semibold text-sm text-gray-900">What to do with this number</p>
+              <p className="text-xs text-gray-500 mt-0.5 inline-flex items-center gap-1">
+                How to get started on your FI path <ArrowRight size={12} />
+              </p>
+            </Link>
+            <Link
+              to="/tools"
+              className="bg-white border border-gray-100 rounded-xl p-4 hover:border-emerald-200 transition"
+            >
+              <p className="font-semibold text-sm text-gray-900">Free up cash flow</p>
+              <p className="text-xs text-gray-500 mt-0.5 inline-flex items-center gap-1">
+                Stewardship tools — budget, give, privacy <ArrowRight size={12} />
+              </p>
+            </Link>
+          </div>
           <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 mb-4">
             <h3 className="text-lg font-semibold mb-4">FI Milestones</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
@@ -231,6 +256,7 @@ export default function SuperFiCalculator() {
                 <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full shrink-0 ${idx === step ? 'bg-emerald-600 text-white' : idx < step ? 'bg-white text-emerald-600 border border-emerald-200' : 'bg-white text-gray-400 border'}`}>
                   {idx < step ? <Check size={14} /> : <s.icon size={14} />}
                   <span className="text-sm font-medium hidden sm:inline">{s.title}</span>
+                  <span className="text-xs font-medium sm:hidden">{STEP_SHORT[idx]}</span>
                 </div>
                 {idx < 3 && <div className={`w-6 h-0.5 ${idx < step ? 'bg-emerald-600' : 'bg-gray-200'}`} />}
               </React.Fragment>
