@@ -99,3 +99,18 @@ import GiveTheWindfallAJobLessonsFromStIngrid from './pages/give-the-windfall-a-
 import PayTheDebtOfJusticeLessonsFromStGregoryTheGreat from './pages/pay-the-debt-of-justice-lessons-from-st-gregory-the-great.jsx';
 import LeaveTheCourtForTheCaveLessonsFromStRosalia from './pages/leave-the-court-for-the-cave-lessons-from-st-rosalia.jsx';
 import CutTheRoyalHairLessonsFromStCloud from './pages/cut-the-royal-hair-lessons-from-st-cloud.jsx';
+import AppRoutes from './AppRoutes.jsx';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <RouteSeo />
+        <Analytics />
+        <SpeedInsights />
+        <AppRoutes />
+      </Router>
+    </HelmetProvider>
+  </React.StrictMode>
+);
