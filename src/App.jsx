@@ -4,10 +4,8 @@ import { ArrowRight, Calculator } from 'lucide-react';
 import SubscribeForm from './components/SubscribeForm';
 import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
-import ReferralCard from './components/ReferralCard';
 import LedgerBand from './components/LedgerBand';
 import { allPosts } from './data/posts';
-import { getReferral } from './data/referrals';
 import { pathForCalculator } from './data/calculators';
 
 const SEQUENCE = [
@@ -17,7 +15,6 @@ const SEQUENCE = [
 ];
 
 function App() {
-  const homeReferral = getReferral({ slot: 1, pool: 'all' });
   const recentPosts = allPosts.slice(0, 3);
 
   return (
@@ -147,10 +144,6 @@ function App() {
             </Link>
           ))}
         </div>
-      </div>
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-8">
-        <ReferralCard referral={homeReferral} />
       </div>
 
       <div className="px-4 sm:px-6 pb-10">
