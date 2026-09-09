@@ -8,12 +8,6 @@ import LedgerBand from './components/LedgerBand';
 import { allPosts } from './data/posts';
 import { pathForCalculator } from './data/calculators';
 
-const SEQUENCE = [
-  { to: '/blog/is-fire-compatible-with-catholicism', label: 'Is FIRE Compatible' },
-  { to: '/blog/build-margin-for-catholic-families', label: 'Build Margin' },
-  { to: '/blog/how-to-budget-as-a-catholic-family-with-tithing-first', label: 'Budget with the tithe first' },
-];
-
 function App() {
   const recentPosts = allPosts.slice(0, 3);
 
@@ -82,20 +76,10 @@ function App() {
           </p>
           <Link
             to="/blog/how-to-get-started-on-your-fi-path"
-            className="inline-flex items-center gap-2 text-emerald-700 hover:text-emerald-800 font-semibold text-sm mb-3"
+            className="inline-flex items-center gap-2 text-emerald-700 hover:text-emerald-800 font-semibold text-sm"
           >
             How to Get Started <ArrowRight size={14} />
           </Link>
-          <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-gray-600">
-            {SEQUENCE.map((item, i) => (
-              <span key={item.to} className="inline-flex items-center gap-3">
-                {i > 0 && <span className="text-gray-300">·</span>}
-                <Link to={item.to} className="text-emerald-700 hover:underline">
-                  {item.label}
-                </Link>
-              </span>
-            ))}
-          </div>
         </div>
 
         <div className="relative pt-3">
