@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Open the Mantle: Lessons from St. Nicholas of Tolentino',
+    date: 'September 10, 2026',
+    dateSort: '2026-09-10',
+    excerpt: 'When the prior stopped him, the bread under St. Nicholas’s mantle turned to roses. Families that keep a real surplus can open the same hand without counting the cost.',
+    readTime: '4 min read',
+    link: '/blog/open-the-mantle-lessons-from-st-nicholas-of-tolentino',
+    tags: ['Stewardship', 'Seasonal', 'Tithing'],
+    featured: false
+  },
+  {
     title: 'Begin in the Small: Lessons from Mary\'s Nativity',
     date: 'September 8, 2026',
     dateSort: '2026-09-08',
