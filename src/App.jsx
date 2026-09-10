@@ -72,7 +72,7 @@ function App() {
           </div>
           <h3 className="font-semibold text-lg text-gray-900 mb-2 mt-1">Read the sequence</h3>
           <p className="text-gray-600 text-sm leading-relaxed mb-4">
-            How we treat faith and money when you want more than today’s saint note.
+            Practical steps on faith, money, and margin when you want more than a single saint note.
           </p>
           <Link
             to="/blog/how-to-get-started-on-your-fi-path"
