@@ -27,61 +27,61 @@ export default function BooksWeKeepInTheHouse() {
           Books We Keep in the House
         </h1>
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-          A short shelf we actually reread — saints, the home, and staying small enough for God. Not a display stack.
+          Six titles that come off the shelf when the house needs a rule, a correction, or a quieter love of God than the week is offering.
         </p>
 
         <p className="mb-6">
-          Most Catholic book lists try to be a library. This is not that. These are the titles that keep coming off the shelf when the household needs a rule, a correction, or a quieter love of God than the week is offering.
+          We do not keep a Catholic library for guests. We keep a short stack we reread. When a raise wants to thicken the life, or the kids need something smaller than a program, these are the ones that get pulled down.
         </p>
 
         <p className="mb-6">
-          Money posts on this site keep saying the same thing in different saints: name enough, let surplus pass through, order the loves. These books train that before the spreadsheet does. Same TAN prices; the links support the site.
+          The money essays on this site keep circling the same three habits: name enough, let surplus pass through, order the loves. These books train that before a spreadsheet does. Links go to TAN at the same price you would pay anyway.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
           <BookLink title="The Imitation of Christ" />
         </h2>
         <p className="mb-6">
-          Thomas à Kempis on detachment. What comes in is meant to pass through, not thicken the household. When a raise wants to become a heavier life, this is the book that still says no.
+          Thomas à Kempis on detachment. What comes in is meant to pass through. When a raise wants to become a heavier life, this is still the book that says no.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
           <BookLink title="Introduction to the Devout Life" />
         </h2>
         <p className="mb-6">
-          St. Francis de Sales wrote it for people with a house, a marriage, and ordinary work — not for the cloister. It is the household rule of peace: devotion that fits a Tuesday, not a retreat schedule you will abandon by Thursday.
+          St. Francis de Sales wrote it for a house, a marriage, and ordinary work. Devotion that fits a Tuesday. Not a retreat schedule you will drop by Thursday.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
           <BookLink title="True Devotion to Mary" />
         </h2>
         <p className="mb-6">
-          St. Louis de Montfort on consecration. The point is not more Marian décor. It is giving the whole life — including the budget — through her hands so it does not stay private property.
+          St. Louis de Montfort on consecration. The point is not more Marian décor. Give the whole life — including the budget — through her hands so it does not stay private property.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
           <BookLink title="Confessions" />
         </h2>
         <p className="mb-6">
-          Augustine&apos;s restless heart, and Monica&apos;s long fidelity behind it. Ordered love is the budget. If God is not first, money will try to be, and it will never be enough.
+          Augustine’s restless heart, and Monica’s long fidelity behind it. Ordered love is the budget. If God is not first, money will try to be, and it will never be enough.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
           <BookLink title="The Spiritual Combat" />
         </h2>
         <p className="mb-6">
-          Scupoli on the interior fight. The same battle that shows up as sloth in prayer shows up as impulse on the card. Name the weak point. Fight one front.
+          Scupoli on the interior fight. The sloth that skips prayer is the same impulse that hits the card. Name the weak point. Fight one front.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
           <BookLink title="Oremus" />
         </h2>
         <p className="mb-6">
-          Latin and English prayers for the children, with the Church&apos;s art. Formation that fits on a lap. If the house is going to pray together, start smaller than a program.
+          Latin and English prayers for the children, with the Church’s art. Formation that fits on a lap. If the house is going to pray together, start smaller than a program.
         </p>
 
         <p className="mb-6">
-          When a saint post on this site actually continues one of these arguments, you will see that single title at the end. Most days there will not be a book. This page is the shelf. For the rest of TAN:{' '}
+          That is the shelf. For everything else from TAN,{' '}
           <a
             href={TAN_HOME_URL}
             target="_blank"
@@ -94,7 +94,7 @@ export default function BooksWeKeepInTheHouse() {
         </p>
 
         <p className="mb-6">
-          For the money side of the same habit, start with{' '}
+          The money side of the same habit is{' '}
           <Link to="/blog/why-fi-for-catholics" className="text-emerald-700 font-medium hover:underline">
             Why FI for Catholics
           </Link>
@@ -102,7 +102,7 @@ export default function BooksWeKeepInTheHouse() {
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Keep a short shelf. Reread it. Let the rest of the catalog wait.
+          Keep it short. Reread it. Let the rest wait.
         </p>
 
         <p className="text-gray-700 font-medium mt-6">
