@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Leave Room for the Cross: Lessons from Its Exaltation',
+    date: 'September 14, 2026',
+    dateSort: '2026-09-14',
+    excerpt: 'Christ emptied Himself and took the form of a slave. Households that claim every dollar have no free hand when the real cross arrives.',
+    readTime: '4 min read',
+    link: '/blog/leave-room-for-the-cross-lessons-from-its-exaltation',
+    tags: ['Stewardship', 'Seasonal', 'Prayer'],
+    featured: false
+  },
+  {
     title: 'Open the Mantle: Lessons from St. Nicholas of Tolentino',
     date: 'September 10, 2026',
     dateSort: '2026-09-10',
