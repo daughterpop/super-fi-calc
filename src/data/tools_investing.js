@@ -20,6 +20,28 @@ export const tools_investing = [
     valueScore: 200,
   },
   {
+    id: 'robinhood-prediction-markets',
+    name: 'Robinhood Prediction Markets',
+    category: 'Investing',
+    badge: 'Up to $2,000 free trade',
+    headline: 'We’ll both get a free trade worth up to $2,000',
+    description:
+      'We’ll both get a free trade worth up to $2,000 when you join Robinhood and sign up for prediction markets with this link. 🎁 New users open a Robinhood account, complete Prediction Markets signup, and both sides can earn the welcome trade reward.',
+    perks: [
+      'Free trade worth up to $2,000 for both of us after you join and sign up for Prediction Markets',
+      'Event contracts on real-world outcomes inside the Robinhood app',
+      'Same account as stocks, ETFs, and options — one login',
+      'U.S. residents only; new Robinhood Derivatives / Prediction Markets users',
+    ],
+    cta: 'Join Robinhood Prediction Markets',
+    href: 'https://join.robinhood.com/prediction-markets/dustinh-1bff5a/',
+    accent: 'emerald',
+    icon: 'trending',
+    footnote:
+      'Offer terms set by Robinhood. Typically requires a new U.S. account, a Robinhood Derivatives account, and completing the Prediction Markets learning experience. Reward amounts and eligibility can change. Event contracts involve risk of loss. 18+.',
+    valueScore: 2000,
+  },
+  {
     id: 'wealthfront',
     name: 'Wealthfront',
     category: 'Investing',
