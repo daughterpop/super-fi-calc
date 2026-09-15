@@ -34,17 +34,15 @@ export default function AiTriathlonCoachingWithTransitionForBusyParents() {
 
         <p className="not-prose mb-8">
           <a
-            href="https://www.transition.fun?ref=TRANSITIONVTRTF4"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://www.via-salutis.com/shop"
             className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors text-sm sm:text-base shadow-sm"
           >
-            Try Transition free →
+            Training tools now live on Via Salutis →
           </a>
         </p>
 
         <p className="mb-6 text-sm text-gray-600">
-          This is a referral link. Trial length and pricing change; confirm current terms on Transition's site. Not medical advice.
+          Transition belongs with the body, not the ledger. The live referral (code TRANSITIONVTRTF4, one month free) is on Via Salutis, the sibling site for fasting, sleep, and training.
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">Train with a plan. Leave room for the rest of life.</p>
