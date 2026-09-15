@@ -82,8 +82,8 @@ function App() {
           </Link>
         </div>
 
-        <div className="relative pt-3">
-          <div className="absolute -top-0 left-6 w-7 h-7 rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center shadow-sm z-10">
+        <div className="relative">
+          <div className="absolute -top-3 left-6 w-7 h-7 rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center shadow-sm z-10">
             3
           </div>
           <LedgerBand compact />
