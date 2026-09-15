@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Stand Beside the Cross: Lessons from Our Lady of Sorrows',
+    date: 'September 15, 2026',
+    dateSort: '2026-09-15',
+    excerpt: 'Mary stood at the foot of the Cross while others fled. A household that keeps real margin can stay present when sorrow lands instead of scrambling for the next dollar or distraction.',
+    readTime: '4 min read',
+    link: '/blog/stand-beside-the-cross-lessons-from-our-lady-of-sorrows',
+    tags: ['Stewardship', 'Seasonal', 'Prayer'],
+    featured: false
+  },
+  {
     title: 'Leave Room for the Cross: Lessons from Its Exaltation',
     date: 'September 14, 2026',
     dateSort: '2026-09-14',
