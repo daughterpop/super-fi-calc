@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Give Away the Inheritance: Lessons from St. Cyprian',
+    date: 'September 16, 2026',
+    dateSort: '2026-09-16',
+    excerpt: 'Cyprian distributed his entire fortune to the poor the hour he turned to Christ. Households that release the claim on surplus keep the same free hand for mercy when the need appears.',
+    readTime: '4 min read',
+    link: '/blog/give-away-the-inheritance-lessons-from-st-cyprian',
+    tags: ['Stewardship', 'Seasonal', 'Tithing'],
+    featured: false
+  },
+  {
     title: 'Stand Beside the Cross: Lessons from Our Lady of Sorrows',
     date: 'September 15, 2026',
     dateSort: '2026-09-15',
