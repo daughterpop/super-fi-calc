@@ -66,21 +66,21 @@ function App() {
           </span>
         </Link>
 
-        <div className="relative bg-white border border-gray-100 rounded-2xl p-6">
+        <Link
+          to="/blog/how-to-get-started-on-your-fi-path"
+          className="group relative block bg-white border border-gray-100 hover:border-emerald-200 rounded-2xl p-6 transition-all hover:shadow-md"
+        >
           <div className="absolute -top-3 left-6 w-7 h-7 rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center shadow-sm">
             2
           </div>
           <h3 className="font-semibold text-lg text-gray-900 mb-2 mt-1">Read the sequence</h3>
-          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+          <p className="text-gray-600 text-sm leading-relaxed mb-3">
             Practical steps on faith, money, and margin when you want more than a single saint note.
           </p>
-          <Link
-            to="/blog/how-to-get-started-on-your-fi-path"
-            className="inline-flex items-center gap-2 text-emerald-700 hover:text-emerald-800 font-semibold text-sm"
-          >
+          <span className="text-emerald-600 text-sm font-medium inline-flex items-center gap-1">
             How to Get Started <ArrowRight size={14} />
-          </Link>
-        </div>
+          </span>
+        </Link>
 
         <div className="relative">
           <div className="absolute -top-3 left-6 w-7 h-7 rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center shadow-sm z-10">
