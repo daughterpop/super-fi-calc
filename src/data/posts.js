@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Sell the Tapestries: Lessons from St. Robert Bellarmine',
+    date: 'September 17, 2026',
+    dateSort: '2026-09-17',
+    excerpt: 'When famine hit Rome, Cardinal Bellarmine tore the tapestries from his walls and sold them for the poor. “The walls won’t catch cold,” he said. Families that keep real surplus can do the same with their own comforts.',
+    readTime: '4 min read',
+    link: '/blog/sell-the-tapestries-lessons-from-st-robert-bellarmine',
+    tags: ['Stewardship', 'Seasonal', 'Tithing'],
+    featured: false
+  },
+  {
     title: 'Give Away the Inheritance: Lessons from St. Cyprian',
     date: 'September 16, 2026',
     dateSort: '2026-09-16',
