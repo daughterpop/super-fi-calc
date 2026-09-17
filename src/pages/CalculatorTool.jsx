@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { ArrowLeft, BookOpen, Wrench, Newspaper } from 'lucide-react';
+import { ArrowLeft, BookOpen, HelpCircle, Newspaper } from 'lucide-react';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
@@ -113,7 +113,7 @@ export default function CalculatorTool() {
           </Link>
         </div>
 
-        {/* One next-step row: blog + Ledger + tools. Header strip / SoftSellNudge already cover referrals. */}
+        {/* One next-step row: guide + Ledger + FAQ. SoftSellNudge already covers tools/referrals. */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <Link
             to="/blog/how-to-get-started-on-your-fi-path"
@@ -136,13 +136,13 @@ export default function CalculatorTool() {
             </div>
           </Link>
           <Link
-            to="/tools"
+            to="/faq"
             className="bg-white border border-gray-100 rounded-xl p-4 hover:border-emerald-200 transition flex gap-3"
           >
-            <Wrench className="text-emerald-600 shrink-0" size={20} />
+            <HelpCircle className="text-emerald-600 shrink-0" size={20} />
             <div>
-              <p className="font-semibold text-sm text-gray-900">Stewardship tools</p>
-              <p className="text-xs text-gray-500 mt-0.5">Apps with referral perks</p>
+              <p className="font-semibold text-sm text-gray-900">Common questions</p>
+              <p className="text-xs text-gray-500 mt-0.5">FI, tithing, and next steps</p>
             </div>
           </Link>
         </div>
