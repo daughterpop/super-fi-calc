@@ -1,1 +1,25 @@
-PLACEHOLDER
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Via Fidelitatis — Faithful FI for Catholic Families</title>
+    <link>https://www.viafidelitatis.com/</link>
+    <description>Practical financial independence tools and faith-filled stewardship insights for Catholic families.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://www.viafidelitatis.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Travel Light: Lessons from St. Joseph of Cupertino</title>
+      <link>https://www.viafidelitatis.com/blog/travel-light-lessons-from-st-joseph-of-cupertino</link>
+      <guid isPermaLink="true">https://www.viafidelitatis.com/blog/travel-light-lessons-from-st-joseph-of-cupertino</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>On his deathbed Joseph of Cupertino told his superior he had nothing left to resign. Households that keep no fixed claims on surplus can answer the next transfer without panic.</description>
+    </item>
+    <item>
+      <title>Sell the Tapestries: Lessons from St. Robert Bellarmine</title>
+      <link>https://www.viafidelitatis.com/blog/sell-the-tapestries-lessons-from-st-robert-bellarmine</link>
+      <guid isPermaLink="true">https://www.viafidelitatis.com/blog/sell-the-tapestries-lessons-from-st-robert-bellarmine</guid>
+      <pubDate>Thu, 17 Sep 2026 12:00:00 GMT</pubDate>
+      <description>When famine hit Rome, Cardinal Bellarmine tore the tapestries from his walls and sold them for the poor. “The walls won’t catch cold,” he said. Families that keep real surplus can do the same with their own comforts.</description>
+    </item>
+  </channel>
+</rss>
