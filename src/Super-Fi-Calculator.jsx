@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
-import { ArrowRight, ArrowLeft, Check, Home, GraduationCap, DollarSign, Sparkles, Share2 } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
+import { ArrowLeft, Check, Home, GraduationCap, DollarSign, Sparkles, Share2 } from 'lucide-react';
 
 function formatCompact(n) {
   if (!Number.isFinite(n)) return '—';
@@ -186,15 +186,7 @@ export default function SuperFiCalculator() {
               )}
             </div>
           </div>
-          <p className="text-xs sm:text-sm text-gray-500 text-center mb-3 max-w-2xl mx-auto">Investments only (house equity excluded). Mortgage is added to the FI target. Time to FI is the first year the portfolio stays above the inflation-adjusted target thereafter.</p>
-          <p className="text-center mb-4">
-            <Link
-              to="/blog/how-to-get-started-on-your-fi-path"
-              className="inline-flex items-center gap-1 text-sm font-medium text-emerald-700 hover:text-emerald-800"
-            >
-              Next step: How to get started <ArrowRight size={14} />
-            </Link>
-          </p>
+          <p className="text-xs sm:text-sm text-gray-500 text-center mb-4 max-w-2xl mx-auto">Investments only (house equity excluded). Mortgage is added to the FI target. Time to FI is the first year the portfolio stays above the inflation-adjusted target thereafter.</p>
           <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 mb-4">
             <h3 className="text-lg font-semibold mb-4">FI Milestones</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
@@ -248,7 +240,7 @@ export default function SuperFiCalculator() {
                 </div>
                 {idx < 3 && <div className={`w-6 h-0.5 ${idx < step ? 'bg-emerald-600' : 'bg-gray-200'}`} />}
               </React.Fragment>
-            ))}
+                       ))}
           </div>
         </div>
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-5 sm:p-8">
@@ -278,29 +270,28 @@ export default function SuperFiCalculator() {
                 <p className="text-sm text-gray-500 mt-2">Increases with inflation automatically</p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div><label className="block text-sm font-semibold mb-2">Expected Rate of Return</label>
-                  <div className="relative"><input type="number" inputMode="decimal" value={rateOfReturn} onChange={(e) => setRateOfReturn(parseFloat(e.target.value) || 0)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" /><span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">%</span></div></div>
-                <div><label className="block text-sm font-semibold mb-2">Inflation Rate</label>
-                  <div className="relative"><input type="number" inputMode="decimal" value={inflationRate} onChange={(e) => setInflationRate(parseFloat(e.target.value) || 0)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" /><span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">%</span></div></div>
+                <div><label className="block text-sm font-semibold mb-2">Expected Rate of Return (%)</label>
+                  <input type="number" inputMode="decimal" value={rateOfReturn} onChange={(e) => setRateOfReturn(parseFloat(e.target.value) || 0)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" /></div>
+                <div><label className="block text-sm font-semibold mb-2">Inflation Rate (%)</label>
+                  <input type="number" inputMode="decimal" value={inflationRate} onChange={(e) => setInflationRate(parseFloat(e.target.value) || 0)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" /></div>
               </div>
             </div>
           )}
           {step === 1 && (
             <div className="space-y-5">
-              <h2 className="text-xl font-bold">Mortgage details</h2>
-              <p className="text-sm text-gray-500">Optional. Remaining balance is added to the FI target so the plan covers the house debt.</p>
-              <label className="flex items-center gap-2"><input type="checkbox" checked={hasMortgage} onChange={(e) => setHasMortgage(e.target.checked)} className="rounded" /><span className="text-sm font-medium">I have a mortgage</span></label>
+              <h2 className="text-xl font-bold">Mortgage</h2>
+              <label className="flex items-center gap-2"><input type="checkbox" checked={hasMortgage} onChange={(e) => setHasMortgage(e.target.checked)} className="rounded" /><span className="text-sm font-medium">We have a mortgage</span></label>
               {hasMortgage && (
                 <div className="space-y-4">
-                  <div><label className="block text-sm font-semibold mb-2">Remaining balance</label>
+                  <div><label htmlFor="fi-mortgage-balance" className="block text-sm font-semibold mb-2">Remaining balance</label>
                     <div className="relative"><span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
-                    <MoneyField ariaLabel="Mortgage balance" value={mortgageBalance} onChange={setMortgageBalance} className={mc} /></div></div>
+                    <MoneyField id="fi-mortgage-balance" ariaLabel="Mortgage balance" value={mortgageBalance} onChange={setMortgageBalance} className={mc} /></div></div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div><label className="block text-sm font-semibold mb-2">Interest rate</label>
-                      <div className="relative"><input type="number" inputMode="decimal" value={mortgageRate} onChange={(e) => setMortgageRate(parseFloat(e.target.value) || 0)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" /><span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">%</span></div></div>
-                    <div><label className="block text-sm font-semibold mb-2">Monthly payment</label>
+                    <div><label className="block text-sm font-semibold mb-2">Interest rate (%)</label>
+                      <input type="number" inputMode="decimal" value={mortgageRate} onChange={(e) => setMortgageRate(parseFloat(e.target.value) || 0)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" /></div>
+                    <div><label htmlFor="fi-monthly-payment" className="block text-sm font-semibold mb-2">Monthly payment</label>
                       <div className="relative"><span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
-                      <MoneyField ariaLabel="Monthly mortgage payment" value={monthlyPayment} onChange={setMonthlyPayment} className={mc} /></div></div>
+                      <MoneyField id="fi-monthly-payment" ariaLabel="Monthly payment" value={monthlyPayment} onChange={setMonthlyPayment} className={mc} /></div></div>
                   </div>
                 </div>
               )}
@@ -309,17 +300,15 @@ export default function SuperFiCalculator() {
           {step === 2 && (
             <div className="space-y-5">
               <h2 className="text-xl font-bold">Children & college</h2>
-              <p className="text-sm text-gray-500">Ages drive when four-year tuition hits. Leave off if you will not fund college this way.</p>
-              <label className="flex items-center gap-2"><input type="checkbox" checked={payingForCollege} onChange={(e) => setPayingForCollege(e.target.checked)} className="rounded" /><span className="text-sm font-medium">Planning to pay for college</span></label>
+              <label className="flex items-center gap-2"><input type="checkbox" checked={payingForCollege} onChange={(e) => setPayingForCollege(e.target.checked)} className="rounded" /><span className="text-sm font-medium">Paying for college</span></label>
               {payingForCollege && (
                 <div className="space-y-3">
                   {kids.map((kid, idx) => (
                     <div key={kid.id} className="p-3 border-2 border-gray-100 rounded-xl space-y-3">
-                      <div className="flex justify-between gap-2"><span className="text-sm font-semibold">Child {idx + 1}</span>
-                        {kids.length > 1 && <button onClick={() => setKids(kids.filter((_, i) => i !== idx))} className="text-sm text-red-600">Remove</button>}</div>
+                      <div className="flex justify-between gap-2"><span className="text-sm font-semibold">Child {idx + 1}</span><button onClick={() => setKids(kids.filter((_, i) => i !== idx))} className="text-sm text-red-600">Remove</button></div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div><label className="text-xs text-gray-600">Age</label><input type="number" value={kid.age} onChange={(e) => updateKid(idx, 'age', parseInt(e.target.value) || 0)} className="w-full px-3 py-2 border-2 rounded-lg" /></div>
-                        <div><label className="text-xs text-gray-600">Annual tuition (today $)</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                        <div><label className="text-xs text-gray-600">Annual tuition</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
                           <MoneyField ariaLabel="Annual tuition" value={kid.annualTuition} onChange={(n) => updateKid(idx, 'annualTuition', n)} className="w-full pl-7 pr-3 py-2 border-2 rounded-lg" /></div></div>
                       </div>
                     </div>
@@ -332,14 +321,12 @@ export default function SuperFiCalculator() {
           {step === 3 && (
             <div className="space-y-5">
               <h2 className="text-xl font-bold">Large expenses</h2>
-              <p className="text-sm text-gray-500">One-time hits like vehicles or a roof that should come out of the portfolio in a given year.</p>
-              <label className="flex items-center gap-2"><input type="checkbox" checked={buyingVehicle} onChange={(e) => setBuyingVehicle(e.target.checked)} className="rounded" /><span className="text-sm font-medium">Planning a vehicle purchase</span></label>
+              <label className="flex items-center gap-2"><input type="checkbox" checked={buyingVehicle} onChange={(e) => setBuyingVehicle(e.target.checked)} className="rounded" /><span className="text-sm font-medium">Buying vehicles</span></label>
               {buyingVehicle && (
                 <div className="space-y-3">
                   {vehicles.map((v, idx) => (
                     <div key={v.id} className="p-3 border-2 border-gray-100 rounded-xl space-y-3">
-                      <div className="flex justify-between gap-2"><span className="text-sm font-semibold">Vehicle {idx + 1}</span>
-                        {vehicles.length > 1 && <button onClick={() => setVehicles(vehicles.filter((_, i) => i !== idx))} className="text-sm text-red-600">Remove</button>}</div>
+                      <div className="flex justify-between gap-2"><span className="text-sm font-semibold">Vehicle {idx + 1}</span><button onClick={() => setVehicles(vehicles.filter((_, i) => i !== idx))} className="text-sm text-red-600">Remove</button></div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div><label className="text-xs text-gray-600">Amount</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
                           <MoneyField ariaLabel="Vehicle amount" value={v.amount} onChange={(n) => updateVehicle(idx, 'amount', n)} className="w-full pl-7 pr-3 py-2 border-2 rounded-lg" /></div></div>
@@ -347,7 +334,7 @@ export default function SuperFiCalculator() {
                       </div>
                     </div>
                   ))}
-                  <button onClick={() => setVehicles([...vehicles, { id: Date.now(), amount: 30000, year: new Date().getFullYear() + 3 }])} className="text-sm text-emerald-700 font-medium">+ Add vehicle</button>
+                  <button onClick={() => setVehicles([...vehicles, { id: Date.now(), amount: 40000, year: new Date().getFullYear() + 3 }])} className="text-sm text-emerald-700 font-medium">+ Add vehicle</button>
                 </div>
               )}
               <label className="flex items-center gap-2"><input type="checkbox" checked={hasOtherExpenses} onChange={(e) => setHasOtherExpenses(e.target.checked)} className="rounded" /><span className="text-sm font-medium">Other large expenses</span></label>
