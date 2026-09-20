@@ -1,1 +1,7 @@
-FULL_SITEMAP_PLACEHOLDER_TOO_LONG
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://www.viafidelitatis.com/</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://www.viafidelitatis.com/ledger</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://www.viafidelitatis.com/ledger/take-up-septembers-cross</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.viafidelitatis.com/ledger/the-usual-daily-wage</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+</urlset>
