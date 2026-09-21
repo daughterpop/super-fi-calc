@@ -94,26 +94,7 @@ export default function CalculatorTool() {
           <SoftSellNudge pool={nudge.pool} slot={nudge.slot} hint={nudge.hint} />
         )}
 
-        <div className="rounded-2xl border border-gray-100 bg-white p-5 sm:p-6">
-          <h2 className="text-lg font-bold text-gray-900 mb-3">More calculators</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {others.map((c) => (
-              <Link
-                key={c.slug}
-                to={pathForCalculator(c.slug)}
-                className="rounded-xl border border-gray-100 px-4 py-3 hover:border-emerald-200 hover:bg-emerald-50/40 transition"
-              >
-                <p className="font-semibold text-sm text-gray-900">{c.label}</p>
-                <p className="text-xs text-gray-500 mt-0.5">{c.blurb}</p>
-              </Link>
-            ))}
-          </div>
-          <Link to="/calculators" className="inline-block mt-4 text-sm font-medium text-emerald-700 hover:text-emerald-800">
-            View full catalog →
-          </Link>
-        </div>
-
-        {/* One next-step row: guide + Ledger + FAQ. SoftSellNudge already covers tools/referrals. */}
+        {/* Next step right after results so the path is visible without scrolling past more tools. SoftSell already covers referrals. */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <Link
             to="/blog/how-to-get-started-on-your-fi-path"
@@ -144,6 +125,25 @@ export default function CalculatorTool() {
               <p className="font-semibold text-sm text-gray-900">Common questions</p>
               <p className="text-xs text-gray-500 mt-0.5">FI, tithing, and next steps</p>
             </div>
+          </Link>
+        </div>
+
+        <div className="rounded-2xl border border-gray-100 bg-white p-5 sm:p-6">
+          <h2 className="text-lg font-bold text-gray-900 mb-3">More calculators</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {others.map((c) => (
+              <Link
+                key={c.slug}
+                to={pathForCalculator(c.slug)}
+                className="rounded-xl border border-gray-100 px-4 py-3 hover:border-emerald-200 hover:bg-emerald-50/40 transition"
+              >
+                <p className="font-semibold text-sm text-gray-900">{c.label}</p>
+                <p className="text-xs text-gray-500 mt-0.5">{c.blurb}</p>
+              </Link>
+            ))}
+          </div>
+          <Link to="/calculators" className="inline-block mt-4 text-sm font-medium text-emerald-700 hover:text-emerald-800">
+            View full catalog →
           </Link>
         </div>
       </div>
