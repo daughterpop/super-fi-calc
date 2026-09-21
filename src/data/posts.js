@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Leave the Tax Booth: Lessons from St. Matthew',
+    date: 'September 21, 2026',
+    dateSort: '2026-09-21',
+    excerpt: 'Matthew rose from the customs post the moment Jesus said “Follow me.” Households that release the claim on every extra dollar keep the same free hand for the next call of mercy or vocation.',
+    readTime: '4 min read',
+    link: '/blog/leave-the-tax-booth-lessons-from-st-matthew',
+    tags: ['Stewardship', 'Seasonal', 'Prayer'],
+    featured: false
+  },
+  {
     title: 'Travel Light: Lessons from St. Joseph of Cupertino',
     date: 'September 18, 2026',
     dateSort: '2026-09-18',
