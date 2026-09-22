@@ -1,5 +1,27 @@
 export const tools_banking = [
   {
+    id: 'gemini-credit-card',
+    name: 'Gemini Credit Card',
+    category: 'Banking & Payments',
+    badge: 'Extra $50 in crypto',
+    headline: 'Apply with this referral and get an extra $50 in crypto',
+    description:
+      'Use this referral code to sign up for the Gemini Credit Card and get an extra $50 in crypto. Crypto rewards on everyday spend, no annual fee. Check the offer and benefits on the application page.',
+    perks: [
+      'Extra $50 in crypto after approval and a qualifying first-cycle purchase',
+      'Crypto rewards on everyday spending (rates shown at application)',
+      'No annual fee',
+      'Rewards deposited in crypto you choose on Gemini',
+    ],
+    cta: 'Apply for Gemini Credit Card — $50 crypto',
+    href: 'https://creditcard.exchange.gemini.com/credit-card/apply?referral_code=jdbeq24gw',
+    accent: 'cyan',
+    icon: 'banknote',
+    footnote:
+      'Referral terms set by Gemini. Referee must be approved and complete a qualifying purchase in the first billing cycle. Crypto rewards and eligibility can change. Issued by WebBank. Approval not guaranteed.',
+    valueScore: 50,
+  },
+  {
     id: 'amex-bbc',
     name: 'Amex Blue Business Cash',
     category: 'Banking & Payments',

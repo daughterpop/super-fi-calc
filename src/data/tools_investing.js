@@ -169,9 +169,11 @@ export const tools_investing = [
     ],
     cta: 'Join Gemini — Claim $50 Crypto',
     href: 'https://exchange.gemini.com/register?referral=kewa4resr&type=referral&unified=true',
+    secondaryCta: 'Apply for Gemini Credit Card',
+    secondaryHref: 'https://creditcard.exchange.gemini.com/credit-card/apply?referral_code=jdbeq24gw',
     accent: 'cyan',
     icon: 'gem',
-    footnote: 'Offer requires signup via referral and either Gemini Credit Card approval or $100+ in trades. Terms set by Gemini; crypto rewards and eligibility can change.',
+    footnote: 'Offer requires signup via referral and either Gemini Credit Card approval or $100+ in trades. Card referral: extra $50 after approval and a qualifying first-cycle purchase. Terms set by Gemini; crypto rewards and eligibility can change.',
     valueScore: 50,
   },
 ];
