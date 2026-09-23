@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Offer the First Coin: Lessons from Padre Pio',
+    date: 'September 23, 2026',
+    dateSort: '2026-09-23',
+    excerpt: 'When the hospital was only an idea, Padre Pio pulled a single coin from his pocket and handed it over as the first gift. Families that treat every small surplus the same way keep the ledger open for real works of mercy.',
+    readTime: '4 min read',
+    link: '/blog/offer-the-first-coin-lessons-from-padre-pio',
+    tags: ['Stewardship', 'Seasonal', 'Tithing'],
+    featured: false
+  },
+  {
     title: 'Stand with the Legion: Lessons from St. Maurice',
     date: 'September 22, 2026',
     dateSort: '2026-09-22',
