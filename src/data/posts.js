@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Ransom the Captive: Lessons from Our Lady of Mercy',
+    date: 'September 24, 2026',
+    dateSort: '2026-09-24',
+    excerpt: 'Peter Nolasco looked at the Christian slaves and said, “Behold eternal treasures which never fail.” Households that keep real surplus free can treat the next captive need the same way.',
+    readTime: '4 min read',
+    link: '/blog/ransom-the-captive-lessons-from-our-lady-of-mercy',
+    tags: ['Stewardship', 'Seasonal', 'Tithing'],
+    featured: false
+  },
+  {
     title: 'Offer the First Coin: Lessons from Padre Pio',
     date: 'September 23, 2026',
     dateSort: '2026-09-23',
