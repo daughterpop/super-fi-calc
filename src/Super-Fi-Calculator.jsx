@@ -191,7 +191,7 @@ export default function SuperFiCalculator() {
           </p>
           <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 mb-4">
             <h3 className="text-lg font-semibold mb-4">FI Milestones</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {results.milestones.map((m, idx) => (
                 <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-gray-50">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center ${m.achieved ? 'bg-green-100 text-green-600' : 'bg-gray-100 text-gray-400'}`}>{m.achieved ? <Check size={16} /> : <div className="w-2 h-2 rounded-full bg-gray-300" />}</div>
@@ -301,22 +301,27 @@ export default function SuperFiCalculator() {
           {step === 2 && (
             <div className="space-y-5">
               <h2 className="text-xl font-bold">Children & college</h2>
-              <label className="flex items-center gap-2"><input type="checkbox" checked={payingForCollege} onChange={(e) => setPayingForCollege(e.target.checked)} className="rounded" /><span className="text-sm font-medium">Paying for college</span></label>
-              {payingForCollege && kids.map((kid, i) => (
-                <div key={kid.id} className="grid grid-cols-2 gap-3 p-3 bg-gray-50 rounded-xl">
-                  <div><label className="block text-xs font-medium mb-1">Age</label>
-                    <input type="number" value={kid.age} onChange={(e) => updateKid(i, 'age', parseInt(e.target.value) || 0)} className="w-full px-3 py-2 border rounded-lg" /></div>
-                  <div><label className="block text-xs font-medium mb-1">Annual tuition</label>
-                    <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
-                      <MoneyField value={kid.annualTuition} onChange={(v) => updateKid(i, 'annualTuition', v)} className="w-full pl-7 pr-3 py-2 border rounded-lg" ariaLabel={`Kid ${i+1} tuition`} /></div></div>
+              <label className="flex items-center gap-2"><input type="checkbox" checked={payingForCollege} onChange={(e) => setPayingForCollege(e.target.checked)} className="rounded" /><span className="text-sm font-medium">Planning to pay for college</span></label>
+              {payingForCollege && (
+                <div className="space-y-3">
+                  {kids.map((kid, i) => (
+                    <div key={kid.id} className="grid grid-cols-2 gap-3 p-3 bg-gray-50 rounded-xl">
+                      <div><label className="block text-xs font-medium mb-1">Age</label>
+                        <input type="number" value={kid.age} onChange={(e) => updateKid(i, 'age', parseInt(e.target.value) || 0)} className="w-full px-3 py-2 border rounded-lg" /></div>
+                      <div><label className="block text-xs font-medium mb-1">Annual tuition</label>
+                        <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
+                          <MoneyField value={kid.annualTuition} onChange={(val) => updateKid(i, 'annualTuition', val)} className="w-full pl-7 pr-3 py-2 border rounded-lg" ariaLabel="Annual tuition" /></div></div>
+                    </div>
+                  ))}
+                  <button onClick={() => setKids([...kids, { id: Date.now(), age: 5, annualTuition: 46000 }])} className="text-sm text-emerald-700 font-medium">+ Add child</button>
                 </div>
-              ))}
+              )}
             </div>
           )}
           {step === 3 && (
             <div className="space-y-5">
               <h2 className="text-xl font-bold">Large expenses</h2>
-              <label className="flex items-center gap-2"><input type="checkbox" checked={buyingVehicle} onChange={(e) => setBuyingVehicle(e.target.checked)} className="rounded" /><span className="text-sm font-medium">Planning a vehicle purchase</span></label>
+              <label className="flex items-center gap-2"><input type="checkbox" checked={buyingVehicle} onChange={(e) => setBuyingVehicle(e.target.checked)} className="rounded" /><span className="text-sm font-medium">Buying a vehicle</span></label>
               {buyingVehicle && vehicles.map((v, i) => (
                 <div key={v.id} className="grid grid-cols-2 gap-3 p-3 bg-gray-50 rounded-xl">
                   <div><label className="block text-xs font-medium mb-1">Amount</label>
