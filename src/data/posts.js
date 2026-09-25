@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Compose the Hymn: Lessons from Blessed Herman',
+    date: 'September 25, 2026',
+    dateSort: '2026-09-25',
+    excerpt: 'Born twisted and barely able to speak, Blessed Herman still wrote the Salve Regina from his cell. Households that keep real surplus free can still offer the better part when health or schedule feels locked.',
+    readTime: '4 min read',
+    link: '/blog/compose-the-hymn-lessons-from-blessed-herman',
+    tags: ['Stewardship', 'Seasonal', 'Prayer'],
+    featured: false
+  },
+  {
     title: 'Ransom the Captive: Lessons from Our Lady of Mercy',
     date: 'September 24, 2026',
     dateSort: '2026-09-24',
