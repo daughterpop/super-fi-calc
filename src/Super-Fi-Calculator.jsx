@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Check, Home, GraduationCap, DollarSign, Sparkles, Share2 } from 'lucide-react';
 
 function formatCompact(n) {
@@ -205,14 +205,6 @@ export default function SuperFiCalculator() {
             <p className="text-sm text-amber-800 mb-3">On track for FI at age <span className="font-semibold">{results.fiAge || 'XX'}</span> — margin for family, Church, and the work that lasts.</p>
             <button onClick={handleShareLegacy} className="w-full flex items-center justify-center gap-2 bg-amber-600 text-white font-semibold py-2.5 rounded-xl text-sm"><Share2 size={16} /> Share this legacy</button>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm mb-6">
-            <span className="text-gray-500">Next:</span>
-            <Link to="/blog/how-to-get-started-on-your-fi-path" className="text-emerald-700 hover:text-emerald-800 font-medium underline-offset-2 hover:underline">How to get started</Link>
-            <span className="text-gray-300">·</span>
-            <Link to="/tools" className="text-emerald-700 hover:text-emerald-800 font-medium underline-offset-2 hover:underline">Tools</Link>
-            <span className="text-gray-300">·</span>
-            <Link to="/faq" className="text-emerald-700 hover:text-emerald-800 font-medium underline-offset-2 hover:underline">FAQ</Link>
-          </div>
           <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
             <div className="p-4 border-b"><h3 className="font-semibold">Projection Timeline</h3></div>
             <div className="overflow-x-auto"><table className="w-full min-w-[540px] text-sm">
@@ -280,27 +272,27 @@ export default function SuperFiCalculator() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div><label className="block text-sm font-semibold mb-2">Expected Rate of Return (%)</label>
-                  <input type="number" inputMode="decimal" value={rateOfReturn} onChange={(e) => setRateOfReturn(parseFloat(e.target.value) || 0)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" /></div>
+                  <input type="number" step="0.1" value={rateOfReturn} onChange={(e) => setRateOfReturn(parseFloat(e.target.value) || 0)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" /></div>
                 <div><label className="block text-sm font-semibold mb-2">Inflation Rate (%)</label>
-                  <input type="number" inputMode="decimal" value={inflationRate} onChange={(e) => setInflationRate(parseFloat(e.target.value) || 0)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" /></div>
+                  <input type="number" step="0.1" value={inflationRate} onChange={(e) => setInflationRate(parseFloat(e.target.value) || 0)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" /></div>
               </div>
             </div>
           )}
           {step === 1 && (
             <div className="space-y-5">
-              <h2 className="text-xl font-bold">Mortgage</h2>
+              <h2 className="text-xl font-bold">Mortgage details</h2>
               <label className="flex items-center gap-2"><input type="checkbox" checked={hasMortgage} onChange={(e) => setHasMortgage(e.target.checked)} className="rounded" /><span className="text-sm font-medium">I have a mortgage</span></label>
               {hasMortgage && (
                 <div className="space-y-4">
-                  <div><label className="block text-sm font-semibold mb-2">Remaining balance</label>
+                  <div><label htmlFor="fi-mortgage-balance" className="block text-sm font-semibold mb-2">Current mortgage balance</label>
                     <div className="relative"><span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
-                      <MoneyField value={mortgageBalance} onChange={setMortgageBalance} className={mc} ariaLabel="Mortgage balance" /></div></div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div><label className="block text-sm font-semibold mb-2">Rate (%)</label>
-                      <input type="number" inputMode="decimal" value={mortgageRate} onChange={(e) => setMortgageRate(parseFloat(e.target.value) || 0)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" /></div>
-                    <div><label className="block text-sm font-semibold mb-2">Monthly payment</label>
+                    <MoneyField id="fi-mortgage-balance" ariaLabel="Mortgage balance" value={mortgageBalance} onChange={setMortgageBalance} className={mc} /></div></div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div><label className="block text-sm font-semibold mb-2">Interest rate (%)</label>
+                      <input type="number" step="0.01" value={mortgageRate} onChange={(e) => setMortgageRate(parseFloat(e.target.value) || 0)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" /></div>
+                    <div><label htmlFor="fi-monthly-payment" className="block text-sm font-semibold mb-2">Monthly payment</label>
                       <div className="relative"><span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
-                        <MoneyField value={monthlyPayment} onChange={setMonthlyPayment} className={mc} ariaLabel="Monthly payment" /></div></div>
+                      <MoneyField id="fi-monthly-payment" ariaLabel="Monthly payment" value={monthlyPayment} onChange={setMonthlyPayment} className={mc} /></div></div>
                   </div>
                 </div>
               )}
@@ -310,21 +302,26 @@ export default function SuperFiCalculator() {
             <div className="space-y-5">
               <h2 className="text-xl font-bold">Children & college</h2>
               <label className="flex items-center gap-2"><input type="checkbox" checked={payingForCollege} onChange={(e) => setPayingForCollege(e.target.checked)} className="rounded" /><span className="text-sm font-medium">Planning to pay for college</span></label>
-              {payingForCollege && kids.map((kid, i) => (
-                <div key={kid.id} className="grid grid-cols-2 gap-3 p-3 bg-gray-50 rounded-xl">
-                  <div><label className="block text-xs font-medium mb-1">Age</label>
-                    <input type="number" value={kid.age} onChange={(e) => updateKid(i, 'age', parseInt(e.target.value) || 0)} className="w-full px-3 py-2 border rounded-lg" /></div>
-                  <div><label className="block text-xs font-medium mb-1">Annual tuition</label>
-                    <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
-                      <MoneyField value={kid.annualTuition} onChange={(val) => updateKid(i, 'annualTuition', val)} className="w-full pl-7 pr-3 py-2 border rounded-lg" ariaLabel="Annual tuition" /></div></div>
+              {payingForCollege && (
+                <div className="space-y-3">
+                  {kids.map((kid, i) => (
+                    <div key={kid.id} className="grid grid-cols-2 gap-3 p-3 bg-gray-50 rounded-xl">
+                      <div><label className="block text-xs font-medium mb-1">Age</label>
+                        <input type="number" value={kid.age} onChange={(e) => updateKid(i, 'age', parseInt(e.target.value) || 0)} className="w-full px-3 py-2 border rounded-lg" /></div>
+                      <div><label className="block text-xs font-medium mb-1">Annual tuition</label>
+                        <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
+                          <MoneyField value={kid.annualTuition} onChange={(val) => updateKid(i, 'annualTuition', val)} className="w-full pl-7 pr-3 py-2 border rounded-lg" ariaLabel="Annual tuition" /></div></div>
+                    </div>
+                  ))}
+                  <button onClick={() => setKids([...kids, { id: Date.now(), age: 5, annualTuition: 46000 }])} className="text-sm text-emerald-700 font-medium">+ Add child</button>
                 </div>
-              ))}
+              )}
             </div>
           )}
           {step === 3 && (
             <div className="space-y-5">
               <h2 className="text-xl font-bold">Large expenses</h2>
-              <label className="flex items-center gap-2"><input type="checkbox" checked={buyingVehicle} onChange={(e) => setBuyingVehicle(e.target.checked)} className="rounded" /><span className="text-sm font-medium">Buying a vehicle</span></label>
+              <label className="flex items-center gap-2"><input type="checkbox" checked={buyingVehicle} onChange={(e) => setBuyingVehicle(e.target.checked)} className="rounded" /><span className="text-sm font-medium">Planning a vehicle purchase</span></label>
               {buyingVehicle && vehicles.map((v, i) => (
                 <div key={v.id} className="grid grid-cols-2 gap-3 p-3 bg-gray-50 rounded-xl">
                   <div><label className="block text-xs font-medium mb-1">Amount</label>
