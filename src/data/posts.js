@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Grind the Wheat: Lessons from St. Wenceslaus',
+    date: 'September 28, 2026',
+    dateSort: '2026-09-28',
+    excerpt: 'St. Wenceslaus rose at night, barefoot, to grind wheat and bake bread for the poor with his own hands. Households that leave surplus unclaimed can still answer that same quiet call.',
+    readTime: '4 min read',
+    link: '/blog/grind-the-wheat-lessons-from-st-wenceslaus',
+    tags: ['Stewardship', 'Seasonal', 'Tithing'],
+    featured: false
+  },
+  {
     title: 'Compose the Hymn: Lessons from Blessed Herman',
     date: 'September 25, 2026',
     dateSort: '2026-09-25',
