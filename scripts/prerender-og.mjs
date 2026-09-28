@@ -13,10 +13,10 @@ const SLUG_RE = /^[a-z0-9][a-z0-9-]{0,118}$/i;
 
 function escapeAttr(value) {
   return String(value)
-    .replace(/&/g, '&')
-    .replace(/"/g, '"')
-    .replace(/</g, '<')
-    .replace(/>/g, '>');
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
 }
 
 function buildOgImageUrl({ title, kicker, kind = 'site' }) {
@@ -27,24 +27,27 @@ function buildOgImageUrl({ title, kicker, kind = 'site' }) {
   return SITE + '/api/og?' + params.toString();
 }
 
+function unescapeJsSingle(value) {
+  return String(value).replace(/\\'/g, "'").replace(/\\\\/g, '\\');
+}
+
 function field(src, key) {
-  const re = new RegExp(key + ":\\s*'([^']*)'");
+  const re = new RegExp(key + ":\\s*'((?:\\\\'|[^'])*)'");
   const found = src.match(re);
-  return found ? found[1] : '';
+  return found ? unescapeJsSingle(found[1]) : '';
 }
 
 function extractPosts(src) {
   const items = [];
-  const re = /link:\s*'(\/blog\/[a-z0-9-]+)'/gi;
+  // Bind title + link from the SAME object. The old 900-char lookback
+  // stole the previous essay's title, so X cards showed the wrong post.
+  const re = /\{\s*title:\s*'((?:\\'|[^'])*)'[\s\S]*?link:\s*'(\/blog\/[a-z0-9-]+)'/gi;
   let match;
   while ((match = re.exec(src))) {
-    const link = match[1];
-    const windowStart = Math.max(0, match.index - 900);
-    const chunk = src.slice(windowStart, match.index + 80);
     items.push({
-      link,
-      title: field(chunk, 'title'),
-      excerpt: field(chunk, 'excerpt'),
+      title: unescapeJsSingle(match[1]),
+      excerpt: field(match[0], 'excerpt'),
+      link: match[2],
     });
   }
   return items;
@@ -156,4 +159,12 @@ for (const calc of calcs) {
   written += 1;
 }
 
+const mismatches = posts.filter((p) => {
+  const slug = String(p.link || '').replace(/^\/blog\//, '');
+  return !p.title || !slug;
+});
+ if (mismatches.length) {
+  console.warn('prerender-og: missing title/slug on', mismatches.length, 'posts');
+}
 console.log('prerender-og: wrote ' + written + ' page previews (' + posts.length + ' posts)');
+console.log('prerender-og: sample', posts.slice(0, 3).map((p) => p.link + ' => ' + p.title).join(' | '));
