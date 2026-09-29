@@ -1,6 +1,6 @@
 import "./App.css";
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calculator } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import SubscribeForm from './components/SubscribeForm';
 import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
@@ -23,19 +23,11 @@ function App() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
             Freedom to live your vocation
           </h1>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-6">
             <span className="font-semibold text-gray-800">Via Fidelitatis</span> means “the way of fidelity.”
             Tools and writing so money stops crowding out Mass, kids, and generosity.
           </p>
-
-          <Link
-            to={pathForCalculator('fi-path')}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors text-sm sm:text-base shadow-sm"
-          >
-            <Calculator size={18} />
-            Find your FI number
-          </Link>
-          <p className="mt-5 text-sm text-gray-500">
+          <p className="text-sm text-gray-500">
             <Link to="/faq" className="text-emerald-700 hover:text-emerald-800 font-medium underline-offset-2 hover:underline">
               Common questions
             </Link>
