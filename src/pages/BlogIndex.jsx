@@ -79,6 +79,13 @@ export default function BlogIndex() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
         {!archive ? (
           <>
+            <header className="mb-8">
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Blog</h1>
+              <p className="text-gray-600 text-sm sm:text-base max-w-2xl">
+                Saints notes, household guides, and practical money writing for Catholic families.
+              </p>
+            </header>
+
             <section className="mb-10">
               <h2 className="text-xl font-bold text-gray-900 mb-3">Latest</h2>
               <div className="space-y-3">
