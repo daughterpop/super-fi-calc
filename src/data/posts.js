@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Open the Christmas Shoes: Lessons from St. Thérèse',
+    date: 'October 1, 2026',
+    dateSort: '2026-10-01',
+    excerpt: 'Thérèse heard her father say the shoes by the hearth would be filled for the last time. She dried the tears, ran downstairs, and opened them with joy. A denied want does not have to become a purchase.',
+    readTime: '4 min read',
+    link: '/blog/open-the-christmas-shoes-lessons-from-st-therese',
+    tags: ['Stewardship', 'Seasonal', 'Prayer'],
+    featured: false
+  },
+  {
     title: 'Copy the Manuscript: Lessons from St. Jerome',
     date: 'September 30, 2026',
     dateSort: '2026-09-30',
