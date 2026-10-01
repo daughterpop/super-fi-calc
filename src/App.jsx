@@ -23,18 +23,9 @@ function App() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
             Freedom to live your vocation
           </h1>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-6">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             <span className="font-semibold text-gray-800">Via Fidelitatis</span> means “the way of fidelity.”
             Tools and writing so money stops crowding out Mass, kids, and generosity.
-          </p>
-          <p className="text-sm text-gray-500">
-            <Link to="/faq" className="text-emerald-700 hover:text-emerald-800 font-medium underline-offset-2 hover:underline">
-              Common questions
-            </Link>
-            <span className="text-gray-300"> · </span>
-            <Link to="/blog" className="text-emerald-700 hover:text-emerald-800 font-medium underline-offset-2 hover:underline">
-              Blog
-            </Link>
           </p>
         </div>
       </div>
