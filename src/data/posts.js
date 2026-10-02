@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Hand Him the Sealed Bond: Lessons from Tobias',
+    date: 'October 2, 2026',
+    dateSort: '2026-10-02',
+    excerpt: 'Tobit put the sealed bond in his son\'s hand: ten talents of silver left with Gabael, not to be spent on the road. Raphael walked with the boy until the purse was paid out whole.',
+    readTime: '4 min read',
+    link: '/blog/hand-him-the-sealed-bond-lessons-from-tobias',
+    tags: ['Stewardship', 'Seasonal', 'Prayer'],
+    featured: false
+  },
+  {
     title: 'Open the Christmas Shoes: Lessons from St. Thérèse',
     date: 'October 1, 2026',
     dateSort: '2026-10-01',
