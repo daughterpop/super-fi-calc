@@ -4,12 +4,13 @@ import { ArrowRight } from 'lucide-react';
 import SubscribeForm from './components/SubscribeForm';
 import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
-import LedgerBand from './components/LedgerBand';
 import { allPosts } from './data/posts';
 import { pathForCalculator } from './data/calculators';
+import { latestEdition } from './data/ledger';
 
 function App() {
   const recentPosts = allPosts.slice(0, 3);
+  const latest = latestEdition();
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
@@ -65,12 +66,23 @@ function App() {
           </span>
         </Link>
 
-        <div className="relative">
-          <div className="absolute -top-3 left-6 w-7 h-7 rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center shadow-sm z-10">
-            3
-          </div>
-          <LedgerBand compact />
-        </div>
+        {latest && (
+          <Link
+            to={`/ledger/${latest.slug}`}
+            className="group relative block bg-white border border-gray-100 hover:border-emerald-200 rounded-2xl p-6 transition-all hover:shadow-md"
+          >
+            <div className="absolute -top-3 left-6 w-7 h-7 rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center shadow-sm">
+              3
+            </div>
+            <h3 className="font-semibold text-lg text-gray-900 mb-2 mt-1">Read this week’s note</h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-3">
+              {latest.title}. A short Sunday Ledger after the numbers — budget, a deal worth skipping, and the readings.
+            </p>
+            <span className="text-emerald-600 text-sm font-medium inline-flex items-center gap-1">
+              Open the Ledger <ArrowRight size={14} />
+            </span>
+          </Link>
+        )}
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 border-t border-gray-100">
