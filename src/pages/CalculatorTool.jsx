@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { ArrowLeft, BookOpen, HelpCircle, Newspaper } from 'lucide-react';
+import { ArrowLeft, ArrowRight, BookOpen } from 'lucide-react';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
@@ -18,11 +18,9 @@ import CompoundGrowthCalculator from '../components/CompoundGrowthCalculator';
 import RentVsBuyCalculator from '../components/RentVsBuyCalculator';
 import EmployerMatchCalculator from '../components/EmployerMatchCalculator';
 import {
-  ALL_CALCULATORS,
   CALCULATOR_BY_SLUG,
   NUDGE_BY_ID,
   HAS_INTERNAL_NUDGE,
-  pathForCalculator,
 } from '../data/calculators';
 
 function renderCalculator(id) {
@@ -93,39 +91,36 @@ export default function CalculatorTool() {
           <SoftSellNudge pool={nudge.pool} slot={nudge.slot} hint={nudge.hint} />
         )}
 
-        {/* Next step right after results so the path is visible without scrolling past more tools. SoftSell already covers referrals. */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        {/* One next step after the result. Ledger and FAQ stay available, but not as equal cards. */}
+        <div className="bg-white border border-gray-100 rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div className="flex gap-3 min-w-0">
+            <BookOpen className="text-emerald-600 shrink-0 mt-0.5" size={20} />
+            <div>
+              <p className="font-semibold text-sm text-gray-900">Next: read the sequence</p>
+              <p className="text-xs text-gray-500 mt-0.5">
+                What to do with the number, before another tool or another calculator.
+              </p>
+            </div>
+          </div>
           <Link
             to="/blog/how-to-get-started-on-your-fi-path"
-            className="bg-white border border-gray-100 rounded-xl p-4 hover:border-emerald-200 transition flex gap-3"
+            className="inline-flex items-center justify-center gap-1.5 shrink-0 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-lg"
           >
-            <BookOpen className="text-emerald-600 shrink-0" size={20} />
-            <div>
-              <p className="font-semibold text-sm text-gray-900">How to get started</p>
-              <p className="text-xs text-gray-500 mt-0.5">Path after the numbers</p>
-            </div>
-          </Link>
-          <Link
-            to="/ledger"
-            className="bg-white border border-gray-100 rounded-xl p-4 hover:border-emerald-200 transition flex gap-3"
-          >
-            <Newspaper className="text-emerald-600 shrink-0" size={20} />
-            <div>
-              <p className="font-semibold text-sm text-gray-900">This week’s Ledger</p>
-              <p className="text-xs text-gray-500 mt-0.5">Sunday note for the household</p>
-            </div>
-          </Link>
-          <Link
-            to="/faq"
-            className="bg-white border border-gray-100 rounded-xl p-4 hover:border-emerald-200 transition flex gap-3"
-          >
-            <HelpCircle className="text-emerald-600 shrink-0" size={20} />
-            <div>
-              <p className="font-semibold text-sm text-gray-900">Common questions</p>
-              <p className="text-xs text-gray-500 mt-0.5">FI, tithing, and next steps</p>
-            </div>
+            How to get started
+            <ArrowRight size={14} />
           </Link>
         </div>
+        <p className="text-xs text-gray-500">
+          Or open{' '}
+          <Link to="/ledger" className="text-emerald-700 font-medium hover:text-emerald-800">
+            this week’s Ledger
+          </Link>
+          {' '}or the{' '}
+          <Link to="/faq" className="text-emerald-700 font-medium hover:text-emerald-800">
+            FAQ
+          </Link>
+          .
+        </p>
       </div>
 
       <div className="px-4 sm:px-6 pb-10 pt-2">
