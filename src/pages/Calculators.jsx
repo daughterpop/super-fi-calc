@@ -24,7 +24,7 @@ export default function Calculators() {
         <>
           Start with{' '}
           <Link to={pathForCalculator('savings-rate-runway')} className={FAQ_LINK_CLASS}>
-            Savings rate &amp; runway
+            Savings rate & runway
           </Link>{' '}
           for a quick pulse, then{' '}
           <Link to={pathForCalculator('fi-path')} className={FAQ_LINK_CLASS}>
@@ -46,6 +46,7 @@ export default function Calculators() {
         </>
       ),
       link: '/blog/how-to-get-started-on-your-fi-path',
+      linkLabel: 'How to get started',
     },
     {
       q: 'How does this align with Catholic stewardship?',
@@ -59,11 +60,13 @@ export default function Calculators() {
         </>
       ),
       link: '/blog/why-fi-for-catholics',
+      linkLabel: 'Why FI for Catholics',
     },
     {
       q: 'Should tithing count as an expense in FI math?',
       a: 'Many Catholic families treat giving as non-negotiable. Model it inside expenses so surplus is what remains after fidelity.',
       link: '/blog/build-margin-to-give-freely-lessons-from-st-pantaleon',
+      linkLabel: 'Give freely: St. Pantaleon',
     },
     {
       q: 'Are the state 529 tax numbers exact?',
@@ -82,6 +85,7 @@ export default function Calculators() {
         </>
       ),
       link: '/blog/triple-savings-online-purchases',
+      linkLabel: 'Triple savings on purchases you already make',
     },
   ];
 
@@ -121,9 +125,6 @@ export default function Calculators() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 bg-white border-t border-b border-gray-100">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold tracking-[1.5px] mb-4">
-            FAITH • FAMILY • STEWARDSHIP
-          </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Calculator FAQ</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">Quick answers while you plan</p>
         </div>
@@ -140,7 +141,7 @@ export default function Calculators() {
                   {faq.link && (
                     <span className="block mt-3">
                       <Link to={faq.link} className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-700 font-medium text-sm">
-                        Related reading →
+                        {faq.linkLabel} →
                       </Link>
                     </span>
                   )}
