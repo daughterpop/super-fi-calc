@@ -18,6 +18,69 @@ export const LANES = [
 
 export const editions = [
   {
+    slug: 'have-no-anxiety-at-all',
+    issue: 3,
+    date: '2026-10-04',
+    sundayLabel: 'Sunday, October 4, 2026',
+    title: 'Have no anxiety at all',
+    lede:
+      'October opens on a benefits page and a warehouse book that closes in two weeks. This Ledger names the election that will not roll forward by itself, vets the Costco instant-savings book already in the aisle, and sits with Paul, who tells a worried church to pray before it spends.',
+    lanes: [
+      {
+        lane: 'household',
+        kicker: 'Open enrollment',
+        title: 'Write the premium before the portal closes',
+        lede:
+          'Many employers open the 2027 benefits window in October. Federal open season is later. The FSA still dies if you do not re-elect it.',
+        body: [
+          'The first Sunday of October is when the household inbox starts looking like an HR portal. Private employers often run open enrollment now for coverage that starts in January. Federal employees and annuitants have a later window: the Office of Personnel Management set 2026 open season for November 9 through December 14, for 2027 coverage. Either way, the work this week is the same. Do not wait for the last night of the window.',
+          'Write three lines before you click enroll. The premium you will actually pay each month. The deductible you can meet from wages, not from a credit card. Whether the flexible spending account continues only if you elect it again. Health and dependent-care FSAs do not roll forward on their own. For plan years that began in 2026, the IRS cap on employee health-FSA contributions was $3,400, with a carryover of up to $680 if the plan allows it. Your 2027 sheet may show a different number. Use that sheet. Do not invent a cap to feel finished.',
+          'Elect what you already spend on prescriptions, glasses, and the care you can name. A guess that “we will use it” is how December becomes a scramble for eligible receipts. Do not fund the election by quieting the parish envelope. The tithe is not the float for a pretax account. If the premium jumps, the answer is a smaller cart and a written question to HR, not a paused gift.',
+        ],
+        tool: {
+          label: 'Tithing & surplus calculator',
+          href: '/calculators/tithing-surplus',
+        },
+      },
+      {
+        lane: 'deal',
+        kicker: 'Warehouse book',
+        title: 'The Costco book is not a new appliance',
+        lede:
+          'The October instant-savings book is reported through October 18. The card scan is real. The espresso machine is the test.',
+        body: [
+          'Deal pages and the coupon-book writeups agree on the window: Costco’s October instant savings run from September 21 through October 18, 2026. There is no code to type. The cut shows when the membership card is scanned, in the warehouse and on a share of the same items online. Prices still move by location. If your warehouse does not have the tag, you do not have the deal.',
+          'The book mixes ordinary goods with machines. Detergent, the pantry item you already buy, a food you would have put in the cart on a normal Saturday: that can pass the organic-spend test. The headlines do not. A fully automatic espresso machine marked down by about $100, and outdoor light strings marked down by about $60, are not household staples. They are a second purchase wearing a red tag.',
+          'If the list on the fridge already matches a tagged item, buy that item and stop. Do not join Costco this week to “get the book.” A new membership bought for a seasonal flyer is manufactured spend. The book ends October 18. The dues do not.',
+        ],
+        verdict: {
+          label: 'Only if',
+          note: 'Only if the tagged item was already on the list. Skip the espresso machine, the holiday lights, and a membership opened for the flyer.',
+        },
+        tool: {
+          label: 'Bonus value calculator',
+          href: '/calculators/bonus-value',
+        },
+      },
+      {
+        lane: 'fidelity',
+        kicker: '27th Sunday in Ordinary Time',
+        title: 'Have no anxiety at all',
+        lede:
+          'Philippians 4:6–9 is the household reading this week. Vintage time has come in the Gospel, and the tenants wanted the inheritance without the fruit.',
+        body: [
+          '“Have no anxiety at all, but in everything, by prayer and petition, with thanksgiving, make your requests known to God.” That is the line that governs the benefits page. Paul does not say the premium will be small. He says the request goes to God before it goes to the cart. Then “the peace of God that surpasses all understanding will guard your hearts and minds in Christ Jesus.” Peace here is not a feeling after the portal. It is the guard on a short list already prayed.',
+          'The Gospel is the same vineyard, later in the season. The owner planted, hedged, dug the press, and built the tower. At vintage he sent for the produce. The tenants kept the fruit and killed the heir to acquire the inheritance. We do a quieter version when open enrollment becomes a hunt for the richest plan, and the parish gift is what gets leased away. Jesus’ verdict is plain: the kingdom is given “to a people that will produce its fruit.” The alleluia says the same in another key: “I have chosen you from the world, says the Lord, to go and bear fruit that will remain.”',
+          'Isaiah looked for judgment and heard bloodshed, for justice and heard the outcry. The household version is smaller and still real. Look for a premium you can name, and do not answer with a wild cart. Keep on doing what you have already learned: the tithe, the care you can document, the no to the machine. Then the God of peace will be with you — not after the warehouse, before it.',
+        ],
+        tool: {
+          label: 'FI path calculator',
+          href: '/calculators/fi-path',
+        },
+      },
+    ],
+  },
+  {
     slug: 'the-usual-daily-wage',
     issue: 2,
     date: '2026-09-20',
