@@ -291,13 +291,10 @@ export default function Tools() {
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
-      <SiteHeader />
+      <SiteHeader showReferralStrip={false} />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
         <div className="text-center mb-6 sm:mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-semibold tracking-[1.5px] mb-4">
-            STEWARDSHIP TOOLS • REFERRAL PERKS
-          </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 leading-tight">
             Tools to Speed Up Your FI Journey
           </h1>
