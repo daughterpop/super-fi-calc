@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Leave the Two Denarii: Lessons from the Jericho Road',
+    date: 'October 5, 2026',
+    dateSort: '2026-10-05',
+    excerpt: 'The Samaritan set the wounded man on his own animal, then left two denarii with the innkeeper and promised to cover whatever else the night cost. A household with no open tab cannot make that promise.',
+    readTime: '4 min read',
+    link: '/blog/leave-the-two-denarii-lessons-from-the-jericho-road',
+    tags: ['Stewardship', 'Seasonal', 'Tithing'],
+    featured: false
+  },
+  {
     title: 'Hand Him the Sealed Bond: Lessons from Tobias',
     date: 'October 2, 2026',
     dateSort: '2026-10-02',
