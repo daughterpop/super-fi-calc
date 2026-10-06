@@ -91,7 +91,7 @@ export default function CalculatorTool() {
           <SoftSellNudge pool={nudge.pool} slot={nudge.slot} hint={nudge.hint} />
         )}
 
-        {/* One next step after the result. Ledger and FAQ stay available, but not as equal cards. */}
+        {/* One next step after the tool. Ledger and FAQ stay in the footer. */}
         <div className="bg-white border border-gray-100 rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div className="flex gap-3 min-w-0">
             <BookOpen className="text-emerald-600 shrink-0 mt-0.5" size={20} />
@@ -110,17 +110,6 @@ export default function CalculatorTool() {
             <ArrowRight size={14} />
           </Link>
         </div>
-        <p className="text-xs text-gray-500">
-          Or open{' '}
-          <Link to="/ledger" className="text-emerald-700 font-medium hover:text-emerald-800">
-            this week’s Ledger
-          </Link>
-          {' '}or the{' '}
-          <Link to="/faq" className="text-emerald-700 font-medium hover:text-emerald-800">
-            FAQ
-          </Link>
-          .
-        </p>
       </div>
 
       <div className="px-4 sm:px-6 pb-10 pt-2">
