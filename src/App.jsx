@@ -50,39 +50,28 @@ function App() {
           </span>
         </Link>
 
-        <Link
-          to="/blog/how-to-get-started-on-your-fi-path"
-          className="group relative block bg-white border border-gray-100 hover:border-emerald-200 rounded-2xl p-6 transition-all hover:shadow-md"
-        >
-          <div className="absolute -top-3 left-6 w-7 h-7 rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center shadow-sm">
-            2
-          </div>
-          <h3 className="font-semibold text-lg text-gray-900 mb-2 mt-1">Read the sequence</h3>
-          <p className="text-gray-600 text-sm leading-relaxed mb-3">
-            Practical steps on faith, money, and margin when you want more than a single saint note.
-          </p>
-          <span className="text-emerald-600 text-sm font-medium inline-flex items-center gap-1">
-            How to Get Started <ArrowRight size={14} />
-          </span>
-        </Link>
-
-        {latest && (
+        <p className="text-center text-sm text-gray-500 leading-relaxed">
+          After the number,{' '}
           <Link
-            to={`/ledger/${latest.slug}`}
-            className="group relative block bg-white border border-gray-100 hover:border-emerald-200 rounded-2xl p-6 transition-all hover:shadow-md"
+            to="/blog/how-to-get-started-on-your-fi-path"
+            className="text-emerald-700 font-medium hover:text-emerald-800"
           >
-            <div className="absolute -top-3 left-6 w-7 h-7 rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center shadow-sm">
-              3
-            </div>
-            <h3 className="font-semibold text-lg text-gray-900 mb-2 mt-1">Read this week’s note</h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-3">
-              {latest.title}. A short Sunday Ledger after the numbers — budget, a deal worth skipping, and the readings.
-            </p>
-            <span className="text-emerald-600 text-sm font-medium inline-flex items-center gap-1">
-              Open the Ledger <ArrowRight size={14} />
-            </span>
+            read the sequence
           </Link>
-        )}
+          {latest ? (
+            <>
+              {' '}
+              or{' '}
+              <Link
+                to={`/ledger/${latest.slug}`}
+                className="text-emerald-700 font-medium hover:text-emerald-800"
+              >
+                this week’s Ledger
+              </Link>
+            </>
+          ) : null}
+          .
+        </p>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 border-t border-gray-100">
