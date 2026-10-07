@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Interrupt the Ledger: Lessons from Pius V at Lepanto',
+    date: 'October 7, 2026',
+    dateSort: '2026-10-07',
+    excerpt: 'Pius V left the treasurer mid-meeting and ordered Rome\'s bells rung before the Lepanto messenger arrived. A card left on the counter cannot pray the next decade.',
+    readTime: '4 min read',
+    link: '/blog/interrupt-the-ledger-lessons-from-pius-v-at-lepanto',
+    tags: ['Stewardship', 'Seasonal', 'Prayer'],
+    featured: false
+  },
+  {
     title: 'Refuse the See of Reggio: Lessons from St. Bruno',
     date: 'October 6, 2026',
     dateSort: '2026-10-06',
