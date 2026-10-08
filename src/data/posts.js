@@ -395,7 +395,7 @@ const rawPosts = [
     dateSort: '2026-07-20',
     excerpt: 'FI is not reserved for high earners. The math works for any household willing to keep a gap and put it to work.',
     readTime: '4 min read',
-    link: '/blog/why-financial-independence-is-for-everyone',
+    link: '/blog/why-fi-for-everyone',
     tags: ['Stewardship', 'FI'],
     featured: false
   }

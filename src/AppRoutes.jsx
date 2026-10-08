@@ -9,6 +9,7 @@ import Faq from './pages/Faq.jsx';
 import LedgerIndex from './pages/LedgerIndex.jsx';
 import LedgerEdition from './pages/LedgerEdition.jsx';
 import BlogSlug from './BlogSlug.jsx';
+import NotFound from './components/NotFound.jsx';
 
 export default function AppRoutes() {
   return (
@@ -23,7 +24,7 @@ export default function AppRoutes() {
       <Route path="/tools" element={<Tools />} />
       <Route path="/subscribe" element={<Subscribe />} />
       <Route path="/faq" element={<Faq />} />
-      <Route path="*" element={<App />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
