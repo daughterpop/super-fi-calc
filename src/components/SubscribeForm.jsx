@@ -1,7 +1,8 @@
 // src/components/SubscribeForm.jsx
 //
 // The one email signup on the site ("Get The Ledger on Sunday"). It is used on
-// the home page, /subscribe, /ledger and every /ledger/:slug edition.
+// the home page, /blog, /calculators, every /calculators/:slug tool, /ledger,
+// every /ledger/:slug edition and /subscribe. Essays link to /subscribe.
 //
 // Delivery: every signup is emailed to Dustin through formsubmit.co. There is
 // no mailing-list service behind it (no MailerLite) for now. Any new signup
@@ -25,6 +26,10 @@ export const FORMSUBMIT_POST = `https://formsubmit.co/${FORMSUBMIT_TARGET}`;
 function sourceLabel(pathname) {
   if (pathname === '/' || pathname === '') return 'Home page';
   if (pathname === '/subscribe') return 'Subscribe page';
+  if (pathname === '/blog') return 'Blog index';
+  if (pathname === '/calculators') return 'Calculators index';
+  const calc = pathname.match(/^\/calculators\/([^/]+)/);
+  if (calc) return `Calculator ${calc[1]}`;
   if (pathname === '/ledger') return 'Ledger archive';
   const edition = pathname.match(/^\/ledger\/([^/]+)/);
   if (edition) return `Ledger edition ${edition[1]}`;
