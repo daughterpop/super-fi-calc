@@ -4,7 +4,9 @@
 // the home page, /blog, /calculators, every /calculators/:slug tool, /ledger,
 // every /ledger/:slug edition and /subscribe. Essays link to /subscribe.
 //
-// Delivery: every signup is emailed to Dustin through formsubmit.co. There is
+// Delivery: every signup is emailed to Dustin (dhimmer1@gmail.com) through
+// formsubmit.co. Activation is per referring URL; browsers send only the
+// origin cross-origin, and https://www.viafidelitatis.com/ is activated. There is
 // no mailing-list service behind it (no MailerLite) for now. Any new signup
 // point should reuse FORMSUBMIT_AJAX / FORMSUBMIT_POST below, not a new address.
 //
@@ -76,6 +78,9 @@ export default function SubscribeForm() {
     try {
       const response = await fetch(FORMSUBMIT_AJAX, {
         method: 'POST',
+        // formsubmit activates per referring URL. Sending only the origin
+        // keeps every page on the one activated form (https://www.viafidelitatis.com/).
+        referrerPolicy: 'strict-origin-when-cross-origin',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
