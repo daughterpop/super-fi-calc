@@ -160,11 +160,14 @@ function FaqItem({ q, a }) {
           className={`shrink-0 text-emerald-600 mt-0.5 transition-transform ${open ? 'rotate-180' : ''}`}
         />
       </button>
-      {open && (
-        <div className="px-4 sm:px-5 pb-4 text-sm sm:text-[15px] text-gray-600 leading-relaxed border-t border-gray-50 pt-3">
-          {a}
-        </div>
-      )}
+      {/* Always in the HTML (hidden until opened) so crawlers and the
+          prerendered page include every answer. */}
+      <div
+        hidden={!open}
+        className="px-4 sm:px-5 pb-4 text-sm sm:text-[15px] text-gray-600 leading-relaxed border-t border-gray-50 pt-3"
+      >
+        {a}
+      </div>
     </div>
   );
 }

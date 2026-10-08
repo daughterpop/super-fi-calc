@@ -2,7 +2,16 @@ import { lazy, Suspense } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
-const pageModules = import.meta.glob('./pages/*.jsx');
+// Browser: one lazy chunk per essay. The build-time prerender
+// (src/entry-server.jsx) swaps in eagerly loaded modules via setEagerPages so
+// renderToString gets the full essay instead of the Suspense fallback.
+let pageModules = import.meta.glob('./pages/*.jsx');
+let eager = false;
+
+export function setEagerPages(modules) {
+  pageModules = modules;
+  eager = true;
+}
 
 const ALIASES = {
   'why-fi-for-everyone': 'WhyFIForEveryone',
@@ -18,6 +27,19 @@ function resolveModule(slug) {
     if (pageModules[key]) return pageModules[key];
   }
   return null;
+}
+
+/** True when /blog/:slug resolves to an essay file (used by the prerender route list). */
+export function hasEssay(slug) {
+  return resolveModule(slug) !== null;
+}
+
+// Cache one lazy() per slug so re-renders (and hydration) reuse the same
+// component instead of re-suspending.
+const lazyCache = new Map();
+function lazyPage(slug, loader) {
+  if (!lazyCache.has(slug)) lazyCache.set(slug, lazy(loader));
+  return lazyCache.get(slug);
 }
 
 function MissingPost({ slug }) {
@@ -39,7 +61,7 @@ export default function BlogSlug() {
   const { slug } = useParams();
   const loader = resolveModule(slug);
   if (!loader) return <MissingPost slug={slug} />;
-  const Page = lazy(loader);
+  const Page = eager ? loader.default : lazyPage(slug, loader);
   return (
     <Suspense fallback={<div className="min-h-screen bg-gray-50" />}>
       <Page />

@@ -5,14 +5,14 @@
   "framework": "vite",
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
-    { "source": "/blog{/}?", "destination": "/index.html" },
-    { "source": "/blog/:slug{/}?", "destination": "/index.html" },
-    { "source": "/calculators{/}?", "destination": "/index.html" },
-    { "source": "/calculators/:slug{/}?", "destination": "/index.html" },
-    { "source": "/ledger{/}?", "destination": "/index.html" },
-    { "source": "/ledger/:slug{/}?", "destination": "/index.html" },
-    { "source": "/tools{/}?", "destination": "/index.html" },
-    { "source": "/subscribe{/}?", "destination": "/index.html" },
-    { "source": "/faq{/}?", "destination": "/index.html" }
+    { "source": "/blog{/}?", "destination": "/app-shell.html" },
+    { "source": "/blog/:slug{/}?", "destination": "/app-shell.html" },
+    { "source": "/calculators{/}?", "destination": "/app-shell.html" },
+    { "source": "/calculators/:slug{/}?", "destination": "/app-shell.html" },
+    { "source": "/ledger{/}?", "destination": "/app-shell.html" },
+    { "source": "/ledger/:slug{/}?", "destination": "/app-shell.html" },
+    { "source": "/tools{/}?", "destination": "/app-shell.html" },
+    { "source": "/subscribe{/}?", "destination": "/app-shell.html" },
+    { "source": "/faq{/}?", "destination": "/app-shell.html" }
   ]
 }

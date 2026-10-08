@@ -35,3 +35,11 @@ If yes, add `<FurtherReading title="..." note="..." />` after the last household
 - Never commit placeholder text (`PLACEHOLDER_POSTS`, "...", "rest unchanged", etc.).
 - Before committing, check the diff: these three files should only show added lines (the only allowed changed lines are the `/blog` `<lastmod>` in sitemap.xml and `<lastBuildDate>` in rss.xml). If any other existing line is removed or changed, or a file looks shorter than before or truncated, stop and do not commit.
 - If the post's slug is already in posts.js, do not add it again.
+
+### Prerendering, structured data, and IndexNow (automatic — no action needed)
+
+The build turns every route into static HTML with the full essay text and JSON-LD (`scripts/prerender.mjs`, `src/entry-server.jsx`). It finds new posts on its own from `src/data/posts.js` and `src/pages/*.jsx`, and a GitHub Action (`.github/workflows/indexnow.yml`) pings IndexNow after the new post is live. The daily post workflow does not change.
+
+- Do not edit or delete: `scripts/prerender.mjs`, `scripts/prerender-og.mjs`, `scripts/essay-meta-plugin.mjs`, `scripts/indexnow-ping.mjs`, `src/entry-server.jsx`, `src/components/RouteSeo.jsx`, `src/main.jsx`, `vite.config.js`, `vercel.json`, `.github/workflows/indexnow.yml`, or the IndexNow key file `public/8031b40e9abd26ad2b4d3f8c311276f1.txt`.
+- Page files must not touch `window`, `document`, or `localStorage` at the top level of the file (outside a component or `useEffect`). The build renders every essay in Node, where those do not exist.
+- Keep each essay's `<h1>` as plain text. Older essays that are not in posts.js take their title from it.
