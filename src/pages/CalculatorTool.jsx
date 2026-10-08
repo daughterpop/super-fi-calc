@@ -1,9 +1,13 @@
+import { useCallback, useRef, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, BookOpen } from 'lucide-react';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
 import SoftSellNudge from '../components/calculators/SoftSellNudge';
+import CalculatorEmailCapture, {
+  readCalculatorResults,
+} from '../components/calculators/CalculatorEmailCapture';
 import SuperFiCalculator from '../Super-Fi-Calculator.jsx';
 import LoanPaymentCalculator from '../components/LoanPaymentCalculator';
 import BonusValueCalculator from '../components/BonusValueCalculator';
@@ -59,12 +63,34 @@ function renderCalculator(id) {
 export default function CalculatorTool() {
   const { slug } = useParams();
   const tool = CALCULATOR_BY_SLUG[slug];
+  const calcRef = useRef(null);
+  // The email capture appears once the visitor changes an input or presses a
+  // calculator button while a result is showing. It then replaces the generic
+  // Ledger box below. Prerendered HTML always has the generic box, so
+  // hydration matches.
+  const [touchedSlug, setTouchedSlug] = useState(null);
+  const [dismissedSlug, setDismissedSlug] = useState(null);
+  // Wait a tick so the calculator re-renders, then only count it once a result
+  // is on screen (the FI path wizard shows results after "See results").
+  const markTouched = useCallback(() => {
+    setTimeout(() => {
+      if (readCalculatorResults(calcRef.current, 1).length > 0) setTouchedSlug(slug);
+    }, 0);
+  }, [slug]);
+  const onCalcClick = useCallback(
+    (e) => {
+      if (e.target.closest && e.target.closest('button')) markTouched();
+    },
+    [markTouched],
+  );
+  const getResults = useCallback(() => readCalculatorResults(calcRef.current), []);
 
   if (!tool) {
     return <Navigate to="/calculators" replace />;
   }
 
   const nudge = NUDGE_BY_ID[tool.id];
+  const showCapture = touchedSlug === slug && dismissedSlug !== slug;
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
@@ -85,7 +111,23 @@ export default function CalculatorTool() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6">
-        {renderCalculator(tool.id)}
+        <div
+          ref={calcRef}
+          onInputCapture={markTouched}
+          onChangeCapture={markTouched}
+          onClickCapture={onCalcClick}
+        >
+          {renderCalculator(tool.id)}
+        </div>
+
+        {showCapture && (
+          <CalculatorEmailCapture
+            key={slug}
+            tool={tool}
+            getResults={getResults}
+            onDismiss={() => setDismissedSlug(slug)}
+          />
+        )}
 
         {nudge && !HAS_INTERNAL_NUDGE.has(tool.id) && (
           <SoftSellNudge pool={nudge.pool} slot={nudge.slot} hint={nudge.hint} />
@@ -112,9 +154,11 @@ export default function CalculatorTool() {
         </div>
       </div>
 
-      <div className="px-4 sm:px-6 pb-10 pt-2">
-        <SubscribeForm />
-      </div>
+      {!showCapture && (
+        <div className="px-4 sm:px-6 pb-10 pt-2">
+          <SubscribeForm />
+        </div>
+      )}
       <SiteFooter />
     </div>
   );
