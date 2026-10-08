@@ -18,7 +18,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { formatIssue, latestEdition } from '../data/ledger';
 import { SITE } from '../lib/seoData';
 
-const FORMSUBMIT_TARGET = 'dustin.himmerich@protonmail.com';
+const FORMSUBMIT_TARGET = 'dhimmer1@gmail.com';
 export const FORMSUBMIT_AJAX = `https://formsubmit.co/ajax/${FORMSUBMIT_TARGET}`;
 export const FORMSUBMIT_POST = `https://formsubmit.co/${FORMSUBMIT_TARGET}`;
 
