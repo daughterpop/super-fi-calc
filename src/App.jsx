@@ -6,11 +6,9 @@ import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
 import { allPosts } from './data/posts';
 import { pathForCalculator } from './data/calculators';
-import { latestEdition } from './data/ledger';
 
 function App() {
   const recentPosts = allPosts.slice(0, 3);
-  const latest = latestEdition();
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
@@ -36,12 +34,9 @@ function App() {
 
         <Link
           to={pathForCalculator('fi-path')}
-          className="group relative block bg-white border border-gray-100 hover:border-emerald-200 rounded-2xl p-6 transition-all hover:shadow-md"
+          className="group block bg-white border border-gray-100 hover:border-emerald-200 rounded-2xl p-6 transition-all hover:shadow-md"
         >
-          <div className="absolute -top-3 left-6 w-7 h-7 rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center shadow-sm">
-            1
-          </div>
-          <h3 className="font-semibold text-lg text-gray-900 mb-2 mt-1">Run the number</h3>
+          <h3 className="font-semibold text-lg text-gray-900 mb-2">Run the number</h3>
           <p className="text-gray-600 text-sm leading-relaxed mb-3">
             College, mortgage, tithing, a full house. One years-to-FI figure is usually enough to see the next step.
           </p>
@@ -58,18 +53,6 @@ function App() {
           >
             read the sequence
           </Link>
-          {latest ? (
-            <>
-              {' '}
-              or{' '}
-              <Link
-                to={`/ledger/${latest.slug}`}
-                className="text-emerald-700 font-medium hover:text-emerald-800"
-              >
-                this week’s Ledger
-              </Link>
-            </>
-          ) : null}
           .
         </p>
       </div>
