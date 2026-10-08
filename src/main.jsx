@@ -10,7 +10,8 @@ import RouteSeo from './components/RouteSeo.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import AppRoutes from './AppRoutes.jsx';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const container = document.getElementById('root');
+const app = (
   <React.StrictMode>
     <HelmetProvider>
       <Router>
@@ -23,3 +24,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </HelmetProvider>
   </React.StrictMode>
 );
+
+// Prerendered routes (scripts/prerender.mjs) ship real HTML inside #root, so
+// hydrate it. Anything else (e.g. an unknown /blog/:slug) renders fresh.
+if (container.hasChildNodes()) {
+  ReactDOM.hydrateRoot(container, app);
+} else {
+  ReactDOM.createRoot(container).render(app);
+}

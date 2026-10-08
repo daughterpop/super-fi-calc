@@ -1,0 +1,43 @@
+# Tell IndexNow search engines (Bing, Yandex, etc.) about new essays after a
+# production push. Runs on GitHub, separate from the Vercel build, so it can
+# never block or fail a deploy. See scripts/indexnow-ping.mjs.
+name: IndexNow ping
+
+on:
+  push:
+    branches: [Fixed]
+    paths:
+      - public/sitemap.xml
+      - src/pages/**
+      - src/data/posts.js
+      - src/data/ledger.js
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: 'Optional: comma-separated full URLs to submit (blank = auto-detect from sitemap)'
+        required: false
+        default: ''
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Wait for the Vercel deploy, then ping IndexNow
+        run: node scripts/indexnow-ping.mjs
+        env:
+          INDEXNOW_URLS: ${{ github.event.inputs.urls }}
