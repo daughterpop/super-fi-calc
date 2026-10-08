@@ -4,9 +4,15 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "rewrites": [
-    {
-      "source": "/((?!api/|assets/).*)",
-      "destination": "/index.html"
-    }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/blog{/}?", "destination": "/index.html" },
+    { "source": "/blog/:slug{/}?", "destination": "/index.html" },
+    { "source": "/calculators{/}?", "destination": "/index.html" },
+    { "source": "/calculators/:slug{/}?", "destination": "/index.html" },
+    { "source": "/ledger{/}?", "destination": "/index.html" },
+    { "source": "/ledger/:slug{/}?", "destination": "/index.html" },
+    { "source": "/tools{/}?", "destination": "/index.html" },
+    { "source": "/subscribe{/}?", "destination": "/index.html" },
+    { "source": "/faq{/}?", "destination": "/index.html" }
   ]
 }

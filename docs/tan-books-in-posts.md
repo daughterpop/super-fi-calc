@@ -21,3 +21,17 @@ If yes, add `<FurtherReading title="..." note="..." />` after the last household
 - If no honest match, omit the block
 - Never invent that TAN publishes a title
 - Do not shape the post around a TAN title
+
+### Editing shared files (posts.js, sitemap.xml, rss.xml)
+
+`src/data/posts.js`, `public/sitemap.xml`, and `public/rss.xml` hold every post on the site. Rewriting them whole has broken production builds and shipped a 2-URL sitemap.
+
+- Never replace, truncate, or regenerate these files. Edit them in place.
+- Add the new post by inserting exactly one entry and leaving every existing entry untouched:
+  - `src/data/posts.js`: one new object at the top of the `rawPosts` array.
+  - `public/sitemap.xml`: one new `<url>` line directly after the `/blog` entry.
+  - `public/rss.xml`: one new `<item>` directly before the first existing `<item>`.
+- Put the new page file and all three inserts in ONE commit when the tool allows it. If it can only commit one file at a time, commit the page file first, then each insert, and every commit must leave the file complete. No "restore" or follow-up fix commits.
+- Never commit placeholder text (`PLACEHOLDER_POSTS`, "...", "rest unchanged", etc.).
+- Before committing, check the diff: these three files should only show added lines (the only allowed changed lines are the `/blog` `<lastmod>` in sitemap.xml and `<lastBuildDate>` in rss.xml). If any other existing line is removed or changed, or a file looks shorter than before or truncated, stop and do not commit.
+- If the post's slug is already in posts.js, do not add it again.

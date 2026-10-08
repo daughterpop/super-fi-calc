@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const pageModules = import.meta.glob('./pages/*.jsx');
 
@@ -22,6 +23,9 @@ function resolveModule(slug) {
 function MissingPost({ slug }) {
   return (
     <div className="min-h-screen bg-gray-50 px-4 py-16 text-center">
+      <Helmet>
+        <meta name="robots" content="noindex" />
+      </Helmet>
       <h1 className="text-2xl font-bold text-gray-900 mb-3">Post not found</h1>
       <p className="text-gray-600 mb-6">No page at /blog/{slug}.</p>
       <Link to="/blog" className="text-emerald-700 font-medium hover:underline">
