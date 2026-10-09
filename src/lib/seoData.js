@@ -43,6 +43,12 @@ export const STATIC = {
       'A short Sunday read for Catholic households: what matters in the budget this week, whether a deal is worth it, and a note from the Mass readings.',
     type: 'website',
   },
+  '/contact': {
+    title: 'Contact — Write to Dustin | Via Fidelitatis',
+    description:
+      'Questions, corrections, or a story from your own household. Send a note to Via Fidelitatis; every message is read.',
+    type: 'website',
+  },
   '/faq': {
     title: 'FAQ — Catholic Financial Independence Questions | Via Fidelitatis',
     description:

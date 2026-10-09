@@ -13,6 +13,7 @@
     { "source": "/ledger/:slug{/}?", "destination": "/app-shell.html" },
     { "source": "/tools{/}?", "destination": "/app-shell.html" },
     { "source": "/subscribe{/}?", "destination": "/app-shell.html" },
-    { "source": "/faq{/}?", "destination": "/app-shell.html" }
+    { "source": "/faq{/}?", "destination": "/app-shell.html" },
+    { "source": "/contact{/}?", "destination": "/app-shell.html" }
   ]
 }

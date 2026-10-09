@@ -20,7 +20,7 @@ import { hasEssay, setEagerPages } from './BlogSlug.jsx';
 
 setEagerPages(import.meta.glob('./pages/*.jsx', { eager: true }));
 
-const STATIC_ROUTES = ['/', '/blog', '/calculators', '/ledger', '/tools', '/faq', '/subscribe'];
+const STATIC_ROUTES = ['/', '/blog', '/calculators', '/ledger', '/tools', '/faq', '/subscribe', '/contact'];
 
 export function getRoutes() {
   const blog = new Set();
