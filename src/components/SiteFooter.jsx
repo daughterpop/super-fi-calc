@@ -7,6 +7,7 @@ const EXPLORE = [
   { to: '/tools', label: 'Tools' },
   { to: '/faq', label: 'FAQ' },
   { to: '/subscribe', label: 'Subscribe' },
+  { to: '/contact', label: 'Contact' },
 ];
 
 /**

@@ -202,7 +202,7 @@ export default function RouteSeo() {
         : breadcrumbs([['Home', '/'], ['Blog', '/blog'], [headline, pathname]])
     );
   } else if (staticMeta) {
-    const label = { '/tools': 'Tools', '/subscribe': 'Subscribe', '/ledger': 'The Ledger' }[pathname];
+    const label = { '/tools': 'Tools', '/subscribe': 'Subscribe', '/ledger': 'The Ledger', '/contact': 'Contact' }[pathname];
     if (label) jsonLd = graph(breadcrumbs([['Home', '/'], [label, pathname]]));
   }
 

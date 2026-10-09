@@ -6,6 +6,7 @@ import BlogIndex from './pages/BlogIndex.jsx';
 import Tools from './pages/Tools.jsx';
 import Subscribe from './pages/Subscribe.jsx';
 import Faq from './pages/Faq.jsx';
+import Contact from './pages/Contact.jsx';
 import LedgerIndex from './pages/LedgerIndex.jsx';
 import LedgerEdition from './pages/LedgerEdition.jsx';
 import BlogSlug from './BlogSlug.jsx';
@@ -24,6 +25,7 @@ export default function AppRoutes() {
       <Route path="/tools" element={<Tools />} />
       <Route path="/subscribe" element={<Subscribe />} />
       <Route path="/faq" element={<Faq />} />
+      <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
