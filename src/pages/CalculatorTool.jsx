@@ -4,7 +4,6 @@ import { ArrowLeft, ArrowRight, BookOpen } from 'lucide-react';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
-import SoftSellNudge from '../components/calculators/SoftSellNudge';
 import CalculatorEmailCapture, {
   readCalculatorResults,
 } from '../components/calculators/CalculatorEmailCapture';
@@ -21,11 +20,7 @@ import EmergencyFundCalculator from '../components/EmergencyFundCalculator';
 import CompoundGrowthCalculator from '../components/CompoundGrowthCalculator';
 import RentVsBuyCalculator from '../components/RentVsBuyCalculator';
 import EmployerMatchCalculator from '../components/EmployerMatchCalculator';
-import {
-  CALCULATOR_BY_SLUG,
-  NUDGE_BY_ID,
-  HAS_INTERNAL_NUDGE,
-} from '../data/calculators';
+import { CALCULATOR_BY_SLUG } from '../data/calculators';
 
 function renderCalculator(id) {
   switch (id) {
@@ -89,7 +84,6 @@ export default function CalculatorTool() {
     return <Navigate to="/calculators" replace />;
   }
 
-  const nudge = NUDGE_BY_ID[tool.id];
   const showCapture = touchedSlug === slug && dismissedSlug !== slug;
 
   return (
@@ -129,11 +123,9 @@ export default function CalculatorTool() {
           />
         )}
 
-        {nudge && !HAS_INTERNAL_NUDGE.has(tool.id) && (
-          <SoftSellNudge pool={nudge.pool} slot={nudge.slot} hint={nudge.hint} />
-        )}
-
-        {/* One next step after the tool. Ledger and FAQ stay in the footer. */}
+        {/* One next step after the tool. The header strip already carries the
+            referral; a second affiliate card under the number was competing with it.
+            Ledger and FAQ stay in the footer. */}
         <div className="bg-white border border-gray-100 rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div className="flex gap-3 min-w-0">
             <BookOpen className="text-emerald-600 shrink-0 mt-0.5" size={20} />
