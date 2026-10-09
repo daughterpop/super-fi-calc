@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Resign the Oriel Fellowship While You Still Can',
+    date: 'October 9, 2026',
+    dateSort: '2026-10-09',
+    excerpt: 'Newman resigned the Oriel fellowship on 3 October, then knelt in the Littlemore chapel while Dominic Barberi’s cloak was still wet. A stipend already promised to the house cannot be handed back.',
+    readTime: '4 min read',
+    link: '/blog/resign-the-oriel-fellowship-while-you-still-can',
+    tags: ['Stewardship', 'Seasonal', 'Prayer'],
+    featured: false
+  },
+  {
     title: 'Lend the Three Loaves to the Friend at Midnight',
     date: 'October 8, 2026',
     dateSort: '2026-10-08',
