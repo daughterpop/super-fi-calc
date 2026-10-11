@@ -18,6 +18,69 @@ export const LANES = [
 
 export const editions = [
   {
+    slug: 'learned-the-secret',
+    issue: 4,
+    date: '2026-10-11',
+    sundayLabel: 'Sunday, October 11, 2026',
+    title: 'I have learned the secret',
+    lede:
+      'The second Sunday of October arrives with the warehouse book still open for seven more days and the first real cold nights already on the forecast. This Ledger names the heat that will share the checking account with the candy, vets the last week of the Costco instant-savings book, and sits with Paul, who learned the secret of being content whether the table was full or bare.',
+    lanes: [
+      {
+        lane: 'household',
+        kicker: 'First cold nights',
+        title: 'Write the heat before the thermostat drops',
+        lede:
+          'The first heating bill of the season is not a surprise if you name it this afternoon. Winter coats and the parish gift belong on the same page.',
+        body: [
+          'October’s second week is when the overnight low stops being a novelty and becomes a bill. The furnace cycles once, then twice. The kids come home needing the coat that was fine last March. None of it is optional. All of it arrives while the candy aisle is still pretending to be the main event.',
+          'Sit down once today. Write the estimated first heating cycle — look at last October’s statement if you have it, or the utility’s average. Add the coat or the boots that will not wait. Then put the Sunday envelope on the same line, not after the list. If the page does not balance, the answer is a smaller cart this week, not a quieter gift. Heat comes from wages. So does the tithe.',
+          'Do not raid the emergency fund for the first cold snap, and do not skip the parish to buy bulk candy “while it is on sale.” Those two accounts have jobs. The season can be ordinary once the numbers are written. The scramble starts when they stay unnamed until the bill arrives.',
+        ],
+        tool: {
+          label: 'Tithing & surplus calculator',
+          href: '/calculators/tithing-surplus',
+        },
+      },
+      {
+        lane: 'deal',
+        kicker: 'Last week of the book',
+        title: 'The Costco book closes next Sunday',
+        lede:
+          'Instant savings run through October 18. The card scan is still real. The candy and the machine are still the test.',
+        body: [
+          'Deal pages still agree: Costco’s October instant-savings book began September 21 and ends October 18, 2026. No code. The cut appears when the membership card is scanned, in the warehouse and on many of the same items online. Your warehouse sets the final price. If the tag is missing, the deal is missing.',
+          'Seven days remain. Ordinary goods you already buy — detergent, the pantry staple, the food on this week’s list — can pass the organic-spend test. Bulk Halloween candy and the discounted espresso machine do not. Candy bought “while it is cheap” is manufactured spend if the house did not already plan to serve it. A machine marked down a hundred dollars is a second purchase wearing a red tag.',
+          'If the list on the fridge matches a tagged item, buy it and stop. Do not make a second trip for the book’s last page. Do not open a new membership this week to catch the flyer. The book ends next Sunday. The dues do not. The candy aisle will still be there after the 18th, and so will the next book.',
+        ],
+        verdict: {
+          label: 'Only if',
+          note: 'Only if the tagged item was already on the list. Skip the bulk candy invented for the sale, the espresso machine, and any membership opened for the flyer.',
+        },
+        tool: {
+          label: 'Bonus value calculator',
+          href: '/calculators/bonus-value',
+        },
+      },
+      {
+        lane: 'fidelity',
+        kicker: '28th Sunday in Ordinary Time',
+        title: 'I have learned the secret',
+        lede:
+          'Philippians 4:12–13 is the household reading this week. The invited guests went off to their farm and their business. The feast was ready.',
+        body: [
+          '“I know how to live in humble circumstances; I know also how to live with abundance. In every circumstance and in all things I have learned the secret of being well fed and of going hungry, of living in abundance and of being in need. I can do all things in him who strengthens me.” That is the line that governs the first heating bill and the last page of the warehouse book. Paul does not say the cold will not come. He says he has learned the secret in both seasons. Then he adds the promise: “My God will fully supply whatever you need, in accord with his glorious riches in Christ Jesus.”',
+          'The Gospel is the same invitation in another key. The king prepared the wedding feast. The invited guests refused and went away — one to his farm, another to his business. We do the quieter version when the heating cycle or the red tag becomes the business that keeps us from the table already set. The hall fills with whoever will come. The man without the wedding garment is cast out. The garment is not a feeling after the warehouse. It is the short list already prayed: the tithe named, the heat named, the no to the machine.',
+          'Isaiah promised a feast of rich food and choice wines on the mountain, and the Lord wiping every tear. The household version is smaller and still real. Come to the feast that is already ready — Mass this morning, the envelope on the same page as the furnace, the cart that stops when the list ends. Then the secret Paul learned is not a theory. It is the peace that sits with a written number before the thermostat drops.',
+        ],
+        tool: {
+          label: 'FI path calculator',
+          href: '/calculators/fi-path',
+        },
+      },
+    ],
+  },
+  {
     slug: 'have-no-anxiety-at-all',
     issue: 3,
     date: '2026-10-04',
