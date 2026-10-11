@@ -26,6 +26,11 @@ function App() {
             <span className="font-semibold text-gray-800">Via Fidelitatis</span> means “the way of fidelity.”
             Tools and writing so money stops crowding out Mass, kids, and generosity.
           </p>
+          <img
+            src="/images/fidelitatis-hero.jpg"
+            alt="Open missal, pen, and papers on a wooden table in natural morning light"
+            className="mx-auto mt-8 mb-4 w-full max-w-2xl rounded-2xl shadow-sm"
+          />
         </div>
       </div>
 
