@@ -6,9 +6,7 @@ import { GUIDE_LINKS } from '../data/guides';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import SubscribeForm from '../components/SubscribeForm';
-import ReferralCard from '../components/ReferralCard';
 import { formatIssue, latestEdition } from '../data/ledger';
-import { getReferral } from '../data/referrals';
 
 const ARCHIVE_LANES = [
   { id: 'saints', label: 'Saints', match: (p) => (p.tags || []).includes('Seasonal') },
@@ -40,7 +38,6 @@ export default function BlogIndex() {
   const archive = params.get('view') === 'all';
   const [searchTerm, setSearchTerm] = useState('');
   const [lane, setLane] = useState(null);
-  const listReferral = getReferral({ slot: 8, pool: 'all' });
   const latestLedger = latestEdition();
 
   const sorted = useMemo(() => [...allPosts].sort(byDate), []);
@@ -150,12 +147,6 @@ export default function BlogIndex() {
                   <span className="text-gray-400"> · {formatIssue(latestLedger)}</span>
                 </p>
               </section>
-            )}
-
-            {listReferral && (
-              <div className="mb-8">
-                <ReferralCard referral={listReferral} />
-              </div>
             )}
 
             <SubscribeForm />
