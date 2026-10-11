@@ -26,11 +26,16 @@ function App() {
             <span className="font-semibold text-gray-800">Via Fidelitatis</span> means “the way of fidelity.”
             Tools and writing so money stops crowding out Mass, kids, and generosity.
           </p>
-          <img
-            src="/images/fidelitatis-hero.jpg"
-            alt="Open missal, pen, and papers on a wooden table in natural morning light"
-            className="mx-auto mt-8 mb-4 w-full max-w-2xl rounded-2xl shadow-sm"
-          />
+          <figure className="mx-auto mt-8 mb-4 w-full max-w-2xl">
+            <img
+              src="/images/fidelitatis-hero.jpg"
+              alt="Open missal, pen, and papers on a wooden table in natural morning light"
+              className="w-full rounded-2xl shadow-sm"
+            />
+            <figcaption className="mt-2 text-center text-xs text-gray-500">
+              The number comes after the book is open.
+            </figcaption>
+          </figure>
         </div>
       </div>
 
