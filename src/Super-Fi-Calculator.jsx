@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { ArrowLeft, Check, Home, GraduationCap, DollarSign, Sparkles } from 'lucide-react';
 
 function formatCompact(n) {
@@ -211,6 +211,13 @@ export default function SuperFiCalculator() {
               </tbody>
             </table></div>
           </div>
+          <div className="mt-6 text-center text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            After the number,{' '}
+            <Link to="/blog/how-to-get-started-on-your-fi-path" className="text-emerald-700 font-medium hover:text-emerald-800">
+              read the sequence
+            </Link>
+            .
+          </div>
         </div>
       </div>
     );
@@ -279,9 +286,9 @@ export default function SuperFiCalculator() {
                   <div className="grid grid-cols-2 gap-4">
                     <div><label className="block text-sm font-semibold mb-2">Rate (%)</label>
                       <input type="number" step="0.01" value={mortgageRate} onChange={(e) => setMortgageRate(parseFloat(e.target.value) || 0)} className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" /></div>
-                    <div><label className="block text-sm font-semibold mb-2">Monthly payment</label>
+                    <div><label className="block text-sm font-semibold mb-2">Monthly Payment</label>
                       <div className="relative"><span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
-                        <MoneyField value={monthlyPayment} onChange={setMonthlyPayment} className={mc} ariaLabel="Monthly mortgage payment" /></div></div>
+                        <MoneyField value={monthlyPayment} onChange={setMonthlyPayment} className={mc} ariaLabel="Monthly payment" /></div></div>
                   </div>
                 </>
               )}
@@ -289,23 +296,22 @@ export default function SuperFiCalculator() {
           )}
           {step === 2 && (
             <div className="space-y-5">
-              <h2 className="text-xl font-bold">Children & college</h2>
+              <h2 className="text-xl font-bold">Children & College</h2>
               <label className="flex items-center gap-3"><input type="checkbox" checked={payingForCollege} onChange={(e) => setPayingForCollege(e.target.checked)} className="rounded" /><span className="font-medium">Paying for college</span></label>
               {payingForCollege && kids.map((kid, i) => (
                 <div key={kid.id} className="grid grid-cols-2 gap-3 p-3 bg-gray-50 rounded-xl">
                   <div><label className="block text-xs font-medium mb-1">Age</label>
                     <input type="number" value={kid.age} onChange={(e) => updateKid(i, 'age', parseInt(e.target.value) || 0)} className="w-full px-3 py-2 border rounded-lg" /></div>
-                  <div><label className="block text-xs font-medium mb-1">Annual tuition</label>
+                  <div><label className="block text-xs font-medium mb-1">Annual Tuition</label>
                     <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
                       <MoneyField value={kid.annualTuition} onChange={(val) => updateKid(i, 'annualTuition', val)} className="w-full pl-7 pr-3 py-2 border rounded-lg" ariaLabel="Annual tuition" /></div></div>
                 </div>
               ))}
-              {payingForCollege && <button onClick={() => setKids([...kids, { id: Date.now(), age: 0, annualTuition: 20000 }])} className="text-sm text-emerald-700 font-medium">+ Add child</button>}
             </div>
           )}
           {step === 3 && (
             <div className="space-y-5">
-              <h2 className="text-xl font-bold">Large expenses</h2>
+              <h2 className="text-xl font-bold">Large Expenses</h2>
               <label className="flex items-center gap-3"><input type="checkbox" checked={buyingVehicle} onChange={(e) => setBuyingVehicle(e.target.checked)} className="rounded" /><span className="font-medium">Buying a vehicle</span></label>
               {buyingVehicle && vehicles.map((v, i) => (
                 <div key={v.id} className="grid grid-cols-2 gap-3 p-3 bg-gray-50 rounded-xl">
