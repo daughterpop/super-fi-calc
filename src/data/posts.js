@@ -1,5 +1,36 @@
 const rawPosts = [
   {
+    title: 'Count the Cost Before You Build: Lessons from St. Luke',
+    date: 'October 14, 2026',
+    dateSort: '2026-10-14',
+    excerpt: 'Luke recorded the question Jesus put to every builder: which of you does not first sit down and count the cost? A household raising its tower without that number is building barns in the dark.',
+    readTime: '4 min read',
+    link: '/blog/count-the-cost-before-you-build-lessons-from-st-luke',
+    tags: ['Stewardship', 'Seasonal', 'Planning'],
+    featured: false
+  },
+  {
+    title: 'Be Not Afraid of the Honest Number: Lessons from St. John Paul II',
+    date: 'October 15, 2026',
+    dateSort: '2026-10-15',
+    excerpt: "His first words as pope were \u2018be not afraid.\u2019 The household that will not total its debts and state its savings rate is managing a fog \u2014 and the fog always lifts as a crisis.",
+    readTime: '4 min read',
+    link: '/blog/be-not-afraid-of-the-honest-number-lessons-from-st-john-paul-ii',
+    tags: ['Stewardship', 'Seasonal', 'Courage'],
+    featured: false
+  },
+  {
+    title: 'Finish the Course: Lessons from Sts. Simon and Jude',
+    date: 'October 16, 2026',
+    dateSort: '2026-10-16',
+    excerpt: 'They walked to Persia and never came back \u2014 the long, obscure middle was the whole assignment. The middle years of FI are not the waiting room; they are the formation.',
+    readTime: '4 min read',
+    link: '/blog/finish-the-course-lessons-from-sts-simon-and-jude',
+    tags: ['Stewardship', 'Seasonal', 'Perseverance'],
+    featured: false
+  },
+
+  {
     title: 'Give the Ring at the Gate: Lessons from St. Edward',
     date: 'October 13, 2026',
     dateSort: '2026-10-13',
