@@ -48,23 +48,12 @@ function App() {
         >
           <h3 className="font-semibold text-lg text-gray-900 mb-2">Run the number</h3>
           <p className="text-gray-600 text-sm leading-relaxed mb-3">
-            College, mortgage, tithing, a full house. One years-to-FI figure is usually enough to see the next step.
+            College, mortgage, tithing, a full house. One years-to-FI figure is usually enough to see the next step — then follow the sequence.
           </p>
           <span className="text-emerald-600 text-sm font-medium inline-flex items-center gap-1">
             Open the calculator <ArrowRight size={14} />
           </span>
         </Link>
-
-        <p className="text-center text-sm text-gray-500 leading-relaxed">
-          After the number,{' '}
-          <Link
-            to="/blog/how-to-get-started-on-your-fi-path"
-            className="text-emerald-700 font-medium hover:text-emerald-800"
-          >
-            read the sequence
-          </Link>
-          .
-        </p>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 border-t border-gray-100">
