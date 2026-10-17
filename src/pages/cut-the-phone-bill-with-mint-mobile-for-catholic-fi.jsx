@@ -16,31 +16,13 @@ export default function CutThePhoneBillWithMintMobileForCatholicFi() {
           A recurring bill most households can shrink without lifestyle drama — freeing cash for the emergency fund, investing, or the tithe.
         </p>
 
-        <p className="mb-6">Hey everyone,</p>
-
-        <p className="mb-6">
-          Financial independence is built from many small levers, not one dramatic move. The monthly phone bill is one of the easiest. Prepaid plans on major networks often cost a fraction of postpaid family plans while delivering the same coverage for ordinary use.
-        </p>
-
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Why Mint Mobile fits</h2>
-        <p className="mb-6">
-          Mint Mobile runs on T-Mobile's network with simple prepaid plans. You pay upfront for three, six, or twelve months, which removes surprise fees and makes the true monthly cost easy to compare. For many households the savings versus a traditional postpaid plan are large enough to notice in the first year.
-        </p>
-        <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
-          <li>Lower recurring cost without changing how you use the phone day to day.</li>
-          <li>Upfront payment periods that force a clear comparison against your current bill.</li>
-          <li>Referral credit that softens the first renewal when you switch through a friend link.</li>
-        </ul>
-
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">How it serves the FI path</h2>
-        <p className="mb-6">
-          Every dollar you stop sending to a carrier is a dollar available for{' '}
-          <Link to="/blog/building-an-emergency-fund-without-neglecting-the-tithe" className="text-emerald-700 font-medium hover:underline">the emergency fund</Link>, investing, or{' '}
-          <Link to="/blog/how-to-budget-as-a-catholic-family-with-tithing-first" className="text-emerald-700 font-medium hover:underline">consistent giving</Link>.
-          Cutting a fixed cost is often more reliable than chasing another side hustle. Check coverage at your address and commute routes before you port numbers. If it works, the savings compound every month you stay on the plan.
-        </p>
-
-        <p className="not-prose mb-8">
+        <div className="not-prose border border-emerald-200 bg-emerald-50 rounded-2xl p-6 mb-10">
+          <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700 mb-2">
+            Try it
+          </p>
+          <p className="text-gray-700 mb-4">
+            New signups through the referral link below can get a $15 Mint credit — confirm current terms on Mint Mobile's site.
+          </p>
           <a
             href="https://my.mintmobile.com/refer/n5SgKMM"
             target="_blank"
@@ -49,10 +31,27 @@ export default function CutThePhoneBillWithMintMobileForCatholicFi() {
           >
             Get $15 Mint credit →
           </a>
-        </p>
+        </div>
 
         <p className="mb-6 text-sm text-gray-600">
           This is a referral link. If you sign up, the site may earn a commission at no extra cost to you. Plan prices and coverage vary; confirm current terms on Mint Mobile's site.
+        </p>
+
+        <p className="mb-6">
+          The most boring line on the budget is the phone bill. That is exactly why it is worth attacking. Financial independence is built from many small levers, not one dramatic move — and prepaid plans on major networks often cost a fraction of postpaid family plans while delivering the same coverage for ordinary use.
+        </p>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
+          Why Mint won the comparison
+        </h2>
+        <p className="mb-6">
+          Mint Mobile runs on T-Mobile's network with simple prepaid plans. You pay upfront for three, six, or twelve months, which removes surprise fees and makes the true monthly cost easy to compare against your current bill. Paying in advance also forces an honest side-by-side: no autopilot renewal hiding the math. For many households, the first-year savings versus a traditional postpaid plan are large enough to notice — and a referral credit can soften the first renewal on top of that.
+        </p>
+        <p className="mb-6">
+          Every dollar you stop sending to a carrier is a dollar available for{' '}
+          <Link to="/blog/building-an-emergency-fund-without-neglecting-the-tithe" className="text-emerald-700 font-medium hover:underline">the emergency fund</Link>, investing, or{' '}
+          <Link to="/blog/how-to-budget-as-a-catholic-family-with-tithing-first" className="text-emerald-700 font-medium hover:underline">consistent giving</Link>.
+          Cutting a fixed cost is often more reliable than chasing another side hustle. Check coverage at your address and commute routes before you port numbers. If it works, the savings compound every month you stay on the plan.
         </p>
 
         <p className="not-prose mb-8 flex flex-wrap gap-3">
