@@ -10,11 +10,7 @@ export default function BuildMarginToFormTheHeartLessonsFromStJohnEudes() {
         </h1>
 
         <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-          Hey everyone,
-        </p>
-
-        <p className="text-xl font-semibold text-gray-800 mb-4">
-          On the Memorial of St. John Eudes, the apostle of the Sacred Hearts of Jesus and Mary, Catholic families receive a clear invitation: free the heart so it can be formed in real love.
+          St. John Eudes believed the Heart of Jesus could become the working heart of a shopkeeper, a mother, a clerk. On his memorial, the apostle of the Sacred Hearts of Jesus and Mary hands Catholic families a clear invitation: free the heart so it can be formed in real love.
         </p>
 
         <p className="mb-6">
@@ -22,7 +18,7 @@ export default function BuildMarginToFormTheHeartLessonsFromStJohnEudes() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          The heart cannot be formed under constant money pressure
+          A crowded heart cannot be formed
         </h2>
         <p className="mb-6">
           St. John Eudes taught, “Let us love Jesus with the Heart of Mary. And Mary with the Heart of Jesus. And let us have but one heart and one love with Jesus and Mary.” That kind of interior unity requires space. When every spare thought is occupied by the next bill, the next car repair, or the quiet fear that there will not be enough, the heart stays crowded. Devotion becomes another item on a long to-do list instead of the center of life.
@@ -32,15 +28,12 @@ export default function BuildMarginToFormTheHeartLessonsFromStJohnEudes() {
           Faithful financial independence is one practical way to clear that space. Real margin — a deliberate gap between what the household earns and what it spends — removes the constant low-level anxiety that keeps the heart from resting in Christ. It is not about accumulating for its own sake. It is about creating the freedom to form the heart the way St. John Eudes urged: in the furnace of the Sacred Heart rather than in the furnace of financial stress.
         </p>
 
-        <ul className="list-disc pl-6 space-y-3 mb-8 text-gray-700">
-          <li>Protect the tithe first so generosity stays a habit of the heart, not a leftover</li>
-          <li>Build a real emergency fund so unexpected costs do not steal peace or prayer time</li>
-          <li>Keep lifestyle inflation in check so surplus can serve both family needs and long-term freedom</li>
-          <li>Automate the basics so money management never becomes a second full-time job</li>
-        </ul>
+        <p className="mb-6">
+          Protect the tithe first so generosity stays a habit of the heart, not a leftover. Build a real emergency fund so unexpected costs do not steal peace or prayer time. Keep lifestyle inflation in check so surplus can serve both family needs and long-term freedom. And automate the basics, so money management never becomes a second full-time job.
+        </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          The practical next step
+          Order the money like you order the day
         </h2>
         <p className="mb-6">
           You do not need a seventeenth-century seminary or a royal purse. You need the same intentionality St. John Eudes showed when he ordered his days around the Hearts of Jesus and Mary. Run the numbers once. Name the gap you want between earning and spending. Guard the tithe. Build the buffer. Then let the surplus grow quietly while you stay free to form the heart in prayer, family life, and open-handed love.
@@ -51,7 +44,7 @@ export default function BuildMarginToFormTheHeartLessonsFromStJohnEudes() {
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Financial freedom really is for everyone — including your family.
+          One heart, one love — and a household with room for both.
         </p>
 
         <p className="text-gray-700 font-medium mt-6">

@@ -10,11 +10,7 @@ export default function BuildMarginToCarryTheCrossLessonsFromStEdithStein() {
         </h1>
 
         <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-          Hey everyone,
-        </p>
-
-        <p className="text-xl font-semibold text-gray-800 mb-4">
-          Today the Church remembers St. Teresa Benedicta of the Cross — Edith Stein.
+          There is a number in your household that nobody wants to look at. On the feast of St. Teresa Benedicta of the Cross — Edith Stein — the Church honors a philosopher who built her whole life on refusing to look away.
         </p>
 
         <p className="mb-6">
@@ -30,7 +26,7 @@ export default function BuildMarginToCarryTheCrossLessonsFromStEdithStein() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Truth first, then freedom
+          The examination of the checkbook
         </h2>
         <p className="mb-6">
           Most money anxiety comes from living right at the edge of whatever income we currently have. When a real trial arrives, there is no room left to respond with faith. Margin is not a lack of trust in Providence. It is the practical fruit of seeking truth in our finances so that trust can actually take root.
@@ -48,7 +44,7 @@ export default function BuildMarginToCarryTheCrossLessonsFromStEdithStein() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Let the numbers serve the mission
+          Truth, tracked and invested
         </h2>
         <p className="mb-4">
           Once the gap appears, put the surplus to work so it can grow quietly in the background. Low-cost index funds do the heavy lifting over time. If you want a simple place to start tracking the truth of your numbers and investing the surplus, I use Robinhood myself:
@@ -68,7 +64,7 @@ export default function BuildMarginToCarryTheCrossLessonsFromStEdithStein() {
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Financial freedom really is for everyone — including your family.
+          Seek the truth in your numbers, and carry whatever cross comes with peace.
         </p>
 
         <p className="text-gray-700 font-medium mt-6">

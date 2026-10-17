@@ -11,7 +11,7 @@ export default function BuildMarginForRadicalLoveLessonsFromStMaximilianKolbe() 
         </h1>
 
         <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-          Hey everyone,
+          It is the question humming underneath every family budget, whether anyone says it aloud: if a friend called tonight with a real need, could we say yes before the mental math starts?
         </p>
 
         <p className="text-xl font-semibold text-gray-800 mb-4">
@@ -31,7 +31,7 @@ export default function BuildMarginForRadicalLoveLessonsFromStMaximilianKolbe() 
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Why margin makes radical love ordinary
+          The economics of a free gift
         </h2>
         <p className="mb-6">
           Margin is not surplus for its own sake. It is the breathing room that lets a family say yes to real needs without fear. A broken-down car, a neighbor in crisis, a parish collection, or simply the quiet decision to work fewer hours so a parent can be more present — all of these become possible when the household is no longer living at the edge. Building that margin through ordinary, faithful stewardship is one concrete way Catholic families prepare to love the way Kolbe loved.
@@ -49,7 +49,7 @@ export default function BuildMarginForRadicalLoveLessonsFromStMaximilianKolbe() 
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Let the surplus serve the mission
+          What the surplus is for
         </h2>
         <p className="mb-6">
           Once the gap appears, keep it simple. Low-cost index funds can grow quietly in the background while the family stays free of constant money drama. The goal is not accumulation for status. It is the same quiet strength St. Maximilian modeled: a life light enough and stable enough that ordinary ups and downs never extinguish the readiness to give.
@@ -67,7 +67,7 @@ export default function BuildMarginForRadicalLoveLessonsFromStMaximilianKolbe() 
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Financial freedom really is for everyone — including your family.
+          Love to the end — and build the margin that keeps your household ready to love.
         </p>
 
         <p className="text-gray-700 font-medium mt-6">

@@ -10,11 +10,7 @@ export default function BuildMarginForTrueBeautyLessonsFromStRoseOfLima() {
         </h1>
 
         <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-          Hey everyone,
-        </p>
-
-        <p className="text-xl font-semibold text-gray-800 mb-4">
-          On the Memorial of St. Rose of Lima, the first canonized saint of the Americas, the Church holds up a young woman who chose the beauty of a free heart over the world’s applause.
+          Go open your closet and count what vanity bought. On the Memorial of St. Rose of Lima — the first canonized saint of the Americas — the Church holds up a young woman who chose the beauty of a free heart over the world’s applause.
         </p>
 
         <p className="mb-6">
@@ -26,25 +22,22 @@ export default function BuildMarginForTrueBeautyLessonsFromStRoseOfLima() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          What margin makes possible
+          Vanity keeps receipts
         </h2>
         <p className="mb-6">
           A deliberate gap between income and spending creates space to live lightly without anxiety. It lets you resist status spending, keep a buffer, and still open the home or the wallet when need appears. That margin is not about looking poor. It is the quiet room where the heart can prefer Christ over comparison.
         </p>
 
-        <ul className="list-disc pl-6 space-y-3 mb-8 text-gray-700">
-          <li>Audit one recurring “status” expense and redirect it to savings or giving</li>
-          <li>Choose the functional option over the impressive one when both meet the need</li>
-          <li>Keep a small emergency buffer so simple living never feels like crisis</li>
-          <li>Review purchases against the question: does this free the heart or feed vanity?</li>
-        </ul>
+        <p className="mb-6">
+          It can start with auditing one recurring “status” expense and redirecting it to savings or giving. It means choosing the functional option over the impressive one when both meet the need, and keeping a small emergency buffer so simple living never feels like a crisis. Above all it means running every purchase past one question: does this free the heart, or feed vanity?
+        </p>
 
         <p className="mb-6">
           When the household is no longer ruled by the need to impress or the fear of falling behind, the family can more easily live the hidden holiness St. Rose modeled. Financial independence, lived this way, becomes ordinary fidelity — the practical foundation that lets true beauty shape the home.
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Financial freedom really is for everyone — including your family.
+          Choose the beauty of a free heart — it never goes out of style, and it never needs financing.
         </p>
 
         <p className="text-gray-700 font-medium mt-6">

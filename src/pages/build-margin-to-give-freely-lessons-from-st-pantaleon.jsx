@@ -10,11 +10,7 @@ export default function BuildMarginToGiveFreelyLessonsFromStPantaleon() {
         </h1>
 
         <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-          Hey everyone,
-        </p>
-
-        <p className="text-xl font-semibold text-gray-800 mb-4">
-          Today the Church remembers St. Pantaleon — a physician who treated the poor without taking any payment.
+          Hey everyone — picture the moment the bill comes and somebody says: it’s covered. Today the Church remembers St. Pantaleon, the physician who treated the poor without taking any payment.
         </p>
 
         <p className="mb-6">
@@ -22,7 +18,7 @@ export default function BuildMarginToGiveFreelyLessonsFromStPantaleon() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Margin makes free service possible
+          The unmercenary economy
         </h2>
         <p className="mb-6">
           St. John Chrysostom once told his flock:
@@ -35,7 +31,7 @@ export default function BuildMarginToGiveFreelyLessonsFromStPantaleon() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Three small practices this week
+          Practice the no-silver habit
         </h2>
         <ul className="list-disc pl-6 space-y-3 mb-8 text-gray-700">
           <li>Identify one recurring expense that rarely brings peace or joy. Reduce or eliminate it and redirect the difference toward investing or a quiet act of generosity.</li>
@@ -48,7 +44,7 @@ export default function BuildMarginToGiveFreelyLessonsFromStPantaleon() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          A simple tool for family generosity
+          Give on purpose, not at tax time
         </h2>
         <p className="mb-4">
           If you want a clean way to practice planned giving without scrambling at tax time, Daffy is a donor-advised fund built for families. You can contribute when cash is available, invest it, and then grant it out to the charities and causes you care about — including your parish — whenever you are ready. It turns generosity into a steady habit instead of a last-minute scramble:
@@ -68,7 +64,7 @@ export default function BuildMarginToGiveFreelyLessonsFromStPantaleon() {
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Financial freedom really is for everyone — including your family.
+          Give without silver — the wealth you give away is the wealth that stays yours.
         </p>
 
         <p className="text-gray-700 font-medium mt-6">

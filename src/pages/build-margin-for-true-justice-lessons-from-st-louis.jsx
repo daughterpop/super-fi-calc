@@ -10,7 +10,7 @@ export default function BuildMarginForTrueJusticeLessonsFromStLouis() {
         </h1>
 
         <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-          Hey everyone,
+          What would a just king do with a checking account?
         </p>
 
         <p className="text-xl font-semibold text-gray-800 mb-4">
@@ -22,7 +22,7 @@ export default function BuildMarginForTrueJusticeLessonsFromStLouis() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          What St. Louis actually taught
+          The king’s advice to his son
         </h2>
         <p className="mb-6">
           In the advice he left his son, Louis wrote: “Be kindhearted to the poor, the unfortunate and the afflicted. Give them as much help and consolation as you can.” He also told him to side with the poor rather than the rich until the truth was clear.
@@ -33,7 +33,7 @@ export default function BuildMarginForTrueJusticeLessonsFromStLouis() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          How margin makes justice possible
+          Justice needs a surplus
         </h2>
         <p className="mb-6">
           Without margin, every unexpected expense becomes a zero-sum choice. You can still give, but it often feels like cutting into something essential. With margin, the same act becomes ordinary and joyful.
@@ -51,7 +51,7 @@ export default function BuildMarginForTrueJusticeLessonsFromStLouis() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          One practical step this week
+          This week’s honest audit
         </h2>
         <p className="mb-6">
           Look at last month’s numbers together. Name the true surplus after the tithe, the essentials, and the emergency fund contribution. That surplus is the practical room where justice and generosity can live without strain. If the gap is thin, pick one quiet expense to trim — not as punishment, but so the household can breathe and give freely.
@@ -62,7 +62,7 @@ export default function BuildMarginForTrueJusticeLessonsFromStLouis() {
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Financial freedom really is for everyone — including your family.
+          Justice in the home is quiet work; let your checkbook be its witness.
         </p>
 
         <p className="text-gray-700 font-medium mt-6">

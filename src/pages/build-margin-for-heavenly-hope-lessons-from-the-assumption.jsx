@@ -11,7 +11,7 @@ export default function BuildMarginForHeavenlyHopeLessonsFromTheAssumption() {
         </h1>
 
         <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-          Hey everyone,
+          What does a feast about Mary’s glorified body have to do with your bank balance? More than the world would like you to believe.
         </p>
 
         <p className="text-xl font-semibold text-gray-800 mb-4">
@@ -31,25 +31,22 @@ export default function BuildMarginForHeavenlyHopeLessonsFromTheAssumption() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Why margin serves heavenly hope
+          Why the feast unsettles the budget
         </h2>
         <p className="mb-6">
           Margin is the gap between what comes in and what goes out. That gap is not an end in itself. It is the breathing room that lets a family refuse the pressure to treat every dollar as sacred to status or security. When the emergency fund is solid, the tithe is automated, and lifestyle inflation is resisted, the household can look up. A medical bill, a relative in need, or the simple choice to work a little less so a parent can be present no longer feels like a threat to survival. The same freedom that lets Mary’s children live lightly on earth is the freedom that keeps them oriented to the glory that already belongs to her.
         </p>
 
-        <ul className="list-disc pl-6 space-y-3 mb-8 text-gray-700">
-          <li>Keep a true emergency fund so ordinary crises never force panic selling or debt that crowds out prayer and presence.</li>
-          <li>Give first (tithe and alms) so generosity remains a settled claim rather than an afterthought when cash feels tight.</li>
-          <li>Refuse lifestyle creep so raises and bonuses expand capacity to serve rather than raise the floor of comfort.</li>
-          <li>Treat time as part of the margin: lower required income frees hours for family, parish, and rest that money alone cannot buy.</li>
-        </ul>
+        <p className="mb-6">
+          That looks like an emergency fund with real money in it, so ordinary crises never force panic selling or debt that crowds out prayer and presence. It looks like the tithe and alms decided first — settled claims rather than leftovers when cash feels tight. It looks like raises and bonuses expanding the capacity to serve instead of the floor of comfort. And it treats time as margin too: lower required income buys back hours for family, parish, and rest that no salary can purchase.
+        </p>
 
         <p className="mb-6">
           The Assumption does not ask us to despise the body or the material world. It asks us to remember where both are headed. Building margin through steady, faithful stewardship is one concrete way Catholic families practice that memory in the checkbook and the calendar.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Keep the surplus pointed toward the goal
+          Keep the surplus aimed at heaven
         </h2>
         <p className="mb-6">
           Once the gap appears, keep the investing simple. Low-cost index funds can grow quietly while the family stays free of constant money drama. The point is not to pile up treasures that rust. It is the same quiet strength the Assumption reveals: a life light enough and stable enough that ordinary ups and downs never pull the eyes away from the glory already prepared.
@@ -67,7 +64,7 @@ export default function BuildMarginForHeavenlyHopeLessonsFromTheAssumption() {
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Financial freedom really is for everyone — including your family.
+          Keep your eyes on the glory already prepared for her — and your household light enough to follow.
         </p>
 
         <p className="text-gray-700 font-medium mt-6">
