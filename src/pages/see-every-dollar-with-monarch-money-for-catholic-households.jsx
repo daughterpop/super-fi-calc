@@ -17,58 +17,46 @@ export default function SeeEveryDollarWithMonarchMoneyForCatholicHouseholds() {
         </p>
 
         <p className="mb-6">
-          Hey everyone,
-        </p>
-
-        <p className="mb-6">
-          You cannot manage what you cannot see. For Catholic families building toward financial independence, the first practical step is often the same: get honest, shared numbers in one place. Monarch Money is one of the cleaner tools for that job.
+          Most money tension in a marriage is an information problem. One spouse carries the mental load of where the money goes; the other sees fragments. You cannot fix that with a better spreadsheet — you fix it by both looking at the same numbers.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Why shared clarity matters
+          The spouse gap
         </h2>
         <p className="mb-6">
-          Large households, dual incomes, irregular bonuses, and the constant pull of kids' activities make it easy for spending to drift. One spouse often carries the mental load of “where the money goes.” The other may only see fragments. That gap produces friction, surprise, and delayed decisions about tithing, debt, or investing.
+          Large households, dual incomes, irregular bonuses, and the constant pull of kids' activities make it easy for spending to drift. When one partner holds all the context, every question about a purchase sounds like an interrogation and every decision about tithing, debt, or investing waits on one person. A shared dashboard does not settle every disagreement. It makes the conversation factual instead of accusatory.
+        </p>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
+          What Monarch actually does
+        </h2>
+        <p className="mb-6">
+          Monarch Money connects bank, credit, and investment accounts so cash flow and net worth live in one view. Budgeting works by category with room for custom labels that match how your family actually spends, and both spouses can log in to see the same picture. Investments track alongside checking and debt, which matters once you are past the emergency-fund stage and the question becomes allocation rather than survival.
         </p>
         <p className="mb-6">
-          A shared dashboard does not solve every disagreement. It does make the conversation factual instead of accusatory. When both of you can see the same categories, the same net worth trend, and the same surplus (or shortfall), the path to{' '}
+          When both of you can see the same categories, the same net worth trend, and the same surplus or shortfall,{' '}
           <Link to="/blog/build-margin-for-catholic-families" className="text-emerald-700 font-medium hover:underline">building margin</Link>{' '}
           becomes a joint project instead of a solo burden.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          What Monarch does well
-        </h2>
-        <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
-          <li>Connects bank, credit, and investment accounts so cash flow and net worth live in one view.</li>
-          <li>Supports budgeting by category with room for custom labels that match how your family actually spends.</li>
-          <li>Works well for couples — both can log in and see the same picture.</li>
-          <li>Tracks investments alongside checking and debt, which matters once you are past the emergency-fund stage.</li>
-        </ul>
-        <p className="mb-6">
-          Through the referral link below, new users can get 50% off the first year of Core. Confirm current pricing and terms at signup.
-        </p>
-
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          How it fits the Catholic FI sequence
+          The one rule that makes it work
         </h2>
         <p className="mb-6">
-          Monarch is not the strategy. It is the mirror. Use it to support a budget that treats{' '}
-          <Link to="/blog/how-to-budget-as-a-catholic-family-with-tithing-first" className="text-emerald-700 font-medium hover:underline">tithing as a first claim</Link>, protects the essentials, and reveals the surplus that can fund the emergency buffer and long-term investing. Review together weekly or biweekly — short, calm, and focused on one adjustment at a time.
-        </p>
-        <p className="mb-6">
-          Pair the dashboard with the{' '}
+          Monarch is the mirror, not the strategy. Use it to support a budget that treats{' '}
+          <Link to="/blog/how-to-budget-as-a-catholic-family-with-tithing-first" className="text-emerald-700 font-medium hover:underline">tithing as a first claim</Link>{' '}
+          — then set a recurring 20-minute review with your spouse, weekly or biweekly, and limit each session to one adjustment. Do not try to perfect every category on day one; aim for "good enough to see the surplus" within the first week. And pair the monthly picture with the{' '}
           <Link to="/calculators" className="text-emerald-700 font-medium hover:underline">FI calculator</Link>{' '}
-          so the monthly picture connects to the multi-year goal. Clarity without a destination is just anxiety with better charts.
+          so the numbers connect to the multi-year goal. Clarity without a destination is just anxiety with better charts.
         </p>
 
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Getting started
-        </h2>
-        <p className="mb-6">
-          Sign up through the link, connect the primary accounts, invite your spouse, and set a recurring 20-minute review. Do not try to perfect every category on day one. Aim for “good enough to see the surplus” within the first week.
-        </p>
-        <p className="not-prose mb-8">
+        <div className="not-prose border border-emerald-200 bg-emerald-50 rounded-2xl p-6 my-8">
+          <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700 mb-2">
+            Try it
+          </p>
+          <p className="text-gray-700 mb-4">
+            New users through the referral link below can get 50% off the first year of Core — confirm current pricing and terms at signup.
+          </p>
           <a
             href="https://monarch.com/referral/hvup58srp1?r_source=share"
             target="_blank"
@@ -77,7 +65,7 @@ export default function SeeEveryDollarWithMonarchMoneyForCatholicHouseholds() {
           >
             Get 50% off Monarch →
           </a>
-        </p>
+        </div>
 
         <p className="mb-6 text-sm text-gray-600">
           This is a referral link. If you sign up, the site may earn a commission at no extra cost to you. Pricing and features change; confirm current terms on Monarch's site.
