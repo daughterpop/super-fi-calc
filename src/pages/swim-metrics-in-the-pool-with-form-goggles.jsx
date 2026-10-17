@@ -16,35 +16,34 @@ export default function SwimMetricsInThePoolWithFormGoggles() {
           Real-time pace, distance, and stroke data in your field of view — useful for triathlon swim work when technique and consistency matter more than guessing.
         </p>
 
-        <p className="mb-6">Hey everyone,</p>
-
         <p className="mb-6">
-          For age-group triathletes balancing training with family and work, the pool is often the weakest and least measured leg. FORM smart swim goggles put basic metrics where you can see them without stopping at the wall every length.
+          For the age-group triathlete juggling family and work, the pool is the weakest and least measured leg. FORM smart swim goggles put pace, distance, and stroke rate where you can see them — no stopping at the wall every length to guess how the set is going.
         </p>
 
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">What they offer</h2>
-        <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
-          <li>Pace, distance, stroke rate, and related metrics displayed in-goggle.</li>
-          <li>Useful feedback loop for technique work and steady aerobic sets.</li>
-          <li>Referral campaigns periodically add rewards for new buyers — confirm current offer at checkout.</li>
-        </ul>
-
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Why it belongs on a tools page for this site</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
+          When it earns its place
+        </h2>
         <p className="mb-6">
-          Sustainable training is part of stewarding health so the long FI horizon remains realistic. Better swim data can shorten the learning curve and reduce wasted pool time — time that belongs to family and prayer as much as to sport. It is a niche tool: buy it if you are already committed to swim improvement, not as a gadget for its own sake.
+          Real-time metrics give technique work an honest feedback loop: steady aerobic sets stop being guesswork, and wasted pool time shrinks — time that belongs to family and prayer as much as to sport. Sustainable training is part of stewarding health so the long FI horizon stays realistic. It is a niche tool, though: buy it if you are already committed to swim improvement, not as a gadget for its own sake. Referral campaigns periodically add rewards for new buyers — confirm the current offer at checkout.
         </p>
 
-        <p className="not-prose mb-8">
+        <div className="not-prose border border-emerald-200 bg-emerald-50 rounded-2xl p-6 my-8">
+          <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700 mb-2">
+            Where this lives now
+          </p>
+          <p className="text-gray-700 mb-4">
+            Training tools moved to Via Salutis — the sibling site for fasting, sleep, and training.
+          </p>
           <a
             href="https://www.via-salutis.com/shop"
             className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors text-sm sm:text-base shadow-sm"
           >
-            Training tools now live on Via Salutis →
+            Training tools on Via Salutis →
           </a>
-        </p>
+        </div>
 
         <p className="mb-6 text-sm text-gray-600">
-          FORM belongs with the body, not the ledger. The live referral is on Via Salutis, the sibling site for fasting, sleep, and training.
+          FORM belongs with the body, not the ledger. The live referral is on Via Salutis.
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">Train with feedback. Protect the rest of life.</p>
