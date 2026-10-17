@@ -43,7 +43,7 @@ export default function AiMealPlanningForCatholicFamiliesStretchTheBudgetAndAcce
           A quick faith + finance tip
         </h2>
         <p className="mb-6">
-          One family we know started a Sunday evening “stewardship supper.” After Mass they review the coming week’s meal plan together, thank God for the food, and decide together where the savings will go that month — more to the kids’ college accounts, a little extra to the parish, or the investment account. The kids see money and faith working side by side. It’s simple, it’s prayerful, and it builds the exact habits that lead to long-term freedom.
+          Here’s a practice worth trying in your own home: a Sunday evening “stewardship supper.” After Mass, review the coming week’s meal plan together, thank God for the food, and decide together where the savings will go that month — more to the kids’ college accounts, a little extra to the parish, or the investment account. This is a suggestion, not a story about some other family. But the principle is sound: kids who help plan the week see money and faith working side by side, and that’s the exact habit that leads to long-term freedom.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
