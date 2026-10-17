@@ -15,7 +15,7 @@ export default function BuildMarginForRoyalPeaceLessonsFromTheQueenshipOfMary() 
         </p>
 
         <p className="text-xl font-semibold text-gray-800 mb-4">
-          On the Memorial of the Queenship of the Blessed Virgin Mary, the Church invites us to place our households under her gentle rule.
+          Today is the Memorial of the Queenship of the Blessed Virgin Mary — the day the Church puts the household formally under her gentle rule.
         </p>
 
         <p className="mb-6">
@@ -23,18 +23,15 @@ export default function BuildMarginForRoyalPeaceLessonsFromTheQueenshipOfMary() 
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          What margin makes possible
+          Who actually rules your household?
         </h2>
         <p className="mb-6">
           A deliberate gap between what comes in and what goes out creates space for the family to live ordered lives. It lets you give first, keep a buffer, and still have room for ordinary hospitality and rest. That margin is not about accumulating status. It is the quiet room where Mary’s maternal care can shape daily decisions without constant financial noise.
         </p>
 
-        <ul className="list-disc pl-6 space-y-3 mb-8 text-gray-700">
-          <li>Put the tithe and savings on autopilot so the choice is already made</li>
-          <li>Choose the simpler option when it protects family peace</li>
-          <li>Review lifestyle upgrades once a season instead of chasing every new thing</li>
-          <li>Treat debt and housing as tools under the family’s true priorities</li>
-        </ul>
+        <p className="mb-6">
+          In practice that means the tithe and the savings go on autopilot, so the choice is already made before the month starts. It means choosing the simpler option when it protects family peace, and reviewing the lifestyle upgrades once a season instead of chasing every new thing. It means treating debt and the mortgage as tools that answer to the family’s true priorities — never the other way around.
+        </p>
 
         <p className="mb-6">
           When the household is no longer ruled by the fear of running short or the pressure to keep up, the family can more easily live under the Queen’s care. Financial independence, lived this way, becomes ordinary fidelity — the practical foundation that lets maternal love and royal peace shape the home.
@@ -46,7 +43,7 @@ export default function BuildMarginForRoyalPeaceLessonsFromTheQueenshipOfMary() 
         />
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Financial freedom really is for everyone — including your family.
+          Under her queenship, let peace govern the ledger and anxiety go into exile.
         </p>
 
         <p className="text-gray-700 font-medium mt-6">

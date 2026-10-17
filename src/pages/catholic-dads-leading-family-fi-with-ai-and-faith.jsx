@@ -14,31 +14,53 @@ export default function CatholicDadsLeadingFamilyFiWithAiAndFaith() {
         </p>
 
         <p className="mb-6">
-          Recent buzz around Catholic AI tools has dads like us thinking bigger about stewardship. We can use smart AI to lead our families toward financial independence without missing bedtime prayers or soccer games.
+          Here is a sentence worth arguing with: a father who refuses to look at his family's numbers is not a spiritual man with better priorities. He is a steward who has not checked the ledger. St. Paul told Timothy that a man who will not provide for his own household has denied the faith — and provision requires knowing what comes in, what goes out, and where it is all headed.
         </p>
 
         <p className="mb-6">
-          It’s practical, faith-first, and focused on building a strong marriage and raising kids who understand money as a tool for generosity.
+          That is where AI earns a place in a Catholic home. Not as an oracle, but as a shovel. It digs. You decide where the trench goes.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          How dads can use AI for family FI
+          What AI is actually good for in a family budget
         </h2>
+        <p className="mb-6">
+          Forget the hype about AI financial advisors. The honest, useful version is much smaller:
+        </p>
         <ul className="list-disc pl-6 space-y-3 mb-8 text-gray-700">
-          <li>Have AI analyze your budget with tithing and family activities prioritized</li>
-          <li>Simulate scenarios for home ownership, Catholic education, and retirement together</li>
-          <li>Automate investing so you have more time for leading family devotions</li>
+          <li>Paste a month of credit card or bank exports into a chatbot and ask it to categorize the spending. It will be roughly right and confidently wrong in places — audit every line yourself. The point is not the AI's answer; it is that you finally looked.</li>
+          <li>Use it for quick scenario arithmetic: what changes if the extra $300 goes to the mortgage instead of a taxable account? It can do the math, but it has no idea which trade is right for your family. Treat its numbers as a sketch, not advice.</li>
+          <li>Let it draft the awkward conversations — the note to your wife that the kitchen remodel waits a year, the way to tell the kids the vacation got simpler. Then rewrite it in your own voice, because AI writes like a greeting card and your family deserves their father, not a template.</li>
         </ul>
 
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
+          The part no chatbot can do
+        </h2>
         <p className="mb-6">
-          One quick faith + finance tip: One dad prompted a faith-aligned AI with his family numbers and discovered they could reach FI in 12 years while still funding annual pilgrimages. It gave him confidence to lead boldly.
+          Here is my real opinion, stated plainly: the most important financial decisions a Catholic dad makes are discernment questions, and outsourcing them to a chatbot is abdication, not leadership. No AI can tell you what percentage to tithe, whether Catholic school tuition is worth the stretch, or whether your family should take the pilgrimage this year. Those are prayer-and-spouse questions. A tool that answers them for you has not made you a better steward; it has made you a quieter one.
         </p>
+        <p className="mb-6">
+          And one more, since we are being honest: automate the investing and then stop fiddling with it. Set the automatic transfer into broad index funds and leave it alone. The dad refreshing his portfolio at the dinner table is not present for the blessing, the conversation, or the kids. Presence is the actual return on this whole project.
+        </p>
+        <p className="mb-6">
+          In the parable of the talents, the master does not praise the servant with the cleverest analysis. He praises the faithful one. The buried talent is the dad who knows exactly what he should do and keeps getting around to it. Look at the numbers, make the plan, automate it, and then go be a father.
+        </p>
+
+        <p className="text-lg font-medium text-gray-800 mt-10">
+          Financial freedom really is for everyone — including your family.
+        </p>
+
+        <p className="text-gray-700 font-medium mt-6">
+          – Dustin
+        </p>
+
+        <hr className="my-10 border-gray-300" />
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
           Ready to invest?
         </h2>
         <p className="mb-4">
-          If you’re ready to start putting money to work while staying true to your values, I use Robinhood myself. Open an account through my link and you can get free stocks (up to $200 value) when you fund it — perfect for buying broad index funds:
+          If you're ready to start putting money to work while staying true to your values, I use Robinhood myself. Open an account through my link and you can get free stocks (up to $200 value) when you fund it — perfect for buying broad index funds:
         </p>
 
         <a
@@ -49,14 +71,6 @@ export default function CatholicDadsLeadingFamilyFiWithAiAndFaith() {
         >
           Get Your Free Stocks on Robinhood →
         </a>
-
-        <p className="text-lg font-medium text-gray-800 mt-10">
-          Financial freedom really is for everyone — including your family.
-        </p>
-
-        <p className="text-gray-700 font-medium mt-6">
-          – Dustin
-        </p>
 
         <BlogPostFooter />
       </div>

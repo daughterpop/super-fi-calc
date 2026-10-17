@@ -11,15 +11,7 @@ export default function BuildMarginThatGuardsYourPeaceLessonsFromStJaneFrancesDe
         </h1>
 
         <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-          Hey everyone,
-        </p>
-
-        <p className="text-xl font-semibold text-gray-800 mb-4">
-          Today the Church remembers St. Jane Frances de Chantal.
-        </p>
-
-        <p className="mb-6">
-          Widow, mother, and founder of the Visitation Order, she carried heavy family responsibilities and still became a model of gentle, steady charity. One of her most practical teachings still speaks directly to modern households: “Do not lose your inward peace for anything whatsoever, even if your whole world seems upset.”
+          What is a Christian household actually allowed to lose its peace over? St. Jane Frances de Chantal — widow, mother, founder of the Visitation Order — answers with the bluntness of a woman who raised children and buried a husband: nothing. “Do not lose your inward peace for anything whatsoever, even if your whole world seems upset.”
         </p>
 
         <p className="mb-6">
@@ -27,25 +19,22 @@ export default function BuildMarginThatGuardsYourPeaceLessonsFromStJaneFrancesDe
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Why margin protects inward peace
+          Peace is a defended interior
         </h2>
         <p className="mb-6">
           When every dollar is spoken for before it arrives, small disruptions become crises. A car repair, a medical bill, or simply a slower month can unsettle the whole household. Margin changes the math. A deliberate gap between what you earn and what you spend creates room to breathe. That room is what lets a family keep its peace even when circumstances shift.
         </p>
 
-        <ul className="list-disc pl-6 space-y-3 mb-8 text-gray-700">
-          <li>Name the true “enough” for housing, vehicles, food, and clothing so lifestyle inflation cannot quietly expand.</li>
-          <li>Track spending for one honest month without judgment — just data — then cut the leaks that produce the most anxiety.</li>
-          <li>Automate a modest savings rate first so the surplus is protected before discretionary spending can claim it.</li>
-          <li>When income rises, move the increase into investments or emergency reserves before the new lifestyle can take hold.</li>
-        </ul>
+        <p className="mb-6">
+          Name the true “enough” for housing, vehicles, food, and clothing so lifestyle inflation cannot quietly expand. Track spending for one honest month without judgment — just data — then cut the leaks that produce the most anxiety. Automate a modest savings rate first, so the surplus is protected before discretionary spending can claim it. And when income rises, move the increase into investments or reserves before the new lifestyle can take hold.
+        </p>
 
         <p className="mb-6">
           Jane Frances lived this in her own way. After her husband’s death she managed a large household, raised children, and still founded a religious community dedicated to gentle service of the sick and poor. Her freedom to act came from a heart that refused to let exterior troubles rule the interior life. The same principle applies to money: build the practical margin first, then the peace follows.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Put the surplus to work quietly
+          Grow the buffer, keep the peace
         </h2>
         <p className="mb-6">
           Once the gap appears, keep it simple. Low-cost index funds can grow in the background while the family stays free of constant money drama. The goal is not accumulation for status. It is the same quiet strength Jane Frances modeled: a household light enough and stable enough that ordinary ups and downs no longer threaten its peace or its ability to love.
@@ -57,7 +46,7 @@ export default function BuildMarginThatGuardsYourPeaceLessonsFromStJaneFrancesDe
         />
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Financial freedom really is for everyone — including your family.
+          Guard the inward peace first; make the numbers serve it, never steal it.
         </p>
 
         <p className="text-gray-700 font-medium mt-6">

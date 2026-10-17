@@ -11,15 +11,11 @@ export default function BuildMarginThroughGospelPovertyLessonsFromStDominic() {
         </h1>
 
         <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-          Hey everyone,
-        </p>
-
-        <p className="text-xl font-semibold text-gray-800 mb-4">
-          Today the Church remembers St. Dominic.
+          “Possess poverty.” Two words — and with them St. Dominic, founder of the Order of Preachers, carried the Gospel unarmed across a continent. Today the Church remembers him.
         </p>
 
         <p className="mb-6">
-          Founder of the Order of Preachers, he chose radical simplicity so nothing would stand between him and the work of the Gospel. He traveled light, begged for his food, and lived with a joy that witnesses still noticed centuries later. One short directive attributed to him still cuts through the noise of our age: “Possess poverty.”
+          He chose radical simplicity so nothing would stand between him and the work of the Gospel. He traveled light, begged for his food, and lived with a joy that witnesses still noticed centuries later. That short directive still cuts through the noise of our age.
         </p>
 
         <p className="mb-6">
@@ -31,7 +27,7 @@ export default function BuildMarginThroughGospelPovertyLessonsFromStDominic() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Why less creates more room
+          Less is a strategy, not a mood
         </h2>
         <p className="mb-6">
           Most money stress is not caused by absolute lack. It is caused by living right at the edge of whatever income we currently have. Every raise gets absorbed. Every new convenience becomes a necessity. The gap disappears, and with it the ability to say yes to the people and callings God places in front of us.
@@ -49,7 +45,7 @@ export default function BuildMarginThroughGospelPovertyLessonsFromStDominic() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Turn the surplus into freedom
+          Where the freed money goes
         </h2>
         <p className="mb-4">
           Once the gap appears, the next step is simple: put the surplus to work so it can grow quietly in the background. Low-cost index funds do the heavy lifting over time. If you are ready to start (or restart) that part of the plan, I use Robinhood myself:
@@ -74,7 +70,7 @@ export default function BuildMarginThroughGospelPovertyLessonsFromStDominic() {
         />
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Financial freedom really is for everyone — including your family.
+          Possess poverty — and let the freedom fund the mission.
         </p>
 
         <p className="text-gray-700 font-medium mt-6">

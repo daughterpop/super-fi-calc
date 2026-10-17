@@ -10,15 +10,11 @@ export default function BuildMarginForHonestLivingLessonsFromStBartholomew() {
         </h1>
 
         <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-          Hey everyone,
-        </p>
-
-        <p className="text-xl font-semibold text-gray-800 mb-4">
-          On the Feast of St. Bartholomew the Apostle, the Church remembers the man Jesus called “an Israelite indeed, in whom there is no guile.”
+          Jesus met Nathanael with a one-sentence verdict: “an Israelite indeed, in whom there is no guile.” On the Feast of St. Bartholomew the Apostle — Nathanael, by the Church’s tradition — we are handed the patron of the unmasked life.
         </p>
 
         <p className="mb-6">
-          When Nathanael (identified by tradition with Bartholomew) approached, the Lord saw a heart free of deceit. That same integrity belongs in the household finances of Catholic families. Building real financial margin is one practical way to live without the quiet pressures that push us toward status spending, hidden debt, or numbers we prefer not to face.
+          That same unmasked integrity belongs in the household ledger. Building real financial margin is one practical way to live without the quiet pressures that push us toward status spending, hidden debt, or numbers we prefer not to face.
         </p>
 
         <p className="mb-6">
@@ -26,7 +22,7 @@ export default function BuildMarginForHonestLivingLessonsFromStBartholomew() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          What honest margin looks like
+          Guile has a bookkeeping problem
         </h2>
         <p className="mb-6">
           Guile in money often shows up as lifestyle inflation to keep up appearances, delayed hard conversations about debt, or budgets that only work on paper. Real margin removes the need for those shortcuts. It lets the family live the truth of their numbers while still giving, saving, and resting.
@@ -44,7 +40,7 @@ export default function BuildMarginForHonestLivingLessonsFromStBartholomew() {
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Financial freedom really is for everyone — including your family.
+          Live without guile in the ledger, and the rest of the household will learn to follow.
         </p>
 
         <p className="text-gray-700 font-medium mt-6">

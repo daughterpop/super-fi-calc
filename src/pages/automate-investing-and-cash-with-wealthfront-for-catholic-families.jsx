@@ -17,50 +17,34 @@ export default function AutomateInvestingAndCashWithWealthfrontForCatholicFamili
         </p>
 
         <p className="mb-6">
-          Hey everyone,
-        </p>
-
-        <p className="mb-6">
-          Consistency beats cleverness for most families on the path to financial independence. The households that reach real margin are rarely the ones with the most sophisticated stock picks. They are the ones who automate contributions, keep fees low, and stop tinkering.
+          The households that reach real margin rarely have the cleverest portfolios. They have the most automated ones. Wealthfront is a robo-advisor that builds and rebalances a diversified portfolio of low-cost ETFs around your risk profile and goals — plus a high-yield Cash Account for the money that should stay liquid: emergency layers, near-term goals, surplus waiting to be invested.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          What Wealthfront is good for
+          The case for boring
         </h2>
         <p className="mb-6">
-          Wealthfront is a robo-advisor that builds and rebalances a diversified portfolio of low-cost ETFs based on your risk profile and goals. It also offers a high-yield Cash Account for the money that should stay liquid — emergency fund layers, near-term goals, or surplus waiting to be invested.
-        </p>
-        <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
-          <li>Automated portfolio management reduces the temptation to time the market or chase last quarter's winners.</li>
-          <li>Tax-loss harvesting (on taxable accounts above certain thresholds) can improve after-tax results without extra effort.</li>
-          <li>A competitive cash yield keeps short-term dollars productive while remaining accessible.</li>
-          <li>Recurring transfers make “invest the surplus” a set-it-and-review-quarterly habit instead of a monthly decision.</li>
-        </ul>
-        <p className="mb-6">
-          Referral perks often include a temporary APY boost on cash and/or an investing deposit match. Confirm current terms when you sign up.
+          Automated portfolio management removes the temptation to time the market or chase last quarter's winners, and tax-loss harvesting on taxable accounts above certain thresholds can improve after-tax results without extra effort. A competitive cash yield keeps short-term dollars productive while staying accessible. Recurring transfers turn "invest the surplus" into a set-it-and-review-quarterly habit instead of a monthly decision — which is exactly the point for a family with better things to do than watch markets.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          How it fits Catholic stewardship
+          One honest caveat
         </h2>
         <p className="mb-6">
-          Automation is not a substitute for virtue. It is a tool that protects good intentions from distraction and decision fatigue. Once the{' '}
-          <Link to="/blog/how-to-budget-as-a-catholic-family-with-tithing-first" className="text-emerald-700 font-medium hover:underline">budget with tithing first</Link>{' '}
-          is in place and the{' '}
-          <Link to="/blog/building-an-emergency-fund-without-neglecting-the-tithe" className="text-emerald-700 font-medium hover:underline">emergency fund</Link>{' '}
-          is growing, the surplus needs a quiet, reliable home. A robo-advisor is one way to give that surplus a long horizon without requiring daily attention.
-        </p>
-        <p className="mb-6">
-          Keep the order clear: give, protect, then grow. Automating investing does not mean neglecting moral screening if that matters to your household — review the underlying funds and adjust if needed. See{' '}
+          Automation is not a substitute for virtue. It is a tool that protects good intentions from distraction and decision fatigue. Keep the order clear: give, protect, then grow. And automating does not mean neglecting moral screening if that matters to your household — review the underlying funds and adjust if needed. See{' '}
           <Link to="/blog/faith-based-investing-basics-for-catholic-households" className="text-emerald-700 font-medium hover:underline">Faith-Based Investing Basics</Link>{' '}
-          for the framing.
+          for the framing, and make sure the{' '}
+          <Link to="/blog/how-to-budget-as-a-catholic-family-with-tithing-first" className="text-emerald-700 font-medium hover:underline">budget with tithing first</Link>{' '}
+          and the{' '}
+          <Link to="/blog/building-an-emergency-fund-without-neglecting-the-tithe" className="text-emerald-700 font-medium hover:underline">emergency fund</Link>{' '}
+          are in place before the surplus starts flowing here.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          A simple next step
+          The link
         </h2>
         <p className="mb-6">
-          Open an account through the link below, link your bank, set a recurring transfer sized to your real surplus, and let the system rebalance. Check in quarterly. Pair the numbers with the{' '}
+          Referral perks often include a temporary APY boost on cash and/or an investing deposit match — confirm current terms when you sign up. Open the account through the link, connect your bank, set a recurring transfer sized to your real surplus, and let the system rebalance. Check in quarterly, and pair the numbers with the{' '}
           <Link to="/calculators" className="text-emerald-700 font-medium hover:underline">FI calculator</Link>{' '}
           so you know whether the savings rate is actually moving the timeline.
         </p>

@@ -17,48 +17,16 @@ export default function InvestYourSurplusWithRobinhoodForCatholicFi() {
         </p>
 
         <p className="mb-6">
-          Hey everyone,
+          The order matters more than the brokerage. Tithe. Protect the household. Then invest the surplus. Once those are in place, what you need is not a clever strategy — it is a low-friction place to buy broad, low-cost index funds, contribute every payday, and leave the money alone for decades.
         </p>
 
-        <p className="mb-6">
-          Building margin is not only about spending less. It is about directing the dollars that remain toward the long-term freedom that supports vocation, family, and generosity. After the tithe and a real cash buffer, investing the surplus is the engine that turns monthly discipline into lasting capacity.
-        </p>
-
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Why a simple brokerage belongs on the path
-        </h2>
-        <p className="mb-6">
-          Most Catholic households do not need a complicated strategy. They need a low-friction place to buy broad, low-cost index funds or ETFs, contribute regularly, and leave the money alone for decades. Robinhood is one practical option for that first layer of taxable or IRA investing when the basics are already in place.
-        </p>
-        <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
-          <li>Commission-free trades on stocks and ETFs keep costs low for small, regular contributions.</li>
-          <li>Fractional shares make it realistic to invest a fixed dollar amount every payday instead of waiting for a full share price.</li>
-          <li>A clean mobile experience reduces the friction that stops good intentions from becoming automatic habits.</li>
-        </ul>
-        <p className="mb-6">
-          None of that replaces the order of operations. Capture the employer 401(k) match first. Build the emergency fund. Keep giving. Then invest the surplus. For the broader sequence, see the{' '}
-          <Link to="/blog/how-to-get-started-on-your-fi-path" className="text-emerald-700 font-medium hover:underline">Get Started guide</Link>{' '}
-          and{' '}
-          <Link to="/blog/faith-based-investing-basics-for-catholic-households" className="text-emerald-700 font-medium hover:underline">Faith-Based Investing Basics</Link>.
-        </p>
-
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          How it serves Catholic FI
-        </h2>
-        <p className="mb-6">
-          Financial independence for Catholic families means margin for vocation — the freedom to say yes to the next good work without constant money anxiety. Investing surplus is not an end in itself. It is how today's faithfulness funds tomorrow's capacity for hospitality, education, mission, and care for the poor.
-        </p>
-        <p className="mb-6">
-          Use the tool; do not let the tool use you. Avoid speculative day-trading, leverage, and the dopamine loop of constant checking. Prefer broad market exposure, consistent contributions, and a long horizon. That is stewardship, not speculation.
-        </p>
-
-        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Getting started
-        </h2>
-        <p className="mb-6">
-          Open an account through the referral below. New accounts that fund often unlock free stock rewards (terms vary — confirm current offer at signup). Then set a recurring transfer from checking on payday and buy a simple, low-cost index fund or ETF. Review once a quarter, not once a day.
-        </p>
-        <p className="not-prose mb-8">
+        <div className="not-prose border border-emerald-200 bg-emerald-50 rounded-2xl p-6 my-8">
+          <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700 mb-2">
+            Try it
+          </p>
+          <p className="text-gray-700 mb-4">
+            New funded accounts often unlock free stock rewards — terms vary, so confirm the current offer at signup.
+          </p>
           <a
             href="https://join.robinhood.com/dustinh-1bff5a"
             target="_blank"
@@ -67,10 +35,30 @@ export default function InvestYourSurplusWithRobinhoodForCatholicFi() {
           >
             Claim free stock via Robinhood →
           </a>
-        </p>
+        </div>
 
         <p className="mb-6 text-sm text-gray-600">
           This is a referral link. If you sign up, the site may earn a commission at no extra cost to you. Investing involves risk, including possible loss of principal. This is not personalized investment advice.
+        </p>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
+          Why simple beats clever
+        </h2>
+        <p className="mb-6">
+          Most Catholic households do not need a complicated strategy. Commission-free trades on stocks and ETFs keep costs low on small, regular contributions. Fractional shares make it realistic to invest a fixed dollar amount every payday instead of waiting to afford a full share. And a clean mobile experience turns good intentions into automatic habits instead of paperwork you never finish.
+        </p>
+        <p className="mb-6">
+          None of that replaces the order of operations. Capture the employer 401(k) match first. Build the emergency fund. Keep giving. Then invest the surplus. For the broader sequence, see the{' '}
+          <Link to="/blog/how-to-get-started-on-your-fi-path" className="text-emerald-700 font-medium hover:underline">Get Started guide</Link>{' '}
+          and{' '}
+          <Link to="/blog/faith-based-investing-basics-for-catholic-households" className="text-emerald-700 font-medium hover:underline">Faith-Based Investing Basics</Link>.
+        </p>
+
+        <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
+          The guardrails
+        </h2>
+        <p className="mb-6">
+          Financial independence for Catholic families means margin for vocation — the freedom to say yes to the next good work without constant money anxiety. Use the tool; do not let the tool use you. Avoid speculative day-trading, leverage, and the dopamine loop of constant checking. Prefer broad market exposure, consistent contributions, and a long horizon. That is stewardship, not speculation.
         </p>
 
         <p className="not-prose mb-8 flex flex-wrap gap-3">

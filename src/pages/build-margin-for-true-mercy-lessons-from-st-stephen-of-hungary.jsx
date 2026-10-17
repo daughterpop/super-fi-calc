@@ -11,11 +11,7 @@ export default function BuildMarginForTrueMercyLessonsFromStStephenOfHungary() {
         </h1>
 
         <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-          Hey everyone,
-        </p>
-
-        <p className="text-xl font-semibold text-gray-800 mb-4">
-          Today the Church remembers St. Stephen of Hungary, the first Christian king of the Magyars and a model of just, merciful rule.
+          A king sat down to write his son’s formation, and the chapter on mercy reads like a budget line: “Be merciful to all who are suffering violence.” Today the Church remembers St. Stephen of Hungary, the first Christian king of the Magyars.
         </p>
 
         <p className="mb-6">
@@ -31,7 +27,7 @@ export default function BuildMarginForTrueMercyLessonsFromStStephenOfHungary() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Why margin makes mercy practical
+          Mercy needs a margin
         </h2>
         <p className="mb-6">
           Stephen knew that a ruler who is constantly anxious about scarcity cannot govern with patience or justice. The same is true in the home. Margin is the practical foundation that lets a family practice the mercy the Gospel requires without the constant mental math of “Can we really afford this?” It protects the ability to welcome, to give, and to respond when someone is suffering violence or need.
@@ -49,7 +45,7 @@ export default function BuildMarginForTrueMercyLessonsFromStStephenOfHungary() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          Keep the surplus ordered toward mercy
+          The crown’s quiet strength
         </h2>
         <p className="mb-6">
           Once the gap appears, keep the investing simple. Low-cost index funds can grow quietly while the family stays free of constant money drama. The point is not to pile up treasures. It is the same quiet strength Stephen urged: a life stable enough that ordinary ups and downs never crowd out mercy, patience, or the ability to show favor to those who come to you.
@@ -67,7 +63,7 @@ export default function BuildMarginForTrueMercyLessonsFromStStephenOfHungary() {
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Financial freedom really is for everyone — including your family.
+          Be merciful as your Father is merciful — and keep the margin that makes mercy ordinary.
         </p>
 
         <p className="text-gray-700 font-medium mt-6">

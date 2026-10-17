@@ -15,7 +15,7 @@ export default function OrderYourLovesLessonsFromStAugustine() {
         </h1>
 
         <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-          Hey everyone,
+          “You have made us for yourself, O Lord, and our heart is restless until it rests in you.”
         </p>
 
         <p className="text-xl font-semibold text-gray-800 mb-4">
@@ -27,10 +27,10 @@ export default function OrderYourLovesLessonsFromStAugustine() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          What he actually taught
+          The restlessness diagnosis
         </h2>
         <p className="mb-6">
-          In the Confessions he prays, “You have made us for yourself, O Lord, and our heart is restless until it rests in you.” That is not a mood. It is a diagnosis. If God is not first, money will try to be. It will never be enough, because it was never meant to be the rest.
+          That is not a mood. It is a diagnosis. If God is not first, money will try to be. It will never be enough, because it was never meant to be the rest.
         </p>
 
         <p className="mb-6">
@@ -38,7 +38,7 @@ export default function OrderYourLovesLessonsFromStAugustine() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          How this lands in the household plan
+          Ordered love has a sequence
         </h2>
         <p className="mb-6">
           Faithful FI is ordered love with a checking account. You name what is enough. You refuse to let lifestyle creep baptize every raise. You keep a buffer so fear does not run the home. You give first, not last. Then you put the true remainder to work — some for the vocation of the family, some for people who need it now.
@@ -56,7 +56,7 @@ export default function OrderYourLovesLessonsFromStAugustine() {
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
-          One practical step this week
+          This week, ask in order
         </h2>
         <p className="mb-6">
           Sit down with last month’s numbers and ask Augustine’s question in order: Did God get the first fruits? Did the household take what it actually needed? Is there a remainder sitting idle that could serve someone else — or compound for the vocation — instead of leaking into nicer versions of the same life?
@@ -85,7 +85,7 @@ export default function OrderYourLovesLessonsFromStAugustine() {
         />
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Financial freedom really is for everyone — including your family.
+          Order your loves, and your money will finally rest too.
         </p>
 
         <p className="text-gray-700 font-medium mt-6">
