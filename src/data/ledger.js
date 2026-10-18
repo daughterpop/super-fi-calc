@@ -17,6 +17,69 @@ export const LANES = [
 ];
 
 export const editions = [
+{
+    slug: 'repay-to-caesar-and-god',
+    issue: 5,
+    date: '2026-10-18',
+    sundayLabel: 'Sunday, October 18, 2026',
+    title: 'Repay to Caesar and to God',
+    lede:
+      'The third Sunday of October arrives on the last day of the warehouse book and the first real week of Halloween prep. This Ledger names the candy and costume number that will not wait until the 31st, vets the closing of Costco’s instant-savings book, and sits with Jesus, who asked whose image was on the coin.',
+    lanes: [
+      {
+        lane: 'household',
+        kicker: 'Halloween week',
+        title: 'Write the candy before the last cart',
+        lede:
+          'The average household plans about $160 for Halloween this year. Candy, costumes, and the porch bag still arrive from wages, not from a sale.',
+        body: [
+          'Halloween is thirteen days away. The candy aisle is already loud. Costumes that fit last year may not. The porch bag for the neighborhood is not optional if the house has always handed something out. None of it is large alone. Together they eat the float that was supposed to cover the heating cycle already named last week.',
+          'Sit down once today. Write three lines. The candy you will actually hand out or serve. The costume or the pair of shoes that will not wait. The decorations you already own and will not replace. Then put the Sunday envelope on the same page, not after the list. If the page does not balance, the answer is fewer bags and a reused costume, not a quieter gift. Halloween comes from wages. So does the tithe.',
+          'Do not raid the emergency fund for a bulk bag “while it is cheap,” and do not skip the parish because the kids want matching outfits. Those two accounts have jobs. The week can be ordinary once the numbers are written. The scramble starts when they stay unnamed until the night of the 31st.',
+        ],
+        tool: {
+          label: 'Tithing & surplus calculator',
+          href: '/calculators/tithing-surplus',
+        },
+      },
+      {
+        lane: 'deal',
+        kicker: 'Last day of the book',
+        title: 'The Costco book closes today',
+        lede:
+          'Instant savings end October 18. The card scan is still real this afternoon. The bulk candy is still the test.',
+        body: [
+          'Deal pages still agree: Costco’s October instant-savings book began September 21 and ends today, October 18, 2026. No code. The cut appears when the membership card is scanned, in the warehouse and on many of the same items online. Your warehouse sets the final price. If the tag is missing, the deal is missing.',
+          'This is the last day. Ordinary goods you already buy — detergent, the pantry staple, the food on this week’s list — can pass the organic-spend test if they are still tagged. Bulk Halloween candy does not. Candy bought “while it is cheap” is manufactured spend if the house did not already plan to serve it. A machine marked down is a second purchase wearing a red tag.',
+          'If the list on the fridge matches a tagged item still in stock, buy it and stop. Do not make a second trip for the book’s last page. Do not open a new membership today to catch the flyer. The book ends this evening. The dues do not. The next book starts tomorrow. The candy aisle will still be there after the 18th.',
+        ],
+        verdict: {
+          label: 'Only if',
+          note: 'Only if the tagged item was already on the list and is still in stock. Skip the bulk candy invented for the sale and any membership opened for the flyer.',
+        },
+        tool: {
+          label: 'Bonus value calculator',
+          href: '/calculators/bonus-value',
+        },
+      },
+      {
+        lane: 'fidelity',
+        kicker: '29th Sunday in Ordinary Time',
+        title: 'Repay to Caesar and to God',
+        lede:
+          'Matthew 22:21 is the household reading this week. They handed him the coin. He asked whose image was on it.',
+        body: [
+          '“Then repay to Caesar what belongs to Caesar and to God what belongs to God.” That is the line that governs the candy bag and the last page of the warehouse book. Jesus does not say the tax is nothing. He says the image on the coin marks the claim. The image of God is on the household. The tithe, the Mass, the kids at the table — those belong to God. The heating bill and the porch candy belong to the wages that carry Caesar’s stamp.',
+          'The Pharisees wanted a trap. Pay the tax and look disloyal to God. Refuse and look disloyal to Rome. The quieter version is the same trap in the aisle: skip the envelope so the matching costumes fit, or invent a cart so the sale does not pass. Jesus’ verdict is plain. Give the coin its due. Give God what already carries His image.',
+          'Isaiah said the Lord called Cyrus by name, though Cyrus knew Him not, so that people might know there is no God besides the Lord. The household version is smaller and still real. Name the candy. Name the heat. Name the envelope on the same page. Then the image that matters is not the one on the receipt. It is the one already on the people at the table.',
+        ],
+        tool: {
+          label: 'FI path calculator',
+          href: '/calculators/fi-path',
+        },
+      },
+    ],
+  },,
   {
     slug: 'learned-the-secret',
     issue: 4,
