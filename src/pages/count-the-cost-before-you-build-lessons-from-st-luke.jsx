@@ -50,6 +50,14 @@ export default function CountTheCostBeforeYouBuildLessonsFromStLuke() {
           Sit down — literally, at the table, with the statements — and add up what the household spent in the last twelve months. One evening. That single number is the beginning of the count, and everything after it gets easier.
         </p>
 
+        <p className="mb-6">
+          From there, work the steps in order —{" "}
+          <a href="/blog/how-to-get-started-on-your-fi-path" className="text-blue-700 hover:underline font-medium">
+            How to Get Started on Your FI Path
+          </a>{" "}
+          lays out the sequence.
+        </p>
+
         <p className="mb-4">
           Once you know the spending, the FI number behind it is simple arithmetic. Run it and see what the tower actually costs.
         </p>
