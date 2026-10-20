@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'Barefoot Past the Next Raise: St. Paul of the Cross',
+    date: 'October 20, 2026',
+    dateSort: '2026-10-20',
+    excerpt: 'On 22 November 1720 the bishop vested Paul of the Cross in rough village wool and he walked out barefoot. A household that has already claimed the next raise cannot make that same refusal.',
+    readTime: '4 min read',
+    link: '/blog/barefoot-past-the-next-raise',
+    tags: ['Stewardship', 'Seasonal', 'Poverty'],
+    featured: false
+  },
+  {
     title: 'Count the Cost Before You Build: Lessons from St. Luke',
     date: 'October 14, 2026',
     dateSort: '2026-10-14',
