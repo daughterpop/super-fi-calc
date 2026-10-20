@@ -79,7 +79,7 @@ export const editions = [
         },
       },
     ],
-  },,
+  },
   {
     slug: 'learned-the-secret',
     issue: 4,

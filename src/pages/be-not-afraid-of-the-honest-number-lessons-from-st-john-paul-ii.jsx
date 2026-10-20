@@ -51,7 +51,11 @@ export default function BeNotAfraidOfTheHonestNumberLessonsFromStJohnPaulII() {
         </p>
 
         <p className="mb-4">
-          If part of the honest number is what the household gives away, make sure the giving is deliberate too — first-fruits, not leftovers.
+          If part of the honest number is what the household gives away, make sure the giving is deliberate too — first-fruits, not leftovers.{" "}
+          <a href="/blog/how-to-budget-as-a-catholic-family-with-tithing-first" className="text-blue-700 hover:underline font-medium">
+            How to Budget as a Catholic Family (with Tithing First)
+          </a>{" "}
+          shows how to build the budget around the gift.
         </p>
 
         <a

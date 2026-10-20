@@ -62,7 +62,11 @@ export default function FinishTheCourseLessonsFromStsSimonAndJude() {
         </a>
 
         <p className="mb-6">
-          Simon and Jude finished together, far from home, with no crowd watching. The household that keeps the course in the quiet years finishes the same way — not with applause, but with the freedom that was the point all along.
+          Simon and Jude finished together, far from home, with no crowd watching. The household that keeps the course in the quiet years finishes the same way — not with applause, but with the freedom that was the point all along. For the long middle,{" "}
+          <a href="/blog/stay-the-course-lessons-from-st-monica" className="text-blue-700 hover:underline font-medium">
+            Stay the Course: Lessons from St. Monica
+          </a>{" "}
+          is worth the read — perseverance has a patron.
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">
