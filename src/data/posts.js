@@ -1,5 +1,15 @@
 const rawPosts = [
   {
+    title: 'What an Extra $100 a Month on a Mortgage Actually Does',
+    date: 'October 21, 2026',
+    dateSort: '2026-10-21',
+    excerpt: 'On a $350,000 loan at 6.5%, an extra $100 a month on the mortgage ends it 42 payments early and saves about $62,600 in interest. Here is the math, and when I would send that $100 elsewhere.',
+    readTime: '4 min read',
+    link: '/blog/extra-100-a-month-on-a-mortgage',
+    tags: ['Stewardship', 'Planning', 'Debt'],
+    featured: false
+  },
+  {
     title: 'Barefoot Past the Next Raise: St. Paul of the Cross',
     date: 'October 20, 2026',
     dateSort: '2026-10-20',
