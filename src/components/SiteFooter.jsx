@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import AdSenseUnit from './AdSenseUnit';
 
 const EXPLORE = [
   { to: '/calculators', label: 'Calculators' },
@@ -19,6 +20,7 @@ export default function SiteFooter() {
 
   return (
     <footer className="border-t border-gray-200 bg-white mt-auto">
+      <AdSenseUnit />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
           <div className="max-w-sm">
