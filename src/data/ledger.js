@@ -18,6 +18,70 @@ export const LANES = [
 
 export const editions = [
 {
+    slug: 'love-your-neighbor-as-yourself',
+    issue: 6,
+    date: '2026-10-25',
+    sundayLabel: 'Sunday, October 25, 2026',
+    title: 'Love Your Neighbor as Yourself',
+    lede:
+      'The last Sunday of October arrives with the furnace already cycling and Halloween still six days out. This Ledger names the heating number that will share the checking account with the porch bag, vets the warehouse savings that still run through mid-November, and sits with Jesus, who named the two commandments the whole law depends on.',
+    lanes: [
+      {
+        lane: 'household',
+        kicker: 'First full heating cycle',
+        title: 'Write the heat before the first full bill',
+        lede:
+          'Winter heating costs are expected to rise about 8.7 percent this season. The first real cycle is not a surprise if you name it this afternoon.',
+        body: [
+          'October’s last week is when the furnace stops being occasional and becomes a line item. The overnight low is no longer a novelty. The kids come home needing the coat that was fine in March. The porch bag for Friday is still on the list. None of it is optional. All of it arrives while the utility estimate is still sitting in last year’s folder.',
+          'Sit down once today. Write the estimated first full heating cycle — last October’s statement if you have it, or the utility’s average for your size of house. Add the coat or the boots that will not wait. Then put the Sunday envelope on the same line, not after the list. If the page does not balance, the answer is a smaller cart this week and a reused costume, not a quieter gift. Heat comes from wages. So does the tithe.',
+          'Do not raid the emergency fund for a bulk bag “while the book is open,” and do not skip the parish because the thermostat dropped. Those two accounts have jobs. The week can be ordinary once the numbers are written. The scramble starts when the first full bill arrives unnamed.',
+        ],
+        tool: {
+          label: 'Tithing & surplus calculator',
+          href: '/calculators/tithing-surplus',
+        },
+      },
+      {
+        lane: 'deal',
+        kicker: 'Warehouse savings still open',
+        title: 'Costco savings run through mid-November',
+        lede:
+          'The current member savings book opened October 19 and runs through November 15. Ordinary goods already on the list can still pass the test.',
+        body: [
+          'Deal pages still agree: Costco’s warehouse savings that began October 19 continue through November 15, 2026. No code. The cut appears when the membership card is scanned, in the warehouse and on many of the same items online. Reynolds Wrap foil, Tide and All Free detergent, and other pantry staples are among the tagged items. Your warehouse sets the final price. If the tag is missing, the deal is missing.',
+          'This is not the last day. Ordinary goods you already buy — detergent, foil, the food on this week’s list — can pass the organic-spend test if they are still tagged. Bulk Halloween candy does not. Candy bought “while it is cheap” is manufactured spend if the house did not already plan to serve it. A machine marked down is a second purchase wearing a red tag.',
+          'If the list on the fridge matches a tagged item still in stock, buy it and stop. Do not make a second trip for the book’s remaining weeks. Do not open a new membership to catch the flyer. The book ends November 15. The dues do not. The candy aisle will still be there after the 31st.',
+        ],
+        verdict: {
+          label: 'Only if',
+          note: 'Only if the tagged item was already on the list and is still in stock. Skip the bulk candy invented for the sale and any membership opened for the flyer.',
+        },
+        tool: {
+          label: 'Bonus value calculator',
+          href: '/calculators/bonus-value',
+        },
+      },
+      {
+        lane: 'fidelity',
+        kicker: '30th Sunday in Ordinary Time',
+        title: 'Love your neighbor as yourself',
+        lede:
+          'Matthew 22:37–39 is the household reading this week. The Pharisees asked which commandment was greatest. He gave them two.',
+        body: [
+          '“You shall love the Lord, your God, with all your heart, with all your soul, and with all your mind. This is the greatest and the first commandment. The second is like it: You shall love your neighbor as yourself. The whole law and the prophets depend on these two commandments.” That is the line that governs the heating cycle and the remaining pages of the warehouse book. Jesus does not say the bills are nothing. He says the love of God and the love of the neighbor at the table are the measure.',
+          'The first reading is the same love in household clothes. If you lend money to a poor neighbor, do not act like an extortioner. If you take his cloak as a pledge, return it before sunset — it is the only covering he has. The quieter version is the same: hold back the envelope so the matching costumes fit, or invent a cart so the red tag does not pass. The cloak goes back. The image that matters is already on the people at the table.',
+          'Paul wrote to the Thessalonians that they became imitators of the Lord, receiving the word in great affliction with joy from the Holy Spirit, so that they became a model. The household version is smaller and still real. Name the heat. Name the porch bag. Name the envelope on the same page. Then the love the law depends on is not a theory. It is the short list already prayed before the first full bill arrives.',
+        ],
+        tool: {
+          label: 'FI path calculator',
+          href: '/calculators/fi-path',
+        },
+      },
+    ],
+  },
+
+{
     slug: 'repay-to-caesar-and-god',
     issue: 5,
     date: '2026-10-18',
