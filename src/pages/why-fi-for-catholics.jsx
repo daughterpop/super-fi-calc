@@ -95,7 +95,11 @@ export default function WhyFiForCatholics() {
         </p>
         <p className="mb-6">
           Clarity is not faithlessness. It is how parents refuse magical thinking.
-          Run the numbers once with your actual household size in mind, then adjust the plan rather than the children’s needs.
+          Run the numbers once, with your actual household size in mind, in the{" "}
+          <Link to="/calculators/savings-rate-runway" className="text-emerald-700 font-medium hover:underline">
+            savings-rate &amp; runway calculator
+          </Link>
+          , then adjust the plan rather than the children’s needs.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">

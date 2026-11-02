@@ -33,7 +33,13 @@ export default function CastTheBeltBeforeTheStandards() {
         </p>
 
         <p className="mb-6">
-          Say a family of five has already set the tithe and the ordinary bills. A few hundred dollars remain. The decision that keeps the belt free is to leave that amount unassigned instead of letting the next recurring charge claim it in advance. When a job or a school or a relative later asks for something that would cost the household’s margin, the dollar is still available to answer without first undoing a prior commitment.
+          Say a family of five has already set the tithe and the ordinary bills. A few hundred dollars remain. The decision that keeps the belt free is to leave that amount unassigned instead of letting the next recurring charge claim it in advance. When a job or a school or a relative later asks for something that would cost the household’s{" "}
+          <a href="/blog/build-margin-for-catholic-families" className="text-blue-700 hover:underline font-medium">
+            margin
+          </a>{" "}, the dollar is still available to answer without first undoing a prior commitment. See how long that unassigned dollar lasts at the{" "}
+          <a href="/calculators/savings-rate-runway" className="text-blue-700 hover:underline font-medium">
+            savings-rate runway
+          </a>.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">

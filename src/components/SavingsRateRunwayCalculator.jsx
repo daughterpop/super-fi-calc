@@ -75,7 +75,7 @@ export default function SavingsRateRunwayCalculator() {
       </div>
       <p className="text-sm text-gray-600 mb-6 max-w-2xl">
         Two numbers that reduce anxiety fast: what percent of income becomes surplus, and how many months your cash
-        reserves cover essential spending.
+        reserves cover monthly spending.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
