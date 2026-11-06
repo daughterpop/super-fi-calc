@@ -64,7 +64,7 @@ export default function Calculators() {
     },
     {
       q: 'Should tithing count as an expense in FI math?',
-      a: 'Many Catholic families treat giving as non-negotiable. Model it inside expenses so surplus is what remains after fidelity.',
+      a: 'Many Catholic families treat giving as non-negotiable. Model it inside expenses, so the surplus you plan from is what remains after giving.',
       link: '/blog/build-margin-to-give-freely-lessons-from-st-pantaleon',
       linkLabel: 'Give freely: St. Pantaleon',
     },
