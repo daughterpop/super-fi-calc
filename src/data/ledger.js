@@ -18,6 +18,69 @@ export const LANES = [
 
 export const editions = [
 {
+    slug: 'stay-awake-for-the-bridegroom',
+    issue: 8,
+    date: '2026-11-08',
+    sundayLabel: 'Sunday, November 8, 2026',
+    title: 'Stay Awake for the Bridegroom',
+    lede:
+      'The Thirty-second Sunday arrives as the first full heating cycle shares the checking account with Thanksgiving prep. This Ledger names the meal number before the deals open, vets Target’s $30 bundle that starts today, and sits with the wise who already carried oil.',
+    lanes: [
+      {
+        lane: 'household',
+        kicker: 'Thanksgiving cart',
+        title: 'Write the meal before the first full bill',
+        lede:
+          'The average household will spend something on the table. Name the ordinary list for your family before the flyer decides the number.',
+        body: [
+          'November 8 is when the overnight low has already become a bill and the turkey still has to be named. The first full heating cycle is no longer theoretical. The Sunday envelope still goes out. The table on the 26th is not optional if the house has always fed the people who come. None of it waits for a better week.',
+          'Sit down once today. Write three lines. The ordinary turkey and sides you will actually serve. The heat that is already cycling. The Sunday envelope. Then put them on the same page, not after the list. If the page does not balance, the answer is the smaller cart and the coat already owned, not a quieter gift. The meal comes from wages. So does the tithe.',
+          'Do not raid the emergency fund because a flyer arrived, and do not skip the parish because the table looks large. Those two accounts have jobs. The week can stay ordinary once the numbers are written. The scramble starts when the first full statement and the last cart arrive unnamed.',
+        ],
+        tool: {
+          label: 'Tithing & surplus calculator',
+          href: '/calculators/tithing-surplus',
+        },
+      },
+      {
+        lane: 'deal',
+        kicker: 'Meal bundle starts today',
+        title: 'Target’s $30 meal for six',
+        lede:
+          'The bundle opens November 8 and runs through the 29th. Ordinary items already on the list can pass the test. The extra $5 sides do not.',
+        body: [
+          'Target’s Thanksgiving meal for six is $30 and available from today through November 29. It includes a Butterball turkey up to 10 pounds, potatoes, cranberry sauce, green beans, cream of mushroom soup, fried onions, stuffing, gravy, and baguettes. Prices are before tax. The offer is not available in Alaska or Hawaii. A separate Good & Gather turkey is 79 cents a pound wherever sold. Walmart’s basket is $35 for ten and already open; Aldi and others have their own. Your store sets the final availability.',
+          'Ordinary goods already on this week’s list can pass the organic-spend test if the bundle matches what the house was going to buy. A second pie, the $5 wine, or bulk candy invented for the flyer does not. Those are manufactured spend if the table did not already plan them. A marked-down tree is still a second purchase wearing a red tag.',
+          'If the list on the fridge matches the bundle still in stock, buy it and stop. Do not make a second trip for the remaining days. Do not open a new membership or drive across town for the $5 difference. The deal ends November 29. The ordinary table does not.',
+        ],
+        verdict: {
+          label: 'Only if',
+          note: 'Only if the items match the ordinary Thanksgiving list already written. Skip the extra $5 sides, the wine, and any cart invented for the flyer.',
+        },
+        tool: {
+          label: 'Bonus value calculator',
+          href: '/calculators/bonus-value',
+        },
+      },
+      {
+        lane: 'fidelity',
+        kicker: 'Thirty-second Sunday',
+        title: 'Stay awake for the bridegroom',
+        lede:
+          'Matthew 25:13 is the household reading this week. The wise brought oil. The foolish did not.',
+        body: [
+          '“Therefore, stay awake, for you know neither the day nor the hour.” That is the line that governs the heating total and the meal cart that opens today. Jesus does not say the bridegroom is a surprise. He says the oil was the preparation that could not be borrowed at midnight. The household version is smaller and still real. The named list, the envelope already set aside, the no to the extra that was never on the page — these are the flasks already carried.',
+          'The first reading shows the same readiness. Wisdom is readily perceived by those who love her and found by those who seek her. She meets them on the way. The quieter version is the same: the page written this afternoon so the first full bill does not arrive as a stranger. Holding the envelope so a sale does not pass, or inventing a cart so the red tag does not fail the test, is the way of arriving at the door without oil.',
+          'Paul wrote that we may not grieve like those who have no hope. The household version is the short list already prayed. Name the meal. Name the heat. Name the envelope on the same line. Then the wise are not a theory for the Thirty-second Sunday. They are the ones already at the table when the bridegroom comes.',
+        ],
+        tool: {
+          label: 'FI path calculator',
+          href: '/calculators/fi-path',
+        },
+      },
+    ],
+  },
+{
     slug: 'blessed-are-the-poor-in-spirit',
     issue: 7,
     date: '2026-11-01',
