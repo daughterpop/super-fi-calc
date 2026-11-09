@@ -132,7 +132,7 @@ export default function CalculatorTool() {
             <div>
               <p className="font-semibold text-sm text-gray-900">Next: read the sequence</p>
               <p className="text-xs text-gray-500 mt-0.5">
-                What to do with the number, before another tool or another calculator.
+                What to do with the number, before opening another calculator.
               </p>
             </div>
           </div>

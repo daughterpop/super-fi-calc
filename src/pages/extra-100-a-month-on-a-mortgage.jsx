@@ -18,7 +18,7 @@ export default function Extra100AMonthOnAMortgage() {
         </p>
 
         <p className="mb-6">
-          That is what an extra $100 a month on a mortgage does to a $350,000, 30-year loan at 6.5%, if the $100 goes to principal with every payment from the first one. The loan ends after 318 payments instead of 360, so it is gone in 26 and a half years instead of 30. Over that stretch you put in $31,800 of extra money and skip roughly twice that much in interest.
+          That is what an extra $100 a month on a mortgage does to a $350,000, 30-year loan at 6.5%, if the $100 goes to principal with every payment from the first one. The loan ends after 318 payments instead of 360, so it is gone in 26 and a half years instead of 30. Over that stretch you put in $31,800 of extra money and save about $62,600 in interest — roughly twice what you put in.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
@@ -44,7 +44,7 @@ export default function Extra100AMonthOnAMortgage() {
         </p>
 
         <p className="mb-6">
-          So my order is plain. A household without an emergency fund, or still carrying a credit card balance, should send the $100 there first. Once those are handled and the rate is around 6% or higher, I think the extra mortgage payment is one of the better homes a modest monthly surplus can find: a guaranteed return equal to the rate, with no market risk.
+          So my order is plain. A household without <a href="/blog/building-an-emergency-fund-without-neglecting-the-tithe" className="text-blue-700 hover:underline font-medium">an emergency fund</a>, or still carrying a credit card balance, should send the $100 there first. Once those are handled and the rate is around 6% or higher, I think the extra mortgage payment is one of the better homes a modest monthly surplus can find: a guaranteed return equal to the rate, with no market risk.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">

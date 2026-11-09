@@ -33,7 +33,7 @@ export default function BringTheSpicesBeforeDawn() {
         </p>
 
         <p className="mb-6">
-          Say a family has already set the tithe and the ordinary bills. A small surplus remains. The decision that keeps the spices available is to leave that surplus unassigned until the need appears, instead of letting the next subscription or the larger vehicle payment claim it in advance. The myrrh is then still in the house when someone needs to be driven to a hospital or a meal needs to be carried to a neighbor.
+          Say a family has already set the tithe and the ordinary bills. A small surplus remains. The decision that keeps the spices available is to <a href="/blog/build-margin-for-catholic-families" className="text-blue-700 hover:underline font-medium">leave that surplus unassigned</a> until the need appears, instead of letting the next subscription or the larger vehicle payment claim it in advance. The myrrh is then still in the house when someone needs to be driven to a hospital or a meal needs to be carried to a neighbor.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">

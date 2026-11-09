@@ -10,7 +10,7 @@ export const STATIC = {
   '/': {
     title: 'Via Fidelitatis — Faithful FI Tools for Catholic Families',
     description:
-      'Practical financial independence tools for Catholic families. FI calculator for college, mortgage, and family expenses — plus faith-filled stewardship resources.',
+      'Practical financial independence tools for Catholic families: an FI calculator covering college, mortgage, and family expenses — plus faith-filled stewardship resources.',
     type: 'website',
   },
   '/calculators': {
