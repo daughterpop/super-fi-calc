@@ -95,7 +95,7 @@ export default function IsFireCompatibleWithCatholicism() {
 
         <p className="not-prose mb-8 flex flex-wrap gap-3">
           <Link
-            to="/calculators"
+            to="/calculators/fi-path"
             className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors text-sm sm:text-base shadow-sm"
           >
             Find your FI number →
