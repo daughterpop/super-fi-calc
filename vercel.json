@@ -3,6 +3,9 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "redirects": [
+    { "source": "/feed.xml", "destination": "/rss.xml", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/blog{/}?", "destination": "/app-shell.html" },
