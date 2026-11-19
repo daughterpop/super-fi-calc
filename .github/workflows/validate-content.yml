@@ -1,0 +1,29 @@
+# Fails PRs and pushes to Fixed when posts.js, ledger.js, rss.xml or
+# sitemap.xml is truncated, placeholder-filled or malformed.
+# See scripts/check-content.mjs. The same check also runs first in `npm run build`.
+name: Validate content
+
+on:
+  push:
+    branches: [Fixed]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check content files
+        run: node scripts/check-content.mjs
+      - name: Strict XML parse (rss.xml, sitemap.xml)
+        run: |
+          sudo apt-get install -y -qq libxml2-utils >/dev/null
+          xmllint --noout public/rss.xml public/sitemap.xml
+          echo "rss items: $(grep -c '<item>' public/rss.xml)"
