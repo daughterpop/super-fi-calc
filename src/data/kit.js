@@ -2,10 +2,8 @@
 // lead magnet (growth experiment #2). Signups go to Dustin's existing
 // free Kit account. No API key is required for this public endpoint.
 //
-// Replace KIT_FORM_ID with the numeric form ID once the form exists.
-// The signup will not post to Kit until this is a number.
-
-export const KIT_FORM_ID = 'YOUR_KIT_FORM_ID';
+// Numeric form ID from the existing free Kit account (The Lilac Post).
+export const KIT_FORM_ID = '10211474';
 
 export const KIT_SUBSCRIBE_URL = `https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`;
 
