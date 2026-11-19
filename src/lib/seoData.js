@@ -32,9 +32,9 @@ export const STATIC = {
     type: 'website',
   },
   '/subscribe': {
-    title: 'Subscribe — Get The Ledger on Sunday | Via Fidelitatis',
+    title: 'Get the free Tithe-First Budget Worksheet | Via Fidelitatis',
     description:
-      'Join the Via Fidelitatis list for The Ledger every Sunday — a short household read for Catholic families on the path to FI.',
+      'Get the free Tithe-First Budget Worksheet and join the list for The Ledger every Sunday — a short household read for Catholic families on the path to FI.',
     type: 'website',
   },
   '/ledger': {
