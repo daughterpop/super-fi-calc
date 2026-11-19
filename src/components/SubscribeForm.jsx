@@ -73,7 +73,8 @@ export default function SubscribeForm() {
     try {
       const body = new FormData();
       body.set('email_address', email.trim());
-      if (firstName.trim()) body.set('first_name', firstName.trim());
+      // Kit's public form embed uses fields[first_name], not first_name.
+      if (firstName.trim()) body.set('fields[first_name]', firstName.trim());
 
       const response = await fetch(KIT_SUBSCRIBE_URL, {
         method: 'POST',
@@ -132,7 +133,7 @@ export default function SubscribeForm() {
           <input
             id={nameId}
             type="text"
-            name="first_name"
+            name="fields[first_name]"
             autoComplete="given-name"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
