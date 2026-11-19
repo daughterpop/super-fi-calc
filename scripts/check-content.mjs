@@ -92,6 +92,37 @@ const checkXml = (rel, rootTag) => {
   if (stack.length) bad(rel, `unclosed tags: ${stack.join(", ")}`);
 };
 
+// ---------- src/data/ledger.js ----------
+// Added 2026-11-18: the Nov 14 Ledger Issue 09 push replaced ledger.js and
+// sitemap.xml with the literal text "$(cat /tmp/...)" (an unexpanded shell
+// substitution). RouteSeo.jsx then failed to import getEdition and every
+// Vercel build errored from Nov 14 to Nov 18.
+const ledgerPath = join(root, "src/data/ledger.js");
+const ledgerSrc = readFileSync(ledgerPath, "utf8");
+if (ledgerSrc.length < 2000)
+  bad("ledger.js", `suspiciously small (${ledgerSrc.length} bytes) — file may be truncated`);
+for (const fn of ["getEdition", "latestEdition", "adjacentEditions"])
+  if (!new RegExp(`export\\s+function\\s+${fn}\\b`).test(ledgerSrc))
+    bad("ledger.js", `does not export ${fn}()`);
+
+// Tripwire for unexpanded shell substitutions / placeholders in any guarded file.
+for (const rel of ["src/data/posts.js", "src/data/ledger.js", "public/rss.xml", "public/sitemap.xml"]) {
+  const src = readFileSync(join(root, rel), "utf8");
+  if (/\$\((cat|echo)\s/.test(src)) bad(rel, 'contains an unexpanded shell substitution like "$(cat ...)"');
+  if (/PLACEHOLDER|rest unchanged/i.test(src)) bad(rel, "contains placeholder text");
+}
+
+// RSS item-level checks (the Oct 13 failure: a new block was inserted *after*
+// the first <item> line, so the old first entry lost its opening <item>).
+{
+  const rss = readFileSync(join(root, "public/rss.xml"), "utf8");
+  const opens = (rss.match(/<item>/g) || []).length;
+  const closes = (rss.match(/<\/item>/g) || []).length;
+  if (opens !== closes) bad("public/rss.xml", `<item> count (${opens}) != </item> count (${closes})`);
+  if (/<item>\s*<item>/.test(rss) || /<\/item>\s*<title>/.test(rss))
+    bad("public/rss.xml", "an <item> is missing its opening or closing tag");
+}
+
 checkXml("public/rss.xml", "<rss");
 checkXml("public/sitemap.xml", "<urlset");
 

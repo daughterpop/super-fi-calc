@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/prerender.mjs",
+    "build": "node scripts/check-content.mjs && vite build && node scripts/prerender.mjs",
+    "check-content": "node scripts/check-content.mjs",
     "prerender": "node scripts/prerender.mjs",
     "prerender-og": "node scripts/prerender-og.mjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
