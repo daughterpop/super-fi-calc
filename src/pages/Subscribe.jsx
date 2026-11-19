@@ -15,11 +15,11 @@ export default function Subscribe() {
             FAITH • FAMILY • STEWARDSHIP
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-            Get The Ledger on Sunday
+            Get the free Tithe-First Budget Worksheet
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
-            One email on Sunday for Catholic households — a short read on the
-            budget, a deal worth taking or skipping, and a note from the readings.
+            A one-page plan that puts first fruits first. You’ll also get The
+            Ledger on Sunday — a short household read for Catholic families.
           </p>
         </div>
       </div>

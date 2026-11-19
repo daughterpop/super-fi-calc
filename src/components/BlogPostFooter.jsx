@@ -7,6 +7,8 @@ import { BlogArticleHeader } from './SiteHeader';
 import { getReferral } from '../data/referrals';
 import { allPosts, getPostByPath } from '../data/posts';
 import { GUIDE_LINKS, isGuideLink } from '../data/guides';
+import SubscribeForm from './SubscribeForm';
+import { isWorksheetOfferPath } from '../data/kit';
 
 function BlogNavPortal() {
   const [el, setEl] = useState(null);
@@ -126,15 +128,19 @@ export default function BlogPostFooter() {
 
         {postReferral && <ReferralCard referral={postReferral} />}
 
-        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-          Prefer email?{' '}
-          <Link
-            to="/subscribe"
-            className="text-emerald-600 hover:text-emerald-700 font-semibold"
-          >
-            Subscribe for occasional notes →
-          </Link>
-        </p>
+        {isWorksheetOfferPath(pathname) ? (
+          <SubscribeForm />
+        ) : (
+          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            Prefer email?{' '}
+            <Link
+              to="/subscribe"
+              className="text-emerald-600 hover:text-emerald-700 font-semibold"
+            >
+              Subscribe for occasional notes →
+            </Link>
+          </p>
+        )}
         <Link to="/blog" className="text-emerald-600 hover:text-emerald-800 font-medium">
           ← Back to Blog
         </Link>
