@@ -10,14 +10,10 @@ export default function FaithBasedInvestingBasicsForCatholicHouseholds() {
           Practical guide
         </p>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Faith-Based Investing Basics for Catholic Households
+          How Should Catholics Invest? Faith-Based Investing Basics
         </h1>
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-          A simple starting point for Catholic families who want their investments to serve long-term margin without turning money into an idol or ignoring moral considerations.
-        </p>
-
-        <p className="mb-6">
-          Hey everyone,
+          Begin by capturing any employer 401(k) match, then put the rest into low-cost, broad index or target-date funds and keep buying through good years and bad. Moral screening is a legitimate option for Catholic households; make that choice on purpose rather than by default.
         </p>
 
         <p className="mb-6">
@@ -41,14 +37,18 @@ export default function FaithBasedInvestingBasicsForCatholicHouseholds() {
           For the large majority of Catholic households the simplest effective approach is:
         </p>
         <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
-          <li>Capture every dollar of employer 401(k) match — it is free money.</li>
+          <li>Capture every dollar of employer 401(k) match — it is free money. The{' '}
+            <Link to="/calculators/employer-match" className="text-emerald-700 font-medium hover:underline">employer match calculator</Link>{' '}
+            shows what skipping it costs.</li>
           <li>Favor low-cost, broad-market index funds or target-date funds inside retirement accounts.</li>
           <li>Keep fees low. Expense ratios matter more than almost any other variable over decades.</li>
           <li>Invest consistently through market ups and downs rather than trying to time them.</li>
           <li>Avoid complexity, leverage, and speculative individual stocks until the basics are solid and the household has real margin.</li>
         </ul>
         <p className="mb-6">
-          Consistency beats cleverness for the first ten or twenty years. Most of the benefit comes from the savings rate and time in the market, not from stock-picking skill.
+          Consistency beats cleverness for the first ten or twenty years. Most of the benefit comes from the savings rate and time in the market, not from stock-picking skill. The{' '}
+          <Link to="/calculators/compound-growth" className="text-emerald-700 font-medium hover:underline">compound growth calculator</Link>{' '}
+          shows what a steady monthly amount becomes over those decades.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
@@ -93,7 +93,7 @@ export default function FaithBasedInvestingBasicsForCatholicHouseholds() {
 
         <p className="not-prose mb-8 flex flex-wrap gap-3">
           <Link
-            to="/calculators"
+            to="/calculators/fi-path"
             className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors text-sm sm:text-base shadow-sm"
           >
             Find your FI number →

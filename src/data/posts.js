@@ -30,7 +30,7 @@ const rawPosts = [
     featured: false
   },
   {
-    title: 'What an Extra $100 a Month on a Mortgage Actually Does',
+    title: 'How Much Does an Extra $100 a Month Save on a Mortgage?',
     date: 'October 21, 2026',
     dateSort: '2026-10-21',
     excerpt: 'On a $350,000 loan at 6.5%, an extra $100 a month on the mortgage ends it 42 payments early and saves about $62,600 in interest. Here is the math, and when I would send that $100 elsewhere.',
@@ -432,40 +432,40 @@ const rawPosts = [
     featured: false
   },
   {
-    title: 'Is FIRE Compatible with Catholicism?',
+    title: 'Is It a Sin to Retire Early? A Catholic Answer on FIRE',
     date: 'August 20, 2026',
     dateSort: '2026-08-20',
-    excerpt: 'Financial independence is a tool. Whether it serves or hinders a Catholic family depends on what the freedom is for.',
+    excerpt: 'No. Early retirement is not sinful in itself, but the Church calls work a duty, so the plan is judged by what the freedom is for. What FIRE gets right, where it goes wrong, and a three-question test.',
     readTime: '5 min read',
     link: '/blog/is-fire-compatible-with-catholicism',
     tags: ['Stewardship', 'FI'],
     featured: true
   },
   {
-    title: 'How to Budget as a Catholic Family (with Tithing First)',
+    title: 'How Much Should a Catholic Tithe? A Budget That Gives First',
     date: 'August 15, 2026',
     dateSort: '2026-08-15',
-    excerpt: 'Tithe first, then build the rest of the plan. A simple order that keeps giving from becoming the leftover.',
+    excerpt: 'The Church sets no fixed percentage; each Catholic supports the Church according to ability (CCC 2043). Many families use 10% as a benchmark. Here is a budget that takes it out first.',
     readTime: '5 min read',
     link: '/blog/how-to-budget-as-a-catholic-family-with-tithing-first',
     tags: ['Stewardship', 'Tithing', 'Budget'],
     featured: false
   },
   {
-    title: 'Building an Emergency Fund Without Neglecting the Tithe',
+    title: 'How Big Should a Catholic Family’s Emergency Fund Be?',
     date: 'August 12, 2026',
     dateSort: '2026-08-12',
-    excerpt: 'The cash buffer and the tithe are not rivals. Both protect the household’s ability to respond when need appears.',
+    excerpt: 'Three to six months of essential expenses, tithe included, built after a $1,000–$2,000 starter fund. One-income and large families should aim high, and keep giving while the fund grows.',
     readTime: '4 min read',
     link: '/blog/building-an-emergency-fund-without-neglecting-the-tithe',
     tags: ['Stewardship', 'Tithing', 'Emergency'],
     featured: false
   },
   {
-    title: 'Faith-Based Investing Basics for Catholic Households',
+    title: 'How Should Catholics Invest? Faith-Based Investing Basics',
     date: 'August 10, 2026',
     dateSort: '2026-08-10',
-    excerpt: 'Investing is stewardship of future capacity. Basic principles that keep the portfolio aligned with the family’s real ends.',
+    excerpt: 'Take the full 401(k) match, hold low-cost index or target-date funds, and decide deliberately whether to add moral screens. A plain starting point for Catholic households with surplus to invest.',
     readTime: '5 min read',
     link: '/blog/faith-based-investing-basics-for-catholic-households',
     tags: ['Stewardship', 'Investing'],
@@ -492,10 +492,10 @@ const rawPosts = [
     featured: true
   },
   {
-    title: 'How to Get Started on Your FI Path',
+    title: 'How Do You Start on the Path to Financial Independence?',
     date: 'July 28, 2026',
     dateSort: '2026-07-28',
-    excerpt: 'One clear path for Catholic households ready to begin: calculate, cut what does not serve, invest the gap, and keep giving first.',
+    excerpt: 'One shared goal, rough numbers, one calculator run and one change this month. Seven steps for a Catholic household starting toward financial independence from zero.',
     readTime: '5 min read',
     link: '/blog/how-to-get-started-on-your-fi-path',
     tags: ['Stewardship', 'FI'],

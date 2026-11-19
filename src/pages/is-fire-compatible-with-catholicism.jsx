@@ -10,14 +10,10 @@ export default function IsFireCompatibleWithCatholicism() {
           Core question
         </p>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Is FIRE Compatible with Catholicism?
+          Is It a Sin to Retire Early? A Catholic Answer on FIRE
         </h1>
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-          A clear Catholic answer to the Financial Independence, Retire Early movement — what to keep, what to leave behind, and how margin for vocation differs from the secular race to stop working.
-        </p>
-
-        <p className="mb-6">
-          Hey everyone,
+          No. Retiring early is not a sin in itself, but the Catechism calls work a duty (CCC 2427), so the real question is what the freed-up years are for. The thrift, low debt and patient investing behind FIRE fit Catholic prudence; treating leisure as the prize does not.
         </p>
 
         <p className="mb-6">
@@ -95,7 +91,7 @@ export default function IsFireCompatibleWithCatholicism() {
 
         <p className="not-prose mb-8 flex flex-wrap gap-3">
           <Link
-            to="/calculators"
+            to="/calculators/fi-path"
             className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors text-sm sm:text-base shadow-sm"
           >
             Find your FI number →
