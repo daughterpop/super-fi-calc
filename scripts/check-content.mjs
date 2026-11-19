@@ -105,6 +105,35 @@ for (const fn of ["getEdition", "latestEdition", "adjacentEditions"])
   if (!new RegExp(`export\\s+function\\s+${fn}\\b`).test(ledgerSrc))
     bad("ledger.js", `does not export ${fn}()`);
 
+// Shrink guard (added 2026-11-18): an automation rewrite that drops earlier
+// issues must fail the build. Issues must run 1..N with no gaps, N must not fall
+// below MIN_LEDGER_ISSUES (raise it when a new issue ships), and every issue
+// needs a /ledger/<slug> entry in public/sitemap.xml.
+const MIN_LEDGER_ISSUES = 9;
+try {
+  const { editions } = await import(pathToFileURL(ledgerPath).href);
+  if (!Array.isArray(editions)) bad("ledger.js", "editions must be an array");
+  else {
+    const nums = editions.map((e) => e?.issue).sort((a, b) => a - b);
+    if (editions.length < MIN_LEDGER_ISSUES)
+      bad("ledger.js", `only ${editions.length} issues (expected at least ${MIN_LEDGER_ISSUES}) — earlier issues were dropped`);
+    if (nums.some((n, i) => n !== i + 1))
+      bad("ledger.js", `issue numbers must run 1..${nums.length} with no gaps (got ${nums.join(",")})`);
+    const slugs = new Set();
+    const sitemapSrc = readFileSync(join(root, "public/sitemap.xml"), "utf8");
+    for (const e of editions) {
+      const w = `ledger issue ${e?.issue ?? "?"}`;
+      if (typeof e?.slug !== "string" || !/^[a-z0-9-]+$/.test(e.slug)) bad(w, "slug must be kebab-case");
+      else if (slugs.has(e.slug)) bad(w, "duplicate slug");
+      else if (!sitemapSrc.includes(`/ledger/${e.slug}</loc>`)) bad(w, `public/sitemap.xml is missing /ledger/${e.slug}`);
+      slugs.add(e.slug);
+      if (!Array.isArray(e?.lanes) || e.lanes.length !== 3) bad(w, "must have exactly 3 lanes");
+    }
+  }
+} catch (e) {
+  bad("ledger.js", `failed to parse/import: ${e.message}`);
+}
+
 // Tripwire for unexpanded shell substitutions / placeholders in any guarded file.
 for (const rel of ["src/data/posts.js", "src/data/ledger.js", "public/rss.xml", "public/sitemap.xml"]) {
   const src = readFileSync(join(root, rel), "utf8");

@@ -18,6 +18,69 @@ export const LANES = [
 
 export const editions = [
 {
+    slug: 'put-the-talents-to-work',
+    issue: 9,
+    date: '2026-11-15',
+    sundayLabel: 'Sunday, November 15, 2026',
+    title: 'Put the Talents to Work',
+    lede:
+      'A talent was close to twenty years of a laborer’s wages, so the servant who buried one was not hiding a small thing. Issue 09 asks a mid-November household the same question the master asked: what is sitting idle that could be working, and whom is it meant to serve?',
+    lanes: [
+      {
+        lane: 'household',
+        kicker: 'Year-end payroll',
+        title: 'Check the deferral before the last paychecks of 2026',
+        lede:
+          'The 2026 401(k) limit is $24,500, plus $8,000 for workers 50 and over. Only a handful of pay dates remain to change what goes in this year.',
+        body: [
+          'Mid-November leaves most salaried workers with three to five paychecks before December 31. Whatever percentage payroll is holding now is, for practical purposes, the 2026 number. The IRS set this year’s elective-deferral limit at $24,500 for 401(k), 403(b), most 457 plans, and the Thrift Savings Plan. Workers 50 and older may add $8,000, and those who turn 60 through 63 this year may add $11,250 instead. The IRA limit is $7,500, with $1,100 more at age 50.',
+          'Few households need to reach the ceiling. The figure that matters more is the employer match, because a match left unclaimed is pay the house earned and never collected. Open the benefits portal this week and find two percentages: what the employer matches and what you defer. If the second is below the first, raising it before the final December check is the one change on this page with a guaranteed return. Many plans need a week or two for a new election to reach payroll, so the window shuts before the calendar does.',
+          'If the budget allows only one change, keep the parish gift where it is and adjust the plan around it. The envelope is firstfruits; the match is prudence. A higher deferral should come out of spending nobody will remember in January, not out of the gift or the grocery line.',
+        ],
+        tool: {
+          label: 'Employer match calculator',
+          href: '/calculators/employer-match',
+        },
+      },
+      {
+        lane: 'deal',
+        kicker: 'Treasury rate reset',
+        title: 'I bonds at 5.51% through April',
+        lede:
+          'New Series I bonds pay a 5.51% composite rate, including a 1.40% fixed rate that lasts the life of the bond. Savings that already exist can pass the test. Borrowed or emergency money cannot.',
+        body: [
+          'On November 1 the Treasury set the composite rate for I bonds issued from November 1, 2026 through April 30, 2027 at 5.51 percent. It combines a 1.40 percent fixed rate, which never changes for a bond bought in this window, with a semiannual inflation rate of 2.04 percent that resets every six months. Purchases are made only at TreasuryDirect, and the electronic limit is $10,000 per person per calendar year. A bond cannot be cashed in its first 12 months, and redeeming before five years forfeits the last three months of interest.',
+          'This offer has no cart attached, so the organic-spend test turns on where the dollars come from. Cash already parked beyond the emergency fund, money the house will not need for at least a year, passes. The emergency fund itself fails because of the 12-month lock. So does anything pulled from the parish gift, from a credit line, or from the 401(k) match in the lane above.',
+          'Interest accrues from the first day of the month of purchase, so a bond bought on November 30 earns as if it were bought on November 1. A purchase in late December and another in early January also count against two separate calendar-year limits. Neither detail is a reason to stretch. Move only the dollars that were already idle.',
+        ],
+        verdict: {
+          label: 'Only if',
+          note: 'Only if the money is already saved, sits beyond the emergency fund, and will not be needed for at least 12 months. Never with borrowed money or the parish envelope.',
+        },
+        tool: {
+          label: 'Compound growth calculator',
+          href: '/calculators/compound-growth',
+        },
+      },
+      {
+        lane: 'fidelity',
+        kicker: '33rd Sunday in Ordinary Time',
+        title: 'Put the talents to work',
+        lede:
+          'Matthew 25:14-30 is the Gospel this week, and the Church keeps the tenth World Day of the Poor on the same Sunday.',
+        body: [
+          'A silver talent is commonly reckoned at about 6,000 denarii, and Matthew 20:2 sets a laborer’s daily wage at one denarius. The servant who received one talent was holding close to two decades of work, not pocket change. His master does not fault him for having less than the others. He faults the hole in the ground: “Out of fear I went off and buried your talent in the ground.” Fear produced nothing, and the master calls it wicked and lazy, not careful.',
+          'The Catechism reads the unequal shares plainly. Talents are not distributed equally, and that difference belongs to God’s plan, so that those endowed with particular gifts share the benefits with those who need them (CCC 1936–1937). The first reading shows the same pattern inside a home. The worthy wife works with willing hands, and “she reaches out her hands to the poor, and extends her arms to the needy” (Proverbs 31:20). Her industry and her open hand are one virtue.',
+          'Pope Francis placed the World Day of the Poor on this Sunday in his 2016 apostolic letter Misericordia et misera. Pope Leo XIV titled his message for this tenth observance with Psalm 14:6: “The Lord is the refuge of the poor.” A deferral raised before December and a share of the surplus sent to the parish poor box or the St. Vincent de Paul conference are small, unglamorous returns. The servant who doubled two talents heard the same words as the one who doubled five: “Come, share your master’s joy.”',
+        ],
+        tool: {
+          label: 'Tithing & surplus calculator',
+          href: '/calculators/tithing-surplus',
+        },
+      },
+    ],
+  },
+{
     slug: 'stay-awake-for-the-bridegroom',
     issue: 8,
     date: '2026-11-08',
