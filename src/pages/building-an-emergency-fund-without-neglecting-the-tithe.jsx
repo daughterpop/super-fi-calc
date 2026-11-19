@@ -10,14 +10,10 @@ export default function BuildingAnEmergencyFundWithoutNeglectingTheTithe() {
           Practical guide
         </p>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Building an Emergency Fund Without Neglecting the Tithe
+          How Big Should a Catholic Family’s Emergency Fund Be?
         </h1>
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-          How Catholic families can build a real cash buffer and keep generosity as a first claim — so unexpected costs never force a choice between prudence and fidelity.
-        </p>
-
-        <p className="mb-6">
-          Hey everyone,
+          Three to six months of essential expenses, with the tithe counted as one of those expenses. Start with a $1,000–$2,000 starter fund while you keep giving, and aim for the six-month end if the household runs on one income or has many children.
         </p>
 
         <p className="mb-6">
@@ -66,7 +62,9 @@ export default function BuildingAnEmergencyFundWithoutNeglectingTheTithe() {
           How much is enough?
         </h2>
         <p className="mb-6">
-          Calculate essential monthly costs — not the full lifestyle number. Include the tithe. Multiply by three to six depending on job stability, family size, and health. A household of eight with one income needs a larger buffer than a dual-income couple with no dependents. Honesty here is an act of care, not fear.
+          Calculate essential monthly costs — not the full lifestyle number. Include the tithe. Multiply by three to six depending on job stability, family size, and health. A household of eight with one income needs a larger buffer than a dual-income couple with no dependents. Honesty here is an act of care, not fear. The{' '}
+          <Link to="/calculators/emergency-fund" className="text-emerald-700 font-medium hover:underline">emergency fund calculator</Link>{' '}
+          does that multiplication for your own household.
         </p>
         <p className="mb-6">
           Keep the fund in a high-yield savings account that is separate from daily checking. It should be accessible within a day or two, not locked in long-term investments.
@@ -104,7 +102,7 @@ export default function BuildingAnEmergencyFundWithoutNeglectingTheTithe() {
         </p>
 
         <p className="text-lg font-medium text-gray-800 mt-10">
-          Give first. Protect the household. Let the buffer serve both prudence and love.
+          Keep the tithe, fill the buffer, and let the cash serve both prudence and love.
         </p>
         <p className="text-gray-700 font-medium mt-6">– Dustin</p>
 

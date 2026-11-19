@@ -10,7 +10,7 @@ export default function Extra100AMonthOnAMortgage() {
         </p>
 
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-          What an Extra $100 a Month on a Mortgage Actually Does
+          How Much Does an Extra $100 a Month Save on a Mortgage?
         </h1>
 
         <p className="text-xl font-semibold text-gray-800 mb-4">

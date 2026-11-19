@@ -10,14 +10,10 @@ export default function HowToBudgetAsACatholicFamilyWithTithingFirst() {
           Practical guide
         </p>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          How to Budget as a Catholic Family (with Tithing First)
+          How Much Should a Catholic Tithe? A Budget That Gives First
         </h1>
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-          A simple, faith-aligned budget that treats giving as a first claim, protects the non-negotiables, and still creates the surplus that builds real financial margin.
-        </p>
-
-        <p className="mb-6">
-          Hey everyone,
+          The Church sets no fixed percentage: the fifth precept asks the faithful to help provide for the Church’s material needs, each according to his own ability (CCC 2043). Many families use the biblical tenth as a benchmark, and whatever share you settle on belongs at the top of the budget, not at the bottom.
         </p>
 
         <p className="mb-6">
@@ -35,7 +31,8 @@ export default function HowToBudgetAsACatholicFamilyWithTithingFirst() {
           Many Catholic households treat the tithe (or a prayerfully chosen percentage) as a non-negotiable expense, not a leftover. That is coherent with the Gospel and with financial independence. If generosity only exists while the W-2 is large, the plan was never ordered to fidelity.
         </p>
         <p className="mb-6">
-          Practical move: the day income arrives, set aside the giving percentage before any other allocation. Automate it if possible. What remains is the true envelope for living, saving, and building margin.
+          Practical move: the day income arrives, set aside the giving percentage before any other allocation. Automate it if possible. What remains is the true envelope for living, saving, and building margin. To see what a given percentage leaves for everything else, try the{' '}
+          <Link to="/calculators/tithing-surplus" className="text-emerald-700 font-medium hover:underline">tithing and surplus calculator</Link>.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">

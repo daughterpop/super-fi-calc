@@ -10,10 +10,10 @@ export default function HowToGetStartedOnYourFiPath() {
           Evergreen guide · Core pillar
         </p>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          How to Get Started on Your FI Path
+          How Do You Start on the Path to Financial Independence?
         </h1>
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-          A simple, faith-aligned starting point for Catholic families who want clearer numbers without turning money into an idol.
+          Agree with your spouse on one goal, write down rough numbers, run an FI calculator once, and change one thing this month. After that the work is mostly review and patience; the seven steps below fill in each piece.
         </p>
 
         <p className="mb-6">
@@ -67,7 +67,8 @@ export default function HowToGetStartedOnYourFiPath() {
           3. Run the calculator once
         </h2>
         <p className="mb-6">
-          Plug those rough numbers into the free FI calculator. The output is not a prophecy. It is a flashlight:
+          Plug those rough numbers into the free{' '}
+          <Link to="/calculators/fi-path" className="text-emerald-700 font-medium hover:underline">FI path calculator</Link>. The output is not a prophecy. It is a flashlight:
           “At this surplus and these expenses, we are roughly <em>X</em> years out.”
         </p>
         <p className="mb-6">
@@ -94,7 +95,9 @@ export default function HowToGetStartedOnYourFiPath() {
           <li><strong>Automate</strong> — raise the 401(k) contribution, set a recurring taxable transfer, or capture the employer match</li>
         </ul>
         <p className="mb-6">
-          One lever, done consistently, beats an elaborate system you abandon in three weeks. This is how real{' '}
+          To see how far one lever moves the date, the{' '}
+          <Link to="/calculators/savings-rate-runway" className="text-emerald-700 font-medium hover:underline">savings rate calculator</Link>{' '}
+          compares the before and after. One lever, done consistently, beats an elaborate system you abandon in three weeks. This is how real{' '}
           <Link to="/blog/build-margin-for-catholic-families" className="text-emerald-700 font-medium hover:underline">margin</Link>{' '}
           is built — not in theory, but in the next thirty days.
         </p>
