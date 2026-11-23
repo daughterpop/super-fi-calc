@@ -33,7 +33,7 @@ export default function IsDebtASinForCatholics() {
         </p>
 
         <p className="mb-6">
-          Say a family of five has a $280,000 mortgage at 6.25% and a $12,000 car note. Both are fixed, both are being paid on time, both leave enough after the tithe for ordinary life. Nothing in the Catechism or in Romans requires them to sell the house tomorrow. The sin would be adding a new high-interest balance they have no plan to clear, or missing payments on the ones they already have.
+          Say a family of five has a $280,000 <a href="/calculators/loan-payment" className="text-blue-700 hover:underline font-medium">mortgage</a> at 6.25% and a $12,000 car note. Both are fixed, both are being paid on time, both leave enough after the <a href="/calculators/tithing-surplus" className="text-blue-700 hover:underline font-medium">tithe</a> for ordinary life. Nothing in the Catechism or in Romans requires them to sell the house tomorrow. The sin would be adding a new high-interest balance they have no plan to clear, or missing payments on the ones they already have.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">
