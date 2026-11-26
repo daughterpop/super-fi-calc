@@ -149,7 +149,7 @@ export default function WhyFiForCatholics() {
             Build Margin hub
           </Link>
           <Link
-            to="/calculators"
+            to="/calculators/fi-path"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 hover:border-emerald-300 text-gray-800 font-medium rounded-xl transition-colors text-sm sm:text-base"
           >
             Open the calculator
